@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LukeAndroidDemo</string>
+    <string name="sessionactivity1">SessionActivity1</string>
+    <string name="intent_2_sessionactivity2">Intent 2 SessionActivity2</string>
+    <string name="title_activity_tween">TweenActivity</string>
+    <string name="title_activity_frame">FrameActivity</string>
+</resources>
