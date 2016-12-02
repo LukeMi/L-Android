@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.luke.android.demo">
 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".app.MyApplication"
@@ -17,25 +20,31 @@
         <activity android:name=".sharedpreferences.SharedPreferencesDemoActivity" />
         <activity android:name=".handler.BaseHandlerActivity" />
         <activity android:name=".handler.HandlerTestActivity" />
-        <activity android:name=".datechangereceiver.DateChangedActivity" />
+        <activity android:name=".datechangereceiver.TimeChangedActivity" />
         <activity android:name=".perssion.PermissionActivity" />
-        <activity android:name=".animation.AnimationActivity"></activity>
+        <activity android:name=".animation.AnimationActivity" />
         <activity
             android:name=".animation.TweenActivity"
             android:label="@string/title_activity_tween"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".animation.FrameActivity"
+            android:label="@string/title_activity_frame" />
+        <activity android:name=".animation.PropertyActivity" />
+        <activity
+            android:name=".animation.ScaleActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".webservice.WebServiceActivity">
+
+        </activity>
+        <activity android:name=".util_qualify.DeviceutilActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".animation.FrameActivity"
-            android:label="@string/title_activity_frame"/>
-        <activity android:name=".animation.PropertyActivity" />
-        <activity android:name=".animation.ScaleActivity"
-            android:theme="@style/AppTheme">
 
         </activity>
     </application>

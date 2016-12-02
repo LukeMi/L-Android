@@ -14,7 +14,7 @@ public class HandlerTestActivity extends BaseHandlerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         myHandler = new MyHandler(this);
-        myHandler.sendMessage(myHandler.obtainMessage(MSG_TEST,1));
+        myHandler.sendMessage(myHandler.obtainMessage(MSG_TEST,"handler"));
     }
 
     @Override

@@ -13,7 +13,10 @@ import android.widget.TextView;
 import com.luke.android.demo.util.Logcat;
 import com.luke.android.demo.R;
 
-public class DateChangedActivity extends AppCompatActivity {
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class TimeChangedActivity extends AppCompatActivity {
 
     private TextView oldTime_DateChangedText;
     private TextView updateTime_DateChangedText;
@@ -34,11 +37,13 @@ public class DateChangedActivity extends AppCompatActivity {
             handler.sendEmptyMessageDelayed(MSG_CURRENTTIME, 1000);
         }
     };
+    private SimpleDateFormat sdf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_date_changed);
+        sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss sss");
         initView();
         initReceiver();
         handler.sendEmptyMessage(MSG_CURRENTTIME);
@@ -73,11 +78,13 @@ public class DateChangedActivity extends AppCompatActivity {
             String action = intent.getAction();
             if (action.equals(Intent.ACTION_TIME_CHANGED)) {
                 handler.removeMessages(MSG_CURRENTTIME);
-                oldTime_DateChangedText.setText(String.valueOf(currentTime));
+                oldTime_DateChangedText.setText(sdf.format(new Date(currentTime)));
                 //改变后的时间
                 Long timestamp = System.currentTimeMillis();
-                String timestampStr = String.valueOf(timestamp);
+                String timestampStr = sdf.format(new Date(timestamp));
                 updateTime_DateChangedText.setText(timestampStr);
+                long delta = currentTime - timestamp - 28800000;
+                
                 durationTime_DateChangedText.setText(String.valueOf(currentTime - timestamp));
                 Logcat.log(String.valueOf("currentTime - timestamp = duration : " + currentTime + "-" + timestamp + "=" + (currentTime - timestamp)));
             }
