@@ -1,6 +1,7 @@
 package com.luke.android.demo.util;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
@@ -26,6 +27,7 @@ import java.util.UUID;
 import static android.telephony.TelephonyManager.NETWORK_TYPE_UNKNOWN;
 
 /**
+ * 获取安卓终端的基本参数
  * Created by mzchen on 2016/12/1.
  */
 
@@ -54,7 +56,7 @@ public class DeviceInfoUtil {
 
 
     /**
-     * 获取手机的IMEI号码(适配6.0权限)
+     * 获取手机的IMEI号码(适配6.0权限,API23及以上需要请求权限的操作)
      *
      * @param context 上下文
      * @return IMEI号码
@@ -485,5 +487,35 @@ public class DeviceInfoUtil {
         PackageManager packageManager = context.getPackageManager();
         CharSequence appLabel = packageManager.getApplicationLabel(applicationInfo);
         return (String) appLabel;
+    }
+
+
+    /**
+     * Android 6.0 判断权限是否被申请（6.0以下需在清单文件注册）
+     *
+     * @param context    上下文
+     * @param permission 权限
+     * @return true 表示有该权限；false表示没有该权限
+     */
+    public static boolean isGetParamPermission(Context context, String permission) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context.checkSelfPermission(permission) == PackageManager.PERMISSION_DENIED) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    /**
+     * 请求权限的操作
+     *
+     * @param context    Activity
+     * @param permission 所请求的权限
+     */
+    public static void requestPermission(Context context, String permission) {
+        if (!isGetParamPermission(context, permission)) {
+            if (((Activity) context) instanceof Activity && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                ((Activity) context).requestPermissions(new String[]{permission}, 1 << 4);
+            }
+        }
     }
 }

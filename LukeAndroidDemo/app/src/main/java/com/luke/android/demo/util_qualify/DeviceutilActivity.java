@@ -1,5 +1,6 @@
 package com.luke.android.demo.util_qualify;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -23,6 +24,16 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_deviceutil);
         initView();
         setDeviceInfoToTV();
+//        requestPermission();
+    }
+
+    /**
+     * 请求权限
+     */
+    private void requestPermission() {
+        if(!DeviceInfoUtil.isGetParamPermission(this, Manifest.permission.READ_PHONE_STATE)){
+            DeviceInfoUtil.requestPermission(this,Manifest.permission.READ_PHONE_STATE);
+        }
     }
 
     private void initView() {
@@ -72,6 +83,7 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         map.put("widthPixels", widthPixels);
         map.put("heightPixels", heightPixels);
         map.put("density", density);
+        requestPermission();
         map.put("IMEI", IMEI);
         map.put("IMSI", IMSI);
         map.put("SIM", SIM);
