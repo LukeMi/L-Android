@@ -2,6 +2,7 @@ package com.luke.android.demo.util;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
@@ -13,16 +14,29 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.text.format.Formatter;
 import android.util.DisplayMetrics;
+import android.util.Log;
 
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileFilter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.Date;
 import java.util.Enumeration;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.UUID;
+import java.util.regex.Pattern;
 
 import static android.telephony.TelephonyManager.NETWORK_TYPE_UNKNOWN;
 
@@ -172,6 +186,17 @@ public class DeviceInfoUtil {
             macSerial = macAddress == null ? "" : macAddress;
         }
         return macSerial;
+    }
+
+    /**
+     * 获取手机第一次运动时产生和存储的64bit的一个数
+     *
+     * @param context 上下文
+     * @return
+     */
+    public static String getANDROID_ID(Context context) {
+        return android.provider.Settings.Secure.getString(context.getContentResolver()
+                , android.provider.Settings.Secure.ANDROID_ID);
     }
 
     /**
@@ -437,7 +462,7 @@ public class DeviceInfoUtil {
      * @param context 上下文
      * @return udid 手机唯一标示
      */
-    private String getUdid(Context context) {
+    public static String getUdid(Context context) {
         SharedPreferences loadInfoConfigureSPF = context.getSharedPreferences("loadInfoConfigure", Context.MODE_PRIVATE);
         String udid = "", tmSerial, tmPhone, androidId;
         if (TextUtils.isEmpty(udid)) {
@@ -517,5 +542,242 @@ public class DeviceInfoUtil {
                 ((Activity) context).requestPermissions(new String[]{permission}, 1 << 4);
             }
         }
+    }
+
+    /**
+     * 获取手机内存大小
+     *
+     * @param context 上下文
+     * @return
+     */
+    public static String getTotalMemory(Context context) {
+        String str1 = "/proc/meminfo";// 系统内存信息文件
+        String str2;
+        String[] arrayOfString;
+        long initial_memory = 0;
+        try {
+            FileReader localFileReader = new FileReader(str1);
+            BufferedReader localBufferedReader = new BufferedReader(localFileReader, 8192);
+            str2 = localBufferedReader.readLine();// 读取meminfo第一行，系统总内存大小
+
+            arrayOfString = str2.split("\\s+");
+            for (String num : arrayOfString) {
+                Log.i(str2, num + "\t");
+            }
+
+            initial_memory = Integer.valueOf(arrayOfString[1]).intValue() * 1024;// 获得系统总内存，单位是KB，乘以1024转换为Byte
+            localBufferedReader.close();
+
+        } catch (IOException e) {
+        }
+        return Formatter.formatFileSize(context, initial_memory);// Byte转换为KB或者MB，内存大小规格化
+    }
+
+    /**
+     * 获取当前可用内存大小
+     *
+     * @param context 上下文
+     * @return
+     */
+    public static String getAvailMemory(Context context) {
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
+        am.getMemoryInfo(mi);
+        return Formatter.formatFileSize(context, mi.availMem);
+    }
+
+    /**
+     * 获取CPU名字
+     *
+     * @return CPU名字
+     */
+    public static String getCpuName() {
+        try {
+            FileReader fr = new FileReader("/proc/cpuinfo");
+            BufferedReader br = new BufferedReader(fr);
+            String text = br.readLine();
+            String[] array = text.split(":\\s+", 2);
+            for (int i = 0; i < array.length; i++) {
+            }
+            return array[1];
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 获取CPU最大频率（单位KHZ）
+     */
+    public static String getMaxCpuFreq() {
+        String result = "";
+        ProcessBuilder cmd;
+        try {
+            String[] args = {"/system/bin/cat",
+                    "/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq"};
+            cmd = new ProcessBuilder(args);
+            Process process = cmd.start();
+            InputStream in = process.getInputStream();
+            byte[] re = new byte[24];
+            while (in.read(re) != -1) {
+                result = result + new String(re);
+            }
+            in.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            result = "N/A";
+        }
+        return result.trim() + "KHz";
+    }
+
+    /**
+     * 获取CPU最小频率（单位KHZ）
+     */
+    public static String getMinCpuFreq() {
+        String result = "";
+        ProcessBuilder cmd;
+        try {
+            String[] args = {"/system/bin/cat",
+                    "/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq"};
+            cmd = new ProcessBuilder(args);
+            Process process = cmd.start();
+            InputStream in = process.getInputStream();
+            byte[] re = new byte[24];
+            while (in.read(re) != -1) {
+                result = result + new String(re);
+            }
+            in.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            result = "N/A";
+        }
+        return result.trim() + "KHz";
+    }
+
+    /**
+     * 实时获取CPU当前频率（单位KHZ）
+     */
+    public static String getCurCpuFreq() {
+        String result = "N/A";
+        try {
+            FileReader fr = new FileReader(
+                    "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq");
+            BufferedReader br = new BufferedReader(fr);
+            String text = br.readLine();
+            result = text.trim() + "KHz";
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /**
+     * 获取CPU核心数
+     *
+     * @return
+     */
+    public static int getCPUNumCores() {
+        //Private Class to display only CPU devices in the directory listing
+        class CpuFilter implements FileFilter {
+            @Override
+            public boolean accept(File pathname) {
+                //Check if filename is "cpu", followed by a single digit number
+                if (Pattern.matches("cpu[0-9]", pathname.getName())) {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        try {
+            //Get directory containing CPU info
+            File dir = new File("/sys/devices/system/cpu/");
+            //Filter to only list the devices we care about
+            File[] files = dir.listFiles(new CpuFilter());
+            //Return the number of cores (virtual CPU devices)
+            return files.length;
+        } catch (Exception e) {
+            //Print exception
+            e.printStackTrace();
+            //Default to return 1 core
+            return 1;
+        }
+    }
+
+
+    public static String getXX(Context context) {
+        StringBuilder phoneInfo = new StringBuilder();
+        phoneInfo.append("Product: " + android.os.Build.PRODUCT + System.getProperty("line.separator"));
+        phoneInfo.append("CPU_ABI: " + android.os.Build.CPU_ABI + System.getProperty("line.separator"));
+        phoneInfo.append("TAGS: " + android.os.Build.TAGS + System.getProperty("line.separator"));
+        phoneInfo.append("VERSION_CODES.BASE: " + android.os.Build.VERSION_CODES.BASE + System.getProperty("line.separator"));
+        phoneInfo.append("MODEL: " + android.os.Build.MODEL + System.getProperty("line.separator"));
+        phoneInfo.append("SDK: " + android.os.Build.VERSION.SDK + System.getProperty("line.separator"));
+        phoneInfo.append("VERSION.RELEASE: " + android.os.Build.VERSION.RELEASE + System.getProperty("line.separator"));
+        phoneInfo.append("DEVICE: " + android.os.Build.DEVICE + System.getProperty("line.separator"));
+        phoneInfo.append("DISPLAY: " + android.os.Build.DISPLAY + System.getProperty("line.separator"));
+        phoneInfo.append("BRAND: " + android.os.Build.BRAND + System.getProperty("line.separator"));
+        phoneInfo.append("BOARD: " + android.os.Build.BOARD + System.getProperty("line.separator"));
+        phoneInfo.append("FINGERPRINT: " + android.os.Build.FINGERPRINT + System.getProperty("line.separator"));
+        phoneInfo.append("ID: " + android.os.Build.ID + System.getProperty("line.separator"));
+        phoneInfo.append("MANUFACTURER: " + android.os.Build.MANUFACTURER + System.getProperty("line.separator"));
+        phoneInfo.append("USER: " + android.os.Build.USER + System.getProperty("line.separator"));
+        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+//        phoneInfo.append("DeviceId(IMEI) = " + tm.getDeviceId() + System.getProperty("line.separator"));
+        phoneInfo.append("DeviceSoftwareVersion = " + tm.getDeviceSoftwareVersion() + System.getProperty("line.separator"));
+        phoneInfo.append("Line1Number = " + tm.getLine1Number() + System.getProperty("line.separator"));
+        phoneInfo.append("NetworkCountryIso = " + tm.getNetworkCountryIso() + System.getProperty("line.separator"));
+        phoneInfo.append("NetworkOperator = " + tm.getNetworkOperator() + System.getProperty("line.separator"));
+        phoneInfo.append("NetworkOperatorName = " + tm.getNetworkOperatorName() + System.getProperty("line.separator"));
+        phoneInfo.append("NetworkType = " + tm.getNetworkType() + System.getProperty("line.separator"));
+        phoneInfo.append("PhoneType = " + tm.getPhoneType() + System.getProperty("line.separator"));
+        phoneInfo.append("SimCountryIso = " + tm.getSimCountryIso() + System.getProperty("line.separator"));
+        phoneInfo.append("SimOperator = " + tm.getSimOperator() + System.getProperty("line.separator"));
+        phoneInfo.append("SimOperatorName = " + tm.getSimOperatorName() + System.getProperty("line.separator"));
+        phoneInfo.append("SimSerialNumber = " + tm.getSimSerialNumber() + System.getProperty("line.separator"));
+        phoneInfo.append("SimState = " + tm.getSimState() + System.getProperty("line.separator"));
+        phoneInfo.append("SubscriberId(IMSI) = " + tm.getSubscriberId() + System.getProperty("line.separator"));
+        phoneInfo.append("VoiceMailNumber = " + tm.getVoiceMailNumber() + System.getProperty("line.separator"));
+
+        return phoneInfo.toString();
+    }
+
+    /**
+     * 获取   android.os.Build.下面的android设备信息
+     *
+     * @return 以Map键值对形式返回的Build下面的信息<br/>
+     */
+    public static JSONObject getBuildInfo() {
+        Map<String, String> buildMap = new LinkedHashMap<>();
+        buildMap.put("ID", Build.ID);
+        buildMap.put("DISPLAY", Build.DISPLAY);
+        buildMap.put("PRODUCT", Build.PRODUCT);
+        buildMap.put("DEVICE", Build.DEVICE);
+
+        buildMap.put("BOARD", Build.BOARD);
+        buildMap.put("CPU_ABI", Build.CPU_ABI);
+        buildMap.put("CPU_ABI2", Build.CPU_ABI2);
+        buildMap.put("MANUFACTURER", Build.MANUFACTURER);
+        buildMap.put("BRAND", Build.BRAND);
+        buildMap.put("MODEL", Build.MODEL);
+        buildMap.put("BOOTLOADER", Build.BOOTLOADER);
+        buildMap.put("RADIO", Build.RADIO);
+        buildMap.put("HARDWARE", Build.HARDWARE);
+        buildMap.put("SERIAL", Build.SERIAL);
+        buildMap.put("VERSION_INCREMENTAL", Build.VERSION.INCREMENTAL);
+        buildMap.put("VERSION_RELEASE", Build.VERSION.RELEASE);
+        buildMap.put("VERSION_BASE_OS", Build.VERSION.BASE_OS);
+        buildMap.put("VERSION_SECURITY_PATCH", Build.VERSION.SECURITY_PATCH);
+        buildMap.put("VERSION_SDK", Build.VERSION.SDK);
+        buildMap.put("VERSION_SDK_INT", String.valueOf(Build.VERSION.SDK_INT));
+        buildMap.put("VERSION_PREVIEW_SDK_INT", String.valueOf(Build.VERSION.PREVIEW_SDK_INT));
+        buildMap.put("VERSION_CODENAME", Build.VERSION.CODENAME);
+
+        JSONObject jsonObject = JavaCTransUtil.map2JsonObject(buildMap);
+        return jsonObject;
     }
 }

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.luke.android.demo.R;
 import com.luke.android.demo.util.DeviceInfoUtil;
+import com.luke.android.demo.util.Logcat;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -24,15 +25,14 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_deviceutil);
         initView();
         setDeviceInfoToTV();
-//        requestPermission();
     }
 
     /**
      * 请求权限
      */
     private void requestPermission() {
-        if(!DeviceInfoUtil.isGetParamPermission(this, Manifest.permission.READ_PHONE_STATE)){
-            DeviceInfoUtil.requestPermission(this,Manifest.permission.READ_PHONE_STATE);
+        if (!DeviceInfoUtil.isGetParamPermission(this, Manifest.permission.READ_PHONE_STATE)) {
+            DeviceInfoUtil.requestPermission(this, Manifest.permission.READ_PHONE_STATE);
         }
     }
 
@@ -74,6 +74,16 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         String appName = DeviceInfoUtil.getAppName(this);
         String apppkg = DeviceInfoUtil.getApppakg(this);
         String appVersion = DeviceInfoUtil.getAppVersion(this);
+        String androidId = DeviceInfoUtil.getANDROID_ID(this);
+        String udid = DeviceInfoUtil.getUdid(this);
+        String TotalMemory = DeviceInfoUtil.getTotalMemory(this);
+        String getAvailMemory = DeviceInfoUtil.getAvailMemory(this);
+        String CpuName = DeviceInfoUtil.getCpuName();
+        String MaxCpuFreq = DeviceInfoUtil.getMaxCpuFreq();
+        String MinCpuFreq = DeviceInfoUtil.getMinCpuFreq();
+        String CurCpuFreq = DeviceInfoUtil.getCurCpuFreq();
+        int CPUNumCores = DeviceInfoUtil.getCPUNumCores();
+        String XX = DeviceInfoUtil.getXX(this);
 
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("phoneBand", phoneBand);
@@ -84,17 +94,30 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         map.put("heightPixels", heightPixels);
         map.put("density", density);
         requestPermission();
+        map.put("macID", macID);
         map.put("IMEI", IMEI);
+        map.put("androidId", androidId);
+        map.put("udid", udid);
         map.put("IMSI", IMSI);
         map.put("SIM", SIM);
         map.put("phoneNumber", phoneNumber);
         map.put("netType", netType);
         map.put("netName", netName);
         map.put("ip", ip);
-        map.put("macID", macID);
         map.put("appName", appName);
         map.put("apppkg", apppkg);
         map.put("appVersion", appVersion);
+
+        map.put("TotalMemory", TotalMemory);
+        map.put("getAvailMemory", getAvailMemory);
+        map.put("CpuName", CpuName);
+        map.put("MaxCpuFreq", MaxCpuFreq);
+        map.put("MinCpuFreq", MinCpuFreq);
+        map.put("CurCpuFreq", CurCpuFreq);
+        map.put("CPUNumCores", CPUNumCores);
+        map.put("XX", XX);
+        Logcat.log("----DeDeviceutilActivity----getBuildInfo----" + DeviceInfoUtil.getBuildInfo());
+
         StringBuilder builder = new StringBuilder();
         for (Map.Entry<String, Object> entry : map.entrySet()) {
             String key = entry.getKey();

@@ -12,7 +12,7 @@ import java.util.Map;
  * Created by mzchen on 2016/12/2.
  */
 
-public class JavaClassTransUtil {
+public class JavaCTransUtil {
 
     /**
      * 将 JsonObject 转换成 Map<String,Sting>集合
@@ -46,5 +46,26 @@ public class JavaClassTransUtil {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     * Map转换成JsonObject
+     *
+     * @param map map集合
+     * @return jsonObject
+     */
+    public static JSONObject map2JsonObject(Map<String, String> map) {
+        JSONObject jsonObject = new JSONObject();
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            try {
+                jsonObject.put(key, value);
+            } catch (JSONException e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
+        return jsonObject;
     }
 }
