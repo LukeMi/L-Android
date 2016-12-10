@@ -45,7 +45,7 @@ import static android.telephony.TelephonyManager.NETWORK_TYPE_UNKNOWN;
  * Created by mzchen on 2016/12/1.
  */
 
-public class DeviceInfoUtil {
+public class DeviceUtil {
 
     private static final int NETWORK_TYPE_UNAVAILABLE = -1;
     private static final int NETWORK_TYPE_WIFI = -101;

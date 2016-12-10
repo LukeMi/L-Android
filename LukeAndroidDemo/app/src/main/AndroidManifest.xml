@@ -20,32 +20,37 @@
         <activity android:name=".sharedpreferences.SharedPreferencesDemoActivity" />
         <activity android:name=".handler.BaseHandlerActivity" />
         <activity android:name=".handler.HandlerTestActivity" />
-        <activity android:name=".datechangereceiver.TimeChangedActivity" />
         <activity android:name=".perssion.PermissionActivity" />
         <activity android:name=".animation.AnimationActivity" />
         <activity
             android:name=".animation.TweenActivity"
             android:label="@string/title_activity_tween"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".animation.FrameActivity"
             android:label="@string/title_activity_frame" />
+
         <activity android:name=".animation.PropertyActivity" />
+
         <activity
             android:name=".animation.ScaleActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".webservice.WebServiceActivity">
+
+        <activity android:name=".webservice.WebServiceActivity" />
+        <activity
+            android:name=".utilcheck.DeviceutilActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+
+        <activity android:name=".getappchannelactivity.GetAppchannelActivity">
 
         </activity>
-        <activity android:name=".util_qualify.DeviceutilActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
+        <activity android:name=".utilcheck.ZipUtilActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

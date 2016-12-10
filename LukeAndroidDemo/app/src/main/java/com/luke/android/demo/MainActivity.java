@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.luke.android.demo.animation.AnimationActivity;
-import com.luke.android.demo.datechangereceiver.TimeChangedActivity;
 import com.luke.android.demo.handler.HandlerTestActivity;
 import com.luke.android.demo.sessionlifecycle.SessionActivity1;
 import com.luke.android.demo.webservice.WebServiceActivity;
@@ -34,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.activityLifeCycle_main:
                 intent.setClass(this, SessionActivity1.class);
-                break;
-            case R.id.receiver_main:
-                intent.setClass(this, TimeChangedActivity.class);
                 break;
         }
         startActivity(intent);

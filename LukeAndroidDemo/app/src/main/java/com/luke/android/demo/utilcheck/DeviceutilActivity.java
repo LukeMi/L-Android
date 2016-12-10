@@ -1,4 +1,4 @@
-package com.luke.android.demo.util_qualify;
+package com.luke.android.demo.utilcheck;
 
 import android.Manifest;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.luke.android.demo.R;
-import com.luke.android.demo.util.DeviceInfoUtil;
+import com.luke.android.demo.util.DeviceUtil;
 import com.luke.android.demo.util.Logcat;
 
 import java.util.LinkedHashMap;
@@ -31,8 +31,8 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
      * 请求权限
      */
     private void requestPermission() {
-        if (!DeviceInfoUtil.isGetParamPermission(this, Manifest.permission.READ_PHONE_STATE)) {
-            DeviceInfoUtil.requestPermission(this, Manifest.permission.READ_PHONE_STATE);
+        if (!DeviceUtil.isGetParamPermission(this, Manifest.permission.READ_PHONE_STATE)) {
+            DeviceUtil.requestPermission(this, Manifest.permission.READ_PHONE_STATE);
         }
     }
 
@@ -53,37 +53,37 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void setDeviceInfoToTV() {
-        String phoneBand = DeviceInfoUtil.getPhoneBrand();
-        String phoneMode = DeviceInfoUtil.getPhoneMode();
-        String language = DeviceInfoUtil.getLanguage(this);
-        String osVersion = DeviceInfoUtil.getOSVersion();
-        DisplayMetrics displayMetrics = DeviceInfoUtil.getDisplayMetrics(this);
+        String phoneBand = DeviceUtil.getPhoneBrand();
+        String phoneMode = DeviceUtil.getPhoneMode();
+        String language = DeviceUtil.getLanguage(this);
+        String osVersion = DeviceUtil.getOSVersion();
+        DisplayMetrics displayMetrics = DeviceUtil.getDisplayMetrics(this);
         int widthPixels = displayMetrics.widthPixels;
         int heightPixels = displayMetrics.heightPixels;
         float density = displayMetrics.density;
-        String IMEI = DeviceInfoUtil.getIMEI(this);
-        String IMSI = DeviceInfoUtil.getIMSI(this);
-        String SIM = DeviceInfoUtil.getSIM(this);
-        String phoneNumber = DeviceInfoUtil.getPhoneNumber(this);
+        String IMEI = DeviceUtil.getIMEI(this);
+        String IMSI = DeviceUtil.getIMSI(this);
+        String SIM = DeviceUtil.getSIM(this);
+        String phoneNumber = DeviceUtil.getPhoneNumber(this);
 
-        String netType = DeviceInfoUtil.getNetType(this);
-        String netName = DeviceInfoUtil.getNetName(this);
-        String ip = DeviceInfoUtil.getIp(this);
-        String macID = DeviceInfoUtil.getMacID(this);
+        String netType = DeviceUtil.getNetType(this);
+        String netName = DeviceUtil.getNetName(this);
+        String ip = DeviceUtil.getIp(this);
+        String macID = DeviceUtil.getMacID(this);
 
-        String appName = DeviceInfoUtil.getAppName(this);
-        String apppkg = DeviceInfoUtil.getApppakg(this);
-        String appVersion = DeviceInfoUtil.getAppVersion(this);
-        String androidId = DeviceInfoUtil.getANDROID_ID(this);
-        String udid = DeviceInfoUtil.getUdid(this);
-        String TotalMemory = DeviceInfoUtil.getTotalMemory(this);
-        String getAvailMemory = DeviceInfoUtil.getAvailMemory(this);
-        String CpuName = DeviceInfoUtil.getCpuName();
-        String MaxCpuFreq = DeviceInfoUtil.getMaxCpuFreq();
-        String MinCpuFreq = DeviceInfoUtil.getMinCpuFreq();
-        String CurCpuFreq = DeviceInfoUtil.getCurCpuFreq();
-        int CPUNumCores = DeviceInfoUtil.getCPUNumCores();
-        String XX = DeviceInfoUtil.getXX(this);
+        String appName = DeviceUtil.getAppName(this);
+        String apppkg = DeviceUtil.getApppakg(this);
+        String appVersion = DeviceUtil.getAppVersion(this);
+        String androidId = DeviceUtil.getANDROID_ID(this);
+        String udid = DeviceUtil.getUdid(this);
+        String TotalMemory = DeviceUtil.getTotalMemory(this);
+        String getAvailMemory = DeviceUtil.getAvailMemory(this);
+        String CpuName = DeviceUtil.getCpuName();
+        String MaxCpuFreq = DeviceUtil.getMaxCpuFreq();
+        String MinCpuFreq = DeviceUtil.getMinCpuFreq();
+        String CurCpuFreq = DeviceUtil.getCurCpuFreq();
+        int CPUNumCores = DeviceUtil.getCPUNumCores();
+        String XX = DeviceUtil.getXX(this);
 
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("phoneBand", phoneBand);
@@ -116,7 +116,7 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         map.put("CurCpuFreq", CurCpuFreq);
         map.put("CPUNumCores", CPUNumCores);
         map.put("XX", XX);
-        Logcat.log("----DeDeviceutilActivity----getBuildInfo----" + DeviceInfoUtil.getBuildInfo());
+        Logcat.log("----DeDeviceutilActivity----getBuildInfo----" + DeviceUtil.getBuildInfo());
 
         StringBuilder builder = new StringBuilder();
         for (Map.Entry<String, Object> entry : map.entrySet()) {
