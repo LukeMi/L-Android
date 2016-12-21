@@ -3,6 +3,7 @@ package com.luke.android.demo.util;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -68,4 +69,34 @@ public class JavaCTransUtil {
         }
         return jsonObject;
     }
+
+    /**
+     * 遍历对象及其属性值
+     *
+     * @param obj
+     * @return
+     * @throws Exception
+     */
+    public static Map<String, String> readClassAttr(Object obj) throws Exception {
+        Field[] fields = obj.getClass().getDeclaredFields();
+        String keyList = "";
+        String valueList = "";
+        for (Field field : fields) {
+            field.setAccessible(true);
+            if (field.get(obj) != null && !"".equals(field.get(obj).toString())) {
+                keyList += "," + field.getName();
+                if ("a".equals(field.getName())) {
+                    valueList += "," + "特殊格式哦";
+                } else {
+                    valueList += "," + field.get(obj);
+                }
+                ///System.out.println(field.getName()+"   "+field.get(obj).toString());
+            }
+        }
+        Map<String, String> maps = new HashMap<String, String>();
+        maps.put("keys", keyList);
+        maps.put("values", valueList);
+        return maps;
+    }
+
 }

@@ -38,6 +38,7 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
+import static android.os.Build.SERIAL;
 import static android.telephony.TelephonyManager.NETWORK_TYPE_UNKNOWN;
 
 /**
@@ -767,7 +768,7 @@ public class DeviceUtil {
         buildMap.put("BOOTLOADER", Build.BOOTLOADER);
         buildMap.put("RADIO", Build.RADIO);
         buildMap.put("HARDWARE", Build.HARDWARE);
-        buildMap.put("SERIAL", Build.SERIAL);
+        buildMap.put("SERIAL", SERIAL);
         buildMap.put("VERSION_INCREMENTAL", Build.VERSION.INCREMENTAL);
         buildMap.put("VERSION_RELEASE", Build.VERSION.RELEASE);
         buildMap.put("VERSION_BASE_OS", Build.VERSION.BASE_OS);
@@ -779,5 +780,52 @@ public class DeviceUtil {
 
         JSONObject jsonObject = JavaCTransUtil.map2JsonObject(buildMap);
         return jsonObject;
+    }
+
+    /**
+     * 手机硬件序列号
+     *
+     * @return 序列号
+     */
+    public static String getSerial() {
+        return Build.SERIAL;
+    }
+
+    /**
+     * 获取CPU序列号
+     *
+     * @return CPU序列号(16位)
+     * <p>
+     * 读取失败为"0000000000000000"
+     */
+    public static String getCPUSerial() {
+        String str = "", strCPU = "", cpuAddress = "0000000000000000";
+        try {
+            //读取CPU信息
+            Process pp = Runtime.getRuntime().exec("cat /proc/cpuinfo");
+            InputStreamReader ir = new InputStreamReader(pp.getInputStream());
+            LineNumberReader input = new LineNumberReader(ir);
+            //查找CPU序列号
+            for (int i = 1; i < 100; i++) {
+                str = input.readLine();
+                if (str != null) {
+                    //查找到序列号所在行
+                    if (str.indexOf("Serial") > -1) {
+                        //提取序列号
+                        strCPU = str.substring(str.indexOf(":") + 1, str.length());
+                        //去空格
+                        cpuAddress = strCPU.trim();
+                        break;
+                    }
+                } else {
+                    //文件结尾
+                    break;
+                }
+            }
+        } catch (IOException ex) {
+            //赋予默认值
+            ex.printStackTrace();
+        }
+        return cpuAddress;
     }
 }

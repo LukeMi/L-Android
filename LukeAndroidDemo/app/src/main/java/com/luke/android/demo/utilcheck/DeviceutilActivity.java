@@ -82,6 +82,7 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         String MaxCpuFreq = DeviceUtil.getMaxCpuFreq();
         String MinCpuFreq = DeviceUtil.getMinCpuFreq();
         String CurCpuFreq = DeviceUtil.getCurCpuFreq();
+        String cpuSN = DeviceUtil.getCPUSerial();
         int CPUNumCores = DeviceUtil.getCPUNumCores();
         String XX = DeviceUtil.getXX(this);
 
@@ -115,6 +116,7 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         map.put("MinCpuFreq", MinCpuFreq);
         map.put("CurCpuFreq", CurCpuFreq);
         map.put("CPUNumCores", CPUNumCores);
+        map.put("CPU_SN", cpuSN);
         map.put("XX", XX);
         Logcat.log("----DeDeviceutilActivity----getBuildInfo----" + DeviceUtil.getBuildInfo());
 
@@ -127,4 +129,5 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         String showStr = builder.toString();
         showDeviceInfoTV.setText(showStr);
     }
+
 }

@@ -26,26 +26,22 @@
             android:name=".animation.TweenActivity"
             android:label="@string/title_activity_tween"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".animation.FrameActivity"
             android:label="@string/title_activity_frame" />
-
         <activity android:name=".animation.PropertyActivity" />
-
         <activity
             android:name=".animation.ScaleActivity"
             android:theme="@style/AppTheme" />
+        <activity android:name=".webservice.WebServiceActivity">
 
-        <activity android:name=".webservice.WebServiceActivity" />
+        </activity>
         <activity
             android:name=".utilcheck.DeviceutilActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-
-        <activity android:name=".getappchannelactivity.GetAppchannelActivity">
-
-        </activity>
-        <activity android:name=".utilcheck.ZipUtilActivity">
+        <activity android:name=".getappchannelactivity.GetAppchannelActivity"></activity>
+        <activity android:name=".utilcheck.ZipUtilActivity"></activity>
+        <activity android:name=".handler.HandlerPostActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

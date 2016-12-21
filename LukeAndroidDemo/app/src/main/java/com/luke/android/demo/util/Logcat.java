@@ -7,18 +7,16 @@ import android.util.Log;
  */
 
 public class Logcat {
-    private static boolean debug = true;
-    private static String TAG = "tbug";
 
-    public static void log(String log){
-        if (debug){
+    public static void log(String log) {
+        if (ConfigUtil.debug) {
             log = log.trim();
             int startIndex = 0;
             int maxLength = 4000;
-            while(startIndex < log.length()){
+            while (startIndex < log.length()) {
                 int endIndex = startIndex + maxLength < log.length() ? startIndex + maxLength : log.length();
                 String s = log.substring(startIndex, endIndex);
-                Log.i(TAG, "--->" + s.trim());
+                Log.i(ConfigUtil.TAG, "--->" + s.trim());
                 startIndex += maxLength;
             }
         }

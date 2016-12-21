@@ -21,7 +21,7 @@ import com.luke.android.demo.util.Logcat;
 public class MyApplication extends BaseApplication {
     private final int MSG_REPEAT_TIME = 0x00;
     private final int MSG_CURRENTTIME = 0x0001;
-    private DateChangedReceiver dateChangedReceiver;
+    private TimeChangedReceiver dateChangedReceiver;
     //当前时间
     private long currentTime = 0;
     private Handler handler = new Handler() {
@@ -69,7 +69,7 @@ public class MyApplication extends BaseApplication {
     private void initReceiver() {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Intent.ACTION_TIME_CHANGED);   //为BroadcastReceiver指定action，使之用于接收同action的广播
-        dateChangedReceiver = new DateChangedReceiver();
+        dateChangedReceiver = new TimeChangedReceiver();
         registerReceiver(dateChangedReceiver, intentFilter);
         handler.sendEmptyMessage(MSG_CURRENTTIME);//实时时间
     }
@@ -78,7 +78,7 @@ public class MyApplication extends BaseApplication {
     /**
      * 时间改变的广播，加以处理时间改变的逻辑
      */
-    public class DateChangedReceiver extends BroadcastReceiver {
+    public class TimeChangedReceiver extends BroadcastReceiver {
 
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -96,4 +96,5 @@ public class MyApplication extends BaseApplication {
             }
         }
     }
+
 }
