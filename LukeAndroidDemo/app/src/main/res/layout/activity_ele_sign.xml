@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ele_sign"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.luke.android.demo.testview.EleSignActivity">
+
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/isSigned_ESA"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="是否签名" />
+        <Button
+            android:id="@+id/clearSigned_ESA"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="清除签名" />
+
+
+        <Button
+            android:id="@+id/showPicBig_ESA"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="显示大图" />
+    </LinearLayout>
+
+    <com.luke.android.demo.view.LinePathView
+        android:id="@+id/elecSign_ESA"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"/>
+</RelativeLayout>

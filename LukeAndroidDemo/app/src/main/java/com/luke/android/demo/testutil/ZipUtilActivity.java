@@ -1,4 +1,4 @@
-package com.luke.android.demo.utilcheck;
+package com.luke.android.demo.testutil;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

@@ -8,4 +8,7 @@ package com.luke.android.demo.util;
 public class ConfigUtil {
     public static boolean debug = true;
     public static String TAG = "tbug";
+    public static final int CA_REQUESTCODE = 0x0001;
+    public static final int CA_RESULTCODE= 0x0002;
+
 }
