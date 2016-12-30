@@ -31,9 +31,11 @@ import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Pattern;
@@ -827,5 +829,47 @@ public class DeviceUtil {
             ex.printStackTrace();
         }
         return cpuAddress;
+    }
+
+    /**
+     * 获取应用的UID
+     *
+     * @param context 上下文
+     * @return UID
+     */
+    public static String getUID(Context context) {
+        String uid;
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        ApplicationInfo applicationInfo = context.getApplicationInfo();
+        List<ActivityManager.RunningAppProcessInfo> run = activityManager.getRunningAppProcesses();
+        for (ActivityManager.RunningAppProcessInfo runningProcess : run) {
+            if ((runningProcess.processName != null) && runningProcess.processName.equals(applicationInfo.processName)) {
+                uid = String.valueOf(runningProcess.uid);
+                return uid;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 获取应用的PID数组
+     *
+     * @param context 上下文
+     * @return List<String>
+     */
+    public static List<String> getPID(Context context) {
+        List<String> list = new ArrayList<>();
+        String  processName = context.getPackageName();
+        int pid = android.os.Process.myPid();
+        ActivityManager mActivityManager = (ActivityManager) context
+                .getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningAppProcessInfo appProcess : mActivityManager
+                .getRunningAppProcesses()) {
+            list.add(appProcess.processName);
+            if (appProcess.pid == pid  && appProcess.processName.equals(processName)) {
+                
+            }
+        }
+        return  list;
     }
 }

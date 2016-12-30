@@ -173,7 +173,6 @@
     <color name="viewfinder_frame">#ff000000</color>
     <color name="viewfinder_laser">#ffff0000</color>
     <color name="viewfinder_mask">#60000000</color>
-
     <color name="deep_grey">#555555</color>
     <color name="sort_btn_normal">#393939</color>
     <color name="sort_btn_pressed">#787878</color>

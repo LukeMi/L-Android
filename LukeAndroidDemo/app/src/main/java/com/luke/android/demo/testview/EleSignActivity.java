@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.luke.android.demo.R;
+import com.luke.android.demo.util.HttpUtils;
 import com.luke.android.demo.util.Logcat;
 import com.luke.android.demo.util.SDCardUtils;
 import com.luke.android.demo.view.LinePathView;
@@ -23,6 +24,8 @@ import com.luke.android.demo.view.ShowBigPicClass;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -34,6 +37,7 @@ public class EleSignActivity extends AppCompatActivity implements View.OnClickLi
     private Button clearSigned_ESA_BTN;
     private int WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 0x0001;
     private short SDK_PERMISSION_REQUEST = 0x0002;
+    File f = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +50,7 @@ public class EleSignActivity extends AppCompatActivity implements View.OnClickLi
     protected void onResume() {
         super.onResume();
 //        getPermissions();
-        getPersimmions();
+//        getPersimmions();
     }
 
     /**
@@ -123,11 +127,11 @@ public class EleSignActivity extends AppCompatActivity implements View.OnClickLi
      * @return true 保存成功；false 不成功
      */
     private boolean savePicToLocal() {
-        File f = null;
+
         if (SDCardUtils.isSDCardMounted()) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (this.checkSelfPermission(Manifest.permission_group.STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    f = new File(Environment.getDataDirectory(), new Date().getTime() + ".jpg");
+                if (this.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                    f = new File(Environment.getDataDirectory(), File.separator+new Date().getTime() + ".jpg");
                 } else {
                     Toast.makeText(this, "API 23 无此权限", Toast.LENGTH_SHORT).show();
                 }
@@ -142,7 +146,20 @@ public class EleSignActivity extends AppCompatActivity implements View.OnClickLi
         if (f == null) {
             try {
                 f.createNewFile();
-                eleSignView.save(f.getAbsolutePath());
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            eleSignView.save(f.getAbsolutePath());
+                            File file = new File(Environment.getDownloadCacheDirectory(),File.separator+"11.jpg");
+                            FileOutputStream fos = new FileOutputStream(file);
+                            byte[] bytes = HttpUtils.getByteArray("https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png");
+                            fos.write(bytes);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
                 if (f.exists()) {
                     return true;
                 } else {
