@@ -41,5 +41,10 @@
             android:src="@drawable/default_pic"
             android:scaleType="fitCenter"/>
     </LinearLayout>
+    <Button
+        android:id="@+id/nativiePic_CA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="本地图片"/>
 
 </LinearLayout>

@@ -260,7 +260,7 @@ public class DeviceUtil {
         String type = "unknown";
         switch (networkClass) {
             case NETWORK_CLASS_UNAVAILABLE:
-                type = "noNetwork";
+                type = "NONETWORK";
                 break;
             case NETWORK_CLASS_WIFI:
                 type = "WIFI";
@@ -837,18 +837,16 @@ public class DeviceUtil {
      * @param context 上下文
      * @return UID
      */
-    public static String getUID(Context context) {
-        String uid;
+    public static int getUID(Context context) {
         ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         ApplicationInfo applicationInfo = context.getApplicationInfo();
         List<ActivityManager.RunningAppProcessInfo> run = activityManager.getRunningAppProcesses();
         for (ActivityManager.RunningAppProcessInfo runningProcess : run) {
             if ((runningProcess.processName != null) && runningProcess.processName.equals(applicationInfo.processName)) {
-                uid = String.valueOf(runningProcess.uid);
-                return uid;
+                return runningProcess.uid;
             }
         }
-        return null;
+        return 0;
     }
 
     /**
@@ -859,17 +857,17 @@ public class DeviceUtil {
      */
     public static List<String> getPID(Context context) {
         List<String> list = new ArrayList<>();
-        String  processName = context.getPackageName();
+        String processName = context.getPackageName();
         int pid = android.os.Process.myPid();
         ActivityManager mActivityManager = (ActivityManager) context
                 .getSystemService(Context.ACTIVITY_SERVICE);
         for (ActivityManager.RunningAppProcessInfo appProcess : mActivityManager
                 .getRunningAppProcesses()) {
             list.add(appProcess.processName);
-            if (appProcess.pid == pid  && appProcess.processName.equals(processName)) {
-                
+            if (appProcess.pid == pid && appProcess.processName.equals(processName)) {
+
             }
         }
-        return  list;
+        return list;
     }
 }

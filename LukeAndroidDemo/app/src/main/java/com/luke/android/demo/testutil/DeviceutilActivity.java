@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.luke.android.demo.R;
 import com.luke.android.demo.util.DeviceUtil;
-import com.luke.android.demo.util.Logcat;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -118,7 +117,11 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         map.put("CPUNumCores", CPUNumCores);
         map.put("CPU_SN", cpuSN);
         map.put("XX", XX);
-        Logcat.log("----DeDeviceutilActivity----getBuildInfo----" + DeviceUtil.getBuildInfo());
+        try {
+//            Logcat.log("----DeDeviceutilActivity----getBuildInfo----" + DeviceUtil.getBuildInfo());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         StringBuilder builder = new StringBuilder();
         for (Map.Entry<String, Object> entry : map.entrySet()) {

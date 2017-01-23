@@ -1,7 +1,9 @@
 package com.luke.android.demo.camera;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -28,7 +30,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static com.luke.android.demo.R.id.preViewPic_CA;
 import static com.luke.android.demo.util.ConfigUtil.CA_REQUESTCODE;
 
 public class CameraActivity extends AppCompatActivity implements View.OnClickListener {
@@ -38,8 +39,10 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
     private String picName1;
     private Button takePhoneBTN;
     private Button uploadPhotosBTN;
+    private Button nativiePicBTN;
     private ImageView preViewPicIV;
     Bitmap waterBm;
+    private int RESULT_LOAD_IMAGE = 0x0011;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +54,11 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
     private void initView() {
         takePhoneBTN = ((Button) findViewById(R.id.takePhotos_CA));
         uploadPhotosBTN = ((Button) findViewById(R.id.uploadPhotos_CA));
-        preViewPicIV = ((ImageView) findViewById(preViewPic_CA));
+        nativiePicBTN = ((Button) findViewById(R.id.nativiePic_CA));
+        preViewPicIV = ((ImageView) findViewById(R.id.preViewPic_CA));
         uploadPhotosBTN.setOnClickListener(this);
         takePhoneBTN.setOnClickListener(this);
+        nativiePicBTN.setOnClickListener(this);
         preViewPicIV.setOnClickListener(this);
 
     }
@@ -67,7 +72,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
                 picName1 = "ZSGD" + System.currentTimeMillis() + ".jpg";
                 Uri imageUri = Uri.fromFile(getPhotoFile(picName1));
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-                startActivityForResult(intent, CA_REQUESTCODE);
+                startActivityForResult(intent, ConfigUtil.CA_REQUESTCODE);
                 break;
             case R.id.uploadPhotos_CA:
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -85,6 +90,13 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
 //                detailPhotoFragment.setCancelable(false);
                 detailPhotoFragment.show(getSupportFragmentManager(), null);*/
                 break;
+            case R.id.nativiePic_CA:
+                Intent i = new Intent(
+                        Intent.ACTION_PICK,
+                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(i, RESULT_LOAD_IMAGE);
+
+                break;
 
         }
     }
@@ -93,7 +105,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Logcat.log("----CameraActivity----onActivityResult--->" + "requestCode = " + requestCode + ";resultCode = " + resultCode);
-        if (requestCode == ConfigUtil.CA_REQUESTCODE) {
+        if (requestCode == CA_REQUESTCODE) {
             Bitmap bmp1 = BitmapUtils.getBitmap(getPhotoFile(picName1).getAbsolutePath(), 1000, 1000);
             if (null != bmp1) {
                 preViewPicIV.setDrawingCacheEnabled(true);
@@ -101,6 +113,19 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
                 preViewPicIV.setDrawingCacheEnabled(true);
                 preViewPicIV.setImageBitmap(waterBm);
             }
+        }else if (requestCode ==RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data){
+            Uri selectedImage = data.getData();
+            String[] filePathColumn = { MediaStore.Images.Media.DATA };
+            Cursor cursor = getContentResolver().query(selectedImage,
+                    filePathColumn, null, null, null);
+            cursor.moveToFirst();
+            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+            String picturePath = cursor.getString(columnIndex);
+            Logcat.log("----CameraActivity----onActivityResult----file---->"+filePathColumn[0]+" ;picturePath= "+picturePath);
+            cursor.close();
+            Bitmap bmp1 = BitmapUtils.getBitmap(picturePath, 100, 100);
+            preViewPicIV.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+
         }
     }
 

@@ -35,21 +35,10 @@
         <activity
             android:name=".animation.ScaleActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".webservice.WebServiceActivity"></activity>
+        <activity android:name=".webservice.WebServiceActivity" />
         <activity
             android:name=".testutil.DeviceutilActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".getappchannelactivity.GetAppchannelActivity" />
-        <activity android:name=".testutil.ZipUtilActivity" />
-        <activity android:name=".handler.HandlerPostActivity"></activity>
-        <activity android:name=".camera.CameraActivity" />
-        <activity android:name=".testview.EleSignActivity">
-
-        </activity>
-        <activity android:name=".testview.CViewActivity" />
-        <activity android:name=".viewlearn.WebviewActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:configChanges="orientation|keyboardHidden">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -58,6 +47,53 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".getappchannelactivity.GetAppchannelActivity" />
+        <activity android:name=".testutil.ZipUtilActivity" />
+        <activity android:name=".handler.HandlerPostActivity" />
+        <activity android:name=".camera.CameraActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".testview.EleSignActivity" />
+        <activity android:name=".testview.CViewActivity" />
+        <activity
+            android:name=".viewlearn.WebviewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+
+
+        </activity>
+        <activity android:name=".testspeedmodel.TestSpeedActivity">
+
+        </activity>
+        <activity android:name=".fluxanalistics.FluxActivity">
+
+            <!--
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".receiver.ReceiverActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".plug.PlugActivity"></activity>
     </application>
 
 </manifest>
