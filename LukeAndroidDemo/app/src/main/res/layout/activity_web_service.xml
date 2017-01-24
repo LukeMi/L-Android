@@ -22,7 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:hint="请输入手机号" />
+            android:hint="输入手机号,方可查询" />
 
         <Button
             android:id="@+id/query_WebSer"

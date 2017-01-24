@@ -21,4 +21,23 @@ public class Logcat {
             }
         }
     }
+
+    /**
+     * Activity生命周期打印
+     *
+     * @param log
+     */
+    public static void log_life(String log) {
+        if (ConfigUtil.debug) {
+            log = log.trim();
+            int startIndex = 0;
+            int maxLength = 4000;
+            while (startIndex < log.length()) {
+                int endIndex = startIndex + maxLength < log.length() ? startIndex + maxLength : log.length();
+                String s = log.substring(startIndex, endIndex);
+                Log.i(ConfigUtil.TAG_LIFE, "--->" + s.trim());
+                startIndex += maxLength;
+            }
+        }
+    }
 }
