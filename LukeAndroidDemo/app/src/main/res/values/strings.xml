@@ -129,5 +129,6 @@
     <string name="key_upavg_speed">上行均值</string>
     <string name="click">点击下载图片</string>
     <string name="show_flux">显示流量</string>
+    <string name="title_activity_process">ProcessActivity</string>
 
 </resources>
