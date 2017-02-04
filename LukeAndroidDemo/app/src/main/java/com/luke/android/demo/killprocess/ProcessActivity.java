@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,7 +30,6 @@ import java.util.List;
 
 public class ProcessActivity extends AppCompatActivity {
 
-    private LinearLayout contentLLayout;
     private ListView lv;
     private ArrayList<AppInfo> appList;
     private String whiteOrder = "com.tencent.mobileqq";
@@ -92,11 +90,15 @@ public class ProcessActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        contentLLayout = ((LinearLayout) findViewById(R.id.contentLLayout));
-        lv = new ListView(this);
-        contentLLayout.addView(lv);
+        lv = ((ListView) findViewById(R.id.appList));
+        loadInstallAppList();
+    }
 
-        ArrayList<AppInfo> appInfoList = getAppInfo(this, false);
+    /**
+     * 加载列表
+     */
+    private void loadInstallAppList() {
+        ArrayList<AppInfo> appInfoList = getAppInfoData(this, false);
         AppinfoAdapter adpater = new AppinfoAdapter(this, appInfoList);
         lv.setAdapter(adpater);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -104,8 +106,9 @@ public class ProcessActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 AppInfo appInfo = appList.get(position);
                 Intent intent = new Intent(ProcessActivity.this, ProcessDetailActivity.class);
-                intent.putExtra("ProcessDetailActivity", appInfo);
+                intent.putExtra("pName", appInfo.getPn());
                 startActivity(intent);
+//                Toast.makeText(ProcessActivity.this, "dianji", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -114,12 +117,14 @@ public class ProcessActivity extends AppCompatActivity {
     /**
      * 获取已经手机已经安卓的软件（true非系统自带）
      */
-    public ArrayList<AppInfo> getAppInfo(Context context, boolean sysPackages) {
+    public ArrayList<AppInfo> getAppInfoData(Context context, boolean sysPackages) {
         appList = new ArrayList<>();
         List<PackageInfo> packList = context.getPackageManager().getInstalledPackages(0);
         for (int i = 0; i < packList.size(); i++) {
             PackageInfo packInfo = packList.get(i);
-            if ((null == packInfo.versionName)) {
+            ApplicationInfo applicationInfo = packInfo.applicationInfo;
+            if ((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) > 0) {//系统应用
+                Logcat.log("----来自于方法二 ---->>过滤掉系统应用: "+packInfo.packageName);
                 continue;
             }
             AppInfo appInfo = new AppInfo();
@@ -129,7 +134,6 @@ public class ProcessActivity extends AppCompatActivity {
             appInfo.setVn(packInfo.versionName);
             appInfo.setLd(packInfo.lastUpdateTime);
             appInfo.setFd(packInfo.firstInstallTime);
-            appInfo.setPermissions(packInfo.permissions);
             try {
                 appInfo.setIcon(context.getPackageManager().getApplicationIcon(appInfo.getPn()));
             } catch (Exception e) {

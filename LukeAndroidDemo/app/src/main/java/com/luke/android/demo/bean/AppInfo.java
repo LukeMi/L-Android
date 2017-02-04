@@ -1,11 +1,9 @@
 package com.luke.android.demo.bean;
 
 import android.content.Intent;
-import android.content.pm.PermissionInfo;
 import android.graphics.drawable.Drawable;
 
 import java.io.Serializable;
-import java.util.Arrays;
 
 /**
  * 手机应用信息类
@@ -21,7 +19,7 @@ public class AppInfo implements Serializable{
     private int vc;//版本号
     private long ld;//上次更新时间
     private long fd;//首次安装时间
-    private PermissionInfo[] permissions;//权限
+//    private PermissionInfo[] permissions;//权限
 
 
     public AppInfo() {
@@ -54,13 +52,7 @@ public class AppInfo implements Serializable{
         this.pn = pn;
     }
 
-    public PermissionInfo[] getPermissions() {
-        return permissions;
-    }
 
-    public void setPermissions(PermissionInfo[] permissions) {
-        this.permissions = permissions;
-    }
 
     public String getVn() {
         return vn;
@@ -121,7 +113,6 @@ public class AppInfo implements Serializable{
                 ", vc=" + vc +
                 ", ld=" + ld +
                 ", fd=" + fd +
-                ", permissions=" + Arrays.toString(permissions) +
                 '}';
     }
 
