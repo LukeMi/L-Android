@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.luke.android.demo.animation.FrameActivity">
+    tools:context="com.tbug.android.demo.animation.FrameActivity">
 
     
 

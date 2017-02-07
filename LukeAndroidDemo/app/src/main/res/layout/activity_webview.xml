@@ -7,7 +7,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    tools:context="com.luke.android.demo.viewlearn.WebviewActivity">
+    tools:context="com.tbug.android.demo.viewlearn.WebviewActivity">
 
     <LinearLayout
         android:id="@+id/llayout"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.luke.android.demo.sessionlifecycle.SessionActivity1">
+    tools:context="com.tbug.android.demo.sessionlifecycle.SessionActivity1">
 
     <TextView
         android:layout_width="match_parent"

@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.luke.android.demo.sessionlifecycle.SessionActivity1">
+    tools:context="com.tbug.android.demo.sessionlifecycle.SessionActivity1">
 
     <TextView
         android:layout_width="match_parent"

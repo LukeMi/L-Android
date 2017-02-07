@@ -5,7 +5,7 @@
     android:id="@+id/activity_flux"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.luke.android.demo.fluxanalistics.FluxActivity">
+    tools:context="com.tbug.android.demo.fluxanalistics.FluxActivity">
 
 
     <TextView
