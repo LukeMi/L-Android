@@ -11,39 +11,39 @@
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
 
     <application
-        android:name="com.tbug.android.demo.app.MyApplication"
+        android:name=".app.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/android"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name="com.tbug.android.demo.MainActivity" />
-        <activity android:name="com.tbug.android.demo.sessionlifecycle.SessionActivity1" />
-        <activity android:name="com.tbug.android.demo.sessionlifecycle.SessionActivity2" />
-        <activity android:name="com.tbug.android.demo.sharedpreferences.SharedPreferencesDemoActivity" />
-        <activity android:name="com.tbug.android.demo.handler.BaseHandlerActivity" />
-        <activity android:name="com.tbug.android.demo.handler.HandlerTestActivity" />
-        <activity android:name="com.tbug.android.demo.perssion.PermissionActivity" />
-        <activity android:name="com.tbug.android.demo.animation.AnimationActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".sessionlifecycle.SessionActivity1" />
+        <activity android:name=".sessionlifecycle.SessionActivity2" />
+        <activity android:name=".sharedpreferences.SharedPreferencesDemoActivity" />
+        <activity android:name=".handler.BaseHandlerActivity" />
+        <activity android:name=".handler.HandlerTestActivity" />
+        <activity android:name=".perssion.PermissionActivity" />
+        <activity android:name=".animation.AnimationActivity" />
         <activity
-            android:name="com.tbug.android.demo.animation.TweenActivity"
+            android:name=".animation.TweenActivity"
             android:label="@string/title_activity_tween"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.tbug.android.demo.animation.FrameActivity"
+            android:name=".animation.FrameActivity"
             android:label="@string/title_activity_frame" />
-        <activity android:name="com.tbug.android.demo.animation.PropertyActivity" />
+        <activity android:name=".animation.PropertyActivity" />
         <activity
-            android:name="com.tbug.android.demo.animation.ScaleActivity"
+            android:name=".animation.ScaleActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.tbug.android.demo.webservice.WebServiceActivity" />
+        <activity android:name=".webservice.WebServiceActivity" />
         <activity
-            android:name="com.tbug.android.demo.testutil.DeviceutilActivity"
+            android:name=".testutil.DeviceutilActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name="com.tbug.android.demo.getappchannelactivity.GetAppchannelActivity" />
-        <activity android:name="com.tbug.android.demo.testutil.ZipUtilActivity" />
-        <activity android:name="com.tbug.android.demo.handler.HandlerPostActivity" />
-        <activity android:name="com.tbug.android.demo.camera.CameraActivity">
+        <activity android:name=".getappchannelactivity.GetAppchannelActivity" />
+        <activity android:name=".testutil.ZipUtilActivity" />
+        <activity android:name=".handler.HandlerPostActivity" />
+        <activity android:name=".camera.CameraActivity">
 
             <!--
             <intent-filter>
@@ -53,14 +53,14 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name="com.tbug.android.demo.testview.EleSignActivity" />
-        <activity android:name="com.tbug.android.demo.testview.CViewActivity" />
+        <activity android:name=".testview.EleSignActivity" />
+        <activity android:name=".testview.CViewActivity" />
         <activity
-            android:name="com.tbug.android.demo.viewlearn.WebviewActivity"
+            android:name=".viewlearn.WebviewActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name="com.tbug.android.demo.testspeedmodel.TestSpeedActivity" />
-        <activity android:name="com.tbug.android.demo.fluxanalistics.FluxActivity">
+        <activity android:name=".testspeedmodel.TestSpeedActivity" />
+        <activity android:name=".fluxanalistics.FluxActivity">
 
             <!--
               <intent-filter>
@@ -70,7 +70,7 @@
               </intent-filter>
             -->
         </activity>
-        <activity android:name="com.tbug.android.demo.receiver.ReceiverActivity">
+        <activity android:name=".receiver.ReceiverActivity">
 
             <!--
             <intent-filter>
@@ -80,16 +80,17 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name="com.tbug.android.demo.plug.PlugActivity" />
-        <activity android:name="com.tbug.android.demo.BaseActivity" />
+        <activity android:name=".plug.PlugActivity" />
+        <activity android:name=".BaseActivity" />
         <activity
-            android:name="com.tbug.android.demo.killprocess.ProcessActivity"
+            android:name=".killprocess.ProcessActivity"
             android:label="@string/title_activity_process"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".killprocess.ProcessDetailActivity" />
+        <activity android:name=".network_operation.NetworkActivity">
 
         </activity>
-        <activity android:name="com.tbug.android.demo.killprocess.ProcessDetailActivity"></activity>
-        <activity android:name="com.tbug.android.demo.network_operation.NetworkActivity">
+        <activity android:name=".mob_sms.Mob_SMS_Activity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
