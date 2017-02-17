@@ -1,4 +1,4 @@
-package com.tbug.android.library.util;
+package com.tbug.android.mlibrary.util;
 
 /**
  * Created by mzchen on 2016/11/18.

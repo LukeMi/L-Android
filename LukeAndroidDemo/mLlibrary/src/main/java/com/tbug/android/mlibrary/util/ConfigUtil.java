@@ -1,4 +1,4 @@
-package com.tbug.android.library.util;
+package com.tbug.android.mlibrary.util;
 
 /**
  * 配置文件存放区

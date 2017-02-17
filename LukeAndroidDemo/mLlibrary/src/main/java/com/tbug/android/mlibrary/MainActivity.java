@@ -1,4 +1,4 @@
-package com.tbug.android.library;
+package com.tbug.android.mlibrary;
 
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.tbug.android.library.util.Logcat;
+import com.tbug.android.mlibrary.util.Logcat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,23 +49,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.changeBTN:
-                try {
-                    AssetManager assetManager = getAssets();
-                    String[] fontses = assetManager.list("fonts");
-                    int fontsNO = fontses.length;
-                    for (int i = 0; i < fontsNO; i++) {
-                        Logcat.log(fontses[i]);
-                        listStr.add("fonts/" + fontses[i]);
-                    }
-                    showFontsLV.setAdapter(new ArrayAdapter<String>(
-                            MainActivity.this, android.R.layout.simple_list_item_1,
-                            fontses));
-                } catch (Exception e) {
-                    e.printStackTrace();
+        int i1 = v.getId();
+        if (i1 == R.id.changeBTN) {
+            try {
+                AssetManager assetManager = getAssets();
+                String[] fontses = assetManager.list("fonts");
+                int fontsNO = fontses.length;
+                for (int i = 0; i < fontsNO; i++) {
+                    Logcat.log(fontses[i]);
+                    listStr.add("fonts/" + fontses[i]);
                 }
-                break;
+                showFontsLV.setAdapter(new ArrayAdapter<String>(
+                        MainActivity.this, android.R.layout.simple_list_item_1,
+                        fontses));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
     }
 }

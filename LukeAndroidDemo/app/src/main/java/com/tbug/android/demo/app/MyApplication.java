@@ -10,6 +10,7 @@ import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.activeandroid.ActiveAndroid;
 import com.tbug.android.demo.ancetor.BaseApplication;
 import com.tbug.android.demo.sessionlifecycle.MyActivityLifecycleCallbacks;
 import com.tbug.android.demo.util.Logcat;
@@ -49,6 +50,7 @@ public class MyApplication extends BaseApplication {
         registerActivityLifecycleCallbacks(new MyActivityLifecycleCallbacks());
         handler.sendEmptyMessageDelayed(MSG_REPEAT_TIME, 3000);
         initReceiver();
+        ActiveAndroid.initialize(this);
     }
 
     @Override

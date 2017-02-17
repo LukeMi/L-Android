@@ -3,22 +3,32 @@ package com.tbug.android.demo.bean;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 
+import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
+
 import java.io.Serializable;
 
 /**
  * 手机应用信息类
  * Created by mzchen on 2017/2/3.
  */
-
-public class AppInfo implements Serializable{
-    private String appName;// 程序名
-    private String pn; // 程序包名
-    private String vn = "";//版本名
-    private Intent intent;// 启动Intent
-    private Drawable icon;// 程序图标
-    private int vc;//版本号
-    private long ld;//上次更新时间
-    private long fd;//首次安装时间
+@Table(name = "AppInfo", id = "_id")
+public class AppInfo extends Model implements Serializable {
+    @Column(name = "appName")
+    public String appName;// 程序名
+    @Column(name = "pn")
+    public String pn; // 程序包名
+    @Column(name = "vn")
+    public String vn = "";//版本名
+    //    public Intent intent;// 启动Intent
+//    public Drawable icon;// 程序图标
+    @Column(name = "vc")
+    public int vc;//版本号
+    @Column(name = "ld")
+    public long ld;//上次更新时间
+    @Column(name = "fd")
+    public long fd;//首次安装时间
 //    private PermissionInfo[] permissions;//权限
 
 
@@ -29,8 +39,6 @@ public class AppInfo implements Serializable{
         this.appName = appName;
         this.pn = pn;
         this.vn = vn;
-        this.intent = intent;
-        this.icon = icon;
         this.vc = vc;
         this.ld = ld;
         this.fd = fd;
@@ -53,29 +61,12 @@ public class AppInfo implements Serializable{
     }
 
 
-
     public String getVn() {
         return vn;
     }
 
     public void setVn(String vn) {
         this.vn = vn;
-    }
-
-    public Intent getIntent() {
-        return intent;
-    }
-
-    public void setIntent(Intent intent) {
-        this.intent = intent;
-    }
-
-    public Drawable getIcon() {
-        return icon;
-    }
-
-    public void setIcon(Drawable icon) {
-        this.icon = icon;
     }
 
     public int getVc() {
@@ -108,8 +99,6 @@ public class AppInfo implements Serializable{
                 "appName='" + appName + '\'' +
                 ", pn='" + pn + '\'' +
                 ", vn='" + vn + '\'' +
-                ", intent=" + intent +
-                ", icon=" + icon +
                 ", vc=" + vc +
                 ", ld=" + ld +
                 ", fd=" + fd +

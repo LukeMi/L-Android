@@ -84,19 +84,24 @@
         <activity android:name=".BaseActivity" />
         <activity
             android:name=".killprocess.ProcessActivity"
-            android:label="@string/title_activity_process"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".killprocess.ProcessDetailActivity" />
-        <activity android:name=".network_operation.NetworkActivity">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        </activity>
-        <activity android:name=".mob_sms.Mob_SMS_Activity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".killprocess.ProcessDetailActivity" >
+        </activity>
+        <activity android:name=".network_operation.NetworkActivity">
+
+        </activity>
+        <activity android:name=".mob_sms.Mob_SMS_Activity">
+
+
 
         </activity>
     </application>

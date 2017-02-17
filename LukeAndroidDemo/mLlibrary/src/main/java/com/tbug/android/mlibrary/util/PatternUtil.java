@@ -1,4 +1,4 @@
-package com.tbug.android.library.util;
+package com.tbug.android.mlibrary.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

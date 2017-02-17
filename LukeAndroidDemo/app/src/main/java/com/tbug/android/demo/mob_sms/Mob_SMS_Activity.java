@@ -149,11 +149,11 @@ public class Mob_SMS_Activity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.sendRequestBTN:
                 //获取验证码
-
+                int c = 0;
                 break;
             case R.id.submit_secrityCode:
                 //提交验证信息
-                registerUser("CN",  );
+//                registerUser("CN",  );
                 break;
         }
     }

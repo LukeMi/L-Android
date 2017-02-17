@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.tbug.android.library.MainActivity">
+    tools:context="com.tbug.android.mlibrary.MainActivity">
 
     <Button
         android:id="@+id/changeBTN"

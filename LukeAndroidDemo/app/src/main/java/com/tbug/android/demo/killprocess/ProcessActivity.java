@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,7 +21,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.activeandroid.ActiveAndroid;
+import com.activeandroid.Cache;
+import com.activeandroid.query.Delete;
 import com.tbug.android.demo.R;
 import com.tbug.android.demo.bean.AppInfo;
 import com.tbug.android.demo.util.Logcat;
@@ -28,11 +33,13 @@ import com.tbug.android.demo.util.Logcat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProcessActivity extends AppCompatActivity {
+public class ProcessActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ListView lv;
+    private ListView showDB;
     private ArrayList<AppInfo> appList;
     private String whiteOrder = "com.tencent.mobileqq";
+    private int count;
     private final int MSG_CYCLE = 0x0001;
     private Handler mHandler = new Handler() {
         @Override
@@ -46,6 +53,7 @@ public class ProcessActivity extends AppCompatActivity {
             }
         }
     };
+    private TextView showTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +70,9 @@ public class ProcessActivity extends AppCompatActivity {
     private void killBackProcess(Context context) {
         ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = am.getRunningAppProcesses();
-        if (null == runningAppProcesses) {
+        if (null == runningAppProcesses || runningAppProcesses.size() == 0) {
             Logcat.log("无可运行程序---->>");
         }
-
         String currentPKG = getApplication().getPackageName();
         for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : runningAppProcesses) {
             String[] pkgList = runningAppProcessInfo.pkgList;
@@ -91,6 +98,16 @@ public class ProcessActivity extends AppCompatActivity {
 
     private void initViews() {
         lv = ((ListView) findViewById(R.id.appList));
+        showDB = ((ListView) findViewById(R.id.showDB));
+
+
+        showTV = ((TextView) findViewById(R.id.showTV));
+        findViewById(R.id.addDB).setOnClickListener(this);
+        findViewById(R.id.delDB).setOnClickListener(this);
+        findViewById(R.id.updateDB).setOnClickListener(this);
+        findViewById(R.id.queryDB).setOnClickListener(this);
+
+
         loadInstallAppList();
     }
 
@@ -113,6 +130,11 @@ public class ProcessActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        System.exit(0);
+        super.onBackPressed();
+    }
 
     /**
      * 获取已经手机已经安卓的软件（true非系统自带）
@@ -124,7 +146,7 @@ public class ProcessActivity extends AppCompatActivity {
             PackageInfo packInfo = packList.get(i);
             ApplicationInfo applicationInfo = packInfo.applicationInfo;
             if ((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) > 0) {//系统应用
-                Logcat.log("----来自于方法二 ---->>过滤掉系统应用: "+packInfo.packageName);
+                Logcat.log("----来自于方法二 ---->>过滤掉系统应用: " + packInfo.packageName);
                 continue;
             }
             AppInfo appInfo = new AppInfo();
@@ -135,11 +157,12 @@ public class ProcessActivity extends AppCompatActivity {
             appInfo.setLd(packInfo.lastUpdateTime);
             appInfo.setFd(packInfo.firstInstallTime);
             try {
-                appInfo.setIcon(context.getPackageManager().getApplicationIcon(appInfo.getPn()));
+//                appInfo.setIcon(context.getPackageManager().getApplicationIcon(appInfo.getPn()));
             } catch (Exception e) {
                 e.printStackTrace();
             }
             appList.add(appInfo);
+            appInfo.save();
         }
         return appList;
     }
@@ -163,7 +186,7 @@ public class ProcessActivity extends AppCompatActivity {
                     try {
                         ApplicationInfo info = packageManager.getApplicationInfo(pkgName, 0);
                         if ((info.flags & ApplicationInfo.FLAG_SYSTEM) <= 0) {//安装的第三方应用，而不是系统应用
-                            Log.e("runningName", info.loadLabel(packageManager).toString());
+                            Logcat.log("runningName" + info.loadLabel(packageManager).toString());
                         }
                     } catch (PackageManager.NameNotFoundException e) {
                         e.printStackTrace();
@@ -172,7 +195,68 @@ public class ProcessActivity extends AppCompatActivity {
             }
         }
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.addDB:
+                count++;
+                AppInfo appInfo = new AppInfo();
+                appInfo.setAppName(("setAppName" + count));
+                appInfo.setPn(("setPn" + count));
+                appInfo.setVc(count);
+                appInfo.setVn(("setVn" + count));
+                appInfo.setLd(System.currentTimeMillis());
+                appInfo.setFd(System.currentTimeMillis());
+                appInfo.save();
+                break;
+            case R.id.delDB:
+                //Hero.delete(Hero.class,1);//删除id为1的记录
+                new Delete().from(AppInfo.class).where("power>?", 60).execute();//删除power大于60的所有记录
+                Toast.makeText(ProcessActivity.this, "删除数据ok", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.updateDB:
+                AppInfo hero = AppInfo.load(AppInfo.class, 10);
+                /**
+                 * load方法其实执行的是：
+                 * new Select()).from(type).where(tableInfo.getIdName() + "=?", new Object[]{Long.valueOf(id)}).executeSingle();
+                 * 即是先单条查询；
+                 * executeSingle（）相当于limit(1);
+                 */
+                hero.setPn("杜甫");
+                hero.save();
+                Toast.makeText(ProcessActivity.this, "修改数据ok", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.queryDB:
+
+                showTV.setText(queryDB().toString());
+                break;
+
+        }
+
+    }
+
+    /**
+     * 数据库查询数据
+     */
+    private StringBuilder queryDB() {
+        StringBuilder content = new StringBuilder("");
+        //获取数据库的游标，和SQLite相同
+        Cursor cursor = ActiveAndroid.getDatabase().query(Cache.getTableName(AppInfo.class), null, null, null, null, null, null);
+        int appName = cursor.getColumnIndex("appName");
+        int pn = cursor.getColumnIndex("pn");
+        int vn = cursor.getColumnIndex("vn");
+        while (cursor.moveToNext()) {
+            AppInfo appInfo = new AppInfo();
+            appInfo.appName = cursor.getString(appName);
+            appInfo.pn = cursor.getString(pn);
+            appInfo.vn = cursor.getString(vn);
+            content.append(appInfo.toString());
+        }
+        return content;
+    }
 }
+
 
 /**
  * 适配器
@@ -224,9 +308,9 @@ class AppinfoAdapter extends BaseAdapter {
 
         vh.title.setText(appList.get(position).getAppName());
         vh.pName.setText(appList.get(position).getPn());
-        Drawable icon = appList.get(position).getIcon();
+        Drawable icon = null;//appList.get(position).getIcon();
         if (icon != null) {
-            vh.iconIV.setImageDrawable(appList.get(position).getIcon());
+//            vh.iconIV.setImageDrawable(appList.get(position).getIcon());
         } else {
             vh.iconIV.setImageResource(R.mipmap.ic_launcher);
         }
