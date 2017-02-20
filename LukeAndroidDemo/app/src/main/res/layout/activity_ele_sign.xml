@@ -4,7 +4,7 @@
     android:id="@+id/activity_ele_sign"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tbug.android.demo.testview.EleSignActivity">
+    tools:context="com.tbug.android.collection_demo.testview.EleSignActivity">
 
 
     <LinearLayout
@@ -36,7 +36,7 @@
             android:text="显示大图" />
     </LinearLayout>
 
-    <com.tbug.android.demo.view.LinePathView
+    <com.tbug.android.collection_demo.view.LinePathView
         android:id="@+id/elecSign_ESA"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

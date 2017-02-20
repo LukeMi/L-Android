@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.tbug.android.demo.network_operation.NetworkActivity">
+    tools:context="com.tbug.android.collection_demo.network_operation.NetworkActivity">
     <Button
         android:id="@+id/loadFM"
         android:layout_width="match_parent"

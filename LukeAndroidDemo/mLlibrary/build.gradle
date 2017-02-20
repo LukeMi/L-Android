@@ -10,7 +10,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName "v1.0.0_release"
 //        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -32,6 +32,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.2.1'
     testCompile 'junit:junit:4.12'
+    compile 'org.apache.ant:ant:1.7.0'
 }
 task makeJar(type: Copy, dependsOn: "build") {
     def buildFile = file("build.gradle")
@@ -43,7 +44,7 @@ task makeJar(type: Copy, dependsOn: "build") {
     from 'build/intermediates/bundles/release/classes.jar'
     into 'build'
     rename { String fileName ->
-        fileName.replace('classes', 'Tbug_SDK' + versionCode)
+        fileName.replace('classes', 'TbugSDK_' + versionCode)
     }
 }
 
