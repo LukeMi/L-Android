@@ -128,3 +128,8 @@
 
 #不压缩输入的类文件
 -dontshrink
+
+# “Warning:Ignoring InnerClasses attribute for an anonymous inner class”
+-keepattributes EnclosingMethod
+-keepattributes InnerClasses
+-dontoptimize

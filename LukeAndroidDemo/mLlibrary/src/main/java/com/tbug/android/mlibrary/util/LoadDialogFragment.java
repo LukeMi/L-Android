@@ -24,12 +24,9 @@ public class LoadDialogFragment extends DialogFragment {
         this.context = context;
     }*/
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return super.onCreateView(inflater, container, savedInstanceState);
     }
-
-
 }

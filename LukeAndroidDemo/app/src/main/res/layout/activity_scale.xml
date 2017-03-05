@@ -4,7 +4,7 @@
     android:id="@+id/activity_scale"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tbug.android.collection_demo.animation.ScaleActivity">
+    tools:context="com.tbug.android.collection.animation.ScaleActivity">
     <ImageView
         android:id="@+id/scale_img_ScaleAct"
         android:layout_width="match_parent"

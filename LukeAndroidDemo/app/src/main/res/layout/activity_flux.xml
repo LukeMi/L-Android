@@ -5,7 +5,7 @@
     android:id="@+id/activity_flux"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tbug.android.collection_demo.fluxanalistics.FluxActivity">
+    tools:context="com.tbug.android.collection.fluxanalistics.FluxActivity">
 
 
     <TextView
@@ -22,6 +22,6 @@
         android:id="@+id/pic"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/abc"/>
+        android:src="@mipmap/abc"/>
 
 </LinearLayout>

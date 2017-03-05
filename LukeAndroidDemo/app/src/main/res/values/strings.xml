@@ -130,5 +130,37 @@
     <string name="click">点击下载图片</string>
     <string name="show_flux">显示流量</string>
     <string name="title_activity_process">ProcessActivity</string>
+    <string name="abc_action_bar_home_description">Navigate home</string>
+    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
+    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
+    <string name="abc_action_bar_up_description">Navigate up</string>
+    <string name="abc_action_menu_overflow_description">More options</string>
+    <string name="abc_action_mode_done">Done</string>
+    <string name="abc_activity_chooser_view_see_all">See all</string>
+    <string name="abc_activitychooserview_choose_application">Choose an app</string>
+    <string name="abc_capital_off">OFF</string>
+    <string name="abc_capital_on">ON</string>
+    <string name="abc_search_hint">Search…</string>
+    <string name="abc_searchview_description_clear">Clear query</string>
+    <string name="abc_searchview_description_query">Search query</string>
+    <string name="abc_searchview_description_search">Search</string>
+    <string name="abc_searchview_description_submit">Submit query</string>
+    <string name="abc_searchview_description_voice">Voice search</string>
+    <string name="abc_shareactionprovider_share_with">Share with</string>
+    <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
+    <string name="abc_toolbar_collapse_description">Collapse</string>
+
+
+    <string name="error_code_detail">61 ： GPS定位结果\n62 ： 扫描整合定位依据失败。此时定位结果无效。\n63 ： 网络异常，没有成功向服务器发起请求。此时定位结果无效。\n65 ： 定位缓存的结果。\n66 ： 离线定位结果。通过requestOfflineLocaiton调用时对应的返回结果\n67 ： 离线定位失败。通过requestOfflineLocaiton调用时对应的返回结果\n68 ： 网络连接失败时，查找本地离线定位时对应的返回结果\n161： 表示网络定位结果\n162~167： 服务端定位失败\n502：key参数错误\n505：key不存在或者非法\n601：key服务被开发者自己禁用\n602：key mcode不匹配\n501～700：key验证失败\n</string>
+    <string name="qa_callback">\n问题反馈:\n
+        邮件格式格式：\n
+		1) 手机标识（移动联通IMEI，电信MEID）\n
+		2) 问题发生时间；\n
+		3）定位类型：失败（给出返回码），或者不准（给出真实位置）等；\n
+		4）具体描述：细节描述，可以给出问题发生的频率或者APP名称，sdk版本等，也可以加上附件如日志，贴图等\n
+        </string>
+    <string name="qa_callback_mail">\n反馈邮箱:loc-bugs@baidu.com</string>
+    <string name="toast_normal">一般性Toast显示+StringID</string>
+    <string name="title_activity_edit_text">EditTextActivity</string>
 
 </resources>

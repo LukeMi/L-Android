@@ -4,7 +4,7 @@
     android:id="@+id/activity_process_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tbug.android.collection_demo.killprocess.ProcessDetailActivity">
+    tools:context="com.tbug.android.collection.killprocess.ProcessDetailActivity">
     <LinearLayout
         android:id="@+id/content"
         android:layout_width="match_parent"

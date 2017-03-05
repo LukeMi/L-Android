@@ -4,7 +4,7 @@
     android:id="@+id/activity_test_speed"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tbug.android.collection_demo.testspeedmodel.TestSpeedActivity">
+    tools:context="com.tbug.android.collection.testspeedmodel.TestSpeedActivity">
     <LinearLayout
         android:id="@+id/bottom"
         android:layout_width="match_parent"
