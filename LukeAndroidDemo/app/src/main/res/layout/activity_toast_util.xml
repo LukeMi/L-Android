@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_toast_util"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tbug.android.collection.util_test.ToastUtilActivity">
+
+    <Button
+        android:id="@+id/show_makeText_String"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="一般性Toast显示+String" />
+
+    <Button
+        android:id="@+id/show_makeText_StringID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="一般性Toast显示+StringID" />
+
+    <Button
+        android:id="@+id/show_makeText_position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="一般性Toast显示+位置设置" />
+
+    <Button
+        android:id="@+id/show_makeText_position_StringID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="一般性Toast显示+位置设置+StringID" />
+
+    <Button
+        android:id="@+id/show_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义Toast显示" />
+
+    <Button
+        android:id="@+id/show_view_position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义Toast显示+显示位置" />
+
+</LinearLayout>
