@@ -108,7 +108,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
         super.onActivityResult(requestCode, resultCode, data);
         Logcat.log("----CameraActivity----onActivityResult--->" + "requestCode = " + requestCode + ";resultCode = " + resultCode);
         if (requestCode == CA_REQUESTCODE) {
-            Bitmap bmp1 = BitmapUtils.getBitmap(getPhotoFile(picName1).getAbsolutePath(), 1000, 1000);
+            Bitmap bmp1 = BitmapUtils.compressBitmap(getPhotoFile(picName1).getAbsolutePath(), 1000, 1000);
             if (null != bmp1) {
                 preViewPicIV.setDrawingCacheEnabled(true);
                 waterBm = setWatermark(bmp1, "ZSGD");
@@ -125,7 +125,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
             String picturePath = cursor.getString(columnIndex);
             Logcat.log("----CameraActivity----onActivityResult----file---->" + filePathColumn[0] + " ;picturePath= " + picturePath);
             cursor.close();
-            Bitmap bmp1 = BitmapUtils.getBitmap(picturePath, 100, 100);
+            Bitmap bmp1 = BitmapUtils.compressBitmap(picturePath, 100, 100);
             preViewPicIV.setImageBitmap(BitmapFactory.decodeFile(picturePath));
 
         }

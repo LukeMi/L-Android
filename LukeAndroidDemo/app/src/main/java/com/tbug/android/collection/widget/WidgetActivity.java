@@ -46,6 +46,7 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.RatingBar).setOnClickListener(this);
         findViewById(R.id.ProgressDialog).setOnClickListener(this);
         findViewById(R.id.Notification).setOnClickListener(this);
+        findViewById(R.id.WebviewActivity).setOnClickListener(this);
     }
 
     @Override
@@ -102,6 +103,12 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.ProgressDialog:
                 break;
             case R.id.Notification:
+                break;
+            case R.id.WebviewActivity:
+                targetClass = WebviewActivity.class;
+                break;
+            case R.id.TableLayoutActivity:
+                targetClass = TableLayoutActivity.class;
                 break;
 
             default:

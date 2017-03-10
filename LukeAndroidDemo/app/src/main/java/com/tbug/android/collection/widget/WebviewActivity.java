@@ -1,4 +1,4 @@
-package com.tbug.android.collection.viewlearn;
+package com.tbug.android.collection.widget;
 
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;

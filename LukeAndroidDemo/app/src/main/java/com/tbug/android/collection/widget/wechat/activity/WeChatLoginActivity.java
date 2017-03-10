@@ -1,4 +1,4 @@
-package com.tbug.android.collection.widget;
+package com.tbug.android.collection.widget.wechat.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.tbug.android.collection.R;
 
-public class WeChatActivity extends AppCompatActivity implements View.OnClickListener {
+public class WeChatLoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText accountET;
     private EditText passwordET;
@@ -25,7 +25,7 @@ public class WeChatActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_we_chat);
+        setContentView(R.layout.activity_we_chat_login);
         initView();
     }
 

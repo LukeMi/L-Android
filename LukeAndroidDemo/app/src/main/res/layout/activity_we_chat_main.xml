@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_we_chat_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.tbug.android.collection.widget.wechat.activity.WeChatMainActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mainViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/separateLine" />
+
+    <View
+        android:id="@+id/separateLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@+id/bottomNavigationBar"
+        android:background="@color/deep_grey" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/bottomNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        app:tabIndicatorColor="#09BA07"
+        app:tabIndicatorHeight="2dp"
+        app:tabSelectedTextColor="#09BA07"
+        app:tabTextColor="#797D81" />
+
+</RelativeLayout>

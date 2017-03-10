@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 import com.tbug.android.collection.R;
 import com.tbug.android.collection.util.Logcat;
+import com.tbug.android.collection.widget.wechat.activity.WeChatLoginActivity;
 
 import static com.tbug.android.collection.R.id.ic_password_delete;
 
@@ -102,7 +103,7 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
                 textPasswordET.setCursorVisible(true);
                 break;
             case R.id.weChatActivity:
-                startActivity(new Intent(this,WeChatActivity.class));
+                startActivity(new Intent(this,WeChatLoginActivity.class));
                 break;
         }
     }

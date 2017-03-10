@@ -185,8 +185,6 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
             case R.id.xml_translate_TweenAct:
                 xml_translateImg.startAnimation(AnimationUtils.loadAnimation(this, R.anim.translate));
                 break;
-
-
             case R.id.scale_img_TweenAct:
                 Intent intent = new Intent();
                 intent.setClass(this, ScaleActivity.class);

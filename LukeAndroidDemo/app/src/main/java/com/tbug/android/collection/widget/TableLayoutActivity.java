@@ -5,11 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.tbug.android.collection.R;
 
-public class FrameActivity extends AppCompatActivity {
+public class TableLayoutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_frame2);
+        setContentView(R.layout.activity_table_layout);
     }
 }

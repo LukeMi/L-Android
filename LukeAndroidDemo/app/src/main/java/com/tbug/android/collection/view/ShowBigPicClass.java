@@ -13,6 +13,8 @@ import android.widget.ImageView;
 
 import com.tbug.android.collection.util.Logcat;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Calendar;
@@ -43,7 +45,7 @@ public class ShowBigPicClass {
             public void run() {
                 try {
                     String fileName = "ZSGD_Water_" + String.valueOf(Calendar.getInstance().getTimeInMillis()) + ".jpg";
-                    File file = new File(Environment.getExternalStorageDirectory(), File.separator+"zsgd"+fileName);
+                    File file = new File(Environment.getExternalStorageDirectory(), File.separator + "zsgd" + fileName);
                     FileOutputStream fos = new FileOutputStream(file);
                     bm.compress(Bitmap.CompressFormat.JPEG, 100, fos);
                     fos.flush();
@@ -79,6 +81,32 @@ public class ShowBigPicClass {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+                //保存图片
+                boolean saveFlag = false;
+                if (saveFlag) {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                                bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                                String fileName = "woca" + ".png";
+                                File file = new File(context.getFilesDir(), fileName);
+                                if (!file.exists()) {
+                                    file.createNewFile();
+                                }
+                                DataOutputStream to = new DataOutputStream(new FileOutputStream(file));
+                                baos.writeTo(to);
+                                baos.flush();
+                                baos.close();
+                                Logcat.log("保存成功");
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                                Logcat.log("保存失败");
+                            }
+                        }
+                    }).start();
+                }
             }
         });
     }

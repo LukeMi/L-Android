@@ -55,13 +55,7 @@
         <activity
             android:name=".animation.TweenActivity"
             android:label="TweenActivity"
-            android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme" />
         <activity android:name=".animation.FrameActivity" />
         <activity android:name=".animation.PropertyActivity" />
         <activity android:name=".animation.ScaleActivity" />
@@ -76,7 +70,7 @@
         <activity android:name=".testview.EleSignActivity" />
         <activity android:name=".testview.CViewActivity" />
         <activity
-            android:name=".viewlearn.WebviewActivity"
+            android:name=".widget.WebviewActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".testspeedmodel.TestSpeedActivity" />
@@ -114,9 +108,21 @@
         <activity
             android:name=".widget.EditTextActivity"
             android:label="EditText控件效果"
-            android:theme="@style/Theme.AppCompat"></activity>
-        <activity android:name=".widget.WeChatActivity" />
-        <activity android:name=".widget.FrameActivity"></activity>
+            android:theme="@style/Theme.AppCompat" />
+        <activity android:name=".widget.wechat.activity.WeChatLoginActivity" />
+        <activity android:name=".widget.ViewPrintActivity" />
+        <activity android:name=".util_test.BitmapUtilActivity"></activity>
+
+        <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
+        <activity android:name=".util_test.UtilMainActivity" />
+        <activity android:name=".widget.wechat.activity.WeChatMainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".widget.TableLayoutActivity"></activity>
     </application>
 
 </manifest>
