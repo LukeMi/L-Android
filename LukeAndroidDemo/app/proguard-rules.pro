@@ -18,3 +18,10 @@
 -keepattributes EnclosingMethod
 -keepattributes InnerClasses
 -dontoptimize
+
+#mob短信验证开始
+-keep class cn.smssdk.**{*;}
+-keep class com.mob.**{*;}
+-dontwarn com.mob.**
+-dontwarn cn.smssdk.**
+#mob短信验证开结束

@@ -22,17 +22,17 @@ public class HttpUtils {
     /**
      * 通过GET请求方式获取Json数据
      *
-     * @param webSite 网址
+     * @param url 网址/环境
      * @return JSON 字符串
      */
-    public static String getString(String webSite) {
+    public static String getString(String url) {
         // TODO Auto-generated method stub
         InputStream is = null;
         // 读取String内容
         BufferedReader br = null;
         try {
-            URL url = new URL(webSite);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            URL _url = new URL(url);
+            HttpURLConnection conn = (HttpURLConnection) _url.openConnection();
             conn.setDoInput(true); // 可以读取
             conn.setDoOutput(false); // 没有写入
             conn.setRequestMethod("GET");
@@ -53,22 +53,13 @@ public class HttpUtils {
                 }
                 return builder.toString();
             }
-        } catch (MalformedURLException e) {
+            if (br != null)
+                br.close();
+            if (is != null)
+                is.close();
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } finally {
-            try {
-                if (br != null)
-                    br.close();
-                if (is != null)
-                    is.close();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
         }
         return null;
     }
@@ -76,15 +67,15 @@ public class HttpUtils {
     /**
      * 通过GET方式下载二进制数据
      *
-     * @param webSite 网址
+     * @param url 网址
      * @return byte[] 字节数组
      */
-    public static byte[] getByteArray(String webSite) {
+    public static byte[] getByteArray(String url) {
         InputStream is = null;
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try {
-            URL url = new URL(webSite);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            URL _url = new URL(url);
+            HttpURLConnection conn = (HttpURLConnection) _url.openConnection();
             conn.setDoInput(true);
             conn.setDoOutput(false);
             conn.setRequestMethod("GET");
@@ -101,13 +92,7 @@ public class HttpUtils {
                 }
             }
             return baos.toByteArray();
-        } catch (MalformedURLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (ProtocolException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         } finally {
@@ -116,7 +101,7 @@ public class HttpUtils {
                     baos.close();
                 if (is != null)
                     is.close();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
@@ -124,10 +109,16 @@ public class HttpUtils {
         return null;
     }
 
-    public static void httpDoPost(byte[] data, String urlSite) {
+    /**
+     * http POST请求（方法一）
+     *
+     * @param url  请求url
+     * @param data 字节数组
+     */
+    public static void httpPostRequest(String url, byte[] data) {
         try {
-            URL url = new URL(urlSite);
-            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+            URL _url = new URL(url);
+            HttpURLConnection httpURLConnection = (HttpURLConnection) _url.openConnection();
             OutputStream outputStream = httpURLConnection.getOutputStream();
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setConnectTimeout(5000);
@@ -139,7 +130,45 @@ public class HttpUtils {
             dos.flush();
             dos.close();
             outputStream.close();
+            if (httpURLConnection.getResponseCode() == 200) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
+                StringBuffer sb = new StringBuffer();
+                String line = "";
+                while ((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                reader.close();
+                httpURLConnection.disconnect();
+                //如果上传不成功就保存为文件
+                String result = sb.toString();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
+    /**
+     * http POST请求（方法二）
+     *
+     * @param url  请求url
+     * @param data 请求字符串
+     */
+    public static void httpPostRequest(String url, String data) {
+        try {
+            URL _url = new URL(url);
+            HttpURLConnection httpURLConnection = (HttpURLConnection) _url.openConnection();
+            OutputStream outputStream = httpURLConnection.getOutputStream();
+            httpURLConnection.setRequestMethod("POST");
+            httpURLConnection.setConnectTimeout(5000);
+            httpURLConnection.setDoInput(true);
+            httpURLConnection.setDoOutput(true);
+            httpURLConnection.setRequestProperty("Content-type", "application/octet-stream");
+            DataOutputStream dos = new DataOutputStream(outputStream);
+            byte[] bytes = data.getBytes();
+            dos.write(bytes, 0, bytes.length);
+            dos.flush();
+            dos.close();
+            outputStream.close();
             if (httpURLConnection.getResponseCode() == 200) {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
                 StringBuffer sb = new StringBuffer();

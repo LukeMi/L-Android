@@ -81,7 +81,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
                 waterBm.compress(Bitmap.CompressFormat.JPEG, 100, baos);
                 byte[] bytes = baos.toByteArray();
                 String url = "http://192.168.33.52:8090";
-                HttpUtils.httpDoPost(bytes, url);
+                HttpUtils.httpPostRequest(url, bytes);
                 break;
             case R.id.preViewPic_CA:
 

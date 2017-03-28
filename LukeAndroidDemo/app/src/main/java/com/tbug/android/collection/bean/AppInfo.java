@@ -105,4 +105,5 @@ public class AppInfo extends Model implements Serializable {
                 '}';
     }
 
+
 }

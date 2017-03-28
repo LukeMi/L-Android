@@ -14,6 +14,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="电子签名"/>
+        <Button
+            android:id="@+id/dialogUtil_CVA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="对话框帮助类"/>
+        <Button
+            android:id="@+id/zoomHeadListView_CVA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="头部缩放ListView"/>
 
 
     </LinearLayout>

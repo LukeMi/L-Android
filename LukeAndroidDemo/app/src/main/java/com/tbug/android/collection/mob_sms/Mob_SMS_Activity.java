@@ -14,10 +14,12 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+
 import com.mob.tools.utils.ResHelper;
 import com.tbug.android.collection.R;
 
 import java.util.Random;
+
 
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;

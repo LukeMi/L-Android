@@ -4,7 +4,8 @@ import java.util.regex.Pattern
 apply plugin: 'com.android.library'
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '25.0.2'
+
     defaultConfig {
 //        applicationId "com.tbug.android.mlibrary"
         minSdkVersion 14
@@ -14,6 +15,7 @@ android {
 //        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
+
     buildTypes {
         release {
             minifyEnabled true
@@ -34,6 +36,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'org.apache.ant:ant:1.7.0'
 }
+
 task makeJar(type: Copy, dependsOn: "build") {
     def buildFile = file("build.gradle")
     def pattern = Pattern.compile("versionName\\s+\"(\\S+)\"")
@@ -41,10 +44,16 @@ task makeJar(type: Copy, dependsOn: "build") {
     def matcher = pattern.matcher(manifestText)
     matcher.find()
     def versionCode = matcher.group(1)
-    from 'build/intermediates/bundles/release/classes.jar'
-    into 'build'
+    //去除路径集下部分的资源
+    exclude "com/tbug/android/mlibrary/MainActivity.class"
+
+    from 'build/intermediates/bundles/debug/classes.jar'
+    into 'build/libs'
     rename { String fileName ->
         fileName.replace('classes', 'TbugSDK_' + versionCode)
     }
+
 }
+
+
 

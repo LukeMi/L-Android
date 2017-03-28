@@ -9,9 +9,8 @@ import android.widget.Toast;
 
 import com.tbug.android.collection.R;
 
-public class CViewActivity extends AppCompatActivity implements View.OnClickListener{
+public class CViewActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button eleSignBTN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,22 +20,31 @@ public class CViewActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void initView() {
-        eleSignBTN = ((Button) findViewById(R.id.elecSign_CVA));
-        eleSignBTN.setOnClickListener(this);
+        findViewById(R.id.elecSign_CVA).setOnClickListener(this);
+        findViewById(R.id.dialogUtil_CVA).setOnClickListener(this);
+        findViewById(R.id.zoomHeadListView_CVA).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        Intent intent = new Intent();
-        switch (id){
+        Class<?> targetClass = null;
+        switch (id) {
             case R.id.elecSign_CVA:
-                intent.setClass(this,EleSignActivity.class);
+                targetClass = EleSignActivity.class;
+                break;
+            case R.id.dialogUtil_CVA:
+                targetClass = DialogUtilActivity.class;
+                break;
+            case R.id.zoomHeadListView_CVA:
+                targetClass = ZoomHeadListViewActivity.class;
                 break;
             default:
                 Toast.makeText(this, "这是什么鬼", Toast.LENGTH_SHORT).show();
                 break;
         }
-        startActivity(intent);
+        if (targetClass !=null){
+            startActivity(new Intent(CViewActivity.this,targetClass));
+        }
     }
 }
