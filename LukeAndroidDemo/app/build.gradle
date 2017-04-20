@@ -1,10 +1,11 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao' // apply pluginGreenDao3
+apply plugin: 'android-apt'//ButterKnife配置
 android {
     compileSdkVersion 23
     buildToolsVersion '25.0.2'
     defaultConfig {
-        applicationId "com.tbug.android.collection"
+        applicationId "com.lukemi.android.collection"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
@@ -21,20 +22,44 @@ android {
     lintOptions {
         abortOnError false
     }
-
     aaptOptions.cruncherEnabled = false
     aaptOptions.useNewCruncher = false
-
+    //httpClient支持
+    useLibrary 'org.apache.http.legacy'
 //    百度定位配置
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
         }
     }
+    dependencies {
+        //Gson解析依赖
+        compile 'com.google.code.gson:gson:2.3.1'
+        //Glide加载图片
+        compile 'com.github.bumptech.glide:glide:3.7.0'
+        //圆形图片
+        compile 'de.hdodenhof:circleimageview:2.1.0'
+        //volley框架
+        compile 'com.mcxiaoke.volley:library:1.0.19'
+        //okHttp3网络请求
+        compile 'com.squareup.okhttp3:okhttp:3.6.0'
+        //Picasso 加载图片
+        compile 'com.squareup.picasso:picasso:2.5.2'
+        //greendao 数据库（根build 进行maven中心库配置）
+        compile 'org.greenrobot:greendao:3.2.2'
+        //ButterKnife依赖
+        compile 'com.jakewharton:butterknife:8.4.0'
+        apt 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    }
 }
 
-
-
+//greendao配置 module必须添加（否则报错）apply plugin: 'org.greenrobot.greendao'
+greendao {
+    schemaVersion 1                             //版本号，升级时可配置
+    daoPackage 'com.inst.greendao3_demo.dao'     //包名
+    targetGenDir 'src/main/java'                 //生成目录
+}
 
 
 dependencies {
@@ -51,11 +76,12 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:support-v4:23.4.0'
-    compile 'com.jakewharton:butterknife:7.0.0'
     compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     testCompile 'junit:junit:4.12'
     androidTestCompile 'org.testng:testng:6.9.6'
     androidTestCompile 'junit:junit:4.12'
+    //alibaba Json
+    compile 'com.alibaba:fastjson:1.2.31'
 }

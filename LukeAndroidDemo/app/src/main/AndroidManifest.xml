@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tbug.android.collection">
+    package="com.lukemi.android.collection">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -9,6 +9,18 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    //设置壁纸
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    //拨打电话
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    //拍照
+    <uses-permission android:name="android.permission.CAMERA" />
+    //LED灯权限4个
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.flash" />
 
     <!-- 百度定位权限开始 -->
     <!-- 这个权限用于进行网络定位 -->
@@ -32,12 +44,12 @@
 
     <!-- 百度定位权限结束 -->
     <application
-        android:name=".app.MyApplication"
+        android:name="com.lukemi.android.collection.app.MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/android"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/app_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:hardwareAccelerated="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <!-- 百度定位配置 -->
@@ -45,53 +57,53 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="fORO8Klz9DRp0ZBuGZDyChN6hyX2lkGS" />
         //key:开发者申请的Key
-        <activity android:name=".MainActivity" />
-        <activity android:name=".sessionlifecycle.SessionActivity1" />
-        <activity android:name=".sessionlifecycle.SessionActivity2" />
-        <activity android:name=".sharedpreferences.SharedPreferencesDemoActivity" />
-        <activity android:name=".handler.BaseHandlerActivity" />
-        <activity android:name=".handler.HandlerTestActivity" />
-        <activity android:name=".perssion.PermissionActivity" />
-        <activity android:name=".animation.AnimationActivity" />
         <activity
-            android:name=".animation.TweenActivity"
+            android:name="com.lukemi.android.collection.MainActivity"
+            android:launchMode="singleTask" />
+        <activity android:name="com.lukemi.android.collection.sessionlifecycle.SessionActivity1" />
+        <activity android:name="com.lukemi.android.collection.sessionlifecycle.SessionActivity2" />
+        <activity android:name="com.lukemi.android.collection.sharedpreferences.SharedPreferencesDemoActivity" />
+        <activity android:name="com.lukemi.android.collection.handler.BaseHandlerActivity" />
+        <activity android:name="com.lukemi.android.collection.handler.HandlerTestActivity" />
+        <activity android:name="com.lukemi.android.collection.perssion.PermissionActivity" />
+        <activity android:name="com.lukemi.android.collection.animation.AnimationActivity" />
+        <activity
+            android:name="com.lukemi.android.collection.animation.TweenActivity"
             android:label="TweenActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".animation.FrameActivity" />
-        <activity android:name=".animation.PropertyActivity" />
-        <activity android:name=".animation.ScaleActivity" />
-        <activity android:name=".webservice.WebServiceActivity" />
+        <activity android:name="com.lukemi.android.collection.animation.FrameActivity" />
+        <activity android:name="com.lukemi.android.collection.animation.PropertyActivity" />
+        <activity android:name="com.lukemi.android.collection.animation.ScaleActivity" />
+        <activity android:name="com.lukemi.android.collection.webservice.WebServiceActivity" />
         <activity
-            android:name=".util_test.DeviceutilActivity"
+            android:name="com.lukemi.android.collection.utiltest.DeviceutilActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".getappchannelactivity.GetAppchannelActivity" />
-        <activity android:name=".util_test.ZipUtilActivity" />
-        <activity android:name=".handler.HandlerPostActivity" />
-        <activity android:name=".camera.CameraActivity" />
-        <activity android:name=".testview.EleSignActivity" />
-        <activity android:name=".testview.CViewActivity" />
+        <activity android:name="com.lukemi.android.collection.getappchannelactivity.GetAppchannelActivity" />
+        <activity android:name="com.lukemi.android.collection.utiltest.ZipUtilActivity" />
+        <activity android:name="com.lukemi.android.collection.handler.HandlerPostActivity" />
+        <activity android:name="com.lukemi.android.collection.camera.CameraActivity" />
+        <activity android:name="com.lukemi.android.collection.viewtest.EleSignActivity" />
+        <activity android:name="com.lukemi.android.collection.viewtest.CViewActivity" />
         <activity
-            android:name=".widget.WebviewActivity"
+            android:name="com.lukemi.android.collection.widget.WebviewActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".fluxanalistics.FluxActivity" />
-        <activity android:name=".receiver.ReceiverActivity" />
-        <activity android:name=".plug.PlugActivity" />
-        <activity android:name=".BaseActivity" />
-        <activity android:name=".killprocess.ProcessActivity" />
-        <activity android:name=".killprocess.ProcessDetailActivity" />
-        <activity android:name=".network_operation.NetworkActivity" />
-        <activity android:name=".mob_sms.Mob_SMS_Activity">
-
-        </activity>
-        <activity android:name=".weather.WeatherActivity" />
+        <activity android:name="com.lukemi.android.collection.fluxanalistics.FluxActivity" />
+        <activity android:name="com.lukemi.android.collection.receiver.ReceiverActivity" />
+        <activity android:name="com.lukemi.android.collection.plug.PlugActivity" />
+        <activity android:name="com.lukemi.android.collection.BaseActivity" />
+        <activity android:name="com.lukemi.android.collection.killprocess.ProcessActivity" />
+        <activity android:name="com.lukemi.android.collection.killprocess.ProcessDetailActivity" />
+        <activity android:name="com.lukemi.android.collection.network_operation.NetworkActivity" />
+        <activity android:name="com.lukemi.android.collection.mob_sms.Mob_SMS_Activity" />
+        <activity android:name="com.lukemi.android.collection.weather.WeatherActivity" />
         <activity
-            android:name=".baidu.BDLocActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".baidu.BDLocQuestionActivity"></activity>
-        <activity android:name=".camera.WX_Camera_Activity" />
-        <activity android:name=".util_test.ToastUtilActivity" />
-        <activity android:name=".testview.DialogUtilActivity" />
+            android:name="com.lukemi.android.collection.baidu.BDLocActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.lukemi.android.collection.baidu.BDLocQuestionActivity" />
+        <activity android:name="com.lukemi.android.collection.camera.WX_Camera_Activity" />
+        <activity android:name="com.lukemi.android.collection.utiltest.ToastUtilActivity" />
+        <activity android:name="com.lukemi.android.collection.viewtest.DialogUtilActivity" />
 
         <!-- 百度服务 -->
         <service
@@ -100,27 +112,61 @@
             android:process=":remote" />
 
         <activity
-            android:name=".widget.WidgetActivity"
+            android:name="com.lukemi.android.collection.widget.WidgetActivity"
             android:label="控件大全"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".widget.TextViewActivity"
+            android:name="com.lukemi.android.collection.widget.TextViewActivity"
             android:label="TextView控件效果"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".widget.EditTextActivity"
+            android:name="com.lukemi.android.collection.widget.EditTextActivity"
             android:label="EditText控件效果"
             android:theme="@style/Theme.AppCompat" />
-        <activity android:name=".widget.wechat.activity.WeChatLoginActivity" />
-        <activity android:name=".widget.ViewPrintActivity" />
-        <activity android:name=".util_test.BitmapUtilActivity" />
+        <activity android:name="com.lukemi.android.collection.widget.wechat.activity.WeChatLoginActivity" />
+        <activity android:name="com.lukemi.android.collection.widget.ViewPrintActivity" />
+        <activity android:name="com.lukemi.android.collection.utiltest.BitmapUtilActivity" />
 
         <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
-        <activity android:name=".util_test.UtilMainActivity" />
-        <activity android:name=".widget.wechat.activity.WeChatMainActivity"></activity>
-        <activity android:name=".widget.TableLayoutActivity" />
-        <activity android:name=".widget.satin.SatinMainActivity" />
-        <activity android:name=".testview.ZoomHeadListViewActivity">
+        <activity android:name="com.lukemi.android.collection.utiltest.UtilMainActivity" />
+        <activity android:name="com.lukemi.android.collection.widget.wechat.activity.WeChatMainActivity" />
+        <activity android:name="com.lukemi.android.collection.widget.TableLayoutActivity" />
+        <activity android:name="com.lukemi.android.collection.widget.satin.SatinMainActivity" />
+        <activity android:name="com.lukemi.android.collection.viewtest.ZoomHeadListViewActivity" />
+        <activity android:name="com.lukemi.android.collection.widget.TabLayoutActivity" />
+        <activity android:name="com.lukemi.android.collection.widget.ListViewActivity" />
+        <activity
+            android:name="com.lukemi.android.collection.WelcomeActivity"
+            android:theme="@style/WelcActivityTheme">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name="com.lukemi.android.collection.baidu.BDActivity" />
+        <activity android:name="com.lukemi.android.collection.ThirdAPIActivity" />
+        <activity android:name="com.lukemi.android.collection.setting.WallPaperActivity" />
+        <activity android:name="com.lukemi.android.collection.setting.SettingActivity" />
+        <activity android:name="com.lukemi.android.collection.setting.SettingIntentActivity" />
+        <activity android:name="com.lukemi.android.collection.setting.CommomIntentActivity" />
+        <activity android:name="com.lukemi.android.collection.setting.TorchActivity" />
+        <activity android:name="com.lukemi.android.collection.db.GreenDaoActivity">
+
+            <!--
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+            -->
+        </activity>
+        <asctivity android:name=".httpprocessor.HttpProcessorActivity">
+        </asctivity>
+        <activity android:name="com.lukemi.android.collection.http.volley.VollyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

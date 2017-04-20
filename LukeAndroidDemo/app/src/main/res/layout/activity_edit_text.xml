@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/antiquewhite"
-    tools:context="com.tbug.android.collection.widget.EditTextActivity">
+    tools:context="com.tbug.android.collection.com.lukemi.android.collection.widget.EditTextActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -25,3 +25,25 @@
 -dontwarn com.mob.**
 -dontwarn cn.smssdk.**
 #mob短信验证开结束
+
+#Glide加载图片开始
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+# for DexGuard only
+-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+#Glide加载图片结束
+
+#GreenDao数据库开始
+-keepclassmembers class * extends org.greenrobot.greendao.AbstractDao {
+public static java.lang.String TABLENAME;
+}
+-keep class **$Properties
+# If you do not use SQLCipher:
+-dontwarn org.greenrobot.greendao.database.**
+# If you do not use Rx:
+-dontwarn rx.**
+#GreenDao数据库开始
+

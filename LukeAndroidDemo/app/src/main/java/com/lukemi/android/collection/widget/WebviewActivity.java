@@ -1,0 +1,96 @@
+package com.lukemi.android.collection.widget;
+
+import android.app.ProgressDialog;
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
+import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+
+import static android.view.Window.FEATURE_NO_TITLE;
+
+public class WebviewActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private ProgressDialog dialog;
+    private LinearLayout llayout;
+    private EditText webSit_ET;
+    private Button run_BTN;
+    private Button refresh_BTN;
+    private WebView web;
+    private String url = "http://www.baidu.com/";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(FEATURE_NO_TITLE);
+        setContentView(com.lukemi.android.collection.R.layout.activity_webview);
+        initView();
+        setListener();
+    }
+
+
+    private void initView() {
+        dialog = new ProgressDialog(WebviewActivity.this);
+        dialog.setMessage("加载中请稍候。。。");
+        webSit_ET = ((EditText) findViewById(com.lukemi.android.collection.R.id.inputsite));
+        run_BTN = ((Button) findViewById(com.lukemi.android.collection.R.id.run));
+        refresh_BTN = ((Button) findViewById(com.lukemi.android.collection.R.id.refresh));
+        web = ((WebView) findViewById(com.lukemi.android.collection.R.id.webview));
+        llayout = ((LinearLayout) findViewById(com.lukemi.android.collection.R.id.llayout));
+
+
+    }
+
+    private void setListener() {
+        run_BTN.setOnClickListener(this);
+        refresh_BTN.setOnClickListener(this);
+        web.getSettings().setJavaScriptEnabled(true);
+        web.setWebChromeClient(new WebChromeClient());
+        web.setWebViewClient(new WebViewClient() {
+
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                dialog.show();
+            }
+
+            public void onPageFinished(WebView view, String url) {
+                dialog.dismiss();
+                if (llayout.isShown()){
+                    llayout.setVisibility(View.GONE);
+                }
+            }
+        });
+        web.loadUrl(url);
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id) {
+            case com.lukemi.android.collection.R.id.run:
+                String url = webSit_ET.getText().toString();
+                web.loadUrl(url);
+                break;
+            case com.lukemi.android.collection.R.id.refresh:
+                web.reload();
+                break;
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (web.canGoBack()) {
+                web.goBack();
+            }else{
+                finish();
+            }
+        }
+        return true;
+    }
+}

@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_vertical_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.tbug.android.collection.testview.DialogUtilActivity">
+    tools:context="com.tbug.android.collection.com.lukemi.android.collection.viewtest.DialogUtilActivity">
 
     <Button
         android:id="@+id/show_progressDialog"

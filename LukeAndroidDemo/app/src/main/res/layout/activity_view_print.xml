@@ -4,7 +4,7 @@
     android:id="@+id/activity_view_print"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tbug.android.collection.widget.ViewPrintActivity">
+    tools:context="com.tbug.android.collection.com.lukemi.android.collection.widget.ViewPrintActivity">
 
     <FrameLayout
         android:id="@+id/frameLayout"

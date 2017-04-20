@@ -8,6 +8,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.tbug.android.collection.camera.WX_Camera_Activity">
+    tools:context="com.tbug.android.collection.com.lukemi.android.collection.camera.WX_Camera_Activity">
 
 </RelativeLayout>
