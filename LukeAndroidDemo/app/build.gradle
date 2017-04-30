@@ -5,7 +5,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion '25.0.2'
     defaultConfig {
-        applicationId "com.lukemi.android.collection"
+        applicationId "com.lukemi.myandroid"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
@@ -67,21 +67,20 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //webservice
     compile files('libs/ksoap2-android-assembly-2.4-jar-with-dependencies.jar')
-    //个人框架
+
     //百度定位
     compile files('libs/BaiduLBS_Android.jar')
-    //黄油刀
-    //activeAndroid 数据库操作
+    //个人框架
     compile files('libs/TbugSDK_v1.0.0_release.jar')
+    //activeAndroid 数据库操作
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:support-v4:23.4.0'
     compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
+    compile 'com.alibaba:fastjson:1.2.31'
     testCompile 'junit:junit:4.12'
     androidTestCompile 'org.testng:testng:6.9.6'
     androidTestCompile 'junit:junit:4.12'
-    //alibaba Json
-    compile 'com.alibaba:fastjson:1.2.31'
 }

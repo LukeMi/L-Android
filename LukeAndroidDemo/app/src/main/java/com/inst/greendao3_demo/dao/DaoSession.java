@@ -8,7 +8,7 @@ import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.identityscope.IdentityScopeType;
 import org.greenrobot.greendao.internal.DaoConfig;
 
-import com.lukemi.android.collection.bean.Student;
+import com.lukemi.myandroid.bean.Student;
 
 import com.inst.greendao3_demo.dao.StudentDao;
 

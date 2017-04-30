@@ -1,13 +1,13 @@
 import java.util.regex.Pattern
 
-//apply plugin: 'com.android.application'
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
+//apply plugin: 'com.android.library'
 android {
     compileSdkVersion 23
     buildToolsVersion '25.0.2'
 
     defaultConfig {
-//        applicationId "com.tbug.android.mlibrary"
+        applicationId "com.lukemi.mlibrary"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1

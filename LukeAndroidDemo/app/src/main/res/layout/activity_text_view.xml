@@ -43,7 +43,7 @@
             android:text="TexTView 和上面的一样>我在你的前生或来世 碧落或黄泉 只是不在此刻 不在眼前" />
 
 
-        <com.lukemi.android.collection.view.MarqueeTextView
+        <com.lukemi.myandroid.view.MarqueeTextView
             android:id="@+id/marqueeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

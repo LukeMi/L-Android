@@ -35,7 +35,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <com.lukemi.android.collection.view.NoPadingTextView
+        <com.lukemi.myandroid.view.NoPadingTextView
             android:id="@+id/startLoc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
             android:layout_marginTop="6dp"
             android:background="@color/black" />
 
-        <com.lukemi.android.collection.view.NoPadingTextView
+        <com.lukemi.myandroid.view.NoPadingTextView
             android:id="@+id/stopLoc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

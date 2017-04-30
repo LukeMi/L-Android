@@ -36,7 +36,7 @@
             android:text="显示大图" />
     </LinearLayout>
 
-    <com.lukemi.android.collection.view.LinePathView
+    <com.lukemi.myandroid.view.LinePathView
         android:id="@+id/elecSign_ESA"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
