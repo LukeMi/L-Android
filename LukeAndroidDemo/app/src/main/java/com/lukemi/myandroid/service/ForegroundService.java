@@ -5,6 +5,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.IBinder;
 
 import com.lukemi.myandroid.MainActivity;
@@ -23,6 +25,8 @@ public class ForegroundService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        //从铃声管理器
+        Uri sound= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         Notification notification = new Notification.Builder(this)
@@ -30,6 +34,9 @@ public class ForegroundService extends Service {
                 .setWhen(System.currentTimeMillis())
                 .setTicker("有通知到来")
                 .setContentTitle("这是通知的标题")
+//                .setDefaults(Notification.DEFAULT_ALL)
+                .setDefaults(/*Notification.DEFAULT_SOUND |*/ Notification.DEFAULT_VIBRATE|Notification.DEFAULT_LIGHTS|Notification.COLOR_DEFAULT)
+                .setSound(sound)
                 .setContentText("这是通知的内容")
                 .setOngoing(true)
                 .setContentIntent(pendingIntent)

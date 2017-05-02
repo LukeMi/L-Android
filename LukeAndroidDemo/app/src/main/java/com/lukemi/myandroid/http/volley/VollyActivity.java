@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.lukemi.myandroid.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -14,22 +16,22 @@ import butterknife.OnClick;
  * ButterNife使用
  */
 public class VollyActivity extends AppCompatActivity {
-    @BindView(com.lukemi.myandroid.R.id.btn)
+    @BindView(R.id.btn)
     Button btn;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.lukemi.myandroid.R.layout.activity_volly);
+        setContentView(R.layout.activity_volly);
         ButterKnife.bind(this);
     }
 
-    @OnClick({com.lukemi.myandroid.R.id.btn, com.lukemi.myandroid.R.id.btn1})//绑定多个点击事件
+    @OnClick({R.id.btn, R.id.btn1})//绑定多个点击事件
 //    @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case com.lukemi.myandroid.R.id.btn:
+            case R.id.btn:
                 Toast.makeText(this, "btn", Toast.LENGTH_SHORT).show();
                 break;
             default:
