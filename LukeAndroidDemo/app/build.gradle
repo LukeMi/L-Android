@@ -79,7 +79,7 @@ dependencies {
     //activeAndroid 数据库操作
     compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
     compile 'com.android.support:multidex:1.0.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
+//    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     compile 'com.alibaba:fastjson:1.2.31'
     testCompile 'junit:junit:4.12'
     androidTestCompile 'org.testng:testng:6.9.6'
