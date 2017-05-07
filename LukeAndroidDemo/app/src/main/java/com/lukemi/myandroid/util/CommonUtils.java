@@ -11,7 +11,10 @@ import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.android.volley.RequestQueue;
@@ -243,7 +246,7 @@ public class CommonUtils {
     public static class GlideRoundTransform extends BitmapTransformation {
         private float radius = 0f;
 
-        public  GlideRoundTransform(Context context) {
+        public GlideRoundTransform(Context context) {
             this(context, 4);
         }
 
@@ -276,6 +279,31 @@ public class CommonUtils {
         public String getId() {
             return getClass().getName() + Math.round(radius);
         }
+    }
+
+
+    /**
+     * 密码EditText内容是否可见
+     *
+     * @param editText 密码输入框
+     * @param flag true显示，false不显示
+     */
+    public void showPasswordETcontent(EditText editText, boolean flag) {
+        if (flag) {
+            //注释掉的是第一种方法(numberPassword有效)
+            editText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+//            editText.setInputType(InputType.TYPE_TEXT_VARIATION_NORMAL);
+
+        } else {
+            editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+//            editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        }
+        editText.requestFocus();
+        //设置光标可见
+        editText.setCursorVisible(true);
+        //设置光标位置---防止点击之后游标回到0位置
+        int location = editText.length();
+        editText.setSelection(location);
     }
 }
 

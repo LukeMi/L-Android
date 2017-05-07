@@ -17,11 +17,12 @@
     <uses-permission android:name="android.permission.CAMERA" />
     //LED灯权限4个
     <uses-permission android:name="android.permission.FLASHLIGHT" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.camera.flash" />
     //通知栏震动
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <!-- 百度定位权限开始 -->
     <!-- 这个权限用于进行网络定位 -->
@@ -45,7 +46,7 @@
 
     <!-- 百度定位权限结束 -->
     <application
-        android:name="app.MyApplication"
+        android:name=".app.MyApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/app_icon"
@@ -60,107 +61,108 @@
             android:value="fORO8Klz9DRp0ZBuGZDyChN6hyX2lkGS" />
         //key:开发者申请的Key
         <activity
-            android:name="MainActivity"
+            android:name=".MainActivity"
             android:launchMode="singleTask" />
-        <activity android:name="sessionlifecycle.SessionActivity1" />
-        <activity android:name="sessionlifecycle.SessionActivity2" />
-        <activity android:name="sharedpreferences.SharedPreferencesDemoActivity" />
-        <activity android:name="handler.BaseHandlerActivity" />
-        <activity android:name="handler.HandlerTestActivity" />
-        <activity android:name="perssion.PermissionActivity" />
-        <activity android:name="animation.AnimationActivity" />
+        <activity android:name=".sessionlifecycle.SessionActivity1" />
+        <activity android:name=".sessionlifecycle.SessionActivity2" />
+        <activity android:name=".sharedpreferences.SharedPreferencesDemoActivity" />
+        <activity android:name=".handler.BaseHandlerActivity" />
+        <activity android:name=".handler.HandlerTestActivity" />
+        <activity android:name=".perssion.PermissionActivity" />
+        <activity android:name=".animation.AnimationActivity" />
         <activity
-            android:name="animation.TweenActivity"
+            android:name=".animation.TweenActivity"
             android:label="TweenActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name="animation.FrameActivity" />
-        <activity android:name="animation.PropertyActivity" />
-        <activity android:name="animation.ScaleActivity" />
-        <activity android:name="webservice.WebServiceActivity" >
+        <activity android:name=".animation.FrameActivity" />
+        <activity android:name=".animation.PropertyActivity" />
+        <activity android:name=".animation.ScaleActivity" />
+        <activity android:name=".webservice.WebServiceActivity">
 
         </activity>
         <activity
-            android:name="utiltest.DeviceutilActivity"
+            android:name=".utiltest.DeviceutilActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name="getappchannelactivity.GetAppchannelActivity" />
-        <activity android:name="utiltest.ZipUtilActivity" />
-        <activity android:name="handler.HandlerPostActivity" />
-        <activity android:name="camera.CameraActivity" />
-        <activity android:name="viewtest.EleSignActivity" />
-        <activity android:name="viewtest.CViewActivity" />
+        <activity android:name=".getappchannelactivity.GetAppchannelActivity" />
+        <activity android:name=".utiltest.ZipUtilActivity" />
+        <activity android:name=".handler.HandlerPostActivity" />
+        <activity android:name=".camera.CameraActivity" />
+        <activity android:name=".viewtest.EleSignActivity" />
+        <activity android:name=".viewtest.CViewActivity" />
         <activity
-            android:name="widget.WebviewActivity"
+            android:name=".widget.WebviewActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
-        <activity android:name="fluxanalistics.FluxActivity" />
-        <activity android:name="receiver.ReceiverActivity" />
-        <activity android:name="plug.PlugActivity" />
-        <activity android:name="BaseActivity" />
-        <activity android:name="killprocess.ProcessActivity" />
-        <activity android:name="killprocess.ProcessDetailActivity" />
-        <activity android:name="network_operation.NetworkActivity" />
-        <activity android:name="mob_sms.Mob_SMS_Activity" />
-        <activity android:name="weather.WeatherActivity" />
+        <activity android:name=".fluxanalistics.FluxActivity" />
+        <activity android:name=".receiver.ReceiverActivity" />
+        <activity android:name=".plug.PlugActivity" />
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".killprocess.ProcessActivity" />
+        <activity android:name=".killprocess.ProcessDetailActivity" />
+        <activity android:name=".network_operation.NetworkActivity" />
+        <activity android:name=".mob_sms.Mob_SMS_Activity" />
+        <activity android:name=".weather.WeatherActivity" />
         <activity
-            android:name="baidu.BDLocActivity"
+            android:name=".baidu.BDLocActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="baidu.BDLocQuestionActivity" />
-        <activity android:name="camera.WX_Camera_Activity" />
-        <activity android:name="utiltest.ToastUtilActivity" />
-        <activity android:name="viewtest.DialogUtilActivity" />
+        <activity android:name=".baidu.BDLocQuestionActivity" />
+        <activity android:name=".camera.WX_Camera_Activity" />
+        <activity android:name=".utiltest.ToastUtilActivity" />
+        <activity android:name=".viewtest.DialogUtilActivity" />
         <activity
-            android:name="widget.WidgetActivity"
+            android:name=".widget.WidgetActivity"
             android:label="控件大全"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name="widget.TextViewActivity"
+            android:name=".widget.TextViewActivity"
             android:label="TextView控件效果"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name="widget.EditTextActivity"
+            android:name=".widget.EditTextActivity"
             android:label="EditText控件效果"
-            android:theme="@style/Theme.AppCompat" />
-        <activity android:name="widget.wechat.activity.WeChatLoginActivity" />
-        <activity android:name="widget.ViewPrintActivity" />
-        <activity android:name="utiltest.BitmapUtilActivity">
-
-        </activity>
-
-        <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
-        <activity android:name="utiltest.UtilMainActivity" />
-        <activity android:name="widget.wechat.activity.WeChatMainActivity" />
-        <activity android:name="widget.TableLayoutActivity" />
-        <activity android:name="widget.satin.SatinMainActivity" />
-        <activity android:name="viewtest.ZoomHeadListViewActivity" />
-        <activity android:name="widget.TabLayoutActivity" />
-        <activity android:name="widget.ListViewActivity" />
-        <activity
-            android:name="WelcomeActivity"
-            android:theme="@style/WelcActivityTheme">
-        </activity>
-        <activity android:name="baidu.BDActivity" />
-        <activity android:name="ThirdAPIActivity" />
-        <activity android:name="setting.WallPaperActivity" />
-        <activity android:name="setting.SettingActivity" />
-        <activity android:name="setting.SettingIntentActivity" />
-        <activity android:name="setting.CommomIntentActivity" />
-        <activity android:name="setting.TorchActivity" />
-        <activity android:name="db.GreenDaoActivity">
-
-        </activity>
-
-        <asctivity android:name=".httpprocessor.HttpProcessorActivity" >
+            android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".widget.wechat.activity.WeChatLoginActivity" />
+        <activity android:name=".widget.ViewPrintActivity" />
+        <activity android:name=".utiltest.BitmapUtilActivity">
+
+        </activity>
+
+        <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
+        <activity android:name=".utiltest.UtilMainActivity" />
+        <activity android:name=".widget.wechat.activity.WeChatMainActivity" />
+        <activity android:name=".widget.TableLayoutActivity" />
+        <activity android:name=".widget.satin.SatinMainActivity" />
+        <activity android:name=".viewtest.ZoomHeadListViewActivity" />
+        <activity android:name=".widget.TabLayoutActivity" />
+        <activity android:name=".widget.ListViewActivity" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:theme="@style/WelcActivityTheme"></activity>
+        <activity android:name=".baidu.BDActivity" />
+        <activity android:name=".ThirdAPIActivity" />
+        <activity android:name=".setting.WallPaperActivity" />
+        <activity android:name=".setting.SettingActivity" />
+        <activity android:name=".setting.SettingIntentActivity" />
+        <activity android:name=".setting.CommomIntentActivity" />
+        <activity android:name=".setting.TorchActivity" />
+        <activity android:name=".db.GreenDaoActivity">
+
+        </activity>
+
+        <asctivity android:name=".httpprocessor.HttpProcessorActivity">
+
         </asctivity>
 
-        <activity android:name="http.volley.VollyActivity" />
-        <activity android:name="widget.ImageViewActivity" />
+        <activity android:name=".http.volley.VollyActivity" />
+        <activity android:name=".widget.ImageViewActivity" />
 
         <!-- 百度服务 -->
         <service
@@ -168,13 +170,13 @@
             android:enabled="true"
             android:process=":remote" />
         <service
-            android:name="service.ForegroundService"
+            android:name=".service.ForegroundService"
             android:enabled="true"
             android:exported="true"
-            android:process=":foreground_service"/>
+            android:process=":foreground_service" />
 
         <receiver
-            android:name="receiver.BootReceiver"
+            android:name=".receiver.BootReceiver"
             android:enabled="false"
             android:exported="false">
             <intent-filter>

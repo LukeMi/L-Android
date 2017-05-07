@@ -7,6 +7,8 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -100,7 +102,7 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
                 textPasswordET.setCursorVisible(true);
                 break;
             case com.lukemi.myandroid.R.id.weChatActivity:
-                startActivity(new Intent(this,WeChatLoginActivity.class));
+                startActivity(new Intent(this, WeChatLoginActivity.class));
                 break;
         }
     }
@@ -115,12 +117,12 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
     public void showPasswordETcontent(EditText passwordET, boolean showFlag) {
         if (showFlag) {
             //注释掉的是第一种方法(numberPassword有效)
-//                    textPasswordET.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-            passwordET.setInputType(InputType.TYPE_TEXT_VARIATION_NORMAL);
+            textPasswordET.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+//            passwordET.setInputType(InputType.TYPE_TEXT_VARIATION_NORMAL);
 
         } else {
-//                    textPasswordET.setTransformationMethod(PasswordTransformationMethod.getInstance());
-            passwordET.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            textPasswordET.setTransformationMethod(PasswordTransformationMethod.getInstance());
+//            passwordET.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         }
         passwordET.requestFocus();
         //设置光标可见
