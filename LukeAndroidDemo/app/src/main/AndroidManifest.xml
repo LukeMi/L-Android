@@ -77,9 +77,7 @@
         <activity android:name=".animation.FrameActivity" />
         <activity android:name=".animation.PropertyActivity" />
         <activity android:name=".animation.ScaleActivity" />
-        <activity android:name=".webservice.WebServiceActivity">
-
-        </activity>
+        <activity android:name=".webservice.WebServiceActivity" />
         <activity
             android:name=".utiltest.DeviceutilActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -92,9 +90,7 @@
         <activity
             android:name=".widget.WebviewActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".fluxanalistics.FluxActivity" />
         <activity android:name=".receiver.ReceiverActivity" />
         <activity android:name=".plug.PlugActivity" />
@@ -123,17 +119,11 @@
             android:name=".widget.EditTextActivity"
             android:label="EditText控件效果"
             android:theme="@style/Theme.AppCompat">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".widget.wechat.activity.WeChatLoginActivity" />
         <activity android:name=".widget.ViewPrintActivity" />
-        <activity android:name=".utiltest.BitmapUtilActivity">
-
-        </activity>
+        <activity android:name=".utiltest.BitmapUtilActivity" />
 
         <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
         <activity android:name=".utiltest.UtilMainActivity" />
@@ -145,7 +135,7 @@
         <activity android:name=".widget.ListViewActivity" />
         <activity
             android:name=".WelcomeActivity"
-            android:theme="@style/WelcActivityTheme"></activity>
+            android:theme="@style/WelcActivityTheme" />
         <activity android:name=".baidu.BDActivity" />
         <activity android:name=".ThirdAPIActivity" />
         <activity android:name=".setting.WallPaperActivity" />
@@ -153,13 +143,9 @@
         <activity android:name=".setting.SettingIntentActivity" />
         <activity android:name=".setting.CommomIntentActivity" />
         <activity android:name=".setting.TorchActivity" />
-        <activity android:name=".db.GreenDaoActivity">
+        <activity android:name=".db.GreenDaoActivity" />
 
-        </activity>
-
-        <asctivity android:name=".httpprocessor.HttpProcessorActivity">
-
-        </asctivity>
+        <asctivity android:name=".httpprocessor.HttpProcessorActivity" />
 
         <activity android:name=".http.volley.VollyActivity" />
         <activity android:name=".widget.ImageViewActivity" />
@@ -188,6 +174,17 @@
                 <action android:name="android.intent.action.SCREEN_OFF" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".evenbus.EvenBusActivity">
+
+        </activity>
+        <activity android:name=".evenbus.ReceiveEventActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

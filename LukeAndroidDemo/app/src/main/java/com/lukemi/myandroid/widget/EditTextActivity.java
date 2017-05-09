@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
@@ -13,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.lukemi.myandroid.R;
 import com.lukemi.myandroid.util.Logcat;
 import com.lukemi.myandroid.widget.wechat.activity.WeChatLoginActivity;
 
@@ -28,15 +28,15 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.lukemi.myandroid.R.layout.activity_edit_text);
+        setContentView(R.layout.activity_edit_text);
         initVIew();
     }
 
     private void initVIew() {
-        textPasswordET = ((EditText) findViewById(com.lukemi.myandroid.R.id.textPassword));
-        weChatActivity = (Button) findViewById(com.lukemi.myandroid.R.id.weChatActivity);
-        ic_password_deleteBTN = (Button) findViewById(com.lukemi.myandroid.R.id.ic_password_delete);
-        ic_password_showBTN = (Button) findViewById(com.lukemi.myandroid.R.id.ic_password_show);
+        textPasswordET = ((EditText) findViewById(R.id.textPassword));
+        weChatActivity = (Button) findViewById(R.id.weChatActivity);
+        ic_password_deleteBTN = (Button) findViewById(R.id.ic_password_delete);
+        ic_password_showBTN = (Button) findViewById(R.id.ic_password_show);
 
         weChatActivity.setOnClickListener(this);
         ic_password_deleteBTN.setOnClickListener(this);
@@ -80,11 +80,11 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case com.lukemi.myandroid.R.id.ic_password_delete:
+            case R.id.ic_password_delete:
                 Logcat.log("EditTextActivity----> click---->> ic_password_delete");
                 textPasswordET.setText("");
                 break;
-            case com.lukemi.myandroid.R.id.ic_password_show://设置密码是否可见
+            case R.id.ic_password_show://设置密码是否可见
                 Logcat.log("EditTextActivity----> click---->> ic_password_show");
                 if (!showFlag) {
                     showFlag = true;
@@ -94,14 +94,14 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
                     showPasswordETcontent(textPasswordET, showFlag);
                 }
                 break;
-            case com.lukemi.myandroid.R.id.textPassword:
+            case R.id.textPassword:
                 //设置光标位置---防止点击之后游标回到0位置
                 int location = textPasswordET.length();
                 textPasswordET.setSelection(location);
                 //设置光标可见
                 textPasswordET.setCursorVisible(true);
                 break;
-            case com.lukemi.myandroid.R.id.weChatActivity:
+            case R.id.weChatActivity:
                 startActivity(new Intent(this, WeChatLoginActivity.class));
                 break;
         }
@@ -111,10 +111,10 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
     /**
      * 密码EditText内容是否可见
      *
-     * @param passwordET 密码输入框
+     * @param editText 密码输入框
      * @param showFlag   true显示，false不显示
      */
-    public void showPasswordETcontent(EditText passwordET, boolean showFlag) {
+    public void showPasswordETcontent(EditText editText, boolean showFlag) {
         if (showFlag) {
             //注释掉的是第一种方法(numberPassword有效)
             textPasswordET.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
@@ -124,12 +124,12 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
             textPasswordET.setTransformationMethod(PasswordTransformationMethod.getInstance());
 //            passwordET.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         }
-        passwordET.requestFocus();
+        editText.requestFocus();
         //设置光标可见
-        passwordET.setCursorVisible(true);
+        editText.setCursorVisible(true);
         //设置光标位置---防止点击之后游标回到0位置
-        int location = passwordET.length();
-        passwordET.setSelection(location);
+        int location = editText.length();
+        editText.setSelection(location);
     }
 
 }
