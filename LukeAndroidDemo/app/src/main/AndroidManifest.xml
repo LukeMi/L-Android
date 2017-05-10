@@ -118,9 +118,7 @@
         <activity
             android:name=".widget.EditTextActivity"
             android:label="EditText控件效果"
-            android:theme="@style/Theme.AppCompat">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat" />
         <activity android:name=".widget.wechat.activity.WeChatLoginActivity" />
         <activity android:name=".widget.ViewPrintActivity" />
         <activity android:name=".utiltest.BitmapUtilActivity" />
@@ -175,10 +173,12 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".evenbus.EvenBusActivity">
+        <activity android:name=".evenbus.EvenBusActivity" />
+        <activity android:name=".evenbus.ReceiveEventActivity"></activity>
+        <activity android:name=".widget.DialogActivity">
 
         </activity>
-        <activity android:name=".evenbus.ReceiveEventActivity">
+        <activity android:name=".viewtest.ClipPhotoViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -19,11 +19,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.lukemi.myandroid.R;
+import com.lukemi.myandroid.util.BitmapUtils;
+import com.lukemi.myandroid.util.ConfigUtil;
 import com.lukemi.myandroid.util.HttpUtils;
 import com.lukemi.myandroid.util.Logcat;
 import com.lukemi.myandroid.view.ShowBigPicClass;
-import com.lukemi.myandroid.util.BitmapUtils;
-import com.lukemi.myandroid.util.ConfigUtil;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -32,6 +34,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static com.lukemi.myandroid.util.ConfigUtil.CA_REQUESTCODE;
+
 
 public class CameraActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -48,15 +51,15 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.lukemi.myandroid.R.layout.activity_camera);
+        setContentView(R.layout.activity_camera);
         initView();
     }
 
     private void initView() {
-        takePhoneBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.takePhotos_CA));
-        uploadPhotosBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.uploadPhotos_CA));
-        nativiePicBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.nativiePic_CA));
-        preViewPicIV = ((ImageView) findViewById(com.lukemi.myandroid.R.id.preViewPic_CA));
+        takePhoneBTN = ((Button) findViewById(R.id.takePhotos_CA));
+        uploadPhotosBTN = ((Button) findViewById(R.id.uploadPhotos_CA));
+        nativiePicBTN = ((Button) findViewById(R.id.nativiePic_CA));
+        preViewPicIV = ((ImageView) findViewById(R.id.preViewPic_CA));
         uploadPhotosBTN.setOnClickListener(this);
         takePhoneBTN.setOnClickListener(this);
         nativiePicBTN.setOnClickListener(this);
@@ -68,21 +71,21 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         int id = v.getId();
         switch (id) {
-            case com.lukemi.myandroid.R.id.takePhotos_CA:
+            case R.id.takePhotos_CA:
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 picName1 = "ZSGD" + System.currentTimeMillis() + ".jpg";
                 Uri imageUri = Uri.fromFile(getPhotoFile(picName1));
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-                startActivityForResult(intent, ConfigUtil.CA_REQUESTCODE);
+                startActivityForResult(intent, CA_REQUESTCODE);
                 break;
-            case com.lukemi.myandroid.R.id.uploadPhotos_CA:
+            case R.id.uploadPhotos_CA:
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 waterBm.compress(Bitmap.CompressFormat.JPEG, 100, baos);
                 byte[] bytes = baos.toByteArray();
                 String url = "http://192.168.33.52:8090";
                 HttpUtils.httpPostRequest(url, bytes);
                 break;
-            case com.lukemi.myandroid.R.id.preViewPic_CA:
+            case R.id.preViewPic_CA:
 
                 ShowBigPicClass showBigPicClass = new ShowBigPicClass(this, waterBm);
                 showBigPicClass.showDetailPhoto();
@@ -91,7 +94,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
 //                detailPhotoFragment.setCancelable(false);
                 detailPhotoFragment.show(getSupportFragmentManager(), null);*/
                 break;
-            case com.lukemi.myandroid.R.id.nativiePic_CA:
+            case R.id.nativiePic_CA:
                 Intent i = new Intent(
                         Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);

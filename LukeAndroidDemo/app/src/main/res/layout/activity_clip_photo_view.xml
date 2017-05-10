@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lukemi.myandroid.viewtest.ClipPhotoViewActivity">
+    <!--导航栏-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/gray"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/image_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/travel_msg_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="裁剪"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="9dp"
+            android:text="@string/clip"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_camera"/>
+    <Button
+        android:id="@+id/btn_loc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_loc"/>
+
+    <com.lukemi.myandroid.view.ClipImageView
+        android:id="@+id/civ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/abc"/>
+    <ImageView
+        android:id="@+id/img_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
