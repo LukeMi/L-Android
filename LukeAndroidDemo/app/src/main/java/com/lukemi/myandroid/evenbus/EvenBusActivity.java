@@ -11,6 +11,9 @@ import org.greenrobot.eventbus.EventBus;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * evenbus 先订阅 再post  onCreate（注册） onDestroy(取消注册) 声明处理方法
+ */
 public class EvenBusActivity extends AppCompatActivity {
 
 

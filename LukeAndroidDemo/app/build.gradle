@@ -52,6 +52,8 @@ android {
         apt 'com.jakewharton:butterknife-compiler:8.4.0'
         //事件总线
         compile 'org.greenrobot:eventbus:3.0.0'
+        //activeAndroid 数据库操作
+        compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
     }
 }
 
@@ -73,14 +75,9 @@ dependencies {
     compile files('libs/BaiduLBS_Android.jar')
     //个人框架
     compile files('libs/TbugSDK_v1.0.0_release.jar')
-
-    //activeAndroid 数据库操作
-
-
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:support-v4:23.4.0'
-    compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     compile 'com.alibaba:fastjson:1.2.31'

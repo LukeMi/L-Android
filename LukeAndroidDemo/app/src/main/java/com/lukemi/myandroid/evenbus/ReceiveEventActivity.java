@@ -42,6 +42,7 @@ public class ReceiveEventActivity extends AppCompatActivity {
         EventBus.getDefault().unregister(this);
     }
 
+    //处理操作开始
     @Subscribe(threadMode = ThreadMode.MAIN)//主线程
     public void onEvenBusMain1(String event) {
         textEvent1.setText(event);
@@ -62,16 +63,17 @@ public class ReceiveEventActivity extends AppCompatActivity {
         Logcat.log("ThreadMode.BACKGROUND -->> 消息结果为: " + event);
     }
 
-    @Subscribe(threadMode = ThreadMode.ASYNC)//主线程
+    @Subscribe(threadMode = ThreadMode.ASYNC)//主线程    申明订阅后的线程操作
     public void onEvenBusMain5(double event) {
         Logcat.log("ThreadMode.ASYNC -->> 消息结果为: " + event);
     }
+    //处理操作结束
 
     @OnClick({R.id.btn_test})
     public void onViewClicked(View v) {
         switch (v.getId()) {
             case R.id.btn_test:
-                startActivity(new Intent(this,EvenBusActivity.class));
+                startActivity(new Intent(this, EvenBusActivity.class));
                 break;
             default:
                 break;
