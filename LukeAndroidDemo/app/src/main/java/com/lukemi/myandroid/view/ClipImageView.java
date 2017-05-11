@@ -23,7 +23,7 @@ import android.widget.ImageView;
 /**
  * 裁剪控件
  */
-public class ClipImageView extends android.support.v7.widget.AppCompatImageView implements ScaleGestureDetector.OnScaleGestureListener {
+public class ClipImageView extends ImageView implements ScaleGestureDetector.OnScaleGestureListener {
 
     private static final int LAYER_FLAGS = Canvas.MATRIX_SAVE_FLAG | Canvas.CLIP_SAVE_FLAG
                 | Canvas.HAS_ALPHA_LAYER_SAVE_FLAG | Canvas.FULL_COLOR_LAYER_SAVE_FLAG
@@ -82,6 +82,7 @@ public class ClipImageView extends android.support.v7.widget.AppCompatImageView 
         mScaleGestureDetector = new ScaleGestureDetector(context, this);
         mGestureDetector = new GestureDetector(context, new GestureListener());
     }
+
 
     private void sharedConstructing() {
         super.setClickable(true);
