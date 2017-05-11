@@ -50,13 +50,17 @@
         android:layout_height="wrap_content"
         android:text="btn_loc"/>
 
-    <com.lukemi.myandroid.view.ClipImageView
-        android:id="@+id/civ"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/abc"/>
     <ImageView
         android:id="@+id/img_show"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bd_loc_bg"/>
+    <com.lukemi.myandroid.view.ClipImageView
+        android:id="@+id/civ"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/abc"/>
+
+
 </LinearLayout>

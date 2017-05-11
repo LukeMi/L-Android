@@ -70,7 +70,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //webservice
     compile files('libs/ksoap2-android-assembly-2.4-jar-with-dependencies.jar')
-
     //百度定位
     compile files('libs/BaiduLBS_Android.jar')
     //个人框架
@@ -84,4 +83,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     androidTestCompile 'org.testng:testng:6.9.6'
     androidTestCompile 'junit:junit:4.12'
+    compile files('libs/httpmime-4.3-sources.jar')
 }
