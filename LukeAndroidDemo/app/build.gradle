@@ -74,6 +74,7 @@ dependencies {
     compile files('libs/BaiduLBS_Android.jar')
     //个人框架
     compile files('libs/TbugSDK_v1.0.0_release.jar')
+    compile files('libs/httpmime-4.3-sources.jar')
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:support-v4:23.4.0'
@@ -83,5 +84,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
     androidTestCompile 'org.testng:testng:6.9.6'
     androidTestCompile 'junit:junit:4.12'
-    compile files('libs/httpmime-4.3-sources.jar')
 }

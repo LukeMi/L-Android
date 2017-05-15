@@ -139,8 +139,8 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
-            android:enabled="false"
-            android:background="@drawable/selector_bottomline_color" />
+            android:background="@drawable/selector_bottomline_color"
+            android:enabled="false" />
 
         <Button
             android:id="@+id/login"

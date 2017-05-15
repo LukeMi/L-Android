@@ -175,16 +175,15 @@
 
         <activity android:name=".evenbus.EvenBusActivity" />
         <activity android:name=".evenbus.ReceiveEventActivity" />
-        <activity android:name=".widget.DialogActivity"></activity>
-        <activity android:name=".viewtest.ClipPhotoViewActivity">
+        <activity android:name=".widget.DialogActivity" />
+        <activity android:name=".viewtest.ClipPhotoViewActivity"></activity>
+        <activity android:name=".viewtest.UploadActivity"></activity>
+        <activity android:name=".widget.RGActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".viewtest.UploadActivity">
-
         </activity>
     </application>
 
