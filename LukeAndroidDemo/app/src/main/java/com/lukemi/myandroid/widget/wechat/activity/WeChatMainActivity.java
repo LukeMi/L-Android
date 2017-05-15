@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lukemi.myandroid.R;
 import com.lukemi.myandroid.widget.wechat.fragment.WeChatContactFragment;
 import com.lukemi.myandroid.widget.wechat.fragment.WeChatDiscoverFragment;
 import com.lukemi.myandroid.widget.wechat.fragment.WeChatMSGFragment;
@@ -108,8 +109,8 @@ public class WeChatMainActivity extends AppCompatActivity {
      * 初始化控件
      */
     private void initView() {
-        mainViewPager = ((ViewPager) findViewById(com.lukemi.myandroid.R.id.mainViewPager));
-        navigateTabLayout = ((TabLayout) findViewById(com.lukemi.myandroid.R.id.bottomNavigationBar));
+        mainViewPager = ((ViewPager) findViewById(R.id.mainViewPager));
+        navigateTabLayout = ((TabLayout) findViewById(R.id.bottomNavigationBar));
         initMainViewPager();
         initNavigateTabLayout();
     }
