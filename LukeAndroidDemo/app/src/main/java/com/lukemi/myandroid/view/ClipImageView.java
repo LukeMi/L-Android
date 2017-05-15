@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.PixelFormat;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
@@ -26,12 +27,12 @@ import android.widget.ImageView;
 public class ClipImageView extends ImageView implements ScaleGestureDetector.OnScaleGestureListener {
 
     private static final int LAYER_FLAGS = Canvas.MATRIX_SAVE_FLAG | Canvas.CLIP_SAVE_FLAG
-                | Canvas.HAS_ALPHA_LAYER_SAVE_FLAG | Canvas.FULL_COLOR_LAYER_SAVE_FLAG
-                | Canvas.CLIP_TO_LAYER_SAVE_FLAG | Canvas.ALL_SAVE_FLAG;
+            | Canvas.HAS_ALPHA_LAYER_SAVE_FLAG | Canvas.FULL_COLOR_LAYER_SAVE_FLAG
+            | Canvas.CLIP_TO_LAYER_SAVE_FLAG | Canvas.ALL_SAVE_FLAG;
 
     //裁剪区域半径
     private float mRadius = 200;
-    private float radiusWidthRatio  = 3f/9;//裁剪圆框的半径占view的宽度的比
+    private float radiusWidthRatio = 3f / 9;//裁剪圆框的半径占view的宽度的比
     private int clipBorderWidth = 2;
     //最大缩放
     public static final float SCALE_MAX = 3.0f;
@@ -126,6 +127,7 @@ public class ClipImageView extends ImageView implements ScaleGestureDetector.OnS
 
     /**
      * 用来保证阴影的大小足以遮住图片
+     *
      * @return
      */
     private RectF getShelterRectF() {
@@ -143,7 +145,7 @@ public class ClipImageView extends ImageView implements ScaleGestureDetector.OnS
 
     public void setImageResource(int resourceId) {
         super.setImageResource(resourceId);
-        mBitmap = BitmapFactory.decodeResource(getResources(),resourceId);
+        mBitmap = BitmapFactory.decodeResource(getResources(), resourceId);
         fitImageToView();
     }
 
@@ -155,6 +157,7 @@ public class ClipImageView extends ImageView implements ScaleGestureDetector.OnS
 
     /**
      * 剪裁头像
+     *
      * @return
      */
     public Bitmap clipBitmap() {
@@ -169,16 +172,33 @@ public class ClipImageView extends ImageView implements ScaleGestureDetector.OnS
         Canvas canvas = new Canvas(target);
         canvas.drawCircle(mRadius, mRadius, mRadius, paint);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-
-        canvas.drawBitmap(mBitmap,- (dw / 2 - mRadius) + x ,- (dh / 2 - mRadius) + y, paint);
+        canvas.drawBitmap(mBitmap, -(dw / 2 - mRadius) + x, -(dh / 2 - mRadius) + y, paint);
         return target;
     }
 
     private Bitmap zoomBitmap(Bitmap bitmap) {
+        if (bitmap == null) {
+            Drawable drawable = getDrawable();
+            // 取 drawable 的长宽
+            int w = drawable.getIntrinsicWidth();
+            int h = drawable.getIntrinsicHeight();
+
+            // 取 drawable 的颜色格式
+            Bitmap.Config config = drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
+                    : Bitmap.Config.RGB_565;
+            // 建立对应 bitmap
+            Bitmap b1 = Bitmap.createBitmap(w, h, config);
+            // 建立对应 bitmap 的画布
+            Canvas canvas = new Canvas(b1);
+            drawable.setBounds(0, 0, w, h);
+            // 把 drawable 内容画到画布中
+            drawable.draw(canvas);
+            bitmap = b1;
+        }
         int imageWidth = bitmap.getWidth();
         int imageHeight = bitmap.getHeight();
         Matrix matrix = new Matrix();
-        matrix.postScale(getScale(),getScale());
+        matrix.postScale(getScale(), getScale());
         Bitmap imageBitmap = Bitmap.createBitmap(bitmap, 0, 0, imageWidth, imageHeight, matrix, true);
         return imageBitmap;
     }
@@ -292,7 +312,7 @@ public class ClipImageView extends ImageView implements ScaleGestureDetector.OnS
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (getDrawable() == null){
+        if (getDrawable() == null) {
             return;
         }
         getShelterRectF();
@@ -303,7 +323,7 @@ public class ClipImageView extends ImageView implements ScaleGestureDetector.OnS
         mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         mRadius = getWidth() * radiusWidthRatio;
         canvas.drawCircle(getWidth() / 2, getHeight() / 2, mRadius, mPaint);
-        if (circleR == null){
+        if (circleR == null) {
             circleR = new RectF(getWidth() / 2 - mRadius, getHeight() / 2 - mRadius, getWidth() / 2 + mRadius,
                     getHeight() / 2 + mRadius);
         }
@@ -336,7 +356,7 @@ public class ClipImageView extends ImageView implements ScaleGestureDetector.OnS
             mLastY = y;
         }
         lastPointerCount = pointerCount;
-        switch (event.getAction()){
+        switch (event.getAction()) {
             case MotionEvent.ACTION_MOVE:
                 float dx = x - mLastX;
                 float dy = y - mLastY;
@@ -344,7 +364,7 @@ public class ClipImageView extends ImageView implements ScaleGestureDetector.OnS
                 if (shelterR.left + dx >= circleR.left - clipBorderWidth / 2 || shelterR.right + dx <= circleR.right - clipBorderWidth / 2) {
                     dx = 0;
                 }
-                if (shelterR.top + dy >=  circleR.top - clipBorderWidth / 2 || shelterR.bottom + dy <= circleR.bottom - clipBorderWidth / 2) {
+                if (shelterR.top + dy >= circleR.top - clipBorderWidth / 2 || shelterR.bottom + dy <= circleR.bottom - clipBorderWidth / 2) {
                     dy = 0;
                 }
                 mScaleMatrix.postTranslate(dx, dy);
@@ -385,7 +405,7 @@ public class ClipImageView extends ImageView implements ScaleGestureDetector.OnS
         if (dh < clipWidth && dw > clipWidth) {
             scale = clipWidth * 1.0f / dh;
         }
-        if (dh < clipWidth && dw <clipWidth){
+        if (dh < clipWidth && dw < clipWidth) {
             scale = Math.max(clipWidth * 1.0f / dw, clipWidth * 1.0f / dh);
         }
         if (dw > dh) {

@@ -3,7 +3,6 @@ package com.lukemi.myandroid.viewtest;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -14,68 +13,52 @@ import android.widget.ImageView;
 import com.lukemi.myandroid.R;
 import com.lukemi.myandroid.util.BitmapUtils;
 import com.lukemi.myandroid.util.Logcat;
-import com.lukemi.myandroid.view.ClipImageView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ClipPhotoViewActivity extends AppCompatActivity {
+public class UploadActivity extends AppCompatActivity {
 
-    @BindView(R.id.civ)
-    ClipImageView civ;
     @BindView(R.id.img_show)
     ImageView imgShow;
-    private int REQUESTCODE_CAMERA = 0x0001;
-    private int REQUESTCODE_ALBUM = 0x0002;
+    private int RESULT_LOAD_IMAGE = 0x0011;
+    Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clip_photo_view);
+        setContentView(R.layout.activity_upload);
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.image_back, R.id.text_save, R.id.btn_camera, R.id.btn_loc})
+    @OnClick({R.id.btn_choice, R.id.btn_upload})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.image_back:
-                finish();
-                break;
-            case R.id.text_save:
-                clip();
-                break;
-            case R.id.btn_camera:
-//                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                picName1 = "ZSGD" + System.currentTimeMillis() + ".jpg";
-//                Uri imageUri = Uri.fromFile(getPhotoFile(picName1));
-//                intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-//                startActivityForResult(intent, REQUESTCODE_CAMERA);
-                break;
-            case R.id.btn_loc:
+            case R.id.btn_choice:
                 Intent i = new Intent(
                         Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(i, REQUESTCODE_ALBUM);
+                startActivityForResult(i, RESULT_LOAD_IMAGE);
+                break;
+            case R.id.btn_upload:
+                upLoadAvatar();
                 break;
         }
     }
 
     /**
-     * 裁剪
+     * 上传头像
      */
-    private void clip() {
-        Bitmap bitmap = civ.clipBitmap();
-        imgShow.setImageBitmap(bitmap);
-        imgShow.setVisibility(View.VISIBLE);
+    private void upLoadAvatar() {
+        final String url = "http://bbs.91360.com/pathosec-app.html?jscbk=direct&action=setavatar&uid=16359&token=wpfClEg2VmbCkW7DnMOPFMOHbBPDijnDrFJ+w6DCiADCksK4";
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUESTCODE_CAMERA && data != null){
-
-        }else if (requestCode == REQUESTCODE_ALBUM && data != null){
+        Logcat.log("----CameraActivity----onActivityResult--->" + "requestCode = " + requestCode + ";resultCode = " + resultCode);
+        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
             Uri selectedImage = data.getData();
             String[] filePathColumn = {MediaStore.Images.Media.DATA};
             Cursor cursor = getContentResolver().query(selectedImage,
@@ -86,7 +69,12 @@ public class ClipPhotoViewActivity extends AppCompatActivity {
             Logcat.log("----CameraActivity----onActivityResult----file---->" + filePathColumn[0] + " ;picturePath= " + picturePath);
             cursor.close();
             Bitmap bmp1 = BitmapUtils.compressBitmap(picturePath, 100, 100);
-            civ.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+//            bitmap = BitmapFactory.decodeFile(picturePath);
+            bitmap = BitmapUtils.drawable2Bitmap(this.getResources().getDrawable(R.drawable.ic_launcher));
+            imgShow.setImageBitmap(bitmap);
         }
     }
+
+
+
 }

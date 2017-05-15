@@ -70,11 +70,11 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //webservice
     compile files('libs/ksoap2-android-assembly-2.4-jar-with-dependencies.jar')
-
     //百度定位
     compile files('libs/BaiduLBS_Android.jar')
     //个人框架
     compile files('libs/TbugSDK_v1.0.0_release.jar')
+    compile files('libs/httpmime-4.3-sources.jar')
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:support-v4:23.4.0'

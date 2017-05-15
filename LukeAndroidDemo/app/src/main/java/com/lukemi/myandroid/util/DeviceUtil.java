@@ -880,4 +880,34 @@ public class DeviceUtil {
         }
         return list;
     }
+
+    /**
+     * 获取屏幕高度
+     * @param context
+     * @return 单位（px）
+     */
+    public int getHeight(Context context){
+       return context.getResources().getDisplayMetrics().heightPixels;
+    }
+    /**
+     * 获取屏幕宽度
+     * @param context
+     * @return 单位（px）
+     */
+    public int getWidth(Context context){
+        return context.getResources().getDisplayMetrics().widthPixels;
+    }
+    /**
+     * 获取屏幕密度
+     * @param context
+     * @return 单位（px）
+     */
+    public float getDensity(Context context){
+        return context.getResources().getDisplayMetrics().density;
+    }
+
+    public float getScaleDensity(Context context){
+        return context.getResources().getDisplayMetrics().scaledDensity;
+    }
+
 }
