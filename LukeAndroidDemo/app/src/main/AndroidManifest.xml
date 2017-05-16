@@ -77,7 +77,13 @@
         <activity android:name=".animation.FrameActivity" />
         <activity android:name=".animation.PropertyActivity" />
         <activity android:name=".animation.ScaleActivity" />
-        <activity android:name=".webservice.WebServiceActivity" />
+        <activity android:name=".webservice.WebServiceActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".utiltest.DeviceutilActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -179,11 +185,7 @@
         <activity android:name=".viewtest.ClipPhotoViewActivity"></activity>
         <activity android:name=".viewtest.UploadActivity"></activity>
         <activity android:name=".widget.RGActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

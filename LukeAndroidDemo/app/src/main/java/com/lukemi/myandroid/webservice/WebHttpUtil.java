@@ -1,5 +1,7 @@
 package com.lukemi.myandroid.webservice;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import org.ksoap2.SoapEnvelope;
@@ -15,6 +17,7 @@ import java.util.concurrent.Executors;
  */
 
 public class WebHttpUtil {
+    private static Handler mHandler = new Handler(Looper.getMainLooper());
     private static ExecutorService threadPool = Executors.newFixedThreadPool(2);
 
     /**
@@ -32,43 +35,48 @@ public class WebHttpUtil {
             @Override
             public void run() {
                 // 指定WebService的命名空间和调用的方法名
-                SoapObject soapObject = new SoapObject(nameSpace, methodName);
+                SoapObject rq = new SoapObject(nameSpace, methodName);
                 // 设置需调用WebService接口需要传入的两个参数mobileCode、userId
-                soapObject.addProperty("mobileCode", phoneNumber);
+                rq.addProperty("mobileCode", phoneNumber);
 //                soapObject.addProperty("userID", "");
-
                 // 生成调用WebService方法的SOAP请求信息,并指定SOAP的版本
-                SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER10);
+                SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 
-                envelope.bodyOut = soapObject;
+                envelope.bodyOut = rq;
                 // 设置是否调用的是dotNet开发的WebService
                 envelope.dotNet = true;
                 // 等价于envelope.bodyOut = rpc;
-                envelope.setOutputSoapObject(soapObject);
-
-                HttpTransportSE transport = new HttpTransportSE(endPoint);
+                envelope.setOutputSoapObject(rq);
+                HttpTransportSE ht = new HttpTransportSE(endPoint);
+                ht.debug = true;
                 try {
                     // 调用WebService
-                    transport.call(soapAction, envelope);
+                    ht.call(soapAction, envelope);
                 } catch (Exception e) {
                     Log.i("TAG", "----e.printStackTrace()----" + (e.getMessage()));
                     e.printStackTrace();
                 }
 
                 // 获取返回的数据
-                SoapObject object = (SoapObject) envelope.bodyIn;
+                SoapObject res = (SoapObject) envelope.bodyIn;
                 // 获取返回的结果
-                String result = object.getProperty(0).toString();
-                int count = object.getAttributeCount();
+                final String result = res.getProperty("getMobileCodeInfoResult").toString();
+                int count = res.getAttributeCount();
                 if (count != 0) {
                     for (int i = 0; i < count; i++) {
-                        Log.i("TAG", "----result---->>  " + object.getProperty(i).toString());
+                        Log.i("TAG", "----result---->> " + res.getProperty(i).toString());
                     }
                 }
 
-                Log.i("TAG", "----result----" + object.getPropertyCount() + " : " + result);
+                Log.i("TAG", "----result----" + res.getPropertyCount() + " : " + result);
                 // 将WebService返回的结果显示在TextView中
-                onPhoneCallBack.returnPhoneInfo(result);
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        onPhoneCallBack.returnPhoneInfo(result);
+                    }
+                });
+
             }
         });
     }

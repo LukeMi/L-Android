@@ -62,6 +62,9 @@ public class WebServiceActivity extends BaseActivity implements View.OnClickList
         int id = v.getId();
         switch (id) {
             case R.id.query_WebSer:
+
+                new SearchLocationTask("13856976635").execute();
+
                 String phoneNumber = inputET.getText().toString();
                 if (PatternUtil.isPhoneLegal(phoneNumber)) {
                     queryNUM(phoneNumber);
@@ -73,7 +76,7 @@ public class WebServiceActivity extends BaseActivity implements View.OnClickList
     }
 
     private void queryNUM(String phoneNumber) {
-        String nameSpace = "http://WebXml.com.cn";     //命名空间
+        String nameSpace = "http://WebXml.com.cn/";     //命名空间 一个斜号都不能错
         String methodName = "getMobileCodeInfo";    //方法名
         String endPoint = "http://ws.webxml.com.cn/WebServices/MobileCodeWS.asmx";    //webservice url
         String soapAction = "http://WebXml.com.cn/getMobileCodeInfo";    //soapAction
