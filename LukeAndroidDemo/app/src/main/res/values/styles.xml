@@ -1878,4 +1878,9 @@
         <item name="android:windowExitAnimation">@anim/actionsheet_dialog_out</item>
     </style>
 
+    <style name ="dividTheme" parent="AppTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name= "android:listDivider">@drawable/divider </item >
+    </style >
+
 </resources>
