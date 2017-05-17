@@ -167,9 +167,6 @@ public class WeChatMainActivity extends AppCompatActivity {
         private Context context;
         private LayoutInflater mInflater;
 
-        public MainAdapter(FragmentManager fm) {
-            super(fm);
-        }
 
         public MainAdapter(FragmentManager fm, Context context, String[] itemNames, int[] drawableIDs, List<Fragment> fragmentList) {
             super(fm);
