@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao' // apply pluginGreenDao3
 apply plugin: 'android-apt'//ButterKnife配置
+apply plugin: 'kotlin-android'//kolin配置
+apply plugin: 'kotlin-android-extensions'//kolin配置
 android {
     compileSdkVersion 23
     buildToolsVersion '25.0.2'
@@ -54,6 +56,11 @@ android {
         compile 'org.greenrobot:eventbus:3.0.0'
         //activeAndroid 数据库操作
         compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
+        //kotlin
+        compile 'org.jetbrains.kotlin:kotlin-stdlib:1.1.1'
+        // sdk15, sdk19, sdk21, sdk23 are also available
+        compile 'org.jetbrains.anko:anko-sdk25:0.10.0-beta-1'
+        compile 'org.jetbrains.anko:anko-appcompat-v7:0.10.0-beta-1'
     }
 }
 
