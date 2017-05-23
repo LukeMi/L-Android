@@ -62,11 +62,10 @@ public class MyApplication extends BaseApplication {
         registerActivityLifecycleCallbacks(new MyActivityLifecycleCallbacks());
         handler.sendEmptyMessageDelayed(MSG_REPEAT_TIME, 3000);
         initReceiver();
-        ActiveAndroid.initialize(this);
+//        ActiveAndroid.initialize(this);
         HttpHelper.init(new VollyProcessor(this));
         Intent sevice = new Intent(this, ForegroundService.class);
         this.startService(sevice);
-
     }
 
     @Override
