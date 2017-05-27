@@ -78,7 +78,6 @@
         <activity android:name=".animation.PropertyActivity"/>
         <activity android:name=".animation.ScaleActivity"/>
         <activity android:name=".webservice.WebServiceActivity">
-
         </activity>
         <activity
             android:name=".utiltest.DeviceutilActivity"
@@ -128,11 +127,6 @@
         <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
         <activity android:name=".utiltest.UtilMainActivity"/>
         <activity android:name=".widget.wechat.activity.WeChatMainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".widget.TableLayoutActivity"/>
         <activity android:name=".widget.satin.SatinMainActivity"/>
@@ -186,8 +180,17 @@
         <activity android:name=".widget.DialogActivity"/>
         <activity android:name=".viewtest.ClipPhotoViewActivity"/>
         <activity android:name=".viewtest.UploadActivity"/>
-        <activity android:name=".widget.RGActivity"></activity>
-        <activity android:name=".widget.ReccyclerViewActivity"></activity>
+        <activity android:name=".widget.RGActivity"/>
+        <activity android:name=".widget.ReccyclerViewActivity"/>
+        <activity android:name=".evenbus.BackEvenBUSFragment_Activity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".evenbus.ForgroundActivity">
+        </activity>
     </application>
 
 </manifest>
