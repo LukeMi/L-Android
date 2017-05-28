@@ -62,7 +62,12 @@
         //key:开发者申请的Key
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTask">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".sessionlifecycle.SessionActivity1"/>
         <activity android:name=".sessionlifecycle.SessionActivity2"/>
         <activity android:name=".sharedpreferences.SharedPreferencesDemoActivity"/>
@@ -128,11 +133,7 @@
         <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
         <activity android:name=".utiltest.UtilMainActivity"/>
         <activity android:name=".widget.wechat.activity.WeChatMainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".widget.TableLayoutActivity"/>
         <activity android:name=".widget.satin.SatinMainActivity"/>
