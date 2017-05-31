@@ -58,9 +58,14 @@ android {
         compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
         //kotlin
         compile 'org.jetbrains.kotlin:kotlin-stdlib:1.1.1'
-        // sdk15, sdk19, sdk21, sdk23 are also available
+        // sdk15, sdk19, sdk21, sdk23 are also available kotlin
         compile 'org.jetbrains.anko:anko-sdk25:0.10.0-beta-1'
         compile 'org.jetbrains.anko:anko-appcompat-v7:0.10.0-beta-1'
+
+        //okgo 通用的 GET POST
+        compile 'com.lzy.net:okgo:2.1.4'
+        //okserver 下载管理和上传管理扩展，根据需要添加
+        compile 'com.lzy.net:okserver:1.1.3'
     }
 }
 

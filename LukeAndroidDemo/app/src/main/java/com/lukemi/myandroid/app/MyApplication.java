@@ -18,6 +18,9 @@ import com.lukemi.myandroid.service.ForegroundService;
 import com.lukemi.myandroid.sessionlifecycle.MyActivityLifecycleCallbacks;
 import com.lukemi.myandroid.util.Logcat;
 import com.lukemi.myandroid.http.httpprocessor.HttpHelper;
+import com.lzy.okgo.OkGo;
+
+import java.util.logging.Level;
 
 /**
  * Created by mzchen on 2016/10/23.
@@ -64,8 +67,14 @@ public class MyApplication extends BaseApplication {
         initReceiver();
 //        ActiveAndroid.initialize(this);
         HttpHelper.init(new VollyProcessor(this));
+        //启动服务
         Intent sevice = new Intent(this, ForegroundService.class);
         this.startService(sevice);
+        //OkGo 框架初始化
+        OkGo.init(this);
+        OkGo.getInstance()
+                .debug("OkGo", Level.INFO, true);
+
     }
 
     @Override

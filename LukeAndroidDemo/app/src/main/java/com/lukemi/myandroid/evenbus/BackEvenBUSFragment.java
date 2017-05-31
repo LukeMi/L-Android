@@ -95,7 +95,7 @@ public class BackEvenBUSFragment extends Fragment {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(String event) {
-        text.setText("EvenBus");
+        text.setText(event);
         String url = "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png";
         CommonUtils.glideLoadPic(getContext(), url, img);
     }
