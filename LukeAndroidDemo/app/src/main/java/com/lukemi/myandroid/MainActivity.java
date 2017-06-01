@@ -3,13 +3,11 @@ package com.lukemi.myandroid;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 
 import com.lukemi.myandroid.animation.AnimationActivity;
 import com.lukemi.myandroid.handler.HandlerTestActivity;
 import com.lukemi.myandroid.setting.SettingActivity;
-import com.lukemi.myandroid.util.HttpUtils;
 import com.lukemi.myandroid.util.Logcat;
 import com.lukemi.myandroid.webservice.WebServiceActivity;
 import com.lukemi.myandroid.sessionlifecycle.SessionActivity1;
@@ -34,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        verUpdate(this);
+        updateVersion(this);
     }
 
-    private void verUpdate(MainActivity mainActivity) {
+    private void updateVersion(MainActivity mainActivity ) {
         //tomcate模拟版本更新
         final String verUrl = "http://127.0.0.1:8080/verupdate.txt";
         OkGo.get(verUrl)
@@ -45,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
-                        Logcat.log("verUpdate: " + s);
+                        Logcat.log("updateVersion: " + s);
                         try {
                             JSONObject object = new JSONObject(s);
                             if (object.optString("rsm").equals("1")) {//成功

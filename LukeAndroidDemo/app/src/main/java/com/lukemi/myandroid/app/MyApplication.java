@@ -19,6 +19,7 @@ import com.lukemi.myandroid.sessionlifecycle.MyActivityLifecycleCallbacks;
 import com.lukemi.myandroid.util.Logcat;
 import com.lukemi.myandroid.http.httpprocessor.HttpHelper;
 import com.lzy.okgo.OkGo;
+import com.squareup.leakcanary.LeakCanary;
 
 import java.util.logging.Level;
 
@@ -74,7 +75,11 @@ public class MyApplication extends BaseApplication {
         OkGo.init(this);
         OkGo.getInstance()
                 .debug("OkGo", Level.INFO, true);
-
+        //内存泄漏
+        if (!LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            LeakCanary.install(this);
+        }
     }
 
     @Override
