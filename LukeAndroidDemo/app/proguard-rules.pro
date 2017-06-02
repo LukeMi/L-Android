@@ -32,8 +32,8 @@
   **[] $VALUES;
   public *;
 }
-# for DexGuard only
--keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+# for DexGuard only签名打包出异常
+#-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
 #Glide加载图片结束
 
 #GreenDao数据库开始
@@ -45,5 +45,7 @@ public static java.lang.String TABLENAME;
 -dontwarn org.greenrobot.greendao.database.**
 # If you do not use Rx:
 -dontwarn rx.**
-#GreenDao数据库开始
+#GreenDao数据库结束
+#alibaba
+-keep com.alibaba.*
 
