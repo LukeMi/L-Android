@@ -76,4 +76,5 @@
     <dimen name="view_75">75dp</dimen>
     <dimen name="view_55">55dp</dimen>
     <dimen name="view_150">150dp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
 </resources>
