@@ -106,7 +106,8 @@ public class WebviewActivity extends AppCompatActivity implements View.OnClickLi
                 if (!inputUrl.startsWith("http://")) {
                     inputUrl = "http://" + inputUrl;
                 }
-                web.loadUrl(inputUrl);
+//                web.loadUrl(inputUrl);
+                web.loadUrl("homepathology91360://91360");
                 break;
             case R.id.refresh:
                 web.reload();

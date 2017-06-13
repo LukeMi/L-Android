@@ -63,10 +63,13 @@
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+
+            <!--
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN"/>
+                  <category android:name="android.intent.category.LAUNCHER"/>
+              </intent-filter>
+            -->
         </activity>
         <activity android:name=".sessionlifecycle.SessionActivity1"/>
         <activity android:name=".sessionlifecycle.SessionActivity2"/>
@@ -96,7 +99,16 @@
         <activity
             android:name=".widget.WebviewActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            -->
+        </activity>
         <activity android:name=".fluxanalistics.FluxActivity"/>
         <activity android:name=".receiver.ReceiverActivity"/>
         <activity android:name=".plug.PlugActivity"/>
@@ -149,9 +161,7 @@
         <activity android:name=".setting.CommomIntentActivity"/>
         <activity android:name=".setting.TorchActivity"/>
         <activity android:name=".db.GreenDaoActivity"/>
-
-        <activity android:name=".httpprocessor.HttpProcessorActivity"/>
-
+        <activity android:name=".http.httpprocessor.HttpProcessorActivity"/>
         <activity android:name=".http.volley.VollyActivity"/>
         <activity android:name=".widget.ImageViewActivity"/>
 
@@ -188,10 +198,34 @@
         <activity android:name=".widget.RGActivity"/>
         <activity android:name=".widget.ReccyclerViewActivity"/>
         <activity android:name=".evenbus.BackEvenBUSFragment_Activity">
-
-
         </activity>
         <activity android:name=".evenbus.ForgroundActivity">
+        </activity>
+        <activity android:name=".widget.wechat.CommentActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".widget.PopupActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustUnspecified">
+        </activity>
+        <activity android:name=".widget.brvah.BRVAHActivity">
+        </activity>
+        <activity android:name=".widget.brvah.MultieBRVAHActivity">
+        </activity>
+        <activity android:name=".widget.brvah.BaseQuickActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 

@@ -118,7 +118,6 @@
     <color name="cadetblue">#5f9ea0</color><!--军兰色 -->
     <color name="darkolivegreen">#556b2f</color><!--暗橄榄绿 -->
     <color name="indigo">#4b0082</color><!--靛青色 -->
-    <color name="mediumturquoise">#48d1cc</color><!--中绿宝石 -->
     <color name="darkslateblue">#483d8b</color><!--暗灰蓝色 -->
     <color name="steelblue">#4682b4</color><!--钢兰色 -->
     <color name="royalblue">#4169e1</color><!--皇家蓝 -->
@@ -180,4 +179,34 @@
     <color name="sort_btn_pressed">#787878</color>
     <color name="g_black">#8B8B78</color>
     <color name="query_bg">#f5f5f5</color>
+
+
+    <color name="mediumturquoise">#57c4d3</color><!--中绿宝石 登录导航栏颜色-->
+    <color name="mediumturquoise1">#51C4D4</color><!--中绿宝石 登录按钮可用颜色颜色-->
+    <!--分割线-->
+    <color name="gray_splitline1">#e6e6e6</color><!--灰色 分割线颜色-->
+    <color name="gray_splitline2">#f0f0f0</color><!--浅灰色 分割线颜色-->
+    <!--文字-->
+    <color name="white_text_btn">#ffffff</color><!--白色 提示性文字颜色-->
+    <color name="gray_text_assit">#cccccc</color><!--中灰色 辅助性文字颜色-->
+    <color name="gray_text_assit1">#e8e8e8</color><!--中灰色 辅助性文字颜色-->
+    <color name="gray_text_hint">#888888</color><!--深灰色 提示性文字颜色-->
+    <color name="gray_text_content">#BBBBBB</color><!--深灰色 提示性文字颜色-->
+    <color name="gray_text_profile">#B0B0B0</color><!--深灰色 提示性文字颜色-->
+    <color name="gray_text_content1">#999999</color><!--深灰色 提示性文字颜色-->
+    <color name="gray_text_status">#666666</color><!--浅黑色 辅助。默认状态栏文字颜色-->
+    <color name="black_text_doc">#333333</color><!--深黑色 标题正文主要文字颜色-->
+    <!--图标-->
+    <color name="white_icon">#ffffff</color><!--白色 颜色背景上的图标颜色-->
+    <color name="gray_icon">#cccccc</color><!--中灰色 工具栏上的操作图标颜色-->
+    <!--背景颜色-->
+    <color name="white_bkg">#ffffff</color><!--白色 列表背景和对话框颜色-->
+    <color name="gray_bkg_top">#fafafa</color><!--浅白色 顶部导航栏和底部标签栏颜色-->
+    <color name="gray_back_g">#f6f6f6</color><!--浅白色 顶部导航栏和底部标签栏颜色-->
+    <color name="gray_bkg_first">#f0f0f0</color><!--浅灰色 列表背景和对话框颜色-->
+    <color name="gray_main_tab_text">#757575</color><!--浅灰色 列表背景和对话框颜色-->
+
+    <color name="red_text_loginout">#EB5B4C</color><!--浅灰色 列表背景和对话框颜色-->
+    <color name="blue_text_login">#037BFF</color><!--浅灰色 列表背景和对话框颜色-->
+    <color name="black_alph_bkg">#404040</color>
 </resources>

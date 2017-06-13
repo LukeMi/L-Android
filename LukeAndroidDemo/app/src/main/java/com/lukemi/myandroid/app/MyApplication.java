@@ -70,7 +70,7 @@ public class MyApplication extends BaseApplication {
         HttpHelper.init(new VollyProcessor(this));
         //启动服务
         Intent sevice = new Intent(this, ForegroundService.class);
-        this.startService(sevice);
+//        this.startService(sevice);
         //OkGo 框架初始化
         OkGo.init(this);
         OkGo.getInstance()

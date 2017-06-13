@@ -49,3 +49,9 @@ public static java.lang.String TABLENAME;
 #alibaba
 -keep com.alibaba.*
 
+#BaseRecyclerViewAdapterHelper
+-keep class com.chad.library.adapter.** {
+   *;
+}
+
+

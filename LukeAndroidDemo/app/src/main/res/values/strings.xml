@@ -176,4 +176,7 @@
     <string name="tab_me">我</string>
     <string name="save">保存</string>
     <string name="clip">裁剪</string>
+    <string name="cancle">取消</string>
+    <string name="write_comment">写评论</string>
+    <string name="send">发送</string>
 </resources>
