@@ -73,7 +73,7 @@ public class BaseQuickActivity extends AppCompatActivity {
                     v.setName("中国: " + count);
                     list.add(v);
                 }
-                quickAdapter.notifyDataSetChanged();
+//                quickAdapter.notifyDataSetChanged();
             }
         },rvBasequick);
         rvBasequick.setAdapter(quickAdapter);
