@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -122,11 +123,9 @@ public class BaseQuickActivity extends AppCompatActivity
                                 List<NewsCatesBean.DataBean.SlidesBean.RowsBeanX> rows = newsCatesBean.getData().getSlides().getRows();
                                 if (rows!=null &&rows.size()>0){
                                     adapter.removeAllHeaderView();
-                                    headView =  getLayoutInflater().inflate(R.layout.view_head_news,src, false);
+                                    headView =  getLayoutInflater().inflate(R.layout.view_head_news,null/*(ViewGroup) rvBasequick.getParent(), false*/);
                                     adapter.addHeaderView(headView);
                                 }
-
-
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -149,6 +148,8 @@ public class BaseQuickActivity extends AppCompatActivity
                         if (isLoadMore) {
                             isLoadMore = false;
                         }
+                        src.setEnabled(true);
+                        adapter.setEnableLoadMore(true);
                         if (src.isRefreshing()) {
                             src.setRefreshing(false);
                         }
@@ -159,6 +160,7 @@ public class BaseQuickActivity extends AppCompatActivity
 
     @Override
     public void onRefresh() {
+        adapter.setEnableLoadMore(false);
         refresh();
     }
 
@@ -172,6 +174,7 @@ public class BaseQuickActivity extends AppCompatActivity
         public QuickAdapter(@LayoutRes int layoutResId, @Nullable List<NewsCatesBean.DataBean.ListsBean.RowsBean> data) {
             super(layoutResId, data);
         }
+
 
         @Override
         protected void convert(BaseViewHolder helper, NewsCatesBean.DataBean.ListsBean.RowsBean item) {
