@@ -74,6 +74,8 @@ android {
         compile 'me.relex:circleindicator:1.2.2@aar'
         //BRVAH 强大的RecyclerAdapter框架
         compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.18'
+        //Jsoup 解析xml
+        compile 'org.jsoup:jsoup:1.10.3'
     }
 }
 
