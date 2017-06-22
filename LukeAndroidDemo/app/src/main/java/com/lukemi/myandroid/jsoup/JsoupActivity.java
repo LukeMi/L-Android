@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 
 import com.lukemi.myandroid.R;
+import com.lukemi.myandroid.util.Logcat;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -27,12 +29,12 @@ public class JsoupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jsoup);
         ButterKnife.bind(this);
-        try {
-            doc = Jsoup.connect(url).get();
-            doc.charset(new Charset("utf-8",null) {
-            });
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        }).start();
+
     }
 }

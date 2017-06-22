@@ -379,7 +379,7 @@ public class BitmapUtils {
 
         // 取 drawable 的颜色格式
         Bitmap.Config config = drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
-                : Bitmap.Config.RGB_565;
+                                       : Bitmap.Config.RGB_565;
         // 建立对应 bitmap
         Bitmap bitmap = Bitmap.createBitmap(w, h, config);
         // 建立对应 bitmap 的画布
@@ -447,14 +447,14 @@ public class BitmapUtils {
 
         Paint paint = new Paint();
         LinearGradient shader = new LinearGradient(0, bitmap.getHeight(), 0,
-                bitmapWithReflection.getHeight() + reflectionGap, 0x70ffffff,
-                0x00ffffff, Shader.TileMode.CLAMP);
+                                                          bitmapWithReflection.getHeight() + reflectionGap, 0x70ffffff,
+                                                          0x00ffffff, Shader.TileMode.CLAMP);
         paint.setShader(shader);
         // Set the Transfer mode to be porter duff and destination in
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         // Draw a rectangle using the paint with our linear gradient
         canvas.drawRect(0, h, w, bitmapWithReflection.getHeight()
-                + reflectionGap, paint);
+                                         + reflectionGap, paint);
         return bitmapWithReflection;
     }
 
@@ -480,11 +480,11 @@ public class BitmapUtils {
         // 获取屏幕长和高
         int width = activity.getWindowManager().getDefaultDisplay().getWidth();
         int height = activity.getWindowManager().getDefaultDisplay()
-                .getHeight();
+                             .getHeight();
 
         // 去掉题目栏
         Bitmap b = Bitmap.createBitmap(b1, 0, statusBarHeight, width, height
-                - statusBarHeight);
+                                                                              - statusBarHeight);
         view.destroyDrawingCache();
         return b;
     }

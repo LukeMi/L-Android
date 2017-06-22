@@ -221,9 +221,13 @@
         <activity android:name=".widget.brvah.MultieBRVAHActivity">
         </activity>
         <activity android:name=".widget.brvah.BaseQuickActivity">
-
         </activity>
         <activity android:name=".jsoup.JsoupActivity">
+        </activity>
+        <activity android:name=".widget.JSAndroidActivity">
+
+        </activity>
+        <activity android:name=".widget.LifecycleFragmentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
