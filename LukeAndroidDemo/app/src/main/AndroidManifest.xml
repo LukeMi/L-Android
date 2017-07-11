@@ -100,14 +100,6 @@
             android:name=".widget.WebviewActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-            -->
         </activity>
         <activity android:name=".fluxanalistics.FluxActivity"/>
         <activity android:name=".receiver.ReceiverActivity"/>
@@ -225,9 +217,13 @@
         <activity android:name=".jsoup.JsoupActivity">
         </activity>
         <activity android:name=".widget.JSAndroidActivity">
-
         </activity>
         <activity android:name=".widget.LifecycleFragmentActivity">
+        </activity>
+        <activity android:name=".widget.ViewPagerActivity">
+
+        </activity>
+        <activity android:name=".viewtest.RVRefreshViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
