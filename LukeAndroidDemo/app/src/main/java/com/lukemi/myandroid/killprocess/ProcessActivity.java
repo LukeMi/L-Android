@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.activeandroid.ActiveAndroid;
 import com.activeandroid.Cache;
 import com.activeandroid.query.Delete;
+import com.lukemi.myandroid.R;
 import com.lukemi.myandroid.util.Logcat;
 import com.lukemi.myandroid.bean.AppInfo;
 
@@ -57,7 +58,7 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.lukemi.myandroid.R.layout.activity_process);
+        setContentView(R.layout.activity_process);
         initViews();
         mHandler.sendEmptyMessageDelayed(MSG_CYCLE, 0);
     }
@@ -96,15 +97,15 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void initViews() {
-        lv = ((ListView) findViewById(com.lukemi.myandroid.R.id.appList));
-        showDB = ((ListView) findViewById(com.lukemi.myandroid.R.id.showDB));
+        lv = ((ListView) findViewById(R.id.appList));
+        showDB = ((ListView) findViewById(R.id.showDB));
 
 
-        showTV = ((TextView) findViewById(com.lukemi.myandroid.R.id.showTV));
-        findViewById(com.lukemi.myandroid.R.id.addDB).setOnClickListener(this);
-        findViewById(com.lukemi.myandroid.R.id.delDB).setOnClickListener(this);
-        findViewById(com.lukemi.myandroid.R.id.updateDB).setOnClickListener(this);
-        findViewById(com.lukemi.myandroid.R.id.queryDB).setOnClickListener(this);
+        showTV = ((TextView) findViewById(R.id.showTV));
+        findViewById(R.id.addDB).setOnClickListener(this);
+        findViewById(R.id.delDB).setOnClickListener(this);
+        findViewById(R.id.updateDB).setOnClickListener(this);
+        findViewById(R.id.queryDB).setOnClickListener(this);
 
 
         loadInstallAppList();
@@ -198,7 +199,7 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case com.lukemi.myandroid.R.id.addDB:
+            case R.id.addDB:
                 count++;
                 AppInfo appInfo = new AppInfo();
                 appInfo.setAppName(("setAppName" + count));
@@ -209,12 +210,12 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
                 appInfo.setFd(System.currentTimeMillis());
                 appInfo.save();
                 break;
-            case com.lukemi.myandroid.R.id.delDB:
+            case R.id.delDB:
                 //Hero.delete(Hero.class,1);//删除id为1的记录
                 new Delete().from(AppInfo.class).where("power>?", 60).execute();//删除power大于60的所有记录
                 Toast.makeText(ProcessActivity.this, "删除数据ok", Toast.LENGTH_SHORT).show();
                 break;
-            case com.lukemi.myandroid.R.id.updateDB:
+            case R.id.updateDB:
                 AppInfo hero = AppInfo.load(AppInfo.class, 10);
                 /**
                  * load方法其实执行的是：
@@ -226,7 +227,7 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
                 hero.save();
                 Toast.makeText(ProcessActivity.this, "修改数据ok", Toast.LENGTH_SHORT).show();
                 break;
-            case com.lukemi.myandroid.R.id.queryDB:
+            case R.id.queryDB:
 
                 showTV.setText(queryDB().toString());
                 break;
@@ -295,15 +296,15 @@ class AppinfoAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder vh;
         if (convertView == null) {
-            convertView = filter.inflate(com.lukemi.myandroid.R.layout.item_process, null);
+            convertView = filter.inflate(R.layout.item_process, null);
             vh = new ViewHolder();
             convertView.setTag(vh);
         } else {
             vh = (ViewHolder) convertView.getTag();
         }
-        vh.title = (TextView) convertView.findViewById(com.lukemi.myandroid.R.id.title);
-        vh.pName = (TextView) convertView.findViewById(com.lukemi.myandroid.R.id.pName);
-        vh.iconIV = (ImageView) convertView.findViewById(com.lukemi.myandroid.R.id.icon);
+        vh.title = (TextView) convertView.findViewById(R.id.title);
+        vh.pName = (TextView) convertView.findViewById(R.id.pName);
+        vh.iconIV = (ImageView) convertView.findViewById(R.id.icon);
 
         vh.title.setText(appList.get(position).getAppName());
         vh.pName.setText(appList.get(position).getPn());
@@ -311,7 +312,7 @@ class AppinfoAdapter extends BaseAdapter {
         if (icon != null) {
 //            vh.iconIV.setImageDrawable(appList.get(position).getIcon());
         } else {
-            vh.iconIV.setImageResource(com.lukemi.myandroid.R.mipmap.ic_launcher);
+            vh.iconIV.setImageResource(R.mipmap.ic_launcher);
         }
         return convertView;
     }
