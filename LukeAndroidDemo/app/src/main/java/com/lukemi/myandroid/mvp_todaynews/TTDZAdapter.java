@@ -15,9 +15,28 @@ import java.util.List;
 
 public class TTDZAdapter extends BaseQuickAdapter<TTDZBean.DataBean, BaseViewHolder> {
 
+    private int maxItemCount;
+
+    public int getMaxItemCount() {
+        return maxItemCount;
+    }
+
+    public void setMaxItemCount(int maxItemCount) {
+        this.maxItemCount = maxItemCount;
+    }
+
     public TTDZAdapter(@LayoutRes int layoutResId, @Nullable List<TTDZBean.DataBean> data) {
         super(layoutResId, data);
     }
+
+    @Override
+    public int getItemCount() {
+        if (maxItemCount != 0) {
+            return maxItemCount > super.getItemCount() ? super.getItemCount() : maxItemCount;
+        }
+        return super.getItemCount();
+    }
+
 
     public TTDZAdapter(@Nullable List<TTDZBean.DataBean> data) {
         super(data);
@@ -29,6 +48,6 @@ public class TTDZAdapter extends BaseQuickAdapter<TTDZBean.DataBean, BaseViewHol
 
     @Override
     protected void convert(BaseViewHolder helper, TTDZBean.DataBean item) {
-        helper.setText(R.id.tv_content, item.getGroup().getText());
+        helper.setText(R.id.tv_content, item.toString());
     }
 }

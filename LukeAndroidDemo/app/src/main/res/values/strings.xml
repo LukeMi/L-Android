@@ -186,4 +186,30 @@
     <string name="updated_at">上次更新于%1$s前</string>
     <string name="updated_just_now">刚刚更新</string>
     <string name="time_error">时间有问题</string>
+
+    <string-array name="categoryList1">
+        <item>__all__</item>
+        <item>news_hot</item>
+        <item>news_society</item>
+        <item>news_entertainment</item>
+        <item>news_tech</item>
+        <item>news_military</item>
+        <item>news_sports</item>
+        <item>news_car</item>
+        <item>news_finance</item>
+        <item>news_world</item>
+        <item>news_fashion</item>
+
+    </string-array>
+    <string-array name="categoryList2">
+        <item>news_travel</item>
+        <item>news_discovery</item>
+        <item>news_baby</item>
+        <item>news_regimen</item>
+        <item>news_story</item>
+        <item>news_essay</item>
+        <item>news_game</item>
+        <item>news_history</item>
+        <item>news_food</item>
+    </string-array>
 </resources>

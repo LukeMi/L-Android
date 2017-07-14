@@ -209,4 +209,5 @@
     <color name="red_text_loginout">#EB5B4C</color><!--浅灰色 列表背景和对话框颜色-->
     <color name="blue_text_login">#037BFF</color><!--浅灰色 列表背景和对话框颜色-->
     <color name="black_alph_bkg">#404040</color>
+    <color name="mask_color">#88888888</color>
 </resources>

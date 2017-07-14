@@ -155,7 +155,9 @@
         <activity android:name=".db.GreenDaoActivity"/>
         <activity android:name=".http.httpprocessor.HttpProcessorActivity"/>
         <activity android:name=".http.volley.VollyActivity"/>
-        <activity android:name=".widget.ImageViewActivity"/>
+        <activity android:name=".widget.ImageViewActivity">
+
+        </activity>
 
         <!-- 百度服务 -->
         <service
@@ -230,7 +232,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".AppInfoActivity">
-
         </activity>
     </application>
 

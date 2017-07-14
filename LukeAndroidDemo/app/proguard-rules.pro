@@ -47,7 +47,8 @@ public static java.lang.String TABLENAME;
 -dontwarn rx.**
 #GreenDao数据库结束
 #alibaba
--keep com.alibaba.*
+-keep com.alibaba.**{
+}
 
 #BaseRecyclerViewAdapterHelper
 -keep class com.chad.library.adapter.** {
