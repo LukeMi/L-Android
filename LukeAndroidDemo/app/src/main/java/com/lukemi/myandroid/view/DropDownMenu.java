@@ -127,7 +127,6 @@ public class DropDownMenu extends LinearLayout {
             addTab(tabTexts, i);
         }
         containerView.addView(contentView, 0);
-
         maskView = new View(getContext());
         maskView.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
         maskView.setBackgroundColor(maskColor);

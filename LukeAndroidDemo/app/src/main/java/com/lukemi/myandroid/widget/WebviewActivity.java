@@ -34,7 +34,8 @@ public class WebviewActivity extends AppCompatActivity implements View.OnClickLi
     //    private String defaultURL = "http://www.baidu.com/";
     //web 缓存目录
     private static final String APP_CACHE_DIRNAME = "/webcache";
-    private String defaultURL = "http://meeting.91360.com/Meeting/ShowDetails_436.html";
+    //    private String defaultURL = "http://meeting.91360.com/Meeting/ShowDetails_436.html";
+    private String defaultURL = "http://jxl.91360.com/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

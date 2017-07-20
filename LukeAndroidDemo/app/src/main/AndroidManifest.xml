@@ -156,7 +156,6 @@
         <activity android:name=".http.httpprocessor.HttpProcessorActivity"/>
         <activity android:name=".http.volley.VollyActivity"/>
         <activity android:name=".widget.ImageViewActivity">
-
         </activity>
 
         <!-- 百度服务 -->
@@ -196,14 +195,6 @@
         <activity android:name=".evenbus.ForgroundActivity">
         </activity>
         <activity android:name=".widget.wechat.CommentActivity">
-
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-            -->
         </activity>
         <activity
             android:name=".widget.PopupActivity"
@@ -225,13 +216,16 @@
         <activity android:name=".widget.ViewPagerActivity">
         </activity>
         <activity android:name=".viewtest.RVRefreshViewActivity">
+
+        </activity>
+        <activity android:name=".AppInfoActivity">
+        </activity>
+        <activity android:name=".news_today.NewListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".AppInfoActivity">
         </activity>
     </application>
 

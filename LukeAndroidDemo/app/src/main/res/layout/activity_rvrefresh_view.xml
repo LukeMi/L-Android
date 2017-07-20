@@ -37,6 +37,7 @@
         app:ddtextSelectedColor="@color/green"
         app:ddtextUnselectedColor="@color/black_text_doc"
         app:ddunderlineColor="@color/gray"
+        android:background="@color/aliceblue"
         />
 
     <!-- <include

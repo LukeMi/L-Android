@@ -108,10 +108,11 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
-    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.android.support:multidex:1.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.alibaba:fastjson:1.2.31'
     testCompile 'junit:junit:4.12'
     androidTestCompile 'org.testng:testng:6.9.6'
     androidTestCompile 'junit:junit:4.12'
+    compile project(':refresh-layout')
 }

@@ -152,15 +152,18 @@ public class RVRefreshViewActivity extends AppCompatActivity implements RefreshH
 
 
         lvcategories1 = new ListView(this);
+        lvcategories1.setBackgroundColor(getResources().getColor(R.color.white));
         lvcategories1.setAdapter(cadater1);
         lvcategories1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String curcategory = categories1.get(position);
                 doSort(curcategory);
+                dropDownView.closeMenu();
             }
         });
         lvcategories2 = new ListView(this);
+        lvcategories2.setBackgroundColor(getResources().getColor(R.color.white));
         lvcategories2.setAdapter(cadater2);
 
         lvcategories2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -168,6 +171,7 @@ public class RVRefreshViewActivity extends AppCompatActivity implements RefreshH
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String curcategory = categories2.get(position);
                 doSort(curcategory);
+                dropDownView.closeMenu();
             }
         });
 
@@ -182,7 +186,6 @@ public class RVRefreshViewActivity extends AppCompatActivity implements RefreshH
         Toast.makeText(RVRefreshViewActivity.this, curcategory, Toast.LENGTH_SHORT).show();
         category = curcategory;
         refresh();
-
     }
 
     private View createHeaderView() {
