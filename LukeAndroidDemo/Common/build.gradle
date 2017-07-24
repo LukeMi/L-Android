@@ -27,19 +27,23 @@ android {
     lintOptions {
         abortOnError false
     }
+    dependencies {
+        compile 'com.android.support:appcompat-v7:25.3.1'
+        //ButterKnife依赖
+        apt 'com.jakewharton:butterknife-compiler:8.4.0'
+        compile 'com.jakewharton:butterknife:8.4.0'
+    }
 
 }
 
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    //ButterKnife依赖
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'org.apache.ant:ant:1.7.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'com.android.support:design:25.3.1'
     testCompile 'junit:junit:4.12'
-    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile project(':refresh-layout')
 }
 
 task makeJar(type: Copy, dependsOn: "build") {

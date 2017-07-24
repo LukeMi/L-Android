@@ -105,6 +105,7 @@ dependencies {
     //个人框架
     compile files('libs/TbugSDK_v1.0.0_release.jar')
     compile files('libs/httpmime-4.3-sources.jar')
+    compile project(':refresh-layout')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
@@ -114,5 +115,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
     androidTestCompile 'org.testng:testng:6.9.6'
     androidTestCompile 'junit:junit:4.12'
-    compile project(':refresh-layout')
 }

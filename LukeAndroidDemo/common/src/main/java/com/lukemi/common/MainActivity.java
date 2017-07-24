@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.lukemi.common.test.DiDiViewActivity;
+import com.lukemi.common.test.FloatViewActivity;
 import com.lukemi.common.test.FontActivity;
 
 import butterknife.ButterKnife;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.FontActivity,R.id.DiDiViewActivity})
+    @OnClick({R.id.FontActivity,R.id.DiDiViewActivity,R.id.FloatViewActivity})
     public void onViewClicked(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -32,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.DiDiViewActivity:
                 intent = new Intent(this, DiDiViewActivity.class);
+                break;
+            case R.id.FloatViewActivity:
+                intent = new Intent(this, FloatViewActivity.class);
                 break;
             default:
                 break;

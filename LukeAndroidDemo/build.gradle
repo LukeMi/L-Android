@@ -18,6 +18,13 @@ buildscript {
     }
 }
 
+dexOptions {
+    dexInProcess = true
+    javaMaxHeapSize "3g"
+    preDexLibraries = false
+    incremental true
+}
+
 allprojects {
     repositories {
         jcenter()

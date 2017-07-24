@@ -216,11 +216,13 @@
         <activity android:name=".widget.ViewPagerActivity">
         </activity>
         <activity android:name=".viewtest.RVRefreshViewActivity">
-
         </activity>
         <activity android:name=".AppInfoActivity">
         </activity>
         <activity android:name=".news_today.NewListActivity">
+
+        </activity>
+        <activity android:name=".widget.CoordinaryLayoutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

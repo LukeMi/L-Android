@@ -3,6 +3,7 @@
           package="com.lukemi.common">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +20,8 @@
         <activity android:name=".test.FontActivity">
         </activity>
         <activity android:name=".test.DiDiViewActivity">
+        </activity>
+        <activity android:name=".test.FloatViewActivity">
         </activity>
     </application>
 

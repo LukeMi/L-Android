@@ -228,9 +228,9 @@ public class NewListActivity extends AppCompatActivity implements OnRefreshListe
                         try {
                             JSONObject object = new JSONObject(s);
                             JSONArray array = object.getJSONArray("data");
-                            if (array==null || array.length()<1){
+                            if (array == null || array.length() < 1) {
                                 newsAdapter.loadMoreEnd();
-                            }else {
+                            } else {
                                 newsAdapter.loadMoreComplete();
                             }
                             Class<?> transformClass = getTagetClass(category);
