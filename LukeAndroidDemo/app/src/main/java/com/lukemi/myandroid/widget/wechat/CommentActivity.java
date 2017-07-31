@@ -1,9 +1,11 @@
 package com.lukemi.myandroid.widget.wechat;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
 
 import com.lukemi.myandroid.R;
 

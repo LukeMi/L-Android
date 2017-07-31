@@ -1,4 +1,4 @@
-package com.inst.greendao3_demo.dao;
+package com.lukemi.myandroid.dao;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteStatement;
@@ -44,14 +44,11 @@ public class StudentDao extends AbstractDao<Student, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"STUDENT\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
+                "\"_id\" INTEGER PRIMARY KEY ," + // 0: id
                 "\"NAME\" TEXT," + // 1: name
                 "\"AGE\" TEXT," + // 2: age
                 "\"NUMBER\" TEXT," + // 3: number
                 "\"SCORE\" TEXT);"); // 4: score
-        // Add Indexes
-        db.execSQL("CREATE UNIQUE INDEX " + constraint + "IDX_STUDENT_NUMBER ON \"STUDENT\"" +
-                " (\"NUMBER\" ASC);");
     }
 
     /** Drops the underlying database table. */

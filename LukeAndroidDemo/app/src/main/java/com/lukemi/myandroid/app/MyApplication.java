@@ -13,6 +13,8 @@ import android.util.Log;
 
 import com.activeandroid.ActiveAndroid;
 import com.lukemi.myandroid.ancetor.BaseApplication;
+import com.lukemi.myandroid.dao.DaoMaster;
+import com.lukemi.myandroid.dao.DaoSession;
 import com.lukemi.myandroid.http.httpprocessor.VollyProcessor;
 import com.lukemi.myandroid.service.ForegroundService;
 import com.lukemi.myandroid.sessionlifecycle.MyActivityLifecycleCallbacks;
@@ -20,6 +22,8 @@ import com.lukemi.myandroid.util.Logcat;
 import com.lukemi.myandroid.http.httpprocessor.HttpHelper;
 import com.lzy.okgo.OkGo;
 import com.squareup.leakcanary.LeakCanary;
+
+import org.greenrobot.greendao.database.Database;
 
 import java.util.logging.Level;
 
@@ -51,6 +55,8 @@ public class MyApplication extends BaseApplication {
 
         }
     };
+    private boolean ENCRYPTED = false;
+    private DaoSession daoSession;
 
     @Override
     protected void attachBaseContext(Context base) {
@@ -80,6 +86,13 @@ public class MyApplication extends BaseApplication {
             // This process is dedicated to LeakCanary for heap analysis.
             LeakCanary.install(this);
         }
+        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this, ENCRYPTED ? "notes-db-encrypted" : "notes-db");
+        Database db = ENCRYPTED ? helper.getEncryptedWritableDb("super-secret") : helper.getWritableDb();
+        daoSession = new DaoMaster(db).newSession();
+    }
+
+    public DaoSession getDaoSession() {
+        return daoSession;
     }
 
     @Override

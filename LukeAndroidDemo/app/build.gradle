@@ -90,7 +90,7 @@ android {
 //greendao配置 module必须添加（否则报错）apply plugin: 'org.greenrobot.greendao'
 greendao {
     schemaVersion 1                             //版本号，升级时可配置
-    daoPackage 'com.inst.greendao3_demo.dao'     //包名
+    daoPackage 'com.lukemi.myandroid.dao'     //包名
     targetGenDir 'src/main/java'                 //生成目录
 }
 

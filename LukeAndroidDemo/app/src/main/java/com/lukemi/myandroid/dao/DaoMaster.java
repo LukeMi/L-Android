@@ -1,4 +1,4 @@
-package com.inst.greendao3_demo.dao;
+package com.lukemi.myandroid.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

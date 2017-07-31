@@ -136,6 +136,7 @@
         <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
         <activity android:name=".utiltest.UtilMainActivity"/>
         <activity android:name=".widget.wechat.activity.WeChatMainActivity">
+
         </activity>
         <activity android:name=".widget.TableLayoutActivity"/>
         <activity android:name=".widget.satin.SatinMainActivity"/>
@@ -152,7 +153,13 @@
         <activity android:name=".setting.SettingIntentActivity"/>
         <activity android:name=".setting.CommomIntentActivity"/>
         <activity android:name=".setting.TorchActivity"/>
-        <activity android:name=".db.GreenDaoActivity"/>
+        <activity android:name=".db.GreenDaoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".http.httpprocessor.HttpProcessorActivity"/>
         <activity android:name=".http.volley.VollyActivity"/>
         <activity android:name=".widget.ImageViewActivity">
@@ -223,11 +230,10 @@
 
         </activity>
         <activity android:name=".widget.CoordinaryLayoutActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+        </activity>
+        <activity android:name=".widget.MeasureViewActivity">
+
         </activity>
     </application>
 

@@ -2,8 +2,8 @@ package com.lukemi.myandroid.db;
 
 import android.content.Context;
 
-import com.inst.greendao3_demo.dao.DaoMaster;
-import com.inst.greendao3_demo.dao.DaoSession;
+import com.lukemi.myandroid.dao.DaoMaster;
+import com.lukemi.myandroid.dao.DaoSession;
 
 import org.greenrobot.greendao.query.QueryBuilder;
 
@@ -47,7 +47,7 @@ public class GreenDao3Core {
         return daoSession;
     }
 
-    public static void enableQueryBuilderLog(){
+    public static void enableQueryBuilderLog() {
         QueryBuilder.LOG_SQL = true;
         QueryBuilder.LOG_VALUES = true;
     }

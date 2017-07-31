@@ -3,15 +3,24 @@ package com.lukemi.myandroid.widget.wechat.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
+
+import com.lukemi.myandroid.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link WeChatMSGFragment.OnFragmentInteractionListener} interface
+ * {@link OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link WeChatMSGFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -21,12 +30,16 @@ public class WeChatMSGFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    @BindView(R.id.viewflipper)
+    ViewFlipper viewflipper;
+    Unbinder unbinder;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    private LayoutInflater inflater;
 
     public WeChatMSGFragment() {
         // Required empty public constructor
@@ -63,7 +76,32 @@ public class WeChatMSGFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(com.lukemi.myandroid.R.layout.fragment_we_chat_msg, container, false);
+        View view = inflater.inflate(R.layout.fragment_we_chat_msg, container, false);
+        unbinder = ButterKnife.bind(this, view);
+        this.inflater = inflater;
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        View c1 = inflater.inflate(R.layout.item_common_image,null);
+        ImageView img1 = (ImageView) c1.findViewById(R.id.img_common);
+        img1.setImageResource(R.drawable.wallpaper1);
+        View c2 = inflater.inflate(R.layout.item_common_image,null);
+        ImageView img2 = (ImageView) c2.findViewById(R.id.img_common);
+        img2.setImageResource(R.drawable.wallpaper2);
+        View c3 = inflater.inflate(R.layout.item_common_image,null);
+        ImageView img3 = (ImageView) c3.findViewById(R.id.img_common);
+        img3.setImageResource(R.drawable.wallpaper3);
+        View c4 = inflater.inflate(R.layout.item_common_image,null);
+        ImageView img4 = (ImageView) c4.findViewById(R.id.img_common);
+        img1.setImageResource(R.drawable.wallpaper4);
+        viewflipper.addView(c1);
+        viewflipper.addView(c2);
+        viewflipper.addView(c3);
+        viewflipper.addView(c4);
+        viewflipper.startFlipping();
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -88,6 +126,12 @@ public class WeChatMSGFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 
     /**
