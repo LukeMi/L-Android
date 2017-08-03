@@ -135,7 +135,7 @@
 
         <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
         <activity android:name=".utiltest.UtilMainActivity"/>
-        <activity android:name=".widget.wechat.activity.WeChatMainActivity">
+        <activity android:name=".widget.wechat.activity.WeChatMainActivity"/>
         <activity android:name=".widget.TableLayoutActivity" />
         <activity android:name=".widget.satin.SatinMainActivity" />
 
