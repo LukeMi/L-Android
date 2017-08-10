@@ -11,8 +11,7 @@ import android.support.multidex.MultiDex;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.activeandroid.ActiveAndroid;
-import com.lukemi.myandroid.ancetor.BaseApplication;
+import com.lukemi.myandroid.base.BaseApplication;
 import com.lukemi.myandroid.dao.DaoMaster;
 import com.lukemi.myandroid.dao.DaoSession;
 import com.lukemi.myandroid.http.httpprocessor.VollyProcessor;

@@ -23,13 +23,6 @@
             android:text="insert"/>
 
         <Button
-            android:id="@+id/delete"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="delete"/>
-
-        <Button
             android:id="@+id/update"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -49,17 +42,15 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/op_menu"
-        android:layout_marginTop="10dp"/>
-
+        android:layout_height="match_parent"
+        android:layout_above="@+id/del_history"
+        android:layout_below="@+id/op_menu"/>
 
     <TextView
         android:id="@+id/del_history"
         android:layout_width="match_parent"
         android:layout_height="@dimen/view_40"
-        android:layout_below="@+id/rv_list"
-        android:layout_marginTop="@dimen/view_10"
+        android:layout_alignParentBottom="true"
         android:background="@color/gray"
         android:gravity="center"
         android:text="@string/del_history"

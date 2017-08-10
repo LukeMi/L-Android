@@ -35,12 +35,16 @@ android {
     aaptOptions.useNewCruncher = false
     //httpClient支持
     useLibrary 'org.apache.http.legacy'
-//    百度定位配置
+//    //资源分包
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
+
+
         }
     }
+
+
     dependencies {
         //Gson解析依赖
         compile 'com.google.code.gson:gson:2.3.1'

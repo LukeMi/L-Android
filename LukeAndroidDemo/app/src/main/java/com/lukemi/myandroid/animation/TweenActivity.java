@@ -18,27 +18,34 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.lukemi.myandroid.R;
 import com.lukemi.myandroid.util.Logcat;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+
 public class TweenActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button xml_alpha_TweenActBTN;
-    private ImageView alphaImg;
-    private Button xml_rotate_TweenActBTN;
-    private Button xml_scale_TweenActBTN;
-    private Button xml_translate_TweenActBTN;
-    private Button alpha_TweenActBTN;
-    private Button rotate_TweenActBTN;
-    private Button scale_TweenActBTN;
-    private Button translate_TweenActBTN;
-    private ImageView rotateImg;
-    private ImageView scaleImg;
-    private ImageView translateImg;
 
-
-    private ImageView xml_alphaImg;
-    private ImageView xml_rotateImg;
-    private ImageView xml_scaleImg;
-    private ImageView xml_translateImg;
+    @BindView(R.id.alpha_img_TweenAct)
+    ImageView alphaImg;
+    @BindView(R.id.alpha_TweenAct)
+    Button alpha_TweenActBTN;
+    @BindView(R.id.rotate_img_TweenAct)
+    ImageView rotateImg;
+    @BindView(R.id.scale_img_TweenAct)
+    ImageView scaleImg;
+    @BindView(R.id.translate_img_TweenAct)
+    ImageView translateImg;
+    @BindView(R.id.xml_alpha_img_TweenAct)
+    ImageView xml_alphaImg;
+    @BindView(R.id.xml_rotate_img_TweenAct)
+    ImageView xml_rotateImg;
+    @BindView(R.id.xml_scale_img_TweenAct)
+    ImageView xml_scaleImg;
+    @BindView(R.id.xml_translate_img_TweenAct)
+    ImageView xml_translateImg;
 
     private AlphaAnimation alphaAnimation;
 
@@ -66,7 +73,8 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.lukemi.myandroid.R.layout.activity_tween);
+        setContentView(R.layout.activity_tween);
+        ButterKnife.bind(this);
         initView();
     }
 
@@ -74,42 +82,22 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
      * 初始化控件
      */
     private void initView() {
-        alpha_TweenActBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.alpha_TweenAct));
-        rotate_TweenActBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.rotate_TweenAct));
-        scale_TweenActBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.scale_TweenAct));
-        translate_TweenActBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.translate_TweenAct));
 
-        xml_alpha_TweenActBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.xml_alpha_TweenAct));
-        xml_rotate_TweenActBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.xml_rotate_TweenAct));
-        xml_scale_TweenActBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.xml_scale_TweenAct));
-        xml_translate_TweenActBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.xml_translate_TweenAct));
-
-        alpha_TweenActBTN.setOnClickListener(this);
-        rotate_TweenActBTN.setOnClickListener(this);
-        scale_TweenActBTN.setOnClickListener(this);
-        translate_TweenActBTN.setOnClickListener(this);
-        xml_alpha_TweenActBTN.setOnClickListener(this);
-        xml_rotate_TweenActBTN.setOnClickListener(this);
-        xml_scale_TweenActBTN.setOnClickListener(this);
-        xml_translate_TweenActBTN.setOnClickListener(this);
-
-        alphaImg = ((ImageView) findViewById(com.lukemi.myandroid.R.id.alpha_img_TweenAct));
-        rotateImg = ((ImageView) findViewById(com.lukemi.myandroid.R.id.rotate_img_TweenAct));
-        scaleImg = ((ImageView) findViewById(com.lukemi.myandroid.R.id.scale_img_TweenAct));
-        scaleImg.setOnClickListener(this);
-        translateImg = ((ImageView) findViewById(com.lukemi.myandroid.R.id.translate_img_TweenAct));
-
-        xml_alphaImg = ((ImageView) findViewById(com.lukemi.myandroid.R.id.xml_alpha_img_TweenAct));
-        xml_rotateImg = ((ImageView) findViewById(com.lukemi.myandroid.R.id.xml_rotate_img_TweenAct));
-        xml_scaleImg = ((ImageView) findViewById(com.lukemi.myandroid.R.id.xml_scale_img_TweenAct));
-        xml_translateImg = ((ImageView) findViewById(com.lukemi.myandroid.R.id.xml_translate_img_TweenAct));
     }
 
-    @Override
+    @OnClick({R.id.alpha_TweenAct,
+                     R.id.rotate_TweenAct,
+                     R.id.scale_TweenAct,
+                     R.id.translate_TweenAct,
+                     R.id.xml_alpha_TweenAct,
+                     R.id.xml_rotate_TweenAct,
+                     R.id.xml_scale_TweenAct,
+                     R.id.xml_translate_TweenAct,
+                     R.id.scale_img_TweenAct,})
     public void onClick(View v) {
         int id = v.getId();
         switch (id) {
-            case com.lukemi.myandroid.R.id.alpha_TweenAct:
+            case R.id.alpha_TweenAct:
                 alphaAnimation = new AlphaAnimation(0, 1);
                 alphaAnimation.setDuration(3000);
                 alphaAnimation.setRepeatCount(-1);
@@ -124,7 +112,7 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
                     public void onAnimationEnd(Animation animation) {
                         alpha_TweenActBTN.setClickable(true);
                         Toast toast = Toast.makeText(TweenActivity.this, "渐变动画结束", Toast.LENGTH_SHORT);
-                        toast.setView(getLayoutInflater().inflate(com.lukemi.myandroid.R.layout.view_toast, null));
+                        toast.setView(getLayoutInflater().inflate(R.layout.view_toast, null));
                         toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
                     }
@@ -139,10 +127,10 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
                 alphaAnimation.setRepeatCount(-1);
                 alphaImg.startAnimation(alphaAnimation);
                 break;
-            case com.lukemi.myandroid.R.id.rotate_TweenAct:
+            case R.id.rotate_TweenAct:
                 RotateAnimation rotateAnimation = new RotateAnimation(0, 359,
-                        Animation.RELATIVE_TO_SELF, 0.5f,
-                        Animation.RELATIVE_TO_SELF, 0.5f);
+                                                                             Animation.RELATIVE_TO_SELF, 0.5f,
+                                                                             Animation.RELATIVE_TO_SELF, 0.5f);
                 rotateAnimation.setDuration(3000);
 //                rotateAnimation.setInterpolator(new LinearInterpolator());//匀速度
 //                rotateAnimation.setInterpolator(new DecelerateInterpolator());//减度效果
@@ -151,37 +139,37 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
                 rotateAnimation.setRepeatMode(Animation.REVERSE);
                 rotateImg.startAnimation(rotateAnimation);
                 break;
-            case com.lukemi.myandroid.R.id.scale_TweenAct:
+            case R.id.scale_TweenAct:
                 ScaleAnimation scaleAnimation = new ScaleAnimation(0.0f, 1.4f, 0.0f, 1.4f,
-                        Animation.RELATIVE_TO_SELF, 0.5f,
-                        Animation.RELATIVE_TO_SELF, 0.5f);
+                                                                          Animation.RELATIVE_TO_SELF, 0.5f,
+                                                                          Animation.RELATIVE_TO_SELF, 0.5f);
                 scaleAnimation.setDuration(3000);
                 scaleAnimation.setFillAfter(true);
                 scaleImg.startAnimation(scaleAnimation);
                 break;
-            case com.lukemi.myandroid.R.id.translate_TweenAct:
+            case R.id.translate_TweenAct:
                 Toast.makeText(this, "translate_TweenAct", Toast.LENGTH_SHORT).show();
                 TranslateAnimation translateAnimation = new TranslateAnimation(0, 1, 0, 1);
                 translateAnimation.setDuration(3000);
                 translateImg.setAnimation(translateAnimation);
                 break;
 
-            case com.lukemi.myandroid.R.id.xml_alpha_TweenAct:
-                Animation alphaAnimation = AnimationUtils.loadAnimation(this, com.lukemi.myandroid.R.anim.alpha);
+            case R.id.xml_alpha_TweenAct:
+                Animation alphaAnimation = AnimationUtils.loadAnimation(this, R.anim.alpha);
                 xml_alphaImg.startAnimation(alphaAnimation);
                 break;
-            case com.lukemi.myandroid.R.id.xml_rotate_TweenAct:
-                Animation ra = AnimationUtils.loadAnimation(this, com.lukemi.myandroid.R.anim.alpha);
+            case R.id.xml_rotate_TweenAct:
+                Animation ra = AnimationUtils.loadAnimation(this, R.anim.alpha);
 
                 xml_rotateImg.startAnimation(ra);
                 break;
-            case com.lukemi.myandroid.R.id.xml_scale_TweenAct:
-                xml_scaleImg.startAnimation(AnimationUtils.loadAnimation(this, com.lukemi.myandroid.R.anim.scale));
+            case R.id.xml_scale_TweenAct:
+                xml_scaleImg.startAnimation(AnimationUtils.loadAnimation(this, R.anim.scale));
                 break;
-            case com.lukemi.myandroid.R.id.xml_translate_TweenAct:
-                xml_translateImg.startAnimation(AnimationUtils.loadAnimation(this, com.lukemi.myandroid.R.anim.translate));
+            case R.id.xml_translate_TweenAct:
+                xml_translateImg.startAnimation(AnimationUtils.loadAnimation(this, R.anim.translate));
                 break;
-            case com.lukemi.myandroid.R.id.scale_img_TweenAct:
+            case R.id.scale_img_TweenAct:
                 Intent intent = new Intent();
                 intent.setClass(this, ScaleActivity.class);
                 startActivity(intent);

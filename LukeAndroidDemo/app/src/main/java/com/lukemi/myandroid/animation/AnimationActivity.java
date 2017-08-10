@@ -6,17 +6,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class AnimationActivity extends AppCompatActivity implements View.OnClickListener {
+import com.lukemi.myandroid.R;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
-    private Button tween_AniBTN;
-    private Button fram_AniBTN;
-    private Button property_AniBTN;
+public class AnimationActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.lukemi.myandroid.R.layout.activity_animation);
+        setContentView(R.layout.activity_animation);
+        ButterKnife.bind(this);
         initView();
     }
 
@@ -24,27 +26,22 @@ public class AnimationActivity extends AppCompatActivity implements View.OnClick
      * 初始化控件
      */
     private void initView() {
-        tween_AniBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.tween_Ani));
-        fram_AniBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.fram_Ani));
-        property_AniBTN = ((Button) findViewById(com.lukemi.myandroid.R.id.property_Ani));
-        tween_AniBTN.setOnClickListener(this);
-        fram_AniBTN.setOnClickListener(this);
-        property_AniBTN.setOnClickListener(this);
+
     }
 
-    @Override
+    @OnClick({R.id.tween_Ani, R.id.fram_Ani, R.id.property_Ani})
     public void onClick(View v) {
         int id = v.getId();
         Intent intent = new Intent();
-        switch (id){
-            case com.lukemi.myandroid.R.id.tween_Ani:
-                intent.setClass(this,TweenActivity.class);
+        switch (id) {
+            case R.id.tween_Ani:
+                intent.setClass(this, TweenActivity.class);
                 break;
-            case com.lukemi.myandroid.R.id.fram_Ani:
-                intent.setClass(this,FrameActivity.class);
+            case R.id.fram_Ani:
+                intent.setClass(this, FrameActivity.class);
                 break;
-            case com.lukemi.myandroid.R.id.property_Ani:
-                intent.setClass(this,PropertyActivity.class);
+            case R.id.property_Ani:
+                intent.setClass(this, PropertyActivity.class);
                 break;
         }
         startActivity(intent);

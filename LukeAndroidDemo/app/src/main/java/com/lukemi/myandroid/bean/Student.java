@@ -17,7 +17,7 @@ import org.greenrobot.greendao.annotation.Unique;
 @Entity
 public class Student {
 
-    @Id
+    @Id(autoincrement = true)
     private Long id;
     private String name;
     private String age;

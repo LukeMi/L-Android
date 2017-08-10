@@ -1,16 +1,17 @@
 package com.lukemi.myandroid.db;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.test.mock.MockApplication;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.activeandroid.app.Application;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.lukemi.myandroid.R;
@@ -19,6 +20,7 @@ import com.lukemi.myandroid.bean.Student;
 import com.lukemi.myandroid.dao.DaoSession;
 import com.lukemi.myandroid.dao.StudentDao;
 import com.lukemi.myandroid.util.Logcat;
+import com.lukemi.myandroid.util.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +29,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class GreenDaoActivity extends AppCompatActivity implements BaseQuickAdapter.OnItemClickListener {
+public class GreenDaoActivity extends AppCompatActivity implements BaseQuickAdapter.OnItemLongClickListener,
+                                                                           BaseQuickAdapter.OnItemChildClickListener {
 
     @BindView(R.id.rv_list)
     RecyclerView rvList;
@@ -51,7 +54,9 @@ public class GreenDaoActivity extends AppCompatActivity implements BaseQuickAdap
         DaoSession daoSession = ((MyApplication) getApplication()).getDaoSession();
         studentDao = daoSession.getStudentDao();
         studentAdapter = new StudentAdapter(R.layout.view_student_item, studentList);
-        studentAdapter.setOnItemClickListener(this);
+        studentAdapter.setRelationView(delHistory);
+        studentAdapter.setOnItemLongClickListener(this);
+        studentAdapter.setOnItemChildClickListener(this);
         rvList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rvList.setAdapter(studentAdapter);
     }
@@ -60,20 +65,17 @@ public class GreenDaoActivity extends AppCompatActivity implements BaseQuickAdap
 
     }
 
-    @OnClick({R.id.insert, R.id.delete, R.id.update, R.id.query, R.id.del_history})
+    @OnClick({R.id.insert, R.id.update, R.id.query, R.id.del_history})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.insert:
                 id++;
                 int age = 10;
                 Student student = new Student();
-                student.setAge(String.valueOf(age + id));
-                student.setName("我是学生" + id);
-                student.setNumber("1996_" + id);
+                student.setAge("age: " + String.valueOf(age + id));
+                student.setName("name: " + id);
+                student.setNumber("number: " + id);
                 insertStudent(student);
-                break;
-            case R.id.delete:
-//                deleteStudent();
                 break;
             case R.id.update:
                 updateStudent(null);
@@ -82,8 +84,14 @@ public class GreenDaoActivity extends AppCompatActivity implements BaseQuickAdap
                 queryStudent(null);
                 break;
             case R.id.del_history:
+                deleteHistory();
                 break;
         }
+    }
+
+    private void deleteHistory() {
+        studentDao.deleteAll();
+        queryStudent(null);
     }
 
     private void insertStudent(Student student) {
@@ -95,11 +103,22 @@ public class GreenDaoActivity extends AppCompatActivity implements BaseQuickAdap
     }
 
     private void deleteStudent(Student student) {
+        studentDao.delete(student);
+        queryStudent(null);
+    }
 
+    private void deleteStudentByKey(long id) {
+        studentDao.deleteByKey(id);
+        queryStudent(null);
     }
 
     private void updateStudent(Student student) {
 
+    }
+
+    private void queryStudentByName(String name) {
+        Student student = studentDao.queryBuilder().where(StudentDao.Properties.Name.eq(name)).build().unique();
+        ToastUtil.show_makeText(this, student != null ? student.toString() : "当前id未找到：", Toast.LENGTH_SHORT);
     }
 
     private boolean queryStudent(Student student) {
@@ -132,24 +151,81 @@ public class GreenDaoActivity extends AppCompatActivity implements BaseQuickAdap
 
     }
 
+
     @Override
-    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        deleteStudent(studentList.get(position));
+    public boolean onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final Student student = studentList.get(position);
+        final Long id = student.getId();
+        builder.setMessage("改名字: ")
+                .setMessage("更改的是：id= " + id)
+                .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        student.setName("更改的是：id= " + id);
+                        updateStudent(student);
+                    }
+                })
+                .setNegativeButton(R.string.cancle, null)
+                .create()
+                .show();
+        return false;
     }
 
+    @Override
+    public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+        Student student = studentList.get(position);
+        switch (view.getId()) {
+            case R.id.btn_del:
+                deleteStudent(student);
+                break;
+            case R.id.btn_query:
+                boolean b = queryStudent(student);
+                ToastUtil.show_makeText(this, b ? "数据库中查询到该条数据：" + student.toString() : "数据库中未查询到该条数据", Toast.LENGTH_SHORT);
+                break;
+            case R.id.btn_id:
+                queryStudentByName(student.getName());
+                break;
+            case R.id.btn_DEL_id:
+                deleteStudentByKey(student.getId());
+                break;
+            default:
+                break;
+        }
+    }
 
     class StudentAdapter extends BaseQuickAdapter<Student, BaseViewHolder> {
+        private View view;
 
         public StudentAdapter(@LayoutRes int layoutResId, @Nullable List<Student> data) {
             super(layoutResId, data);
         }
 
         @Override
+        public int getItemCount() {
+            int itemCount = super.getItemCount();
+            if (itemCount != 0 && view != null) {
+                view.setVisibility(View.VISIBLE);
+            } else {
+                view.setVisibility(View.GONE);
+            }
+            return itemCount;
+        }
+
+        @Override
         protected void convert(BaseViewHolder helper, Student item) {
-            helper.setText(R.id.id, item.getId() + "")
+            helper.setText(R.id.id, "id: " + item.getId())
                     .setText(R.id.number, item.getNumber() + "")
                     .setText(R.id.name, item.getName() + "")
-                    .setText(R.id.age, item.getAge() + "");
+                    .setText(R.id.age, item.getAge() + "")
+                    .addOnClickListener(R.id.btn_del)
+                    .addOnClickListener(R.id.btn_query)
+                    .addOnClickListener(R.id.btn_DEL_id)
+                    .addOnClickListener(R.id.btn_id);
+        }
+
+        public void setRelationView(View view) {
+            this.view = view;
         }
     }
 

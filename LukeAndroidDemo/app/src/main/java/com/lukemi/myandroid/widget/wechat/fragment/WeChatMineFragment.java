@@ -8,15 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.lukemi.myandroid.base.BaseLazyFragment;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link WeChatMineFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
  * Use the {@link WeChatMineFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class WeChatMineFragment extends Fragment {
+public class WeChatMineFragment extends BaseLazyFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -26,17 +26,11 @@ public class WeChatMineFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private OnFragmentInteractionListener mListener;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-           /* throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");*/
-        }
+
     }
 
     @Override
@@ -51,18 +45,15 @@ public class WeChatMineFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(com.lukemi.myandroid.R.layout.fragment_we_chat_mine, container, false);
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
     }
 
     public WeChatMineFragment() {
-        // Required empty public constructor
     }
 
     /**
@@ -83,25 +74,5 @@ public class WeChatMineFragment extends Fragment {
         return fragment;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
 }

@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lukemi.myandroid.R;
+import com.lukemi.myandroid.widget.wechat.fragment.SubLazyLoadFragment;
 import com.lukemi.myandroid.widget.wechat.fragment.WeChatContactFragment;
 import com.lukemi.myandroid.widget.wechat.fragment.WeChatDiscoverFragment;
 import com.lukemi.myandroid.widget.wechat.fragment.WeChatMSGFragment;
@@ -37,21 +38,21 @@ public class WeChatMainActivity extends AppCompatActivity {
     private TabLayout navigateTabLayout;
     private MainAdapter mainAdapter;
     private String[] titles = new String[]{"微信", "通讯录", "发现", "我"};
-    private int[] drawableIDs = new int[]{com.lukemi.myandroid.R.drawable.selector_wechat_main_message
-            , com.lukemi.myandroid.R.drawable.selector_wechat_main_contact
-            , com.lukemi.myandroid.R.drawable.selector_wechat_main_discover
-            , com.lukemi.myandroid.R.drawable.selector_wechat_main_mine};
+    private int[] drawableIDs = new int[]{R.drawable.selector_wechat_main_message
+            , R.drawable.selector_wechat_main_contact
+            , R.drawable.selector_wechat_main_discover
+            , R.drawable.selector_wechat_main_mine};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.lukemi.myandroid.R.layout.activity_we_chat_main);
+        setContentView(R.layout.activity_we_chat_main);
         initView();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(com.lukemi.myandroid.R.menu.menu_wechat_main, menu);
+        getMenuInflater().inflate(R.menu.menu_wechat_main, menu);
         menu.add(0, Menu.FIRST + 2, 2, "个人信息").setIcon(android.R.drawable.ic_menu_send);
         return true;
     }
@@ -83,19 +84,19 @@ public class WeChatMainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case com.lukemi.myandroid.R.id.action_search:
+            case R.id.action_search:
                 Toast.makeText(this, "R.id.action_search", Toast.LENGTH_SHORT).show();
                 break;
-            case com.lukemi.myandroid.R.id.action_group_chat:
+            case R.id.action_group_chat:
                 Toast.makeText(this, "R.id.action_group_chat", Toast.LENGTH_SHORT).show();
                 break;
-            case com.lukemi.myandroid.R.id.action_add_friend:
+            case R.id.action_add_friend:
                 Toast.makeText(this, "R.id.action_add_friend", Toast.LENGTH_SHORT).show();
                 break;
-            case com.lukemi.myandroid.R.id.action_scan:
+            case R.id.action_scan:
                 Toast.makeText(this, "R.id.action_scan", Toast.LENGTH_SHORT).show();
                 break;
-            case com.lukemi.myandroid.R.id.action_feed:
+            case R.id.action_feed:
                 Toast.makeText(this, "R.id.action_feed", Toast.LENGTH_SHORT).show();
                 break;
             case Menu.FIRST + 2:
@@ -150,10 +151,15 @@ public class WeChatMainActivity extends AppCompatActivity {
      */
     private void initMainViewPager() {
         List<Fragment> fragmentList = new ArrayList<>();
-        fragmentList.add(WeChatMSGFragment.newInstance("", ""));
+        fragmentList.add(SubLazyLoadFragment.newInstance("", ""));
+        fragmentList.add(SubLazyLoadFragment.newInstance("", ""));
+        fragmentList.add(SubLazyLoadFragment.newInstance("", ""));
+        fragmentList.add(SubLazyLoadFragment.newInstance("", ""));
+
+       /* fragmentList.add(WeChatMSGFragment.newInstance("", ""));
         fragmentList.add(WeChatContactFragment.newInstance("", ""));
         fragmentList.add(WeChatDiscoverFragment.newInstance("", ""));
-        fragmentList.add(WeChatMineFragment.newInstance("", ""));
+        fragmentList.add(WeChatMineFragment.newInstance("", ""));*/
         mainAdapter = new MainAdapter(getSupportFragmentManager(), this, titles, drawableIDs, fragmentList);
         mainViewPager.setAdapter(mainAdapter);
 
@@ -190,9 +196,9 @@ public class WeChatMainActivity extends AppCompatActivity {
         }
 
         public View getTabView(int position) {
-            View view = View.inflate(context, com.lukemi.myandroid.R.layout.item_wechat_main_navigation, null);
-            ImageView imageView = (ImageView) view.findViewById(com.lukemi.myandroid.R.id.icon);
-            TextView textView = (TextView) view.findViewById(com.lukemi.myandroid.R.id.title);
+            View view = View.inflate(context, R.layout.item_wechat_main_navigation, null);
+            ImageView imageView = (ImageView) view.findViewById(R.id.icon);
+            TextView textView = (TextView) view.findViewById(R.id.title);
             imageView.setImageResource(drawableIDs[position]);
             textView.setText(titles[position]);
 
