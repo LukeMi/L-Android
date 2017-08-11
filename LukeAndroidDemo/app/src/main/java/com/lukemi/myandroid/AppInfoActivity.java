@@ -80,9 +80,9 @@ public class AppInfoActivity extends AppCompatActivity implements BaseQuickAdapt
                 appInfo.setPn(packageName);
                 appInfo.setVc(versionCode);
                 appInfo.setVn(versionName);
-                if ((packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
-                    appInfoList.add(appInfo);
-                }
+//                if ((packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {//判定是否不是系统应用
+                appInfoList.add(appInfo);
+//                }
                 Logcat.log("initView: " + packageInfo.toString());
             } catch (Exception e) {
                 e.printStackTrace();
@@ -94,7 +94,6 @@ public class AppInfoActivity extends AppCompatActivity implements BaseQuickAdapt
                 appinfoAdapter.notifyDataSetChanged();
             }
         });
-
     }
 
 
