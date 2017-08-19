@@ -134,15 +134,16 @@
         <activity android:name=".utiltest.BitmapUtilActivity" />
 
         <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
-        <activity android:name=".utiltest.UtilMainActivity"/>
-        <activity android:name=".widget.wechat.activity.WeChatMainActivity"/>
+        <activity android:name=".utiltest.UtilMainActivity" />
+        <activity android:name=".widget.wechat.activity.WeChatMainActivity" />
         <activity android:name=".widget.TableLayoutActivity" />
         <activity android:name=".widget.satin.SatinMainActivity" />
-
-        <activity android:name=".widget.TabLayoutActivity"/>
-        <activity android:name=".widget.ListViewActivity"/>
+        <activity android:name=".viewtest.ZoomHeadListViewActivity" />
+        <activity android:name=".widget.TabLayoutActivity" />
+        <activity android:name=".widget.ListViewActivity" />
         <activity
             android:name=".WelcomeActivity"
+<<<<<<< Updated upstream
             android:theme="@style/WelcActivityTheme"/>
         <activity android:name=".baidu.BDActivity"/>
         <activity android:name=".ThirdAPIActivity"/>
@@ -162,6 +163,20 @@
         <activity android:name=".http.volley.VollyActivity"/>
         <activity android:name=".widget.ImageViewActivity">
         </activity>
+=======
+            android:theme="@style/WelcActivityTheme" />
+        <activity android:name=".baidu.BDActivity" />
+        <activity android:name=".ThirdAPIActivity" />
+        <activity android:name=".setting.WallPaperActivity" />
+        <activity android:name=".setting.SettingActivity" />
+        <activity android:name=".setting.SettingIntentActivity" />
+        <activity android:name=".setting.CommomIntentActivity" />
+        <activity android:name=".setting.TorchActivity" />
+        <activity android:name=".db.GreenDaoActivity" />
+        <activity android:name=".http.httpprocessor.HttpProcessorActivity" />
+        <activity android:name=".http.volley.VollyActivity" />
+        <activity android:name=".widget.ImageViewActivity" />
+>>>>>>> Stashed changes
 
         <!-- 百度服务 -->
         <service
@@ -214,10 +229,17 @@
         <activity android:name=".news_today.NewListActivity"></activity>
         <activity android:name=".widget.CoordinaryLayoutActivity"></activity>
         <activity android:name=".widget.ConstraintLayoutActivity">
+<<<<<<< Updated upstream
 
         </activity>
         <activity android:name=".widget.MeasureViewActivity">
+=======
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+>>>>>>> Stashed changes
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
