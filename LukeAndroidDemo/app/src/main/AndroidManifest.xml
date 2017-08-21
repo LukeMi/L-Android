@@ -88,7 +88,8 @@
         <activity android:name=".webservice.WebServiceActivity"/>
         <activity
             android:name=".utiltest.DeviceutilActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
         <activity android:name=".getappchannelactivity.GetAppchannelActivity"/>
         <activity android:name=".utiltest.ZipUtilActivity"/>
         <activity android:name=".handler.HandlerPostActivity"/>
@@ -123,7 +124,6 @@
             android:name=".widget.TextViewActivity"
             android:label="TextView控件效果"
             android:theme="@style/Theme.AppCompat">
-
         </activity>
         <activity
             android:name=".widget.EditTextActivity"
@@ -132,12 +132,11 @@
         <activity android:name=".widget.wechat.activity.WeChatLoginActivity"/>
         <activity android:name=".widget.ViewPrintActivity"/>
         <activity android:name=".utiltest.BitmapUtilActivity"/>
-
         <activity android:name=".utiltest.UtilMainActivity"/>
-        <activity android:name=".widget.wechat.activity.WeChatMainActivity"/>
+        <activity android:name=".widget.wechat.activity.WeChatMainActivity">
+        </activity>
         <activity android:name=".widget.TableLayoutActivity"/>
         <activity android:name=".widget.satin.SatinMainActivity"/>
-
         <activity android:name=".widget.TabLayoutActivity"/>
         <activity android:name=".widget.ListViewActivity"/>
         <activity
@@ -205,18 +204,37 @@
         <activity android:name=".widget.ViewPagerActivity"/>
         <activity android:name=".viewtest.RVRefreshViewActivity"/>
         <activity android:name=".AppInfoActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
-        <activity android:name=".news_today.NewListActivity"></activity>
-        <activity android:name=".widget.CoordinaryLayoutActivity"></activity>
+        <activity android:name=".news_today.NewListActivity"/>
+        <activity android:name=".widget.CoordinaryLayoutActivity"/>
         <activity android:name=".widget.ConstraintLayoutActivity">
-
         </activity>
         <activity android:name=".widget.MeasureViewActivity">
+        </activity>
+        <activity android:name=".main.RadioGroupMainActivity">
 
+        </activity>
+        <activity android:name=".SchemeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:host="video"
+                    android:scheme="myandroid"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".widget.ImageViewCenterInsideActivity">
+
+        </activity>
+        <activity android:name=".widget.RoundImageViewListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 

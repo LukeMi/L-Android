@@ -32,8 +32,6 @@ public class WeChatMSGFragment extends BaseLazyFragment {
     @BindView(R.id.viewflipper)
     ViewFlipper viewflipper;
     Unbinder unbinder;
-    @BindView(R.id.tv_content)
-    TextView tvContent;
 
     // TODO: Rename and change types of parameters
     private String mParam1;

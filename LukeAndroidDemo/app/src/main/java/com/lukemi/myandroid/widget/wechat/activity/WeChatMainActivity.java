@@ -199,7 +199,7 @@ public class WeChatMainActivity extends AppCompatActivity {
             View view = View.inflate(context, R.layout.item_wechat_main_navigation, null);
             ImageView imageView = (ImageView) view.findViewById(R.id.icon);
             TextView textView = (TextView) view.findViewById(R.id.title);
-            imageView.setImageResource(drawableIDs[position]);
+            imageView.setImageDrawable(getResources().getDrawable(drawableIDs[position]));
             textView.setText(titles[position]);
 
             return view;

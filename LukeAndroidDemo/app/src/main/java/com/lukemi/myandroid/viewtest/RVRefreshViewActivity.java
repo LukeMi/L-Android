@@ -72,7 +72,7 @@ public class RVRefreshViewActivity extends AppCompatActivity implements RefreshH
         setContentView(R.layout.activity_rvrefresh_view);
         ButterKnife.bind(this);
         contentView = LayoutInflater.from(this).inflate(R.layout.contentview_menu, null);
-        rvTest = (RecyclerView) contentView.findViewById(R.id.rv_test);
+        rvTest = (RecyclerView) contentView.findViewById(R.id.mRecyclerView);
         superSwipeRefreshLayout = (SuperSwipeRefreshLayout) contentView.findViewById(R.id.rotate_header_list_view_frame);
         initData();
         initView();

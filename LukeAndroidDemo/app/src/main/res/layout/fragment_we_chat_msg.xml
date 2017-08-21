@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="msg"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
     <ViewFlipper
         android:id="@+id/viewflipper"
@@ -21,10 +21,5 @@
         android:visibility="gone"
         />
 
-    <TextView
-        android:id="@+id/tv_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"/>
 
 </LinearLayout>

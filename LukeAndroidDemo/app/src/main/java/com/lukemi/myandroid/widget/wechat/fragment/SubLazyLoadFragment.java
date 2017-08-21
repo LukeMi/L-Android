@@ -20,7 +20,6 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
 import com.lukemi.myandroid.R;
 import com.lukemi.myandroid.base.BaseLazyFragment;
-import com.lukemi.myandroid.news_today.NewListActivity;
 import com.lukemi.myandroid.news_today.model.JNewsBabyBean;
 import com.lukemi.myandroid.news_today.model.JNewsBaseBean;
 import com.lukemi.myandroid.news_today.model.JNewsCarBean;
@@ -76,7 +75,7 @@ public class SubLazyLoadFragment extends BaseLazyFragment
                            OnRefreshListener {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    @BindView(R.id.rv_test)
+    @BindView(R.id.mRecyclerView)
     RecyclerView rvTest;
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout refreshLayout;
