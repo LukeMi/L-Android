@@ -48,7 +48,7 @@ public class MyApplication extends BaseApplication {
                     break;
                 case MSG_REPEAT_TIME:
                     Log.i("session", "定时任务");
-                    handler.sendEmptyMessageDelayed(MSG_REPEAT_TIME, 3000);
+                    handler.sendEmptyMessageDelayed(MSG_REPEAT_TIME, 60000);
                     break;
             }
 
@@ -69,7 +69,7 @@ public class MyApplication extends BaseApplication {
         super.onCreate();
         Logcat.log("----MyApplication---- is in");
         registerActivityLifecycleCallbacks(new MyActivityLifecycleCallbacks());
-        handler.sendEmptyMessageDelayed(MSG_REPEAT_TIME, 3000);
+        handler.sendEmptyMessageDelayed(MSG_REPEAT_TIME, 60000);
         initReceiver();
 //        ActiveAndroid.initialize(this);
         HttpHelper.init(new VollyProcessor(this));

@@ -8,18 +8,15 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.lukemi.myandroid.util.Logcat;
-
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * 流式布局
  * Created by mzchen on 2017/1/18.
  */
 
-public class FlowLayout extends ViewGroup implements View.OnClickListener {
+public class SingleLineLayout extends ViewGroup implements View.OnClickListener {
 
     /**
      * 存储所有的View，按行记录
@@ -32,12 +29,11 @@ public class FlowLayout extends ViewGroup implements View.OnClickListener {
     /**
      * 布局的宽高
      */
-    private int width = 0; /*height = 0*/
-    ;
+    private int width = 0, height = 0;
     /**
      * 每一行的宽度，width不断取其中最大的宽度
      */
-//    private int lineWidth = 0;
+    private int lineWidth = 0;
     /**
      * 每一行的高度，累加至height
      */
@@ -49,22 +45,25 @@ public class FlowLayout extends ViewGroup implements View.OnClickListener {
     /**
      * 布局中子控件设置的LayoutParam
      */
+
+    private OnSinglineAddCompleteListener listener;
+
     private MarginLayoutParams layoutParams;
 
-    public FlowLayout(Context context) {
+    public SingleLineLayout(Context context) {
         super(context);
     }
 
-    public FlowLayout(Context context, AttributeSet attrs) {
+    public SingleLineLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public FlowLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public SingleLineLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public FlowLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public SingleLineLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
@@ -87,9 +86,6 @@ public class FlowLayout extends ViewGroup implements View.OnClickListener {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        int height = 0;
-        int lineWidth = 0;
-        int count = 0;
         //根据所有子控件设置自己的宽和高
         for (int i = 0; i < getChildCount(); i++) {
             child = getChildAt(i);
@@ -101,21 +97,23 @@ public class FlowLayout extends ViewGroup implements View.OnClickListener {
             int childHeight = child.getMeasuredHeight() + layoutParams.topMargin + layoutParams.bottomMargin;
             //如果加入当前child后超出最大允许宽度，则将目前最大宽度给width，累加height，然后开启新行
             if (lineWidth + childWidth > MeasureSpec.getSize(widthMeasureSpec)) {
+                if (i != 0) {//此处为bug修改
+                    if (listener != null) {
+                        listener.onSinglineComplite(i);
+                        removeView(child);
+                    } else {
+                        throw new RuntimeException("you need to implement OnSinglineAddCompleteListener");
+                    }
+                }
                 width = Math.max(lineWidth, childWidth);// 对比得到最大宽度
-                // 开启新行，将当前行的宽高设为当前child的宽高
-                lineWidth = childWidth;
-                lineHeight = childHeight;
-                // 累加行高
-                height += lineHeight;
-                Logcat.log("onMeasure: for " + (++count));
+                break;
             } else {
                 // 否则（不换行）累加行宽，lineHeight取最大高度
                 lineWidth += childWidth;
                 lineHeight = Math.max(lineHeight, childHeight);
             }
             // 如果是最后一个，则将当前记录的最大宽度和当前lineWidth做比较，并累加行高
-            if (i == getChildCount() - 1 && lineWidth < MeasureSpec.getSize(widthMeasureSpec)) {
-                Logcat.log("onMeasure: lastItem " + height);
+            if (i == getChildCount() - 1) {
                 width = Math.max(width, lineWidth);
                 height += lineHeight;
             }
@@ -125,9 +123,6 @@ public class FlowLayout extends ViewGroup implements View.OnClickListener {
         height = (MeasureSpec.getMode(heightMeasureSpec) == MeasureSpec.EXACTLY) ? MeasureSpec.getSize(heightMeasureSpec) : height;
         setMeasuredDimension(width, height);
         requestLayout();
-
-        Logcat.log("onMeasure: " + height);
-        Logcat.log("onMeasure count:  " + getChildCount());
     }
 
     @SuppressLint("DrawAllocation")
@@ -135,7 +130,7 @@ public class FlowLayout extends ViewGroup implements View.OnClickListener {
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         mAllViews.clear();
         mLineHeight.clear();
-        int lineWidth = 0;
+        lineWidth = 0;
         lineHeight = 0;
         // 存储每一行所有的childView
         List<View> lineViews = new ArrayList<View>();
@@ -193,4 +188,31 @@ public class FlowLayout extends ViewGroup implements View.OnClickListener {
     public void onClick(View v) {
 
     }
+
+    @Override
+    public void removeAllViews() {
+        super.removeAllViews();
+        height = -lineHeight;//防止刷新多一行
+        requestLayout();
+        invalidate();
+    }
+
+
+    @Override
+    public void setVisibility(int visibility) {
+        super.setVisibility(visibility);
+        if (visibility == GONE) {
+            height = -lineHeight;//防止刷新多一行
+        }
+
+    }
+
+    public void setOnSinglineAddCompleteListener(OnSinglineAddCompleteListener listener) {
+        this.listener = listener;
+    }
+
+    public interface OnSinglineAddCompleteListener {
+        void onSinglineComplite(int childCount);
+    }
+
 }

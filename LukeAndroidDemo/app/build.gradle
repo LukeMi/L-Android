@@ -1,8 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao' // apply pluginGreenDao3
 apply plugin: 'android-apt'//ButterKnife配置
-apply plugin: 'kotlin-android'//kolin配置
-apply plugin: 'kotlin-android-extensions'//kolin配置
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.3'
@@ -14,6 +12,9 @@ android {
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        aaptOptions {
+            additionalParameters "--no-version-vectors"
+        }
     }
     buildTypes {
         release {

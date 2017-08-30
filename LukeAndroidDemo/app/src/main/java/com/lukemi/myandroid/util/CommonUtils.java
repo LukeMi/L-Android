@@ -66,6 +66,18 @@ public class CommonUtils {
                 .into(imageView);//传入要设置的ImageView
     }
 
+    public static void glideLoadPicGround(Context context, String url, ImageView imageView) {
+        Glide
+                .with(context)//传入上下文
+                .load(url)//图片url
+                .placeholder(R.drawable.ic_launcher)//（可选）设置默认占位图
+                .error(R.drawable.ic_launcher)//（可选）设置异常占位图
+                .dontAnimate()
+                .centerCrop()//设置动态转换:centerCrop()、fitCenter()等函数也可以通过自定义Transformation
+                .transform(new GlideRoundTransform(context))
+                .into(imageView);//传入要设置的ImageView
+    }
+
     /**
      * Picasso加载网络图片
      *

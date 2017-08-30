@@ -85,7 +85,8 @@
         <activity android:name=".animation.FrameActivity"/>
         <activity android:name=".animation.PropertyActivity"/>
         <activity android:name=".animation.ScaleActivity"/>
-        <activity android:name=".webservice.WebServiceActivity"/>
+        <activity android:name=".webservice.WebServiceActivity">
+        </activity>
         <activity
             android:name=".utiltest.DeviceutilActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -205,14 +206,14 @@
         <activity android:name=".viewtest.RVRefreshViewActivity"/>
         <activity android:name=".AppInfoActivity">
         </activity>
-        <activity android:name=".news_today.NewListActivity"/>
+        <activity android:name=".news_today.NewListActivity">
+        </activity>
         <activity android:name=".widget.CoordinaryLayoutActivity"/>
         <activity android:name=".widget.ConstraintLayoutActivity">
         </activity>
         <activity android:name=".widget.MeasureViewActivity">
         </activity>
         <activity android:name=".main.RadioGroupMainActivity">
-
         </activity>
         <activity android:name=".SchemeActivity">
             <intent-filter>
@@ -230,6 +231,12 @@
 
         </activity>
         <activity android:name=".widget.RoundImageViewListActivity">
+        </activity>
+        <activity android:name=".utiltest.FlowLayoutActivity">
+        </activity>
+        <activity android:name=".viewtest.ResChangeImageViewActivity">
+        </activity>
+        <activity android:name=".viewtest.SingleLineLinearlayoutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

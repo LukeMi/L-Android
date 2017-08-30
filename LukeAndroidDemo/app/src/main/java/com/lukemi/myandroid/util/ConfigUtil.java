@@ -7,7 +7,7 @@ package com.lukemi.myandroid.util;
 
 public class ConfigUtil {
     public static boolean debug = true;
-    public static String TAG = "tbug";
+    public static String TAG = "lukemi";
     public static String TAG_LIFE = "tbug_life";
     public static String TAG_VIEW = "tbug_view";
     public static final int CA_REQUESTCODE = 0x0001;

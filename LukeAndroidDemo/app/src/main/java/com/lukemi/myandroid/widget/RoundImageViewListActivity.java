@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -16,13 +17,18 @@ import com.lukemi.myandroid.BaseActivity;
 import com.lukemi.myandroid.R;
 import com.lukemi.myandroid.bean.DZBean;
 import com.lukemi.myandroid.util.CommonUtils;
-import com.lukemi.myandroid.util.HttpUtils;
+import com.lukemi.myandroid.util.Logcat;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.request.BaseRequest;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,9 +65,30 @@ public class RoundImageViewListActivity extends BaseActivity implements OnRefres
         adapter = new MyAdapter(R.layout.item_process, list, this);
         adapter.setOnItemClickListener(this);
         adapter.setOnLoadMoreListener(this, mRecyclerView);
+        initRecyclerViewListener();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(adapter);
+        refreshLayout.setRefreshHeader(new ClassicsHeader(this).setSpinnerStyle(SpinnerStyle.Translate));
+        refreshLayout.setOnRefreshListener(this);
         refreshLayout.autoRefresh();
+    }
+
+    private void initRecyclerViewListener() {
+        ViewTreeObserver viewTreeObserver = mRecyclerView.getViewTreeObserver();
+        viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                try {
+                    if (mRecyclerView.computeVerticalScrollRange() < getResources().getDisplayMetrics().heightPixels) {
+                        adapter.setEnableLoadMore(false);
+                    } else {
+                        adapter.setEnableLoadMore(true);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     private void refresh() {
@@ -69,8 +96,6 @@ public class RoundImageViewListActivity extends BaseActivity implements OnRefres
         adapter.setEnableLoadMore(false);
         page = 1;
         http();
-
-
     }
 
     private void loadMore() {
@@ -107,18 +132,26 @@ public class RoundImageViewListActivity extends BaseActivity implements OnRefres
         @Override
         protected void convert(BaseViewHolder helper, DZBean.DataBeanX.DataBean item) {
             DZBean.DataBeanX.DataBean.GroupBean group = item.getGroup();
-            DZBean.DataBeanX.DataBean.GroupBean.UserBean user = group.getUser();
-            String name = user.getName();
-            String user_id = user.getUser_id();
-            String avatar_url = user.getAvatar_url();
-            helper.setText(R.id.title,name)
-                    .setText(R.id.pName,user_id);
-            CommonUtils.glideLoadPic(context,avatar_url, (ImageView) helper.getView(R.id.icon));
+            if (group != null) {
+                DZBean.DataBeanX.DataBean.GroupBean.UserBean user = group.getUser();
+                String name = user.getName();
+                String user_id = String.valueOf(user.getUser_id());
+                String avatar_url = user.getAvatar_url();
+                helper.setText(R.id.title, name)
+                        .setText(R.id.pName, user_id);
+                CommonUtils.glideLoadPicGround(context, avatar_url, (ImageView) helper.getView(R.id.icon));
+            } else {
+                helper.setText(R.id.title, "name")
+                        .setText(R.id.pName, "name");
+//                CommonUtils.glideLoadPic(context, avatar_url, (ImageView) helper.getView(R.id.icon));
+            }
+
         }
     }
 
+
     private void http() {
-        OkGo.get(url)
+        OkGo.post(url)
                 .tag(this)
                 .params("page", page, false)
                 .execute(new StringCallback() {
@@ -129,7 +162,16 @@ public class RoundImageViewListActivity extends BaseActivity implements OnRefres
 
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
-                        setList(s);
+                        JSONObject obj = null;
+                        try {
+                            obj = new JSONObject(s);
+                            Logcat.log(obj.toString());
+                            setList(obj.toString());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
                     }
 
                     @Override
