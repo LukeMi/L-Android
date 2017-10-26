@@ -46,6 +46,8 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
     ImageView xml_scaleImg;
     @BindView(R.id.xml_translate_img_TweenAct)
     ImageView xml_translateImg;
+    @BindView(R.id.iv_xml_t_s)
+    ImageView iv_xml_t_s;
 
     private AlphaAnimation alphaAnimation;
 
@@ -86,14 +88,14 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
     }
 
     @OnClick({R.id.alpha_TweenAct,
-                     R.id.rotate_TweenAct,
-                     R.id.scale_TweenAct,
-                     R.id.translate_TweenAct,
-                     R.id.xml_alpha_TweenAct,
-                     R.id.xml_rotate_TweenAct,
-                     R.id.xml_scale_TweenAct,
-                     R.id.xml_translate_TweenAct,
-                     R.id.scale_img_TweenAct,})
+            R.id.rotate_TweenAct,
+            R.id.scale_TweenAct,
+            R.id.translate_TweenAct,
+            R.id.xml_alpha_TweenAct,
+            R.id.xml_rotate_TweenAct,
+            R.id.xml_scale_TweenAct,
+            R.id.xml_translate_TweenAct,
+            R.id.scale_img_TweenAct, R.id.xml_t_s})
     public void onClick(View v) {
         int id = v.getId();
         switch (id) {
@@ -129,8 +131,8 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.rotate_TweenAct:
                 RotateAnimation rotateAnimation = new RotateAnimation(0, 359,
-                                                                             Animation.RELATIVE_TO_SELF, 0.5f,
-                                                                             Animation.RELATIVE_TO_SELF, 0.5f);
+                        Animation.RELATIVE_TO_SELF, 0.5f,
+                        Animation.RELATIVE_TO_SELF, 0.5f);
                 rotateAnimation.setDuration(3000);
 //                rotateAnimation.setInterpolator(new LinearInterpolator());//匀速度
 //                rotateAnimation.setInterpolator(new DecelerateInterpolator());//减度效果
@@ -141,8 +143,8 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.scale_TweenAct:
                 ScaleAnimation scaleAnimation = new ScaleAnimation(0.0f, 1.4f, 0.0f, 1.4f,
-                                                                          Animation.RELATIVE_TO_SELF, 0.5f,
-                                                                          Animation.RELATIVE_TO_SELF, 0.5f);
+                        Animation.RELATIVE_TO_SELF, 0.5f,
+                        Animation.RELATIVE_TO_SELF, 0.5f);
                 scaleAnimation.setDuration(3000);
                 scaleAnimation.setFillAfter(true);
                 scaleImg.startAnimation(scaleAnimation);
@@ -173,6 +175,9 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
                 Intent intent = new Intent();
                 intent.setClass(this, ScaleActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.xml_t_s:
+                iv_xml_t_s.startAnimation(AnimationUtils.loadAnimation(this, R.anim.set_a_s));
                 break;
         }
     }

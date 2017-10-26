@@ -63,7 +63,7 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
                     countDownTV.setText(ssb);
                     if (countTime == 0) {
                         mhandler.removeMessages(MSG_DELAY);
-//                        goToMain();
+                        goToMain();
 
                     } else {
                         countTime -= 1;
