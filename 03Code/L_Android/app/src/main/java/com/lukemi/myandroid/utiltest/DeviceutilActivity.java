@@ -59,6 +59,7 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         int widthPixels = displayMetrics.widthPixels;
         int heightPixels = displayMetrics.heightPixels;
         float density = displayMetrics.density;
+        density = displayMetrics.density+ displayMetrics.densityDpi;
         String IMEI = DeviceUtil.getIMEI(this);
         String IMSI = DeviceUtil.getIMSI(this);
         String SIM = DeviceUtil.getSIM(this);

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.lukemi.myandroid">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -15,6 +16,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     //拍照
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     //LED灯权限4个
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
@@ -53,7 +55,8 @@
         android:label="@string/app_name"
         android:persistent="true"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+        tools:replace="android:icon">
 
         <!-- 百度定位配置 -->
         <meta-data
@@ -62,15 +65,7 @@
         //key:开发者申请的Key
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTask">
-
-            <!--
-              <intent-filter>
-                  <action android:name="android.intent.action.MAIN"/>
-                  <category android:name="android.intent.category.LAUNCHER"/>
-              </intent-filter>
-            -->
-        </activity>
+            android:launchMode="singleTask" />
         <activity android:name=".sessionlifecycle.SessionActivity1" />
         <activity android:name=".sessionlifecycle.SessionActivity2" />
         <activity android:name=".sharedpreferences.SharedPreferencesDemoActivity" />
@@ -80,20 +75,14 @@
         <activity android:name=".animation.AnimationActivity" />
         <activity
             android:name=".animation.TweenActivity"
-            android:label="TweenActivity">
-            <!--   <intent-filter>
-                   <action android:name="android.intent.action.MAIN" />
-
-                   <category android:name="android.intent.category.LAUNCHER" />
-               </intent-filter>-->
-        </activity>
+            android:label="TweenActivity" />
         <activity android:name=".animation.FrameActivity" />
         <activity android:name=".animation.PropertyActivity" />
         <activity android:name=".animation.ScaleActivity" />
-        <activity android:name=".webservice.WebServiceActivity"></activity>
+        <activity android:name=".webservice.WebServiceActivity" />
         <activity
             android:name=".utiltest.DeviceutilActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".getappchannelactivity.GetAppchannelActivity" />
         <activity android:name=".utiltest.ZipUtilActivity" />
         <activity android:name=".handler.HandlerPostActivity" />
@@ -125,7 +114,7 @@
             android:label="控件大全" />
         <activity
             android:name=".widget.TextViewActivity"
-            android:label="TextView控件效果"></activity>
+            android:label="TextView控件效果" />
         <activity
             android:name=".widget.EditTextActivity"
             android:label="EditText控件效果"
@@ -134,7 +123,7 @@
         <activity android:name=".widget.ViewPrintActivity" />
         <activity android:name=".utiltest.BitmapUtilActivity" />
         <activity android:name=".utiltest.UtilMainActivity" />
-        <activity android:name=".widget.wechat.activity.WeChatMainActivity"></activity>
+        <activity android:name=".widget.wechat.activity.WeChatMainActivity" />
         <activity android:name=".widget.TableLayoutActivity" />
         <activity android:name=".widget.satin.SatinMainActivity" />
         <activity android:name=".widget.TabLayoutActivity" />
@@ -142,12 +131,11 @@
         <activity
             android:name=".WelcomeActivity"
             android:theme="@style/WelcActivityTheme">
-
-           <!-- <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
         <activity android:name=".baidu.BDActivity" />
         <activity android:name=".ThirdAPIActivity" />
@@ -155,19 +143,13 @@
         <activity android:name=".setting.SettingActivity" />
         <activity
             android:name=".setting.SettingIntentActivity"
-            android:label="SettingIntentActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="SettingIntentActivity" />
         <activity android:name=".setting.CommomIntentActivity" />
         <activity android:name=".setting.TorchActivity" />
-        <activity android:name=".db.GreenDaoActivity"></activity>
+        <activity android:name=".db.GreenDaoActivity" />
         <activity android:name=".http.httpprocessor.HttpProcessorActivity" />
         <activity android:name=".http.volley.VollyActivity" />
-        <activity android:name=".widget.ImageViewActivity"></activity>
+        <activity android:name=".widget.ImageViewActivity" />
 
         <!-- 百度服务 -->
         <service
@@ -216,12 +198,12 @@
         <activity android:name=".widget.LifecycleFragmentActivity" />
         <activity android:name=".widget.ViewPagerActivity" />
         <activity android:name=".viewtest.RVRefreshViewActivity" />
-        <activity android:name=".AppInfoActivity"></activity>
-        <activity android:name=".news_today.NewListActivity"></activity>
+        <activity android:name=".AppInfoActivity" />
+        <activity android:name=".news_today.NewListActivity" />
         <activity android:name=".widget.CoordinaryLayoutActivity" />
-        <activity android:name=".widget.ConstraintLayoutActivity"></activity>
-        <activity android:name=".widget.MeasureViewActivity"></activity>
-        <activity android:name=".main.RadioGroupMainActivity"></activity>
+        <activity android:name=".widget.ConstraintLayoutActivity" />
+        <activity android:name=".widget.MeasureViewActivity" />
+        <activity android:name=".main.RadioGroupMainActivity" />
         <activity android:name=".SchemeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -234,13 +216,13 @@
                     android:scheme="myandroid" />
             </intent-filter>
         </activity>
-        <activity android:name=".widget.ImageViewCenterInsideActivity">
-
-        </activity>
-        <activity android:name=".widget.RoundImageViewListActivity"></activity>
-        <activity android:name=".utiltest.FlowLayoutActivity"></activity>
-        <activity android:name=".viewtest.ResChangeImageViewActivity"></activity>
+        <activity android:name=".widget.ImageViewCenterInsideActivity" />
+        <activity android:name=".widget.RoundImageViewListActivity" />
+        <activity android:name=".utiltest.FlowLayoutActivity" />
+        <activity android:name=".viewtest.ResChangeImageViewActivity" />
         <activity android:name=".viewtest.SingleLineLinearlayoutActivity" />
+        <activity android:name=".utiltest.ScannerActivity" />
+        <activity android:name=".widget.WebviewDownloadActivity"></activity>
     </application>
 
 </manifest>

@@ -46,6 +46,8 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(com.lukemi.myandroid.R.id.ProgressDialog).setOnClickListener(this);
         findViewById(com.lukemi.myandroid.R.id.Notification).setOnClickListener(this);
         findViewById(com.lukemi.myandroid.R.id.WebviewActivity).setOnClickListener(this);
+        findViewById(com.lukemi.myandroid.R.id.TableLayoutActivity).setOnClickListener(this);
+        findViewById(com.lukemi.myandroid.R.id.WebviewDownloadActivity).setOnClickListener(this);
     }
 
     @Override
@@ -110,6 +112,9 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case com.lukemi.myandroid.R.id.TableLayoutActivity:
                 targetClass = TableLayoutActivity.class;
+                break;
+            case com.lukemi.myandroid.R.id.WebviewDownloadActivity:
+                targetClass = WebviewDownloadActivity.class;
                 break;
 
             default:
