@@ -24,21 +24,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.FontActivity,R.id.DiDiViewActivity,R.id.FloatViewActivity})
+    @OnClick({R2.id.FontActivity,R2.id.DiDiViewActivity,R2.id.FloatViewActivity})
     public void onViewClicked(View view) {
         Intent intent = null;
-        switch (view.getId()) {
-            case R.id.FontActivity:
-                intent = new Intent(this, FontActivity.class);
-                break;
-            case R.id.DiDiViewActivity:
-                intent = new Intent(this, DiDiViewActivity.class);
-                break;
-            case R.id.FloatViewActivity:
-                intent = new Intent(this, FloatViewActivity.class);
-                break;
-            default:
-                break;
+        int i = view.getId();
+        if (i == R.id.FontActivity) {
+            intent = new Intent(this, FontActivity.class);
+
+        } else if (i == R.id.DiDiViewActivity) {
+            intent = new Intent(this, DiDiViewActivity.class);
+
+        } else if (i == R.id.FloatViewActivity) {
+            intent = new Intent(this, FloatViewActivity.class);
+
+        } else {
         }
         if (intent != null) {
             startActivity(intent);

@@ -1,0 +1,469 @@
+[33mcommit 5250f661078b5762c3ac663bf428cc488314a432[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m)[m
+Author: chenmz <chenmz@91360.com>
+Date:   Fri Dec 29 14:25:11 2017 +0800
+
+    [Test] t3
+
+[33mcommit d00dfe1d084a1bbd2098d5ea47a1524167627231[m
+Author: chenmz <chenmz@91360.com>
+Date:   Fri Dec 29 14:24:31 2017 +0800
+
+    [Test] t1
+
+[33mcommit 82ef32d1da04696c63f70141b628d43f608fe320[m
+Author: chenmz <chenmz@91360.com>
+Date:   Fri Dec 29 14:24:02 2017 +0800
+
+    [Add] unknown
+
+[33mcommit 318dbb5a61c29e663997563f16ba28f9530822fa[m[33m ([m[1;31morigin/dev[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: chenmz <chenmz@91360.com>
+Date:   Fri Oct 27 13:08:54 2017 +0800
+
+    [ADD] 新增readme
+
+[33mcommit 6e47b9366ce52afa3cc5bda8a3bbb3546e4ff94d[m
+Author: chenmz <chenmz@91360.com>
+Date:   Fri Oct 27 13:02:51 2017 +0800
+
+    [CHG] 更改项目结构
+
+[33mcommit 93d2fcc7c36120fb8f0337218e2c5eaa5d9b863d[m
+Author: chenmz <chenmz@91360.com>
+Date:   Thu Oct 26 17:20:01 2017 +0800
+
+    [ADD] 新增jks
+
+[33mcommit d437c9b2da4294813f9266c463a0384507f54c09[m
+Author: chenmz <chenmz@91360.com>
+Date:   Wed Aug 30 18:12:08 2017 +0800
+
+    [ADD]
+
+[33mcommit 0817469cb49909e5d848558127ee86fb0f59a09e[m
+Author: chenmz <chenmz@91360.com>
+Date:   Mon Aug 21 19:07:18 2017 +0800
+
+    [ADD] scheme
+
+[33mcommit 2f08e6a1bae9613ffd001ffd2d2e561b2d4475ca[m
+Author: chenmz <chenmz@91360.com>
+Date:   Fri Aug 11 18:18:23 2017 +0800
+
+    [Ignore]
+
+[33mcommit 0280149829c79ab7a0a66129b448c62319530aac[m
+Author: chenmz <chenmz@91360.com>
+Date:   Thu Aug 10 20:01:04 2017 +0800
+
+    [ADD] viewpager + fragment 生命周期
+
+[33mcommit 3df441ff01c1f7a98956bd956e9ac4c41d7ba85f[m
+Author: [LukeMi] <[826861729@qq.com]>
+Date:   Thu Aug 3 22:42:25 2017 +0800
+
+    [CHG] 新增忽略文件
+
+[33mcommit ec4d9f1b0fcbc9b9798b9e520890180efd9d7d63[m
+Author: [LukeMi] <[826861729@qq.com]>
+Date:   Tue Aug 1 07:34:05 2017 +0800
+
+    [ADD] constraintLayout learn
+
+[33mcommit 9d99d679efc65ce6e50edbde844792738a77fe5b[m
+Author: chenmz <chenmz@91360.com>
+Date:   Mon Jul 31 19:32:12 2017 +0800
+
+    [CHG] greenDao
+
+[33mcommit d1f378bae392590ce206e7a6570c7955dd5bde4c[m
+Author: chenmz <chenmz@91360.com>
+Date:   Mon Jul 24 20:50:27 2017 +0800
+
+    [ADD] 悬停布局
+
+[33mcommit 2a53f82e97aa4c63163e71d001bbb2b0f99f005e[m
+Author: chenmz <chenmz@91360.com>
+Date:   Thu Jul 20 19:25:21 2017 +0800
+
+    [ADD] 新增刷新框架
+
+[33mcommit 62de04382a1e9f20b4cf28fc3c84d117f6846ce9[m
+Author: chenmz <chenmz@91360.com>
+Date:   Fri Jul 14 17:39:46 2017 +0800
+
+    [CHG] 更改目录
+
+[33mcommit f56c2070401ef13c2699a993efedf0138b835223[m
+Author: chenmz <chenmz@91360.com>
+Date:   Wed Jul 12 21:43:45 2017 +0800
+
+    [ADD]
+
+[33mcommit 99a298113caf5cbc070ae7488adddce72a17149f[m
+Author: chenmz <chenmz@91360.com>
+Date:   Tue Jul 11 19:56:41 2017 +0800
+
+    [ADD] recyclerView 下拉新开始
+
+[33mcommit 7aaa8a013440007b8ad66d0ea394cb12931bc7c3[m
+Author: chenmz <chenmz@91360.com>
+Date:   Thu Jun 22 18:12:31 2017 +0800
+
+    [ADD] js
+
+[33mcommit 1efac4fedc038a48692a49a96dc8cc5873feec2a[m
+Author: chenmz <chenmz@91360.com>
+Date:   Fri Jun 16 17:59:53 2017 +0800
+
+    [ADD] jsoup
+
+[33mcommit 512c255ef80969e85647645e4bafab51067aec40[m
+Author: chenmz <chenmz@91360.com>
+Date:   Fri Jun 16 15:11:11 2017 +0800
+
+    [Ignore]
+
+[33mcommit e2442776266319ce2631f0b88dbfe4859cc969ad[m
+Author: [LukeMi] <[826861729@qq.com]>
+Date:   Wed Jun 14 07:26:40 2017 +0800
+
+    []
+
+[33mcommit 174f1f3365f99af7e0b2e63c51a9feb4118c937a[m
+Author: chenmz <chenmz@91360.com>
+Date:   Tue Jun 13 19:10:01 2017 +0800
+
+    []
+
+[33mcommit 296bf4af54c5063ed6e9a786baf9069537323c5f[m
+Author: chenmz <chenmz@91360.com>
+Date:   Tue Jun 13 18:33:35 2017 +0800
+
+    [ADD] BRVAH框架使用
+
+[33mcommit a7b35ad235bd9f1921fa05625eb8a87c8508133c[m
+Author: chenmz <chenmz@91360.com>
+Date:   Fri Jun 2 18:39:38 2017 +0800
+
+    [CHG]
+
+[33mcommit 4a4db73e72364ad476e320e765ad27b29be60280[m
+Author: chenmz <chenmz@91360.com>
+Date:   Thu Jun 1 20:31:22 2017 +0800
+
+    [ADD] 增加内存泄漏检测 leakcanary
+
+[33mcommit 16351d3350c07decdb898c99b6100f02bb95263b[m
+Author: chenmz <chenmz@91360.com>
+Date:   Wed May 31 19:03:29 2017 +0800
+
+    [ADD] 版本更新
+
+[33mcommit 9cb761b1fa4441e53c81abb5eb8fe1ebe7cea8c9[m
+Merge: d8d6f8b 852f41c
+Author: LukeMi <826861729@qq.com>
+Date:   Sun May 28 16:21:52 2017 +0800
+
+    []
+
+[33mcommit d8d6f8b93ae96b1f07848b49370c10c121b26ee7[m
+Author: LukeMi <826861729@qq.com>
+Date:   Sun May 28 16:19:51 2017 +0800
+
+    [CHG]
+
+[33mcommit 852f41c5a901c280d5e2f3fd83313c0b9fc56955[m
+Author: chenmz <chenmz@91360.com>
+Date:   Sat May 27 17:42:53 2017 +0800
+
+    []
+
+[33mcommit d7e901a8f351300e8aec7783af44c8ed72620aab[m
+Author: chenmz <chenmz@91360.com>
+Date:   Tue May 23 20:26:09 2017 +0800
+
+    [CHG] ?
+
+[33mcommit 8814478c93d1a28802d2d091f9dca60420ddc84e[m
+Author: chenmz <chenmz@91360.com>
+Date:   Fri May 19 19:05:39 2017 +0800
+
+    [ADD] kotlin build
+
+[33mcommit ceb0b7c8940ddc8c9f0be8854aac065897d0308c[m
+Author: chenmz <chenmz@91360.com>
+Date:   Wed May 17 18:13:39 2017 +0800
+
+    [?]
+
+[33mcommit 6c37a330d12a26c0c72ca556cc19cccd86a33a52[m
+Author: LukeMi <826861729@qq.com>
+Date:   Wed May 17 07:33:55 2017 +0800
+
+    [ADD] recyclerView
+
+[33mcommit 07955e8ee93b5ec5d4cf4dd928a2714095a62b38[m
+Author: chenmz <chenmz@91360.com>
+Date:   Tue May 16 19:07:58 2017 +0800
+
+    [BUG] 修改了可以查询请求的wenbService
+
+[33mcommit 1e39b2e0cb7b242fefd20f7ecc4cc5bcff4bc9ea[m
+Author: chenmz <chenmz@91360.com>
+Date:   Tue May 16 08:54:01 2017 +0800
+
+    [CHG]
+
+[33mcommit 8f10d3ec8d63df43760c2c90759f36bdc756b8fe[m
+Author: LukeMi <826861729@qq.com>
+Date:   Tue May 16 06:36:04 2017 +0800
+
+    [ADD] wechatmain
+
+[33mcommit 074172ba89628769ff8eb7cd0b90e2863573fa32[m
+Merge: 682ad64 ef45134
+Author: LukeMi <826861729@qq.com>
+Date:   Mon May 15 21:07:37 2017 +0800
+
+    Merge branch 'dev' of github.com:LukeMi/LukeFirstRespository into dev
+
+[33mcommit 682ad64014ae34cdbc5c6a398068ebe5e0e1fe19[m
+Author: LukeMi <826861729@qq.com>
+Date:   Mon May 15 21:06:56 2017 +0800
+
+    ‘【】[ADD] xx
+
+[33mcommit ef451343945a5be2dc53c0463d1b1a280e997960[m
+Author: chenmz <chenmz@91360.com>
+Date:   Mon May 15 18:50:13 2017 +0800
+
+    [ADD] Radio Button
+
+[33mcommit 4f9690b6e4d83be352c8ee6c638ebd835ad69dff[m
+Author: LukeMi <826861729@qq.com>
+Date:   Thu May 11 21:50:50 2017 +0800
+
+    [CHG]
+
+[33mcommit e32242acfe29257de5fe19ac68afd8a7da52bb7b[m
+Author: chenmz <chenmz@91360.com>
+Date:   Thu May 11 18:29:07 2017 +0800
+
+    [CHG] zalu
+
+[33mcommit 1d24ec6bc3f2447928e2ab5a75f2801bdb3e2d4c[m
+Author: chenmz <chenmz@91360.com>
+Date:   Wed May 10 17:39:15 2017 +0800
+
+    [ADD] 仿IOS对话框
+
+[33mcommit e30dd1eb902034f9eec34ae2c68351648a3d2bf6[m
+Author: chenmz <chenmz@91360.com>
+Date:   Wed May 10 09:08:34 2017 +0800
+
+    [ADD] 添加注释
+
+[33mcommit 3c3f26f7f496fe812670afb98ddfc138e39c583e[m
+Author: LukeMi <826861729@qq.com>
+Date:   Wed May 10 07:34:38 2017 +0800
+
+    [ADD] evenbus 功能
+
+[33mcommit d24e9e0e270c5a98d12be859bb840170b940a226[m
+Author: LukeMi <826861729@qq.com>
+Date:   Mon May 8 07:32:29 2017 +0800
+
+    [ADD] 改bug
+
+[33mcommit 5281aa42c20c7da7df9922b8e79843d4d935d305[m
+Author: chenmz <chenmz@91360.com>
+Date:   Thu May 4 12:54:12 2017 +0800
+
+    [DEL] 不需要的包名
+
+[33mcommit 211dd78bdb94be598e342224425fd53d528219e7[m
+Author: LukeMi <826861729@qq.com>
+Date:   Wed May 3 00:12:52 2017 +0800
+
+    [ADD] xx
+
+[33mcommit 7afa8e5b90174607a4e3763098bb5b437eb17769[m
+Author: LukeMi <826861729@qq.com>
+Date:   Sun Apr 30 18:46:18 2017 +0800
+
+    [ HG] 修改目录
+
+[33mcommit 113cf51a1c5e105a29cad5fe143b03dc5652bf5d[m
+Author: LukeMi <826861729@qq.com>
+Date:   Fri Apr 21 07:55:41 2017 +0800
+
+    [ADD] nuew function
+
+[33mcommit c540fa75eb6838b1e87fed56679f63f456761232[m
+Author: LukeMi <826861729@qq.com>
+Date:   Tue Mar 28 11:36:37 2017 +0800
+
+    [ADD] new
+
+[33mcommit c8b2235be40c60868ea5ebcf0fc6a042513db437[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Fri Mar 10 16:26:40 2017 +0800
+
+    []
+
+[33mcommit 3f0dc4f2c1392245cb4b5a98e79d18e4dec9a72e[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Sun Mar 5 18:54:35 2017 +0800
+
+    [ADD] new Learing
+
+[33mcommit 8804e7feb07cb833cb01efef3296f7af0a5e497b[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Sun Mar 5 18:48:28 2017 +0800
+
+    [ADD] XML2Json帮助类
+
+[33mcommit 5076659f401849cdcc8e14bde95b2ada21949fa9[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Sun Mar 5 18:43:15 2017 +0800
+
+    [ADD] 增加控件学习
+
+[33mcommit 8abccf79c89952b1ae27b1c6292a9799fc6f099e[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Mon Feb 20 18:00:45 2017 +0800
+
+    [CHG] 更改目录
+
+[33mcommit 0c8f31c8c2023dab3636b7a9e984e5a54404a5cd[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Fri Feb 17 09:32:15 2017 +0800
+
+    [ADD] library catalog changed
+
+[33mcommit c82e3d2dcf5bc39e0d8b44b28c760e076548d97a[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Wed Feb 8 18:03:12 2017 +0800
+
+    [ADD] Mob短信验证（未完成）
+
+[33mcommit bbdfe49fd3a72ad1c5879a8fe086bdf97473c292[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Tue Feb 7 23:11:29 2017 +0800
+
+    [CHG] 更改目录
+
+[33mcommit b8f885cfaee4ceb8e346e8111c2d1dce93bae607[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Sat Feb 4 18:01:59 2017 +0800
+
+    [CHG] use ListView
+
+[33mcommit 142fee9fdaaa73aa64f067b3c3e56c990174c3af[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Fri Feb 3 18:02:46 2017 +0800
+
+    [add] 手机进程管理
+
+[33mcommit 9cb3ca35099154adbeb0fbf17f2e252265ec01fa[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Tue Jan 24 17:58:07 2017 +0800
+
+    [ADD] xx
+
+[33mcommit 5e12edf5477faf9c9eeed3594e4a2328c7f7dcc3[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Mon Jan 23 18:04:21 2017 +0800
+
+    [ADD] library
+
+[33mcommit 516411c9d61eead6018d310dbb7a28682a691bd6[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Fri Dec 30 19:46:18 2016 +0800
+
+    [ADD] webView
+
+[33mcommit 4cd0996450d4121bf36ac65a47072240d8398684[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Tue Dec 27 20:08:18 2016 +0800
+
+    []
+
+[33mcommit a2757c15f74be6960d54dfa153696c4140c95aba[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Mon Dec 26 19:33:40 2016 +0800
+
+    [ADD] 摄像头
+
+[33mcommit 90b66cd0bb6a09a95550fff5d09f5c8f471da325[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Wed Dec 21 19:03:38 2016 +0800
+
+    [ADD] Handler
+
+[33mcommit 672f70f0cc45d0a2f23ca093a6cfb26f200dcdf5[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Sat Dec 10 18:15:03 2016 +0800
+
+    [ADD] Android studio 打包
+
+[33mcommit 15038633f38dc13145e88ff2881e600332556d42[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Wed Dec 7 22:57:33 2016 +0800
+
+    [ADD] 新增设备帮助类设备参数
+
+[33mcommit 60aec4462acd9f534858540575aafa9c8dbd2e16[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Mon Dec 5 11:40:59 2016 +0800
+
+    [CHG]更换log
+
+[33mcommit c8d2458ed5d1ba02723de63e8ade4ea997c1e19d[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Mon Dec 5 09:01:04 2016 +0800
+
+    [ADD] 新增类型转换帮助类（待扩展）
+
+[33mcommit 2ed23dd8f165b9d08c28c224acf7135f2b9eb54e[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Fri Dec 2 14:10:37 2016 +0800
+
+    [ADD] 新增Webservice请求（手机号查询），deviceInfo帮助类（已做6.0权限适配）
+
+[33mcommit b2de4b4483710102d17143327bd470971d005779[m
+Author: LukeMi <826861729@qq.com>
+Date:   Thu Dec 1 08:24:35 2016 +0800
+
+    [ADD] doc
+
+[33mcommit a94987450a6f9ec54f673f9d189bb9c882c685bf[m
+Author: Chen Mingzhi <mzchen@akazam.com>
+Date:   Wed Nov 30 15:22:48 2016 +0800
+
+    [ADD] 添加文件到remote resposity -b dev
+
+[33mcommit d9317ae6c16ee0a2d2421b0b50c650c1ab2218bb[m
+Author: LukeMi <826861729@qq.com>
+Date:   Thu Nov 24 23:51:40 2016 +0800
+
+    [ADD] 记住密码
+
+[33mcommit e0daa6478edc1fadc4418b4f26f8898c383e18ef[m
+Author: LukeMi <826861729@qq.com>
+Date:   Thu Nov 24 23:45:51 2016 +0800
+
+    [ADD] wuguitest
+
+[33mcommit 23a794fc3e8e7286c1bc388bc406a7042bef1f08[m
+Author: LukeMi <826861729@qq.com>
+Date:   Thu Nov 24 23:37:59 2016 +0800
+
+    [ADD] pic
+
+[33mcommit 09db679a8e887da127d3f245aa385caab350acf5[m
+Author: LukeMi <826861729@qq.com>
+Date:   Thu Nov 24 23:09:57 2016 +0800
+
+    [ADD] pic

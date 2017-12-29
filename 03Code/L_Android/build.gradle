@@ -13,6 +13,8 @@ buildscript {
         // in the individual module build.gradle files
         //ButterKnife配置
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
+
         //kotlin配置
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.1'
     }
