@@ -123,20 +123,23 @@
         <activity android:name=".widget.ViewPrintActivity" />
         <activity android:name=".utiltest.BitmapUtilActivity" />
         <activity android:name=".utiltest.UtilMainActivity" />
-        <activity android:name=".widget.wechat.activity.WeChatMainActivity" />
+        <activity android:name=".widget.wechat.activity.WeChatMainActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
         <activity android:name=".widget.TableLayoutActivity" />
         <activity android:name=".widget.satin.SatinMainActivity" />
         <activity android:name=".widget.TabLayoutActivity" />
         <activity android:name=".widget.ListViewActivity" />
         <activity
             android:name=".WelcomeActivity"
-            android:theme="@style/WelcActivityTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/WelcActivityTheme" />
         <activity android:name=".baidu.BDActivity" />
         <activity android:name=".ThirdAPIActivity" />
         <activity android:name=".setting.WallPaperActivity" />
@@ -222,7 +225,14 @@
         <activity android:name=".viewtest.ResChangeImageViewActivity" />
         <activity android:name=".viewtest.SingleLineLinearlayoutActivity" />
         <activity android:name=".utiltest.ScannerActivity" />
-        <activity android:name=".widget.WebviewDownloadActivity"></activity>
+        <activity android:name=".widget.WebviewDownloadActivity" />
+        <activity android:name=".list_r.RvDividerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

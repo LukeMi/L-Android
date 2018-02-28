@@ -85,5 +85,6 @@
     <dimen name="sp10">10sp</dimen>
     <dimen name="dp5">5dp</dimen>
     <dimen name="dp10">10dp</dimen>
+    <dimen name="dp1">1dp</dimen>
 
 </resources>
