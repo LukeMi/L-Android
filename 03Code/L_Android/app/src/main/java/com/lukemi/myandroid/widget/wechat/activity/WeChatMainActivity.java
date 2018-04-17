@@ -201,7 +201,6 @@ public class WeChatMainActivity extends AppCompatActivity {
             TextView textView = (TextView) view.findViewById(R.id.title);
             imageView.setImageDrawable(getResources().getDrawable(drawableIDs[position]));
             textView.setText(titles[position]);
-
             return view;
         }
 

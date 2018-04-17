@@ -87,9 +87,14 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         if (mhandler.hasMessages(MSG_DELAY)) {
             mhandler.removeMessages(MSG_DELAY);
         }
-        if (asyncTask != null && !asyncTask.isCancelled()) {
-            asyncTask.cancel(true);
-        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (asyncTask != null && !asyncTask.isCancelled()) {
+                    asyncTask.cancel(true);
+                }
+            }
+        }).start();
         super.onDestroy();
     }
 
@@ -107,7 +112,7 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         showProcessbar.setProgress(0);
 
         countDownTV.setOnClickListener(this);
-        asyncTask = new PicAsncTask().execute(picURL);
+//        asyncTask = new PicAsncTask().execute(picURL);
     }
 
     /**
@@ -117,8 +122,8 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
      * created at: 2017/3/31 14:44
      */
     private void goToMain() {
-        finish();
         startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+        finish();
     }
 
 

@@ -218,6 +218,13 @@
             android:layout_weight="1"
             android:text="TableLayoutActivity"
             android:textAllCaps="false" />
+        <Button
+            android:id="@+id/WebviewDownloadActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="WebviewDownloadActivity"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 </ScrollView>
