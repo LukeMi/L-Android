@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bkg_first"
+    tools:context="com.lukemi.myandroid.main.RadioGroupMainActivity">
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="0dp"
+        android:layout_height="551dp"
+        app:layout_constraintBottom_toTopOf="@+id/spliteline"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/spliteline"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/gray_text_content1"
+        app:layout_constraintBottom_toTopOf="@+id/rg_menu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <RadioGroup
+        android:id="@+id/rg_menu"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <RadioButton
+            android:id="@+id/tab_weixin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:checked="true"
+            android:drawablePadding="@dimen/view_1"
+            android:drawableTop="@drawable/selector_wechat_main_message"
+            android:gravity="center"
+            android:padding="@dimen/view_5"
+            android:text="@string/tab_weixin"
+            android:textColor="@color/selector_wechat_navigation_textcolor"/>
+
+        <RadioButton
+            android:id="@+id/tab_contact"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:drawablePadding="@dimen/view_1"
+            android:drawableTop="@drawable/selector_wechat_main_contact"
+            android:gravity="center"
+            android:padding="@dimen/view_5"
+            android:text="@string/tab_contact"
+            android:textColor="@color/selector_wechat_navigation_textcolor"
+            />
+
+        <RadioButton
+            android:id="@+id/tab_find"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:drawablePadding="@dimen/view_1"
+            android:drawableTop="@drawable/selector_wechat_main_discover"
+            android:gravity="center"
+            android:padding="@dimen/view_5"
+            android:text="@string/tab_find"
+            android:textColor="@color/selector_wechat_navigation_textcolor"
+            />
+
+        <RadioButton
+            android:id="@+id/tab_me"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:drawablePadding="@dimen/view_1"
+            android:drawableTop="@drawable/selector_wechat_main_mine"
+            android:gravity="center"
+            android:padding="@dimen/view_5"
+            android:text="@string/tab_me"
+            android:textColor="@color/selector_wechat_navigation_textcolor"
+            />
+
+    </RadioGroup>
+
+
+</android.support.constraint.ConstraintLayout>

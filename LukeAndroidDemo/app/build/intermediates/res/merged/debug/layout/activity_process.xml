@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.tbug.android.collection.com.lukemi.android.collection.killprocess.ProcessActivity">
+
+    <ListView
+        android:id="@+id/appList"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/showTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示信息" />
+
+    <Button
+        android:id="@+id/addDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加一条信息到数据库" />
+
+    <Button
+        android:id="@+id/delDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="数据库删除操作" />
+
+    <Button
+        android:id="@+id/updateDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="数据库更新操作" />
+
+    <Button
+        android:id="@+id/queryDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="数据库查询操作" />
+
+    <ListView
+        android:id="@+id/showDB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" />
+
+</LinearLayout>

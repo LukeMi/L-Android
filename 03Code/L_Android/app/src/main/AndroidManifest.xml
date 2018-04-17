@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lukemi.myandroid">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    //设置壁纸
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    //拨打电话
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    //拍照
+    <uses-permission android:name="android.permission.CAMERA" />
+    //LED灯权限4个
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.flash" />
+    //通知栏震动
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- 百度定位权限开始 -->
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <!-- 百度定位权限结束 -->
+    <application
+        android:name=".app.MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- 百度定位配置 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="GqUsvN3W5Fii4hp0lhYM2kWiG3NuxySu" />
+        //key:开发者申请的Key
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask"></activity>
+        <activity android:name=".sessionlifecycle.SessionActivity1" />
+        <activity android:name=".sessionlifecycle.SessionActivity2" />
+        <activity android:name=".sharedpreferences.SharedPreferencesDemoActivity" />
+        <activity android:name=".handler.BaseHandlerActivity" />
+        <activity android:name=".handler.HandlerTestActivity" />
+        <activity android:name=".perssion.PermissionActivity" />
+        <activity android:name=".animation.AnimationActivity" />
+        <activity
+            android:name=".animation.TweenActivity"
+            android:label="TweenActivity">
+        </activity>
+        <activity android:name=".animation.FrameActivity" />
+        <activity android:name=".animation.PropertyActivity" />
+        <activity android:name=".animation.ScaleActivity" />
+        <activity android:name=".webservice.WebServiceActivity"></activity>
+        <activity
+            android:name=".utiltest.DeviceutilActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".getappchannelactivity.GetAppchannelActivity" />
+        <activity android:name=".utiltest.ZipUtilActivity" />
+        <activity android:name=".handler.HandlerPostActivity" />
+        <activity android:name=".camera.CameraActivity" />
+        <activity android:name=".viewtest.EleSignActivity" />
+        <activity android:name=".viewtest.CViewActivity" />
+        <activity
+            android:name=".widget.WebviewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".fluxanalistics.FluxActivity" />
+        <activity android:name=".receiver.ReceiverActivity" />
+        <activity android:name=".plug.PlugActivity" />
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".killprocess.ProcessActivity" />
+        <activity android:name=".killprocess.ProcessDetailActivity" />
+        <activity android:name=".network_operation.NetworkActivity" />
+        <activity android:name=".mob_sms.Mob_SMS_Activity" />
+        <activity android:name=".weather.WeatherActivity" />
+        <activity
+            android:name=".baidu.BDLocActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".baidu.BDLocQuestionActivity" />
+        <activity android:name=".camera.WX_Camera_Activity" />
+        <activity android:name=".utiltest.ToastUtilActivity" />
+        <activity android:name=".viewtest.DialogUtilActivity" />
+        <activity
+            android:name=".widget.WidgetActivity"
+            android:label="控件大全" />
+        <activity
+            android:name=".widget.TextViewActivity"
+            android:label="TextView控件效果"></activity>
+        <activity
+            android:name=".widget.EditTextActivity"
+            android:label="EditText控件效果"
+            android:theme="@style/Theme.AppCompat" />
+        <activity android:name=".widget.wechat.activity.WeChatLoginActivity" />
+        <activity android:name=".widget.ViewPrintActivity" />
+        <activity android:name=".utiltest.BitmapUtilActivity" />
+
+        <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
+        <activity android:name=".utiltest.UtilMainActivity" />
+        <activity android:name=".widget.wechat.activity.WeChatMainActivity" />
+        <activity android:name=".widget.TableLayoutActivity" />
+        <activity android:name=".widget.satin.SatinMainActivity" />
+        <activity android:name=".viewtest.ZoomHeadListViewActivity" />
+
+
+        <activity android:name=".widget.TabLayoutActivity" />
+        <activity android:name=".widget.ListViewActivity" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:theme="@style/WelcActivityTheme" />
+        <activity android:name=".baidu.BDActivity" />
+        <activity android:name=".ThirdAPIActivity" />
+        <activity android:name=".setting.WallPaperActivity" />
+        <activity android:name=".setting.SettingActivity" />
+        <activity android:name=".setting.SettingIntentActivity" />
+        <activity android:name=".setting.CommomIntentActivity" />
+        <activity android:name=".setting.TorchActivity" />
+        <activity android:name=".db.GreenDaoActivity">
+
+        </activity>
+
+        <activity android:name=".http.httpprocessor.HttpProcessorActivity" />
+        <activity android:name=".http.volley.VollyActivity" />
+        <activity android:name=".widget.ImageViewActivity"></activity>
+
+
+        <!-- 百度服务 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+        <service
+            android:name=".service.ForegroundService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":foreground_service" />
+
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+                <action android:name="com.lukemi.foregroundservice.destroy" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".evenbus.EvenBusActivity" />
+        <activity android:name=".evenbus.ReceiveEventActivity" />
+        <activity android:name=".widget.DialogActivity" />
+        <activity android:name=".viewtest.ClipPhotoViewActivity" />
+        <activity android:name=".viewtest.UploadActivity" />
+        <activity android:name=".widget.RGActivity" />
+        <activity android:name=".widget.ReccyclerViewActivity" />
+        <activity android:name=".evenbus.BackEvenBUSFragment_Activity" />
+        <activity android:name=".evenbus.ForgroundActivity" />
+        <activity android:name=".widget.wechat.CommentActivity" />
+        <activity
+            android:name=".widget.PopupActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustUnspecified" />
+        <activity android:name=".widget.brvah.BRVAHActivity" />
+        <activity android:name=".widget.brvah.MultieBRVAHActivity" />
+        <activity android:name=".widget.brvah.BaseQuickActivity" />
+        <activity android:name=".jsoup.JsoupActivity" />
+        <activity android:name=".widget.JSAndroidActivity" />
+        <activity android:name=".widget.LifecycleFragmentActivity" />
+        <activity android:name=".widget.ViewPagerActivity" />
+        <activity android:name=".viewtest.RVRefreshViewActivity" />
+        <activity android:name=".AppInfoActivity"></activity>
+        <activity android:name=".news_today.NewListActivity"></activity>
+
+        <activity android:name=".widget.CoordinaryLayoutActivity"></activity>
+        <activity android:name=".widget.ConstraintLayoutActivity"/>
+
+
+        <activity android:name=".widget.MeasureViewActivity"></activity>
+        <activity android:name=".main.RadioGroupMainActivity"></activity>
+
+        <activity android:name=".widget.RoundImageViewListActivity"></activity>
+        <activity android:name=".utiltest.FlowLayoutActivity"></activity>
+        <activity android:name=".viewtest.ResChangeImageViewActivity"></activity>
+        <activity android:name=".viewtest.SingleLineLinearlayoutActivity" />
+    </application>
+
+</manifest>

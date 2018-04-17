@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_context_zoomlistview.xml",
+        "source": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\src\\main\\res\\menu\\menu_context_zoomlistview.xml"
+    },
+    {
+        "merged": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_button_navigation_view.xml",
+        "source": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\src\\main\\res\\menu\\menu_button_navigation_view.xml"
+    },
+    {
+        "merged": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_wechat_main.xml",
+        "source": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\src\\main\\res\\menu\\menu_wechat_main.xml"
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\default_pic.jpg",
+        "source": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\src\\main\\res\\mipmap-mdpi\\default_pic.jpg"
+    },
+    {
+        "merged": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\pageload_icon2.png",
+        "source": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\src\\main\\res\\mipmap-mdpi\\pageload_icon2.png"
+    },
+    {
+        "merged": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\android.png",
+        "source": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\src\\main\\res\\mipmap-mdpi\\android.png"
+    },
+    {
+        "merged": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\progress_round_1.png",
+        "source": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\src\\main\\res\\mipmap-mdpi\\progress_round_1.png"
+    },
+    {
+        "merged": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\pageload_icon1.png",
+        "source": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\src\\main\\res\\mipmap-mdpi\\pageload_icon1.png"
+    },
+    {
+        "merged": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\abc.png",
+        "source": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\src\\main\\res\\mipmap-mdpi\\abc.png"
+    },
+    {
+        "merged": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\bd_loc_bg.png",
+        "source": "D:\\git\\L-Android\\LukeAndroidDemo\\app\\src\\main\\res\\mipmap-mdpi\\bd_loc_bg.png"
+    }
+]

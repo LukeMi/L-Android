@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_baidu_loc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bd_loc_bg"
+    tools:context="com.tbug.android.collection.com.lukemi.android.collection.baidu.BDLocActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="@color/transparent"
+        android:text="百度定位"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/topseparate"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/title"
+        android:background="@color/sbc_snippet_text" />
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/aliceblue"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.lukemi.myandroid.view.NoPadingTextView
+            android:id="@+id/startLoc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content"
+            android:layout_weight="1"
+            android:background="@drawable/selector_press_textview"
+            android:gravity="center"
+            android:text="start_Location"
+            android:textAllCaps="false"
+            android:textColor="@color/chocolate"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/black" />
+
+        <com.lukemi.myandroid.view.NoPadingTextView
+            android:id="@+id/stopLoc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/content"
+            android:layout_toRightOf="@+id/startLoc"
+            android:layout_weight="1"
+            android:background="@drawable/selector_press_textview"
+            android:gravity="center"
+            android:text="stop_Location"
+            android:textAllCaps="false"
+            android:textColor="@color/orangered"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/topseparate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:text="百度定位显示\n点击按钮开始定位start_Location"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+
+</RelativeLayout>

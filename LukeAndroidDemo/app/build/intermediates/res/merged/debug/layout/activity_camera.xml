@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_camera"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="2dp"
+    tools:context="com.tbug.android.collection.com.lukemi.android.collection.camera.CameraActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp">
+
+            <Button
+                android:id="@+id/takePhotos_CA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="点击拍照" />
+
+            <Button
+                android:id="@+id/uploadPhotos_CA"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="点击上传" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/preViewPic_CA"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:src="@mipmap/default_pic"
+            android:scaleType="fitCenter"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/nativiePic_CA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="本地图片"/>
+
+</LinearLayout>

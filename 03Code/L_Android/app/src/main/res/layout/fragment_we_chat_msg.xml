@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="msg"
+        android:visibility="visible"/>
+
+    <ViewFlipper
+        android:id="@+id/viewflipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:flipInterval="3000"
+        android:inAnimation="@anim/actionsheet_dialog_in"
+        android:outAnimation="@anim/actionsheet_dialog_out"
+        android:visibility="gone"
+        />
+
+
+</LinearLayout>
