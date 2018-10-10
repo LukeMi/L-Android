@@ -1,0 +1,33 @@
+@startuml
+
+skinparam backgroundcolor #FFC125
+skinparam handwritten true           /'线条形状'/
+
+skinparam sequence{
+    ArrowColor #red
+    ActorBorderColor DeepSkyBlue
+    LifeLineBorderColor blue
+    LifeLineBackgroundColor #red
+
+    ParticipantBorderColor DeepSkyBlue
+    ParticipantBackgroundColor #0f0
+    ParticipantFontSize 20
+    ParticipantFontColor white
+
+    ActorBorderColor Red
+    ActorBackgroundColor #0f0
+    ActorFontSize 16
+    ActorFontColor green
+
+}
+
+participant Alice
+participant Bob
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+
+create Actor C
+@enduml

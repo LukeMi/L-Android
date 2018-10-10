@@ -1,0 +1,34 @@
+@startuml
+
+(*)if "Some test" then
+ -right->[false] activity2
+ else
+ -down->[true] "activity1"
+ endif
+
+ if "" then
+
+ if "" then
+ -left->activity5
+ else
+ --> activity6
+ endif
+
+ else
+
+ -right-> activity3
+
+
+ if "last test" then
+-right-> activity8
+else
+ -down-> activity7
+endif
+
+
+
+endif
+
+
+
+@enduml

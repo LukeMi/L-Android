@@ -252,12 +252,12 @@ public class ListViewActivity extends AppCompatActivity {
             Glide
                     .with(context)//传入上下文
                     .load(url)//图片url
-                    .asBitmap()//（可选）只允许加载静态图片，不需要Glide去帮我们自动进行图片格式的判断了（gif图片就只能先是一帧）
-//                        .asGif()//（可选）只允许加载动态图片，和上面的只能选一个
-                    .placeholder(R.drawable.ic_launcher)//（可选）设置默认占位图
-//                    .animate(R.anim.alpha)//设置动画
-                    .error(R.drawable.ic_launcher)//（可选）设置异常占位图
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)//（可选）禁用缓存
+//                    .asBitmap()//（可选）只允许加载静态图片，不需要Glide去帮我们自动进行图片格式的判断了（gif图片就只能先是一帧）
+////                        .asGif()//（可选）只允许加载动态图片，和上面的只能选一个
+//                    .placeholder(R.drawable.ic_launcher)//（可选）设置默认占位图
+////                    .animate(R.anim.alpha)//设置动画
+//                    .error(R.drawable.ic_launcher)//（可选）设置异常占位图
+//                    .diskCacheStrategy(DiskCacheStrategy.NONE)//（可选）禁用缓存
                     .into(imageView);//传入要设置的ImageView
         }
 

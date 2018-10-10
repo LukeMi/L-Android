@@ -1,0 +1,24 @@
+@startsalt
+{
+    Login | "MyName "
+
+    Password | "****   "
+
+    [Cancel] | [  OK   ]
+    {T
+    + World
+    ++ America
+    +++WS
+    +++NewYork
+
+    ++ Canada
+
+    ++Asia
+    +++China
+    ++++Anhui
+    ++++Jiangsu
+    ++Japan
+    }
+
+}
+@enduml

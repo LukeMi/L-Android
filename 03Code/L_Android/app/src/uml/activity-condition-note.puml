@@ -1,0 +1,16 @@
+@startuml
+
+ start
+:foo1;
+floating note left : This is a note
+:foo2;
+note right
+this note is serval //line// and can
+contain <b>HTML</b>
+====
+*Clling ""fool()"" is prohibited
+end note
+stop
+
+
+@enduml

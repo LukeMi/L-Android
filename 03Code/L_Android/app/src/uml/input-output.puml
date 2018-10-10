@@ -1,0 +1,17 @@
+@startuml
+
+participant A as A
+
+[-> A : input
+activate A
+A->A: one
+activate A
+A->] : request
+
+A<--] : result
+deactivate A
+
+[<- A : output
+deactivate A
+
+@enduml

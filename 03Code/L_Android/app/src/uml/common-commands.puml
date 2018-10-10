@@ -1,0 +1,14 @@
+@startuml
+
+title visible note package title skin splite
+Alice --> Bob : request
+right header
+<font color=red>Waring</font>
+Do not use in production
+endheader
+center footer generated for demonstration
+
+
+
+
+@enduml

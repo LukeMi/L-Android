@@ -24,6 +24,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+    }
     private void initLayout() {
         if (bindLayout() != 0) {
             setContentView(bindLayout());

@@ -1,0 +1,14 @@
+@startuml
+salt
+{
+  just plain text
+  [this sdfsfsdfsd]
+  ()Unchecked Radio
+  (X)Checked Radio
+  []unchecked Box
+  [X]Checked Box
+  "Enter text box"
+  ^this is droplist^
+}
+
+@enduml

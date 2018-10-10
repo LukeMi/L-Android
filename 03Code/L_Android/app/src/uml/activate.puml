@@ -1,0 +1,36 @@
+@startuml
+participant " //**Alice**// " as A #RED
+participant Bob as B
+participant Client as C
+participant Dick as D
+A -[#blue]> B : hit
+||45||
+activate B
+
+B -> B: one
+activate B
+B -> B: two
+activate B #0f0
+B -> C : here
+
+activate C
+
+
+C->B:end
+deactivate B
+
+C -> D: c2d
+activate D
+
+D -> C: got itd
+destroy D
+
+C->A:end
+deactivate C
+deactivate B
+
+B -> A: hello
+
+deactivate B
+
+@enduml

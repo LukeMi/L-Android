@@ -1,0 +1,40 @@
+@startuml
+
+actor actor #red
+
+boundary boundary
+
+control control
+
+entity entity
+
+database database
+
+/'
+    participant "mine"  as L #0ff
+    这句的语法和下面的一语发一致
+'/
+participant L as "mine" #ffa
+
+
+mine --> login:  ERE
+login -> register: register op
+
+/'
+    register -->  alias as "tag"
+     这句的语法和下面的一语发一致
+     將 tag 成員设置别名为alias ，若带 message 加 :.*(通配符)
+'/
+register --> "tag" as alias: 設置別名
+
+alias -> register: OK
+
+
+actor -> boundary: to boundary
+actor -> control: to control
+actor -> entity: to entity
+actor -> database: to database
+actor -> boundary: to boundary
+
+
+@enduml

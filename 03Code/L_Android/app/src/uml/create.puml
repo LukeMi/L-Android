@@ -1,0 +1,19 @@
+@startuml
+participant Alice as  A
+participant Bob as  B
+
+A -> B: Authentication Request
+A --> B: Authentication Response
+
+A -\\ B: Another authentication Request
+A <-- B: another authentication Response
+
+create database CD
+
+B -> CD : get data
+||45||
+activate CD
+deactivate CD
+B //- CD : return data
+destroy CD
+@enduml

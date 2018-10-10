@@ -1,0 +1,11 @@
+@startuml
+Alice -> Bob: Hello
+
+
+...some --delay-- ...
+
+Bob --> Alice: hi
+
+
+
+@enduml

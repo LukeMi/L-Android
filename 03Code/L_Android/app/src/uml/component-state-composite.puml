@@ -1,0 +1,18 @@
+@startuml
+
+title Composite state
+[*] --> NotShooting
+state NotShooting{
+    [*] --> Idle
+    Idle --> Configuring : evConfig
+    Configuring --> Idle : asvConfig
+}
+
+state Configuring{
+    [*] --> NewValueSelection
+    NewValueSelection --> NewValuePreview : evNoewValue
+    NewValuePreview --> NewValueSelection : evNoewValueRe
+    NewValueSelection --> NewValuePreview : evNoewValueSaved
+}
+
+@endum

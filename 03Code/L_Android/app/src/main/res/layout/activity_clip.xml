@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dp16"
+    tools:context=".tutorial.clip.ClipActivity">
+
+    <TextView
+        android:id="@+id/tv_content_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp48"
+        android:gravity="center"
+        android:text="content: "
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp48"
+        android:layout_marginLeft="@dimen/dp16"
+        android:hint="pls input content"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/tv_content_hint"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_copy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="copy"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content_hint" />
+
+    <Button
+        android:id="@+id/btn_paste"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="paste"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/btn_copy"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content_hint" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="clear"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/btn_paste"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content_hint" />
+
+    <TextView
+        android:id="@+id/tv_content_show"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:layout_marginTop="@dimen/dp20"
+        android:gravity="center_vertical"
+        android:hint="show clipboard copy "
+        android:textColorHint="#f00"
+        android:textSize="@dimen/sp16"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_copy" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,383 @@
+@startuml
+
+
+ Class01 <|-- Class02
+ Class03 *-- Class04
+ Class05 o-- Class06
+ Class07 -- Class08
+ Class09 .. Class10
+
+ newpage
+
+ title page2
+ Class11 <|-- Class12
+ Class13 --> Class14
+ Class15 ..> Class16
+ Class17 ..|> Class18
+ Class19 <--* Class20
+
+ newpage
+
+ title page3
+ Class01 "1" *-- "many" Class02  : contain
+ Class03 o-- Class04 : aggregation
+ Class05 --> "1" Class06
+
+ newpage
+
+ title page4
+ Driver - Car  : drivers >
+ Car *- Wheel : hvae
+ Car -- Person : < owen
+
+ newpage
+
+ title page5
+ Object  <|-- ArrayList
+
+ Object : equal()
+ ArrayList : Object[] elementData
+ ArrayList : size()
+
+ newpage
+
+ title page6
+ Class Dummy{
+    String data
+    void method()
+ }
+
+ Class Flight{
+    num : int
+    name : String
+ }
+
+ newpage
+
+ title page7 修饰符
+ Class Dummy{
+    -private
+    #protected
+    ~package private
+    +public
+
+    -private()
+    #protected()
+    ~packagePrivate()
+    +public()
+ }
+
+ newpage
+ title page8 Abstract and Static
+ Class Dummy{
+    {static} String id
+    {abstract} void method()
+
+ }
+
+ newpage
+
+ title page9 Advanced class body
+ Class fool{
+     you
+     can
+     --
+     as you
+     and group
+     ==
+     You can have as many group
+     as you can
+     --
+     End of class
+ }
+
+ Class User{
+    ..Simple Getter..
+    +getName()
+    +getAddress()
+    ..Simple Setter..
+    +setName()
+    __private data__
+    int age
+    --encrypted--
+    String password
+ }
+
+ newpage
+ title page10 Notes + style  and setreotypes
+ Class Foo
+ Class Object <<general>>
+ Class ArrayList
+
+ title page10 Advanced class body
+ note left of Foo : on last defined class
+
+ note top of Object : in java, every class\n extends this one
+
+ note "this  is a float note " as N1
+ note "this note is connected \nto serval Objects " as N2
+
+ ArrayList --|> Object
+
+ Object .. N2
+ N2 .. ArrayList
+
+ note as N3
+    <b><i><u>biu tag</u></i></b>
+    <s>s tag </s>  <del> del </del> <strike> stroke </strike>
+    <font color="#00ff00">green color</font>
+    <font color=green>green color</font>
+    <size : 20 > size 20 </size>
+    <img src="">
+
+ end note
+
+ newpage
+ title page11 Note on Links
+ Class Dummy
+ Class foo
+ Class fool
+
+ Dummy --> foo : A link
+ note on link #red : note that is red
+
+ Dummy --> fool : Another link
+ note right on link #blue
+ <font color="#ffffff"> there is my note on right link
+ <font color="#ffffff"> and in blue
+ end note
+
+ newpage
+ title page12 type
+
+ interface Collection
+ interface List
+
+ abstract Class AbstractCollection
+ abstract Class AbstractList
+
+ class ArrayList{
+     Object[] elementData
+     size()
+ }
+
+ enum TimeUtil{
+ DAYS
+ HOURS
+ MINUTES
+ }
+
+ annotation SuppressWarnings
+
+Collection <|- List
+Collection <|-- AbstractCollection
+List <|-- AbstractList
+AbstractCollection <|- AbstractList
+AbstractList *-- ArrayList : use
+
+ newpage
+ title page12 hide or show
+ class Dummy1{
+ +myMethod()
+ }
+
+ class Dummy2{
+   +hiddenMethod()
+
+ }
+
+ class Dummy3 <<serializable>>{
+ String name
+ }
+
+ hide members
+ hide <<serializable>> circle
+ show Dummy1 methods
+ show  <<serializable>> fields
+
+ class Foo1
+ class Foo2
+ Foo2 *-- Foo1
+ hide Foo1
+
+ newpage
+ title page12 hide or show
+ class Foos <? extends Element>{
+ int size()
+ }
+
+ Foos *- Element
+
+ newpage
+ class System <<(S,#ff7700) Singleton>>
+ class Date <<(D,orchid)>>
+
+  newpage
+  title page14 package
+  package "Class Collection" #00f000{
+  Object <|-- ArrayList
+  }
+  package "net.lukemi.android"{
+  Object <|-- Demo1
+  Demo1 *- Demo2
+  }
+
+  newpage
+  title page15 package style
+  scale 750 width
+  package foo1 <<Node>>{
+     class Class1
+  }
+
+  package foo2 <<Rect>>{
+     class Class2
+  }
+
+  package foo3 <<Folder>>{
+    class Class3
+  }
+
+  package foo4 <<Frame>>{
+  class Class4
+  }
+
+  package foo5 <<Cloud>>{
+    class Class5
+  }
+
+  package foo6 <<Database>>{
+      class Class6
+  }
+
+  newpage
+  skinparam packageStyle rect
+  package foo1.foo2{
+  }
+  package foo1.foo2.foo3{
+  class Object
+  }
+
+  foo1.foo2 +-- foo1.foo2.foo3
+
+  newpage
+
+  title page15 namespace
+  class BaseClass
+  namespace net.unused{
+  class Person
+  }
+
+  namespace net.dummy{
+   class Meeting
+   class Person
+  }
+
+  namespace net.foo{
+    class Person
+  }
+
+  BaseClass <|-- net.dummy.Meeting
+  BaseClass <|-- net.dummy.Person
+  BaseClass <|-- net.foo.Person
+  BaseClass <|-- net.unused.Person
+  net.dummy.Meeting o-- net.dummy.Person
+  net.dummy.Meeting o-- net.foo.Person
+  net.dummy.Person <|-- net.foo.Person
+
+  newpage
+  title bar use
+  bar ()- foo
+  bar1 ()-- foo1
+  bar2 -() foo2
+
+  newpage
+  title  arrow direction
+  Room o-Student
+  Room *-- Chair
+  newpage
+  Student -o Room
+  chair --* Room
+  newpage
+  foo -up-> dummyUp
+  foo -left-> dummyLeft
+  foo -right-> dummyRight
+  foo -down-> dummyDown
+  newpage
+
+  title Assiociation classes
+  class Student
+  Student : Name
+  class Course
+  class Enrollment
+  Enrollment : drop()
+  Enrollment : cancel()
+
+ Student "0..*"-"1..*"  Course
+(Student , Course) -- Enrollment
+
+newpage
+  title Assiociation classes
+  class Student
+  Student : Name
+  class Enrollment
+  Enrollment : drop()
+  Enrollment : cancel()
+  class Course
+
+ Student "0..*"--"1..*"  Course
+ (Student , Course) .. Enrollment :dsd
+
+
+ newpage
+ skinparam  class{
+    ArrowColor #0f0
+    BackgroundColor LightGreen
+    BorderColor black
+     BackgroundColor << Foo >> blue
+    BorderColor << Foo >> LightGreen
+
+ }
+
+ skinparam stereotypeCBackgroundColor  yellow
+ skinparam stereotypeCBackgroundColor <<Foo>> red
+
+ Class02 <<Foo>>
+ Class04 <<Foo>>
+ Class01 "1" *-- "many" Class02: contains
+ Class03 o--  Class04  : aggregation
+
+ newpage
+ /'|,\,-'/
+
+ class Foo #red-green
+
+ note left of Foo #ff0|0f0
+ hello
+ world
+ end note
+
+ namespace example #000\fff{
+ class Dummy #blue/green
+ }
+
+ newpage
+ title together hidden
+
+ together {
+ class Together1
+ class Together2
+ class Together3
+ }
+
+ Together1 - Together2
+ Together2 - Together3
+ Together2 -[hidden]--> Bar1
+ Bar1 -[hidden]> Bar2
+
+ newpage
+ title spliting large files <font color="red"> <b><i>wait to use</i></b></font>
+
+
+
+@enduml
+

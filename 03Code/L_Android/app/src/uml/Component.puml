@@ -1,0 +1,116 @@
+@startuml
+
+/'Component declared'/
+title  Component declared
+[First component]
+[Another Componet] as comp2
+component comp3
+component [Last\ncomponent] as comp4
+
+
+newpage
+/'
+  interface declared
+'/
+title  Interface declared
+()"First interface"
+() "Another interface" as inte1
+interface int3
+interface "in\n231432dsfd" as int4
+
+newpage
+title arrow note
+[First Component] as c1
+DataAccess - c1
+note right of c1 : A note also be \n be serval lines
+c1 ..> Http : use
+note left of Http : dsfsfdsfdsfdsd
+
+newpage
+title package node folder frame cloud database
+
+package "Some Group"{
+    HTTP - [First Component]
+    [Another Component]
+}
+
+node "Other Group"{
+    FTP - [Second Component]
+}
+
+cloud {
+    [Example1]
+
+}
+
+
+database "MySql"{
+    folder "This is my folder" {
+        [Folder3]
+    }
+
+    frame "Foo"{
+       [Frames4]
+    }
+
+}
+    [First Component] -down-> FTP
+    [Another Component] -down->  [Example1]
+    [Example1] -down-> [Folder3]
+    [Folder3] -down-> [Frames4]
+
+
+    newpage
+    title **Arrow direction**
+    [Component] .left.> left
+    [Component] -up-> up
+    [Component] -right-> right
+    [Component] -down-> down
+
+    newpage
+    title Use UML2 notation
+    skinparam componentStyle uml2
+    interface "Data Access" as DA
+    DA - [First Component]
+    [First Component] ..> Http : use
+
+    newpage
+    title individual colors
+    component [Web Server] #yellow
+
+    newpage
+    title Using sprite in Stereotype <color: red>//**todo**//</color>
+
+    newpage
+    title skinparam
+    skinparam component{
+        backgroundColor red
+        backgroundColor<<we>> green
+        borderColor blue
+        arrowColor green
+        arrowColor<<we>> red
+    }
+    skinparam interface{
+        backgroundColor yellow
+        borderColor red
+        fontSize 23
+        fontColor blue
+    }
+
+
+    () "Data Access" as DA
+    interface "HTTP"
+    [First Component] as Fc
+    component "Web Server" as ws
+    component "we" <<we>>
+
+
+    DA - Fc
+    Fc ..> HTTP
+    HTTP - ws
+    Fc --> [we]
+
+
+
+
+@enduml

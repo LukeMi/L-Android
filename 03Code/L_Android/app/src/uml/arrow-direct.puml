@@ -1,0 +1,23 @@
+@startuml
+
+:user: -left.....> (left)
+:user: -up--> (Top)
+:user: -right-> (right)
+:user: -down-> (bottom)
+
+newpage
+
+:actor1: --> (usecase1)
+newpage
+:actor2: --> (usecase2)
+
+newpage
+
+'default
+top to bottom direction
+/'left to right direction'/
+
+user1 --> (usecase 1)
+user2 --> (usecase 2)
+
+@enduml

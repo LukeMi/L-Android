@@ -1,0 +1,46 @@
+@startuml
+skinparam handwritten true
+
+skinparam usecase{
+    BackgroundColor Lightblue
+    BorderColor black
+
+
+    BackgroundColor  <<Main>> Lightblue
+    BorderColor <<Main>> red
+
+
+    ArrowColor lightGreen
+    ActorBorder green
+    ActorBackgroundColor YellowGreen
+
+}
+
+ :User: <<Human>>
+ (Start) <<One Shot>>
+ :Main Database: <<Application>>  as :datebase:
+ (Use the application)  as (app) <<Main>>
+
+ :User: -> Start
+ :User: -->(app)
+ :datebase: --> app
+
+
+ newpage
+
+ left to right direction
+ skinparam packageStyle rect
+ actor customer
+ actor clerk
+ rectangle checkout{
+    customer -- (checkout)
+    customer -- (payment) :include
+    (help).> (checkout) : extends
+    (checkout) -- clerk
+ }
+
+
+
+
+
+@enduml

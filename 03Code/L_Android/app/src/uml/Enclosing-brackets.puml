@@ -1,0 +1,38 @@
+@startsalt
+{
+   Name | "        "
+   Modifiers : { (x)public : ()default | [x]private | []protect
+    |[]static | []final |[]abstract}
+   SuperClass: | { "java.lang.Object" | [browse]}
+
+   {"one "
+   "two "
+   [three ]
+   five } |
+
+   {
+        {Open ui | ^mode^}
+        []dsfs
+        [x]dsffsd
+        (x)dsafsa
+        ()dqwer
+
+   }
+   {* File | edit | source | refactor
+   refactor | new | Open File| - |be | saving
+    File | new | Open File| - |be | saving
+   }
+   {""}
+   {""}
+   {""}
+   {""}{""}
+   {""}
+   {""}
+
+   {#
+   . | Column2 | Column3
+   Row head1 | key |value
+   Row head2 | key1 |value2
+   }
+}
+@enduml

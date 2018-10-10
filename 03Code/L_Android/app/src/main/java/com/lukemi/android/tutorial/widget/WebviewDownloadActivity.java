@@ -37,9 +37,11 @@ public class WebviewDownloadActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_webview_download);
-        ButterKnife.bind(this);
-        initView();
+    }
+
+    @Override
+    protected int bindLayout() {
+        return R.layout.activity_webview_download;
     }
 
 
@@ -58,7 +60,8 @@ public class WebviewDownloadActivity extends BaseActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    private void initView() {
+    @Override
+    protected void initView() {
         WebSettings settings = webview.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);

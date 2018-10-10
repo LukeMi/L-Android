@@ -1,0 +1,18 @@
+@startuml
+
+:foo1;
+-> you can;
+if(test?) then
+-[#blue]->
+:foo2;
+-[#0f0,dashed]->this
+**test**;
+:foo3;
+else
+-[#fff,dotted]->
+:foo4;
+endif
+:foo5;
+
+
+@enduml

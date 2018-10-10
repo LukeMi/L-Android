@@ -1,0 +1,12 @@
+@startuml
+
+box "//**Alice Bob**//" #0f0
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+endbox
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+
+Bob -> client : 安妮的仙境
+@enduml

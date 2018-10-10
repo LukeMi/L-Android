@@ -1,0 +1,7 @@
+@startuml
+User --> (Start) :dsf
+
+User -> (Use the app) : label
+:Main Admin : ---> (Use the app): This is \n yet \nlabel
+
+@enduml

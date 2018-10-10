@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+     //设置桌面图标
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
     //设置壁纸
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
@@ -100,6 +101,7 @@
             android:name=".widget.WebviewActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
         <activity android:name=".fluxanalistics.FluxActivity" />
         <activity android:name=".receiver.ReceiverActivity" />
         <activity android:name=".plug.PlugActivity" />
@@ -155,10 +157,6 @@
 
         </activity>
 
-        <activity android:name=".http.httpprocessor.HttpProcessorActivity" />
-        <activity android:name=".http.volley.VollyActivity" />
-
-
         <!-- 百度服务 -->
         <service
             android:name="com.baidu.location.f"
@@ -194,10 +192,6 @@
         <activity android:name=".evenbus.BackEvenBUSFragment_Activity" />
         <activity android:name=".evenbus.ForgroundActivity" />
         <activity android:name=".widget.wechat.CommentActivity" />
-        <activity
-            android:name=".widget.PopupActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:windowSoftInputMode="adjustUnspecified" />
         <activity android:name=".widget.brvah.BRVAHActivity" />
         <activity android:name=".widget.brvah.MultieBRVAHActivity" />
         <activity android:name=".widget.brvah.BaseQuickActivity" />
@@ -230,9 +224,71 @@
         <activity android:name=".viewtest.SingleLineLinearlayoutActivity" />
         <activity android:name=".utiltest.ScannerActivity" />
         <activity android:name=".widget.WebviewDownloadActivity" />
-        <activity android:name=".list_r.RvDividerActivity">
+        <activity android:name=".list_r.RvDividerActivity"></activity>
+	
+	        <activity android:name=".user.login.ui.LoginActivity" />
+        <activity android:name=".user.userInfo.ui.UserInfoActivity" />
+        <activity android:name=".set.IconSetActivity" />
+
+        <activity-alias
+            android:name=".set.NewLaunchActivity"
+            android:enabled="false"
+            android:icon="@drawable/b"
+            android:label="@string/app_name_type"
+            android:targetActivity=".set.IconSetActivity" />
+
+        <activity android:name=".set.NewLaunchActivity" />
+        <activity android:name=".dagger2.StudentActivity" />
+        <activity android:name=".rxJava.RxJavaActivity" />
+        <activity android:name=".volum.VolumeActivity" />
+        <activity android:name=".gps.GpsActivity" />
+        <activity android:name=".status.StatusActivity" />
+        <activity android:name=".user.register.RegisterActivity" />
+        <activity
+            android:name=".recommend.RecommendActivity"
+            android:configChanges="orientation|keyboardHidden" />
+        <activity android:name=".github.GitHubActivity" />
+        <activity android:name=".weather.view.WeatherActivity" />
+        <activity android:name=".anim.AnimationActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".anim.TweenAnimActivity" />
+        <activity android:name=".anim.FrameAnimActivity" />
+        <activity android:name=".anim.PropertyAnimActivity" />
+        <activity android:name=".popup.PopupActivity" />
+        <activity android:name=".notification.NotificationActivity" />
+
+        <service
+            android:name=".volum.MusicService"
+            android:enabled="true"
+            android:exported="true" />
+        <activity android:name=".glide.GlideActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.lukemi.android.fileprovider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        
+        <activity android:name=".touch.TouchEventActivity" />
+        <activity android:name=".clip.ClipActivity" />
+        <activity android:name=".widget.AutoCopleteActivity" />
+        <activity android:name=".state.StateActivity" />
+        <activity android:name=".view.FlowActivity">
 
         </activity>
+        <activity
+            android:name=".view.SignActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".view.EmotionalFaceActivity" />
+        <activity
+            android:name=".view.CoordinateViewActivity"/>
 
 
     </application>

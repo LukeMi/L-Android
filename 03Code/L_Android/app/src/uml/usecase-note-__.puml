@@ -1,0 +1,23 @@
+@startuml
+:Main Admin : as Admin
+(Use the app) as (Use)
+
+User <<test>>
+(Start) <<wstart>>
+
+User -> (Start)
+User -> (Use)
+
+Admin ----> (Use)
+
+note right of Admin : this is an example.
+
+note right of (Use)
+A note case also
+be on serval lines
+end note
+
+note "this is a connected \nto several object. " as N2
+(Start) .. N2
+N2 .. (Use)
+@enduml

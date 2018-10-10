@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tutorial.state.StateActivity">
+
+    <TextView
+
+        android:id="@+id/tv_press"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:background="@drawable/selector_state_pressed"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp16"
+        android:paddingRight="@dimen/dp16"
+        android:text="press" />
+
+    <TextView
+        android:id="@+id/tv_select"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:background="@drawable/selector_state_selected"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp16"
+        android:paddingRight="@dimen/dp16"
+        android:text="select"
+        android:textColor="@color/selector_state_selected"
+        app:layout_constraintTop_toBottomOf="@+id/tv_press" />
+
+    <TextView
+        android:id="@+id/tv_enable"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:background="@drawable/selector_state_enable"
+        android:enabled="false"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp16"
+        android:paddingRight="@dimen/dp16"
+        android:text="enable"
+        app:layout_constraintTop_toBottomOf="@+id/tv_select" />
+
+    <CheckBox
+        android:id="@+id/cb_checked"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:background="@drawable/selector_state_checked"
+        android:gravity="center"
+        android:text="dsfsf"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enable" />
+
+</android.support.constraint.ConstraintLayout>

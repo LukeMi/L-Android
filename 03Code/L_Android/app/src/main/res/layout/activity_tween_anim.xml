@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".anim.TweenAnimActivity">
+
+    <include
+        android:id="@+id/cl_title_type1"
+        layout="@layout/title_bar_common_type1" />
+
+    <Button
+        android:id="@+id/btn_translate"
+        style="@style/btn_common_type1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:text="Translate"
+        app:layout_constraintTop_toBottomOf="@+id/cl_title_type1" />
+
+    <Button
+        android:id="@+id/btn_alpha"
+        style="@style/btn_common_type1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:text="Alpha"
+        app:layout_constraintTop_toBottomOf="@+id/btn_translate" />
+
+    <Button
+        android:id="@+id/btn_rotate"
+        style="@style/btn_common_type1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:text="Rotate"
+        app:layout_constraintTop_toBottomOf="@+id/btn_alpha" />
+
+    <Button
+        android:id="@+id/btn_scale"
+        style="@style/btn_common_type1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:text="Scale"
+        app:layout_constraintTop_toBottomOf="@+id/btn_rotate" />
+
+    <Button
+        android:id="@+id/btn_alpha_Scale"
+        style="@style/btn_common_type1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:text="alpha_Scale"
+        app:layout_constraintTop_toBottomOf="@+id/btn_scale" />
+
+    <Button
+        android:id="@+id/btn_translate_Alpha"
+        style="@style/btn_common_type1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:text="translate_Alpha"
+        app:layout_constraintTop_toBottomOf="@+id/btn_alpha_Scale" />
+
+    <ImageView
+        android:id="@+id/img_anim"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/rocket"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

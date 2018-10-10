@@ -2,7 +2,7 @@
 <resources>
     <declare-styleable name="waterWaveProgressbar">
         <attr name="roundColor" format="color|reference" />
-        <attr name="textColor" format="color|reference" />
+        <attr name="text1Color" format="color|reference" />
     </declare-styleable>
 
     // pull to refresh =================
@@ -45,6 +45,48 @@
         <attr name="ddmenuMenuHeightPercent" format="float" />
     </declare-styleable>
 
+ <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <!-- {@deprecated Use civ_circlebackground_color instead.} -->
+        <attr name="civ_fill_color" format="color" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleView">
+        <attr name="circle_color" format="color|reference" />
+        <attr name="circle_radius" format="integer|reference|dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RingView">
+        <attr name="border_color" format="color|reference" />
+        <attr name="border_width" format="integer|reference|dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="SignView">
+        <attr name="textSize" format="dimension|integer|reference" />
+        <attr name="textColor" format="color|integer" />
+        <attr name="textHintSize" format="dimension|integer|reference" />
+        <attr name="textHintColor" format="color|integer" />
+        <attr name="textHint" format="string|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="EmotionalFaceView">
+        <attr name="borderWidth" format="dimension" />
+        <attr name="borderColor" format="reference|color|integer" />
+        <attr name="faceColor" format="reference|color|integer" />
+        <attr name="eyesColor" format="reference|color|integer" />
+        <attr name="mouthColor" format="reference|color|integer" />
+        <attr name="emotionStyle" format="enum">
+            <enum name="happy" value="1" />
+            <enum name="sad" value="0" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ScratchCardView">
+        <attr name="gestureWidth" format="integer|dimension" />
+    </declare-styleable>
 
 
 </resources>

@@ -1,0 +1,16 @@
+@startuml
+(*)-->"commentListActivity"
+if "logined" then
+-left->[true] "CommentActivity"
+-down-> (*)
+else
+-right->[false] "LoginActicity"
+if"logined " then
+-->[true] "CommentActivity"
+
+
+
+
+
+
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+
+ (*) -left->"<size:10>this</size> <b>Activity</b>\nis <b>very</b> <color:#0f0>long2</color> \nand" as a1
+ note right : "wre"
+ -up-> "Another activity\non serval lines"
+ a1 -down-> "DOwnActivity<img src:>"
+ -->(*)
+ note left : "wre"
+ note bottom : "note bottom"
+
+@enduml

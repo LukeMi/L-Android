@@ -1,0 +1,20 @@
+@startuml
+ partition conductor{
+ (*) --> "Climb on plantform"
+ --> ===s1===
+ --> Bove
+ --> === s2===
+ --> WavesArms
+ }
+
+
+ partition Audience #00ff00{
+  ===s1=== --> Applauds
+ }
+
+  partition Orchestra #dddddd{
+    WavesArms --> introduction
+    --> Playmusic
+  }
+
+@enduml

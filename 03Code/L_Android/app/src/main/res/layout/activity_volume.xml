@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tutorial.volum.VolumeActivity">
+
+
+    <ProgressBar
+        android:id="@+id/pb_volume"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="20dp"
+        android:scrollbarThumbHorizontal="@color/color_green"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pb_process"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:progressDrawable="@drawable/layout_list_pb"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_play"
+        app:layout_constraintTop_toBottomOf="@+id/pb_volume" />
+
+    <Button
+        android:id="@+id/btn_play"
+        style="@style/Style_Volume_Control_BTN"
+        android:layout_marginTop="20dp"
+        android:text="play"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pb_process" />
+
+
+    <Button
+        android:id="@+id/btn_pause"
+        style="@style/Style_Volume_Control_BTN"
+        android:layout_marginTop="20dp"
+        android:text="pause"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/btn_play"
+        app:layout_constraintRight_toLeftOf="@+id/btn_stop"
+        app:layout_constraintTop_toBottomOf="@+id/pb_process" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        style="@style/Style_Volume_Control_BTN"
+        android:layout_marginTop="20dp"
+        android:text="stop"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/btn_pause"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pb_process" />
+
+    <Button
+        android:id="@+id/btn_volume_up"
+        style="@style/Style_Volume_Control_BTN"
+        android:layout_marginTop="4dp"
+        android:text="volum +"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_play" />
+
+    <Button
+        android:id="@+id/btn_volume_down"
+        style="@style/Style_Volume_Control_BTN"
+        android:layout_marginTop="4dp"
+        android:text="volum -"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/btn_volume_up"
+        app:layout_constraintRight_toLeftOf="@+id/btn_volume_calm"
+        app:layout_constraintTop_toBottomOf="@+id/btn_pause" />
+
+    <Button
+        android:id="@+id/btn_volume_calm"
+        style="@style/Style_Volume_Control_BTN"
+        android:layout_marginTop="4dp"
+        android:text="calm down"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/btn_volume_down"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_stop" />
+
+
+</android.support.constraint.ConstraintLayout>

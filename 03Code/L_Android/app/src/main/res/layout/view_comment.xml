@@ -53,14 +53,14 @@
         <com.lukemi.android.view.MyEditText
             android:id="@+id/edit_comment"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/view_80"
-            android:layout_marginTop="@dimen/view_10"
+            android:layout_height="@dimen/dp80"
+            android:layout_marginTop="@dimen/dp10"
             android:background="@drawable/shape_edit_comment"
             android:focusable="true"
             android:gravity="start"
-            android:padding="@dimen/view_5"
+            android:padding="@dimen/dp5"
             android:textColor="@color/black_text_doc"
             android:textColorHint="@color/gray_text_hint"
-            android:textSize="@dimen/text_size_13"/>
+            android:textSize="@dimen/sp13"/>
     </LinearLayout>
 </RelativeLayout>

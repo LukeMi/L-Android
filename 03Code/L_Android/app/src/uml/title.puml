@@ -1,0 +1,30 @@
+@startuml
+
+/'标题'/
+title 这就是你要的标题
+
+participant A
+participant B
+A -> B:  A to B
+B --> A: B to A
+
+
+/' 添加图例 '/
+legend right
+
+这是个
+图例
+endlegend
+
+
+/' 分离图表 '/
+newpage
+
+A -> B: "newpage A to B"
+B --> A:"newpage B to A"
+
+newpage A title new page
+A -> B: "newpage A to B"
+B --> A:"newpage B to A"
+
+@enduml

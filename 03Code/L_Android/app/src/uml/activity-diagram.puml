@@ -1,0 +1,14 @@
+@startuml
+(*) --> welcome Activity
+-->[go to splash page] "splash Activity"
+--> "main Activity"
+-right-> "news Activity"
+-down-> "mine Activity"
+-left-> "login Activity"
+-->(*)
+
+
+
+
+
+@enduml

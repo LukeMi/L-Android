@@ -1,0 +1,16 @@
+@startuml
+
+[*] --> nss
+
+state "Not shooting State" as nss{
+    state "idle mode" as im
+    state "Configuring" as cm
+    [*] --> im
+    im --> cm : ecewrrwe
+    cm --> im : ecewr
+
+}
+
+note right of nss : dsfsf
+
+@enduml

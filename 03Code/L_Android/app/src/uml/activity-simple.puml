@@ -1,0 +1,6 @@
+@startuml
+start
+:Hello;
+:world;
+end
+@enduml

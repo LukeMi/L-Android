@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".anim.FrameAnimActivity">
+
+    <include
+        android:id="@+id/cl_title_type1"
+        layout="@layout/title_bar_common_type1" />
+
+    <ImageView
+        android:id="@+id/img_anim"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="@dimen/dp100"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/fab_op"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/dp40"
+        android:layout_marginRight="@dimen/dp40"
+        android:background="@drawable/shape_frame_anim_btn"
+        android:text="OP"
+        android:textDirection="locale"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+    <!--<android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_op"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginBottom="@dimen/dp40"
+        android:layout_marginRight="@dimen/dp40"
+        android:backgroundTint="@color/color_red"
+        android:textDirection="locale"
+        android:src="@drawable/lv_head_pressed"
+        app:backgroundTint="@color/color_black"
+        app:borderWidth="@dimen/dp_4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+-->
+</android.support.constraint.ConstraintLayout>

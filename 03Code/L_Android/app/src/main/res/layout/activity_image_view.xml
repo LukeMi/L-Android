@@ -6,7 +6,7 @@
               android:layout_height="match_parent"
               android:gravity="center_horizontal"
               android:orientation="vertical"
-              tools:context="com.lukemi.android.widget.ImageViewActivity">
+              tools:context="com.lukemi.android.tutorial.widget.ImageViewActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,14 +34,14 @@
                 app:civ_border_color="@color/brown"
                 app:civ_border_width="2dp"/>
 
-            <com.lukemi.android.view.RoundAngleImageView
+            <com.lukemi.android.tutorial.view.RoundAngleImageView
                 android:id="@+id/roundAngleImageView"
-                android:layout_width="@dimen/dp_100"
-                android:layout_height="@dimen/dp_100"
+                android:layout_width="@dimen/dp100"
+                android:layout_height="@dimen/dp100"
                 android:scaleType="centerCrop"
                 android:src="@drawable/qqproduce"
-                app:roundHeight="@dimen/view_5"
-                app:roundWidth="@dimen/view_5"/>
+                app:roundHeight="@dimen/dp5"
+                app:roundWidth="@dimen/dp5"/>
 
         </LinearLayout>
     </ScrollView>

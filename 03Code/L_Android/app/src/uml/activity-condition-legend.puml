@@ -1,0 +1,25 @@
+@startuml
+
+ start
+title legend
+if(condition ?) then (yes)
+:yes;
+else (no)
+:no;
+note left
+this is a note
+end note
+endif
+stop
+
+legend
+this is a
+endlegend
+
+
+footer dummy footer
+header
+this ia a long  __dumy__head
+end header
+
+@enduml

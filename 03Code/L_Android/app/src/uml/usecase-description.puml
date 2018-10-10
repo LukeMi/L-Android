@@ -1,0 +1,14 @@
+@startuml
+
+ usecase UC1 as "You can use
+ several lines to define your usecase.
+ --
+ 虚线
+ ==
+ 双下划线
+ .. 省略先..
+ "
+
+
+
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+
+[*] --> Active
+note left of Active : thi left if\nnote
+Active --> inactive
+note right of inactive : thi righiuh if\nnote
+note "this is a floating notes" as N1
+@enduml

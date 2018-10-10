@@ -9,11 +9,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.tbug.android.collection.com.lukemi.android.collection.animation.AnimationActivity">
+    >
+    <include
+        android:id="@+id/cl_title_type1"
+        layout="@layout/title_bar_common_type1" />
+	
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+	
         <Button
             android:id="@+id/tween_Ani"
             android:layout_width="match_parent"

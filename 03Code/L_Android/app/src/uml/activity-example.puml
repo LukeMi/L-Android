@@ -1,0 +1,51 @@
+@startuml
+
+
+title servlet Container
+
+(*)--> "ClickServlet handleRequest()"
+-->"new page"
+if "Page.onSecurityCheck" then
+-right->[true] "Page.oninit"
+    if "isForward?" then
+    -right-> [no] "Process Controls"
+        if "" then
+        --> [yes] ===b1===
+
+        else
+        -->[no] ===b2===
+        end if
+
+    else
+    -->[continue processing?\n\nyes] ===b1===
+    end if
+    if "is post?" then
+    --> [yes] "page.onPost()"
+    --> "page.onRender()"
+    else
+    --> [no] "page.onGet()"
+    --> "page.onRender()"
+    end if
+    --> ===b2===
+
+else
+--> ===b2===
+end if
+
+
+if "Do redirect ?" then
+-->[yes] "redirect request"
+--> ===b3===
+else
+    if "" then
+    --> [no] "Render page template"
+    --> ===b3===
+    else
+    -->[yes to forward?] "Forward request"
+    --> ===b3===
+    end if
+
+end if
+--> "Page.onDestroy()"
+
+@enduml

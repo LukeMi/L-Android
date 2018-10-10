@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user_login_mobile_hint">手机号</string>
+    <string name="user_login_password_hint">密码</string>
+    <string name="user_login_login_in_tips">登录</string>
+</resources>

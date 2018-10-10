@@ -1,0 +1,27 @@
+@startuml
+
+ object Object1
+ object Object2
+ object Object3
+ object Object4
+ object Object5
+ object Object6
+ object Object7
+ object Object8
+ object Object9
+ object Object10
+
+ Object1 : name = time
+ Object1 : id = 456
+
+Object1 <|-- Object2
+Object3 *-- Object4
+Object5 o-- Object6
+Object7 .. Object8 : llll
+Object9 -- Object10
+
+newpage
+
+
+
+@enduml

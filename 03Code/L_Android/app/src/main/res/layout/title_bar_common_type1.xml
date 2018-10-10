@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_title_type1"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp48"
+    android:background="@color/color_white">
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="@dimen/dp48"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dp12"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_back_typ1" />
+
+    <TextView
+        android:id="@+id/tv_title_type1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="#2C2C2C"
+        android:textSize="@dimen/sp20"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="title" />
+
+    <ImageView
+        android:id="@+id/img_menu"
+        android:layout_width="@dimen/dp48"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dp12"
+        android:src="@drawable/ic_menu"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

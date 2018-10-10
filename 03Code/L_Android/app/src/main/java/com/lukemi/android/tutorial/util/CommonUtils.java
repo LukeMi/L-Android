@@ -11,6 +11,7 @@ import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
+import android.support.annotation.NonNull;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -27,12 +28,14 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 import com.lukemi.android.tutorial.R;
+import com.lukemi.android.tutorial.glide.GlideUtil;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
 import java.io.IOException;
+import java.security.MessageDigest;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -53,29 +56,11 @@ public class CommonUtils {
         Glide
                 .with(context)//传入上下文
                 .load(url)//图片url
-//                .asBitmap()//（可选）只允许加载静态图片，不需要Glide去帮我们自动进行图片格式的判断了（gif图片就只能先是一帧）
-                .animate(R.anim.alpha)//设置动画
-//                        .asGif()//（可选）只允许加载动态图片，和上面的只能选一个
-                .placeholder(R.drawable.ic_launcher)//（可选）设置默认占位图
-                .error(R.drawable.ic_launcher)//（可选）设置异常占位图
-                .diskCacheStrategy(DiskCacheStrategy.NONE)//（可选）禁用缓存all:缓存源资源和转换后的资源；none:不作任何磁盘缓存 ；source:缓存源资源 result：缓存转换后的资源
-                .thumbnail(0.1f)//这样会先加载缩略图 然后在加载全图
-                .override(800, 800)//设置加载尺寸
-                .centerCrop()//设置动态转换:centerCrop()、fitCenter()等函数也可以通过自定义Transformation
-                .transform(new GlideRoundTransform(context))
                 .into(imageView);//传入要设置的ImageView
     }
 
     public static void glideLoadPicGround(Context context, String url, ImageView imageView) {
-        Glide
-                .with(context)//传入上下文
-                .load(url)//图片url
-                .placeholder(R.drawable.ic_launcher)//（可选）设置默认占位图
-                .error(R.drawable.ic_launcher)//（可选）设置异常占位图
-                .dontAnimate()
-                .centerCrop()//设置动态转换:centerCrop()、fitCenter()等函数也可以通过自定义Transformation
-                .transform(new GlideRoundTransform(context))
-                .into(imageView);//传入要设置的ImageView
+        GlideUtil.loadImgByUrl(context,imageView,url);
     }
 
     /**
@@ -252,9 +237,9 @@ public class CommonUtils {
     }
 
 
-    /**
+   /* *//**
      * 圆角转化器
-     */
+     *//*
     public static class GlideRoundTransform extends BitmapTransformation {
         private float radius = 0f;
 
@@ -291,7 +276,12 @@ public class CommonUtils {
         public String getId() {
             return getClass().getName() + Math.round(radius);
         }
-    }
+
+        @Override
+        public void updateDiskCacheKey(@NonNull MessageDigest messageDigest) {
+
+        }
+    }*/
 
 
     /**

@@ -1,0 +1,23 @@
+@startuml
+
+skinparam state{
+    startColor red
+    endColor yellow
+    backgroundColor lightGreen
+    backgroundColor<<kk>> Green
+
+    borderColor red
+}
+
+[*] --> nss
+nss --> [*]
+
+state "Not Shooting state" as nss{
+    [*] --> im
+    im --> cm :im dsdfsdsf
+    cm --> im :cm dsdfsdsf
+    state "idle mode" as im <<kk>>
+    state "Configuring mode" as cm
+}
+
+@enduml

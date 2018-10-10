@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".tutorial.view.FlowActivity">
+
+    <com.lukemi.android.tutorial.view.CircleView
+        android:id="@+id/img_cv"
+        android:layout_width="@dimen/dp48"
+        android:layout_height="@dimen/dp48"
+        android:padding="@dimen/dp10"
+        app:circle_color="@color/color_red"
+        app:circle_radius="@dimen/dp5" />
+
+
+    <com.lukemi.android.tutorial.view.RingView
+        android:id="@+id/rv"
+        android:layout_width="@dimen/dp48"
+        android:layout_height="@dimen/dp48"
+        android:padding="@dimen/dp1"
+        app:border_color="@color/color_red"
+        app:border_width="@dimen/dp24"
+        app:layout_constraintLeft_toRightOf="@+id/cv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.lukemi.android.tutorial.view.CircleImageView
+        android:id="@+id/cimg"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="@dimen/dp100"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_color="@color/color_blue"
+        app:civ_border_width="@dimen/dp2"
+        app:layout_constraintTop_toBottomOf="@+id/cv" />
+
+
+    <com.lukemi.android.tutorial.view.FlowLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cimg">
+
+        <!--  <TextView
+              android:layout_width="@dimen/dp100"
+              android:layout_height="@dimen/dp48"
+              android:layout_marginLeft="@dimen/dp48"
+              android:text="text" />-->
+
+    </com.lukemi.android.tutorial.view.FlowLayout>
+
+    <com.lukemi.android.tutorial.view.ScratchCardView
+        android:id="@+id/scv"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:gestureWidth="@dimen/dp48"
+        app:layout_constraintTop_toBottomOf="@+id/fl" />
+
+    <TextView
+        android:id="@+id/tv_restore"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="@dimen/dp48"
+        android:gravity="center"
+        android:text="刮刮卡还原"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

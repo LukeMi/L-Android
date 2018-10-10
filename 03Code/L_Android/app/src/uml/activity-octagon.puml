@@ -1,0 +1,8 @@
+@startuml
+
+skinparam activityShape octagon
+
+(*) --> FirstActivity
+--> (*)
+
+@enduml

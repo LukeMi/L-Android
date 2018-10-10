@@ -1,0 +1,22 @@
+@startuml
+
+ skinparam backgroundColor #AAFFFF
+
+ skinparam activity{
+StartColor red
+EndColor gray
+BackgroundColor<< climbs >> yellow
+BarColor brown
+BackgroundColor peru
+
+ }
+
+
+  (*) <<start>> --> "Climbs on Platform" << climbs >>
+  --> ===s1=== <<haha>>
+  --> "Bows" <<bows>>
+  --> ===s2=== <<haha>>
+  --> "WavesArms" <<bows>>
+  --> (*) <<stop>>
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+
+participant A
+participant B
+
+A ->x B
+A -> B
+A ->> B
+A -\ B
+A \\- B
+A //- B
+A ->o B
+A o//- B
+A o\\- B
+A <-> B
+A o<<-> B
+A -\\ B
+
+
+@enduml

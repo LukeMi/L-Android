@@ -1,0 +1,24 @@
+@startuml
+participant "**<s:red>ALice</s>**"  as A #0f0
+participant Bob as B
+
+A-> B:        reerwwwwwwwwwww
+
+==   bridget==
+
+A -> B: hi
+
+/'
+延时操作
+'/
+... 5 seconds delay ...
+
+A<-B:hello
+
+/'
+类似于空格
+'/
+||45||
+
+A -> B: what happend
+@enduml

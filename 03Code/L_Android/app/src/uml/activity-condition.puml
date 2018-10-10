@@ -1,0 +1,11 @@
+@startuml
+ start
+ if (graphviz installed) then (yes)
+ :process all \ndiagrams;
+ else (no)
+ :process only \n squence;
+ endif
+ stop
+
+
+@enduml

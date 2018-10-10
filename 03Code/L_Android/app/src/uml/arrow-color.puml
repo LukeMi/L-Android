@@ -1,0 +1,11 @@
+@startuml
+participant A
+participant B
+
+A -[#red]> B : hello
+A --[#a0f]>>B : hi
+A --[#0000ff]>>B : ok
+A --[#00ff00]>>B : okay
+
+
+@enduml

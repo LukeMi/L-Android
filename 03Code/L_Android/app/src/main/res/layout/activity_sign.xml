@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tutorial.view.SignActivity">
+
+
+    <com.lukemi.android.tutorial.view.SignView
+        android:id="@+id/sv_"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_reset"
+        app:layout_constraintTop_toTopOf="parent"
+        app:textColor="@color/color_red"
+        app:textHint="请输入签名"
+        app:textHintColor="@color/color_black"
+        app:textHintSize="@dimen/sp34"
+        app:textSize="@dimen/sp5" />
+
+
+    <TextView
+        android:id="@+id/tv_sign_color"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp48"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp16"
+        android:paddingRight="@dimen/dp16"
+        android:text="sign colr"
+        android:textSize="@dimen/sp20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_sign_size" />
+
+    <TextView
+        android:id="@+id/tv_sign_size"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp48"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp16"
+        android:paddingRight="@dimen/dp16"
+        android:text="sign size"
+        android:textSize="@dimen/sp20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/tv_sign_color"
+        app:layout_constraintRight_toLeftOf="@+id/tv_save" />
+
+    <TextView
+        android:id="@+id/tv_save"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp48"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp16"
+        android:paddingRight="@dimen/dp16"
+        android:text="save"
+        android:textSize="@dimen/sp20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/tv_sign_size"
+        app:layout_constraintRight_toLeftOf="@+id/tv_reset" />
+
+    <TextView
+        android:id="@+id/tv_reset"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp48"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp16"
+        android:paddingRight="@dimen/dp16"
+        android:text="reset"
+        android:textSize="@dimen/sp20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/tv_save"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

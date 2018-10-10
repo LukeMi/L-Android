@@ -34,21 +34,16 @@ public class ImageViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_image_view);
         ButterKnife.bind(this);
 
+
+
         Glide
                 .with(this)
                 .load(url)
-                .asGif()
-                .placeholder(R.drawable.qqproduce)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .dontAnimate()
                 .into(showIV);
 
         Glide
                 .with(this)
                 .load(linux_url)
-                .placeholder(R.drawable.qqproduce)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .dontAnimate()
                 .into(roundAngleImageView);
 
     }

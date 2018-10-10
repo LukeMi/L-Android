@@ -1,0 +1,26 @@
+@startuml
+ :activity;
+ :phoneWindow ;
+ :decorView;
+ :contentView;
+ split
+ :LinearLayout;
+        split
+        :View;
+        split again
+        :FrameLayout;
+        end split
+ split again
+ :RelativeLayout;
+ split again
+         split
+         :TextView;
+         split again
+         :EditText;
+         split again
+         :LinearLayout;
+         end split
+ split again
+ :View;
+ end split
+@enduml

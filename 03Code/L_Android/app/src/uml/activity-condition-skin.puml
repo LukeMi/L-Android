@@ -1,0 +1,9 @@
+@startuml
+
+ start
+ :start process;
+ #0ff:reading configure files
+ There files should edited at time ;
+ #red:ending of the process;
+
+@enduml

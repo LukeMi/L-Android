@@ -16,8 +16,11 @@ public class SettingIntentActivity extends BaseActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting_intent);
-        initView();
+    }
+
+    @Override
+    protected int bindLayout() {
+        return R.layout.activity_setting_intent;
     }
 
     /**
@@ -26,7 +29,7 @@ public class SettingIntentActivity extends BaseActivity implements View.OnClickL
      * created by: tbug
      * created at: 2017/4/9 18:09
      */
-    private void initView() {
+    protected void initView() {
         findViewById(R.id.ACTION_ACCESSIBILITY_SETTINGS).setOnClickListener(this);
         findViewById(R.id.ACTION_ADD_ACCOUNT).setOnClickListener(this);
         findViewById(R.id.ACTION_AIRPLANE_MODE_SETTINGS).setOnClickListener(this);

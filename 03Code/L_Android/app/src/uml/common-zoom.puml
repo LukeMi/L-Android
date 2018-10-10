@@ -1,0 +1,5 @@
+@startuml
+
+scale 180*100
+Bob --> Alice : hellow
+@enduml

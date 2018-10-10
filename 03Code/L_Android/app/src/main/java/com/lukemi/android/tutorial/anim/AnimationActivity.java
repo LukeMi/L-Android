@@ -24,8 +24,8 @@ public class AnimationActivity extends BaseActivity {
     }
 
     @Override
-    protected int bindLayout() {
-        return R.layout.activity_animation;
+        protected int bindLayout() {
+            return R.layout.activity_animation;
     }
 
     @Override
@@ -46,20 +46,20 @@ public class AnimationActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.img_back, R.id.btn_tween, R.id.btn_frame, R.id.btn_property})
+    @OnClick({R.id.img_back, R.id.tween_Ani, R.id.fram_Ani, R.id.property_Ani})
     public void onViewClicked(View view) {
         Intent intent = null;
         switch (view.getId()) {
             case R.id.img_back:
                 finish();
                 break;
-            case R.id.btn_tween:
+            case R.id.tween_Ani:
                 intent = new Intent(mContext, TweenAnimActivity.class);
                 break;
-            case R.id.btn_frame:
+            case R.id.fram_Ani:
                 intent = new Intent(mContext, FrameAnimActivity.class);
                 break;
-            case R.id.btn_property:
+            case R.id.property_Ani:
                 intent = new Intent(mContext, PropertyAnimActivity.class);
                 break;
         }

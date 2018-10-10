@@ -1,0 +1,21 @@
+@startuml
+database DB1  as "
+you can have horizontal line
+---
+or double line
+===
+Or strong line
+---
+Or dotted line
+
+..my title..
+Enjoy
+"
+
+note right
+this is a note
+understand
+==Another==
+--title--
+end note
+@enduml

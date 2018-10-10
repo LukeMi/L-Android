@@ -1,0 +1,39 @@
+@startuml
+
+participant A
+participant B
+
+autonumber
+
+A --> B : first
+A <- B : two
+
+autonumber 11
+
+A -> B: 第十一条
+
+autonumber 66 6 "<font color=red><b> Message 0"
+
+A <- B: 第66条 间隔 6
+A ->> B: 检查是否是第72条
+
+autonumber stop
+
+A -> B:  暂停标号
+
+autonumber resume "<font color = red> <b> Message 0"
+
+A -> B : 跟随上一次暂停的标号
+A -> B : 继续标号
+
+autonumber stop
+
+A -> B:  暂停标号
+
+autonumber resume 1 "<font color = blue><B> Message 0 "
+
+A -> B : 跟随上一次暂停的标号
+A -> B : 继续标号,检查 gap 是否是 1
+
+
+@enduml

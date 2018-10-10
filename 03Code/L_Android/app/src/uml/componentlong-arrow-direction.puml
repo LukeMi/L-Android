@@ -1,0 +1,7 @@
+@startuml
+
+[*] -up-> center
+center -right-> right
+right -down-> down
+down -left-> [*]
+@enduml

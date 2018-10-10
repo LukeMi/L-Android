@@ -14,11 +14,9 @@ import android.util.Log;
 import com.lukemi.android.tutorial.base.BaseApplication;
 import com.lukemi.android.tutorial.dao.DaoMaster;
 import com.lukemi.android.tutorial.dao.DaoSession;
-import com.lukemi.android.tutorial.http.httpprocessor.VollyProcessor;
 import com.lukemi.android.tutorial.service.ForegroundService;
 import com.lukemi.android.tutorial.sessionlifecycle.MyActivityLifecycleCallbacks;
 import com.lukemi.android.tutorial.util.Logcat;
-import com.lukemi.android.tutorial.http.httpprocessor.HttpHelper;
 import com.lzy.okgo.OkGo;
 import com.squareup.leakcanary.LeakCanary;
 
@@ -72,7 +70,6 @@ public class MyApplication extends BaseApplication {
         handler.sendEmptyMessageDelayed(MSG_REPEAT_TIME, 60000);
         initReceiver();
 //        ActiveAndroid.initialize(this);
-        HttpHelper.init(new VollyProcessor(this));
         //启动服务
         Intent sevice = new Intent(this, ForegroundService.class);
 //        this.startService(sevice);

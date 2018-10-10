@@ -1,0 +1,68 @@
+@startuml
+
+participant A
+participant B
+
+A -> B: a 2 sd
+
+note  left : A note left
+note over A : over A
+
+B -> A: b 2 a
+
+note  right : B note right
+
+B --> B: cycle
+note left
+ BBBBBBBBB
+ CCCCCCC
+ DDDDDD
+end note
+
+newpage
+
+ note left of A #0f0 : left A
+
+
+ note over  A,B #0ff
+    over  A,B
+ end note
+
+ note over  A,B #f00 : over  A,B \n dsdsa
+
+ newpage
+
+ A -> B: aaaaa
+
+ hnote left of A
+ dsd
+ end hnote
+
+
+ hnote left of A :  "  left of A "
+
+ hnote over A #f0f :  "  left of A "
+
+  hnote right of A #0f0:  "  right of A "
+
+  B -> A : bbbbbbbbbbbbbb
+  rnote left of B
+  dsfdf
+  end rnote
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml

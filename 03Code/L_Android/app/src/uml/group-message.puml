@@ -1,0 +1,21 @@
+@startuml
+
+/'
+    alt/else
+    opt
+    loop
+    par
+    break
+    critical
+    group ,followed by a text to be display
+
+'/
+
+participant A
+participant B
+
+A -> B: a to b
+alt gt
+A <-- B: b to a
+
+@enduml

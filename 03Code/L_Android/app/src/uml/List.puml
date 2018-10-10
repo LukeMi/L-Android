@@ -1,0 +1,20 @@
+@startuml
+
+object demo{
+*Bullet list
+*Second item
+**Sub item
+
+this is not ~___underscored__.
+this is not ~""monospaced"".
+}
+
+legend
+#1were
+#2rweqr
+##dfsfdsdsfsfsafds
+##two
+#third
+end legend
+
+@enduml

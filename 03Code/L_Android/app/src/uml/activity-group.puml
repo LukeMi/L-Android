@@ -1,0 +1,18 @@
+@startuml
+
+start
+partition Initialization{
+:read config file;
+:init internal varoable;
+}
+
+
+partition Initialization{
+:wait for user interaction;
+:print information;
+}
+
+stop
+
+
+@enduml

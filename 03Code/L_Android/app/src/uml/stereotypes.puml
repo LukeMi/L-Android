@@ -1,0 +1,8 @@
+@startuml
+participant "Alice is" as A <<good>>
+participant "Bob" as B  <<(c,#ADD12B) test>>
+||45||
+A -> B: Authentication Request
+||45||
+
+@enduml

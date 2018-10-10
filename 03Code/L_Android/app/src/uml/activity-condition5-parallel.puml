@@ -1,0 +1,17 @@
+@startuml
+
+ start
+
+ if (multi process ?) then (yes)
+ fork
+ :Threatment 1;
+ fork again
+ :Threatment 2;
+ end fork
+ else (monproc)
+ :Treatment 1;
+ :Treatment 2;
+ endif
+
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+
+ start
+ while (data avalible ?)
+ :read data;
+ :generate diaframs;
+ endwhile (ewrrw)
+
+ stop
+
+
+@enduml

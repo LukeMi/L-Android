@@ -1,0 +1,35 @@
+@startuml
+
+participant Alice as A
+participant "**Bob**" as B  #red
+
+A -[#red]\\ B: dded
+
+note left of A #green
+
+This is  **bold**
+This is  //italics//
+This is  ""monospaced""
+This is  --stroked--
+This is  __underlined__
+This is  ~~waved~~
+
+end note
+
+A //-[#0f0] B: a to //italics//  bh \
+
+note right of A
+    this is <back:cadetblue><size: 18>displayed</size></back>
+    __left of __ Alice
+end note
+
+note over A,B
+    **//<u:f00>This</u>//**  is <color:#00f>displayed</color>
+   ** <w:0f0><color:#00f>This</color></w>** is displayed
+    <color: #f00>left of</color>   **<size: 20><s:red>ALice</s></size>**  **Bob**
+end note
+
+
+
+
+@enduml
