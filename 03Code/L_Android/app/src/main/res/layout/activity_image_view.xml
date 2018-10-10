@@ -6,7 +6,7 @@
               android:layout_height="match_parent"
               android:gravity="center_horizontal"
               android:orientation="vertical"
-              tools:context="com.lukemi.myandroid.widget.ImageViewActivity">
+              tools:context="com.lukemi.android.widget.ImageViewActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
                 app:civ_border_color="@color/brown"
                 app:civ_border_width="2dp"/>
 
-            <com.lukemi.myandroid.view.RoundAngleImageView
+            <com.lukemi.android.view.RoundAngleImageView
                 android:id="@+id/roundAngleImageView"
                 android:layout_width="@dimen/dp_100"
                 android:layout_height="@dimen/dp_100"

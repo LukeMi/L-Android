@@ -53,4 +53,6 @@ public static java.lang.String TABLENAME;
    *;
 }
 
+-keep com.jcodecraeer.xrecyclerview.XRecyclerView.**{
+}
 

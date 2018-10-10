@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.lukemi.myandroid.viewtest.UploadActivity">
+    tools:context="com.lukemi.android.viewtest.UploadActivity">
 
     <Button
         android:id="@+id/btn_choice"

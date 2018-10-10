@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lukemi.myandroid.evenbus.BackEvenBUSFragment_Activity">
+    tools:context="com.lukemi.android.evenbus.BackEvenBUSFragment_Activity">
 
     <fragment
         android:id="@+id/framlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.lukemi.myandroid.evenbus.BackEvenBUSFragment"/>
+        android:name="com.lukemi.android.evenbus.BackEvenBUSFragment"/>
 
 </android.support.constraint.ConstraintLayout>

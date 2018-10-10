@@ -10,17 +10,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/view_16"
-        android:paddingRight="@dimen/view_16"
-        android:paddingTop="@dimen/view_16">
+        android:paddingLeft="@dimen/dp16"
+        android:paddingRight="@dimen/dp16"
+        android:paddingTop="@dimen/dp16">
 
         <ImageView
             android:id="@+id/iv_appIcon"
-            android:layout_width="@dimen/view_80"
-            android:layout_height="@dimen/view_80"/>
+            android:layout_width="@dimen/dp80"
+            android:layout_height="@dimen/dp80"/>
 
         <LinearLayout
-            android:layout_marginLeft="@dimen/view_16"
+            android:layout_marginLeft="@dimen/dp16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -43,8 +43,8 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/view_1dp"
+        android:layout_height="@dimen/dp1dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="@dimen/view_16"
+        android:layout_marginTop="@dimen/dp16"
         android:background="@color/orange"/>
 </LinearLayout>

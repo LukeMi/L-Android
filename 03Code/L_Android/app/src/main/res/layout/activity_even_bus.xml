@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lukemi.myandroid.evenbus.EvenBusActivity">
+    tools:context="com.lukemi.android.evenbus.EvenBusActivity">
 
     <Button
         android:id="@+id/btn_test"

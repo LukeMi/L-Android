@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lukemi.myandroid.http.httpprocessor.HttpProcessorActivity">
+    tools:context="com.lukemi.android.http.httpprocessor.HttpProcessorActivity">
 
     <Button
         android:id="@+id/btn"

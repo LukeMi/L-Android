@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.lukemi.myandroid.utiltest.ScannerActivity">
+    tools:context="com.lukemi.android.utiltest.ScannerActivity">
 
 
     <!--app:qrcv_customGridScanLineDrawable="@mipmap/custom_grid_scan_line"-->

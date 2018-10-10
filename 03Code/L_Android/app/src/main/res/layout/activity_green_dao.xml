@@ -5,7 +5,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/gray_bkg_first"
                 android:orientation="vertical"
-                tools:context="com.lukemi.myandroid.db.GreenDaoActivity">
+                tools:context="com.lukemi.android.db.GreenDaoActivity">
 
 
     <LinearLayout
@@ -49,11 +49,11 @@
     <TextView
         android:id="@+id/del_history"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/view_40"
+        android:layout_height="@dimen/dp40"
         android:layout_alignParentBottom="true"
         android:background="@color/gray"
         android:gravity="center"
         android:text="@string/del_history"
         android:textColor="@color/red"
-        android:textSize="@dimen/text_size_16"/>
+        android:textSize="@dimen/sp16"/>
 </RelativeLayout>

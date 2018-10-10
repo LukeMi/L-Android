@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.lukemi.myandroid.viewtest.ClipPhotoViewActivity">
+    tools:context="com.lukemi.android.viewtest.ClipPhotoViewActivity">
     <!--导航栏-->
     <RelativeLayout
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
         android:layout_height="200dp"
         android:scaleType="centerCrop"
         android:src="@drawable/bd_loc_bg"/>
-    <com.lukemi.myandroid.view.ClipImageView
+    <com.lukemi.android.view.ClipImageView
         android:id="@+id/civ"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

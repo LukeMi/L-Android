@@ -2,7 +2,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="com.lukemi.myandroid.widget.fragments.DFragment">
+             tools:context="com.lukemi.android.widget.fragments.DFragment">
 
     <TextView
         android:layout_width="match_parent"

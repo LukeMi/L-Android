@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.lukemi.myandroid.widget.fragments.LifecycleFragmentActivity">
+    tools:context="com.lukemi.android.widget.fragments.LifecycleFragmentActivity">
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/view_40"
+        android:layout_height="@dimen/dp40"
         app:tabBackground="@color/white"
         app:tabIndicatorColor="#09BA07"
         app:tabIndicatorHeight="2dp"

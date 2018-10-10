@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lukemi.myandroid.SchemeActivity">
+    tools:context="com.lukemi.android.SchemeActivity">
 
     <TextView
         android:id="@+id/tv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical|left"
-        android:paddingLeft="@dimen/view_20"
+        android:paddingLeft="@dimen/dp20"
         tools:text="result"/>
 
 </android.support.constraint.ConstraintLayout>

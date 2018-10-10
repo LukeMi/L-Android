@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lukemi.myandroid.widget.CircleActivity">
+    tools:context="com.lukemi.android.widget.CircleActivity">
 
     <android.support.v4.widget.CircleImageView
         android:id="@+id/cc"

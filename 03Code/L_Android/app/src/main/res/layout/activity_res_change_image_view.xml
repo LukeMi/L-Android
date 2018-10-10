@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.lukemi.myandroid.viewtest.ResChangeImageViewActivity">
+    tools:context="com.lukemi.android.viewtest.ResChangeImageViewActivity">
 
     <Button
         android:id="@+id/btn_change"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="改变图片"/>
 
-    <com.lukemi.myandroid.view.ResChangeImageView
+    <com.lukemi.android.view.ResChangeImageView
         android:id="@+id/img"
         android:layout_width="@dimen/view_100"
         android:layout_height="@dimen/view_100"

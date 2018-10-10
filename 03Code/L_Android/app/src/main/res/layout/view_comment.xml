@@ -29,7 +29,7 @@
                 android:layout_centerVertical="true"
                 android:text="@string/cancle"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_13"/>
+                android:textSize="@dimen/sp13"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
                 android:layout_centerInParent="true"
                 android:text="@string/write_comment"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_16"/>
+                android:textSize="@dimen/sp16"/>
 
             <TextView
                 android:id="@+id/text_sent"
@@ -47,10 +47,10 @@
                 android:layout_centerVertical="true"
                 android:text="@string/send"
                 android:textColor="@color/gray_text_status"
-                android:textSize="@dimen/text_size_13"/>
+                android:textSize="@dimen/sp13"/>
         </RelativeLayout>
 
-        <com.lukemi.myandroid.view.MyEditText
+        <com.lukemi.android.view.MyEditText
             android:id="@+id/edit_comment"
             android:layout_width="match_parent"
             android:layout_height="@dimen/view_80"

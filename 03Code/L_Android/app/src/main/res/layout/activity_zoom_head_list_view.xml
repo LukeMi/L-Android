@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context="com.tbug.android.collection.com.lukemi.android.collection.viewtest.ZoomHeadListViewActivity">
 
-    <com.lukemi.myandroid.view.ZoomHeadListView
+    <com.lukemi.android.view.ZoomHeadListView
         android:id="@+id/zoomHeadListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

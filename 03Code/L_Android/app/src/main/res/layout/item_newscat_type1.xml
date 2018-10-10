@@ -4,13 +4,13 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="horizontal"
-    android:padding="@dimen/view_13">
+    android:padding="@dimen/dp13">
 
     <ImageView
         android:id="@+id/img_art"
-        android:layout_width="@dimen/view_100"
-        android:layout_height="@dimen/view_75"
-        android:layout_marginRight="@dimen/view_10"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="@dimen/dp75"
+        android:layout_marginRight="@dimen/dp10"
         android:background="@color/white"
         android:scaleType="centerCrop"
         android:src="@drawable/default_pic" />
@@ -29,7 +29,7 @@
             android:maxLines="2"
             android:text="title"
             android:textColor="@color/black_text_doc"
-            android:textSize="@dimen/text_size_16" />
+            android:textSize="@dimen/sp16" />
 
         <TextView
             android:id="@+id/text_date_author"
@@ -40,7 +40,7 @@
             android:maxLines="1"
             android:text="time    auther"
             android:textColor="@color/gray_text_content1"
-            android:textSize="@dimen/text_size_13" />
+            android:textSize="@dimen/sp13" />
 
 
     </RelativeLayout>
