@@ -15,7 +15,7 @@ import com.lukemi.android.tutorial.util.Logcat;
  * Created by mzchen on 2017/2/24.
  */
 
-public class NoPadingTextView extends TextView {
+public class NoPadingTextView extends android.support.v7.widget.AppCompatTextView {
 
     private static final String TEXT = "ap爱哥ξτβбпшㄎㄊěǔぬも┰┠№＠↓";
     private Paint mPaint;// 画笔
@@ -33,12 +33,6 @@ public class NoPadingTextView extends TextView {
     public NoPadingTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
-
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public NoPadingTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
-
 
     /**
      * 初始化画笔

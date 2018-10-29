@@ -12,6 +12,7 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
+import android.support.annotation.RequiresPermission;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.text.format.Formatter;
@@ -722,6 +723,7 @@ public class DeviceUtil {
     }
 
 
+    @RequiresPermission(Manifest.permission.READ_PHONE_STATE)
     public static String getXX(Context context) {
         StringBuilder phoneInfo = new StringBuilder();
         phoneInfo.append("Product: " + android.os.Build.PRODUCT + System.getProperty("line.separator"));
@@ -741,8 +743,8 @@ public class DeviceUtil {
         phoneInfo.append("USER: " + android.os.Build.USER + System.getProperty("line.separator"));
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
 //        phoneInfo.append("DeviceId(IMEI) = " + tm.getDeviceId() + System.getProperty("line.separator"));
-        phoneInfo.append("DeviceSoftwareVersion = " + tm.getDeviceSoftwareVersion() + System.getProperty("line.separator"));
-        phoneInfo.append("Line1Number = " + tm.getLine1Number() + System.getProperty("line.separator"));
+//        phoneInfo.append("DeviceSoftwareVersion = " + tm.getDeviceSoftwareVersion() + System.getProperty("line.separator"));
+//        phoneInfo.append("Line1Number = " + tm.getLine1Number() + System.getProperty("line.separator"));
         phoneInfo.append("NetworkCountryIso = " + tm.getNetworkCountryIso() + System.getProperty("line.separator"));
         phoneInfo.append("NetworkOperator = " + tm.getNetworkOperator() + System.getProperty("line.separator"));
         phoneInfo.append("NetworkOperatorName = " + tm.getNetworkOperatorName() + System.getProperty("line.separator"));
@@ -751,10 +753,10 @@ public class DeviceUtil {
         phoneInfo.append("SimCountryIso = " + tm.getSimCountryIso() + System.getProperty("line.separator"));
         phoneInfo.append("SimOperator = " + tm.getSimOperator() + System.getProperty("line.separator"));
         phoneInfo.append("SimOperatorName = " + tm.getSimOperatorName() + System.getProperty("line.separator"));
-        phoneInfo.append("SimSerialNumber = " + tm.getSimSerialNumber() + System.getProperty("line.separator"));
+//        phoneInfo.append("SimSerialNumber = " + tm.getSimSerialNumber() + System.getProperty("line.separator"));
         phoneInfo.append("SimState = " + tm.getSimState() + System.getProperty("line.separator"));
-        phoneInfo.append("SubscriberId(IMSI) = " + tm.getSubscriberId() + System.getProperty("line.separator"));
-        phoneInfo.append("VoiceMailNumber = " + tm.getVoiceMailNumber() + System.getProperty("line.separator"));
+//        phoneInfo.append("SubscriberId(IMSI) = " + tm.getSubscriberId() + System.getProperty("line.separator"));
+//        phoneInfo.append("VoiceMailNumber = " + tm.getVoiceMailNumber() + System.getProperty("line.separator"));
 
         return phoneInfo.toString();
     }
@@ -762,7 +764,7 @@ public class DeviceUtil {
     /**
      * 获取   android.os.Build.下面的android设备信息
      *
-     * @return 以Map键值对形式返回的Build下面的信息<br/>
+     * @return 以Map键值对形式返回的Build下面的信息<br />
      */
     public static JSONObject getBuildInfo() {
         Map<String, String> buildMap = new LinkedHashMap<>();
@@ -883,33 +885,38 @@ public class DeviceUtil {
 
     /**
      * 获取屏幕高度
+     *
      * @param context
      * @return 单位（px）
      */
-    public int getHeight(Context context){
-       return context.getResources().getDisplayMetrics().heightPixels;
+    public int getHeight(Context context) {
+        return context.getResources().getDisplayMetrics().heightPixels;
     }
+
     /**
      * 获取屏幕宽度
+     *
      * @param context
      * @return 单位（px）
      */
-    public int getWidth(Context context){
+    public int getWidth(Context context) {
         return context.getResources().getDisplayMetrics().widthPixels;
     }
+
     /**
      * 获取屏幕密度
+     *
      * @param context
      * @return 单位（px）
      */
-    public float getDensity(Context context){
+    public float getDensity(Context context) {
         return context.getResources().getDisplayMetrics().density;
     }
 
-    public float getScaleDensity(Context context){
+    public float getScaleDensity(Context context) {
         return context.getResources().getDisplayMetrics().scaledDensity;
     }
-	
+
 
     public static int getStatusBarHeight(Context context) {
         int result = 0;

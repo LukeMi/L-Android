@@ -28,14 +28,14 @@ import java.util.logging.Level;
  * Created by mzchen on 2016/10/23.
  */
 
-public class MyApplication extends BaseApplication {
+public class ToturialApplication extends BaseApplication {
 
-    private final int MSG_REPEAT_TIME = 0x00;
-    private final int MSG_CURRENTTIME = 0x0001;
+    private static final int MSG_REPEAT_TIME = 0x0000;
+    private static final int MSG_CURRENTTIME = 0x0001;
     private TimeChangedReceiver dateChangedReceiver;
     //当前时间
-    private long currentTime = 0;
-    private Handler handler = new Handler() {
+    private static long currentTime = 0;
+    private static Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -65,8 +65,8 @@ public class MyApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        Logcat.log("----MyApplication---- is in");
-        registerActivityLifecycleCallbacks(new  MyActivityLifecycleCallbacks());
+        Logcat.log("----ToturialApplication---- is in");
+        registerActivityLifecycleCallbacks(new MyActivityLifecycleCallbacks());
         handler.sendEmptyMessageDelayed(MSG_REPEAT_TIME, 60000);
         initReceiver();
 //        ActiveAndroid.initialize(this);
@@ -113,7 +113,6 @@ public class MyApplication extends BaseApplication {
         registerReceiver(dateChangedReceiver, intentFilter);
         handler.sendEmptyMessage(MSG_CURRENTTIME);//实时时间
     }
-
 
     /**
      * 时间改变的广播，加以处理时间改变的逻辑

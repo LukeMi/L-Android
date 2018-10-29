@@ -1,0 +1,51 @@
+java
+	三大特性： 
+				封装：
+					1.
+				　　　　  	访问权限   类   包  子类  其他包
+
+  　　　　 					public     ∨   ∨    ∨     ∨          （对任何人都是可用的）
+
+   　　　　				 	protect    ∨   ∨   ∨     ×　　　 （继承的类可以访问以及和private一样的权限）
+
+   　　　　 					default    ∨   ∨   ×     ×　　　 （包访问权限，即在整个包内均可被访问）
+
+   　　　　 					private    ∨   ×   ×     ×　　　 （除类型创建者和类型的内部方法之外的任何人都不能访问的元素）
+				继承、
+				多态
+	六大原则：
+			单一职责原则
+			开闭原则
+			里氏替换原则
+			依赖倒置原则
+			接口隔离原则
+			迪米特原则
+	多并发三大特性：
+				原子性	（synchronized Lock）
+				可见性 	（violate）
+				时序性  
+	Object finalize() 方法 : gc 回收可被調用
+	String:少量数据 
+	StringBuilder：运行较快 
+	StringBuffer：线程安全
+
+
+android
+	生命周期 onCreate onStart onResume onPause onStop onDestroy
+	EvenceBus原理
+	Handler 原理
+	Anr分析:
+			获取 data/anr/trace.txt 文件分析
+	OOM：
+	内存泄漏：
+
+	
+
+	android 设计模式：
+					1.单例模式：Application
+					2.工厂模式：context
+					3.观察者模式：notifyDataChanged
+					4.适配器模式：Context.getSystemService
+					5.Build模式：AlertDialog.Builder
+					6.迭代器模式：Cursor
+					7.代理模式：binder机制

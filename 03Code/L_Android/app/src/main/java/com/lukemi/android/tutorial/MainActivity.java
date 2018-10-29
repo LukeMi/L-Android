@@ -5,13 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.animation.AnimationActivity;
+import com.lukemi.android.tutorial.category.ComponentActivity;
 import com.lukemi.android.tutorial.setting.SettingActivity;
-import com.lukemi.android.tutorial.handler.HandlerTestActivity;
 import com.lukemi.android.tutorial.util.Logcat;
-import com.lukemi.android.tutorial.webservice.WebServiceActivity;
-import com.lukemi.android.tutorial.sessionlifecycle.SessionActivity1;
 import com.lukemi.android.tutorial.utiltest.UtilMainActivity;
 import com.lukemi.android.tutorial.widget.WidgetActivity;
 import com.lzy.okgo.OkGo;
@@ -36,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         updateVersion(this);
     }
 
-    private void updateVersion(MainActivity mainActivity ) {
+    private void updateVersion(MainActivity mainActivity) {
         //tomcate模拟版本更新
         final String verUrl = "http://127.0.0.1:8080/verupdate.txt";
         OkGo.get(verUrl)
@@ -67,18 +64,13 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View v) {
         Class<?> targrtClass = null;
         switch (v.getId()) {
-            case R.id.anim_main:
+            case R.id.btn_anim:
                 targrtClass = AnimationActivity.class;
                 break;
-            case R.id.handler_main:
-                targrtClass = HandlerTestActivity.class;
+            case R.id.btn_component:
+                targrtClass = ComponentActivity.class;
                 break;
-            case R.id.web_main:
-                targrtClass = WebServiceActivity.class;
-                break;
-            case R.id.activityLifeCycle_main:
-                targrtClass = SessionActivity1.class;
-                break;
+
             case R.id.third_API:
                 targrtClass = ThirdAPIActivity.class;
                 break;
@@ -88,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.utilMainActivity:
                 targrtClass = UtilMainActivity.class;
                 break;
-            case R.id.settingActivity:
+            case R.id.btn_intent:
                 targrtClass = SettingActivity.class;
                 break;
         }

@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.app.MyApplication;
+import com.lukemi.android.tutorial.app.ToturialApplication;
 import com.lukemi.android.tutorial.bean.Student;
 import com.lukemi.android.tutorial.dao.DaoSession;
 import com.lukemi.android.tutorial.dao.StudentDao;
@@ -51,7 +51,7 @@ public class GreenDaoActivity extends AppCompatActivity implements BaseQuickAdap
     }
 
     private void initData() {
-        DaoSession daoSession = ((MyApplication) getApplication()).getDaoSession();
+        DaoSession daoSession = ((ToturialApplication) getApplication()).getDaoSession();
         studentDao = daoSession.getStudentDao();
         studentAdapter = new StudentAdapter(R.layout.view_student_item, studentList);
         studentAdapter.setRelationView(delHistory);

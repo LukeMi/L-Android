@@ -34,14 +34,12 @@ public class SchemeActivity extends AppCompatActivity {
         Log.e(TAG, "type: " + uri.getQueryParameter("type"));
 
         String result = "scheme: " + uri.getScheme() + "\n\n" +
-                                "host: " + uri.getHost() + "\n\n" +
-                                "port: " + uri.getPort() + "\n\n" +
-                                "path: " + uri.getPath() + "\n\n" +
-                                "queryString: " + uri.getQuery() + "\n\n" +
-                                "id: " + uri.getQueryParameter("id") + "\n\n" +
-                                "type: " + uri.getQueryParameter("type") + "\n\n";
-
+                "host: " + uri.getHost() + "\n\n" +
+                "port: " + uri.getPort() + "\n\n" +
+                "path: " + uri.getPath() + "\n\n" +
+                "queryString: " + uri.getQuery() + "\n\n" +
+                "id: " + uri.getQueryParameter("id") + "\n\n" +
+                "type: " + uri.getQueryParameter("type") + "\n\n";
         tv.setText(result);
     }
-
 }

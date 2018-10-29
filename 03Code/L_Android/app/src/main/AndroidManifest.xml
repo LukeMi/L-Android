@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-     //设置桌面图标
+    //设置桌面图标
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
     //设置壁纸
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
@@ -44,21 +44,18 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 访问网络，网络定位需要上网 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- SD卡读取权限，用户写入离线定位数据 -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <!-- 百度定位权限结束 -->
     <application
-        android:name=".app.MyApplication"
+        android:name=".app.ToturialApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/app_icon"
         android:label="@string/app_name"
         android:persistent="true"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+        android:theme="@style/AppTheme"
         tools:replace="android:icon">
-
 
         <!-- 百度定位配置 -->
         <meta-data
@@ -101,7 +98,6 @@
             android:name=".widget.WebviewActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity android:name=".fluxanalistics.FluxActivity" />
         <activity android:name=".receiver.ReceiverActivity" />
         <activity android:name=".plug.PlugActivity" />
@@ -118,29 +114,28 @@
         <activity android:name=".camera.WX_Camera_Activity" />
         <activity android:name=".utiltest.ToastUtilActivity" />
         <activity android:name=".viewtest.DialogUtilActivity" />
+        <activity android:name=".SchemeActivity" />
         <activity
             android:name=".widget.WidgetActivity"
             android:label="控件大全" />
         <activity
             android:name=".widget.TextViewActivity"
-            android:label="TextView控件效果"></activity>
+            android:label="TextView控件效果" />
         <activity
             android:name=".widget.EditTextActivity"
             android:label="EditText控件效果"
             android:theme="@style/Theme.AppCompat" />
+        <activity android:name=".widget.ImageViewActivity" />
         <activity android:name=".widget.wechat.activity.WeChatLoginActivity" />
         <activity android:name=".widget.ViewPrintActivity" />
         <activity android:name=".utiltest.BitmapUtilActivity" />
 
         <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
         <activity android:name=".utiltest.UtilMainActivity" />
-
         <activity android:name=".widget.wechat.activity.WeChatMainActivity" />
         <activity android:name=".widget.TableLayoutActivity" />
         <activity android:name=".widget.satin.SatinMainActivity" />
         <activity android:name=".viewtest.ZoomHeadListViewActivity" />
-
-
         <activity android:name=".widget.TabLayoutActivity" />
         <activity android:name=".widget.ListViewActivity" />
         <activity
@@ -153,9 +148,7 @@
         <activity android:name=".setting.SettingIntentActivity" />
         <activity android:name=".setting.CommomIntentActivity" />
         <activity android:name=".setting.TorchActivity" />
-        <activity android:name=".db.GreenDaoActivity">
-
-        </activity>
+        <activity android:name=".db.GreenDaoActivity"></activity>
 
         <!-- 百度服务 -->
         <service
@@ -207,7 +200,6 @@
         <activity android:name=".widget.MeasureViewActivity" />
         <activity android:name=".main.RadioGroupMainActivity">
             <intent-filter>
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
@@ -216,7 +208,6 @@
                     android:scheme="myandroid" />
             </intent-filter>
         </activity>
-
         <activity android:name=".widget.ImageViewCenterInsideActivity" />
         <activity android:name=".widget.RoundImageViewListActivity" />
         <activity android:name=".utiltest.FlowLayoutActivity" />
@@ -224,9 +215,8 @@
         <activity android:name=".viewtest.SingleLineLinearlayoutActivity" />
         <activity android:name=".utiltest.ScannerActivity" />
         <activity android:name=".widget.WebviewDownloadActivity" />
-        <activity android:name=".list_r.RvDividerActivity"></activity>
-	
-	        <activity android:name=".user.login.ui.LoginActivity" />
+        <activity android:name=".list_r.RvDividerActivity" />
+        <activity android:name=".user.login.ui.LoginActivity" />
         <activity android:name=".user.userInfo.ui.UserInfoActivity" />
         <activity android:name=".set.IconSetActivity" />
 
@@ -249,12 +239,7 @@
             android:configChanges="orientation|keyboardHidden" />
         <activity android:name=".github.GitHubActivity" />
         <activity android:name=".weather.view.WeatherActivity" />
-        <activity android:name=".anim.AnimationActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".anim.AnimationActivity"></activity>
         <activity android:name=".anim.TweenAnimActivity" />
         <activity android:name=".anim.FrameAnimActivity" />
         <activity android:name=".anim.PropertyAnimActivity" />
@@ -265,6 +250,7 @@
             android:name=".volum.MusicService"
             android:enabled="true"
             android:exported="true" />
+
         <activity android:name=".glide.GlideActivity" />
 
         <provider
@@ -275,22 +261,18 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-        
+
         <activity android:name=".touch.TouchEventActivity" />
         <activity android:name=".clip.ClipActivity" />
         <activity android:name=".widget.AutoCopleteActivity" />
         <activity android:name=".state.StateActivity" />
-        <activity android:name=".view.FlowActivity">
-
-        </activity>
+        <activity android:name=".view.FlowActivity" />
         <activity
             android:name=".view.SignActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".view.EmotionalFaceActivity" />
-        <activity
-            android:name=".view.CoordinateViewActivity"/>
-
-
+        <activity android:name=".view.CoordinateViewActivity" />
+        <activity android:name=".category.ComponentActivity" />
     </application>
 
 </manifest>

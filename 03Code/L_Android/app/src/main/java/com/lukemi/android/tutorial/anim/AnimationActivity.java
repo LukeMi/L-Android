@@ -46,20 +46,20 @@ public class AnimationActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.img_back, R.id.tween_Ani, R.id.fram_Ani, R.id.property_Ani})
+    @OnClick({R.id.img_back, R.id.btn_tween, R.id.btn_fram, R.id.btn_property})
     public void onViewClicked(View view) {
         Intent intent = null;
         switch (view.getId()) {
             case R.id.img_back:
                 finish();
                 break;
-            case R.id.tween_Ani:
+            case R.id.btn_tween:
                 intent = new Intent(mContext, TweenAnimActivity.class);
                 break;
-            case R.id.fram_Ani:
+            case R.id.btn_fram:
                 intent = new Intent(mContext, FrameAnimActivity.class);
                 break;
-            case R.id.property_Ani:
+            case R.id.btn_property:
                 intent = new Intent(mContext, PropertyAnimActivity.class);
                 break;
         }

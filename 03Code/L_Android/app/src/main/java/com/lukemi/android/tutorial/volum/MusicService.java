@@ -32,8 +32,6 @@ public class MusicService extends Service {
         String action = intent.getAction();
         switch (action) {
             case Constants.Action.ACTION_START_FOREGROUND:
-
-
                 Intent detailIntent = new Intent(this, VolumeActivity.class);
                 detailIntent.setAction(Constants.Action.ACTION_MUSIC_PLAY);
                 PendingIntent detailPendingIntent

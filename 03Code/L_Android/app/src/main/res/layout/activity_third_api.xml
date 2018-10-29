@@ -3,13 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.tbug.android.collection.com.lukemi.android.collection.ThirdAPIActivity">
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/bdActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="百度API" />
+
+    <Button
+        android:id="@+id/btn_webservice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Webservice" />
+
+    <Button
+        android:id="@+id/btn_handler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Handler机制"
+        android:textAllCaps="false" />
 
 </LinearLayout>

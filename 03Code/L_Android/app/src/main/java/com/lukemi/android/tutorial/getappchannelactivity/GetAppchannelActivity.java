@@ -8,7 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.app.MyApplication;
+import com.lukemi.android.tutorial.app.ToturialApplication;
 
 public class GetAppchannelActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -36,7 +36,7 @@ public class GetAppchannelActivity extends AppCompatActivity implements View.OnC
         int id = v.getId();
         switch (id){
             case R.id.getAppchannel_GetApp:
-                String appchannel = ((MyApplication) getApplication()).getAppchannel();
+                String appchannel = ((ToturialApplication) getApplication()).getAppchannel();
                 showAppChannel_GetAppET.setText(appchannel);
                 break;
             default:

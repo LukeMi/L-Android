@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.lukemi.android.tutorial.baidu.BDActivity;
+import com.lukemi.android.tutorial.handler.HandlerTestActivity;
+import com.lukemi.android.tutorial.webservice.WebServiceActivity;
 
 public class ThirdAPIActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -18,6 +20,8 @@ public class ThirdAPIActivity extends AppCompatActivity implements View.OnClickL
 
     private void initView() {
         findViewById(R.id.bdActivity).setOnClickListener(this);
+        findViewById(R.id.btn_webservice).setOnClickListener(this);
+        findViewById(R.id.btn_handler).setOnClickListener(this);
     }
 
     @Override
@@ -27,6 +31,13 @@ public class ThirdAPIActivity extends AppCompatActivity implements View.OnClickL
             case R.id.bdActivity:
                 targrtClass = BDActivity.class;
                 break;
+            case R.id.btn_webservice:
+                targrtClass = WebServiceActivity.class;
+                break;
+            case R.id.btn_handler:
+                targrtClass = HandlerTestActivity.class;
+                break;
+
             default:
                 break;
         }

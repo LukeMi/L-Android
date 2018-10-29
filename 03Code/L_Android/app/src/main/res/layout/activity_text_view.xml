@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/aliceblue"
-    android:orientation="vertical"
-    tools:context="com.tbug.android.collection.com.lukemi.android.collection.widget.TextViewActivity">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,8 +27,8 @@
             android:focusableInTouchMode="true"
             android:marqueeRepeatLimit="marquee_forever"
             android:singleLine="true"
-            android:textColor="@color/black"
-            android:text="我在你的前生或来世 碧落或黄泉 只是不在此刻 不在眼前" />
+            android:text="我在你的前生或来世 碧落或黄泉 只是不在此刻 不在眼前"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/tv2"
@@ -40,19 +39,19 @@
             android:focusableInTouchMode="true"
             android:marqueeRepeatLimit="marquee_forever"
             android:singleLine="true"
-            android:textColor="@color/black"
-            android:text="TexTView 和上面的一样>我在你的前生或来世 碧落或黄泉 只是不在此刻 不在眼前" />
+            android:text="TexTView 和上面的一样>我在你的前生或来世 碧落或黄泉 只是不在此刻 不在眼前"
+            android:textColor="@color/black" />
 
 
-        <com.lukemi.android.view.MarqueeTextView
+        <com.lukemi.android.tutorial.view.MarqueeTextView
             android:id="@+id/marqueeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="marquee"
             android:marqueeRepeatLimit="marquee_forever"
-            android:maxLines="1"
+            android:singleLine="true"
             android:text="我在你的前生或来世 碧落或黄泉 只是不在此刻 不在眼前"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         //设置文字的滚屏
 
@@ -76,17 +75,17 @@
             android:layout_height="100dp"
             android:gravity="center"
             android:scrollbars="vertical"
-            android:textColor="@color/black"
-            android:text="vitercal_ScrollTextView\nvitercal_ScrollTextView\nvitercal_ScrollTextView\nvitercal_ScrollTextView\nvitercal_ScrollTextView\nvitercal_ScrollTextView\nvitercal_ScrollTextView\n" />
+            android:text="vitercal_ScrollTextView\nvitercal_ScrollTextView\nvitercal_ScrollTextView\nvitercal_ScrollTextView\nvitercal_ScrollTextView\nvitercal_ScrollTextView\nvitercal_ScrollTextView\n"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/horizontal_Scroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="@color/black"
             android:scrollbars="horizontal"
-            android:text="xxxxxxxxxxx"/>
+            android:text="xxxxxxxxxxx"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/textView1"
@@ -138,9 +137,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="2.08"
             android:includeFontPadding="false"
-            android:textColor="@color/black"
             android:text="includeFontPadding"
-            android:layout_weight="2.08" />
+            android:textColor="@color/black" />
     </LinearLayout>
 </ScrollView>

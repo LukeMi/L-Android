@@ -4,8 +4,7 @@
     android:id="@+id/activity_baidu_loc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bd_loc_bg"
-    tools:context="com.tbug.android.collection.com.lukemi.android.collection.baidu.BDLocActivity">
+    android:background="@drawable/bd_loc_bg">
 
     <TextView
         android:id="@+id/title"
@@ -35,7 +34,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <com.lukemi.android.view.NoPadingTextView
+        <com.lukemi.android.tutorial.view.NoPadingTextView
             android:id="@+id/startLoc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -56,7 +55,7 @@
             android:layout_marginTop="6dp"
             android:background="@color/black" />
 
-        <com.lukemi.android.view.NoPadingTextView
+        <com.lukemi.android.tutorial.view.NoPadingTextView
             android:id="@+id/stopLoc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
