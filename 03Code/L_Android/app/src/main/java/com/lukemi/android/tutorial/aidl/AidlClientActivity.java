@@ -68,7 +68,7 @@ public class AidlClientActivity extends AppCompatActivity {
             String result;
             try {
                 int add = serverAidlInterface.add(31, 40);
-                result = String.format("3 + 4 = %d", add);
+                result = String.format("31 + 40 = %d", add);
                 tvResult.setText(result);
             } catch (RemoteException e) {
                 e.printStackTrace();
