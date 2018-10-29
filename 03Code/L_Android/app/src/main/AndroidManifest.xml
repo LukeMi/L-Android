@@ -65,11 +65,7 @@
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".sessionlifecycle.SessionActivity1" />
         <activity android:name=".sessionlifecycle.SessionActivity2" />
@@ -148,7 +144,7 @@
         <activity android:name=".setting.SettingIntentActivity" />
         <activity android:name=".setting.CommomIntentActivity" />
         <activity android:name=".setting.TorchActivity" />
-        <activity android:name=".db.GreenDaoActivity"></activity>
+        <activity android:name=".db.GreenDaoActivity" />
 
         <!-- 百度服务 -->
         <service
@@ -239,7 +235,7 @@
             android:configChanges="orientation|keyboardHidden" />
         <activity android:name=".github.GitHubActivity" />
         <activity android:name=".weather.view.WeatherActivity" />
-        <activity android:name=".anim.AnimationActivity"></activity>
+        <activity android:name=".anim.AnimationActivity" />
         <activity android:name=".anim.TweenAnimActivity" />
         <activity android:name=".anim.FrameAnimActivity" />
         <activity android:name=".anim.PropertyAnimActivity" />
@@ -273,6 +269,13 @@
         <activity android:name=".view.EmotionalFaceActivity" />
         <activity android:name=".view.CoordinateViewActivity" />
         <activity android:name=".category.ComponentActivity" />
+        <activity android:name=".aidl.AidlClientActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

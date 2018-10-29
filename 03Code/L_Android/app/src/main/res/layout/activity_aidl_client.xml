@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dp16"
+    tools:context=".aidl.AidlClientActivity">
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text=" 向aidl server 请求 31 与 40 的 和 " />
+
+    <Button
+        android:id="@+id/btn_calc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp16"
+        android:text="sum"
+        app:layout_constraintTop_toBottomOf="@+id/tv_question" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp16"
+        android:gravity="center_vertical"
+        android:hint=" 31 + 41 = ？ "
+        android:textColor="@color/mediumseagreen"
+        app:layout_constraintTop_toBottomOf="@+id/btn_calc" />
+
+</android.support.constraint.ConstraintLayout>
