@@ -24,21 +24,21 @@ public class MapUtil {
 
     private static void initPackageManager(@NonNull Context context) {
         PackageManager mPackageManager = context.getPackageManager();
-        List<PackageInfo> packageInfos = mPackageManager.getInstalledPackages(0);
+        List<PackageInfo> pkgList = mPackageManager.getInstalledPackages(0);
 
-        if (packageInfos != null) {
-            for (int i = 0; i < packageInfos.size(); i++) {
-                mPackageNames.add(packageInfos.get(i).packageName);
+        if (pkgList != null) {
+            for (int i = 0; i < pkgList.size(); i++) {
+                mPackageNames.add(pkgList.get(i).packageName);
             }
         }
     }
 
-    public static boolean haveGaodeMap(@NonNull Context context) {
+    public static boolean haveGaoDeMap(@NonNull Context context) {
         initPackageManager(context);
         return mPackageNames.contains(GAODE_PACKAGE_NAME);
     }
 
-    public static boolean haveBaiduMap(@NonNull Context context) {
+    public static boolean haveBaiDuMap(@NonNull Context context) {
         initPackageManager(context);
         return mPackageNames.contains(BAIDU_PACKAGE_NAME);
     }

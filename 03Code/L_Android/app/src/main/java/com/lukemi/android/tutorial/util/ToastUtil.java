@@ -22,7 +22,7 @@ public class ToastUtil {
      */
     public static Toast show_makeText(Context context, CharSequence text, int duration) {
         if (context != null) {
-            Toast toast = makeText(context, text, duration);
+            Toast toast = makeText(context.getApplicationContext(), text, duration);
             toast.show();
             return toast;
         }
@@ -39,7 +39,7 @@ public class ToastUtil {
      */
     public static Toast show_makeText(Context context, int string_id, int duration) {
         if (context != null) {
-            Toast toast = Toast.makeText(context, context.getResources().getString(string_id), duration);
+            Toast toast = Toast.makeText(context.getApplicationContext(), context.getResources().getString(string_id), duration);
             toast.show();
             return toast;
         }
@@ -59,7 +59,7 @@ public class ToastUtil {
      */
     public static Toast show_makeText_position(Context context, CharSequence text, int gravity, int xOffset, int yOffset, int duration) {
         if (context != null) {
-            Toast toast = makeText(context, text, duration);
+            Toast toast = makeText(context.getApplicationContext(), text, duration);
             toast.setGravity(gravity, xOffset, yOffset);
             toast.show();
             return toast;
@@ -80,7 +80,7 @@ public class ToastUtil {
      */
     public static Toast show_makeText_position(Context context, int string_id, int gravity, int xOffset, int yOffset, int duration) {
         if (context != null) {
-            Toast toast = show_makeText_position(context, context.getString(string_id), gravity, xOffset, yOffset, duration);
+            Toast toast = show_makeText_position(context.getApplicationContext(), context.getString(string_id), gravity, xOffset, yOffset, duration);
             return toast;
         }
         return null;

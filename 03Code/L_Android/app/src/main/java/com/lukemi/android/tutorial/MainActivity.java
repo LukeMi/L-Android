@@ -83,6 +83,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_intent:
                 targrtClass = SettingActivity.class;
                 break;
+            case R.id.btn_android:
+                targrtClass = AndroidActivity.class;
+                break;
         }
         if (targrtClass != null) {
             startActivity(new Intent(MainActivity.this, targrtClass));

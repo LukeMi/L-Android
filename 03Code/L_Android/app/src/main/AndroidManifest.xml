@@ -65,7 +65,11 @@
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".sessionlifecycle.SessionActivity1" />
         <activity android:name=".sessionlifecycle.SessionActivity2" />
@@ -110,7 +114,16 @@
         <activity android:name=".camera.WX_Camera_Activity" />
         <activity android:name=".utiltest.ToastUtilActivity" />
         <activity android:name=".viewtest.DialogUtilActivity" />
-        <activity android:name=".SchemeActivity" />
+        <activity android:name=".SchemeActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="video"
+                    android:scheme="myandroid" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".widget.WidgetActivity"
             android:label="控件大全" />
@@ -195,14 +208,7 @@
         <activity android:name=".widget.ConstraintLayoutActivity" />
         <activity android:name=".widget.MeasureViewActivity" />
         <activity android:name=".main.RadioGroupMainActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
 
-                <data
-                    android:host="video"
-                    android:scheme="myandroid" />
-            </intent-filter>
         </activity>
         <activity android:name=".widget.ImageViewCenterInsideActivity" />
         <activity android:name=".widget.RoundImageViewListActivity" />
@@ -269,13 +275,9 @@
         <activity android:name=".view.EmotionalFaceActivity" />
         <activity android:name=".view.CoordinateViewActivity" />
         <activity android:name=".category.ComponentActivity" />
-        <activity android:name=".aidl.AidlClientActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".aidl.AidlClientActivity" />
+        <activity android:name=".AndroidActivity" />
+        <activity android:name=".IPCActivity"></activity>
     </application>
 
 </manifest>

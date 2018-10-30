@@ -41,6 +41,7 @@ public class Logcat {
             }
         }
     }
+
     /**
      * Activity生命周期打印
      *
