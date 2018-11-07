@@ -41,12 +41,11 @@ public class IPCActivity extends AppCompatActivity {
                 String path = "aidl://hostq:8010/path1?id=0";
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(path));
                 boolean b = getPackageManager().resolveActivity(intent, 0) != null;
-                if (b){
+                if (b) {
                     startActivity(intent);
-                }else{
-                    ToastUtil.show_makeText(this,"未安装对应app",Toast.LENGTH_LONG);
+                } else {
+                    ToastUtil.show_makeText(this, "未安装对应app", Toast.LENGTH_LONG);
                 }
-
                 break;
         }
         if (target != null) {
