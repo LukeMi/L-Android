@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="com.lukemi.common.test.FloatViewActivity">
+        tools:context="com.lukemi.android.common.test.FloatViewActivity">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"

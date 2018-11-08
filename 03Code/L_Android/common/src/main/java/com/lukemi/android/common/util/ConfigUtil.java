@@ -1,4 +1,4 @@
-package com.lukemi.common.util;
+package com.lukemi.android.common.util;
 
 /**
  * 配置文件存放区

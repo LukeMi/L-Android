@@ -1,13 +1,15 @@
-package com.lukemi.common;
+package com.lukemi.android.common;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.lukemi.common.test.DiDiViewActivity;
-import com.lukemi.common.test.FloatViewActivity;
-import com.lukemi.common.test.FontActivity;
+import com.lukemi.android.common.test.DiDiViewActivity;
+import com.lukemi.android.common.test.FloatViewActivity;
+import com.lukemi.android.common.test.FontActivity;
+import com.lukemi.common.R;
+import com.lukemi.common.R2;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

@@ -1,4 +1,4 @@
-package com.lukemi.common.view;
+package com.lukemi.android.common.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;

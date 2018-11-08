@@ -1,4 +1,4 @@
-package com.lukemi.common.util;
+package com.lukemi.android.common.util;
 
 /**
  * Created by mzchen on 2016/11/18.

@@ -1,4 +1,4 @@
-package com.lukemi.common.util;
+package com.lukemi.android.common.util;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;

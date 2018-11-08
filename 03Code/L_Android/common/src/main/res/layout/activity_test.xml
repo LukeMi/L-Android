@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    tools:context="com.lukemi.common.test.TestActivity">
+    tools:context="com.lukemi.common.com.lukemi.android.common.test.TestActivity">
 
-    <com.lukemi.common.view.CirculaArcView
+    <com.lukemi.android.common.view.CirculaArcView
         android:id="@+id/circulaArcView"
         android:layout_width="180dp"
         android:layout_height="180dp"

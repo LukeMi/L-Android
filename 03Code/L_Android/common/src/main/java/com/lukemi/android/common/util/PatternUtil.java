@@ -1,4 +1,4 @@
-package com.lukemi.common.util;
+package com.lukemi.android.common.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

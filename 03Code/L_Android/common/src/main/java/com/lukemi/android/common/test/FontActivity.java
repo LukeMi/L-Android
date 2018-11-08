@@ -1,4 +1,4 @@
-package com.lukemi.common.test;
+package com.lukemi.android.common.test;
 
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.lukemi.common.R;
-import com.lukemi.common.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 import java.util.ArrayList;
 import java.util.List;

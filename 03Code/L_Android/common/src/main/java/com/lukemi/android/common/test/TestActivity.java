@@ -1,4 +1,4 @@
-package com.lukemi.common.test;
+package com.lukemi.android.common.test;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.lukemi.common.R;
 import com.lukemi.common.R2;
-import com.lukemi.common.view.CirculaArcView;
+import com.lukemi.android.common.view.CirculaArcView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

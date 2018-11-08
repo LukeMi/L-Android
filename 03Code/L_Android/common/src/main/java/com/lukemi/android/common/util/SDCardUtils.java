@@ -1,4 +1,4 @@
-package com.lukemi.common.util;
+package com.lukemi.android.common.util;
 
 import android.os.Build.VERSION;
 import android.os.Environment;

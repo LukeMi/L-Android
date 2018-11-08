@@ -1,4 +1,4 @@
-package com.lukemi.common.util;
+package com.lukemi.android.common.util;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

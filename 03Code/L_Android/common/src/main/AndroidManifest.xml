@@ -9,13 +9,13 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.lukemi.android.common.MainActivity">
 
         </activity>
-        <activity android:name=".test.FontActivity"></activity>
-        <activity android:name=".test.DiDiViewActivity"></activity>
-        <activity android:name=".test.FloatViewActivity"></activity>
-        <activity android:name=".test.TestActivity">
+        <activity android:name="com.lukemi.android.common.test.FontActivity"></activity>
+        <activity android:name="com.lukemi.android.common.test.DiDiViewActivity"></activity>
+        <activity android:name="com.lukemi.android.common.test.FloatViewActivity"></activity>
+        <activity android:name="com.lukemi.android.common.test.TestActivity">
 
         </activity>
     </application>

@@ -1,4 +1,4 @@
-package com.lukemi.common.view;
+package com.lukemi.android.common.view;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
