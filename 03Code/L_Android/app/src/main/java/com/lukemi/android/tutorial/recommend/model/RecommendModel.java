@@ -1,6 +1,6 @@
 package com.lukemi.android.tutorial.recommend.model;
 
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;

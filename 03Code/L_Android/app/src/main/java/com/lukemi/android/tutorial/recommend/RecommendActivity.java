@@ -10,7 +10,7 @@ import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.base.BaseActivity;
 import com.lukemi.android.tutorial.recommend.presenter.RecommendPresenter;
 import com.lukemi.android.tutorial.recommend.view.RecommendView;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 import butterknife.BindView;
 

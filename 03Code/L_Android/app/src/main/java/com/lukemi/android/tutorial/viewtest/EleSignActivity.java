@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.util.HttpUtils;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.util.SDCardUtils;
 import com.lukemi.android.tutorial.view.LinePathView;
 import com.lukemi.android.tutorial.view.ShowBigPicClass;

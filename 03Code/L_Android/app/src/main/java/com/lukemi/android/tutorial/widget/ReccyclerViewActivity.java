@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.util.Logcat;
 
 import java.util.List;
 

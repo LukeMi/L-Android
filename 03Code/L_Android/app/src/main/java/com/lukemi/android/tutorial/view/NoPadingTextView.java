@@ -1,15 +1,12 @@
 package com.lukemi.android.tutorial.view;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.os.Build;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 /**
  * Created by mzchen on 2017/2/24.

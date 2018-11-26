@@ -3,7 +3,7 @@ package com.lukemi.android.tutorial.webservice;
 import android.os.AsyncTask;
 import android.os.Looper;
 
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;

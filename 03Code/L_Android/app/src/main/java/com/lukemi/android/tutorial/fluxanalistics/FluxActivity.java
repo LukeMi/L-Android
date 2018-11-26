@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.util.DeviceUtil;
 import com.lukemi.android.tutorial.util.HttpUtils;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

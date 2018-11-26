@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/dp16"
+    tools:context=".SystemMemoryActivity">
+
+    <Button
+        android:id="@+id/btn_obtain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:text="获取系统内存情况" />
+
+    <TextView
+        android:id="@+id/tv_total_memory"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:gravity="center_vertical"
+        android:hint="全部内存：？"
+        app:layout_constraintTop_toBottomOf="@+id/btn_obtain" />
+
+    <TextView
+        android:id="@+id/tv_free_memory"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:gravity="center_vertical"
+        android:hint="可用内存：？"
+        app:layout_constraintTop_toBottomOf="@+id/tv_total_memory" />
+
+
+</android.support.constraint.ConstraintLayout>

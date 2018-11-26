@@ -16,7 +16,7 @@ import com.lukemi.android.tutorial.dao.DaoMaster;
 import com.lukemi.android.tutorial.dao.DaoSession;
 import com.lukemi.android.tutorial.service.ForegroundService;
 import com.lukemi.android.tutorial.sessionlifecycle.MyActivityLifecycleCallbacks;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 import com.lzy.okgo.OkGo;
 import com.squareup.leakcanary.LeakCanary;
 

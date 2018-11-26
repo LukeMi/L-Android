@@ -7,28 +7,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.Toast;
 
-import com.lukemi.common.R;
-import com.lukemi.common.R2;
+import com.lukemi.android.common.R;
 import com.lukemi.android.common.view.CirculaArcView;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 
 public class TestActivity extends AppCompatActivity {
 
-    @BindView(R2.id.circulaArcView)
     CirculaArcView circulaArcView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        ButterKnife.bind(this);
     }
 
-    @OnClick(R2.id.circulaArcView)
     public void onViewClicked() {
      /*   Toast.makeText(this, "circulaArcView", Toast.LENGTH_SHORT).show();
         ScaleAnimation animation = new ScaleAnimation(1, 3, 1, 3, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);

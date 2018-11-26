@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 /**
  * 帧动画使用流程；

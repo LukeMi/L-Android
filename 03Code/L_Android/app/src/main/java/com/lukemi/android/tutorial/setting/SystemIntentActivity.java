@@ -11,7 +11,7 @@ import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.base.BaseActivity;
 
 
-public class SettingIntentActivity extends BaseActivity implements View.OnClickListener {
+public class SystemIntentActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class SettingIntentActivity extends BaseActivity implements View.OnClickL
 
     @Override
     protected int bindLayout() {
-        return R.layout.activity_setting_intent;
+        return R.layout.activity_system_intent;
     }
 
     /**

@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.lukemi.common.R;
+import com.lukemi.android.common.R;
 
 
 /**

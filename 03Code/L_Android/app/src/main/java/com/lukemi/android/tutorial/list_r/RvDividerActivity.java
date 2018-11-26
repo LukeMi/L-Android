@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.util.SortedList;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,10 +15,9 @@ import android.widget.TextView;
 import com.lukemi.android.tutorial.list_r.itemDecoration.GruopItemDecoration;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.list_r.itemDecoration.DividerItemDecoration;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 

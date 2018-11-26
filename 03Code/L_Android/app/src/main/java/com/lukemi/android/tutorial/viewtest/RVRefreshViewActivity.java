@@ -19,7 +19,7 @@ import com.google.gson.Gson;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.mvp_todaynews.TTDZAdapter;
 import com.lukemi.android.tutorial.mvp_todaynews.TTDZBean;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.view.DropDownMenu;
 import com.lukemi.android.tutorial.view.SuperSwipeRefreshLayout;
 import com.lukemi.android.tutorial.view.pulltorefresh.RefreshHeaderView;

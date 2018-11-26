@@ -19,7 +19,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

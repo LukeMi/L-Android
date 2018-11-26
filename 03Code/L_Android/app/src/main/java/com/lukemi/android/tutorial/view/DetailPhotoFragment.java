@@ -11,7 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 
 public class DetailPhotoFragment extends DialogFragment implements View.OnClickListener {

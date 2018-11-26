@@ -56,7 +56,7 @@
         android:layout_height="200dp"
         android:scaleType="centerCrop"
         android:src="@drawable/bd_loc_bg"/>
-    <com.lukemi.android.view.ClipImageView
+    <com.lukemi.android.toturial.view.ClipImageView
         android:id="@+id/civ"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

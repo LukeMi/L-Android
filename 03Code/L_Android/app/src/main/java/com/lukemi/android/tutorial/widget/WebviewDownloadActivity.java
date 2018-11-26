@@ -17,10 +17,9 @@ import android.webkit.WebViewClient;
 
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.base.BaseActivity;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * webView 下载功能

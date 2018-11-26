@@ -22,7 +22,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;

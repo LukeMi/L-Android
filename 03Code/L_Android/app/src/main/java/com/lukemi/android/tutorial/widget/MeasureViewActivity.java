@@ -7,7 +7,6 @@ import android.view.ViewTreeObserver;
 import android.widget.TextView;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.util.Logcat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

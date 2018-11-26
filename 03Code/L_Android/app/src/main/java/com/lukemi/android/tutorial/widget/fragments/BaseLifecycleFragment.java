@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lukemi.android.tutorial.base.BaseLazyFragment;
-import com.lukemi.android.tutorial.util.Logcat;
 
 /**
  * Created by android on 2017/8/10.

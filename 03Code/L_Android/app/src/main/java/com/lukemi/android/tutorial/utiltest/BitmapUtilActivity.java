@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 import com.lukemi.android.tutorial.BaseActivity;
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.view.ShowBigPicClass;
 import com.lukemi.android.tutorial.util.BitmapUtils;
 

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.lukemi.android.tutorial.service.ForegroundService;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 public class BootReceiver extends BroadcastReceiver {
 

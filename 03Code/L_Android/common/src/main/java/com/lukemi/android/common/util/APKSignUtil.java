@@ -46,7 +46,7 @@ public class APKSignUtil {
             valueArgs[0] = apkPath;
             Object pkgParser = pkgParserCt.newInstance(valueArgs);
 //            MediaApplication.logD(DownloadApk.class, "pkgParser:" + pkgParser.toString());
-            Logcat.log("----showUninstallAPKSignatures----> " + pkgParser.toString());
+//            Logcat.log("----showUninstallAPKSignatures----> " + pkgParser.toString());
             // 这个是与显示有关的, 里面涉及到一些像素显示等等, 我们使用默认的情况
             DisplayMetrics metrics = new DisplayMetrics();
             metrics.setToDefaults();

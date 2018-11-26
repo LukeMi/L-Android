@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.lukemi.android.tutorial.util.DeviceUtil;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 public class ReceiverActivity extends AppCompatActivity {
 

@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebChromeClient;
-import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -18,11 +17,11 @@ import android.widget.LinearLayout;
 
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.util.DeviceUtil;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 import static android.view.Window.FEATURE_NO_TITLE;
 
-public class WebviewActivity extends AppCompatActivity implements View.OnClickListener {
+public class WebViewActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ProgressDialog dialog;
     private LinearLayout llayout;
@@ -31,11 +30,11 @@ public class WebviewActivity extends AppCompatActivity implements View.OnClickLi
     private Button refresh_BTN;
     private Button clear_BTN;
     private WebView web;
-    //    private String defaultURL = "http://www.baidu.com/";
+    //    private String defURL = "http://www.baidu.com/";
     //web 缓存目录
     private static final String APP_CACHE_DIRNAME = "/webcache";
-    //    private String defaultURL = "http://meeting.91360.com/Meeting/ShowDetails_436.html";
-    private String defaultURL = "http://jxl.91360.com/";
+    //    private String defURL = "http://meeting.91360.com/Meeting/ShowDetails_436.html";
+    private String defURL = "https://www.funcity.one/?ref=wxwalktomars";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +46,7 @@ public class WebviewActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void initView() {
-        dialog = new ProgressDialog(WebviewActivity.this);
+        dialog = new ProgressDialog(WebViewActivity.this);
         dialog.setMessage("加载中请稍候。。。");
         webSit_ET = ((EditText) findViewById(R.id.inputsite));
         run_BTN = ((Button) findViewById(R.id.run));
@@ -65,7 +64,7 @@ public class WebviewActivity extends AppCompatActivity implements View.OnClickLi
         webSettings.setJavaScriptEnabled(true);
         //设置缓存模式
         if (DeviceUtil.getNetType(this).equalsIgnoreCase(DeviceUtil.NETWORK_TYPE_NAME_UNKNOWN)
-                    || DeviceUtil.getNetType(this).equalsIgnoreCase(DeviceUtil.NETWORK_TYPE_NAME_NONENETWORK)
+                || DeviceUtil.getNetType(this).equalsIgnoreCase(DeviceUtil.NETWORK_TYPE_NAME_NONENETWORK)
                 ) {
             webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         } else {
@@ -103,7 +102,7 @@ public class WebviewActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-        web.loadUrl(defaultURL);
+        web.loadUrl(defURL);
     }
 
     @Override

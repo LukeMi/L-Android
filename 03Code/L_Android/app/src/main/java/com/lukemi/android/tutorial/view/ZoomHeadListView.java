@@ -11,7 +11,7 @@ import android.view.animation.Transformation;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 /**
  * QQ空间头部可向下拉伸空间

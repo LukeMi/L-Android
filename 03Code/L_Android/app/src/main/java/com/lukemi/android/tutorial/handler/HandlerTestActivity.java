@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.widget.Toast;
 
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 public class HandlerTestActivity extends  BaseHandlerActivity {
     private final int MSG_TEST = 0x0000;

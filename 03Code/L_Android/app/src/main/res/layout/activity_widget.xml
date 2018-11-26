@@ -4,14 +4,22 @@
     android:id="@+id/activity_widget"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="none"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <Button
+            android:id="@+id/customViewList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="自定义View测试"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/TextView"
@@ -212,12 +220,21 @@
             android:text="WebviewActivity" />
 
         <Button
+            android:id="@+id/btn_pop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PopupWindow"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/TableLayoutActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TableLayoutActivity"
             android:textAllCaps="false" />
+
         <Button
             android:id="@+id/WebviewDownloadActivity"
             android:layout_width="match_parent"

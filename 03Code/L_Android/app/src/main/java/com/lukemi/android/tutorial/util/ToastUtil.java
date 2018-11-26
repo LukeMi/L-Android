@@ -1,6 +1,7 @@
 package com.lukemi.android.tutorial.util;
 
 import android.content.Context;
+import android.support.annotation.StringRes;
 import android.view.View;
 import android.widget.Toast;
 
@@ -37,7 +38,7 @@ public class ToastUtil {
      * @param string_id 显示的信息id
      * @param duration  显示时长
      */
-    public static Toast show_makeText(Context context, int string_id, int duration) {
+    public static Toast show_makeText(Context context, @StringRes int string_id, int duration) {
         if (context != null) {
             Toast toast = Toast.makeText(context.getApplicationContext(), context.getResources().getString(string_id), duration);
             toast.show();
@@ -55,7 +56,10 @@ public class ToastUtil {
      * @param gravity  位置
      * @param xOffset  x轴偏移量
      * @param yOffset  y轴偏移量
-     * @param duration 时长
+     * @param duration 时长   {@link Toast#LENGTH_SHORT} {@link Toast#LENGTH_LONG}
+     * @author cmz
+     * @version v1.0
+     * @see <a href="https:developer.android.google.cn">参考</a>
      */
     public static Toast show_makeText_position(Context context, CharSequence text, int gravity, int xOffset, int yOffset, int duration) {
         if (context != null) {
@@ -96,7 +100,7 @@ public class ToastUtil {
      */
     public Toast show_view(Context context, View view, float horizontalMargin, float verticalMargin, int duration) {
         if (context != null) {
-            Toast toast = new Toast(context);
+            Toast toast = new Toast(getApplicationContext(context));
             toast.setView(view);
             toast.setDuration(duration);
             toast.setMargin(horizontalMargin, verticalMargin);
@@ -120,7 +124,7 @@ public class ToastUtil {
      */
     public Toast show_view_position(Context context, View view, float horizontalMargin, float verticalMargin, int gravity, int xOffset, int yOffset, int duration) {
         if (context != null) {
-            Toast toast = new Toast(context);
+            Toast toast = new Toast(getApplicationContext(context));
             toast.setView(view);
             toast.setDuration(duration);
             toast.setMargin(horizontalMargin, verticalMargin);
@@ -129,6 +133,10 @@ public class ToastUtil {
             return toast;
         }
         return null;
+    }
+
+    public static Context getApplicationContext(Context context) {
+        return context.getApplicationContext();
     }
 
 }

@@ -20,6 +20,8 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.View;
 
+import com.lukemi.android.common.util.Logcat;
+
 import java.io.ByteArrayOutputStream;
 
 /**

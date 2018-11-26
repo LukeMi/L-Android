@@ -1,39 +1,38 @@
 package com.lukemi.android.tutorial.setting;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.lukemi.android.tutorial.R;
+import com.lukemi.android.tutorial.SystemMemoryActivity;
 
-public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+public class SettingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-        initView();
+        ButterKnife.bind(this);
     }
 
-    private void initView() {
-        findViewById(R.id.wallPaperActivity).setOnClickListener(this);
-        findViewById(R.id.systemIntentActivity).setOnClickListener(this);
-    }
 
-    @Override
-    public void onClick(View v) {
+    @OnClick({R.id.bet_set_wall_paper, R.id.btn_system_intent, R.id.btn_memory_analyse})
+    public void onViewClicked(View view) {
         Class<?> targetClass = null;
-        switch (v.getId()) {
-            //手机壁纸功能
-            case R.id.wallPaperActivity:
+        switch (view.getId()) {
+            case R.id.bet_set_wall_paper:
                 targetClass = WallPaperActivity.class;
                 break;
-            //手机系统各种设置界面
-            case R.id.systemIntentActivity:
-                targetClass = SettingIntentActivity.class;
+            case R.id.btn_system_intent:
+                targetClass = SystemIntentActivity.class;
                 break;
-            default:
+            case R.id.btn_memory_analyse:
+                targetClass = SystemMemoryActivity.class;
                 break;
         }
         if (targetClass != null) {

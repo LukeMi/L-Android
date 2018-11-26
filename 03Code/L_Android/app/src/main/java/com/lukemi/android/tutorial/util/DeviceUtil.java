@@ -764,7 +764,7 @@ public class DeviceUtil {
     /**
      * 获取   android.os.Build.下面的android设备信息
      *
-     * @return 以Map键值对形式返回的Build下面的信息<br />
+     * @return 以Map键值对形式返回的Build下面的信息<br               />
      */
     public static JSONObject getBuildInfo() {
         Map<String, String> buildMap = new LinkedHashMap<>();

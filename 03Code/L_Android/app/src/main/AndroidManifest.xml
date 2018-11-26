@@ -54,6 +54,7 @@
         android:label="@string/app_name"
         android:persistent="true"
         android:supportsRtl="true"
+        android:testOnly="false"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
@@ -96,7 +97,7 @@
         <activity android:name=".viewtest.EleSignActivity" />
         <activity android:name=".viewtest.CViewActivity" />
         <activity
-            android:name=".widget.WebviewActivity"
+            android:name=".widget.WebViewActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".fluxanalistics.FluxActivity" />
@@ -155,7 +156,7 @@
         <activity android:name=".ThirdAPIActivity" />
         <activity android:name=".setting.WallPaperActivity" />
         <activity android:name=".setting.SettingActivity" />
-        <activity android:name=".setting.SettingIntentActivity" />
+        <activity android:name=".setting.SystemIntentActivity" />
         <activity android:name=".setting.CommomIntentActivity" />
         <activity android:name=".setting.TorchActivity" />
         <activity android:name=".db.GreenDaoActivity" />
@@ -208,9 +209,7 @@
         <activity android:name=".widget.CoordinaryLayoutActivity" />
         <activity android:name=".widget.ConstraintLayoutActivity" />
         <activity android:name=".widget.MeasureViewActivity" />
-        <activity android:name=".main.RadioGroupMainActivity">
-
-        </activity>
+        <activity android:name=".main.RadioGroupMainActivity" />
         <activity android:name=".widget.ImageViewCenterInsideActivity" />
         <activity android:name=".widget.RoundImageViewListActivity" />
         <activity android:name=".utiltest.FlowLayoutActivity" />
@@ -278,7 +277,9 @@
         <activity android:name=".category.ComponentActivity" />
         <activity android:name=".aidl.AidlClientActivity" />
         <activity android:name=".AndroidActivity" />
-        <activity android:name=".IPCActivity"></activity>
+        <activity android:name=".IPCActivity" />
+        <activity android:name=".widget.CustomViewListActivity" />
+        <activity android:name=".SystemMemoryActivity"></activity>
     </application>
 
 </manifest>

@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.animation.AnimationActivity;
 import com.lukemi.android.tutorial.category.ComponentActivity;
 import com.lukemi.android.tutorial.setting.SettingActivity;
-import com.lukemi.android.tutorial.util.Logcat;
 import com.lukemi.android.tutorial.utiltest.UtilMainActivity;
 import com.lukemi.android.tutorial.widget.WidgetActivity;
 import com.lzy.okgo.OkGo;

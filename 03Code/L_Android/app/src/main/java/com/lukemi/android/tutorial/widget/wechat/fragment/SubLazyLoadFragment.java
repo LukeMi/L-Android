@@ -41,7 +41,7 @@ import com.lukemi.android.tutorial.news_today.model.JNewsStoryBean;
 import com.lukemi.android.tutorial.news_today.model.JNewsTechBean;
 import com.lukemi.android.tutorial.news_today.model.JNewsTravelBean;
 import com.lukemi.android.tutorial.news_today.model.JNewsWorldBean;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.request.BaseRequest;
@@ -72,7 +72,7 @@ import okhttp3.Response;
  */
 public class SubLazyLoadFragment extends BaseLazyFragment
         implements BaseQuickAdapter.RequestLoadMoreListener,
-                           OnRefreshListener {
+        OnRefreshListener {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     @BindView(R.id.mRecyclerView)
@@ -108,6 +108,7 @@ public class SubLazyLoadFragment extends BaseLazyFragment
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override

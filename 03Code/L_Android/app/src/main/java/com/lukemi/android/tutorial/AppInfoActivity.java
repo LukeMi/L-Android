@@ -1,6 +1,5 @@
 package com.lukemi.android.tutorial;
 
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
@@ -15,9 +14,8 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.lukemi.android.tutorial.R;
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.bean.AppInfos;
-import com.lukemi.android.tutorial.util.Logcat;
 import com.lukemi.android.tutorial.util.ToastUtil;
 
 import java.util.ArrayList;

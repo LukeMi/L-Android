@@ -1,6 +1,6 @@
 package com.lukemi.android.tutorial.weather.api;
 
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 import com.google.gson.Gson;
 
 import java.util.concurrent.TimeUnit;

@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.widget.wechat.activity.WeChatLoginActivity;
 
 public class EditTextActivity extends AppCompatActivity implements View.OnClickListener {

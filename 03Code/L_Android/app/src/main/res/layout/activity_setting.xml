@@ -2,20 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/dp16">M
 
     <Button
-        android:id="@+id/wallPaperActivity"
+        android:id="@+id/bet_set_wall_paper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="WallPaperActivity"
+        android:text="设置桌面壁纸"
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/systemIntentActivity"
+        android:id="@+id/btn_system_intent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SystemIntentActivity"
+        android:text="跳转到系统应用"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_memory_analyse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="内存分析"
         android:textAllCaps="false" />
 
 </LinearLayout>

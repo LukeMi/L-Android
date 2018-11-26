@@ -6,6 +6,8 @@ import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.util.DisplayMetrics;
 
+import com.lukemi.android.common.util.Logcat;
+
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.lang.reflect.Constructor;

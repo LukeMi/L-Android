@@ -1,6 +1,5 @@
 package com.lukemi.android.tutorial.widget.brvah;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -8,12 +7,9 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SimpleItemAnimator;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -22,22 +18,15 @@ import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.bean.NewsCatesBean;
 import com.lukemi.android.tutorial.bean.Village;
 import com.lukemi.android.tutorial.util.CommonUtils;
-import com.lukemi.android.tutorial.util.HttpUtils;
-import com.lukemi.android.tutorial.util.Logcat;
-import com.lukemi.android.tutorial.util.ToastUtil;
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.view.DividerItemDecoration;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
-import org.greenrobot.eventbus.EventBus;
 import org.json.JSONObject;
 
-import java.net.ConnectException;
-import java.net.SocketTimeoutException;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Handler;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

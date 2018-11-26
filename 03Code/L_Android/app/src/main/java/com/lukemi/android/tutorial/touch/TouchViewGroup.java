@@ -5,7 +5,7 @@ import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 public class TouchViewGroup extends ConstraintLayout {
 

@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.lukemi.common.R;
+import com.lukemi.android.common.R;
 import com.lukemi.android.common.util.Logcat;
 
 import java.util.ArrayList;

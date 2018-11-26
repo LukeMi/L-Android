@@ -4,12 +4,12 @@ apply plugin: 'com.android.library'
 //apply plugin: 'maven'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 12
-        targetSdkVersion 27
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -32,14 +32,15 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    provided "com.android.support:design:$rootProject.supportVersion"
-    provided "com.android.support:appcompat-v7:$rootProject.supportVersion"
-    provided "com.android.support:recyclerview-v7:$rootProject.supportVersion"
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    androidTestImplementation "com.android.support.test:runner:$rootProject.runnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoCoreVersion"
+
+    compileOnly "com.android.support:design:$rootProject.supportVersion"
+    compileOnly "com.android.support:appcompat-v7:$rootProject.supportVersion"
+    compileOnly "com.android.support:recyclerview-v7:$rootProject.supportVersion"
+    testImplementation "junit:junit:$rootProject.junitVersion"
 }
 
 /*publish {

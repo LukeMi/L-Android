@@ -1,7 +1,6 @@
 package com.lukemi.android.tutorial.widget.fragments;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 /**
  * A simple {@link Fragment} subclass.

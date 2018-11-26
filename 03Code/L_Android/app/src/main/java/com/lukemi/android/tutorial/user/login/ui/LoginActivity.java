@@ -19,7 +19,7 @@ import com.lukemi.android.tutorial.user.login.presenter.LoginContract;
 import com.lukemi.android.tutorial.user.login.presenter.LoginPresenter;
 import com.lukemi.android.tutorial.user.userInfo.bean.UserInfoBean;
 import com.lukemi.android.tutorial.user.userInfo.ui.UserInfoActivity;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

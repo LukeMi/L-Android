@@ -7,20 +7,16 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
+import com.lukemi.android.tutorial.popup.PopupActivity;
 import com.lukemi.android.tutorial.viewtest.DialogUtilActivity;
-import com.lukemi.android.tutorial.widget.EditTextActivity;
-import com.lukemi.android.tutorial.widget.ImageViewActivity;
-import com.lukemi.android.tutorial.widget.ListViewActivity;
-import com.lukemi.android.tutorial.widget.TableLayoutActivity;
-import com.lukemi.android.tutorial.widget.WebviewActivity;
 
 
-public class WidgetActivity extends AppCompatActivity implements View.OnClickListener{
+public class WidgetActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.activity_widget);
+        setContentView(R.layout.activity_widget);
         initView();
     }
 
@@ -28,6 +24,7 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
      * 初始化控件
      */
     private void initView() {
+        findViewById(R.id.customViewList).setOnClickListener(this);
         findViewById(R.id.TextView).setOnClickListener(this);
         findViewById(R.id.EditText).setOnClickListener(this);
         findViewById(R.id.Button).setOnClickListener(this);
@@ -51,6 +48,7 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.SeekBar).setOnClickListener(this);
         findViewById(R.id.RatingBar).setOnClickListener(this);
         findViewById(R.id.ProgressDialog).setOnClickListener(this);
+        findViewById(R.id.btn_pop).setOnClickListener(this);
         findViewById(R.id.Notification).setOnClickListener(this);
         findViewById(R.id.WebviewActivity).setOnClickListener(this);
         findViewById(R.id.TableLayoutActivity).setOnClickListener(this);
@@ -60,7 +58,10 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         Class<?> targetClass = null;
-        switch (v.getId()){
+        switch (v.getId()) {
+            case R.id.customViewList:
+                targetClass = CustomViewListActivity.class;
+                break;
             case R.id.TextView:
                 targetClass = TextViewActivity.class;
                 break;
@@ -106,6 +107,9 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.ProgressBar:
                 break;
+            case R.id.btn_pop:
+                targetClass = PopupActivity.class;
+                break;
             case R.id.SeekBar:
                 break;
             case R.id.RatingBar:
@@ -115,21 +119,21 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.Notification:
                 break;
             case R.id.WebviewActivity:
-                targetClass = WebviewActivity.class;
+                targetClass = WebViewActivity.class;
                 break;
             case R.id.TableLayoutActivity:
                 targetClass = TableLayoutActivity.class;
                 break;
             case R.id.WebviewDownloadActivity:
-                targetClass =  WebviewDownloadActivity.class;
+                targetClass = WebviewDownloadActivity.class;
                 break;
 
             default:
-                Toast.makeText(WidgetActivity.this,"默认的点击",Toast.LENGTH_SHORT).show();
+                Toast.makeText(WidgetActivity.this, "默认的点击", Toast.LENGTH_SHORT).show();
                 break;
         }
-        if (targetClass != null){
-            startActivity(new Intent(WidgetActivity.this,targetClass));
+        if (targetClass != null) {
+            startActivity(new Intent(WidgetActivity.this, targetClass));
         }
     }
 }

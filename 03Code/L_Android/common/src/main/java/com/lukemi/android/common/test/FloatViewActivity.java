@@ -3,7 +3,7 @@ package com.lukemi.android.common.test;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.lukemi.common.R;
+import com.lukemi.android.common.R;
 
 public class FloatViewActivity extends AppCompatActivity {
 

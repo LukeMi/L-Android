@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.util.Logcat;
+import com.lukemi.android.common.util.Logcat;
 
 
 public class NetworkActivity extends AppCompatActivity implements DownloadCallback, View.OnClickListener {
