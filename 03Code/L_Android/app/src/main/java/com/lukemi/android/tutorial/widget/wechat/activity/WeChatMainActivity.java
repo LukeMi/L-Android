@@ -19,6 +19,10 @@ import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.widget.wechat.fragment.SubLazyLoadFragment;
+import com.lukemi.android.tutorial.widget.wechat.fragment.WeChatContactFragment;
+import com.lukemi.android.tutorial.widget.wechat.fragment.WeChatDiscoverFragment;
+import com.lukemi.android.tutorial.widget.wechat.fragment.WeChatMSGFragment;
+import com.lukemi.android.tutorial.widget.wechat.fragment.WeChatMineFragment;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -147,15 +151,15 @@ public class WeChatMainActivity extends AppCompatActivity {
      */
     private void initMainViewPager() {
         List<Fragment> fragmentList = new ArrayList<>();
+     /*   fragmentList.add(SubLazyLoadFragment.newInstance("", ""));
         fragmentList.add(SubLazyLoadFragment.newInstance("", ""));
         fragmentList.add(SubLazyLoadFragment.newInstance("", ""));
-        fragmentList.add(SubLazyLoadFragment.newInstance("", ""));
-        fragmentList.add(SubLazyLoadFragment.newInstance("", ""));
+        fragmentList.add(SubLazyLoadFragment.newInstance("", ""));*/
 
-       /* fragmentList.add(WeChatMSGFragment.newInstance("", ""));
+        fragmentList.add(WeChatMSGFragment.newInstance("", ""));
         fragmentList.add(WeChatContactFragment.newInstance("", ""));
         fragmentList.add(WeChatDiscoverFragment.newInstance("", ""));
-        fragmentList.add(WeChatMineFragment.newInstance("", ""));*/
+        fragmentList.add(WeChatMineFragment.newInstance("", ""));
         mainAdapter = new MainAdapter(getSupportFragmentManager(), this, titles, drawableIDs, fragmentList);
         mainViewPager.setAdapter(mainAdapter);
 

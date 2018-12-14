@@ -11,6 +11,7 @@ import com.lukemi.android.tutorial.category.ComponentActivity;
 import com.lukemi.android.tutorial.setting.SettingActivity;
 import com.lukemi.android.tutorial.utiltest.UtilMainActivity;
 import com.lukemi.android.tutorial.widget.WidgetActivity;
+import com.lukemi.android.tutorial.widget.wechat.activity.WeChatMainActivity;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
@@ -62,33 +63,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View v) {
-        Class<?> targrtClass = null;
+        Class<?> targetClass = null;
         switch (v.getId()) {
             case R.id.btn_anim:
-                targrtClass = AnimationActivity.class;
+                targetClass = AnimationActivity.class;
                 break;
             case R.id.btn_component:
-                targrtClass = ComponentActivity.class;
+                targetClass = ComponentActivity.class;
                 break;
-
             case R.id.third_API:
-                targrtClass = ThirdAPIActivity.class;
+                targetClass = ThirdAPIActivity.class;
                 break;
             case R.id.widgetActivity:
-                targrtClass = WidgetActivity.class;
+                targetClass = WidgetActivity.class;
                 break;
             case R.id.utilMainActivity:
-                targrtClass = UtilMainActivity.class;
+                targetClass = UtilMainActivity.class;
                 break;
             case R.id.btn_intent:
-                targrtClass = SettingActivity.class;
+                targetClass = SettingActivity.class;
                 break;
             case R.id.btn_android:
-                targrtClass = AndroidActivity.class;
+                targetClass = AndroidActivity.class;
+                break;
+            case R.id.btn_emulate:
+                targetClass = WeChatMainActivity.class;
+                break;
+            default:
                 break;
         }
-        if (targrtClass != null) {
-            startActivity(new Intent(MainActivity.this, targrtClass));
+        if (targetClass != null) {
+            startActivity(new Intent(MainActivity.this, targetClass));
         }
     }
 }

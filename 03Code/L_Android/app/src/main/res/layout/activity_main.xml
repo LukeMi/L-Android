@@ -52,7 +52,6 @@
             android:onClick="onClick"
             android:text="system" />
 
-
         <Button
             android:id="@+id/btn_android"
             android:layout_width="match_parent"
@@ -60,6 +59,11 @@
             android:onClick="onClick"
             android:text="android" />
 
-
+        <Button
+            android:id="@+id/btn_emulate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Emulate Third App" />
     </LinearLayout>
 </ScrollView>
