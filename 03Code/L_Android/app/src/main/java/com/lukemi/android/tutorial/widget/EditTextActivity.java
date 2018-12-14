@@ -84,7 +84,8 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
                 Logcat.log("EditTextActivity----> click---->> ic_password_delete");
                 textPasswordET.setText("");
                 break;
-            case R.id.ic_password_show://设置密码是否可见
+            //设置密码是否可见
+            case R.id.ic_password_show:
                 Logcat.log("EditTextActivity----> click---->> ic_password_show");
                 if (!showFlag) {
                     showFlag = true;
@@ -102,7 +103,9 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
                 textPasswordET.setCursorVisible(true);
                 break;
             case R.id.weChatActivity:
-                startActivity(new Intent(this,  WeChatLoginActivity.class));
+                startActivity(new Intent(this, WeChatLoginActivity.class));
+                break;
+            default:
                 break;
         }
     }
@@ -112,7 +115,7 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
      * 密码EditText内容是否可见
      *
      * @param editText 密码输入框
-     * @param showFlag   true显示，false不显示
+     * @param showFlag true显示，false不显示
      */
     public void showPasswordETcontent(EditText editText, boolean showFlag) {
         if (showFlag) {

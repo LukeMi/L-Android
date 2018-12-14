@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/antiquewhite"
-    tools:context="com.lukemi.android.widget.EditTextActivity">
+    tools:context="com.lukemi.android.tutorial.widget.EditTextActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,10 +13,10 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
+        android:paddingBottom="@dimen/activity_vertical_margin">
 
         <Button
             android:id="@+id/weChatActivity"
@@ -61,8 +61,8 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:focusable="true"
             android:focusableInTouchMode="true">
 
