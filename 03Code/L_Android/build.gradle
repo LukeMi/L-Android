@@ -2,30 +2,24 @@
 
 buildscript {
     ext.kotlin_version = '1.2.71'
+
     repositories {
         google()
         jcenter()
     }
+
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
-
         //greenDao
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
-
-        //kotlin配置
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.1'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
         //ButterKnife配置
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
+        //kotlin配置
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
     }
 }
-
-
 
 allprojects {
     repositories {
@@ -43,7 +37,6 @@ task clean(type: Delete) {
 }
 
 ext {
-
     compileSdkVersion = 28
     buildToolsVersion = '28.0.3'
     minSdkVersion = 17
@@ -63,5 +56,4 @@ ext {
     dagger2Version = '2.16'
     retrofitVersion = '2.4.0'
     leakCanaryVersion = '1.6.1'
-
 }
