@@ -1,0 +1,8 @@
+@startuml
+
+[*] --> start1
+
+具体业务 -> 仓库 : 依赖
+
+
+@enduml

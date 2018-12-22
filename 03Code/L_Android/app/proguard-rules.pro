@@ -52,7 +52,3 @@ public static java.lang.String TABLENAME;
 -keep class com.chad.library.adapter.** {
    *;
 }
-
--keep com.jcodecraeer.xrecyclerview.XRecyclerView.**{
-}
-

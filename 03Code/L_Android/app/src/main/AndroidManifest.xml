@@ -279,7 +279,8 @@
         <activity android:name=".AndroidActivity" />
         <activity android:name=".IPCActivity" />
         <activity android:name=".widget.CustomViewListActivity" />
-        <activity android:name=".SystemMemoryActivity"></activity>
+        <activity android:name=".SystemMemoryActivity" />
+        <activity android:name=".widget.MergeActivity"></activity>
     </application>
 
 </manifest>
