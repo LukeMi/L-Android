@@ -15,15 +15,16 @@
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     //拨打电话
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    //震动
+    <uses-permission android:name="android.permission.VIBRATE" />
     //拍照
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.VIBRATE" />
     //LED灯权限4个
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
-    <uses-feature android:name="android.hardware.camera.flash" />
+    <!--  <uses-feature android:name="android.hardware.camera" />
+      <uses-feature android:name="android.hardware.camera.autofocus" />
+      <uses-feature android:name="android.hardware.camera.flash" />-->
     //通知栏震动
     <uses-permission android:name="android.permission.VIBRATE" />
 
@@ -73,9 +74,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".sessionlifecycle.SessionActivity1" />
-        <activity android:name=".sessionlifecycle.SessionActivity2" />
-        <activity android:name=".sdf.sdfActivity" />
+        <activity android:name=".sessionlifecycle.Session1Activity" />
+        <activity android:name=".sessionlifecycle.Session2Activity" />
+        <activity android:name=".sdf.SpActivity" />
         <activity android:name=".handler.BaseHandlerActivity" />
         <activity android:name=".handler.HandlerTestActivity" />
         <activity android:name=".perssion.PermissionActivity" />
@@ -158,7 +159,7 @@
         <activity android:name=".setting.SettingActivity" />
         <activity android:name=".setting.SystemIntentActivity" />
         <activity android:name=".setting.CommomIntentActivity" />
-        <activity android:name=".setting.TorchActivity" />
+        <activity android:name=".setting.FlashActivity" />
         <activity android:name=".db.GreenDaoActivity" />
 
         <!-- 百度服务 -->
@@ -186,8 +187,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".evenbus.EvenBusActivity" />
-        <activity android:name=".evenbus.ReceiveEventActivity" />
+        <activity android:name=".evenbus.EvenBusSendActivity" />
+        <activity android:name=".evenbus.EventBusReceiveActivity" />
         <activity android:name=".widget.DialogActivity" />
         <activity android:name=".viewtest.ClipPhotoViewActivity" />
         <activity android:name=".viewtest.UploadActivity" />
@@ -280,7 +281,9 @@
         <activity android:name=".IPCActivity" />
         <activity android:name=".widget.CustomViewListActivity" />
         <activity android:name=".SystemMemoryActivity" />
-        <activity android:name=".widget.MergeActivity"></activity>
+        <activity android:name=".widget.MergeActivity" />
+        <activity android:name=".widget.ViewStubActivity" />
+        <activity android:name=".setting.ScreenShotForbiddenActivity"></activity>
     </application>
 
 </manifest>

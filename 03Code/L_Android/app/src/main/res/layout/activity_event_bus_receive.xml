@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.lukemi.android.evenbus.ReceiveEventActivity">
+    tools:context="com.lukemi.android.tutorial.evenbus.EventBusReceiveActivity">
 
     <Button
         android:id="@+id/btn_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="点击测试"/>
+        android:text="点击测试" />
 
     <TextView
         android:id="@+id/text_event1"

@@ -17,8 +17,8 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.app.ToturialApplication;
 import com.lukemi.android.tutorial.bean.Student;
-import com.lukemi.android.tutorial.dao.DaoSession;
-import com.lukemi.android.tutorial.dao.StudentDao;
+import com.lukemi.android.tutorial.db.dao.DaoSession;
+import com.lukemi.android.tutorial.db.dao.StudentDao;
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.util.ToastUtil;
 
@@ -30,7 +30,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class GreenDaoActivity extends AppCompatActivity implements BaseQuickAdapter.OnItemLongClickListener,
-                                                                           BaseQuickAdapter.OnItemChildClickListener {
+        BaseQuickAdapter.OnItemChildClickListener {
 
     @BindView(R.id.rv_list)
     RecyclerView rvList;
@@ -85,6 +85,8 @@ public class GreenDaoActivity extends AppCompatActivity implements BaseQuickAdap
                 break;
             case R.id.del_history:
                 deleteHistory();
+                break;
+            default:
                 break;
         }
     }

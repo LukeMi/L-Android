@@ -11,9 +11,6 @@ public class BootReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // TODO: This method is called when the BroadcastReceiver is receiving
-        // an Intent broadcast.
-
         if (intent.getAction().equals("com.lukemi.foregroundservice.destroy")
                 || intent.getAction().equals("android.intent.action.BOOT_COMPLETED")
                 || intent.getAction().equals("android.intent.action.USER_PRESENT")

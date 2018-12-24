@@ -35,12 +35,12 @@ import java.util.List;
 
 public class ProcessActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private final int MSG_CYCLE = 0x0001;
     private ListView lv;
     private ListView showDB;
     private ArrayList<AppInfo> appList;
     private String whiteOrder = "com.tencent.mobileqq";
     private int count;
-    private final int MSG_CYCLE = 0x0001;
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -55,6 +55,35 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
     };
     private TextView showTV;
 
+    /**
+     * 获得手机中正在运行的有访问网络权限的第三方应用的名字
+     *
+     * @param context
+     * @return
+     */
+    public static void getRunningAPP(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> list = manager.getRunningAppProcesses();
+        for (ActivityManager.RunningAppProcessInfo appProcess : list) {
+            String[] pkgNameList = appProcess.pkgList;//获取该进程中所有的app包名
+            for (String pkgName : pkgNameList) {
+                Log.e("name", pkgName);
+                boolean isHave = (PackageManager.PERMISSION_GRANTED == packageManager.checkPermission("android.permission.INTERNET", pkgName));
+                if (isHave) {
+                    try {
+                        ApplicationInfo info = packageManager.getApplicationInfo(pkgName, 0);
+                        if ((info.flags & ApplicationInfo.FLAG_SYSTEM) <= 0) {//安装的第三方应用，而不是系统应用
+                            Logcat.log("runningName" + info.loadLabel(packageManager).toString());
+                        }
+                    } catch (PackageManager.NameNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +91,6 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
         initViews();
         mHandler.sendEmptyMessageDelayed(MSG_CYCLE, 0);
     }
-
 
     /**
      * 杀死后台进程
@@ -122,7 +150,7 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 AppInfo appInfo = appList.get(position);
-                Intent intent = new Intent(ProcessActivity.this,  ProcessDetailActivity.class);
+                Intent intent = new Intent(ProcessActivity.this, ProcessDetailActivity.class);
                 intent.putExtra("pName", appInfo.getPn());
                 startActivity(intent);
 //                Toast.makeText(ProcessActivity.this, "dianji", Toast.LENGTH_SHORT).show();
@@ -145,7 +173,8 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
         for (int i = 0; i < packList.size(); i++) {
             PackageInfo packInfo = packList.get(i);
             ApplicationInfo applicationInfo = packInfo.applicationInfo;
-            if ((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) > 0) {//系统应用
+            //系统应用
+            if ((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) > 0) {
                 Logcat.log("----来自于方法二 ---->>过滤掉系统应用: " + packInfo.packageName);
                 continue;
             }
@@ -157,7 +186,7 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
             appInfo.setLd(packInfo.lastUpdateTime);
             appInfo.setFd(packInfo.firstInstallTime);
             try {
-//                appInfo.setIcon(context.getPackageManager().getApplicationIcon(appInfo.getPn()));
+                appInfo.setIcon(context.getPackageManager().getApplicationIcon(appInfo.getPn()));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -165,35 +194,6 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
             appInfo.save();
         }
         return appList;
-    }
-
-    /**
-     * 获得手机中正在运行的有访问网络权限的第三方应用的名字
-     *
-     * @param context
-     * @return
-     */
-    public static void getRunningAPP(Context context) {
-        PackageManager packageManager = context.getPackageManager();
-        ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        List<ActivityManager.RunningAppProcessInfo> list = manager.getRunningAppProcesses();
-        for (ActivityManager.RunningAppProcessInfo appProcess : list) {
-            String[] pkgNameList = appProcess.pkgList;//获取该进程中所有的app包名
-            for (String pkgName : pkgNameList) {
-                Log.e("name", pkgName);
-                boolean isHave = (PackageManager.PERMISSION_GRANTED == packageManager.checkPermission("android.permission.INTERNET", pkgName));
-                if (isHave) {
-                    try {
-                        ApplicationInfo info = packageManager.getApplicationInfo(pkgName, 0);
-                        if ((info.flags & ApplicationInfo.FLAG_SYSTEM) <= 0) {//安装的第三方应用，而不是系统应用
-                            Logcat.log("runningName" + info.loadLabel(packageManager).toString());
-                        }
-                    } catch (PackageManager.NameNotFoundException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
     }
 
     @Override
@@ -212,7 +212,8 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.delDB:
                 //Hero.delete(Hero.class,1);//删除id为1的记录
-                new Delete().from(AppInfo.class).where("power>?", 60).execute();//删除power大于60的所有记录
+                //删除power大于60的所有记录
+                new Delete().from(AppInfo.class).where("power>?", 60).execute();
                 Toast.makeText(ProcessActivity.this, "删除数据ok", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.updateDB:
@@ -230,6 +231,8 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.queryDB:
 
                 showTV.setText(queryDB().toString());
+                break;
+            default:
                 break;
 
         }

@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.lukemi.android.tutorial.R;
 
 
-public class SessionActivity2 extends AppCompatActivity {
+public class Session2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

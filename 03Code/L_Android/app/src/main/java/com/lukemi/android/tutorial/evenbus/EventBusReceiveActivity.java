@@ -6,8 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.lukemi.android.tutorial.R;
 import com.lukemi.android.common.util.Logcat;
+import com.lukemi.android.tutorial.R;
+import com.lukemi.android.tutorial.evenbus.event.NumberEvent;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -17,7 +18,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ReceiveEventActivity extends AppCompatActivity {
+/**
+ * @author lukemi
+ * @date 2018/12/24 15:33
+ * @des EventBus 使用 ，注意注册，与反注册 ，无法传递 基本数据类型，只能传递对象
+ * @mail chenmingzhiji@163.com or mingzhichen1990@gmail.com
+ */
+public class EventBusReceiveActivity extends AppCompatActivity {
 
     @BindView(R.id.text_event1)
     TextView textEvent1;
@@ -29,7 +36,7 @@ public class ReceiveEventActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_receive_event);
+        setContentView(R.layout.activity_event_bus_receive);
         ButterKnife.bind(this);
         // 在要接收消息的页面的OnCreate()中注册EventBus
         EventBus.getDefault().register(this);
@@ -49,8 +56,8 @@ public class ReceiveEventActivity extends AppCompatActivity {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)//主线程
-    public void onEvenBusMain2(int event) {
-        textEvent2.setText("消息结果为: " + event);
+    public void onEvenBusMain2(NumberEvent event) {
+        textEvent2.setText("消息结果为: " + event.toString());
     }
 
     @Subscribe(threadMode = ThreadMode.POSTING)//主线程
@@ -73,7 +80,7 @@ public class ReceiveEventActivity extends AppCompatActivity {
     public void onViewClicked(View v) {
         switch (v.getId()) {
             case R.id.btn_test:
-                startActivity(new Intent(this, EvenBusActivity.class));
+                startActivity(new Intent(this, EvenBusSendActivity.class));
                 break;
             default:
                 break;

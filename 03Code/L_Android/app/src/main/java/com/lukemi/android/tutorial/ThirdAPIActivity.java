@@ -1,48 +1,68 @@
 package com.lukemi.android.tutorial;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lukemi.android.tutorial.baidu.BDActivity;
+import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.db.GreenDaoActivity;
+import com.lukemi.android.tutorial.evenbus.EventBusReceiveActivity;
+import com.lukemi.android.tutorial.glide.GlideActivity;
 import com.lukemi.android.tutorial.handler.HandlerTestActivity;
 import com.lukemi.android.tutorial.webservice.WebServiceActivity;
+import com.lukemi.android.tutorial.widget.IntentJumpAdapter;
+import com.lukemi.android.tutorial.widget.IntentJumpBean;
 
-public class ThirdAPIActivity extends AppCompatActivity implements View.OnClickListener {
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+
+public class ThirdAPIActivity extends BaseActivity {
+
+    @BindView(R.id.rv_intent)
+    RecyclerView mRvIntent;
+
+    private List<IntentJumpBean> intentJumpBeanList;
+    private IntentJumpAdapter intentJumpAdapter;
+    private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (BaseQuickAdapter adapter, View view, int position) -> {
+        Class<?> c = ((IntentJumpBean) adapter.getData().get(position)).getC();
+        if (c != null) {
+            startActivity(new Intent(this, c));
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_third_api);
-        initView();
-    }
-
-    private void initView() {
-        findViewById(R.id.bdActivity).setOnClickListener(this);
-        findViewById(R.id.btn_webservice).setOnClickListener(this);
-        findViewById(R.id.btn_handler).setOnClickListener(this);
     }
 
     @Override
-    public void onClick(View v) {
-        Class<?> targrtClass = null;
-        switch (v.getId()) {
-            case R.id.bdActivity:
-                targrtClass = BDActivity.class;
-                break;
-            case R.id.btn_webservice:
-                targrtClass = WebServiceActivity.class;
-                break;
-            case R.id.btn_handler:
-                targrtClass = HandlerTestActivity.class;
-                break;
+    protected int bindLayout() {
+        return R.layout.activity_third_api;
+    }
 
-            default:
-                break;
-        }
-        if (targrtClass != null) {
-            startActivity(new Intent(ThirdAPIActivity.this, targrtClass));
-        }
+    @Override
+    protected void initData(Bundle savedInstanceState) {
+        intentJumpBeanList = new ArrayList<>();
+        intentJumpBeanList = new ArrayList<>();
+        intentJumpBeanList.add(new IntentJumpBean("百度API", BDActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("Webservice", WebServiceActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("Handler机制", HandlerTestActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("GreenDao", GreenDaoActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("EventBus", EventBusReceiveActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("Glide", GlideActivity.class));
+        intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
+        intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
+    }
+
+    @Override
+    protected void initView() {
+        mRvIntent.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        mRvIntent.setAdapter(intentJumpAdapter);
     }
 }

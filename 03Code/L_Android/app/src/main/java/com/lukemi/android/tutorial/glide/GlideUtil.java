@@ -22,6 +22,12 @@ import com.lukemi.android.common.util.Logcat;
 
 import java.security.MessageDigest;
 
+/**
+ * @author lukemi
+ * @date 2018/12/24 15:45
+ * @des Glide Util
+ * @mail chenmingzhiji@163.com or mingzhichen1990@gmail.com
+ */
 public class GlideUtil {
 
     /**
@@ -36,38 +42,39 @@ public class GlideUtil {
 
     }
 
-    public static void loadImgRoot(Context context
-            , ImageView imageView
-            , String url) {
+    public static void loadImgRoot(Context context,
+                                   ImageView imageView,
+                                   String url,
+                                   boolean dontAnimate,
+                                   boolean isGif) {
+        RequestOptions transform = new RequestOptions()
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
+                .fallback(R.mipmap.ic_launcher);
+        if (!isGif || dontAnimate) {
+            // gif 不能播放
+            transform.dontAnimate();
+        }
+        transform.priority(Priority.IMMEDIATE)
+                .centerInside()
+                .transform(new Transformation<Bitmap>() {
+                    @NonNull
+                    @Override
+                    public Resource<Bitmap> transform(@NonNull Context context, @NonNull Resource<Bitmap> resource, int outWidth, int outHeight) {
+                        Logcat.log("outWidth : " + outWidth + " ;outHeight : " + outHeight);
+                        return resource;
+                    }
+
+                    @Override
+                    public void updateDiskCacheKey(@NonNull MessageDigest messageDigest) {
+
+                    }
+                });
         Glide
                 .with(context)
                 .load(url)
-                .apply(new RequestOptions()
-                                .placeholder(R.mipmap.ic_launcher)
-                                .error(R.mipmap.ic_launcher)
-                                .fallback(R.mipmap.ic_launcher)
-//                        .dontAnimate() // gif 不能播放
-                                .priority(Priority.IMMEDIATE)
-                                .centerInside()
-                                .transform(new Transformation<Bitmap>() {
-                                    @NonNull
-                                    @Override
-                                    public Resource<Bitmap> transform(@NonNull Context context, @NonNull Resource<Bitmap> resource, int outWidth, int outHeight) {
-
-                                        Logcat.log("outWidth : " + outWidth + " ;outHeight : " + outHeight);
-                                        return resource;
-                                    }
-
-                                    @Override
-                                    public void updateDiskCacheKey(@NonNull MessageDigest messageDigest) {
-
-                                    }
-                                })
-
-                )
-
+                .apply(transform)
                 .transition(DrawableTransitionOptions.withCrossFade(100))
-
                 .addListener(new RequestListener<Drawable>() {
                     @Override
                     public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
@@ -81,9 +88,7 @@ public class GlideUtil {
                         return false;
                     }
                 })
-
                 .into(imageView);
-
     }
 
 

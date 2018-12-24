@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lukemi.android.tutorial.R;
+import com.lukemi.android.tutorial.notification.NotificationActivity;
 import com.lukemi.android.tutorial.popup.PopupActivity;
 import com.lukemi.android.tutorial.viewtest.DialogUtilActivity;
 
@@ -61,11 +62,12 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("SeekBar", null));
         bindBeanList.add(new IntentJumpBean("RatingBar", null));
         bindBeanList.add(new IntentJumpBean("ProgressDialog", null));
-        bindBeanList.add(new IntentJumpBean("Notification", null));
+        bindBeanList.add(new IntentJumpBean("Notification", NotificationActivity.class));
         bindBeanList.add(new IntentJumpBean("Webview", WebViewActivity.class));
         bindBeanList.add(new IntentJumpBean("TableLayoutActivity", TableLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("WebviewDownloadActivity", WebviewDownloadActivity.class));
-        bindBeanList.add(new IntentJumpBean("MergeActivity", MergeActivity.class));
+        bindBeanList.add(new IntentJumpBean("Merge标签使用", MergeActivity.class));
+        bindBeanList.add(new IntentJumpBean("ViewStub标签使用", ViewStubActivity.class));
 
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, bindBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);

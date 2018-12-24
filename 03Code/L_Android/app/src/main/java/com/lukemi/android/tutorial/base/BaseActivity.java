@@ -1,11 +1,8 @@
 package com.lukemi.android.tutorial.base;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.WindowManager;
 
 import butterknife.ButterKnife;
 
@@ -25,6 +22,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
     }
+
     private void initLayout() {
         if (bindLayout() != 0) {
             setContentView(bindLayout());
@@ -42,13 +40,18 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
+     * 绑定界面布局ID
+     *
      * @return @LayoutRes
      */
     protected abstract int bindLayout();
+
     protected void getIntentData() {
     }
+
     protected void initData(Bundle savedInstanceState) {
     }
+
     protected void initView() {
     }
 

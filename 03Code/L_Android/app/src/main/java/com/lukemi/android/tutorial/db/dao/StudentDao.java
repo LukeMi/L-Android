@@ -1,4 +1,4 @@
-package com.lukemi.android.tutorial.dao;
+package com.lukemi.android.tutorial.db.dao;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteStatement;

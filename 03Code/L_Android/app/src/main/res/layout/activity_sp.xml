@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:background="@color/transparent"
+        android:gravity="center_vertical"
+        android:hint="please input msg" />
+
+    <TextView
+        android:id="@+id/tv_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp48"
+        android:layout_below="@+id/et_input"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="@dimen/dp5"
+        android:gravity="center"
+        android:text="editor" />
+
+    <TextView
+        android:id="@+id/tv_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp48"
+        android:layout_alignTop="@+id/tv_edit"
+        android:layout_alignBottom="@+id/tv_edit"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_toRightOf="@+id/tv_edit"
+        android:gravity="center"
+        android:text="clear all" />
+
+    <TextView
+        android:id="@+id/tv_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_clear"
+        android:layout_marginTop="@dimen/dp5"
+        android:hint="显示结果" />
+
+</RelativeLayout>

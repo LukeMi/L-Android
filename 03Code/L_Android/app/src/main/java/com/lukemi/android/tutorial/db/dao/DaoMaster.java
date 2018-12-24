@@ -1,4 +1,4 @@
-package com.lukemi.android.tutorial.dao;
+package com.lukemi.android.tutorial.db.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.lukemi.android.tutorial.util.DeviceUtil;
 import com.lukemi.android.common.util.Logcat;
@@ -28,7 +29,8 @@ public class ReceiverActivity extends AppCompatActivity {
      */
     private   void initNetChangedReceiver() {
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION); // 为BroadcastReceiver指定action，使之用于接收同action的广播(网络变化)
+        // 为BroadcastReceiver指定action，使之用于接收同action的广播(网络变化)
+        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
         netChangedReceiver = new NetChangedReceiver();
         registerReceiver(netChangedReceiver, intentFilter);
     }
@@ -44,6 +46,7 @@ public class ReceiverActivity extends AppCompatActivity {
             switch (action){
                 case ConnectivityManager.CONNECTIVITY_ACTION:
                     Logcat.log("----networkChanged---->"+"netWorkType: "+ DeviceUtil.getNetType(ReceiverActivity.this));
+                    Toast.makeText(getApplicationContext(),DeviceUtil.getNetType(ReceiverActivity.this),Toast.LENGTH_LONG).show();
                     break;
             }
 

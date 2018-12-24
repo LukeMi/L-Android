@@ -29,6 +29,7 @@ public class SystemIntentActivity extends BaseActivity implements View.OnClickLi
      * created by: tbug
      * created at: 2017/4/9 18:09
      */
+    @Override
     protected void initView() {
         findViewById(R.id.ACTION_ACCESSIBILITY_SETTINGS).setOnClickListener(this);
         findViewById(R.id.ACTION_ADD_ACCOUNT).setOnClickListener(this);

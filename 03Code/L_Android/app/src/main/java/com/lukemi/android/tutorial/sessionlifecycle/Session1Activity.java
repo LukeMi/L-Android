@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class SessionActivity1 extends AppCompatActivity implements View.OnClickListener {
+public class Session1Activity extends AppCompatActivity implements View.OnClickListener {
 
     private Button intentBTN_SA1;
 
@@ -23,7 +23,7 @@ public class SessionActivity1 extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case com.lukemi.android.tutorial.R.id.intentBTN_SA1:
-                Intent intent = new Intent(this, SessionActivity2.class);
+                Intent intent = new Intent(this, Session2Activity.class);
                 startActivity(intent);
                 break;
         }

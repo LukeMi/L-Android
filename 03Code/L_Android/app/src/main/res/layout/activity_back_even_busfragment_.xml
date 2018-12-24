@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.lukemi.android.evenbus.BackEvenBUSFragment_Activity">
+    android:layout_height="match_parent">
 
     <fragment
         android:id="@+id/framlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.lukemi.android.evenbus.BackEvenBUSFragment"/>
+        android:name="com.lukemi.android.tutorial.evenbus.BackEvenBUSFragment"/>
 
 </android.support.constraint.ConstraintLayout>
