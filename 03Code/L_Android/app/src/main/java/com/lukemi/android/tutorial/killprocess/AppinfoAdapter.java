@@ -64,9 +64,9 @@ class AppinfoAdapter extends BaseAdapter {
 
         vh.title.setText(appList.get(position).getAppName());
         vh.pName.setText(appList.get(position).getPn());
-        Drawable icon = null;//appList.get(position).getIcon();
+        Drawable icon = appList.get(position).getIcon();
         if (icon != null) {
-//            vh.iconIV.setImageDrawable(appList.get(position).getIcon());
+            vh.iconIV.setImageDrawable(appList.get(position).getIcon());
         } else {
             vh.iconIV.setImageResource(R.mipmap.ic_launcher);
         }

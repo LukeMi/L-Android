@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dp5">
+
+    <TextView
+        android:id="@+id/tv_key"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp48"
+        android:background="@color/lightgrey"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/dp5"
+        android:paddingRight="@dimen/dp5"
+        android:textColor="@color/gray_main_tab_text"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:text="key" />
+
+    <TextView
+        android:id="@+id/tv_value"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp48"
+        android:background="@color/floralwhite"
+        android:ellipsize="end"
+        android:gravity="center_vertical|right"
+        android:inputType="text"
+        android:maxLines="2"
+        android:paddingRight="@dimen/dp5"
+        android:textColor="@color/darksalmon"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintLeft_toRightOf="@+id/tv_key"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="value" />
+
+</android.support.constraint.ConstraintLayout>

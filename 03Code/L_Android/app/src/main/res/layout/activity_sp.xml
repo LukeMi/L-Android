@@ -7,33 +7,50 @@
         android:id="@+id/et_input"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_40"
-        android:background="@color/transparent"
+        android:background="@drawable/shape_edittext_webite"
+        android:paddingLeft="@dimen/dp5"
         android:gravity="center_vertical"
-        android:hint="please input msg" />
+        android:hint="please input msg"
+        android:inputType="text"
+        android:maxLines="1" />
 
     <TextView
         android:id="@+id/tv_edit"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="@dimen/dp48"
         android:layout_below="@+id/et_input"
+        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:background="@color/green"
         android:layout_marginTop="@dimen/dp5"
+        android:layout_toStartOf="@+id/eton_placeholder"
+        android:layout_toLeftOf="@+id/eton_placeholder"
         android:gravity="center"
         android:text="editor" />
 
+    <View
+        android:id="@+id/eton_placeholder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true" />
+
     <TextView
         android:id="@+id/tv_clear"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:background="@color/red"
         android:layout_height="@dimen/dp48"
-        android:layout_alignTop="@+id/tv_edit"
-        android:layout_alignBottom="@+id/tv_edit"
+        android:layout_below="@+id/et_input"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="@dimen/dp5"
-        android:layout_toRightOf="@+id/tv_edit"
+        android:layout_toEndOf="@+id/eton_placeholder"
+        android:layout_toRightOf="@+id/eton_placeholder"
         android:gravity="center"
         android:text="clear all" />
 
     <TextView
+        android:padding="@dimen/dp16"
+        android:background="@color/gray_bkg_first"
         android:id="@+id/tv_show"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

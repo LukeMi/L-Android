@@ -33,11 +33,10 @@ import com.lukemi.android.tutorial.bean.AppInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProcessActivity extends AppCompatActivity implements View.OnClickListener {
+public class ProcessActivity extends AppCompatActivity {
 
     private final int MSG_CYCLE = 0x0001;
     private ListView lv;
-    private ListView showDB;
     private ArrayList<AppInfo> appList;
     private String whiteOrder = "com.tencent.mobileqq";
     private int count;
@@ -108,7 +107,8 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
                 String packName = pkgList[i];
                 try {
                     ApplicationInfo applicationInfo = getPackageManager().getApplicationInfo(packName, 0);
-                    if ((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) > 0) {//安装的是系统应用，而不是第三方应用
+                    //安装的是系统应用，而不是第三方应用
+                    if ((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) > 0) {
                         continue;
                     }
                     if (!packName.contains(currentPKG)) {
@@ -126,16 +126,6 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
 
     private void initViews() {
         lv = ((ListView) findViewById(R.id.appList));
-        showDB = ((ListView) findViewById(R.id.showDB));
-
-
-        showTV = ((TextView) findViewById(R.id.showTV));
-        findViewById(R.id.addDB).setOnClickListener(this);
-        findViewById(R.id.delDB).setOnClickListener(this);
-        findViewById(R.id.updateDB).setOnClickListener(this);
-        findViewById(R.id.queryDB).setOnClickListener(this);
-
-
         loadInstallAppList();
     }
 
@@ -146,15 +136,11 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
         ArrayList<AppInfo> appInfoList = getAppInfoData(this, false);
         AppinfoAdapter adpater = new AppinfoAdapter(this, appInfoList);
         lv.setAdapter(adpater);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                AppInfo appInfo = appList.get(position);
-                Intent intent = new Intent(ProcessActivity.this, ProcessDetailActivity.class);
-                intent.putExtra("pName", appInfo.getPn());
-                startActivity(intent);
-//                Toast.makeText(ProcessActivity.this, "dianji", Toast.LENGTH_SHORT).show();
-            }
+        lv.setOnItemClickListener((AdapterView<?> parent, View view, int position, long id) -> {
+            AppInfo appInfo = appList.get(position);
+            Intent intent = new Intent(ProcessActivity.this, ProcessDetailActivity.class);
+            intent.putExtra(Intent.EXTRA_PACKAGE_NAME, appInfo.pn);
+            startActivity(intent);
         });
     }
 
@@ -185,79 +171,17 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
             appInfo.setVn(packInfo.versionName);
             appInfo.setLd(packInfo.lastUpdateTime);
             appInfo.setFd(packInfo.firstInstallTime);
+            appInfo.setIcon(packInfo.applicationInfo.loadIcon(getPackageManager()));
             try {
                 appInfo.setIcon(context.getPackageManager().getApplicationIcon(appInfo.getPn()));
             } catch (Exception e) {
                 e.printStackTrace();
             }
             appList.add(appInfo);
-            appInfo.save();
         }
         return appList;
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.addDB:
-                count++;
-                AppInfo appInfo = new AppInfo();
-                appInfo.setAppName(("setAppName" + count));
-                appInfo.setPn(("setPn" + count));
-                appInfo.setVc(count);
-                appInfo.setVn(("setVn" + count));
-                appInfo.setLd(System.currentTimeMillis());
-                appInfo.setFd(System.currentTimeMillis());
-                appInfo.save();
-                break;
-            case R.id.delDB:
-                //Hero.delete(Hero.class,1);//删除id为1的记录
-                //删除power大于60的所有记录
-                new Delete().from(AppInfo.class).where("power>?", 60).execute();
-                Toast.makeText(ProcessActivity.this, "删除数据ok", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.updateDB:
-                AppInfo hero = AppInfo.load(AppInfo.class, 10);
-                /**
-                 * load方法其实执行的是：
-                 * new Select()).from(type).where(tableInfo.getIdName() + "=?", new Object[]{Long.valueOf(id)}).executeSingle();
-                 * 即是先单条查询；
-                 * executeSingle（）相当于limit(1);
-                 */
-                hero.setPn("杜甫");
-                hero.save();
-                Toast.makeText(ProcessActivity.this, "修改数据ok", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.queryDB:
-
-                showTV.setText(queryDB().toString());
-                break;
-            default:
-                break;
-
-        }
-
-    }
-
-    /**
-     * 数据库查询数据
-     */
-    private StringBuilder queryDB() {
-        StringBuilder content = new StringBuilder("");
-        //获取数据库的游标，和SQLite相同
-        Cursor cursor = ActiveAndroid.getDatabase().query(Cache.getTableName(AppInfo.class), null, null, null, null, null, null);
-        int appName = cursor.getColumnIndex("appName");
-        int pn = cursor.getColumnIndex("pn");
-        int vn = cursor.getColumnIndex("vn");
-        while (cursor.moveToNext()) {
-            AppInfo appInfo = new AppInfo();
-            appInfo.appName = cursor.getString(appName);
-            appInfo.pn = cursor.getString(pn);
-            appInfo.vn = cursor.getString(vn);
-            content.append(appInfo.toString());
-        }
-        return content;
-    }
 }
 
 

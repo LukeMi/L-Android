@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_process_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tbug.android.collection.com.lukemi.android.collection.killprocess.ProcessDetailActivity">
-    <LinearLayout
-        android:id="@+id/content"
+    tools:context="com.lukemi.android.tutorial.killprocess.ProcessDetailActivity">
+
+    <ImageView
+        android:id="@+id/img_launcher"
+        android:layout_width="@dimen/dp120"
+        android:layout_height="@dimen/dp120"
+        android:scaleType="fitCenter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_app_detail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_launcher" />
 
-
-
-    </LinearLayout>
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TableRow
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"></TableRow>
-    </TableLayout>
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
