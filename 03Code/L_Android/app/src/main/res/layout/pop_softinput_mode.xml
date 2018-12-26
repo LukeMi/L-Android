@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/mask_color">
+
+    <CheckBox
+        android:id="@+id/cb_control"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp20"
+        android:checked="true"
+        android:text="单选" />
+
+    <TextView
+        android:id="@+id/tv_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp5"
+        android:background="@drawable/selector_soft_input_mode_confirm"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp5"
+        android:paddingRight="@dimen/dp5"
+        android:text="确认"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <com.lukemi.android.tutorial.widget.flowlayout.TagFlowLayout
+        android:id="@+id/tagFlowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp5"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/cb_control"
+        tools:context=".widget.SoftInputModeActivity" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/dp40"
+    android:background="@drawable/selector_item_soft_input_mode_bkg"
+    android:gravity="center_vertical"
+    android:paddingLeft="@dimen/dp10"
+    android:paddingRight="@dimen/dp10"
+    android:textColor="@color/white"
+    android:textSize="@dimen/sp16"
+    tools:context=".widget.SoftInputModeActivity"
+    tools:text="item" />

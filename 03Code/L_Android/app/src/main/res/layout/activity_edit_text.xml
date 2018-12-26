@@ -67,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="5dp"
             android:layout_toLeftOf="@+id/ic_password_delete"
             android:background="@color/dimgray"
@@ -95,4 +96,12 @@
             android:layout_centerVertical="true"
             android:background="@drawable/selector_ic_password_show" />
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_soft_input"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:gravity="center"
+        android:text="test soft input mode" />
+
 </LinearLayout>

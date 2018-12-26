@@ -18,7 +18,7 @@ import java.io.Serializable;
  * 手机应用信息类
  * Created by mzchen on 2017/2/3.
  */
-public class AppInfo   implements Serializable {
+public class AppInfo implements Serializable {
     // 程序名
     public String appName;
     //版本名
@@ -29,7 +29,7 @@ public class AppInfo   implements Serializable {
     // 程序图标
     public Drawable icon;
     //版本号
-    public int vc;
+    public long vc;
     //上次更新时间
     public long ld;
     //首次安装时间
@@ -82,11 +82,11 @@ public class AppInfo   implements Serializable {
         this.vn = vn;
     }
 
-    public int getVc() {
+    public long getVc() {
         return vc;
     }
 
-    public void setVc(int vc) {
+    public void setVc(long vc) {
         this.vc = vc;
     }
 

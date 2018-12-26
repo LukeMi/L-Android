@@ -22,9 +22,11 @@
     //LED灯权限4个
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
-    <!--  <uses-feature android:name="android.hardware.camera" />
+    <!--
+      <uses-feature android:name="android.hardware.camera" />
       <uses-feature android:name="android.hardware.camera.autofocus" />
-      <uses-feature android:name="android.hardware.camera.flash" />-->
+      <uses-feature android:name="android.hardware.camera.flash" />
+    -->
     //通知栏震动
     <uses-permission android:name="android.permission.VIBRATE" />
 
@@ -105,7 +107,7 @@
         <activity android:name=".receiver.ReceiverActivity" />
         <activity android:name=".plug.PlugActivity" />
         <activity android:name=".BaseActivity" />
-        <activity android:name=".killprocess.ProcessActivity" />
+        <activity android:name=".killprocess.AppStaticsActivity" />
         <activity android:name=".killprocess.ProcessDetailActivity" />
         <activity android:name=".network_operation.NetworkActivity" />
         <activity android:name=".mob_sms.Mob_SMS_Activity" />
@@ -283,7 +285,8 @@
         <activity android:name=".SystemMemoryActivity" />
         <activity android:name=".widget.MergeActivity" />
         <activity android:name=".widget.ViewStubActivity" />
-        <activity android:name=".setting.ScreenShotForbiddenActivity"></activity>
+        <activity android:name=".setting.ScreenShotForbiddenActivity" />
+        <activity android:name=".widget.SoftInputModeActivity"></activity>
     </application>
 
 </manifest>

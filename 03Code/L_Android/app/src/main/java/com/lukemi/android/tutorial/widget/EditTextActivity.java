@@ -41,6 +41,7 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
         weChatActivity.setOnClickListener(this);
         ic_password_deleteBTN.setOnClickListener(this);
         ic_password_showBTN.setOnClickListener(this);
+        findViewById(R.id.btn_soft_input).setOnClickListener(this);
         textPasswordET.setOnClickListener(this);
         textPasswordET.addTextChangedListener(new TextWatcher() {
             @Override
@@ -104,6 +105,9 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.weChatActivity:
                 startActivity(new Intent(this, WeChatLoginActivity.class));
+                break;
+            case R.id.btn_soft_input:
+                startActivity(new Intent(this, SoftInputModeActivity.class));
                 break;
             default:
                 break;

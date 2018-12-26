@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.lukemi.android.tutorial.killprocess.ProcessActivity">
+    tools:context="com.lukemi.android.tutorial.killprocess.AppStaticsActivity">
 
     <ListView
         android:id="@+id/appList"

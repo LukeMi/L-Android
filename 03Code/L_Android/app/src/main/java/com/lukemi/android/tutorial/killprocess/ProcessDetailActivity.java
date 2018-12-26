@@ -2,6 +2,7 @@ package com.lukemi.android.tutorial.killprocess;
 
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -53,12 +54,15 @@ public class ProcessDetailActivity extends AppCompatActivity {
     private void initData() {
         mPackageManager = getPackageManager();
         try {
-            ApplicationInfo applicationInfo = mPackageManager.getApplicationInfo(pkg, PackageManager.MATCH_UNINSTALLED_PACKAGES);
+            PackageInfo packageInfo = mPackageManager.getPackageInfo(pkg, PackageManager.MATCH_UNINSTALLED_PACKAGES);
+            long longVersionCode = packageInfo.versionCode;
+            String packageName = packageInfo.packageName;
+            ApplicationInfo applicationInfo = packageInfo.applicationInfo;
 //            int minSdkVersion = applicationInfo.minSdkVersion;
 //            int targetSdkVersion = applicationInfo.targetSdkVersion;
             int uid = applicationInfo.uid;
             String name = applicationInfo.name;
-            String packageName = applicationInfo.packageName;
+//            String packageName = applicationInfo.packageName;
             String taskAffinity = applicationInfo.taskAffinity;
             String processName = applicationInfo.processName;
             String sourceDir = applicationInfo.sourceDir;
@@ -66,6 +70,7 @@ public class ProcessDetailActivity extends AppCompatActivity {
             String label = applicationInfo.loadLabel(mPackageManager).toString();
 
             keyValueDetailBeanList.add(new KeyValueDetailBean("name", name));
+            keyValueDetailBeanList.add(new KeyValueDetailBean("longVersionCode", String.valueOf(longVersionCode)));
             keyValueDetailBeanList.add(new KeyValueDetailBean("label", label));
 //            keyValueDetailBeanList.add(new KeyValueDetailBean("minSdkVersion", String.valueOf(minSdkVersion)));
 //            keyValueDetailBeanList.add(new KeyValueDetailBean("targetSdkVersion", String.valueOf(targetSdkVersion)));

@@ -1,0 +1,35 @@
+@startuml
+
+TextView --> [extends] View
+ViewGroup --> [extends] View
+
+CheckedTextView --> [extends] TextView
+EditText --> [extends] TextView
+Button --> [extends] TextView
+CompoundButton --> [extends] Button
+RadioButton --> [extends] CompoundButton
+CheckBox --> [extends] CompoundButton
+Switch --> [extends] CompoundButton
+
+ConstraintLayout --> [extends] ViewGroup
+RelativeLayout --> [extends]  ViewGroup
+RecyclerView --> [extends] ViewGroup
+LinearLayout --> [extends] ViewGroup
+FrameLayout --> [extends] ViewGroup
+AdapterView --> [extends] ViewGroup
+
+RadioGroup --> [extends] LinearLayout
+
+HorizontalScrollView --> [extends] FrameLayout
+NestedScrollView --> [extends] FrameLayout
+ViewAnimator --> [extends] FrameLayout
+ScrollView --> [extends] FrameLayout
+
+ViewFlipper --> [extends] ViewAnimator
+
+AbsListView --> [extends] AdapterView
+ListView --> [extends] AbsListView
+
+WebView --> [extends] MockView
+
+@enduml
