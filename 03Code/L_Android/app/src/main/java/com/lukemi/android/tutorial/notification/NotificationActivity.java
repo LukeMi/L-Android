@@ -8,13 +8,13 @@ import android.view.View;
 
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 import com.lukemi.android.tutorial.util.NotificationUtil;
 import com.lukemi.android.tutorial.volum.VolumeActivity;
 
 import butterknife.OnClick;
 
-public class NotificationActivity extends BaseActivity {
+public class NotificationActivity extends AbsBaseActivity {
 
     private NotificationManager notificationManager;
 

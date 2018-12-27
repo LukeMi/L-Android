@@ -7,12 +7,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class FrameAnimActivity extends BaseActivity {
+public class FrameAnimActivity extends AbsBaseActivity {
 
     @BindView(R.id.tv_title_type1)
     TextView tvTitleType1;

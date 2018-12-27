@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 import com.lukemi.android.tutorial.user.userInfo.adapter.UserInfoAdapter;
 import com.lukemi.android.tutorial.user.userInfo.bean.UserInfoBean;
 import com.lukemi.android.tutorial.user.userInfo.bean.UserParamsBean;
@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class UserInfoActivity extends BaseActivity {
+public class UserInfoActivity extends AbsBaseActivity {
 
     @BindView(R.id.list)
     RecyclerView list;

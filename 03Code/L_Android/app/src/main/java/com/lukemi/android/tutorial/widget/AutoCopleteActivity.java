@@ -9,11 +9,11 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 
 import butterknife.BindView;
 
-public class AutoCopleteActivity extends BaseActivity {
+public class AutoCopleteActivity extends AbsBaseActivity {
 
     private static final String[] CONTENT = {"android", "ios", "java", "html", "angrialjs"};
     @BindView(R.id.actv_)

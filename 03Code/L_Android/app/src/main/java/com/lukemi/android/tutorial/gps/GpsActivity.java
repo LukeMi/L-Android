@@ -16,14 +16,14 @@ import android.widget.TextView;
 
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
 import static android.location.LocationManager.GPS_PROVIDER;
 
-public class GpsActivity extends BaseActivity {
+public class GpsActivity extends AbsBaseActivity {
     private static final int LOCATION_PER_REQUEST_CODE = 0x000001;
 
     @BindView(R.id.tv_loc_add)

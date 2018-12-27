@@ -18,11 +18,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.lukemi.android.tutorial.R;
@@ -47,12 +42,12 @@ import okhttp3.Request;
  */
 public class ListViewActivity extends AppCompatActivity {
 
+    private final int MSG_CALL_UI = 0x00001;
     private String url = "http://is.snssdk.com/neihan/stream/mix/v1/?mpic=1&webp=1&essence=1&content_type=-102&message_cursor=-1&am_longitude=110&am_latitude=120&am_city=%E5%8C%97%E4%BA%AC%E5%B8%82&am_loc_time=1489226058493&count=30&min_time=1489205901&screen_width=1450&do00le_col_mode=0&iid=3216590132&device_id=32613520945&ac=wifi&channel=360&aid=7&app_name=joke_essay&version_code=612&version_name=6.1.2&device_platform=android&ssmix=a&device_type=sansung&device_brand=xiaomi&os_api=28&os_version=6.10.1&uuid=326135942187625&openudid=3dg6s95rhg2a3dg5&manifest_version_code=612&resolution=1450*2800&dpi=620&update_version_code=6120";
     private ListView listView;
     private TextView title;
     private List<NHDZ_DZ_Bean.DataBeanX.DataBean> lists = new ArrayList<>();
     private LVAdapter adapter;
-    private final int MSG_CALL_UI = 0x00001;
     private Handler mhandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -90,18 +85,16 @@ public class ListViewActivity extends AppCompatActivity {
     private void initView() {
         listView = ((ListView) findViewById(R.id.listView));
         title = ((TextView) findViewById(R.id.title));
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                List<NHDZ_DZ_Bean.DataBeanX.DataBean> dataBeens = getList(url);
-                //使用Volley注释掉
+        new Thread(() -> {
+            List<NHDZ_DZ_Bean.DataBeanX.DataBean> dataBeens = getList(url);
+            //使用Volley注释掉
               /*  Logcat.log("LVAdapter-->>dataBeens: " + dataBeens.toString());
                 Message message = mhandler.obtainMessage(MSG_CALL_UI, dataBeens);
                 mhandler.sendMessage(message);*/
-                Logcat.log("LVAdapter-->>dataBeens: " + dataBeens.toString());
-                Message message = mhandler.obtainMessage(MSG_CALL_UI, dataBeens);
-                mhandler.sendMessage(message);
-            }
+            Logcat.log("LVAdapter-->>dataBeens: " + dataBeens.toString());
+            Message message = mhandler.obtainMessage(MSG_CALL_UI, dataBeens);
+            mhandler.sendMessage(message);
+
         }).start();
 
 
@@ -127,29 +120,6 @@ public class ListViewActivity extends AppCompatActivity {
         return dataBeens;
     }
 
-    private String volleyRequest(Context context, String url) {
-        String responseStr = null;
-        RequestQueue queue = Volley.newRequestQueue(context);
-        StringRequest stringRequest = new StringRequest(url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        //主线程操作
-                        title.setText(response);
-                        Message message = mhandler.obtainMessage(MSG_CALL_UI, formateList(response));
-                        mhandler.sendMessage(message);
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Logcat.log("TAG" + error.getMessage() + error);
-                    }
-                });
-        queue.add(stringRequest);
-        return null;
-    }
-
     public String okHttp3Request(Context context, String url) {
         try {
             OkHttpClient client = new OkHttpClient();
@@ -166,6 +136,7 @@ public class ListViewActivity extends AppCompatActivity {
 
     class LVAdapter extends BaseAdapter {
 
+        int selectItem = -1;
         private Context context;
         private LayoutInflater mInflater;
         private List<NHDZ_DZ_Bean.DataBeanX.DataBean> dataBeens;
@@ -260,24 +231,6 @@ public class ListViewActivity extends AppCompatActivity {
                     .into(imageView);//传入要设置的ImageView
         }
 
-        class ViewHolder {
-
-            CircleImageView userIV;
-            TextView userName;
-            ImageView deleteItemIV;
-            TextView commentTV;
-            TextView support_text;
-            TextView unsupport_text;
-            TextView hot_text;
-            TextView share_text;
-            LinearLayout support;
-            LinearLayout unsupport;
-            LinearLayout hot;
-            LinearLayout share;
-        }
-
-        int selectItem = -1;
-
         private void showDeleteDialog(Context context, List<NHDZ_DZ_Bean.DataBeanX.DataBean.GroupBean.DislikeReasonBean> dislike_reason) {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             List<String> lists = new ArrayList<>();
@@ -314,6 +267,22 @@ public class ListViewActivity extends AppCompatActivity {
             }
 
 
+        }
+
+        class ViewHolder {
+
+            CircleImageView userIV;
+            TextView userName;
+            ImageView deleteItemIV;
+            TextView commentTV;
+            TextView support_text;
+            TextView unsupport_text;
+            TextView hot_text;
+            TextView share_text;
+            LinearLayout support;
+            LinearLayout unsupport;
+            LinearLayout hot;
+            LinearLayout share;
         }
     }
 }

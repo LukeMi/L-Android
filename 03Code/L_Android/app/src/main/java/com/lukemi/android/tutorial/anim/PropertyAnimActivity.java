@@ -11,13 +11,13 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 import com.lukemi.android.common.util.Logcat;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class PropertyAnimActivity extends BaseActivity {
+public class PropertyAnimActivity extends AbsBaseActivity {
     @BindView(R.id.ll_top)
     LinearLayout llTop;
     @BindView(R.id.ll_bottom)

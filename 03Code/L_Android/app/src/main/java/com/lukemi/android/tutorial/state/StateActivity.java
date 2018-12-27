@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -28,7 +28,7 @@ import butterknife.OnClick;
  * android:state_window_focused=["true" | "false"] />
  * </selector>
  */
-public class StateActivity extends BaseActivity {
+public class StateActivity extends AbsBaseActivity {
 
     @BindView(R.id.tv_select)
     TextView tvSelect;

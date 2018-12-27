@@ -15,12 +15,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class TweenAnimActivity extends BaseActivity {
+public class TweenAnimActivity extends AbsBaseActivity {
 
     @BindView(R.id.tv_title_type1)
     TextView tvTitleType1;

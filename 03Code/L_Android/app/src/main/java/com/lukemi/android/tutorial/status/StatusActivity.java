@@ -8,12 +8,12 @@ import android.view.Window;
 import android.widget.Button;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class StatusActivity extends BaseActivity {
+public class StatusActivity extends AbsBaseActivity {
 
     @BindView(R.id.btn_status)
     Button btnStatus;

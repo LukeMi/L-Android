@@ -6,12 +6,12 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class AnimationActivity extends BaseActivity {
+public class AnimationActivity extends AbsBaseActivity {
 
 
     @BindView(R.id.tv_title_type1)

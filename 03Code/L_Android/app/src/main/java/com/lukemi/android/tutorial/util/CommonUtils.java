@@ -1,46 +1,22 @@
 package com.lukemi.android.tutorial.util;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
 import android.renderscript.Allocation;
-import android.renderscript.Element;
 import android.renderscript.RenderScript;
-import android.renderscript.ScriptIntrinsicBlur;
-import android.support.annotation.NonNull;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
-import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.glide.GlideUtil;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
-
-import java.io.IOException;
-import java.security.MessageDigest;
-
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
 
 public class CommonUtils {
     /**
@@ -53,6 +29,7 @@ public class CommonUtils {
      *                  created at: 2017/4/10 19:00
      */
     public static void glideLoadPic(Context context, String url, ImageView imageView) {
+
         Glide
                 .with(context)//传入上下文
                 .load(url)//图片url
@@ -60,7 +37,7 @@ public class CommonUtils {
     }
 
     public static void glideLoadPicGround(Context context, String url, ImageView imageView) {
-        GlideUtil.loadImgByUrl(context,imageView,url);
+        GlideUtil.loadImgByUrl(context, imageView, url);
     }
 
     /**
@@ -100,119 +77,6 @@ public class CommonUtils {
     }
 
     /**
-     * Volley框架网络请求
-     *
-     * @param context
-     * @param url     <br/>
-     *                created by: tbug
-     *                created at: 2017/4/10 19:00
-     */
-    private static void volleyRequest(Context context, String url) {
-        RequestQueue queue = Volley.newRequestQueue(context);
-        StringRequest stringRequest = new StringRequest(url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        //主线程操作(可结合Handler使用)
-
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        //主线程操作
-                    }
-                });
-        queue.add(stringRequest);
-    }
-
-    /**
-     * okHttp3 GET 请求
-     *
-     * @param url
-     * @return
-     */
-    public static String okHttp3GETRequest(String url) {
-        try {
-            OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder()
-                    .url(url)
-                    .build();
-            okhttp3.Response response = client.newCall(request).execute();
-            return response.body().string();
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
-
-    /**
-     * okhttp3 POST 网络请求（暂时未验证）
-     *
-     * @param url
-     * @param data
-     * @return
-     * @throws Exception
-     */
-    public static String okHttp3POSTRequest(String url, String data) throws Exception {
-        MediaType JSON
-                = MediaType.parse("application/json; charset=utf-8");
-
-        OkHttpClient client = new OkHttpClient();
-        RequestBody body = RequestBody.create(JSON, data.getBytes());
-        Request request = new Request.Builder()
-                .url(url)
-                .post(body)
-                .build();
-        okhttp3.Response response = client.newCall(request).execute();
-        return response.body().string();
-
-    }
-
-
-    public static class BlurTransformation implements Transformation {
-
-        RenderScript rs;
-
-        public BlurTransformation(Context context) {
-            super();
-            rs = RenderScript.create(context);
-        }
-
-        @Override
-        public Bitmap transform(Bitmap bitmap) {
-            // Create another bitmap that will hold the results of the filter.
-            Bitmap blurredBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
-
-            // Allocate memory for Renderscript to work with
-            Allocation input = Allocation.createFromBitmap(rs, blurredBitmap, Allocation.MipmapControl.MIPMAP_FULL, Allocation.USAGE_SHARED);
-            Allocation output = Allocation.createTyped(rs, input.getType());
-
-            // Load up an instance of the specific script that we want to use.
-            ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
-            script.setInput(input);
-
-            // Set the blur radius
-            script.setRadius(25);
-
-            // Start the ScriptIntrinisicBlur
-            script.forEach(output);
-
-            // Copy the output to the blurred bitmap
-            output.copyTo(blurredBitmap);
-
-            bitmap.recycle();
-
-            return blurredBitmap;
-        }
-
-        @Override
-        public String key() {
-            return "blur";
-        }
-    }
-
-    /**
      * 将View 转化成 BitMap
      *
      * @param view
@@ -236,8 +100,34 @@ public class CommonUtils {
         return bitmap;
     }
 
+    /**
+     * 密码EditText内容是否可见
+     *
+     * @param editText 密码输入框
+     * @param flag     true显示，false不显示
+     */
+    public void showPasswordETcontent(EditText editText, boolean flag) {
+        if (flag) {
+            //注释掉的是第一种方法(numberPassword有效)
+            editText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+//            editText.setInputType(InputType.TYPE_TEXT_VARIATION_NORMAL);
 
-   /* *//**
+        } else {
+            editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+//            editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        }
+        editText.requestFocus();
+        //设置光标可见
+        editText.setCursorVisible(true);
+        //设置光标位置---防止点击之后游标回到0位置
+        int location = editText.length();
+        editText.setSelection(location);
+    }
+
+
+    /* */
+
+    /**
      * 圆角转化器
      *//*
     public static class GlideRoundTransform extends BitmapTransformation {
@@ -283,29 +173,32 @@ public class CommonUtils {
         }
     }*/
 
+    public static class BlurTransformation implements Transformation {
 
-    /**
-     * 密码EditText内容是否可见
-     *
-     * @param editText 密码输入框
-     * @param flag true显示，false不显示
-     */
-    public void showPasswordETcontent(EditText editText, boolean flag) {
-        if (flag) {
-            //注释掉的是第一种方法(numberPassword有效)
-            editText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-//            editText.setInputType(InputType.TYPE_TEXT_VARIATION_NORMAL);
+        RenderScript rs;
 
-        } else {
-            editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
-//            editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        public BlurTransformation(Context context) {
+            super();
+            rs = RenderScript.create(context);
         }
-        editText.requestFocus();
-        //设置光标可见
-        editText.setCursorVisible(true);
-        //设置光标位置---防止点击之后游标回到0位置
-        int location = editText.length();
-        editText.setSelection(location);
+
+        @Override
+        public Bitmap transform(Bitmap bitmap) {
+            // Create another bitmap that will hold the results of the filter.
+            Bitmap blurredBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
+
+            // Allocate memory for Renderscript to work with
+            Allocation input = Allocation.createFromBitmap(rs, blurredBitmap, Allocation.MipmapControl.MIPMAP_FULL, Allocation.USAGE_SHARED);
+            Allocation output = Allocation.createTyped(rs, input.getType());
+            output.copyTo(blurredBitmap);
+            bitmap.recycle();
+            return blurredBitmap;
+        }
+
+        @Override
+        public String key() {
+            return "blur";
+        }
     }
 }
 

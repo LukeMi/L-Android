@@ -8,10 +8,10 @@ import android.view.View;
 
 import com.lukemi.android.tutorial.AppInfoActivity;
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 
 
-public class SystemIntentActivity extends BaseActivity implements View.OnClickListener {
+public class SystemIntentActivity extends AbsBaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

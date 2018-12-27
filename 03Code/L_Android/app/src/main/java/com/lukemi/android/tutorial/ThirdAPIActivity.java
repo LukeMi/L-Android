@@ -8,21 +8,21 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lukemi.android.tutorial.baidu.BDActivity;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 import com.lukemi.android.tutorial.db.GreenDaoActivity;
 import com.lukemi.android.tutorial.evenbus.EventBusReceiveActivity;
 import com.lukemi.android.tutorial.glide.GlideActivity;
 import com.lukemi.android.tutorial.handler.HandlerTestActivity;
-import com.lukemi.android.tutorial.webservice.WebServiceActivity;
 import com.lukemi.android.tutorial.widget.IntentJumpAdapter;
 import com.lukemi.android.tutorial.widget.IntentJumpBean;
+import com.lukemi.android.tutorial.widget.brvah.BaseQuickActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 
-public class ThirdAPIActivity extends BaseActivity {
+public class ThirdAPIActivity extends AbsBaseActivity {
 
     @BindView(R.id.rv_intent)
     RecyclerView mRvIntent;
@@ -49,13 +49,12 @@ public class ThirdAPIActivity extends BaseActivity {
     @Override
     protected void initData(Bundle savedInstanceState) {
         intentJumpBeanList = new ArrayList<>();
-        intentJumpBeanList = new ArrayList<>();
         intentJumpBeanList.add(new IntentJumpBean("百度API", BDActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("Webservice", WebServiceActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Handler机制", HandlerTestActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("GreenDao", GreenDaoActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("EventBus", EventBusReceiveActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Glide", GlideActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("BRVAH", BaseQuickActivity.class));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }

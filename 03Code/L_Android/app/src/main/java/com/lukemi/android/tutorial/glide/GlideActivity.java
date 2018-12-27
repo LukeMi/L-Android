@@ -1,25 +1,17 @@
 package com.lukemi.android.tutorial.glide;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.FutureTarget;
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
-
-import java.util.concurrent.ExecutionException;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class GlideActivity extends BaseActivity {
+public class GlideActivity extends AbsBaseActivity {
 
     @BindView(R.id.img_thumb)
     ImageView imgThumb;

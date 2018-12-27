@@ -10,12 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class ClipActivity extends BaseActivity {
+public class ClipActivity extends AbsBaseActivity {
 
     @BindView(R.id.et_content)
     EditText etContent;

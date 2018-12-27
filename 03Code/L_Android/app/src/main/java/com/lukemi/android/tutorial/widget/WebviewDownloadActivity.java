@@ -16,7 +16,7 @@ import android.webkit.WebViewClient;
 
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 import com.lukemi.android.common.util.Logcat;
 
 import butterknife.BindView;
@@ -26,7 +26,7 @@ import butterknife.BindView;
  * Created by chenmz
  * on 2017/12/26 .
  */
-public class WebviewDownloadActivity extends BaseActivity {
+public class WebviewDownloadActivity extends AbsBaseActivity {
 
     @BindView(R.id.webview)
     WebView webview;

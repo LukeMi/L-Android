@@ -7,14 +7,14 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 import com.lukemi.android.tutorial.recommend.presenter.RecommendPresenter;
 import com.lukemi.android.tutorial.recommend.view.RecommendView;
 import com.lukemi.android.common.util.Logcat;
 
 import butterknife.BindView;
 
-public class RecommendActivity extends BaseActivity
+public class RecommendActivity extends AbsBaseActivity
         implements RecommendView<String> {
 
     @BindView(R.id.rv_tt)

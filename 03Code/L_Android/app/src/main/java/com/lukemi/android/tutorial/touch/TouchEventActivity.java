@@ -7,13 +7,13 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 import com.lukemi.android.common.util.Logcat;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class  TouchEventActivity extends BaseActivity {
+public class  TouchEventActivity extends AbsBaseActivity {
 
     @BindView(R.id.view)
     View view;

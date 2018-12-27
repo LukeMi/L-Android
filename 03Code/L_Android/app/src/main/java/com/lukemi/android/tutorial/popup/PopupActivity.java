@@ -18,7 +18,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.util.WindowUtil;
 import com.lukemi.android.tutorial.view.MyEditText;
@@ -30,7 +30,7 @@ import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static com.lukemi.android.tutorial.util.DeviceUtil.getStatusBarHeight;
 
 
-public class PopupActivity extends BaseActivity {
+public class PopupActivity extends AbsBaseActivity {
 
     @BindView(R.id.tv_title_type1)
     TextView tvTitleType1;

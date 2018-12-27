@@ -1,1 +1,7 @@
-include ':app', ':common', ':refresh-layout', ':aidlServer'
+include ':app'
+
+include ':Base'
+project(':Base').projectDir= new File('../Base/')
+include ':Base:common'
+include ':Base:refresh-layout'
+include ':Base:aidlServer'

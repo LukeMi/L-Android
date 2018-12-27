@@ -24,10 +24,6 @@ android {
         multiDexEnabled true
     }
 
-    android {
-        useLibrary 'org.apache.http.legacy'
-    }
-
     // 签名配置
     signingConfigs {
         release {
@@ -68,7 +64,7 @@ android {
     // 资源配置
     sourceSets {
         main {
-            jniLibs.srcDirs = ['libs']
+            jniLibs.srcDirs = ['libs', 'libs/bmap', 'libs/ksoap', 'libs/ksoap']
             res.srcDirs = [
                     'src/main/res',
                     "src/main/res/user",
@@ -99,27 +95,22 @@ dependencies {
     implementation "com.android.support:design:$rootProject.supportVersion"
     implementation "com.android.support:cardview-v7:$rootProject.supportVersion"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     //webservice
     implementation files('libs/ksoap2-android-assembly-2.4-jar-with-dependencies.jar')
-
     //百度定位
-    implementation files('libs/BaiduLBS_Android.jar')
-
+    implementation files('libs/bmap/BaiduLBS_Android.jar')
     //个人框架
     implementation files('libs/TbugSDK_v1.0.0_release.jar')
     implementation files('libs/httpmime-4.3-sources.jar')
-    implementation project(':refresh-layout')
-    implementation project(':common')
-    implementation 'com.android.support:multidex:1.0.1'
+
+    implementation project(':Base:refresh-layout')
+    implementation project(':Base:common')
+
     implementation 'com.alibaba:fastjson:1.2.31'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'org.testng:testng:6.9.6'
-    androidTestImplementation 'junit:junit:4.12'
 
     // Butterknife
     implementation "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
@@ -131,12 +122,10 @@ dependencies {
     implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rootProject.rxBindVersion"
     implementation "com.jakewharton.rxbinding2:rxbinding-design:$rootProject.rxBindVersion"
     implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$rootProject.rxBindVersion"
-
     //    @TargetApi version 17
-
     //    implementation "com.jakewharton.rxbinding2:rxbinding-leanback-v17:$rootProject.rxBindVersion"
 
-    //Rx
+    //RxJava
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
 
@@ -149,13 +138,11 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
 
-    //拦截器
-
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    //BRVAH
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
-
     // 64 K
     implementation 'com.android.support:multidex:1.0.3'
 
@@ -164,9 +151,8 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
 
     // 测试 leakcanary
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:rootProject.ext.leakCanaryVersion'
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.ext.leakCanaryVersion"
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.ext.leakCanaryVersion"
-
     // Optional, if you use support library fragments:
     debugImplementation "com.squareup.leakcanary:leakcanary-support-fragment:$rootProject.ext.leakCanaryVersion"
 
@@ -179,10 +165,7 @@ dependencies {
     //圆形图片
     implementation 'de.hdodenhof:circleimageview:2.1.0'
 
-    //volley框架
-    implementation 'com.mcxiaoke.volley:library:1.0.19'
-
-    //Picasso 加载图片
+    //Picasso
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     //greendao 数据库（根build 进行maven中心库配置）
@@ -197,13 +180,6 @@ dependencies {
     //okgo 通用的 GET POST
     implementation 'com.lzy.net:okgo:2.1.4'
 
-    //okserver 下载管理和上传管理扩展，根据需要添加
-    implementation 'com.lzy.net:okserver:1.1.3'
-
-    //内存泄漏
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
-    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
-
     // Optional, if you use support library fragments:
     debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2'
 
@@ -216,11 +192,11 @@ dependencies {
     //Jsoup 解析xml
     implementation 'org.jsoup:jsoup:1.10.3'
 
+    //二维码扫描
     //https://github.com/bingoogolapple/BGAQRCode-Android
     implementation 'cn.bingoogolapple:bga-qrcodecore:1.1.9@aar'
     implementation 'cn.bingoogolapple:bga-zbar:1.1.9@aar'
+
+    //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}
-repositories {
-    mavenCentral()
 }

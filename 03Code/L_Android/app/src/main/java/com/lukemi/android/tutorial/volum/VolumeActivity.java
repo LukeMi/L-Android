@@ -13,12 +13,12 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class VolumeActivity extends BaseActivity implements MediaContact.ViewControl {
+public class VolumeActivity extends AbsBaseActivity implements MediaContact.ViewControl {
 
     private final String TAG = this.getClass().getSimpleName();
     @BindView(R.id.pb_volume)

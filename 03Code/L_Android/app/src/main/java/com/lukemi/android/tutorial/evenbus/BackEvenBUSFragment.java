@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.evenbus.ForgroundActivity;
+import com.lukemi.android.tutorial.glide.GlideUtil;
 import com.lukemi.android.tutorial.util.CommonUtils;
 import com.lukemi.android.tutorial.util.HttpUtils;
 
@@ -61,6 +62,7 @@ public class BackEvenBUSFragment extends Fragment {
         text.setText(event);
         String url = "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png";
         CommonUtils.glideLoadPic(getContext(), url, img);
+        GlideUtil.loadImgByUrl(getContext(),img,url);
     }
 
     ;

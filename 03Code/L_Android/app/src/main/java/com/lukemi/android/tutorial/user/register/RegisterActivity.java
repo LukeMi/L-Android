@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 import com.lukemi.android.common.util.Logcat;
 
 import butterknife.BindView;
@@ -17,7 +17,7 @@ import io.reactivex.disposables.Disposable;
 /**
  * 注册界面
  */
-public class RegisterActivity extends BaseActivity implements RegisterView {
+public class RegisterActivity extends AbsBaseActivity implements RegisterView {
 
     @BindView(R.id.et_account)
     EditText etAccount;

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.BaseActivity;
+import com.lukemi.android.tutorial.base.AbsBaseActivity;
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.weather.model.WeatherBean;
 import com.lukemi.android.tutorial.weather.presenter.WeatherPresenter;
@@ -19,7 +19,7 @@ import java.net.UnknownHostException;
 
 import butterknife.BindView;
 
-public class WeatherActivity extends BaseActivity implements WeatherView {
+public class WeatherActivity extends AbsBaseActivity implements WeatherView {
 
     @BindView(R.id.tv_title)
     TextView tvTitle;

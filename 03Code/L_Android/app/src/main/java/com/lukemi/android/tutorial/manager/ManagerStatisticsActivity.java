@@ -1,6 +1,7 @@
-package com.lukemi.android.tutorial.category;
+package com.lukemi.android.tutorial.manager;
 
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,10 +9,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.AbsBaseActivity;
-import com.lukemi.android.tutorial.receiver.ReceiverActivity;
-import com.lukemi.android.tutorial.sessionlifecycle.Session1Activity;
-import com.lukemi.android.tutorial.volum.VolumeActivity;
+import com.lukemi.android.tutorial.killprocess.AppStaticsActivity;
 import com.lukemi.android.tutorial.widget.IntentJumpAdapter;
 import com.lukemi.android.tutorial.widget.IntentJumpBean;
 
@@ -19,8 +17,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
-public class ComponentActivity extends AbsBaseActivity {
+/**
+ * @author lukemi
+ * @date 2018/12/27 9:46
+ * @des Android 管理类
+ * @mail chenmingzhiji@163.com or mingzhichen1990@gmail.com
+ */
+public class ManagerStatisticsActivity extends AppCompatActivity {
 
     @BindView(R.id.rv_intent)
     RecyclerView mRvIntent;
@@ -37,30 +42,22 @@ public class ComponentActivity extends AbsBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_manager_statistics);
+        ButterKnife.bind(this);
+        initData();
+        initView();
     }
 
-    @Override
-    protected int bindLayout() {
-        return R.layout.activity_component;
-    }
-
-    @Override
-    protected void initData(Bundle savedInstanceState) {
+    private void initData() {
         intentJumpBeanList = new ArrayList<>();
-        intentJumpBeanList = new ArrayList<>();
-        intentJumpBeanList.add(new IntentJumpBean("Activity", Session1Activity.class));
-        intentJumpBeanList.add(new IntentJumpBean("Service", VolumeActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("BroadcastReceiver", ReceiverActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("ContentProvider", null));
+        intentJumpBeanList.add(new IntentJumpBean("ProcessManager", AppStaticsActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("ActivityManager", ActivityManagerActivity.class));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }
 
-    @Override
-    protected void initView() {
+    private void initView() {
         mRvIntent.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRvIntent.setAdapter(intentJumpAdapter);
     }
-
-
 }
