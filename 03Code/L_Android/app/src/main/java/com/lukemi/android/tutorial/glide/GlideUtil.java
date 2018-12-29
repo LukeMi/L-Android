@@ -51,7 +51,7 @@ public class GlideUtil {
                 .placeholder(R.mipmap.ic_launcher)
                 .error(R.mipmap.ic_launcher)
                 .fallback(R.mipmap.ic_launcher);
-        if (!isGif || dontAnimate) {
+        if (isGif || dontAnimate) {
             // gif 不能播放
             transform.dontAnimate();
         }
