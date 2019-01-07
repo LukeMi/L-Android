@@ -1,0 +1,11 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="dp16">16dp</dimen>
+
+    <dimen name="def_ca_edge_wide">2dp</dimen>
+    <dimen name="def_ca_radio">0dp</dimen>
+
+
+</resources>
