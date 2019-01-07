@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.lukemi.android.tutorial">
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!-- 设置桌面图标 -->
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
@@ -27,8 +27,8 @@
       <uses-feature android:name="android.hardware.camera.autofocus" />
       <uses-feature android:name="android.hardware.camera.flash" />
     -->
-    <!-- 通知栏震动 -->
-    <uses-permission android:name="android.permission.VIBRATE" />
+    <!--重复-->
+    <!--<uses-permission android:name="android.permission.VIBRATE" />-->
 
     <!-- 百度定位权限开始 -->
     <!-- 这个权限用于进行网络定位 -->
@@ -69,6 +69,19 @@
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask">
+            <!-- <intent-filter>
+                 <action android:name="android.intent.action.VIEW" />
+                 <action android:name="android.intent.action.MAIN" />
+
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>-->
+        </activity>
+        <activity android:name=".sessionlifecycle.Session1Activity" />
+        <activity android:name=".sessionlifecycle.Session2Activity" />
+        <activity android:name=".sdf.SpActivity" />
+        <activity android:name=".handler.BaseHandlerActivity" />
+        <activity android:name=".handler.HandlerTestActivity" />
+        <activity android:name=".permission.PermissionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -76,12 +89,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".sessionlifecycle.Session1Activity" />
-        <activity android:name=".sessionlifecycle.Session2Activity" />
-        <activity android:name=".sdf.SpActivity" />
-        <activity android:name=".handler.BaseHandlerActivity" />
-        <activity android:name=".handler.HandlerTestActivity" />
-        <activity android:name=".perssion.PermissionActivity" />
         <activity android:name=".animation.AnimationActivity" />
         <activity
             android:name=".animation.TweenActivity"
@@ -215,7 +222,6 @@
         <activity android:name=".widget.ImageViewCenterInsideActivity" />
         <activity android:name=".widget.RoundImageViewListActivity" />
         <activity android:name=".utiltest.FlowLayoutActivity" />
-        <activity android:name=".viewtest.ResChangeImageViewActivity" />
         <activity android:name=".viewtest.SingleLineLinearlayoutActivity" />
         <activity android:name=".utiltest.ScannerActivity" />
         <activity android:name=".widget.WebviewDownloadActivity" />

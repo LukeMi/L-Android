@@ -67,7 +67,7 @@
     <string name="key_areyousure_exit">确认退出吗?</string>
     <string name="key_downloaderr">下载异常</string>
     <string name="key_checkupdata">检查更新</string>
-    <string name="key_init">测速模块初始化中</string>
+    <string name="key_init">测速模块初始化中</string>`
 
     <string name="exclusion_please_close_ONU">功能为开启状态，请将其关闭，再进行大速率测速</string>
     <string name="key_checkunusual_cutdown_restart">检测到异常断电，请退出测速模块重新初始化</string>
