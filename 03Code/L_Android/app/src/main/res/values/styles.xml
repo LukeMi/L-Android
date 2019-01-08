@@ -1177,9 +1177,6 @@
         <item name="android:layout_alignParentLeft">true</item>
     </style>
 
-    <style name="RtlOverlay.Widget.AppCompat.Search.DropDown.Icon2" parent="android:Widget">
-        <item name="android:layout_toLeftOf">@id/edit_query</item>
-    </style>
 
     <style name="RtlOverlay.Widget.AppCompat.Search.DropDown.Query" parent="android:Widget">
         <item name="android:layout_alignParentRight">true</item>
@@ -1299,14 +1296,6 @@
 
     <style name="TextAppearance.Design.Counter" parent="TextAppearance.AppCompat.Caption" />
 
-    <style name="TextAppearance.Design.Counter.Overflow" parent="TextAppearance.AppCompat.Caption">
-        <item name="android:textColor">?attr/textColorError</item>
-    </style>
-
-    <style name="TextAppearance.Design.Error" parent="TextAppearance.AppCompat.Caption">
-        <item name="android:textColor">?attr/textColorError</item>
-    </style>
-
     <style name="TextAppearance.Design.Hint" parent="TextAppearance.AppCompat.Caption">
         <item name="android:textColor">?attr/colorControlActivated</item>
     </style>
@@ -1386,10 +1375,6 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Design" parent="Theme.AppCompat">
-        <item name="textColorError">@color/design_textinput_error_color_dark</item>
-    </style>
-
     <style name="Theme.Design.BottomSheetDialog" parent="Theme.AppCompat.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowAnimationStyle">@style/Animation.Design.BottomSheetDialog</item>
@@ -1397,7 +1382,6 @@
     </style>
 
     <style name="Theme.Design.Light" parent="Theme.AppCompat.Light">
-        <item name="textColorError">@color/design_textinput_error_color_light</item>
     </style>
 
     <style name="Theme.Design.Light.BottomSheetDialog" parent="Theme.AppCompat.Light.Dialog">
@@ -1707,4 +1691,5 @@
 
     <color name="design_textinput_error_color_dark">#000000</color>
     <color name="design_textinput_error_color_light">#000000</color>
+    <dimen name="abc_action_bar_progress_bar_size">80dp</dimen>
 </resources>
