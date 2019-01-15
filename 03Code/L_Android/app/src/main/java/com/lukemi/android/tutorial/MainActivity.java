@@ -13,6 +13,7 @@ import com.lukemi.android.tutorial.animation.AnimationActivity;
 import com.lukemi.android.tutorial.category.ComponentActivity;
 import com.lukemi.android.tutorial.manager.ManagerStatisticsActivity;
 import com.lukemi.android.tutorial.setting.SettingActivity;
+import com.lukemi.android.tutorial.statics.StaticFieldActivity;
 import com.lukemi.android.tutorial.utiltest.UtilMainActivity;
 import com.lukemi.android.tutorial.widget.IntentJumpAdapter;
 import com.lukemi.android.tutorial.widget.IntentJumpBean;
@@ -74,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                             if (object.optString("rsm").equals("1")) {
                                 JSONObject data = object.getJSONObject("data");
                                 String apkUrl = data.getString("url");
-
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
         intentJumpBeanList.add(new IntentJumpBean("android", AndroidActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Emulate Third App", WeChatMainActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("ManagerStatistics", ManagerStatisticsActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("Static Field Test", StaticFieldActivity.class));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }

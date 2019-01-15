@@ -82,7 +82,8 @@
         <activity android:name=".sdf.SpActivity" />
         <activity android:name=".handler.BaseHandlerActivity" />
         <activity android:name=".handler.HandlerTestActivity" />
-        v<activity android:name=".permission.PermissionActivity" />
+        v
+        <activity android:name=".permission.PermissionActivity" />
         <activity android:name=".animation.AnimationActivity" />
         <activity
             android:name=".animation.TweenActivity"
@@ -288,7 +289,8 @@
         <activity android:name=".widget.SoftInputModeActivity" />
         <activity android:name=".manager.ActivityManagerActivity" />
         <activity android:name=".manager.ManagerStatisticsActivity" />
-        <activity android:name=".sessionlifecycle.NewTaskActivity"></activity>
+        <activity android:name=".sessionlifecycle.NewTaskActivity" />
+        <activity android:name=".statics.StaticFieldActivity"></activity>
     </application>
 
 </manifest>
