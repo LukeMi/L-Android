@@ -11,6 +11,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
@@ -26,8 +27,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class TweenActivity extends AppCompatActivity implements View.OnClickListener {
+public class TweenActivity extends AppCompatActivity {
 
+    private final int MSG_REPEAT = 1 << 1;
     @BindView(R.id.alpha_img_TweenAct)
     ImageView alphaImg;
     @BindView(R.id.alpha_TweenAct)
@@ -48,11 +50,12 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
     ImageView xml_translateImg;
     @BindView(R.id.iv_xml_t_s)
     ImageView iv_xml_t_s;
-
+    @BindView(R.id.iv_xml_t_heart)
+    ImageView iv_xml_t_heart;
+    @BindView(R.id.xml_t_heart)
+    View xml_t_heart;
     private AlphaAnimation alphaAnimation;
-
     private int repeatCount;
-    private final int MSG_REPEAT = 1 << 1;
     private final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -70,7 +73,7 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
             }
         }
     };
-
+    private boolean flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,15 +90,10 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
-    @OnClick({R.id.alpha_TweenAct,
-            R.id.rotate_TweenAct,
-            R.id.scale_TweenAct,
-            R.id.translate_TweenAct,
-            R.id.xml_alpha_TweenAct,
-            R.id.xml_rotate_TweenAct,
-            R.id.xml_scale_TweenAct,
-            R.id.xml_translate_TweenAct,
-            R.id.scale_img_TweenAct, R.id.xml_t_s})
+    @OnClick({R.id.alpha_TweenAct, R.id.rotate_TweenAct, R.id.scale_TweenAct,
+            R.id.translate_TweenAct, R.id.xml_alpha_TweenAct, R.id.xml_rotate_TweenAct,
+            R.id.xml_scale_TweenAct, R.id.xml_translate_TweenAct, R.id.scale_img_TweenAct,
+            R.id.xml_t_s, R.id.iv_xml_t_heart})
     public void onClick(View v) {
         int id = v.getId();
         switch (id) {
@@ -173,12 +171,53 @@ public class TweenActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.scale_img_TweenAct:
                 Intent intent = new Intent();
-                intent.setClass(this,  ScaleActivity.class);
+                intent.setClass(this, ScaleActivity.class);
                 startActivity(intent);
                 break;
             case R.id.xml_t_s:
                 iv_xml_t_s.startAnimation(AnimationUtils.loadAnimation(this, R.anim.set_a_s));
                 break;
+            case R.id.iv_xml_t_heart:
+                heart();
+                break;
+            default:
+                break;
         }
+    }
+
+    private void heart() {
+        iv_xml_t_heart.setSelected(flag = !flag);
+        heartAnimation();
+    }
+
+    private void heartAnimation() {
+        ScaleAnimation scaleAnimation = new ScaleAnimation(1f, 1.2f, 1f, 1.2f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        scaleAnimation.setDuration(300);
+        scaleAnimation.setInterpolator(new DecelerateInterpolator());
+        scaleAnimation.setFillAfter(false);
+        scaleAnimation.setRepeatCount(1);
+        scaleAnimation.setRepeatMode(Animation.REVERSE);
+        scaleAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                if (animation == scaleAnimation ){
+                    Logcat.log("animation == scaleAnimation");
+                }
+                Logcat.log("animation onAnimationStart");
+                xml_t_heart.setEnabled(false);
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                xml_t_heart.setEnabled(true);
+                Logcat.log("animation onAnimationEnd");
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                Logcat.log("animation onAnimationRepeat");
+            }
+        });
+        iv_xml_t_heart.startAnimation(scaleAnimation);
     }
 }

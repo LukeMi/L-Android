@@ -50,7 +50,11 @@ public class AnimationActivity extends AppCompatActivity {
             case R.id.btn_property:
                 intent.setClass(this, PropertyActivity.class);
                 break;
+            default:
+                break;
         }
-        startActivity(intent);
+        if (intent.getComponent() != null) {
+            startActivity(intent);
+        }
     }
 }
