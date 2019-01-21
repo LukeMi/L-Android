@@ -47,7 +47,8 @@
     <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 访问网络，网络定位需要上网 -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <!--repeat-->
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
 
     <!-- 百度定位权限结束 -->
     <application
@@ -82,7 +83,7 @@
         <activity android:name=".sdf.SpActivity" />
         <activity android:name=".handler.BaseHandlerActivity" />
         <activity android:name=".handler.HandlerTestActivity" />
-        v
+
         <activity android:name=".permission.PermissionActivity" />
         <activity android:name=".animation.AnimationActivity" />
         <activity

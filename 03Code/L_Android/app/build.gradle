@@ -24,6 +24,26 @@ android {
         multiDexEnabled true
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // 资源配置
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs', 'libs/bmap', 'libs/ksoap', 'libs/ksoap']
+            res.srcDirs = [
+                    'src/main/res',
+                    "src/main/res/user",
+            ]
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
     // 签名配置
     signingConfigs {
         release {
@@ -61,30 +81,16 @@ android {
         enabled = true
     }
 
-    // 资源配置
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs', 'libs/bmap', 'libs/ksoap', 'libs/ksoap']
-            res.srcDirs = [
-                    'src/main/res',
-                    "src/main/res/user",
-            ]
-        }
-    }
-
-    //更改已生成apk前缀名
+    //更改已生成apk前缀名,并更改目录
     android.applicationVariants.all { variant ->
         variant.outputs.each { output ->
             variant.outputs.all {
-                outputFileName = "APP" + defaultConfig.versionCode + "_" + defaultConfig.versionName + "_" + getTimeStamp() + ".apk";
+                variant.getPackageApplication().outputDirectory = new File("app/apk")
+                outputFileName = "APP" + defaultConfig.versionCode + "_" + defaultConfig.versionName + "_" + getTimeStamp() + ".apk"
             }
         }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 }
 
 dependencies {
