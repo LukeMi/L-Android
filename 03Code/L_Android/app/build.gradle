@@ -11,9 +11,14 @@ def getTimeStamp() {
 
 android {
 
+    /**
+     * 由于项目需要做换壳工作，因此我们需要在app的build.gradle文件中对不同项目做相应的维护处理，
+     * 当我们需要切换不同的项目apk时，修改以下几点配置即可（注意蓝色字体）。
+     */
+    String projectName = ""
+
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
-
     defaultConfig {
         applicationId "com.lukemi.android.tutorial"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -22,6 +27,8 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+        //在BuildConfig生成 userType 值
+//        buildConfigField "int", "userType", "3"
     }
 
     compileOptions {
@@ -54,13 +61,12 @@ android {
         }
 
         debug {
-            storeFile file("paradise.jks")
-            storePassword "paradise"
-            keyAlias "paradise"
-            keyPassword "paradise"
+            /*  storeFile file("paradise.jks")
+              storePassword "paradise"
+              keyAlias "paradise"
+              keyPassword "paradise"*/
         }
     }
-
     // Gradle Build 配置
     buildTypes {
         release {
@@ -75,22 +81,43 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     // 数据绑定
     dataBinding {
         enabled = true
     }
 
-    //更改已生成apk前缀名,并更改目录
-    android.applicationVariants.all { variant ->
-        variant.outputs.each { output ->
-            variant.outputs.all {
-                variant.getPackageApplication().outputDirectory = new File("app/apk")
-                outputFileName = "APP" + defaultConfig.versionCode + "_" + defaultConfig.versionName + "_" + getTimeStamp() + ".apk"
-            }
+    //差异化打包
+    // 定义项目维度
+    flavorDimensions "project"
+    productFlavors {
+        developer {
+            dimension "project"
+            buildConfigField "int", "userType", "1"
+            minSdkVersion 14
+            targetSdkVersion 28
+            applicationId 'com.lukemi.android.tutorial.developer'
+            projectName = "developer"
+        }
+        reader {
+            dimension "project"
+            buildConfigField "int", "userType", "2"
+            minSdkVersion 14
+            targetSdkVersion 28
+            applicationId 'com.lukemi.android.tutorial.reader'
+            projectName = "reader"
         }
     }
 
+    //更改已生成apk前缀名,并更改目录
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            //只对release包作用
+            if (outputFile != null && outputFile.name.endsWith('.apk') && variant.buildType.name == 'release') {
+                variant.getPackageApplication().outputDirectory = new File("app/apk")
+            }
+            outputFileName = "APP" + defaultConfig.versionCode + "_" + defaultConfig.versionName + "_" + getTimeStamp() + ".apk"
+        }
+    }
 }
 
 dependencies {
@@ -101,22 +128,22 @@ dependencies {
     implementation "com.android.support:design:$rootProject.supportVersion"
     implementation "com.android.support:cardview-v7:$rootProject.supportVersion"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
-
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
     //webservice
     implementation files('libs/ksoap2-android-assembly-2.4-jar-with-dependencies.jar')
+
     //百度定位
     implementation files('libs/bmap/BaiduLBS_Android.jar')
+
     //个人框架
     implementation files('libs/TbugSDK_v1.0.0_release.jar')
     implementation files('libs/httpmime-4.3-sources.jar')
-
     implementation project(':Base:refresh-layout')
     implementation project(':Base:common')
-
     implementation 'com.alibaba:fastjson:1.2.31'
 
     // Butterknife
@@ -129,7 +156,9 @@ dependencies {
     implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rootProject.rxBindVersion"
     implementation "com.jakewharton.rxbinding2:rxbinding-design:$rootProject.rxBindVersion"
     implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$rootProject.rxBindVersion"
+
     //    @TargetApi version 17
+
     //    implementation "com.jakewharton.rxbinding2:rxbinding-leanback-v17:$rootProject.rxBindVersion"
 
     //RxJava
@@ -148,8 +177,10 @@ dependencies {
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
     //BRVAH
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
+
     // 64 K
     implementation 'com.android.support:multidex:1.0.3'
 
@@ -160,6 +191,7 @@ dependencies {
     // 测试 leakcanary
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.ext.leakCanaryVersion"
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.ext.leakCanaryVersion"
+
     // Optional, if you use support library fragments:
     debugImplementation "com.squareup.leakcanary:leakcanary-support-fragment:$rootProject.ext.leakCanaryVersion"
 
@@ -167,7 +199,8 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.3.1'
 
     //Glide加载图片
-//    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    //    implementation 'com.github.bumptech.glide:glide:3.7.0'
 
     //圆形图片
     implementation 'de.hdodenhof:circleimageview:2.1.0'
@@ -200,6 +233,7 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.10.3'
 
     //二维码扫描
+
     //https://github.com/bingoogolapple/BGAQRCode-Android
     implementation 'cn.bingoogolapple:bga-qrcodecore:1.1.9@aar'
     implementation 'cn.bingoogolapple:bga-zbar:1.1.9@aar'

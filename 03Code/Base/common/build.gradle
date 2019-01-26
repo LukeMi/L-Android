@@ -58,7 +58,7 @@ task makeJar(type: Copy, dependsOn: "build") {
     from 'build/intermediates/bundles/debug/classes.jar'
     into 'build/libs'
     rename { String fileName ->
-        fileName.replace('classes', 'TbugSDK_' + versionCode)
+        fileName.replace('classes', 'TbugSDK_' + versionName)
     }
 
 }

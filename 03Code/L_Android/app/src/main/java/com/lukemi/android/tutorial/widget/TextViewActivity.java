@@ -14,7 +14,6 @@ public class TextViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(com.lukemi.android.tutorial.R.layout.activity_text_view);
         initView();
     }
