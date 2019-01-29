@@ -1,10 +1,13 @@
 package com.lukemi.android.tutorial.permission;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,7 +25,7 @@ import butterknife.OnClick;
  * @des 权限测试类
  * @mail chenmingzhiji@163.com or mingzhichen1990@gmail.com
  */
-public class PermissionActivity extends AppCompatActivity {
+public class PermissionActivity extends BasePermissionActivity {
 
     private static final int REQUEST_CODE_CAMERA = 0x0000001;
 
@@ -39,31 +42,31 @@ public class PermissionActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_CODE_CAMERA) {
-            int permission = grantResults[0];
-            tvResult.setText((permission == PackageManager.PERMISSION_GRANTED) ? "有权限" : "没权限");
-        }
     }
 
     @OnClick(R.id.btn_camera)
     public void onViewClicked() {
-        Logcat.log(" hasCameraPermission() = " + hasCameraPermission());
-        if (hasCameraPermission()) {
-            tvResult.setText("有相机权限");
-        } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                this.requestPermissions(new String[]{Manifest.permission.CAMERA}, REQUEST_CODE_CAMERA);
-            }
+        try {
+            requestPermission(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, this::granted, "sss");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-    private boolean hasCameraPermission() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            return true;
-        } else {
-            return checkCallingOrSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
+    private void granted(boolean granted) {
+        Logcat.log("granted : " + granted);
+        tvResult.setText(granted ? "有权限" : "没权限");
+        if (granted) {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            intent.addCategory(Intent.CATEGORY_DEFAULT);
+            startActivity(intent);
         }
     }
 }

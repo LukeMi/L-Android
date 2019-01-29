@@ -10,6 +10,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lukemi.android.tutorial.gps.GpsActivity;
 import com.lukemi.android.tutorial.killprocess.AppStaticsActivity;
+import com.lukemi.android.tutorial.permission.PermissionActivity;
 import com.lukemi.android.tutorial.sdf.SpActivity;
 import com.lukemi.android.tutorial.setting.FlashActivity;
 import com.lukemi.android.tutorial.setting.ScreenShotForbiddenActivity;
@@ -53,6 +54,7 @@ public class AndroidActivity extends AppCompatActivity {
         intentJumpBeanList.add(new IntentJumpBean("SharedPreference", SpActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("后置灯", FlashActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("禁止截屏", ScreenShotForbiddenActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("Permission", PermissionActivity.class));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }

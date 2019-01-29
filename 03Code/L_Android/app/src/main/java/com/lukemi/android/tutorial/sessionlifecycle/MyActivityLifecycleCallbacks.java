@@ -1,7 +1,9 @@
 package com.lukemi.android.tutorial.sessionlifecycle;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Application;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -10,6 +12,7 @@ import android.util.Log;
  * Created by mzchen on 2016/10/23.
  */
 
+@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 public class MyActivityLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
     private long startTime;
     private long endTime;
@@ -40,7 +43,7 @@ public class MyActivityLifecycleCallbacks implements Application.ActivityLifecyc
             runTimeDuration.setDuration(runTimeDuration.getEndTime() - runTimeDuration.getStartTime());
             //处理逻辑的时候
             Log.i("session", isFirstShow + RunTimeDuration.getInstance().toString());
-            Log.i("session", isFirstShow +""+ startTime);
+            Log.i("session", isFirstShow + "" + startTime);
 
             runTimeDuration.setStartTime(startTime);
         }

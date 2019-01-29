@@ -25,11 +25,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        buildConfigField "boolean", "SHOW_LOG", "true"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
-        //在BuildConfig生成 userType 值
-//        buildConfigField "int", "userType", "3"
     }
 
     compileOptions {
@@ -40,7 +37,7 @@ android {
     // 资源配置
     sourceSets {
         main {
-            jniLibs.srcDirs = ['libs', 'libs/bmap', 'libs/ksoap', 'libs/ksoap']
+            jniLibs.srcDirs = ['libs', 'libs/bmap','libs/ksoap']
             res.srcDirs = [
                     'src/main/res',
                     "src/main/res/user",
@@ -82,6 +79,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     // 数据绑定
     dataBinding {
         enabled = true

@@ -54,7 +54,6 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
                             requestPermission();
                         }
                     }
-
                 }
             }
         }

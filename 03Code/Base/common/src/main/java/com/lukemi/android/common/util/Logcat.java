@@ -41,6 +41,7 @@ public class Logcat {
         if (BuildConfig.DEBUG) {
             log = log.trim();
             int startIndex = 0;
+            //设置日志单次打印长度
             int MAX_LENGTH = 4000;
             while (startIndex < log.length()) {
                 int endIndex = startIndex + MAX_LENGTH < log.length() ? startIndex + MAX_LENGTH : log.length();

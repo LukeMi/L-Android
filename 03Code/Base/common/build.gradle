@@ -12,8 +12,9 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0.0"
+        //自定义常量
         buildConfigField "boolean", "LOG_SHOW", "true"
-        buildConfigField "String", "LOG_TAG", "Common"
+        buildConfigField "String", "LOG_TAG", "\"Common\""
     }
 
     buildTypes {
