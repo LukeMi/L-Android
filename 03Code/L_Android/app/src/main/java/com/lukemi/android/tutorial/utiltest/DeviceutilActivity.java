@@ -1,13 +1,17 @@
 package com.lukemi.android.tutorial.utiltest;
 
 import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.util.DeviceUtil;
 
@@ -15,15 +19,51 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class DeviceutilActivity extends AppCompatActivity implements View.OnClickListener {
+    private static int REQUEST_CODE = 0x000001;
     private Button refreshBTN;
     private TextView showDeviceInfoTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.activity_deviceutil);
+        setContentView(R.layout.activity_deviceutil);
         initView();
-        setDeviceInfoToTV();
+        requestPermission();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        Logcat.log("requestCode " + requestCode);
+        if (requestCode == REQUEST_CODE) {
+            boolean granted = true;
+            for (int p : grantResults) {
+                if (p == PackageManager.PERMISSION_DENIED) {
+                    granted = false;
+                    break;
+                }
+            }
+            if (granted) {
+                setDeviceInfoToTV();
+            } else {
+                for (int i = 0; i < permissions.length; i++) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        if (!shouldShowRequestPermissionRationale(permissions[i])) {
+                            Logcat.log("requestPermission reject");
+                        } else {
+                            requestPermission();
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    private void initView() {
+        refreshBTN = findViewById(R.id.refreshBTN_DUAct);
+        refreshBTN.setOnClickListener(this);
+        showDeviceInfoTV = findViewById(R.id.showDeviceInfo_DUAct);
     }
 
     /**
@@ -31,14 +71,12 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
      */
     private void requestPermission() {
         if (!DeviceUtil.isGetParamPermission(this, Manifest.permission.READ_PHONE_STATE)) {
-            DeviceUtil.requestPermission(this, Manifest.permission.READ_PHONE_STATE);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{Manifest.permission.READ_PHONE_STATE}, REQUEST_CODE);
+            }
+        } else {
+            setDeviceInfoToTV();
         }
-    }
-
-    private void initView() {
-        refreshBTN = ((Button) findViewById(R.id.refreshBTN_DUAct));
-        refreshBTN.setOnClickListener(this);
-        showDeviceInfoTV = ((TextView) findViewById(R.id.showDeviceInfo_DUAct));
     }
 
     @Override
@@ -47,6 +85,8 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         switch (id) {
             case R.id.refreshBTN_DUAct:
                 setDeviceInfoToTV();
+                break;
+            default:
                 break;
         }
     }
@@ -60,7 +100,7 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         int widthPixels = displayMetrics.widthPixels;
         int heightPixels = displayMetrics.heightPixels;
         float density = displayMetrics.density;
-        density = displayMetrics.density+ displayMetrics.densityDpi;
+        density = displayMetrics.density + displayMetrics.densityDpi;
         String IMEI = DeviceUtil.getIMEI(this);
         String IMSI = DeviceUtil.getIMSI(this);
         String SIM = DeviceUtil.getSIM(this);
@@ -84,8 +124,10 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         String CurCpuFreq = DeviceUtil.getCurCpuFreq();
         String cpuSN = DeviceUtil.getCPUSerial();
         int CPUNumCores = DeviceUtil.getCPUNumCores();
-        String XX = DeviceUtil.getXX(this);
-
+        String XX = "";
+        if (checkCallingOrSelfPermission(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+            XX = DeviceUtil.getXX(this);
+        }
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("phoneBand", phoneBand);
         map.put("phoneMode", phoneMode);
@@ -94,7 +136,7 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         map.put("widthPixels", widthPixels);
         map.put("heightPixels", heightPixels);
         map.put("density", density);
-        requestPermission();
+
         map.put("macID", macID);
         map.put("IMEI", IMEI);
         map.put("androidId", androidId);

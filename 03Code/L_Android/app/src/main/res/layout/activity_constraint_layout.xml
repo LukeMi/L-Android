@@ -1,59 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:id="@+id/root"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent"
-                                             android:background="@color/gray_bkg_first"
-                                             tools:context="com.lukemi.android.widget.ConstraintLayoutActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bkg_first">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
+        android:layout_width="384dp"
         android:layout_height="wrap_content"
         android:scaleType="fitCenter"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/xkx"/>
+        app:srcCompat="@drawable/xkx" />
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="0dp"
+        android:layout_width="384dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:gravity="center"
         android:padding="@dimen/dp_10"
         android:text="侠客行"
         android:textColor="@color/black_alph_bkg"
-        android:textSize="@dimen/sp20"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"/>
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/tv_profile"
-        android:layout_width="0dp"
+        android:layout_width="384dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp10"
         android:background="@color/white"
         android:gravity="right|center_vertical"
         android:padding="@dimen/dp10"
         android:text="李白"
         android:textColor="@color/black_alph_bkg"
         android:textSize="@dimen/sp16"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <TextView
         android:id="@+id/tv_content"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/dp10"
+        android:layout_width="384dp"
+        android:layout_height="wrap_content"
         android:background="@color/white"
         android:gravity="center_horizontal"
         android:paddingTop="@dimen/sp20"
@@ -61,10 +48,46 @@
         android:text="@string/poetrm"
         android:textColor="@color/black_text_doc"
         android:textSize="@dimen/sp16"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_profile"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_profile" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="19dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_hint1"
+        app:layout_constraintTop_toTopOf="@+id/tv_hint1" />
+
+    <TextView
+        android:id="@+id/tv_hint1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp8"
+        android:text="唐诗"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_hint2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content" />
+
+    <TextView
+        android:id="@+id/tv_hint2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="宋词"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_hint1"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toRightOf="@+id/tv_hint1"
+        app:layout_constraintRight_toLeftOf="@+id/tv_hint3"
+        app:layout_constraintTop_toTopOf="@+id/tv_hint1" />
+
+    <TextView
+        android:id="@+id/tv_hint3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="元曲"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_hint1"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toRightOf="@+id/tv_hint2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_hint1" />
 
 </android.support.constraint.ConstraintLayout>

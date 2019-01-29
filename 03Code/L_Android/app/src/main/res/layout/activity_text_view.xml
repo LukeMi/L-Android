@@ -12,10 +12,10 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
         android:weightSum="1">
 
         <TextView
@@ -141,5 +141,18 @@
             android:includeFontPadding="false"
             android:text="includeFontPadding"
             android:textColor="@color/black" />
+
+
+        <TextView
+            android:id="@+id/tv_drawable"
+            android:layout_width="@dimen/dp100"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/selector_mark_drawable"
+            android:drawablePadding="@dimen/dp10"
+            android:gravity="center"
+            android:selectAllOnFocus="true"
+            android:text="drawable"
+            android:textColor="@color/selector_rg_text_color"
+            android:textSize="@dimen/sp16" />
     </LinearLayout>
 </ScrollView>

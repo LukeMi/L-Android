@@ -25,6 +25,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        buildConfigField "boolean", "SHOW_LOG", "true"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         //在BuildConfig生成 userType 值
@@ -95,6 +96,8 @@ android {
             buildConfigField "int", "userType", "1"
             minSdkVersion 14
             targetSdkVersion 28
+            versionCode 1
+            versionName "1.0"
             applicationId 'com.lukemi.android.tutorial.developer'
             projectName = "developer"
         }
@@ -103,6 +106,8 @@ android {
             buildConfigField "int", "userType", "2"
             minSdkVersion 14
             targetSdkVersion 28
+            versionCode 1
+            versionName "2.0"
             applicationId 'com.lukemi.android.tutorial.reader'
             projectName = "reader"
         }
@@ -113,10 +118,23 @@ android {
         variant.outputs.all {
             //只对release包作用
             if (outputFile != null && outputFile.name.endsWith('.apk') && variant.buildType.name == 'release') {
+                //更换打包后的目录
                 variant.getPackageApplication().outputDirectory = new File("app/apk")
             }
-            outputFileName = "APP" + defaultConfig.versionCode + "_" + defaultConfig.versionName + "_" + getTimeStamp() + ".apk"
+            outputFileName = "APP" + outputFile.name.split("\\.")[0] + defaultConfig.versionCode + "_" + defaultConfig.versionName + "_" + getTimeStamp() + ".apk"
         }
+    }
+
+    //配置 DEX 选项， 使用以下属性可以缩短构建时间
+    dexOptions {
+        // Sets the maximum number of DEX processes
+        // that can be started concurrently.
+        maxProcessCount 8
+        // Sets the maximum memory allocation pool size
+        // for the dex operation.
+        javaMaxHeapSize "4g"
+        // Enables Gradle to pre-dex library dependencies.
+        preDexLibraries true
     }
 }
 
@@ -139,8 +157,6 @@ dependencies {
     //百度定位
     implementation files('libs/bmap/BaiduLBS_Android.jar')
 
-    //个人框架
-    implementation files('libs/TbugSDK_v1.0.0_release.jar')
     implementation files('libs/httpmime-4.3-sources.jar')
     implementation project(':Base:refresh-layout')
     implementation project(':Base:common')

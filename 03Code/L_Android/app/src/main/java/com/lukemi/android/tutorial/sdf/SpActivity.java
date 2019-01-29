@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
-import com.tbug.android.mlibrary.util.Logcat;
 
 import java.util.Iterator;
 import java.util.Map;

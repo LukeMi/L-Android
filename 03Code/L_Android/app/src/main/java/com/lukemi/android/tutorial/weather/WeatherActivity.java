@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.lukemi.android.common.util.HttpUtils;
 import com.lukemi.android.tutorial.R;
-import com.tbug.android.mlibrary.util.HttpUtils;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -38,11 +38,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
      * 初始化控件
      */
     private void initView() {
-        cityName = ((TextView) findViewById(R.id.cityName));
-        cityName = ((TextView) findViewById(R.id.cityName));
-        cityName = ((TextView) findViewById(R.id.cityName));
-        cityName = ((TextView) findViewById(R.id.cityName));
-        cityName = ((TextView) findViewById(R.id.cityName));
+        cityName = findViewById(R.id.cityName);
     }
 
     /**

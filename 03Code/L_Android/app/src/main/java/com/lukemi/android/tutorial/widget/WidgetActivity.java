@@ -28,6 +28,15 @@ public class WidgetActivity extends AppCompatActivity {
     RecyclerView mRvIntent;
     private List<IntentJumpBean> bindBeanList = new ArrayList<>();
     private IntentJumpAdapter intentJumpAdapter;
+    private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (BaseQuickAdapter adapter, View view, int position) -> {
+        IntentJumpBean o = (IntentJumpBean) adapter.getData().get(position);
+        Class<?> c = o.getC();
+        if (c != null) {
+            startActivity(new Intent(this, c));
+        } else {
+            Toast.makeText(getApplicationContext(), o.getText() + "暂未添加", Toast.LENGTH_LONG).show();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +49,7 @@ public class WidgetActivity extends AppCompatActivity {
 
     private void initData() {
         bindBeanList.add(new IntentJumpBean("自定义View测试", CustomViewListActivity.class));
+        bindBeanList.add(new IntentJumpBean("ConstraintLayout", ConstraintLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("TextView", TextViewActivity.class));
         bindBeanList.add(new IntentJumpBean("EditText", EditTextActivity.class));
         bindBeanList.add(new IntentJumpBean("Button", null));
@@ -72,16 +82,6 @@ public class WidgetActivity extends AppCompatActivity {
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, bindBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }
-
-    private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (BaseQuickAdapter adapter, View view, int position) -> {
-        IntentJumpBean o = (IntentJumpBean) adapter.getData().get(position);
-        Class<?> c = o.getC();
-        if (c != null) {
-            startActivity(new Intent(this, c));
-        } else {
-            Toast.makeText(getApplicationContext(), o.getText() + "暂未添加", Toast.LENGTH_LONG).show();
-        }
-    };
 
     private void initView() {
         mRvIntent.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));

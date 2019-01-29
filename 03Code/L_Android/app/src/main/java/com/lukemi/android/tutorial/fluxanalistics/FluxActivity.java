@@ -28,7 +28,10 @@ public class FluxActivity extends AppCompatActivity implements View.OnClickListe
     private ExecutorService es = Executors.newFixedThreadPool(1);
     private TrafficStats ts;
     private int uid;
-    private long totalBytes;//统计的开机该app的流量
+    /**
+     * 统计的开机该app的流量
+     */
+    private long totalBytes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,27 +68,21 @@ public class FluxActivity extends AppCompatActivity implements View.OnClickListe
      * 下载图片斌并展示
      */
     private void loadPIC() {
-        es.submit(new Runnable() {
-            @Override
-            public void run() {
-                //异步获取数据
-                byte[] byteArray = HttpUtils.httpGetRequest_ByteArray(picUrl);
-                final Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-                Logcat.log("----FluxActivity----pic----bitmap---->" + "bitmap.getByteCount() = " + bitmap.getByteCount());
-               //ui操作
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        pic_IV.setImageBitmap(bitmap);
-                        long uidRxBytes = ts.getUidRxBytes(uid);
-                        long uidTxBytes = ts.getUidTxBytes(uid);
-                        totalBytes = uidRxBytes + uidTxBytes;
-                        showFlux_ET.setText("使用流量 = " + totalBytes + "byte" + "");
-                        Logcat.log("----FluxActivity----info---->" + "uid= " + uid
-                                + "; Process.myUid()= " + Process.myUid());
-                    }
-                });
-            }
+        es.submit(() -> {
+            //异步获取数据
+            byte[] byteArray = HttpUtils.httpGetRequest_ByteArray(picUrl);
+            final Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+            Logcat.log("----FluxActivity----pic----bitmap---->" + "bitmap.getByteCount() = " + bitmap.getByteCount());
+            //ui操作
+            runOnUiThread(() -> {
+                pic_IV.setImageBitmap(bitmap);
+                long uidRxBytes = ts.getUidRxBytes(uid);
+                long uidTxBytes = ts.getUidTxBytes(uid);
+                totalBytes = uidRxBytes + uidTxBytes;
+                showFlux_ET.setText("使用流量 = " + totalBytes + "byte" + "");
+                Logcat.log("----FluxActivity----info---->" + "uid= " + uid
+                        + "; Process.myUid()= " + Process.myUid());
+            });
         });
     }
 }

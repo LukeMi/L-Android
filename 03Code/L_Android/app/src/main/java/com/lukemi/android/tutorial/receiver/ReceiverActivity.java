@@ -35,6 +35,12 @@ public class ReceiverActivity extends AppCompatActivity {
         registerReceiver(netChangedReceiver, intentFilter);
     }
 
+    @Override
+    protected void onDestroy() {
+        unregisterReceiver(netChangedReceiver);
+        super.onDestroy();
+    }
+
     /**
      * 网络改变的广播
      */
