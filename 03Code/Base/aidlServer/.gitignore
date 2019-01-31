@@ -3,3 +3,6 @@
 /.idea
 /gradle
 *.iml
+*.properties
+gradle
+*gradlew.bat
