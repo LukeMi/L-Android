@@ -96,7 +96,7 @@ android {
             targetSdkVersion 28
             versionCode 1
             versionName "1.0"
-            applicationId 'com.lukemi.android.tutorial.developer'
+            applicationId 'com.lukemi.android.tutorial'
             projectName = "developer"
         }
         reader {

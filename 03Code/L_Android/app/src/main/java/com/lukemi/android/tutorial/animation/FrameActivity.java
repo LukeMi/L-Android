@@ -67,7 +67,6 @@ public class FrameActivity extends AppCompatActivity implements View.OnClickList
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onClick(View v) {
-        i++;
         switch (v.getId()) {
             case R.id.control:
                 String text = controlBTN.getText().toString();
@@ -83,18 +82,16 @@ public class FrameActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.addFrame:
                 drawable = (AnimationDrawable) frameIV.getDrawable();
-                if (i++ > 2) {
+                if (++i > 2) {
                     i = 1;
                 }
                 int id = this.getResources().getIdentifier("pageload_icon" + i, "drawable", this.getPackageName());
                 Drawable dw;
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-                    dw = getResources().getDrawable(id);
-                } else {
-                    dw = getResources().getDrawable(id, null);
-                }
+                dw = getResources().getDrawable(id);
                 Logcat.log("----addFrame---->> " + "dw: " + dw + "");
                 drawable.addFrame(dw, 200);
+                break;
+            default:
                 break;
         }
 
