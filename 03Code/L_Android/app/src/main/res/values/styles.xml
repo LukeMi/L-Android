@@ -1692,4 +1692,10 @@
     <color name="design_textinput_error_color_dark">#000000</color>
     <color name="design_textinput_error_color_light">#000000</color>
     <dimen name="abc_action_bar_progress_bar_size">80dp</dimen>
+
+
+    <style name="EtBottomLineStyle" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/gray</item>
+        <item name="colorControlActivated">@color/black</item>
+    </style>
 </resources>

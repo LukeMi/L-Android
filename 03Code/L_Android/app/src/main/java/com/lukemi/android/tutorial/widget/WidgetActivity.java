@@ -74,6 +74,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("ProgressDialog", null));
         bindBeanList.add(new IntentJumpBean("Notification", NotificationActivity.class));
         bindBeanList.add(new IntentJumpBean("Webview", WebViewActivity.class));
+        bindBeanList.add(new IntentJumpBean("ScrollView", ScrollViewActivity.class));
         bindBeanList.add(new IntentJumpBean("TableLayoutActivity", TableLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("WebviewDownloadActivity", WebviewDownloadActivity.class));
         bindBeanList.add(new IntentJumpBean("Merge标签使用", MergeActivity.class));
