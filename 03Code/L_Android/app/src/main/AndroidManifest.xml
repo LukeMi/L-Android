@@ -222,7 +222,9 @@
         <activity android:name=".anim.TweenAnimActivity" />
         <activity android:name=".anim.FrameAnimActivity" />
         <activity android:name=".anim.PropertyAnimActivity" />
-        <activity android:name=".popup.PopupActivity" />
+        <activity android:name=".popup.PopupActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".notification.NotificationActivity" />
 
         <service

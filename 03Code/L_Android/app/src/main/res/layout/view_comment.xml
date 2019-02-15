@@ -50,7 +50,7 @@
                 android:textSize="@dimen/sp13"/>
         </RelativeLayout>
 
-        <com.lukemi.android.view.MyEditText
+        <com.lukemi.android.tutorial.view.MyEditText
             android:id="@+id/edit_comment"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp80"

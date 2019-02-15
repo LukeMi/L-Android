@@ -78,9 +78,12 @@ public class PopupActivity extends AbsBaseActivity {
                 menu();
                 break;
             case R.id.btn_comment:
+                showPop();
                 break;
             case R.id.btn_bottom_pop:
                 option();
+                break;
+            default:
                 break;
         }
     }
@@ -100,18 +103,17 @@ public class PopupActivity extends AbsBaseActivity {
                 popupWindow.dismiss();
             }
         });
-        editComment = ((MyEditText) view.findViewById(R.id.edit_comment));
+        editComment = view.findViewById(R.id.edit_comment);
         editComment.setFocusable(true);
         editComment.requestFocus();
-        editComment.setOnCancelDialogImp(new MyEditText.OnCancelDialogImp() {
-            @Override
-            public void onCancelDialog() {
-                //判断弹框是否为空
-                Logcat.log("onCancelDialog");
-                if (popupWindow != null) {
-                    popupWindow.dismiss();  //弹框消失
-                    popupWindow = null;  //赋空值
-                }
+        editComment.setOnCancelDialogImp(() -> {
+            //判断弹框是否为空
+            Logcat.log("onCancelDialog");
+            if (popupWindow != null) {
+                //弹框消失
+                popupWindow.dismiss();
+                //赋空值
+                popupWindow = null;
             }
         });
 
@@ -128,19 +130,17 @@ public class PopupActivity extends AbsBaseActivity {
             }
         });
         //监听触屏事件
-        popupWindow.setTouchInterceptor(new View.OnTouchListener() {
-            public boolean onTouch(View view, MotionEvent event) {
-                return false;
-            }
-        });
+        popupWindow.setTouchInterceptor((view1, event) -> false);
         popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         popupWindow.setTouchable(true);
         popupWindow.setOutsideTouchable(true);
         //软键盘不会挡着popupwindow
+        popupWindow.setFocusable(true);
         popupWindow.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED);
         popupWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         //设置菜单显示的位置
-        popupWindow.showAtLocation(btnBottomPop, Gravity.BOTTOM, 0, 0);//相对于父控件的位置，同时可以设置偏移量。
+        //相对于父控件的位置，同时可以设置偏移量。
+        popupWindow.showAtLocation(btnBottomPop, Gravity.BOTTOM, 0, 0);
     }
 
 
@@ -154,6 +154,7 @@ public class PopupActivity extends AbsBaseActivity {
          *防止点击触发按钮出现 关闭重新打开现象
          */
         popupWindow.setFocusable(true);
+        popupWindow.setAnimationStyle(R.style.MenuStyle);
         int statusHeight = getStatusBarHeight(this);
         int titleBarHeight = clTitleType1.getHeight();
         int xOffSet = (int) getResources().getDimension(R.dimen.dp15);

@@ -68,7 +68,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("ImageSwitcher", null));
         bindBeanList.add(new IntentJumpBean("GridView", null));
         bindBeanList.add(new IntentJumpBean("ProgressBar", null));
-        bindBeanList.add(new IntentJumpBean("btn_pop", PopupActivity.class));
+        bindBeanList.add(new IntentJumpBean("PopupWindow", PopupActivity.class));
         bindBeanList.add(new IntentJumpBean("SeekBar", null));
         bindBeanList.add(new IntentJumpBean("RatingBar", null));
         bindBeanList.add(new IntentJumpBean("ProgressDialog", null));

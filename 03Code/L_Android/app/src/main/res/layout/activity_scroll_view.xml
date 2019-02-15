@@ -43,19 +43,19 @@
 
                 <EditText
                     android:id="@+id/et_reason"
+                    style="@style/EtBottomLineStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:cursorVisible="true"
                     android:gravity="start|top"
                     android:hint="请输入请假事由（200字以内）"
                     android:inputType="textMultiLine"
-                    android:cursorVisible="true"
-                    android:textCursorDrawable="@drawable/shape_et_cursor"
-                    style="@style/EtBottomLineStyle"
                     android:maxLength="200"
                     android:maxLines="4"
                     android:padding="12dp"
                     android:scrollHorizontally="false"
                     android:singleLine="false"
+                    android:textCursorDrawable="@drawable/shape_et_cursor"
                     android:textSize="14sp" />
 
                 <TextView
