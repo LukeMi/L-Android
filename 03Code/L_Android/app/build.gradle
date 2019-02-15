@@ -43,6 +43,7 @@ android {
             res.srcDirs = [
                     'src/main/res',
                     "src/main/res/user",
+                    'src/config/res',
             ]
         }
     }
@@ -65,6 +66,8 @@ android {
             versionCode 1
             versionName "1.0"
             applicationId 'com.lukemi.android.tutorial'
+
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "developer"]
         }
         user {
             dimension "project"
@@ -76,13 +79,21 @@ android {
             versionName "2.0"
             applicationId 'com.lukemi.android.tutorial.reader'
             projectName = "reader"
+
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "user"]
         }
 
-        xiaomi{}
+        xiaomi{
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+        }
 
-        v360{}
+        v360{
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "v360"]
+        }
 
-        yinyongbao{}
+        yinyongbao{
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yinyongbao"]
+        }
     }
 
     // 签名配置
@@ -108,7 +119,7 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 

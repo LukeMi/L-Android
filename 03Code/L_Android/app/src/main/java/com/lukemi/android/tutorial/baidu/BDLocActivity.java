@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.Poi;
+import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.util.BDLocationUtil;
 
 
@@ -25,7 +26,7 @@ public class BDLocActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.lukemi.android.tutorial.R.layout.activity_baidu_loc);
+        setContentView(R.layout.activity_baidu_loc);
         initViews();
     }
 
@@ -65,11 +66,11 @@ public class BDLocActivity extends AppCompatActivity implements View.OnClickList
      */
     private void initViews() {
 
-        content = ((TextView) findViewById(com.lukemi.android.tutorial.R.id.content));
+        content = ((TextView) findViewById(R.id.content));
         content.setMovementMethod(ScrollingMovementMethod.getInstance());
-        findViewById(com.lukemi.android.tutorial.R.id.title).setBackgroundColor(getResources().getColor(com.lukemi.android.tutorial.R.color.transparent));
-        findViewById(com.lukemi.android.tutorial.R.id.startLoc).setOnClickListener(this);
-        findViewById(com.lukemi.android.tutorial.R.id.stopLoc).setOnClickListener(this);
+        findViewById(R.id.title).setBackgroundColor(getResources().getColor(R.color.transparent));
+        findViewById(R.id.startLoc).setOnClickListener(this);
+        findViewById(R.id.stopLoc).setOnClickListener(this);
 
         bdLocationUtil = new BDLocationUtil(this, this);
     }
@@ -86,11 +87,11 @@ public class BDLocActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case com.lukemi.android.tutorial.R.id.startLoc:
+            case R.id.startLoc:
                 showPDialog();
                 bdLocationUtil.start();
                 break;
-            case com.lukemi.android.tutorial.R.id.stopLoc:
+            case R.id.stopLoc:
                 bdLocationUtil.stop();
                 break;
         }

@@ -31,7 +31,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".app.ToturialApplication"
+        android:name=".app.Application"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/app_icon"
@@ -42,10 +42,12 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
         <activity android:name=".widget.ScrollViewActivity"></activity>
-        <!-- 百度定位配置 -->
+        <!-- 百度定位配置 start-->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="GqUsvN3W5Fii4hp0lhYM2kWiG3NuxySu" /> <!-- key:开发者申请的Key -->
+            android:value="@string/bai_du_location_key" /> <!-- key:开发者申请的Key -->
+        <!-- 百度定位配置 end-->
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask">
@@ -222,9 +224,10 @@
         <activity android:name=".anim.TweenAnimActivity" />
         <activity android:name=".anim.FrameAnimActivity" />
         <activity android:name=".anim.PropertyAnimActivity" />
-        <activity android:name=".popup.PopupActivity"
+        <activity
+            android:name=".popup.PopupActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".notification.NotificationActivity" />
 
         <service
@@ -267,6 +270,11 @@
         <activity android:name=".manager.ManagerStatisticsActivity" />
         <activity android:name=".sessionlifecycle.NewTaskActivity" />
         <activity android:name=".statics.StaticFieldActivity" />
+
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+
     </application>
 
 </manifest>

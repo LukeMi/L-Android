@@ -3,7 +3,7 @@ package com.lukemi.android.tutorial.db.dao;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 
-import com.lukemi.android.tutorial.app.ToturialApplication;
+import com.lukemi.android.tutorial.app.Application;
 import com.lukemi.android.tutorial.bean.Student;
 
 import org.greenrobot.greendao.query.QueryBuilder;
@@ -21,7 +21,7 @@ public class StudentDaoUtil {
     private final DaoSession daoSession;
 
     private StudentDaoUtil(@NonNull Activity context) {
-        daoSession = ((ToturialApplication) context.getApplication()).getDaoSession();
+        daoSession = ((Application) context.getApplication()).getDaoSession();
         studentDao = daoSession.getStudentDao();
     }
 

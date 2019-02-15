@@ -28,7 +28,7 @@ import java.util.logging.Level;
  * Created by mzchen on 2016/10/23.
  */
 
-public class ToturialApplication extends BaseApplication {
+public class Application extends BaseApplication {
 
     private static final int MSG_REPEAT_TIME = 0x0000;
     private static final int MSG_CURRENTTIME = 0x0001;
@@ -65,7 +65,7 @@ public class ToturialApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        Logcat.log("----ToturialApplication---- is in");
+        Logcat.log("----Application---- is in");
         registerActivityLifecycleCallbacks(new MyActivityLifecycleCallbacks());
         handler.sendEmptyMessageDelayed(MSG_REPEAT_TIME, 60000);
         initReceiver();
