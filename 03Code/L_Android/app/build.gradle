@@ -9,6 +9,8 @@ def getTimeStamp() {
     return timeStamp
 }
 
+def keyProps = new Properties()
+
 android {
 
     /**
@@ -37,7 +39,7 @@ android {
     // 资源配置
     sourceSets {
         main {
-            jniLibs.srcDirs = ['libs', 'libs/bmap','libs/ksoap']
+            jniLibs.srcDirs = ['libs', 'libs/bmap', 'libs/ksoap']
             res.srcDirs = [
                     'src/main/res',
                     "src/main/res/user",
@@ -49,22 +51,59 @@ android {
         abortOnError false
     }
 
+    //差异化打包
+    // 定义项目维度
+    flavorDimensions "project"
+    productFlavors {
+        developer {
+            dimension "project"
+            projectName = "developer"
+            keyProps.load(new FileInputStream(file("../keystore/user/keystore.properties")))
+            buildConfigField "int", "userType", "1"
+            minSdkVersion 14
+            targetSdkVersion 28
+            versionCode 1
+            versionName "1.0"
+            applicationId 'com.lukemi.android.tutorial'
+        }
+        reader {
+            dimension "project"
+            keyProps.load(new FileInputStream(file("../keystore/developer/keystore.properties")))
+            buildConfigField "int", "userType", "2"
+            minSdkVersion 14
+            targetSdkVersion 28
+            versionCode 1
+            versionName "2.0"
+            applicationId 'com.lukemi.android.tutorial.reader'
+            projectName = "reader"
+        }
+
+        xiaomi{}
+
+        v360{}
+
+        yinyongbao{}
+    }
+
     // 签名配置
     signingConfigs {
         release {
+            storeFile file(keyProps['STORE_FILE'])
+            storePassword keyProps['STORE_PASSWORD']
+            keyAlias keyProps['KEY_ALIAS']
+            keyPassword keyProps['KEY_PASSWORD']
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+
+        debug {
             storeFile file("paradise.jks")
             storePassword "paradise"
             keyAlias "paradise"
             keyPassword "paradise"
         }
-
-        debug {
-            /*  storeFile file("paradise.jks")
-              storePassword "paradise"
-              keyAlias "paradise"
-              keyPassword "paradise"*/
-        }
     }
+
     // Gradle Build 配置
     buildTypes {
         release {
@@ -85,32 +124,6 @@ android {
         enabled = true
     }
 
-    //差异化打包
-    // 定义项目维度
-    flavorDimensions "project"
-    productFlavors {
-        developer {
-            dimension "project"
-            buildConfigField "int", "userType", "1"
-            minSdkVersion 14
-            targetSdkVersion 28
-            versionCode 1
-            versionName "1.0"
-            applicationId 'com.lukemi.android.tutorial'
-            projectName = "developer"
-        }
-        reader {
-            dimension "project"
-            buildConfigField "int", "userType", "2"
-            minSdkVersion 14
-            targetSdkVersion 28
-            versionCode 1
-            versionName "2.0"
-            applicationId 'com.lukemi.android.tutorial.reader'
-            projectName = "reader"
-        }
-    }
-
     //更改已生成apk前缀名,并更改目录
     android.applicationVariants.all { variant ->
         variant.outputs.all {
@@ -119,7 +132,7 @@ android {
                 //更换打包后的目录
                 variant.getPackageApplication().outputDirectory = new File("app/apk")
             }
-            outputFileName = "APP" + outputFile.name.split("\\.")[0] + defaultConfig.versionCode + "_" + defaultConfig.versionName + "_" + getTimeStamp() + ".apk"
+            outputFileName = outputFile.name.split("\\.")[0] + "_" + getTimeStamp() + "v" + defaultConfig.versionName + ".apk"
         }
     }
 
