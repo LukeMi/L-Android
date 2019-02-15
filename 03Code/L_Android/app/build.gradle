@@ -58,7 +58,7 @@ android {
         developer {
             dimension "project"
             projectName = "developer"
-            keyProps.load(new FileInputStream(file("../keystore/user/keystore.properties")))
+            keyProps.load(new FileInputStream(file("../keystore/developer/keystore.properties")))
             buildConfigField "int", "userType", "1"
             minSdkVersion 14
             targetSdkVersion 28
@@ -66,9 +66,9 @@ android {
             versionName "1.0"
             applicationId 'com.lukemi.android.tutorial'
         }
-        reader {
+        user {
             dimension "project"
-            keyProps.load(new FileInputStream(file("../keystore/developer/keystore.properties")))
+            keyProps.load(new FileInputStream(file("../keystore/user/keystore.properties")))
             buildConfigField "int", "userType", "2"
             minSdkVersion 14
             targetSdkVersion 28
@@ -129,7 +129,7 @@ android {
         variant.outputs.all {
             //只对release包作用
             if (outputFile != null && outputFile.name.endsWith('.apk') && variant.buildType.name == 'release') {
-                //更换打包后的目录
+                //更换打包后的目录，以gradlew指令文件问基准目录
                 variant.getPackageApplication().outputDirectory = new File("app/apk")
             }
             outputFileName = outputFile.name.split("\\.")[0] + "_" + getTimeStamp() + "v" + defaultConfig.versionName + ".apk"
