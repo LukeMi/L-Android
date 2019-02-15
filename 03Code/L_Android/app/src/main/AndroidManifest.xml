@@ -41,16 +41,17 @@
         android:testOnly="false"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".widget.ScrollViewActivity"></activity>
-        <!-- 百度定位配置 start-->
+
+        <!-- 百度定位配置 start -->
+        <!-- key:开发者申请的Key -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="@string/bai_du_location_key" /> <!-- key:开发者申请的Key -->
-        <!-- 百度定位配置 end-->
+            android:value="@string/bai_du_location_key" />
+        <!-- 百度定位配置 end -->
 
         <activity
-            android:name=".MainActivity"
-            android:launchMode="singleTask">
+            android:name=".LauncherActivity"
+            android:theme="@style/WelcActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -58,8 +59,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".sessionlifecycle.Session1Activity" />
-        <activity android:name=".sessionlifecycle.Session2Activity" />
+        <activity android:name=".system.SystemActivity" />
+        <activity android:name=".system.CloseAppActivity" />
+        <activity android:name=".widget.ScrollViewActivity" />
+
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".lifecycle.Session1Activity" />
+        <activity android:name=".lifecycle.Session2Activity" />
         <activity android:name=".sdf.SpActivity" />
         <activity android:name=".handler.BaseHandlerActivity" />
         <activity android:name=".handler.HandlerTestActivity" />
@@ -116,6 +124,7 @@
         <activity
             android:name=".widget.TextViewActivity"
             android:label="TextView控件效果" />
+
         <activity
             android:name=".widget.EditTextActivity"
             android:label="EditText控件效果"
@@ -131,16 +140,13 @@
         <activity android:name=".viewtest.ZoomHeadListViewActivity" />
         <activity android:name=".widget.TabLayoutActivity" />
         <activity android:name=".widget.ListViewActivity" />
-        <activity
-            android:name=".WelcomeActivity"
-            android:theme="@style/WelcActivityTheme" />
         <activity android:name=".baidu.BDActivity" />
         <activity android:name=".ThirdAPIActivity" />
-        <activity android:name=".setting.WallPaperActivity" />
-        <activity android:name=".setting.SettingActivity" />
-        <activity android:name=".setting.SystemIntentActivity" />
-        <activity android:name=".setting.CommomIntentActivity" />
-        <activity android:name=".setting.FlashActivity" />
+        <activity android:name=".system.WallPaperActivity" />
+        <activity android:name=".system.SystemActivity" />
+        <activity android:name=".system.SystemAppListActivity" />
+        <activity android:name=".system.SettingAppActivity" />
+        <activity android:name=".system.FlashActivity" />
         <activity android:name=".db.GreenDaoActivity" /> <!-- 百度服务 -->
         <service
             android:name="com.baidu.location.f"
@@ -264,17 +270,16 @@
         <activity android:name=".SystemMemoryActivity" />
         <activity android:name=".widget.MergeActivity" />
         <activity android:name=".widget.ViewStubActivity" />
-        <activity android:name=".setting.ScreenShotForbiddenActivity" />
+        <activity android:name=".system.ScreenShotForbiddenActivity" />
         <activity android:name=".widget.SoftInputModeActivity" />
         <activity android:name=".manager.ActivityManagerActivity" />
         <activity android:name=".manager.ManagerStatisticsActivity" />
-        <activity android:name=".sessionlifecycle.NewTaskActivity" />
+        <activity android:name=".lifecycle.NewTaskActivity" />
         <activity android:name=".statics.StaticFieldActivity" />
 
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="${UMENG_CHANNEL_VALUE}" />
-
     </application>
 
 </manifest>

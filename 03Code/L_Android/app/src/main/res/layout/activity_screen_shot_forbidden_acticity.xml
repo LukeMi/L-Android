@@ -7,4 +7,4 @@
     android:text="禁止截屏"
     android:textColor="@color/red"
     android:textSize="@dimen/sp26"
-    tools:context=".setting.ScreenShotForbiddenActivity" />
+    tools:context=".system.ScreenShotForbiddenActivity" />

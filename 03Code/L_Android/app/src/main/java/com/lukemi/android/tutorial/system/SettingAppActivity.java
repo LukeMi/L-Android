@@ -1,54 +1,28 @@
-package com.lukemi.android.tutorial.setting;
+package com.lukemi.android.tutorial.system;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Contacts;
 import android.provider.MediaStore;
 import android.provider.Settings;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
+import com.lukemi.android.tutorial.permission.PermissionActivity;
 
 import java.io.File;
 
-public class CommomIntentActivity extends AppCompatActivity implements View.OnClickListener {
+public class SettingAppActivity extends PermissionActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_intent);
-        initView();
-    }
-
-    /**
-     * 初始化控件
-     * <p>
-     * created by: tbug
-     * created at: 2017/4/9 20:53
-     */
-    private void initView() {
-        findViewById(R.id.ACTION_CALL).setOnClickListener(this);
-        findViewById(R.id.ACTION_DIAL).setOnClickListener(this);
-        findViewById(R.id.intallAPK).setOnClickListener(this);
-        findViewById(R.id.ACTION_DELETE).setOnClickListener(this);
-        findViewById(R.id.APPLICATION_DETAILS_SETTINGS).setOnClickListener(this);
-        findViewById(R.id.webSuffering).setOnClickListener(this);
-        findViewById(R.id.toDesktop).setOnClickListener(this);
-        findViewById(R.id.dialRecord).setOnClickListener(this);
-        findViewById(R.id.contact).setOnClickListener(this);
-        findViewById(R.id.selectCcontact).setOnClickListener(this);
-        findViewById(R.id.sms).setOnClickListener(this);
-        findViewById(R.id.sendColorSMS).setOnClickListener(this);
-        findViewById(R.id.sendEmail).setOnClickListener(this);
-        findViewById(R.id.playMedia).setOnClickListener(this);
-        findViewById(R.id.openCamera).setOnClickListener(this);
-        findViewById(R.id.openGallery).setOnClickListener(this);
-        findViewById(R.id.RECORD_SOUND_ACTION).setOnClickListener(this);
     }
 
     /**
@@ -56,7 +30,6 @@ public class CommomIntentActivity extends AppCompatActivity implements View.OnCl
      *
      * @param v
      */
-    @Override
     public void onClick(View v) {
         Intent intent = new Intent();
         switch (v.getId()) {
@@ -73,16 +46,19 @@ public class CommomIntentActivity extends AppCompatActivity implements View.OnCl
                 String filePath = "/android_asset/bizhi.apk";
                 intent.setDataAndType(Uri.parse("file://" + filePath),
                         "application/vnd.android.package-archive");
+                break;
             case R.id.ACTION_DELETE:
                 //卸载某应用
                 String packageName = "com.tbug.android.mlibrary";
-                Uri packageUri = Uri.parse("package:" + packageName);//包名，指定该应用
+                //包名，指定该应用
+                Uri packageUri = Uri.parse("package:" + packageName);
                 intent.setAction(Intent.ACTION_DELETE);
                 intent.setData(packageUri);
             case R.id.APPLICATION_DETAILS_SETTINGS:
                 //查看某一应用程序的信息
                 String pn = "com.tbug.android.mlibrary";
-                Uri pkurl = Uri.parse("package:" + pn);//包名，指定该应用
+                //包名，指定该应用
+                Uri pkurl = Uri.parse("package:" + pn);
                 intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
                 intent.setData(pkurl);
                 break;
@@ -114,7 +90,8 @@ public class CommomIntentActivity extends AppCompatActivity implements View.OnCl
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.putExtra("sms_body", "The SMS text");
 //                intent.setType("vnd.android-dir/mms-sms");
-                intent.setData(Uri.parse("smsto:" + "10086"));//此为号码
+                //此为号码
+                intent.setData(Uri.parse("smsto:" + "10086"));
                 break;
             case R.id.sendColorSMS:
                 Uri uri = Uri.parse("content://media/external/images/media/23");
@@ -181,7 +158,7 @@ public class CommomIntentActivity extends AppCompatActivity implements View.OnCl
                 Uri imageUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), "image.jpg"));
                 //指定照片保存路径（SD卡），image.jpg为一个临时文件，每次拍照后这个图片都会被替换
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-                startActivityForResult(intent,2);
+                startActivityForResult(intent, 2);
                 break;
             case R.id.openGallery:
                 Toast.makeText(this, "http://blog.csdn.net/lilu_leo/article/details/6938729", Toast.LENGTH_SHORT).show();
@@ -189,15 +166,39 @@ public class CommomIntentActivity extends AppCompatActivity implements View.OnCl
             case R.id.RECORD_SOUND_ACTION:
                 intent.setAction(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
                 break;
-            case 0:
+            case R.id.btn_notification:
+                intent = gotoSet();
                 break;
             default:
                 break;
         }
         if (!TextUtils.isEmpty(intent.getAction())) {
             startActivity(intent);
+        } else {
+            Toast.makeText(getApplicationContext(), "未找到对应程序", Toast.LENGTH_SHORT).show();
         }
     }
 
-
+    /**
+     * 跳转到通知设置
+     */
+    private Intent gotoSet() {
+        Intent intent = new Intent();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // API 8.0 引导
+            intent.setAction(Settings.ACTION_APP_NOTIFICATION_SETTINGS);
+            intent.putExtra("android.provider.extra.APP_PACKAGE", getPackageName());
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // android 5.0-7.0
+            intent.setAction(Settings.ACTION_APP_NOTIFICATION_SETTINGS);
+            intent.putExtra("app_package", getPackageName());
+            intent.putExtra("app_uid", getApplicationInfo().uid);
+        } else {
+            // 其他
+            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            intent.setData(Uri.fromParts("package", getPackageName(), null));
+        }
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        return intent;
+    }
 }

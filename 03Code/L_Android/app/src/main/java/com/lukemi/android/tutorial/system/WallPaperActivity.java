@@ -1,4 +1,4 @@
-package com.lukemi.android.tutorial.setting;
+package com.lukemi.android.tutorial.system;
 
 import android.app.WallpaperManager;
 import android.content.Context;
@@ -14,6 +14,7 @@ import android.widget.ImageView;
 
 import com.lukemi.android.tutorial.MainActivity;
 import com.lukemi.android.common.util.Logcat;
+import com.lukemi.android.tutorial.LauncherActivity;
 import com.lukemi.android.tutorial.view.ShowBigPicClass;
 import com.lukemi.android.tutorial.util.BitmapUtils;
 
@@ -95,12 +96,13 @@ public class WallPaperActivity extends AppCompatActivity implements View.OnClick
                     case ViewPager.SCROLL_STATE_IDLE:
                         Logcat.log("onPageScrollStateChanged: -->>ViewPager.SCROLL_STATE_IDLE" + " ;misScrolled: " + misScrolled);
                         if (viewPager.getCurrentItem() == viewPager.getAdapter().getCount() - 1 && misScrolled) {
-                            startActivity(new Intent(WallPaperActivity.this, MainActivity.class));
+                            startActivity(new Intent(WallPaperActivity.this, LauncherActivity.class));
                             WallPaperActivity.this.finish();
-
                         }
                         misScrolled = false;
                         break;
+                        default:
+                            break;
                 }
             }
         });

@@ -1,4 +1,4 @@
-package com.lukemi.android.tutorial.sessionlifecycle;
+package com.lukemi.android.tutorial.lifecycle;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

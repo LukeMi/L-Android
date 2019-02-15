@@ -18,12 +18,20 @@ public class IntentJumpBean {
      */
     private Class<?> c;
 
+    private int flag ;
+
     public IntentJumpBean() {
     }
 
     public IntentJumpBean(String text, Class<?> c) {
         this.text = text;
         this.c = c;
+    }
+
+    public IntentJumpBean(String text, Class<?> c,int flag) {
+        this.text = text;
+        this.c = c;
+        this.flag = flag;
     }
 
     public Class<?> getC() {
@@ -40,6 +48,14 @@ public class IntentJumpBean {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public int getFlag() {
+        return flag;
+    }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
     }
 
     @Override

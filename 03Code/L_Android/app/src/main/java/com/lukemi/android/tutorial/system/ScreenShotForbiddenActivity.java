@@ -1,4 +1,4 @@
-package com.lukemi.android.tutorial.setting;
+package com.lukemi.android.tutorial.system;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

@@ -83,15 +83,15 @@ android {
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "user"]
         }
 
-        xiaomi{
+        xiaomi {
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
         }
 
-        v360{
+        v360 {
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "v360"]
         }
 
-        yinyongbao{
+        yinyongbao {
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yinyongbao"]
         }
     }

@@ -1,4 +1,4 @@
-package com.lukemi.android.tutorial.sessionlifecycle;
+package com.lukemi.android.tutorial.lifecycle;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +15,7 @@ public class Session1Activity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.lukemi.android.tutorial.R.layout.activity_session1);
-        intentBTN_SA1 = ((Button) findViewById(com.lukemi.android.tutorial.R.id.intentBTN_SA1));
+        intentBTN_SA1 = findViewById(com.lukemi.android.tutorial.R.id.intentBTN_SA1);
         intentBTN_SA1.setOnClickListener(this);
     }
 

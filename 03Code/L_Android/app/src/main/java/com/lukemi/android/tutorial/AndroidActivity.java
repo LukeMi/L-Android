@@ -12,8 +12,8 @@ import com.lukemi.android.tutorial.gps.GpsActivity;
 import com.lukemi.android.tutorial.killprocess.AppStaticsActivity;
 import com.lukemi.android.tutorial.permission.PermissionActivity;
 import com.lukemi.android.tutorial.sdf.SpActivity;
-import com.lukemi.android.tutorial.setting.FlashActivity;
-import com.lukemi.android.tutorial.setting.ScreenShotForbiddenActivity;
+import com.lukemi.android.tutorial.system.FlashActivity;
+import com.lukemi.android.tutorial.system.ScreenShotForbiddenActivity;
 import com.lukemi.android.tutorial.widget.IntentJumpAdapter;
 import com.lukemi.android.tutorial.widget.IntentJumpBean;
 

@@ -17,7 +17,7 @@ import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.util.BDLocationUtil;
 
 
-public class BDLocActivity extends AppCompatActivity implements View.OnClickListener, BDLocationUtil.LocationCallBack {
+public class BDLocActivity extends AppCompatActivity implements View.OnClickListener, BDLocationUtil.OnBaiDuLocationListener {
 
     private TextView content;
     private ProgressDialog pDialog = null;
@@ -52,7 +52,7 @@ public class BDLocActivity extends AppCompatActivity implements View.OnClickList
         Class<?> targetClass = null;
         switch (item.getItemId()) {
             case 0:
-                targetClass =  BDLocQuestionActivity.class;
+                targetClass = BDLocQuestionActivity.class;
                 break;
         }
         if (targetClass != null) {
@@ -99,7 +99,8 @@ public class BDLocActivity extends AppCompatActivity implements View.OnClickList
 
 
     @Override
-    public void getBDLocation(BDLocation location) {
+    public void onBaiDuLocation(BDLocation location) {
+        pDialog.dismiss();
         final StringBuffer sb = new StringBuffer(256);
         int locType = location.getLocType();
         String hintInfo = null;
@@ -230,13 +231,9 @@ public class BDLocActivity extends AppCompatActivity implements View.OnClickList
             sb.append("无法获取有效定位依据导致定位失败，一般是由于手机的原因，处于飞行模式下一般会造成这种结果，可以试着重启手机");
         }
 
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                content.setGravity(Gravity.START);
-                content.setText(sb.toString());
-                pDialog.dismiss();
-            }
+        runOnUiThread(() -> {
+            content.setGravity(Gravity.START);
+            content.setText(sb.toString());
         });
     }
 }

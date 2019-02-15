@@ -18,7 +18,7 @@ public class BDLocationUtil {
     public LocationClient mLocationClient = null;
     public BDLocationListener myListener = new MyLocationListener();
     public Context context;
-    public LocationCallBack locationCallBack;
+    public OnBaiDuLocationListener locationCallBack;
 
     /**
      * 创建对象和初始化
@@ -26,7 +26,7 @@ public class BDLocationUtil {
      * @param context
      * @param locationCallBack
      */
-    public BDLocationUtil(Context context, LocationCallBack locationCallBack) {
+    public BDLocationUtil(Context context, OnBaiDuLocationListener locationCallBack) {
         this.context = context;
         this.locationCallBack = locationCallBack;
         initBaiduLocSDK();
@@ -100,6 +100,16 @@ public class BDLocationUtil {
     }
 
     /**
+     * 封装的接口回调
+     */
+    public interface OnBaiDuLocationListener {
+        /**
+         * 耗时操作
+         */
+        void onBaiDuLocation(BDLocation location);
+    }
+
+    /**
      * 实现接口
      */
     public class MyLocationListener implements BDLocationListener {
@@ -161,10 +171,10 @@ public class BDLocationUtil {
                 }
 
                 if (locationCallBack != null) {
-                    locationCallBack.getBDLocation(location);
+                    locationCallBack.onBaiDuLocation(location);
                 } else {
                     try {
-                        throw new Exception("LocationCallBack must't be null");
+                        throw new Exception("OnBaiDuLocationListener must't be null");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -257,16 +267,6 @@ public class BDLocationUtil {
         public void onConnectHotSpotMessage(String s, int i) {
 
         }
-    }
-
-    /**
-     * 封装的接口回调
-     */
-    public interface LocationCallBack {
-        /**
-         * 耗时操作
-         */
-        void getBDLocation(BDLocation location);
     }
 
 }

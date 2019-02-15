@@ -6,7 +6,7 @@
     android:id="@+id/tv_tag"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp48"
-    android:layout_marginTop="@dimen/dp5"
+    android:layout_marginBottom="@dimen/dp5"
     android:background="@drawable/selector_item_intent_jump_bkg"
     android:gravity="center_vertical"
     android:paddingLeft="@dimen/dp16"

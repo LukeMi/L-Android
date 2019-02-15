@@ -1,4 +1,4 @@
-package com.lukemi.android.tutorial.sessionlifecycle;
+package com.lukemi.android.tutorial.lifecycle;
 
 /**
  * Created by mzchen on 2016/10/23.

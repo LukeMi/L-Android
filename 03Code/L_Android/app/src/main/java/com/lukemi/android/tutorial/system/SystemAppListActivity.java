@@ -1,17 +1,19 @@
-package com.lukemi.android.tutorial.setting;
+package com.lukemi.android.tutorial.system;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
+import android.widget.Toast;
 
 import com.lukemi.android.tutorial.AppInfoActivity;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.base.AbsBaseActivity;
+import com.lukemi.android.tutorial.util.IntentUtil;
 
 
-public class SystemIntentActivity extends AbsBaseActivity implements View.OnClickListener {
+public class SystemAppListActivity extends AbsBaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,7 @@ public class SystemIntentActivity extends AbsBaseActivity implements View.OnClic
 
     @Override
     protected int bindLayout() {
-        return R.layout.activity_system_intent;
+        return R.layout.activity_system_app_list;
     }
 
     /**
@@ -165,6 +167,7 @@ public class SystemIntentActivity extends AbsBaseActivity implements View.OnClic
                 case R.id.ACTION_SECURITY_SETTINGS:
                     intent.setAction(Settings.ACTION_SECURITY_SETTINGS);
                     break;
+                //系统设置
                 case R.id.ACTION_SETTINGS:
                     intent.setAction(Settings.ACTION_SETTINGS);
                     break;
@@ -186,14 +189,17 @@ public class SystemIntentActivity extends AbsBaseActivity implements View.OnClic
                 case R.id.ACTION_app_info:
                     intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
                     intent.setData(Uri.fromParts("package", this.getPackageName(), null));
+                    break;
                 case R.id.AppInfoActivity:
                     intent = new Intent(this, AppInfoActivity.class);
                     break;
                 default:
                     break;
             }
-            if (intent != null) {
+            if (IntentUtil.isIntentExist(intent, getApplicationContext())) {
                 startActivity(intent);
+            } else {
+                Toast.makeText(getApplicationContext(), "未找到对应程序", Toast.LENGTH_SHORT).show();
             }
 
         } catch (Exception e) {

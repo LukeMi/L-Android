@@ -12,7 +12,7 @@ import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.animation.AnimationActivity;
 import com.lukemi.android.tutorial.category.ComponentActivity;
 import com.lukemi.android.tutorial.manager.ManagerStatisticsActivity;
-import com.lukemi.android.tutorial.setting.SettingActivity;
+import com.lukemi.android.tutorial.system.SystemActivity;
 import com.lukemi.android.tutorial.statics.StaticFieldActivity;
 import com.lukemi.android.tutorial.utiltest.UtilMainActivity;
 import com.lukemi.android.tutorial.widget.IntentJumpAdapter;
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         intentJumpBeanList.add(new IntentJumpBean("API", ThirdAPIActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Widget", WidgetActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Util", UtilMainActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("system", SettingActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("System", SystemActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("android", AndroidActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Emulate Third App", WeChatMainActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("ManagerStatistics", ManagerStatisticsActivity.class));
