@@ -1,0 +1,15 @@
+@startuml
+
+(string.xml) <-- (build.gradle) : resValue 'string', 'APP_NAME', 'app_name'
+
+(BuildConfig) <-- (build.gradle) :buildConfigField "String" "type" "\"360\""
+
+(AndroidManifest) <-- (build.gradle) :manifestPlaceHolder ["Channel" : "xiaomi"] --> ${Channel}
+
+(*.java) <-- (string.xml) :Resources.getString(R.string.stringResId)
+
+(*.java) <-- (BuildConfig) :Buildcongif.type
+
+(AndroidManifest) --> (*.java) :  ApplicationInfo.metaData.getString("ChannelName");
+
+@enduml

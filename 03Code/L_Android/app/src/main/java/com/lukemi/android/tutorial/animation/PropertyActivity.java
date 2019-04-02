@@ -41,7 +41,7 @@ public class PropertyActivity extends AppCompatActivity {
     }
 
     /**
-     * 测量
+     * 测量Lo
      */
     private void measure() {
         int w = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);

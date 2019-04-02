@@ -139,35 +139,10 @@
         <activity android:name=".baidu.BDActivity" />
         <activity android:name=".ThirdAPIActivity" />
         <activity android:name=".system.WallPaperActivity" />
-        <activity android:name=".system.SystemActivity" />
         <activity android:name=".system.SystemAppListActivity" />
         <activity android:name=".system.SettingAppActivity" />
         <activity android:name=".system.FlashActivity" />
-        <activity android:name=".db.GreenDaoActivity" /> <!-- 百度服务 -->
-        <service
-            android:name="com.baidu.location.f"
-            android:enabled="true"
-            android:process=":remote" />
-        <service
-            android:name=".service.ForegroundService"
-            android:enabled="true"
-            android:exported="true"
-            android:process=":foreground_service" />
-
-        <receiver
-            android:name=".receiver.BootReceiver"
-            android:enabled="false"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.USER_PRESENT" />
-                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
-                <action android:name="com.lukemi.foregroundservice.destroy" />
-                <action android:name="android.intent.action.SCREEN_ON" />
-                <action android:name="android.intent.action.SCREEN_OFF" />
-            </intent-filter>
-        </receiver>
-
+        <activity android:name=".db.GreenDaoActivity" />
         <activity android:name=".evenbus.EvenBusSendActivity" />
         <activity android:name=".evenbus.EventBusReceiveActivity" />
         <activity android:name=".widget.DialogActivity" />
@@ -231,23 +206,6 @@
             android:configChanges="keyboardHidden|orientation"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".notification.NotificationActivity" />
-
-        <service
-            android:name=".volum.MusicService"
-            android:enabled="true"
-            android:exported="true" />
-
-        <activity android:name=".glide.GlideActivity" />
-
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.lukemi.android.fileprovider"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
-
         <activity android:name=".touch.TouchEventActivity" />
         <activity android:name=".clip.ClipActivity" />
         <activity android:name=".widget.AutoCopleteActivity" />
@@ -273,9 +231,55 @@
         <activity android:name=".lifecycle.NewTaskActivity" />
         <activity android:name=".statics.StaticFieldActivity" />
 
+        <!-- 百度服务 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+        <service
+            android:name=".service.ForegroundService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":foreground_service" />
+
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+                <action android:name="com.lukemi.foregroundservice.destroy" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+            </intent-filter>
+        </receiver>
+
+
+
+        <service
+            android:name=".volum.MusicService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".glide.GlideActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.lukemi.android.fileprovider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="${UMENG_CHANNEL_VALUE}" />
+
     </application>
 
 </manifest>
