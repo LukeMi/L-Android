@@ -41,8 +41,14 @@
         android:testOnly="false"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".widget.IncludeActivity"></activity>
-        <!-- 百度定位配置 start -->
+        <activity android:name=".widget.SpanActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".widget.IncludeActivity" /> <!-- 百度定位配置 start -->
         <!-- key:开发者申请的Key -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
@@ -106,14 +112,14 @@
         <activity android:name=".utiltest.ToastUtilActivity" />
         <activity android:name=".viewtest.DialogUtilActivity" />
         <activity android:name=".SchemeActivity">
-            <intent-filter>
+           <!-- <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
                     android:host="video"
                     android:scheme="myandroid" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".widget.WidgetActivity"
@@ -229,9 +235,7 @@
         <activity android:name=".manager.ActivityManagerActivity" />
         <activity android:name=".manager.ManagerStatisticsActivity" />
         <activity android:name=".lifecycle.NewTaskActivity" />
-        <activity android:name=".statics.StaticFieldActivity" />
-
-        <!-- 百度服务 -->
+        <activity android:name=".statics.StaticFieldActivity" /> <!-- 百度服务 -->
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
@@ -256,8 +260,6 @@
             </intent-filter>
         </receiver>
 
-
-
         <service
             android:name=".volum.MusicService"
             android:enabled="true"
@@ -274,12 +276,9 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-
-
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="${UMENG_CHANNEL_VALUE}" />
-
     </application>
 
 </manifest>
