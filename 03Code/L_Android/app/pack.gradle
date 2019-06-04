@@ -12,7 +12,7 @@ class ContentModel{
  */
 def uploadApk() {
     //查找上传的apk文件，这里需要换成自己apk路径
-    def apkDir = new File("./app/build/outputs/apk/T3Passenger/debug")
+    def apkDir = new File("./app/apk")
     if (!apkDir.exists()) {
         throw new RuntimeException("apk output path not exists!")
     }
@@ -54,7 +54,7 @@ def uploadApk() {
     sb.append(twoHyphens).append(boundary).append(end)
     sb.append("Content-Disposition: form-data; name=buildUpdateDescription")
     sb.append(end).append(end)
-    sb.append("this is test").append(end)
+    sb.append(BUILD_NOTES).append(end)
 
     //添加参数file: 需要上传的apk文件
     sb.append(twoHyphens).append(boundary).append(end)
@@ -100,11 +100,11 @@ def uploadApk() {
 }
 
 //打包测试环境apk 上传蒲公英 发送邮件功能使用蒲公英自带的邮件功能
-task packageDebug {
-    def apkDir = new File("./apk")
+task packUploadApk{
+  /*  def apkDir = new File("./app/apk")
     if(apkDir.exists() && apkDir.isDirectory()){
         apkDir.deleteDir()
-    }
+    }*/
     dependsOn("assembleRelease")
 
     doLast {
@@ -115,7 +115,8 @@ task packageDebug {
 
 
 def sendMsgToDing(def data){
-    def conn = new URL("你的钉钉webhook机器人地址").openConnection()
+    println("sendMsgToDing")
+    def conn = new URL("https://oapi.dingtalk.com/robot/send?access_token=5fdd3e2b54bf2200150c08a5b2193f221c462917c5867cde9eec7c36acdb64ef").openConnection()
     conn.setRequestMethod('POST')
     conn.setRequestProperty("Connection", "Keep-Alive")
     conn.setRequestProperty("Content-type", "application/json;charset=UTF-8")
@@ -146,5 +147,6 @@ def sendMsgToDing(def data){
     input.close()
     conn.connect()
     println(result)
+    println("发送到钉钉群执行结束")
 
 }
