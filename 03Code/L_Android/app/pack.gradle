@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
 
-class ContentModel{
+class ContentModel {
     String text
     String title
     String picUrl
@@ -100,11 +100,11 @@ def uploadApk() {
 }
 
 //打包测试环境apk 上传蒲公英 发送邮件功能使用蒲公英自带的邮件功能
-task packUploadApk{
-  /*  def apkDir = new File("./app/apk")
-    if(apkDir.exists() && apkDir.isDirectory()){
-        apkDir.deleteDir()
-    }*/
+task packUploadApk {
+    /*  def apkDir = new File("./app/apk")
+      if(apkDir.exists() && apkDir.isDirectory()){
+          apkDir.deleteDir()
+      }*/
     dependsOn("assembleRelease")
 
     doLast {
@@ -113,10 +113,10 @@ task packUploadApk{
 }
 
 
-
-def sendMsgToDing(def data){
+def sendMsgToDing(def data) {
     println("sendMsgToDing")
-    def conn = new URL("https://oapi.dingtalk.com/robot/send?access_token=5fdd3e2b54bf2200150c08a5b2193f221c462917c5867cde9eec7c36acdb64ef").openConnection()
+    println("sendMsgToDing : " + data)
+    def conn = new URL("https://oapi.dingtalk.com/robot/send?access_token=f7101297d61bfa23b6e1b0ff14c86b0035fce7780d47698b02b64fbb6d00e2bf").openConnection()
     conn.setRequestMethod('POST')
     conn.setRequestProperty("Connection", "Keep-Alive")
     conn.setRequestProperty("Content-type", "application/json;charset=UTF-8")
@@ -125,22 +125,23 @@ def sendMsgToDing(def data){
     conn.setDoInput(true)
     conn.setDoOutput(true)
     def dos = new DataOutputStream(conn.getOutputStream())
-    HashMap<String,Object> map = new HashMap<>()
+    HashMap<String, Object> map = new HashMap<>()
     map.put("msgtype", "link")
     ContentModel contentModel = new ContentModel()
-    contentModel.text = "已经上传至蒲公英,可以下载使用了"+data.buildCreated
-    contentModel.title= "上传提醒"+data.buildVersion
+    contentModel.text = "已经上传至蒲公英,可以下载使用了" + data.buildCreated
+    contentModel.title = "上传提醒" + data.buildVersion
     contentModel.picUrl = data.buildQRCodeURL
-    contentModel.messageUrl= "https://www.pgyer.com/" + data.buildShortcutUrl
-    map.put("link",contentModel)
+    contentModel.messageUrl = "https://www.pgyer.com/" + data.buildShortcutUrl
+    map.put("link", JsonOutput.toJson(contentModel))
     def json = JsonOutput.toJson(map)
     println(json)
     dos.writeBytes(json)
+    JSONOn
     def input = new BufferedReader(new InputStreamReader(conn.getInputStream()))
-    String line =""
-    String result=""
+    String line = ""
+    String result = ""
     while ((line = input.readLine()) != null) {
-        result +=  line
+        result += line
     }
     dos.flush()
     dos.close()
