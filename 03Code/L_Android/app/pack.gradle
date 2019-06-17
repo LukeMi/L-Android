@@ -54,7 +54,7 @@ def uploadApk() {
     sb.append(twoHyphens).append(boundary).append(end)
     sb.append("Content-Disposition: form-data; name=buildUpdateDescription")
     sb.append(end).append(end)
-    sb.append(BUILD_NOTES).append(end)
+    sb.append(UpdateDes).append(end)
 
     //添加参数file: 需要上传的apk文件
     sb.append(twoHyphens).append(boundary).append(end)
@@ -62,7 +62,7 @@ def uploadApk() {
     sb.append(end).append(end)
 
     def dos = new DataOutputStream(conn.getOutputStream())
-    dos.writeBytes(sb.toString())
+    dos.write(sb.toString().getBytes("utf-8"))
     dos.flush()
     sb.delete(0, sb.length())
 
@@ -74,7 +74,7 @@ def uploadApk() {
     }
     sb.append(end)
     sb.append(twoHyphens).append(boundary).append(end)
-    dos.writeBytes(sb.toString())
+    dos.write(sb.toString().getBytes("utf-8"))
 
     dos.flush()
     fis.close()
@@ -101,10 +101,10 @@ def uploadApk() {
 
 //打包测试环境apk 上传蒲公英 发送邮件功能使用蒲公英自带的邮件功能
 task packUploadApk {
-    /*  def apkDir = new File("./app/apk")
-      if(apkDir.exists() && apkDir.isDirectory()){
-          apkDir.deleteDir()
-      }*/
+    def apkDir = new File("./app/apk")
+    if (apkDir.exists() && apkDir.isDirectory()) {
+        apkDir.deleteDir()
+    }
     dependsOn("assembleRelease")
 
     doLast {
@@ -128,15 +128,14 @@ def sendMsgToDing(def data) {
     HashMap<String, Object> map = new HashMap<>()
     map.put("msgtype", "link")
     ContentModel contentModel = new ContentModel()
-    contentModel.text = "已经上传至蒲公英,可以下载使用了" + data.buildCreated
+    contentModel.text = "已经上传至蒲公英,可以下载使用了\nbug修复" + "\n" + data.buildCreated
     contentModel.title = "上传提醒" + data.buildVersion
     contentModel.picUrl = data.buildQRCodeURL
     contentModel.messageUrl = "https://www.pgyer.com/" + data.buildShortcutUrl
     map.put("link", JsonOutput.toJson(contentModel))
     def json = JsonOutput.toJson(map)
     println(json)
-    dos.writeBytes(json)
-    JSONOn
+    dos.write(json.getBytes("utf-8"))
     def input = new BufferedReader(new InputStreamReader(conn.getInputStream()))
     String line = ""
     String result = ""
@@ -148,6 +147,11 @@ def sendMsgToDing(def data) {
     input.close()
     conn.connect()
     println(result)
-    println("发送到钉钉群执行结束")
+    def r = new JsonSlurper().parseText(result)
+    println("发送到钉钉群执行结束 " + (r.errcode == 0 ? "成功" : "失败"))
 
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
 }

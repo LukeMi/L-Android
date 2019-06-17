@@ -4,7 +4,7 @@ apply plugin: 'com.android.application'
 // apply greenDao plugin
 apply plugin: 'org.greenrobot.greendao'
 // 导入打包 上传蒲公英 gradle
-apply from: "pack.gradle"
+//apply from: "pack.gradle"
 
 def getTimeStamp() {
     SimpleDateFormat sdf = new SimpleDateFormat("-yyyy-MM-dd_HH_mm_")
@@ -61,6 +61,7 @@ android {
                     "src/main/res/user",
                     'src/config/res',
             ]
+            java.srcDir("src/main/java")
         }
     }
 
@@ -156,6 +157,8 @@ android {
         variant.outputs.all {
             //只对release包作用
             if (outputFile != null && outputFile.name.endsWith('.apk') && variant.buildType.name == 'release') {
+//                println(variant.productFlavors.user)
+                println("compileSdkVersion : " + compileSdkVersion)
                 //更换打包后的目录，以gradlew指令文件问基准目录
                 variant.getPackageApplication().outputDirectory = new File("./app/apk")
                 outputFileName = outputFile.name.split("\\.")[0] + "_"/* + getTimeStamp() */ + "v" + defaultConfig.versionName + ".apk"
