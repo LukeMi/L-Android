@@ -9,7 +9,6 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.SystemMemoryActivity;
 import com.lukemi.android.tutorial.widget.IntentJumpAdapter;
 import com.lukemi.android.tutorial.widget.IntentJumpBean;
 
@@ -17,10 +16,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
-public class SystemActivity extends AppCompatActivity {
-
+/**
+ * @author mzchen
+ * @date 2019/6/18 20:36
+ * @des
+ * @link https://www.cnblogs.com/huolongluo/p/7774870.html
+ * @mail chenmingzhiji@163.com
+ */
+public class SystemShareActivity extends AppCompatActivity {
 
     @BindView(R.id.rv_intent)
     RecyclerView mRvIntent;
@@ -28,33 +32,26 @@ public class SystemActivity extends AppCompatActivity {
     private IntentJumpAdapter intentJumpAdapter;
     private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (BaseQuickAdapter adapter, View view, int position) -> {
         IntentJumpBean bean = (IntentJumpBean) adapter.getData().get(position);
-        Class<?> c = bean.getC();
-        if (c != null) {
-            Intent intent = new Intent(this, c);
-            if (bean.getFlag() != 0) {
-                intent.setFlags(bean.getFlag());
-            }
-            startActivity(intent);
+        switch (bean.getFlag()) {
+            case 1:
+                textShare();
+                break;
+            default:
+                break;
         }
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_system);
-        ButterKnife.bind(this);
+        setContentView(R.layout.activity_system_share);
         initAdapter();
         initView();
     }
 
     private void initAdapter() {
         intentJumpBeanList = new ArrayList<>();
-        intentJumpBeanList.add(new IntentJumpBean("调用系统App", SystemAppListActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("调用系统 设置 相关 App", SettingAppActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("设置桌面壁纸", WallPaperActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("内存分析", SystemMemoryActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("系统分享", SystemShareActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("关闭应用", CloseAppActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
+        intentJumpBeanList.add(new IntentJumpBean("文本 - 分享", null, 1));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }
@@ -62,5 +59,12 @@ public class SystemActivity extends AppCompatActivity {
     private void initView() {
         mRvIntent.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRvIntent.setAdapter(intentJumpAdapter);
+    }
+
+    private void textShare() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, "文本分享");
+        startActivity(Intent.createChooser(intent, "这是内容，文本分享"));
     }
 }

@@ -1,17 +1,27 @@
-package com.lukemi.android.tutorial.system;
+package com.lukemi.android.tutorial.api;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.lukemi.android.tutorial.AndroidActivity;
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.SystemMemoryActivity;
+import com.lukemi.android.tutorial.TTSActivity;
+import com.lukemi.android.tutorial.ThirdAPIActivity;
+import com.lukemi.android.tutorial.animation.AnimationActivity;
+import com.lukemi.android.tutorial.category.ComponentActivity;
+import com.lukemi.android.tutorial.manager.ManagerStatisticsActivity;
+import com.lukemi.android.tutorial.statics.StaticFieldActivity;
+import com.lukemi.android.tutorial.system.SystemActivity;
+import com.lukemi.android.tutorial.utiltest.UtilMainActivity;
 import com.lukemi.android.tutorial.widget.IntentJumpAdapter;
 import com.lukemi.android.tutorial.widget.IntentJumpBean;
+import com.lukemi.android.tutorial.widget.WidgetActivity;
+import com.lukemi.android.tutorial.widget.wechat.activity.WeChatMainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,42 +29,37 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SystemActivity extends AppCompatActivity {
-
+/**
+ * @author mzchen
+ * @date 2019/6/18 19:57
+ * @des android api
+ * @mail chenmingzhiji@163.com
+ */
+public class AndroidApiActivity extends AppCompatActivity {
 
     @BindView(R.id.rv_intent)
     RecyclerView mRvIntent;
     private List<IntentJumpBean> intentJumpBeanList;
     private IntentJumpAdapter intentJumpAdapter;
     private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (BaseQuickAdapter adapter, View view, int position) -> {
-        IntentJumpBean bean = (IntentJumpBean) adapter.getData().get(position);
-        Class<?> c = bean.getC();
+        Class<?> c = ((IntentJumpBean) adapter.getData().get(position)).getC();
         if (c != null) {
-            Intent intent = new Intent(this, c);
-            if (bean.getFlag() != 0) {
-                intent.setFlags(bean.getFlag());
-            }
-            startActivity(intent);
+            startActivity(new Intent(this, c));
         }
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_system);
+        setContentView(R.layout.activity_android_api);
         ButterKnife.bind(this);
-        initAdapter();
+        initData();
         initView();
     }
 
-    private void initAdapter() {
+    private void initData() {
         intentJumpBeanList = new ArrayList<>();
-        intentJumpBeanList.add(new IntentJumpBean("调用系统App", SystemAppListActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("调用系统 设置 相关 App", SettingAppActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("设置桌面壁纸", WallPaperActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("内存分析", SystemMemoryActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("系统分享", SystemShareActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("关闭应用", CloseAppActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
+        intentJumpBeanList.add(new IntentJumpBean("TextToSpeech", TTSActivity.class));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }

@@ -10,6 +10,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.animation.AnimationActivity;
+import com.lukemi.android.tutorial.api.AndroidApiActivity;
 import com.lukemi.android.tutorial.category.ComponentActivity;
 import com.lukemi.android.tutorial.manager.ManagerStatisticsActivity;
 import com.lukemi.android.tutorial.system.SystemActivity;
@@ -100,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         intentJumpBeanList.add(new IntentJumpBean("Emulate Third App", WeChatMainActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("ManagerStatistics", ManagerStatisticsActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Static Field Test", StaticFieldActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("Android Api", AndroidApiActivity.class));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }

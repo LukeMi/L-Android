@@ -39,21 +39,15 @@
         android:testOnly="false"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label">
-        <activity android:name=".TTSActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".system.SystemShareActivity"></activity>
+        <activity android:name=".api.AndroidApiActivity" /> <!-- 语音合成 -->
+        <activity android:name=".TTSActivity" />
         <activity android:name=".widget.SpanActivity" />
-        <activity android:name=".widget.IncludeActivity" />
-        <!-- 百度定位配置 start -->
+        <activity android:name=".widget.IncludeActivity" /> <!-- 百度定位配置 start -->
         <!-- key:开发者申请的Key -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="@string/bai_du_location_key" />
-        <!-- 百度定位配置 end -->
+            android:value="@string/bai_du_location_key" /> <!-- 百度定位配置 end -->
         <activity
             android:name=".LauncherActivity"
             android:theme="@style/WelcActivityTheme">
@@ -112,19 +106,7 @@
         <activity android:name=".camera.WX_Camera_Activity" />
         <activity android:name=".utiltest.ToastUtilActivity" />
         <activity android:name=".viewtest.DialogUtilActivity" />
-        <activity android:name=".SchemeActivity">
-
-            <!--
-             <intent-filter>
-                 <category android:name="android.intent.category.DEFAULT" />
-                 <category android:name="android.intent.category.BROWSABLE" />
-
-                 <data
-                     android:host="video"
-                     android:scheme="myandroid" />
-             </intent-filter>
-            -->
-        </activity>
+        <activity android:name=".SchemeActivity" />
         <activity
             android:name=".widget.WidgetActivity"
             android:label="控件大全" />
