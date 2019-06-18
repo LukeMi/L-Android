@@ -41,6 +41,13 @@
         android:testOnly="false"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
+        <activity android:name=".TTSActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".widget.SpanActivity" />
         <activity android:name=".widget.IncludeActivity" /> <!-- 百度定位配置 start -->
         <!-- key:开发者申请的Key -->
@@ -106,14 +113,17 @@
         <activity android:name=".utiltest.ToastUtilActivity" />
         <activity android:name=".viewtest.DialogUtilActivity" />
         <activity android:name=".SchemeActivity">
-            <!-- <intent-filter>
+
+            <!--
+             <intent-filter>
                  <category android:name="android.intent.category.DEFAULT" />
                  <category android:name="android.intent.category.BROWSABLE" />
 
                  <data
                      android:host="video"
                      android:scheme="myandroid" />
-             </intent-filter>-->
+             </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".widget.WidgetActivity"
