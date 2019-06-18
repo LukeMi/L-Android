@@ -1,11 +1,10 @@
 <resources>
-    <string name="app_name">Tbug</string>
+    <string name="app_name">天秤</string>
     <string name="sessionactivity1">SessionActivity1</string>
     <string name="intent_2_sessionactivity2">Intent 2 SessionActivity2</string>
     <string name="title_activity_tween">TweenActivity</string>
     <string name="title_activity_frame">FrameActivity</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="paramsSetting">参数设置</string>
     <string name="reTest">重新测速</string>
