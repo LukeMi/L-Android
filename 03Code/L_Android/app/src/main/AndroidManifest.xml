@@ -50,7 +50,7 @@
             android:value="@string/bai_du_location_key" /> <!-- 百度定位配置 end -->
         <activity
             android:name=".LauncherActivity"
-            android:theme="@style/WelcActivityTheme">
+            android:theme="@style/WelActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />

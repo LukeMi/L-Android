@@ -1612,9 +1612,10 @@
         </item>
     </style>
 
-    <style name="WelcActivityTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="WelActivityTheme" parent="Theme.AppCompat.NoActionBar">
         <!--<item name="android:background">@drawable/bd_loc_bg</item>-->
         <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
     </style>
 
