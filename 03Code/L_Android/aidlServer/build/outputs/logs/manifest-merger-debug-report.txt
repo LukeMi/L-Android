@@ -1,0 +1,131 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:2:1-39:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\2b6023b528e3c1a2b1ac212c0550501a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\1b29989e9c36b0fec86a2da6f5f8a2da\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\92f7ae53163d5d52d25aea6674981518\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\943c42629a402ac7d2b6564a32268986\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\db108db611917ec78782f7a75ffbdb11\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\fcced2a265eb3b4033d5c8673c67568a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\58c11459cc0f769ba04041769765d0a5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\073e4f9250d16711dd523a33748add53\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\0d57854bb26a066e9003a123c1e5cfe7\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\4df1c4f082bc6449805e1bbdcc3be286\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\78717103129180f4dc799bb345fbc899\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\b8c3793385c784a3f7fded3fcf7e2dc6\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:2:1-39:12
+	package
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:3:5-47
+		INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+		INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:2:1-39:12
+		INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:2:1-39:12
+		INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:5:5-37:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\1b29989e9c36b0fec86a2da6f5f8a2da\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\1b29989e9c36b0fec86a2da6f5f8a2da\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:11:9-65
+activity#com.lukemi.android.toturial.aidl.AidlActivity
+ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:12:19-47
+intent-filter#action:name:android.intent.action.MAIN
+ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:14:25-66
+service#com.lukemi.android.toturial.aidl.service.AidlServerService
+ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:20:9-23:39
+	android:enabled
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:22:13-35
+	android:exported
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:23:13-36
+	android:name
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:21:13-54
+activity#com.lukemi.android.toturial.aidl.SchemeActivity
+ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:25:9-36:20
+	android:name
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:25:19-49
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:hostq+data:scheme:aidl
+ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:26:13-34:29
+action#android.intent.action.VIEW
+ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:27:17-68
+	android:name
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:27:25-66
+category#android.intent.category.DEFAULT
+ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:28:17-76
+	android:name
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:28:27-73
+category#android.intent.category.BROWSABLE
+ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:29:17-78
+	android:name
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:29:27-75
+data
+ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:31:17-33:45
+	android:host
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:32:21-41
+	android:scheme
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml:33:21-42
+uses-sdk
+INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\2b6023b528e3c1a2b1ac212c0550501a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\2b6023b528e3c1a2b1ac212c0550501a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\1b29989e9c36b0fec86a2da6f5f8a2da\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\1b29989e9c36b0fec86a2da6f5f8a2da\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\92f7ae53163d5d52d25aea6674981518\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\92f7ae53163d5d52d25aea6674981518\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\943c42629a402ac7d2b6564a32268986\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\943c42629a402ac7d2b6564a32268986\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\db108db611917ec78782f7a75ffbdb11\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\db108db611917ec78782f7a75ffbdb11\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\fcced2a265eb3b4033d5c8673c67568a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\fcced2a265eb3b4033d5c8673c67568a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\58c11459cc0f769ba04041769765d0a5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\58c11459cc0f769ba04041769765d0a5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\073e4f9250d16711dd523a33748add53\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\073e4f9250d16711dd523a33748add53\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\0d57854bb26a066e9003a123c1e5cfe7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\0d57854bb26a066e9003a123c1e5cfe7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\4df1c4f082bc6449805e1bbdcc3be286\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\4df1c4f082bc6449805e1bbdcc3be286\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\78717103129180f4dc799bb345fbc899\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\78717103129180f4dc799bb345fbc899\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\b8c3793385c784a3f7fded3fcf7e2dc6\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\LukeMi\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\b8c3793385c784a3f7fded3fcf7e2dc6\AndroidManifest.xml:20:5-44
+INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+		INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+		ADDED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
+		INJECTED from D:\git\L-Android\03Code\L_Android\aidlServer\src\main\AndroidManifest.xml
