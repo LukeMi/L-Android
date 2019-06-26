@@ -126,7 +126,7 @@
         <activity android:name=".widget.TableLayoutActivity" />
         <activity android:name=".widget.satin.SatinMainActivity" />
         <activity android:name=".viewtest.ZoomHeadListViewActivity" />
-        <activity android:name=".widget.TabLayoutActivity" />
+        <activity android:name=".widget.wechat.tablayout.TabLayoutActivity" />
         <activity android:name=".widget.ListViewActivity" />
         <activity android:name=".baidu.BDActivity" />
         <activity android:name=".ThirdAPIActivity" />

@@ -13,9 +13,9 @@ import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.notification.NotificationActivity;
 import com.lukemi.android.tutorial.popup.PopupActivity;
 import com.lukemi.android.tutorial.viewtest.DialogUtilActivity;
+import com.lukemi.android.tutorial.widget.wechat.tablayout.TabLayoutActivity;
 
 import java.util.ArrayList;
-import java.util.IllegalFormatCodePointException;
 import java.util.List;
 
 import butterknife.BindView;
@@ -62,6 +62,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("TabHost", null));
         bindBeanList.add(new IntentJumpBean("Menu", null));
         bindBeanList.add(new IntentJumpBean("AutoCompleteTextView", null));
+        bindBeanList.add(new IntentJumpBean("TabLayout", TabLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("Dialog", DialogUtilActivity.class));
         bindBeanList.add(new IntentJumpBean("ImageView", null));
         bindBeanList.add(new IntentJumpBean("Gallery", null));
