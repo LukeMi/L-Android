@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.lukemi.android.widget.ViewFlipperActivity">
+    android:layout_height="match_parent">
 
-
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/activity_main"
+    <ViewFlipper
+        android:id="@+id/marquee_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.spore.marqueeview.MainActivity">
-        <ViewFlipper
-            android:id="@+id/marquee_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autoStart="true"
-            android:background="#fff"
-            android:flipInterval="3000"
-            android:inAnimation="@anim/anim_marquee_in"
-            android:outAnimation="@anim/anim_marquee_out">
-        </ViewFlipper>
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:autoStart="true"
+        android:background="#fff"
+        android:flipInterval="3000"
+        android:inAnimation="@anim/anim_marquee_in"
+        android:outAnimation="@anim/anim_marquee_out">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp48"
+            android:background="@color/red"
+            android:gravity="center"
+            android:text="第一个" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp48"
+            android:background="@color/green"
+            android:gravity="center"
+            android:text="第2个" />
+
+    </ViewFlipper>
+</RelativeLayout>
+

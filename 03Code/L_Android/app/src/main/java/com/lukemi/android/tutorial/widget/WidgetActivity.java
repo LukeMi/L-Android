@@ -63,6 +63,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("Menu", null));
         bindBeanList.add(new IntentJumpBean("AutoCompleteTextView", null));
         bindBeanList.add(new IntentJumpBean("TabLayout", TabLayoutActivity.class));
+        bindBeanList.add(new IntentJumpBean("ViewFlipper", ViewFlipperActivity.class));
         bindBeanList.add(new IntentJumpBean("Dialog", DialogUtilActivity.class));
         bindBeanList.add(new IntentJumpBean("ImageView", null));
         bindBeanList.add(new IntentJumpBean("Gallery", null));

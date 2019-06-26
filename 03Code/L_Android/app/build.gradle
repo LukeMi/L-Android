@@ -179,6 +179,10 @@ android {
         // Enables Gradle to pre-dex library dependencies.
         preDexLibraries true
     }
+
+    android.packagingOptions {
+        exclude 'META-INF/androidx.customview_customview.versionn'
+    }
 }
 
 dependencies {
@@ -299,4 +303,5 @@ dependencies {
 
     //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
 }

@@ -65,7 +65,7 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         //设置缓存模式
         if (DeviceUtil.getNetType(this).equalsIgnoreCase(DeviceUtil.NETWORK_TYPE_NAME_UNKNOWN)
                 || DeviceUtil.getNetType(this).equalsIgnoreCase(DeviceUtil.NETWORK_TYPE_NAME_NONENETWORK)
-                ) {
+        ) {
             webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         } else {
             webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
@@ -88,11 +88,13 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
                 return super.shouldOverrideUrlLoading(view, url);
             }
 
+            @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 Logcat.log("onPageStarted url: " + url);
                 dialog.show();
             }
 
+            @Override
             public void onPageFinished(WebView view, String url) {
                 Logcat.log("onPageFinished url: " + url);
                 dialog.dismiss();
@@ -114,14 +116,16 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
                 if (!inputUrl.startsWith("http://")) {
                     inputUrl = "http://" + inputUrl;
                 }
-//                web.loadUrl(inputUrl);
-                web.loadUrl("homepathology91360://91360");
+                web.loadUrl(inputUrl);
+//                web.loadUrl("homepathology91360://91360");
                 break;
             case R.id.refresh:
                 web.reload();
                 break;
             case R.id.clear:
                 web.clearCache(true);
+                break;
+            default:
                 break;
         }
     }
