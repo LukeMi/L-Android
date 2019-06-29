@@ -1,6 +1,6 @@
 println "settings start"
 
-include ':app'
+include ':app', ':tbugtool'
 include ':Base'
 project(':Base').projectDir= new File('../Base/')
 include ':Base:common'
