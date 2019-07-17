@@ -40,7 +40,8 @@
         android:testOnly="false"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label">
-        <activity android:name=".widget.RadioGroupActivity"></activity>
+        <activity android:name=".widget.ToastActivity"></activity>
+        <activity android:name=".widget.RadioGroupActivity" />
         <activity android:name=".widget.RatingBarActivity" />
         <activity android:name=".widget.CollapsingToolbarLayoutActivity" />
         <activity android:name=".system.SystemShareActivity" />

@@ -56,7 +56,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("ImageButton", ImageViewActivity.class));
         bindBeanList.add(new IntentJumpBean("CheckBox", null));
         bindBeanList.add(new IntentJumpBean("RadioGroup", RadioGroupActivity.class));
-        bindBeanList.add(new IntentJumpBean("Toast", null));
+        bindBeanList.add(new IntentJumpBean("Toast", ToastActivity.class));
         bindBeanList.add(new IntentJumpBean("Spinner", null));
         bindBeanList.add(new IntentJumpBean("ListView", ListViewActivity.class));
         bindBeanList.add(new IntentJumpBean("TabHost", null));
