@@ -40,7 +40,8 @@
         android:testOnly="false"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label">
-        <activity android:name=".widget.CollapsingToolbarLayoutActivity"></activity>
+        <activity android:name=".widget.RatingBarActivity"></activity>
+        <activity android:name=".widget.CollapsingToolbarLayoutActivity" />
         <activity android:name=".system.SystemShareActivity" />
         <activity android:name=".api.AndroidApiActivity" /> <!-- 语音合成 -->
         <activity android:name=".TTSActivity" />
