@@ -47,6 +47,8 @@ public class IPCActivity extends AppCompatActivity {
                     ToastUtil.show_makeText(this, "未安装对应app", Toast.LENGTH_LONG);
                 }
                 break;
+            default:
+                break;
         }
         if (target != null) {
             startActivity(new Intent(this, target));
