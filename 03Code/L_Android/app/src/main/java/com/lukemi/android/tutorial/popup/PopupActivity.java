@@ -165,23 +165,14 @@ public class PopupActivity extends AbsBaseActivity {
     private void option() {
         View view = getLayoutInflater().inflate(R.layout.popup_bottom, null);
         final PopupWindow bottomPOP = new PopupWindow(view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, false);
-        view.findViewById(R.id.tv_cancel).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                bottomPOP.dismiss();
-            }
-        });
+        view.findViewById(R.id.tv_cancel).setOnClickListener(view1 -> bottomPOP.dismiss());
         bottomPOP.setBackgroundDrawable(new ColorDrawable());
         bottomPOP.setOutsideTouchable(true);
         bottomPOP.setAnimationStyle(R.style.Popup_bottom);
-        bottomPOP.setOnDismissListener(new PopupWindow.OnDismissListener() {
-            @Override
-            public void onDismiss() {
-                WindowUtil.setWindowAlpha(context, 1.0f);
-                btnBottomPop.setEnabled(true);
-            }
+        bottomPOP.setOnDismissListener(() -> {
+            WindowUtil.setWindowAlpha(context, 1.0f);
+            btnBottomPop.setEnabled(true);
         });
-
         /**
          *
          *防止点击触发按钮出现 关闭重新打开现象

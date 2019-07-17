@@ -82,6 +82,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("Merge标签使用", MergeActivity.class));
         bindBeanList.add(new IntentJumpBean("ViewStub标签使用", ViewStubActivity.class));
         bindBeanList.add(new IntentJumpBean("Include标签使用", IncludeActivity.class));
+        bindBeanList.add(new IntentJumpBean("CollapsingToolbarLayout", CollapsingToolbarLayoutActivity.class));
 
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, bindBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);

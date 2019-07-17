@@ -8,13 +8,15 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.Region;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.lukemi.android.tutorial.R;
 import com.lukemi.android.common.util.Logcat;
+import com.lukemi.android.tutorial.R;
 
 public class EmotionalFaceView extends View {
 
@@ -46,6 +48,23 @@ public class EmotionalFaceView extends View {
     public EmotionalFaceView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs, defStyleAttr);
+    }
+
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        Parcelable state = super.onSaveInstanceState();
+        SavedState ss = new SavedState(state);
+
+        ss.emotionStyle = this.emotionStyle;
+        return ss;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        super.onRestoreInstanceState(state);
+        SavedState ss = (SavedState) state;
+        this.setEmotionStyle(ss.emotionStyle);
+
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -137,7 +156,7 @@ public class EmotionalFaceView extends View {
         Paint borderPaint = new Paint();
         borderPaint.setColor(borderColor);
         borderPaint.setStyle(Paint.Style.STROKE);
-        borderPaint.setStrokeWidth(borderWidth*2);
+        borderPaint.setStrokeWidth(borderWidth * 2);
         return borderPaint;
     }
 
@@ -212,5 +231,21 @@ public class EmotionalFaceView extends View {
         void onRightEyeClick();
 
         void onMouthClick();
+    }
+
+    /**
+     * 状态保存
+     */
+    static class SavedState extends BaseSavedState {
+
+        public int emotionStyle;
+
+        SavedState(Parcelable superState) {
+            super(superState);
+        }
+
+        public SavedState(Parcel source) {
+            super(source);
+        }
     }
 }
