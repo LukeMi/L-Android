@@ -195,6 +195,8 @@
     <string name="app_name_type">XApp</string>
     <string name="user_register_register_tips">注册</string>
 
+    <string name="c_toast">自定义吐司框</string>
+
     <string-array name="categoryList1">
         <item>__all__</item>
         <item>news_hot</item>

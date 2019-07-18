@@ -18,6 +18,7 @@ import com.lukemi.android.tutorial.receiver.TimeChangedReceiver;
 import com.lukemi.android.tutorial.service.ForegroundService;
 import com.lukemi.android.tutorial.lifecycle.MyActivityLifecycleCallbacks;
 import com.lukemi.android.common.util.Logcat;
+import com.lukemi.android.tutorial.util.ToastUtil;
 import com.squareup.leakcanary.LeakCanary;
 
 import org.greenrobot.greendao.database.Database;
@@ -81,6 +82,14 @@ public class Application extends BaseApplication {
 
         initLeakCanary();
         initDao();
+        initToast();
+    }
+
+    /**
+     * 初始化全局Toast
+     */
+    private void initToast() {
+        ToastUtil.init(this);
     }
 
     /**

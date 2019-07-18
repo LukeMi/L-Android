@@ -1,9 +1,16 @@
 package com.lukemi.android.tutorial.util;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.lukemi.android.tutorial.R;
+import com.lukemi.android.tutorial.app.Application;
 
 import static android.widget.Toast.makeText;
 
@@ -13,6 +20,65 @@ import static android.widget.Toast.makeText;
  */
 
 public class ToastUtil {
+
+    private static Context mContext;
+
+    private static Toast mToast;
+
+    private static TextView mTvContent;
+
+    private ToastUtil(Context context) {
+        mContext = context;
+    }
+
+    /**
+     * u‘d better
+     *
+     * @param application
+     */
+    public static void init(@NonNull Application application) {
+        mContext = application;
+    }
+
+    /**
+     * u need init first
+     *
+     * @param stringId 字符串id
+     */
+    public static void toast(@StringRes int stringId) {
+        if (mToast == null) {
+            mToast = new Toast(mContext);
+            LayoutInflater inflater = LayoutInflater.from(mContext);
+            mTvContent = (TextView) inflater.inflate(R.layout.view_c_toast, null);
+            mToast.setView(mTvContent);
+            mToast.setGravity(Gravity.BOTTOM, 0, 0);
+            mToast.setDuration(Toast.LENGTH_SHORT);
+        }
+        mTvContent.setText(mContext.getResources().getString(stringId));
+        mToast.show();
+    }
+
+    /**
+     * u need init first
+     *
+     * @param content 字符串id
+     */
+    public static void toast(String content) {
+        if (mToast == null) {
+            mToast = new Toast(mContext);
+            LayoutInflater inflater = LayoutInflater.from(mContext);
+            mTvContent = (TextView) inflater.inflate(R.layout.view_c_toast, null);
+            mToast.setView(mTvContent);
+            mToast.setGravity(Gravity.CENTER, 0, 0);
+            mToast.setDuration(Toast.LENGTH_LONG);
+        }
+        mTvContent.setText(content);
+        mToast.show();
+    }
+
+    public ToastUtil() {
+
+    }
 
     /**
      * 一般性Toast显示+String
