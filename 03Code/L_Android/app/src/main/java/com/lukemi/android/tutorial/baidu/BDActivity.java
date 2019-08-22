@@ -23,14 +23,14 @@ public class BDActivity extends AppCompatActivity implements View.OnClickListene
      * created at: 2017/4/5 18:00
      */
     private void initView() {
-        findViewById(com.lukemi.android.tutorial.R.id.bdLoc).setOnClickListener(this);
+        findViewById(R.id.bdLoc).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         Class<?> targetClass = null;
         switch (v.getId()) {
-            case com.lukemi.android.tutorial.R.id.bdLoc:
+            case R.id.bdLoc:
                 targetClass = BDLocActivity.class;
                 break;
             default:

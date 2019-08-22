@@ -125,10 +125,16 @@ android {
         }
 
         debug {
-            storeFile file("paradise.jks")
-            storePassword "paradise"
-            keyAlias "paradise"
-            keyPassword "paradise"
+
+            storeFile file(keyProps['STORE_FILE'])
+            storePassword keyProps['STORE_PASSWORD']
+            keyAlias keyProps['KEY_ALIAS']
+            keyPassword keyProps['KEY_PASSWORD']
+
+//            storeFile file("paradise.jks")
+//            storePassword "paradise"
+//            keyAlias "paradise"
+//            keyPassword "paradise"
         }
     }
 

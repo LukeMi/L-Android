@@ -40,7 +40,8 @@
         android:testOnly="false"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label">
-        <activity android:name=".widget.ToastActivity"></activity>
+        <activity android:name=".api.vibrator.VibratorActivity"></activity>
+        <activity android:name=".widget.ToastActivity" />
         <activity android:name=".widget.RadioGroupActivity" />
         <activity android:name=".widget.RatingBarActivity" />
         <activity android:name=".widget.CollapsingToolbarLayoutActivity" />
@@ -191,7 +192,7 @@
         <activity android:name=".dagger2.StudentActivity" />
         <activity android:name=".rxJava.RxJavaActivity" />
         <activity android:name=".volum.VolumeActivity" />
-        <activity android:name=".gps.GpsActivity" />
+        <activity android:name=".api.gps.GpsActivity" />
         <activity android:name=".status.StatusActivity" />
         <activity android:name=".user.register.RegisterActivity" />
         <activity

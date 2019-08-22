@@ -12,14 +12,18 @@ public class TextViewActivity extends AppCompatActivity implements View.OnClickL
 
     private TextView vitercal_Scroll;
     private TextView horizontal_Scroll;
-    //跑马灯textView
+
+    /**
+     * 跑马灯textView
+     */
     private TextView marqueeTextView;
+
     private TextView tvDrawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.activity_text_view);
+        setContentView(R.layout.activity_text_view);
         initView();
     }
 
@@ -50,7 +54,7 @@ public class TextViewActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.tv_drawable:
                 tvDrawable.setSelected(!tvDrawable.isSelected());
-            break;
+                break;
             default:
                 break;
         }

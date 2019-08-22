@@ -1,15 +1,15 @@
-package com.lukemi.android.tutorial.gps;
+package com.lukemi.android.tutorial.api.gps;
 
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.location.GpsStatus;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -24,11 +24,44 @@ import butterknife.OnClick;
 import static android.location.LocationManager.GPS_PROVIDER;
 
 public class GpsActivity extends AbsBaseActivity {
+
+    private String TAG = GpsActivity.class.getSimpleName();
+
     private static final int LOCATION_PER_REQUEST_CODE = 0x000001;
 
     @BindView(R.id.tv_loc_add)
     TextView tvLocAdd;
     private LocationManager locationManager;
+
+    private LocationListener mLocationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            if (location != null) {
+                double altitude = location.getAltitude();
+                double longitude = location.getLongitude();
+                double latitude = location.getLatitude();
+                String showText = "longitude : " + longitude
+                        + "\n" + "latitude : " + latitude
+                        + "\n" + "altitude : " + altitude;
+                tvLocAdd.setText(showText);
+            }
+        }
+
+        @Override
+        public void onStatusChanged(String s, int i, Bundle bundle) {
+            Log.i(TAG, "onStatusChanged : " + s);
+        }
+
+        @Override
+        public void onProviderEnabled(String s) {
+            Log.i(TAG, "onProviderEnabled : " + s);
+        }
+
+        @Override
+        public void onProviderDisabled(String s) {
+            Log.i(TAG, "onProviderDisabled : " + s);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +89,14 @@ public class GpsActivity extends AbsBaseActivity {
     @Override
     protected int bindLayout() {
         return R.layout.activity_gps;
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mLocationListener != null) {
+            mLocationListener = null;
+        }
+        super.onDestroy();
     }
 
     @Override
@@ -87,43 +128,18 @@ public class GpsActivity extends AbsBaseActivity {
     }
 
     private void requestLocation() {
-        locationManager.addGpsStatusListener(new GpsStatus.Listener() {
-            @Override
-            public void onGpsStatusChanged(int i) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+//        locationManager.addGpsStatusListener(new GpsStatus.Listener() {
+//            @Override
+//            public void onGpsStatusChanged(int i) {
+//
+//            }
+//        });
 
-            }
-        });
 
-
-        locationManager.requestLocationUpdates(GPS_PROVIDER, 100000L, 100f, new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-                if (location != null) {
-                    double altitude = location.getAltitude();
-                    double longitude = location.getLongitude();
-                    double latitude = location.getLatitude();
-                    String showText = "longitude : " + longitude
-                            + "\n" + "latitude : " + latitude
-                            + "\n" + "altitude : " + altitude;
-                    tvLocAdd.setText(showText);
-                }
-            }
-
-            @Override
-            public void onStatusChanged(String s, int i, Bundle bundle) {
-                Log.i("TAG", "onStatusChanged : " + s);
-            }
-
-            @Override
-            public void onProviderEnabled(String s) {
-                Log.i("TAG", "onProviderEnabled : " + s);
-            }
-
-            @Override
-            public void onProviderDisabled(String s) {
-                Log.i("TAG", "onProviderDisabled : " + s);
-            }
-        });
+        locationManager.requestLocationUpdates(GPS_PROVIDER, 100000L, 100f, mLocationListener);
 
 
     }
