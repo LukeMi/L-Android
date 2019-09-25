@@ -62,13 +62,6 @@
 
     <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textAllCaps">false</item>
-    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
@@ -1611,11 +1604,11 @@
         </item>
     </style>
 
-    <style name="WelActivityTheme" parent="Theme.AppCompat.NoActionBar">
-        <!--<item name="android:background">@drawable/bd_loc_bg</item>-->
+    <style name="LaunchTheme" parent="AppTheme">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:navigationBarColor">#000000</item>
     </style>
 
     <style name="ActionSheetDialogStyle" parent="android:Theme.Dialog">

@@ -39,8 +39,11 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/AppTheme"
-        tools:replace="android:icon,android:label">
-        <activity android:name=".api.vibrator.VibratorActivity"></activity>
+        tools:replace="android:icon,android:label,android:theme">
+        <activity
+            android:name=".widget.EditText1Activity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity android:name=".api.vibrator.VibratorActivity" />
         <activity android:name=".widget.ToastActivity" />
         <activity android:name=".widget.RadioGroupActivity" />
         <activity android:name=".widget.RatingBarActivity" />
@@ -56,7 +59,7 @@
             android:value="@string/bai_du_location_key" /> <!-- 百度定位配置 end -->
         <activity
             android:name=".LauncherActivity"
-            android:theme="@style/WelActivityTheme">
+            android:theme="@style/LaunchTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -135,11 +138,7 @@
         <activity android:name=".widget.wechat.tablayout.TabLayoutActivity" />
         <activity android:name=".widget.ViewFlipperActivity" />
         <activity android:name=".widget.ListViewActivity" />
-        <!--
-<activity
-            android:name=".WelcomeActivity"
-            android:theme="@style/WelcActivityTheme" />
-        -->
+
         <activity android:name=".baidu.BDActivity" />
         <activity android:name=".ThirdAPIActivity" />
         <activity android:name=".system.WallPaperActivity" />
