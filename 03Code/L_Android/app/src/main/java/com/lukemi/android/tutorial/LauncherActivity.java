@@ -1,5 +1,6 @@
 package com.lukemi.android.tutorial;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -69,6 +70,11 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
     };
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launcher);
@@ -77,7 +83,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void updateJumpText(){
-
+        new
     }
 
     @Override

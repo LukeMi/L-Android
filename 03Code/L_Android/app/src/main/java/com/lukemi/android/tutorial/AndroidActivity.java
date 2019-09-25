@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lukemi.android.tutorial.api.gps.GpsActivity;
+import com.lukemi.android.tutorial.api.sensor.SensorActivity;
 import com.lukemi.android.tutorial.api.vibrator.VibratorActivity;
 import com.lukemi.android.tutorial.killprocess.AppStaticsActivity;
 import com.lukemi.android.tutorial.permission.PermissionActivity;
@@ -52,6 +53,7 @@ public class AndroidActivity extends AppCompatActivity {
         intentJumpBeanList.add(new IntentJumpBean("IPC机制", IPCActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("GPS", GpsActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Vibrator", VibratorActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("Sensor", SensorActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Process", AppStaticsActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("SharedPreference", SpActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("后置灯", FlashActivity.class));

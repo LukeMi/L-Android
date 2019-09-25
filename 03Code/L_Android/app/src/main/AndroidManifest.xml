@@ -44,6 +44,9 @@
             android:name=".widget.EditText1Activity"
             android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity android:name=".api.vibrator.VibratorActivity" />
+        tools:replace="android:icon,android:label">
+        <activity android:name=".api.sensor.SensorActivity"></activity>
+        <activity android:name=".api.vibrator.VibratorActivity" />
         <activity android:name=".widget.ToastActivity" />
         <activity android:name=".widget.RadioGroupActivity" />
         <activity android:name=".widget.RatingBarActivity" />
