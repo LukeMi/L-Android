@@ -1,6 +1,5 @@
 package com.lukemi.android.tutorial;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,14 +14,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.lukemi.android.common.util.Logcat;
-
-import java.util.concurrent.TimeUnit;
-
-import io.reactivex.Observable;
-import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
 
 /**
  * 欢迎页面设计<br/>
@@ -48,7 +39,6 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
             super.handleMessage(msg);
             switch (msg.what) {
                 case MSG_DELAY:
-
                     String textStr = countTime + " 跳转";
                     SpannableStringBuilder ssb = new SpannableStringBuilder(textStr);
                     ssb.setSpan(new ForegroundColorSpan(Color.WHITE), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -70,27 +60,16 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
     };
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launcher);
         initView();
-        mHandler.sendEmptyMessage(MSG_DELAY);
-    }
-
-    private void updateJumpText(){
-        new
+        countDown();
     }
 
     @Override
     protected void onDestroy() {
-        if (mHandler.hasMessages(MSG_DELAY)) {
-            mHandler.removeMessages(MSG_DELAY);
-        }
+        mHandler.removeCallbacks(null);
         super.onDestroy();
     }
 
@@ -108,6 +87,10 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
         showProcessbar.setMax(100);
         showProcessbar.setProgress(0);
         countDownTV.setOnClickListener(this);
+    }
+
+    private void countDown() {
+        mHandler.sendEmptyMessage(MSG_DELAY);
     }
 
     /**

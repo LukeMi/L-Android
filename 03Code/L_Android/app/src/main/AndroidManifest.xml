@@ -40,26 +40,7 @@
         android:testOnly="false"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label,android:theme">
-        <activity
-            android:name=".widget.EditText1Activity"
-            android:windowSoftInputMode="stateVisible|adjustResize" />
-        <activity android:name=".api.vibrator.VibratorActivity" />
-        tools:replace="android:icon,android:label">
-        <activity android:name=".api.sensor.SensorActivity"></activity>
-        <activity android:name=".api.vibrator.VibratorActivity" />
-        <activity android:name=".widget.ToastActivity" />
-        <activity android:name=".widget.RadioGroupActivity" />
-        <activity android:name=".widget.RatingBarActivity" />
-        <activity android:name=".widget.CollapsingToolbarLayoutActivity" />
-        <activity android:name=".system.SystemShareActivity" />
-        <activity android:name=".api.AndroidApiActivity" /> <!-- 语音合成 -->
-        <activity android:name=".TTSActivity" />
-        <activity android:name=".widget.SpanActivity" />
-        <activity android:name=".widget.IncludeActivity" /> <!-- 百度定位配置 start -->
-        <!-- key:开发者申请的Key -->
-        <meta-data
-            android:name="com.baidu.lbsapi.API_KEY"
-            android:value="@string/bai_du_location_key" /> <!-- 百度定位配置 end -->
+
         <activity
             android:name=".LauncherActivity"
             android:theme="@style/LaunchTheme">
@@ -70,6 +51,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".widget.EditText1Activity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity android:name=".api.vibrator.VibratorActivity" />
+
+        <activity android:name=".api.sensor.SensorActivity" />
+        <activity android:name=".widget.ToastActivity" />
+        <activity android:name=".widget.RadioGroupActivity" />
+        <activity android:name=".widget.RatingBarActivity" />
+        <activity android:name=".widget.CollapsingToolbarLayoutActivity" />
+        <activity android:name=".system.SystemShareActivity" />
+        <activity android:name=".api.AndroidApiActivity" />
+        <!-- 语音合成 -->
+        <activity android:name=".TTSActivity" />
+
+        <activity android:name=".widget.SpanActivity" />
+
+        <activity android:name=".widget.IncludeActivity" />
+
+        <!-- 百度定位配置 start -->
+        <!-- key:开发者申请的Key -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="@string/bai_du_location_key" />
+        <!-- 百度定位配置 end -->
+
         <activity android:name=".system.SystemActivity" />
         <activity android:name=".system.CloseAppActivity" />
         <activity android:name=".widget.ScrollViewActivity" />
@@ -88,7 +96,8 @@
             android:label="TweenActivity" />
         <activity android:name=".animation.FrameActivity" />
         <activity android:name=".animation.PropertyActivity" />
-        <activity android:name=".animation.ScaleActivity" /> <!-- <activity android:name=".webservice.WebServiceActivity" /> -->
+        <activity android:name=".animation.ScaleActivity" />
+        <!-- <activity android:name=".webservice.WebServiceActivity" /> -->
         <activity
             android:name=".utiltest.DeviceutilActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -127,12 +136,11 @@
             android:label="TextView控件效果" />
         <activity
             android:name=".widget.EditTextActivity"
-            android:label="EditText控件效果"
-            android:theme="@style/Theme.AppCompat" />
+            android:label="EditText控件效果" />
         <activity android:name=".widget.ImageViewActivity" />
         <activity android:name=".widget.wechat.activity.WeChatLoginActivity" />
         <activity android:name=".widget.ViewPrintActivity" />
-        <activity android:name=".utiltest.BitmapUtilActivity" /> <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar" -->
+        <activity android:name=".utiltest.BitmapUtilActivity" />
         <activity android:name=".utiltest.UtilMainActivity" />
         <activity android:name=".widget.wechat.activity.WeChatMainActivity" />
         <activity android:name=".widget.TableLayoutActivity" />
@@ -174,7 +182,8 @@
         <activity android:name=".main.RadioGroupMainActivity" />
         <activity android:name=".widget.ImageViewCenterInsideActivity" />
         <activity android:name=".widget.RoundImageViewListActivity" />
-        <activity android:name=".utiltest.FlowLayoutActivity" /> <!-- <activity android:name=".viewtest.ResChangeImageViewActivity" /> -->
+        <activity android:name=".utiltest.FlowLayoutActivity" />
+
         <activity android:name=".viewtest.SingleLineLinearlayoutActivity" />
         <activity android:name=".utiltest.ScannerActivity" />
         <activity android:name=".widget.WebviewDownloadActivity" />

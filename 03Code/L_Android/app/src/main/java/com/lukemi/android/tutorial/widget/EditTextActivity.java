@@ -33,10 +33,10 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void initVIew() {
-        textPasswordET = ((EditText) findViewById(R.id.textPassword));
-        weChatActivity = (Button) findViewById(R.id.weChatActivity);
-        ic_password_deleteBTN = (Button) findViewById(R.id.ic_password_delete);
-        ic_password_showBTN = (Button) findViewById(R.id.ic_password_show);
+        textPasswordET = findViewById(R.id.textPassword);
+        weChatActivity = findViewById(R.id.weChatActivity);
+        ic_password_deleteBTN = findViewById(R.id.ic_password_delete);
+        ic_password_showBTN = findViewById(R.id.ic_password_show);
 
         weChatActivity.setOnClickListener(this);
         ic_password_deleteBTN.setOnClickListener(this);
@@ -65,15 +65,12 @@ public class EditTextActivity extends AppCompatActivity implements View.OnClickL
 
             }
         });
-        textPasswordET.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                //获得焦点并长度大于0
-                if (hasFocus && ((EditText) v).getText().length() > 0) {
-                    ic_password_deleteBTN.setVisibility(View.VISIBLE);
-                } else {
-                    ic_password_deleteBTN.setVisibility(View.INVISIBLE);
-                }
+        textPasswordET.setOnFocusChangeListener((v, hasFocus) -> {
+            //获得焦点并长度大于0
+            if (hasFocus && ((EditText) v).getText().length() > 0) {
+                ic_password_deleteBTN.setVisibility(View.VISIBLE);
+            } else {
+                ic_password_deleteBTN.setVisibility(View.INVISIBLE);
             }
         });
     }
