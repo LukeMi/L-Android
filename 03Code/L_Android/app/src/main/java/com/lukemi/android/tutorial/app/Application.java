@@ -139,11 +139,11 @@ public class Application extends BaseApplication {
      */
     private void initReceiver() {
         IntentFilter intentFilter = new IntentFilter();
-        //为BroadcastReceiver指定action，使之用于接收同action的广播
+        // 为BroadcastReceiver指定action，使之用于接收同action的广播
         intentFilter.addAction(Intent.ACTION_TIME_CHANGED);
         dateChangedReceiver = new TimeChangedReceiver();
         registerReceiver(dateChangedReceiver, intentFilter);
-        //实时时间
+        // 实时时间
         handler.sendEmptyMessage(MSG_CURRENT_TIME);
     }
 

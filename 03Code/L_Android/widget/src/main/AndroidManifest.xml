@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jeferry.android.widget">
+
+    <application>
+
+        <activity
+            android:name=".WidgetActivity"
+            android:label="控件大全" />
+
+        <activity
+            android:name=".TextViewActivity"
+            android:label="TextView控件效果" />
+        <activity
+            android:name=".EditTextActivity"
+            android:label="EditText控件效果" />
+        <activity android:name=".ImageViewActivity" />
+        <activity android:name=".wechat.activity.WeChatLoginActivity" />
+        <activity android:name=".ViewPrintActivity" />
+        <activity android:name=".wechat.activity.WeChatMainActivity" />
+        <activity android:name=".TableLayoutActivity" />
+        <activity android:name=".satin.SatinMainActivity" />
+        <activity android:name=".wechat.tablayout.TabLayoutActivity" />
+        <activity android:name=".ViewFlipperActivity" />
+        <activity android:name=".ListViewActivity" />
+        <activity android:name=".DialogUtilActivity" />
+        <activity
+            android:name=".WebViewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity android:name=".SpanActivity" />
+
+        <activity android:name=".IncludeActivity" />
+
+        <activity android:name=".ScrollViewActivity" />
+
+        <activity android:name=".ToastActivity" />
+        <activity android:name=".RadioGroupActivity" />
+        <activity android:name=".RatingBarActivity" />
+        <activity android:name=".CollapsingToolbarLayoutActivity" />
+        <activity
+            android:name=".EditText1Activity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <activity android:name=".CoordinaryLayoutActivity" />
+        <activity android:name=".ConstraintLayoutActivity" />
+        <activity android:name=".MeasureViewActivity" />
+        <activity android:name=".ImageViewCenterInsideActivity" />
+
+        <activity android:name=".WebviewDownloadActivity" />
+        <activity android:name=".JSAndroidActivity" />
+        <activity android:name=".LifecycleFragmentActivity" />
+        <activity android:name=".ViewPagerActivity" />
+        <activity android:name="com.jeferry.android.widget.wechat.CommentActivity" />
+        <activity android:name=".ReccyclerViewActivity" />
+        <activity android:name=".DialogActivity" />
+        <activity
+            android:name="com.jeferry.android.widget.PopupActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".notification.NotificationActivity" />
+        <activity android:name=".AutoCopleteActivity" />
+        <activity
+            android:name=".view.SignActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".view.EmotionalFaceActivity" />
+        <activity android:name=".CustomViewListActivity" />
+        <activity android:name=".MergeActivity" />
+        <activity android:name=".ViewStubActivity" />
+        <activity android:name=".SoftInputModeActivity" />
+
+    </application>
+
+</manifest>
