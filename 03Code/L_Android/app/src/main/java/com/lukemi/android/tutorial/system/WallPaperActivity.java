@@ -96,18 +96,24 @@ public class WallPaperActivity extends AppCompatActivity implements View.OnClick
                     case ViewPager.SCROLL_STATE_IDLE:
                         Logcat.log("onPageScrollStateChanged: -->>ViewPager.SCROLL_STATE_IDLE" + " ;misScrolled: " + misScrolled);
                         if (viewPager.getCurrentItem() == viewPager.getAdapter().getCount() - 1 && misScrolled) {
-                            startActivity(new Intent(WallPaperActivity.this, LauncherActivity.class));
+                            go2Launch();
                             WallPaperActivity.this.finish();
                         }
                         misScrolled = false;
                         break;
-                        default:
-                            break;
+                    default:
+                        break;
                 }
             }
         });
-        showIV = ((ImageView) findViewById(com.lukemi.android.tutorial.R.id.showPic));
+        showIV = findViewById(com.lukemi.android.tutorial.R.id.showPic);
         showIV.setImageResource(list.get(0));//设置默认值
+    }
+
+    private void go2Launch() {
+        Intent intent = new Intent(WallPaperActivity.this, LauncherActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
     @Override

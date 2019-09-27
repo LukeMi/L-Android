@@ -23,4 +23,11 @@
         android:text="底部弹出Popup"
         app:layout_constraintTop_toBottomOf="@+id/btn_comment" />
 
+    <Button
+        android:id="@+id/btn_normal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:text="底部弹出 - normal _ Popup"
+        app:layout_constraintTop_toBottomOf="@+id/btn_bottom_pop" />
+
 </android.support.constraint.ConstraintLayout>

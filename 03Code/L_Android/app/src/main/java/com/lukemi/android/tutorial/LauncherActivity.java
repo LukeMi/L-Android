@@ -69,7 +69,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     protected void onDestroy() {
-        mHandler.removeCallbacks(null);
+        mHandler.removeCallbacksAndMessages(null);
         super.onDestroy();
     }
 

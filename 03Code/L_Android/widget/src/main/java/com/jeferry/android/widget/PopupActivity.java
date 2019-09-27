@@ -23,6 +23,7 @@ import com.lukemi.android.common.util.WindowUtil;
 import com.lukemi.android.tutorial.view.MyEditText;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import static com.lukemi.android.common.util.DeviceUtil.getStatusBarHeight;
 
 
@@ -35,35 +36,35 @@ public class PopupActivity extends AppCompatActivity {
     Button btnBottomPop;
     private PopupActivity context;
     private PopupWindow popupWindow;
-    private MyEditText editComment;
-    private InputMethodManager inputManager;
 
+    private InputMethodManager inputManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_popup);
         initData(savedInstanceState);
-        tvTitleType1 = findViewById(R.id.tv_title_type1);
-        imgMenu = findViewById(R.id.img_menu);
-        clTitleType1 = findViewById(R.id.cl_title_type1);
-        btnBottomPop = findViewById(R.id.btn_bottom_pop);
+        initView();
     }
-
 
     protected void initData(Bundle savedInstanceState) {
         context = this;
         inputManager = ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE));
     }
 
-
     protected void initView() {
+        tvTitleType1 = findViewById(R.id.tv_title_type1);
+        imgMenu = findViewById(R.id.img_menu);
+        clTitleType1 = findViewById(R.id.cl_title_type1);
+        btnBottomPop = findViewById(R.id.btn_bottom_pop);
+
         tvTitleType1.setText("PopupWindow");
         imgMenu.setVisibility(View.VISIBLE);
         findViewById(R.id.img_back).setOnClickListener(this::onViewClicked);
         findViewById(R.id.img_menu).setOnClickListener(this::onViewClicked);
         findViewById(R.id.btn_comment).setOnClickListener(this::onViewClicked);
         findViewById(R.id.btn_bottom_pop).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_normal).setOnClickListener(this::onViewClicked);
     }
 
     public void onViewClicked(View view) {
@@ -76,25 +77,28 @@ public class PopupActivity extends AppCompatActivity {
             showPop();
         } else if (id == R.id.btn_bottom_pop) {
             option();
+        } else if (id == R.id.btn_normal) {
+            normalPop();
         }
     }
 
+    private void normalPop() {
+        View view = getLayoutInflater().inflate(R.layout.pop_normal, null);
+        PopupWindow popupWindow = new PopupWindow(view, MATCH_PARENT, WRAP_CONTENT);
+        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        popupWindow.setTouchable(true);
+        popupWindow.setFocusable(true);
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.showAtLocation(btnBottomPop, Gravity.BOTTOM, 0, 0);
+    }
 
     private void showPop() {
         View view = LayoutInflater.from(this).inflate(R.layout.view_comment, null);
-        view.findViewById(R.id.text_cancel).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                popupWindow.dismiss();
-            }
-        });
-        view.findViewById(R.id.text_sent).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                popupWindow.dismiss();
-            }
-        });
-        editComment = view.findViewById(R.id.edit_comment);
+        TextView tvCancel = view.findViewById(R.id.text_cancel);
+        TextView tvSent = view.findViewById(R.id.text_sent);
+        tvCancel.setOnClickListener(v -> popupWindow.dismiss());
+        tvSent.setOnClickListener(v -> popupWindow.dismiss());
+        MyEditText editComment = view.findViewById(R.id.edit_comment);
         editComment.setFocusable(true);
         editComment.requestFocus();
         editComment.setOnCancelDialogImp(() -> {
@@ -107,31 +111,32 @@ public class PopupActivity extends AppCompatActivity {
                 popupWindow = null;
             }
         });
-
-        popupWindow = new PopupWindow(view, MATCH_PARENT, 300, true);
+        popupWindow = new PopupWindow(view, MATCH_PARENT, WRAP_CONTENT, true);
         //监听菜单的关闭事件
-        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
-            @Override
-            public void onDismiss() {
-                Logcat.log("onDismiss inputManager.isActive(): " + inputManager.isActive());
-//                if (inputManager.isActive()) {
-//                    inputManager.hideSoftInputFromWindow(btnPop.getWindowToken(), 0); //强制隐藏键盘
-//                }
-                inputManager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+        popupWindow.setOnDismissListener(() -> {
+            Logcat.log("onDismiss inputManager.isActive(): " + inputManager.isActive());
+            inputManager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+        });
+        //监听触屏事件 - 拦截了屏幕外事件
+        popupWindow.setTouchInterceptor((view1, event) -> {
+            if (popupWindow != null && popupWindow.isShowing()) {
+                return false;
+            } else {
+                return super.dispatchTouchEvent(event);
             }
         });
-        //监听触屏事件
-        popupWindow.setTouchInterceptor((view1, event) -> false);
         popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         popupWindow.setTouchable(true);
-        popupWindow.setOutsideTouchable(true);
-        //软键盘不会挡着popupwindow
         popupWindow.setFocusable(true);
+        popupWindow.setOutsideTouchable(true);
+//        popupWindow.update();
+        //软键盘不会挡着popupwindow
         popupWindow.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED);
         popupWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         //设置菜单显示的位置
         //相对于父控件的位置，同时可以设置偏移量。
         popupWindow.showAtLocation(btnBottomPop, Gravity.BOTTOM, 0, 0);
+        inputManager.toggleSoftInput(0, InputMethodManager.SHOW_IMPLICIT);
     }
 
 

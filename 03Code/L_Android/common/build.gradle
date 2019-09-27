@@ -51,6 +51,8 @@ dependencies {
     api "com.android.support:appcompat-v7:$rootProject.supportVersion"
     api "com.android.support:design:$rootProject.supportVersion"
 
+    api "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
+
     testImplementation "junit:junit:$rootProject.junitVersion"
 
     //BRVAH 强大的RecyclerAdapter框架

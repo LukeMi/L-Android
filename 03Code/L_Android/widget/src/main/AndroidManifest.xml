@@ -52,8 +52,7 @@
         <activity android:name=".DialogActivity" />
         <activity
             android:name=".PopupActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:windowSoftInputMode="adjustResize" />
+            android:configChanges="keyboardHidden|orientation"/>
         <activity android:name=".NotificationActivity" />
         <activity android:name=".AutoCompleteActivity" />
         <activity

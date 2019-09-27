@@ -26,16 +26,12 @@ public class MyEditText extends EditText {
         super(context, attrs, defStyleAttr);
     }
 
-    public MyEditText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
-
     @Override
     public boolean dispatchKeyEventPreIme(KeyEvent event) {
         if (mOnCancelDialogImp != null) {
             mOnCancelDialogImp.onCancelDialog();
         }
-        Logcat.log("MyEditText" + "dispatchKeyEventPreIme method is called: "+super.dispatchKeyEventPreIme(event));
+        Logcat.log("MyEditText" + "dispatchKeyEventPreIme method is called: " + super.dispatchKeyEventPreIme(event));
         return super.dispatchKeyEventPreIme(event);
     }
 
