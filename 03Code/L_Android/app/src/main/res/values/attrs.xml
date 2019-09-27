@@ -50,13 +50,7 @@
         <attr name="border_width" format="integer|reference|dimension" />
     </declare-styleable>
 
-    <declare-styleable name="SignView">
-        <attr name="textSize" format="dimension|integer|reference" />
-        <attr name="textColor" format="color|integer" />
-        <attr name="textHintSize" format="dimension|integer|reference" />
-        <attr name="textHintColor" format="color|integer" />
-        <attr name="textHint" format="string|reference" />
-    </declare-styleable>
+
 
     <declare-styleable name="ScratchCardView">
         <attr name="gestureWidth" format="integer|dimension" />

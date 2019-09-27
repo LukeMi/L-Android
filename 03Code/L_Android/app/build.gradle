@@ -211,6 +211,7 @@ dependencies {
     implementation files('libs/httpmime-4.3-sources.jar')
     implementation project(':refresh-layout')
     implementation project(':common')
+    implementation project(':widget')
     implementation 'com.alibaba:fastjson:1.2.31'
 
     // Butterknife

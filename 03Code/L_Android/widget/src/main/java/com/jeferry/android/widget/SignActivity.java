@@ -1,4 +1,4 @@
-package com.lukemi.android.tutorial.view;
+package com.jeferry.android.widget;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -10,43 +10,37 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.lukemi.android.tutorial.R;
+import com.lukemi.android.tutorial.view.SignView;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class SignActivity extends AppCompatActivity {
 
-    @BindView(R.id.sv_)
-    SignView sv;
+    private SignView sv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign);
-        ButterKnife.bind(this);
+        sv = findViewById(R.id.sv_);
+        findViewById(R.id.sv_).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.tv_sign_color).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.tv_sign_size).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.tv_save).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.tv_reset).setOnClickListener(this::onViewClicked);
     }
 
-    @OnClick({R.id.sv_, R.id.tv_sign_color, R.id.tv_sign_size, R.id.tv_save, R.id.tv_reset})
     public void onViewClicked(View view) {
-        switch (view.getId()) {
-
-            case R.id.sv_:
-                Toast.makeText(this.getApplicationContext(), "click", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.tv_sign_color:
-                sv.setmTextColorRes(R.color.color_black);
-                break;
-            case R.id.tv_sign_size:
-                sv.setmTextSize(R.dimen.sp39);
-                break;
-            case R.id.tv_save:
-                save();
-                break;
-            case R.id.tv_reset:
-                sv.reset();
-                break;
+        int id = view.getId();
+        if (id == R.id.sv_) {
+            Toast.makeText(this.getApplicationContext(), "click", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.tv_sign_color) {
+            sv.setmTextColorRes(R.color.color_black);
+        } else if (id == R.id.tv_sign_size) {
+            sv.setmTextSize(R.dimen.sp39);
+        } else if (id == R.id.tv_save) {
+            save();
+        } else if (id == R.id.tv_reset) {
+            sv.reset();
         }
     }
 
@@ -62,8 +56,7 @@ public class SignActivity extends AppCompatActivity {
         ImageView imageView = new ImageView(this);
         imageView.setImageBitmap(bmp);
         AlertDialog.Builder b = new AlertDialog.Builder(this);
-        b.setView(imageView)
-                .create().show();
+        b.setView(imageView).create().show();
     }
 
 

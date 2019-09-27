@@ -16,7 +16,6 @@ import com.jeferry.android.widget.wechat.tablayout.TabLayoutActivity;
 import com.lukemi.android.common.IntentJumpAdapter;
 import com.lukemi.android.common.IntentJumpBean;
 import com.lukemi.android.common.config.ARouterPath;
-import com.lukemi.android.tutorial.notification.NotificationActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +41,6 @@ public class WidgetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_widget);
-
         initData();
         initView();
     }
@@ -70,9 +68,9 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("Gallery", null));
         bindBeanList.add(new IntentJumpBean("ImageSwitcher", null));
         bindBeanList.add(new IntentJumpBean("GridView", null));
-        bindBeanList.add(new IntentJumpBean("ProgressBar", null));
+        bindBeanList.add(new IntentJumpBean("ProgressBar", ProgressBarActivity.class));
         bindBeanList.add(new IntentJumpBean("PopupWindow", PopupActivity.class));
-        bindBeanList.add(new IntentJumpBean("SeekBar", null));
+        bindBeanList.add(new IntentJumpBean("SeekBar", SeekBarActivity.class));
         bindBeanList.add(new IntentJumpBean("RatingBar", RatingBarActivity.class));
         bindBeanList.add(new IntentJumpBean("ProgressDialog", null));
         bindBeanList.add(new IntentJumpBean("Notification", NotificationActivity.class));

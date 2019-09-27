@@ -16,7 +16,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.lukemi.android.tutorial.R;
+import com.jeferry.android.widget.R;
 
 public class SignView extends View {
 
@@ -171,7 +171,6 @@ public class SignView extends View {
     }
 
 
-
     public float getmHintTextSize() {
         return mHintTextSize;
     }
@@ -181,7 +180,6 @@ public class SignView extends View {
         this.mHintTextSize = mHintTextSize;
         invalidate();
     }
-
 
 
     public int getmHintTextColor() {

@@ -1,10 +1,8 @@
 package com.lukemi.android.tutorial.view;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
@@ -27,11 +25,6 @@ public class ResChangeImageView extends AppCompatImageView {
 
     public ResChangeImageView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-    }
-
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public ResChangeImageView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.lukemi.android.tutorial.notification;
+package com.jeferry.android.widget;
 
 import android.app.NotificationManager;
 import android.content.Context;

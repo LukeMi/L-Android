@@ -9,14 +9,16 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="384dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="fitCenter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/xkx" />
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="384dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:gravity="center"
@@ -27,7 +29,7 @@
 
     <TextView
         android:id="@+id/tv_profile"
-        android:layout_width="384dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:gravity="right|center_vertical"
@@ -35,38 +37,42 @@
         android:text="李白"
         android:textColor="@color/black_alph_bkg"
         android:textSize="@dimen/sp16"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <TextView
         android:id="@+id/tv_content"
-        android:layout_width="384dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:gravity="center_horizontal"
-        android:paddingTop="@dimen/sp20"
+        android:paddingTop="@dimen/dp20"
         android:selectAllOnFocus="true"
         android:text="@string/poetrm"
         android:textColor="@color/black_text_doc"
         android:textSize="@dimen/sp16"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_profile" />
 
     <View
+        android:id="@+id/bkg"
         android:layout_width="match_parent"
-        android:layout_height="19dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="@dimen/dp6"
         android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_hint1"
-        app:layout_constraintTop_toTopOf="@+id/tv_hint1" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_content" />
 
     <TextView
         android:id="@+id/tv_hint1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginLeft="@dimen/dp16"
         android:text="唐诗"
+        app:layout_constraintBottom_toBottomOf="@+id/bkg"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/tv_hint2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_content" />
+        app:layout_constraintTop_toTopOf="@+id/bkg" />
 
     <TextView
         android:id="@+id/tv_hint2"
@@ -83,6 +89,7 @@
         android:id="@+id/tv_hint3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp16"
         android:text="元曲"
         app:layout_constraintBottom_toBottomOf="@+id/tv_hint1"
         app:layout_constraintHorizontal_chainStyle="spread_inside"

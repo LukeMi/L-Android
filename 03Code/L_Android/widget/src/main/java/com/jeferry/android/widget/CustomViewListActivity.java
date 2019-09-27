@@ -37,6 +37,7 @@ public class CustomViewListActivity extends AppCompatActivity {
     private void initData() {
         intentJumpBeanList = new ArrayList<>();
         intentJumpBeanList.add(new IntentJumpBean("笑脸图片", EmotionalFaceActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("签名", SignActivity.class));
 
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);

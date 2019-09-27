@@ -10,7 +10,6 @@ import com.lukemi.android.common.util.Logcat;
 
 public class EmotionalFaceActivity extends AppCompatActivity {
 
-
     EmotionalFaceView ef;
 
     @Override
@@ -21,7 +20,6 @@ public class EmotionalFaceActivity extends AppCompatActivity {
     }
 
     private void initView() {
-
         ef = findViewById(R.id.ef);
         ef.setOnEmotionViewClickListener(new EmotionalFaceView.OnEmotionViewClickListener() {
             @Override
@@ -40,8 +38,8 @@ public class EmotionalFaceActivity extends AppCompatActivity {
                 Toast.makeText(EmotionalFaceActivity.this, "onMouthClick", Toast.LENGTH_SHORT).show();
             }
         });
-         findViewById(R.id.left).setOnClickListener(this::onViewClicked);
-         findViewById(R.id.right).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.left).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.right).setOnClickListener(this::onViewClicked);
     }
 
 
