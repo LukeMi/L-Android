@@ -60,7 +60,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("ListView", ListViewActivity.class));
         bindBeanList.add(new IntentJumpBean("TabHost", null));
         bindBeanList.add(new IntentJumpBean("Menu", null));
-        bindBeanList.add(new IntentJumpBean("AutoCompleteTextView", null));
+        bindBeanList.add(new IntentJumpBean("AutoCompleteTextView", AutoCompleteActivity.class));
         bindBeanList.add(new IntentJumpBean("TabLayout", TabLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("ViewFlipper", ViewFlipperActivity.class));
         bindBeanList.add(new IntentJumpBean("Dialog", DialogUtilActivity.class));
@@ -72,7 +72,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("PopupWindow", PopupActivity.class));
         bindBeanList.add(new IntentJumpBean("SeekBar", SeekBarActivity.class));
         bindBeanList.add(new IntentJumpBean("RatingBar", RatingBarActivity.class));
-        bindBeanList.add(new IntentJumpBean("ProgressDialog", null));
+        bindBeanList.add(new IntentJumpBean("ProgressDialog", ProgressDialogActivity.class));
         bindBeanList.add(new IntentJumpBean("Notification", NotificationActivity.class));
         bindBeanList.add(new IntentJumpBean("Webview", WebViewActivity.class));
         bindBeanList.add(new IntentJumpBean("ScrollView", ScrollViewActivity.class));

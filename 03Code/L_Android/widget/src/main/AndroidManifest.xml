@@ -3,7 +3,8 @@
     package="com.jeferry.android.widget">
 
     <application>
-        <activity android:name=".SeekBarActivity"></activity>
+        <activity android:name=".ProgressDialogActivity"></activity>
+        <activity android:name=".SeekBarActivity" />
         <activity android:name=".ProgressBarActivity" />
         <activity
             android:name=".WidgetActivity"
@@ -54,7 +55,7 @@
             android:configChanges="keyboardHidden|orientation"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".NotificationActivity" />
-        <activity android:name=".AutoCopleteActivity" />
+        <activity android:name=".AutoCompleteActivity" />
         <activity
             android:name=".SignActivity"
             android:screenOrientation="portrait" />

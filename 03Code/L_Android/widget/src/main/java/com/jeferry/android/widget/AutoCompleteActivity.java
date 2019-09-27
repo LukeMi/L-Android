@@ -11,7 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 
-public class AutoCopleteActivity extends AppCompatActivity {
+public class AutoCompleteActivity extends AppCompatActivity {
 
     private static final String[] CONTENT = {"android", "ios", "java", "html", "angrialjs"};
 
@@ -28,13 +28,10 @@ public class AutoCopleteActivity extends AppCompatActivity {
         actv = findViewById(R.id.actv_);
         ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, CONTENT);
         actv.setAdapter(stringArrayAdapter);
-        actv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast toast = Toast.makeText(AutoCopleteActivity.this, "position : " + CONTENT[i], Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.show();
-            }
+        actv.setOnItemClickListener((adapterView, view, i, l) -> {
+            Toast toast = Toast.makeText(AutoCompleteActivity.this, "position : " + CONTENT[i], Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
         });
     }
 
