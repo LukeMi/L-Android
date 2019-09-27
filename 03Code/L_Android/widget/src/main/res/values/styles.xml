@@ -27,7 +27,7 @@
         <!-- Dialog以外的区域模糊效果 -->
         <item name="android:backgroundDimEnabled">true</item>
         <!-- 无标题 -->
-        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
         <!-- 半透明 -->
         <item name="android:windowIsTranslucent">true</item>
         <!-- Dialog进入及退出动画 -->

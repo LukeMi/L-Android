@@ -15,16 +15,16 @@ import android.graphics.RectF;
 import android.graphics.Xfermode;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
-import android.widget.ImageView;
 
 /**
  * 裁剪控件
  */
-public class ClipImageView extends ImageView implements ScaleGestureDetector.OnScaleGestureListener {
+public class ClipImageView extends AppCompatImageView implements ScaleGestureDetector.OnScaleGestureListener {
 
     private static final int LAYER_FLAGS = /*Canvas.MATRIX_SAVE_FLAG | Canvas.CLIP_SAVE_FLAG
             | Canvas.HAS_ALPHA_LAYER_SAVE_FLAG | Canvas.FULL_COLOR_LAYER_SAVE_FLAG

@@ -1,12 +1,12 @@
 package com.lukemi.android.tutorial;
 
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -19,6 +19,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
 import com.lukemi.android.common.base.BaseLazyFragment;
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.news_today.model.JNewsBabyBean;
 import com.lukemi.android.tutorial.news_today.model.JNewsBaseBean;
 import com.lukemi.android.tutorial.news_today.model.JNewsCarBean;
@@ -40,7 +41,6 @@ import com.lukemi.android.tutorial.news_today.model.JNewsStoryBean;
 import com.lukemi.android.tutorial.news_today.model.JNewsTechBean;
 import com.lukemi.android.tutorial.news_today.model.JNewsTravelBean;
 import com.lukemi.android.tutorial.news_today.model.JNewsWorldBean;
-import com.lukemi.android.common.util.Logcat;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.request.BaseRequest;
@@ -95,7 +95,7 @@ public class SubLazyLoadFragment extends BaseLazyFragment
     private List<JNewsBaseBean> newsList = new ArrayList<>();
     private boolean isRefresh;
     private Gson gson;
-    private Activity context;
+    private AppCompatActivity context;
     private View view;
     private boolean isCreatView;
 

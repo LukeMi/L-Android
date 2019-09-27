@@ -1,7 +1,7 @@
 package com.lukemi.android.tutorial.db.dao;
 
-import android.app.Activity;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 
 import com.lukemi.android.tutorial.app.Application;
 import com.lukemi.android.tutorial.bean.Student;
@@ -20,12 +20,12 @@ public class StudentDaoUtil {
     private final StudentDao studentDao;
     private final DaoSession daoSession;
 
-    private StudentDaoUtil(@NonNull Activity context) {
+    private StudentDaoUtil(@NonNull AppCompatActivity context) {
         daoSession = ((Application) context.getApplication()).getDaoSession();
         studentDao = daoSession.getStudentDao();
     }
 
-    public static StudentDaoUtil getInstance(Activity context) {
+    public static StudentDaoUtil getInstance(AppCompatActivity context) {
         if (instance == null) {                         //Single Checked
             synchronized (StudentDaoUtil.class) {
                 if (instance == null) {                 //Double Checked

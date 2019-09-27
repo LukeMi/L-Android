@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:padding="@dimen/dp12"
         android:scaleType="centerInside"
-        android:src="@drawable/ic_back_typ1" />
+        app:srcCompat="@drawable/ic_back_typ1" />
 
     <TextView
         android:id="@+id/tv_title_type1"
@@ -32,7 +32,7 @@
         android:layout_width="@dimen/dp48"
         android:layout_height="match_parent"
         android:padding="@dimen/dp12"
-        android:src="@drawable/ic_menu"
+        app:srcCompat="@drawable/ic_menu"
         android:visibility="invisible"
         app:layout_constraintRight_toRightOf="parent" />
 

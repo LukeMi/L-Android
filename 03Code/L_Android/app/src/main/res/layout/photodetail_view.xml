@@ -2,7 +2,8 @@
 
 <ImageView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/photoDetail"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:src="@mipmap/default_pic"/>
+    app:srcCompat="@mipmap/default_pic"/>

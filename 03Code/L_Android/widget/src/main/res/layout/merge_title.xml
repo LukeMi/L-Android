@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/merge_title"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp48">
@@ -9,7 +10,7 @@
         android:layout_height="@dimen/dp48"
         android:padding="@dimen/dp12"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_back_typ1" />
+        app:srcCompat="@drawable/ic_back_typ1" />
 
     <TextView
         android:layout_width="match_parent"

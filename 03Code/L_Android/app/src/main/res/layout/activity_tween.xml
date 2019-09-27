@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -28,7 +29,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:src="@mipmap/ic_launcher" />
+                app:srcCompat="@mipmap/ic_launcher" />
         </LinearLayout>
 
         <LinearLayout
@@ -48,7 +49,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:src="@mipmap/ic_launcher" />
+                app:srcCompat="@mipmap/ic_launcher" />
         </LinearLayout>
 
         <LinearLayout
@@ -68,7 +69,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:src="@mipmap/ic_launcher" />
+                app:srcCompat="@mipmap/ic_launcher" />
         </LinearLayout>
 
         <LinearLayout
@@ -88,7 +89,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:src="@mipmap/ic_launcher" />
+                app:srcCompat="@mipmap/ic_launcher" />
         </LinearLayout>
 
         <LinearLayout
@@ -108,7 +109,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:src="@mipmap/ic_launcher" />
+                app:srcCompat="@mipmap/ic_launcher" />
         </LinearLayout>
 
         <LinearLayout
@@ -128,7 +129,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:src="@mipmap/ic_launcher" />
+                app:srcCompat="@mipmap/ic_launcher" />
         </LinearLayout>
 
         <LinearLayout
@@ -148,7 +149,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:src="@mipmap/ic_launcher" />
+                app:srcCompat="@mipmap/ic_launcher" />
         </LinearLayout>
 
         <LinearLayout
@@ -168,7 +169,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:src="@mipmap/ic_launcher" />
+                app:srcCompat="@mipmap/ic_launcher" />
         </LinearLayout>
 
         <LinearLayout
@@ -188,7 +189,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:src="@mipmap/ic_launcher" />
+                app:srcCompat="@mipmap/ic_launcher" />
         </LinearLayout>
 
         <LinearLayout
@@ -210,7 +211,7 @@
                 android:padding="@dimen/dp10"
                 android:scaleType="fitCenter"
                 android:layout_weight="2"
-                android:src="@drawable/selector_animation_hear" />
+                app:srcCompat="@drawable/selector_animation_hear" />
         </LinearLayout>
 
     </LinearLayout>

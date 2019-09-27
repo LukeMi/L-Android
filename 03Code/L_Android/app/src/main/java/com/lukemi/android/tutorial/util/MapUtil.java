@@ -1,12 +1,12 @@
 package com.lukemi.android.tutorial.util;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +43,7 @@ public class MapUtil {
         return mPackageNames.contains(BAIDU_PACKAGE_NAME);
     }
 
-    public static void openGaodeMapToGuide(@NonNull Activity activity, String address) {
+    public static void openGaodeMapToGuide(@NonNull AppCompatActivity activity, String address) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
         intent.addCategory(Intent.CATEGORY_DEFAULT);
@@ -55,7 +55,7 @@ public class MapUtil {
         activity.startActivity(intent);
     }
 
-    public static void openBaiduMapToGuide(@NonNull Activity activity, String address) {
+    public static void openBaiduMapToGuide(@NonNull AppCompatActivity activity, String address) {
         Intent intent = new Intent();
         String url = "baidumap://map/place/search?query=" + address;
         Uri uri = Uri.parse(url);
@@ -65,7 +65,7 @@ public class MapUtil {
         activity.startActivity(intent);
     }
 
-    public static void openBrowserToGuide(@NonNull Activity activity, String address) {
+    public static void openBrowserToGuide(@NonNull AppCompatActivity activity, String address) {
         String url = "http://api.map.baidu.com/geocoder?address=" + address + "&output=html&src=91360|91360病理网";
         Uri uri = Uri.parse(url);
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);

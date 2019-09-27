@@ -1,11 +1,11 @@
 package com.lukemi.android.tutorial.rxJava;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.lukemi.android.tutorial.R;
 import com.lukemi.android.common.util.Logcat;
+import com.lukemi.android.tutorial.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ import io.reactivex.functions.Predicate;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
-public class RxJavaActivity extends Activity {
+public class RxJavaActivity extends AppCompatActivity {
     int i = 0;
     private final String TAG = this.getClass().getSimpleName();
     private Disposable subscribe = null;

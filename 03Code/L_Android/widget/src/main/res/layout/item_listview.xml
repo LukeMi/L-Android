@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/delte_nhdz_dz" />
+            app:srcCompat="@drawable/delte_nhdz_dz" />
     </RelativeLayout>
 
     <TextView
@@ -59,7 +59,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/support"/>
+                app:srcCompat="@drawable/support"/>
 
             <TextView
                 android:id="@+id/support_text"
@@ -81,7 +81,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/unsupport"/>
+                app:srcCompat="@drawable/unsupport"/>
 
             <TextView
                 android:id="@+id/unsupport_text"
@@ -103,7 +103,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/comment"/>
+                app:srcCompat="@drawable/comment"/>
 
             <TextView
                 android:id="@+id/hot_text"
@@ -124,7 +124,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/share"/>
+                app:srcCompat="@drawable/share"/>
 
             <TextView
                 android:id="@+id/share_text"

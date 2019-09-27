@@ -1,7 +1,6 @@
 package com.lukemi.android.common.util;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,6 +12,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.support.annotation.RequiresPermission;
+import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.text.format.Formatter;
@@ -552,8 +552,8 @@ public class DeviceUtil {
      */
     public static void requestPermission(Context context, String permission) {
         if (!isGetParamPermission(context, permission)) {
-            if (((Activity) context) instanceof Activity && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                ((Activity) context).requestPermissions(new String[]{permission}, 1 << 4);
+            if (((AppCompatActivity) context) instanceof AppCompatActivity && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                ((AppCompatActivity) context).requestPermissions(new String[]{permission}, 1 << 4);
             }
         }
     }

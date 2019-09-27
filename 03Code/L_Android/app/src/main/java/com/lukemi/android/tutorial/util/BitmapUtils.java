@@ -1,6 +1,5 @@
 package com.lukemi.android.tutorial.util;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -17,6 +16,7 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
@@ -466,7 +466,7 @@ public class BitmapUtils {
      * @param activity
      * @return bitmap
      */
-    public static Bitmap takeActivityShot(Activity activity) {
+    public static Bitmap takeActivityShot(AppCompatActivity activity) {
         Log.i("TAG", "tackScreenShot");
         // View是你须要截图的View
         View view = activity.getWindow().getDecorView();

@@ -3,19 +3,19 @@
     <!-- Base application theme. -->
     <style name="Dialog.FullScreen" parent="Theme.AppCompat.Dialog">
         <item name="android:padding">0dp</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:background">@null</item>
+        <item name="windowNoTitle">true</item>
+        <item name="background">@null</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
     <style name="Dialog.FullScreen1" parent="Theme.AppCompat.Dialog">
         <item name="android:padding">0dp</item>
-        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:gravity">center</item>
-        <item name="android:background">@android:color/transparent</item>
+        <item name="background">@android:color/transparent</item>
         <item name="android:windowBackground">@null</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
@@ -24,18 +24,18 @@
         <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowIsTranslucent">false</item><!--半透明-->
-        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="windowNoTitle">true</item><!--无标题-->
         <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
         <item name="android:backgroundDimEnabled">true</item><!--模糊-->
         <item name="android:backgroundDimAmount">0.5</item>
-        <item name="android:alpha">0.3</item>
+        <item name="alpha">0.3</item>
     </style>
 
     <style name="transcutestyle">
         <item name="android:windowFrame">@android:color/transparent</item><!--边框-->
         <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
         <item name="android:windowIsTranslucent">true</item><!--半透明-->
-        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="windowNoTitle">true</item><!--无标题-->
         <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
         <item name="android:backgroundDimAmount">0.3</item>
         <item name="android:windowAnimationStyle">@null</item>
@@ -44,7 +44,7 @@
     <!-- dialog -->
     <style name="CommonDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@drawable/smssdk_dialog_bg</item>
-        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat" />
@@ -80,7 +80,7 @@
     </style>
 
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
-        <item name="android:layout">@layout/abc_alert_dialog_material</item>
+        <item name="layout">@layout/abc_alert_dialog_material</item>
         <item name="listLayout">@layout/abc_select_dialog_material</item>
         <item name="listItemLayout">@layout/select_dialog_item_material</item>
         <item name="multiChoiceItemLayout">@layout/select_dialog_multichoice_material</item>
@@ -106,7 +106,7 @@
     </style>
 
     <style name="Base.DialogWindowTitleBackground.AppCompat" parent="android:Widget">
-        <item name="android:background">@null</item>
+        <item name="background">@null</item>
         <item name="android:paddingLeft">?attr/dialogPreferredPadding</item>
         <item name="android:paddingRight">?attr/dialogPreferredPadding</item>
         <item name="android:paddingTop">@dimen/abc_dialog_padding_top_material</item>
@@ -434,7 +434,7 @@
         <item name="panelMenuListWidth">@dimen/abc_panel_menu_list_width</item>
         <item name="panelMenuListTheme">@style/Theme.AppCompat.CompactMenu</item>
         <item name="panelBackground">@drawable/abc_menu_hardkey_panel_mtrl_mult</item>
-        <item name="android:panelBackground">@android:color/transparent</item>
+        <item name="panelBackground">@android:color/transparent</item>
         <item name="listChoiceBackgroundIndicator">@drawable/abc_list_selector_holo_dark</item>
 
 
@@ -452,7 +452,7 @@
 
         <item name="spinnerStyle">@style/Widget.AppCompat.Spinner</item>
         <item name="android:spinnerItemStyle">@style/Widget.AppCompat.TextView.SpinnerItem</item>
-        <item name="android:dropDownListViewStyle">@style/Widget.AppCompat.ListView.DropDown</item>
+        <item name="dropDownListViewStyle">@style/Widget.AppCompat.ListView.DropDown</item>
 
 
         <item name="spinnerDropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
@@ -467,7 +467,7 @@
             @style/TextAppearance.AppCompat.Widget.PopupMenu.Small
         </item>
         <item name="listPopupWindowStyle">@style/Widget.AppCompat.ListPopupWindow</item>
-        <item name="dropDownListViewStyle">?android:attr/dropDownListViewStyle</item>
+        <item name="dropDownListViewStyle">?attr/dropDownListViewStyle</item>
 
 
         <item name="searchViewStyle">@style/Widget.AppCompat.SearchView</item>
@@ -608,7 +608,7 @@
         <item name="panelMenuListWidth">@dimen/abc_panel_menu_list_width</item>
         <item name="panelMenuListTheme">@style/Theme.AppCompat.CompactMenu</item>
         <item name="panelBackground">@drawable/abc_menu_hardkey_panel_mtrl_mult</item>
-        <item name="android:panelBackground">@android:color/transparent</item>
+        <item name="panelBackground">@android:color/transparent</item>
         <item name="listChoiceBackgroundIndicator">@drawable/abc_list_selector_holo_light</item>
 
 
@@ -626,7 +626,7 @@
 
         <item name="spinnerStyle">@style/Widget.AppCompat.Spinner</item>
         <item name="android:spinnerItemStyle">@style/Widget.AppCompat.TextView.SpinnerItem</item>
-        <item name="android:dropDownListViewStyle">@style/Widget.AppCompat.ListView.DropDown</item>
+        <item name="dropDownListViewStyle">@style/Widget.AppCompat.ListView.DropDown</item>
 
 
         <item name="spinnerDropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
@@ -641,7 +641,7 @@
             @style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small
         </item>
         <item name="listPopupWindowStyle">@style/Widget.AppCompat.ListPopupWindow</item>
-        <item name="dropDownListViewStyle">?android:attr/dropDownListViewStyle</item>
+        <item name="dropDownListViewStyle">?attr/dropDownListViewStyle</item>
 
 
         <item name="searchViewStyle">@style/Widget.AppCompat.Light.SearchView</item>
@@ -750,13 +750,13 @@
     <style name="Base.V7.Widget.AppCompat.AutoCompleteTextView" parent="android:Widget.AutoCompleteTextView">
         <item name="android:dropDownSelector">?attr/listChoiceBackgroundIndicator</item>
         <item name="android:popupBackground">@drawable/abc_popup_background_mtrl_mult</item>
-        <item name="android:background">?attr/editTextBackground</item>
+        <item name="background">?attr/editTextBackground</item>
         <item name="android:textColor">?attr/editTextColor</item>
         <item name="android:textAppearance">?android:attr/textAppearanceMediumInverse</item>
     </style>
 
     <style name="Base.V7.Widget.AppCompat.EditText" parent="android:Widget.EditText">
-        <item name="android:background">?attr/editTextBackground</item>
+        <item name="background">?attr/editTextBackground</item>
         <item name="android:textColor">?attr/editTextColor</item>
         <item name="android:textAppearance">?android:attr/textAppearanceMediumInverse</item>
     </style>
@@ -808,7 +808,7 @@
     </style>
 
     <style name="Base.Widget.AppCompat.ActionBar.TabView" parent="">
-        <item name="android:background">@drawable/abc_tab_indicator_material</item>
+        <item name="background">@drawable/abc_tab_indicator_material</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:paddingLeft">16dip</item>
         <item name="android:paddingRight">16dip</item>
@@ -818,7 +818,7 @@
     </style>
 
     <style name="Base.Widget.AppCompat.ActionButton" parent="RtlUnderlay.Widget.AppCompat.ActionButton">
-        <item name="android:background">?attr/actionBarItemBackground</item>
+        <item name="background">?attr/actionBarItemBackground</item>
         <item name="android:minWidth">@dimen/abc_action_button_min_width_material</item>
         <item name="android:minHeight">@dimen/abc_action_button_min_height_material</item>
         <item name="android:scaleType">center</item>
@@ -828,7 +828,7 @@
     </style>
 
     <style name="Base.Widget.AppCompat.ActionButton.CloseMode">
-        <item name="android:background">?attr/controlBackground</item>
+        <item name="background">?attr/controlBackground</item>
     </style>
 
 
@@ -844,7 +844,7 @@
 
     <style name="Base.Widget.AppCompat.ActivityChooserView" parent="">
         <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/abc_ab_share_pack_mtrl_alpha</item>
+        <item name="background">@drawable/abc_ab_share_pack_mtrl_alpha</item>
         <item name="divider">?attr/dividerVertical</item>
         <item name="showDividers">middle</item>
         <item name="dividerPadding">6dip</item>
@@ -853,7 +853,7 @@
     <style name="Base.Widget.AppCompat.AutoCompleteTextView" parent="Base.V7.Widget.AppCompat.AutoCompleteTextView" />
 
     <style name="Base.Widget.AppCompat.Button" parent="android:Widget">
-        <item name="android:background">@drawable/abc_btn_default_mtrl_shape</item>
+        <item name="background">@drawable/abc_btn_default_mtrl_shape</item>
         <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
         <item name="android:minHeight">48dip</item>
         <item name="android:minWidth">88dip</item>
@@ -863,7 +863,7 @@
     </style>
 
     <style name="Base.Widget.AppCompat.Button.Borderless">
-        <item name="android:background">@drawable/abc_btn_borderless_material</item>
+        <item name="background">@drawable/abc_btn_borderless_material</item>
     </style>
 
     <style name="Base.Widget.AppCompat.Button.Borderless.Colored">
@@ -877,7 +877,7 @@
     </style>
 
     <style name="Base.Widget.AppCompat.Button.Colored">
-        <item name="android:background">@drawable/abc_btn_colored_material</item>
+        <item name="background">@drawable/abc_btn_colored_material</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.Button.Inverse
         </item>
     </style>
@@ -888,26 +888,26 @@
     </style>
 
     <style name="Base.Widget.AppCompat.ButtonBar" parent="android:Widget">
-        <item name="android:background">@null</item>
+        <item name="background">@null</item>
     </style>
 
     <style name="Base.Widget.AppCompat.ButtonBar.AlertDialog" />
 
     <style name="Base.Widget.AppCompat.CompoundButton.CheckBox" parent="android:Widget.CompoundButton.CheckBox">
         <item name="android:button">?android:attr/listChoiceIndicatorMultiple</item>
-        <item name="android:background">?attr/controlBackground</item>
+        <item name="background">?attr/controlBackground</item>
     </style>
 
     <style name="Base.Widget.AppCompat.CompoundButton.RadioButton" parent="android:Widget.CompoundButton.RadioButton">
         <item name="android:button">?android:attr/listChoiceIndicatorSingle</item>
-        <item name="android:background">?attr/controlBackground</item>
+        <item name="background">?attr/controlBackground</item>
     </style>
 
     <style name="Base.Widget.AppCompat.CompoundButton.Switch" parent="android:Widget.CompoundButton">
         <item name="track">@drawable/abc_switch_track_mtrl_alpha</item>
         <item name="android:thumb">@drawable/abc_switch_thumb_material</item>
         <item name="switchTextAppearance">@style/TextAppearance.AppCompat.Widget.Switch</item>
-        <item name="android:background">?attr/controlBackground</item>
+        <item name="background">?attr/controlBackground</item>
         <item name="showText">false</item>
         <item name="switchPadding">@dimen/abc_switch_padding</item>
         <item name="android:textOn">@string/abc_capital_on</item>
@@ -939,7 +939,7 @@
     <style name="Base.Widget.AppCompat.EditText" parent="Base.V7.Widget.AppCompat.EditText" />
 
     <style name="Base.Widget.AppCompat.ImageButton" parent="android:Widget.ImageButton">
-        <item name="android:background">@drawable/abc_btn_default_mtrl_shape</item>
+        <item name="background">@drawable/abc_btn_default_mtrl_shape</item>
     </style>
 
     <style name="Base.Widget.AppCompat.Light.ActionBar" parent="Base.Widget.AppCompat.ActionBar">
@@ -963,7 +963,7 @@
     </style>
 
     <style name="Base.Widget.AppCompat.Light.ActionBar.TabView" parent="Base.Widget.AppCompat.ActionBar.TabView">
-        <item name="android:background">@drawable/abc_tab_indicator_material</item>
+        <item name="background">@drawable/abc_tab_indicator_material</item>
     </style>
 
     <style name="Base.Widget.AppCompat.Light.PopupMenu" parent="@style/Widget.AppCompat.ListPopupWindow"></style>
@@ -986,12 +986,12 @@
     </style>
 
     <style name="Base.Widget.AppCompat.ListView.DropDown">
-        <item name="android:divider">@null</item>
+        <item name="divider">@null</item>
     </style>
 
     <style name="Base.Widget.AppCompat.ListView.Menu" parent="android:Widget.ListView.Menu">
         <item name="android:listSelector">?attr/listChoiceBackgroundIndicator</item>
-        <item name="android:divider">?attr/dividerHorizontal</item>
+        <item name="divider">?attr/dividerHorizontal</item>
     </style>
 
     <style name="Base.Widget.AppCompat.PopupMenu" parent="@style/Widget.AppCompat.ListPopupWindow"></style>
@@ -1050,7 +1050,7 @@
     </style>
 
     <style name="Base.Widget.AppCompat.Spinner" parent="Platform.Widget.AppCompat.Spinner">
-        <item name="android:background">@drawable/abc_spinner_mtrl_am_alpha</item>
+        <item name="background">@drawable/abc_spinner_mtrl_am_alpha</item>
         <item name="android:popupBackground">@drawable/abc_popup_background_mtrl_mult</item>
         <item name="android:dropDownSelector">?attr/listChoiceBackgroundIndicator</item>
         <item name="android:dropDownVerticalOffset">0dip</item>
@@ -1062,7 +1062,7 @@
     </style>
 
     <style name="Base.Widget.AppCompat.Spinner.Underlined">
-        <item name="android:background">@drawable/abc_spinner_textfield_background_material</item>
+        <item name="background">@drawable/abc_spinner_textfield_background_material</item>
     </style>
 
     <style name="Base.Widget.AppCompat.TextView.SpinnerItem" parent="android:Widget.TextView.SpinnerItem">
@@ -1089,7 +1089,7 @@
     </style>
 
     <style name="Base.Widget.AppCompat.Toolbar.Button.Navigation" parent="android:Widget">
-        <item name="android:background">?attr/controlBackground</item>
+        <item name="background">?attr/controlBackground</item>
         <item name="android:minWidth">56dp</item>
         <item name="android:scaleType">center</item>
     </style>
@@ -1115,7 +1115,7 @@
         <item name="selectableItemBackground">@drawable/abc_item_background_holo_dark</item>
 
 
-        <item name="android:autoCompleteTextViewStyle">
+        <item name="autoCompleteTextViewStyle">
             @style/Widget.AppCompat.AutoCompleteTextView
         </item>
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
@@ -1128,7 +1128,7 @@
         <item name="selectableItemBackground">@drawable/abc_item_background_holo_light</item>
 
 
-        <item name="android:autoCompleteTextViewStyle">
+        <item name="autoCompleteTextViewStyle">
             @style/Widget.AppCompat.Light.AutoCompleteTextView
         </item>
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
@@ -1546,7 +1546,7 @@
 
     <style name="Widget.Design.AppBarLayout" parent="android:Widget">
         <item name="elevation">@dimen/design_appbar_elevation</item>
-        <item name="android:background">?attr/colorPrimary</item>
+        <item name="background">?attr/colorPrimary</item>
     </style>
 
 
@@ -1560,7 +1560,7 @@
     </style>
 
     <style name="Widget.Design.FloatingActionButton" parent="android:Widget">
-        <item name="android:background">@drawable/design_fab_background</item>
+        <item name="background">@drawable/design_fab_background</item>
         <item name="backgroundTint">?attr/colorAccent</item>
         <item name="fabSize">normal</item>
         <item name="elevation">@dimen/design_fab_elevation</item>
@@ -1571,7 +1571,7 @@
 
     <style name="Widget.Design.NavigationView" parent="">
         <item name="elevation">@dimen/design_navigation_elevation</item>
-        <item name="android:background">?android:attr/windowBackground</item>
+        <item name="background">?android:attr/windowBackground</item>
         <item name="android:fitsSystemWindows">true</item>
         <item name="android:maxWidth">@dimen/design_navigation_max_width</item>
     </style>
@@ -1581,10 +1581,10 @@
     </style>
 
     <style name="Widget.Design.Snackbar" parent="android:Widget">
-        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark</item>
         <item name="android:minWidth">@dimen/design_snackbar_min_width</item>
         <item name="android:maxWidth">@dimen/design_snackbar_max_width</item>
-        <item name="android:background">@drawable/design_snackbar_background</item>
+        <item name="background">@drawable/design_snackbar_background</item>
         <item name="android:paddingLeft">@dimen/design_snackbar_padding_horizontal</item>
         <item name="android:paddingRight">@dimen/design_snackbar_padding_horizontal</item>
         <item name="elevation">@dimen/design_snackbar_elevation</item>
@@ -1606,8 +1606,8 @@
 
     <style name="LaunchTheme" parent="AppTheme">
         <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <item name="android:navigationBarColor">#000000</item>
     </style>
 

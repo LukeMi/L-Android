@@ -13,7 +13,7 @@
         android:layout_width="@dimen/dp100"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/ic_launcher" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                     android:layout_marginRight="@dimen/dp6"
                     android:layout_marginTop="@dimen/dp6"
                     android:scaleType="fitXY"
-                    android:src="@drawable/note_btn_close_white" />
+                    app:srcCompat="@drawable/note_btn_close_white" />
             </RelativeLayout>
 
 
@@ -87,7 +87,7 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/note_btn_love_white" />
+                    app:srcCompat="@drawable/note_btn_love_white" />
 
             </LinearLayout>
 
@@ -101,7 +101,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/selector_remote_view_btn_pre" />
+                    app:srcCompat="@drawable/selector_remote_view_btn_pre" />
 
             </LinearLayout>
 
@@ -114,7 +114,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/note_btn_play_white" />
+                    app:srcCompat="@drawable/note_btn_play_white" />
 
             </LinearLayout>
 
@@ -127,7 +127,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/selector_remote_view_btn_next" />
+                    app:srcCompat="@drawable/selector_remote_view_btn_next" />
 
             </LinearLayout>
 
@@ -140,7 +140,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/note_btn_lyc_white" />
+                    app:srcCompat="@drawable/note_btn_lyc_white" />
 
             </LinearLayout>
 

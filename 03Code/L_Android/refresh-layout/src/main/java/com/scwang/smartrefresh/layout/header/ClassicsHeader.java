@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -142,7 +143,7 @@ public class ClassicsHeader extends RelativeLayout implements RefreshHeader {
 
         ta.recycle();
 
-        if (context instanceof FragmentActivity) {
+        if (context instanceof AppCompatActivity) {
             FragmentManager manager = ((FragmentActivity) context).getSupportFragmentManager();
             if (manager != null) {
                 List<Fragment> fragments = manager.getFragments();

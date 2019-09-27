@@ -22,7 +22,7 @@
                 android:id="@+id/showIV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/qqproduce"/>
+                app:srcCompat="@drawable/qqproduce"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/user_icon"

@@ -7,14 +7,14 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
-import android.widget.ImageView;
 
 /**
  * Created by android on 2017/8/24.
  */
 
-public class ResChangeImageView extends ImageView {
+public class ResChangeImageView extends AppCompatImageView {
     private OnImgeChangeListener onImgeChangeListener;
 
     public ResChangeImageView(Context context) {

@@ -1,7 +1,6 @@
 package com.lukemi.android.common.util;
 
-import android.app.Activity;
-import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
 public class WindowUtil {
@@ -10,7 +9,7 @@ public class WindowUtil {
      * @param context
      * @param alpha
      */
-    public static void setWindowAlpha(Activity context, float alpha) {
+    public static void setWindowAlpha(AppCompatActivity context, float alpha) {
         WindowManager.LayoutParams attributes = context.getWindow().getAttributes();
         attributes.alpha = alpha;
         context.getWindow().setAttributes(attributes);

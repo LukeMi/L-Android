@@ -10,7 +10,7 @@
         android:id="@+id/iv90"
         android:layout_width="@dimen/dp80"
         android:layout_height="@dimen/dp80"
-        android:src="@drawable/icon_charging_wait_loading"
+        app:srcCompat="@drawable/icon_charging_wait_loading"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
