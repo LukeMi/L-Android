@@ -45,6 +45,12 @@ android {
                 universalApk true
             }
         }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     compileOptions {
@@ -125,31 +131,23 @@ android {
         }
 
         debug {
-
             storeFile file(keyProps['STORE_FILE'])
             storePassword keyProps['STORE_PASSWORD']
             keyAlias keyProps['KEY_ALIAS']
             keyPassword keyProps['KEY_PASSWORD']
-
-//            storeFile file("paradise.jks")
-//            storePassword "paradise"
-//            keyAlias "paradise"
-//            keyPassword "paradise"
         }
     }
-
     // Gradle Build 配置
     buildTypes {
 
         debug {
-            signingConfig signingConfigs.debug
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
         release {
             signingConfig signingConfigs.release
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
@@ -211,8 +209,8 @@ dependencies {
     implementation files('libs/bmap/BaiduLBS_Android.jar')
 
     implementation files('libs/httpmime-4.3-sources.jar')
-    implementation project(':Base:refresh-layout')
-    implementation project(':Base:common')
+    implementation project(':refresh-layout')
+    implementation project(':common')
     implementation 'com.alibaba:fastjson:1.2.31'
 
     // Butterknife
@@ -295,9 +293,6 @@ dependencies {
     //viewpager指示灯
     implementation 'me.relex:circleindicator:1.2.2@aar'
 
-    //BRVAH 强大的RecyclerAdapter框架
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.18'
-
     //Jsoup 解析xml
     implementation 'org.jsoup:jsoup:1.10.3'
 
@@ -310,4 +305,6 @@ dependencies {
     //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    // ARouter
+    annotationProcessor "com.alibaba:arouter-compiler:${rootProject.arouterAnnotationVersion}"
 }

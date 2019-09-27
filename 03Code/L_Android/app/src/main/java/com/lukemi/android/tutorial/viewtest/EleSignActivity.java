@@ -18,7 +18,7 @@ import com.lukemi.android.tutorial.util.HttpUtils;
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.util.SDCardUtils;
 import com.lukemi.android.tutorial.view.LinePathView;
-import com.lukemi.android.tutorial.view.ShowBigPicClass;
+import com.lukemi.android.common.ShowBigPicClass;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

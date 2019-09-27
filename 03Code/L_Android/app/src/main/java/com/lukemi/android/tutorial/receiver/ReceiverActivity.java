@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.lukemi.android.tutorial.util.DeviceUtil;
+import com.lukemi.android.common.util.DeviceUtil;
 import com.lukemi.android.common.util.Logcat;
 
 public class ReceiverActivity extends AppCompatActivity {
@@ -52,7 +52,7 @@ public class ReceiverActivity extends AppCompatActivity {
             switch (action){
                 case ConnectivityManager.CONNECTIVITY_ACTION:
                     Logcat.log("----networkChanged---->"+"netWorkType: "+ DeviceUtil.getNetType(ReceiverActivity.this));
-                    Toast.makeText(getApplicationContext(),DeviceUtil.getNetType(ReceiverActivity.this),Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), DeviceUtil.getNetType(ReceiverActivity.this),Toast.LENGTH_LONG).show();
                     break;
             }
 

@@ -224,12 +224,5 @@
         <item>news_food</item>
     </string-array>
 
-    <string-array name="lifecycleTabs">
-        <item>Atab</item>
-        <item>Btab</item>
-        <item>Ctab</item>
-        <item>Dtab</item>
-        <item>Etab</item>
-        <item>Ftab</item>
-    </string-array>
+
 </resources>

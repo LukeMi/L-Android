@@ -13,5 +13,5 @@ public abstract class BaseApplication extends Application{
         super.onCreate();
     }
 
-    public abstract String getAppchannel();
+    public abstract String getAppChannel();
 }

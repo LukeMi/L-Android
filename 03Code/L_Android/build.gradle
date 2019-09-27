@@ -56,4 +56,7 @@ ext {
     dagger2Version = '2.16'
     retrofitVersion = '2.4.0'
     leakCanaryVersion = '1.6.2'
+
+    arouterVersion = "1.5.0"
+    arouterAnnotationVersion = "1.2.2"
 }

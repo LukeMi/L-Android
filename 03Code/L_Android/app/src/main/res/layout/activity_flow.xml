@@ -26,7 +26,7 @@
         app:layout_constraintLeft_toRightOf="@+id/cv"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.lukemi.android.tutorial.view.CircleImageView
+    <com.jeferry.android.widget.view.CircleImageView
         android:id="@+id/cimg"
         android:layout_width="@dimen/dp100"
         android:layout_height="@dimen/dp100"

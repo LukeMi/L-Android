@@ -52,24 +52,15 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".widget.EditText1Activity"
-            android:windowSoftInputMode="stateVisible|adjustResize" />
+
         <activity android:name=".api.vibrator.VibratorActivity" />
 
         <activity android:name=".api.sensor.SensorActivity" />
-        <activity android:name=".widget.ToastActivity" />
-        <activity android:name=".widget.RadioGroupActivity" />
-        <activity android:name=".widget.RatingBarActivity" />
-        <activity android:name=".widget.CollapsingToolbarLayoutActivity" />
+
         <activity android:name=".system.SystemShareActivity" />
         <activity android:name=".api.AndroidApiActivity" />
         <!-- 语音合成 -->
         <activity android:name=".TTSActivity" />
-
-        <activity android:name=".widget.SpanActivity" />
-
-        <activity android:name=".widget.IncludeActivity" />
 
         <!-- 百度定位配置 start -->
         <!-- key:开发者申请的Key -->
@@ -80,7 +71,7 @@
 
         <activity android:name=".system.SystemActivity" />
         <activity android:name=".system.CloseAppActivity" />
-        <activity android:name=".widget.ScrollViewActivity" />
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask" />
@@ -107,10 +98,7 @@
         <activity android:name=".camera.CameraActivity" />
         <activity android:name=".viewtest.EleSignActivity" />
         <activity android:name=".viewtest.CViewActivity" />
-        <activity
-            android:name=".widget.WebViewActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
         <activity android:name=".fluxanalistics.FluxActivity" />
         <activity android:name=".receiver.ReceiverActivity" />
         <activity android:name=".plug.PlugActivity" />
@@ -126,29 +114,13 @@
         <activity android:name=".baidu.BDLocQuestionActivity" />
         <activity android:name=".camera.WX_Camera_Activity" />
         <activity android:name=".utiltest.ToastUtilActivity" />
-        <activity android:name=".viewtest.DialogUtilActivity" />
+
         <activity android:name=".SchemeActivity" />
-        <activity
-            android:name=".widget.WidgetActivity"
-            android:label="控件大全" />
-        <activity
-            android:name=".widget.TextViewActivity"
-            android:label="TextView控件效果" />
-        <activity
-            android:name=".widget.EditTextActivity"
-            android:label="EditText控件效果" />
-        <activity android:name=".widget.ImageViewActivity" />
-        <activity android:name=".widget.wechat.activity.WeChatLoginActivity" />
-        <activity android:name=".widget.ViewPrintActivity" />
+
+
         <activity android:name=".utiltest.BitmapUtilActivity" />
         <activity android:name=".utiltest.UtilMainActivity" />
-        <activity android:name=".widget.wechat.activity.WeChatMainActivity" />
-        <activity android:name=".widget.TableLayoutActivity" />
-        <activity android:name=".widget.satin.SatinMainActivity" />
         <activity android:name=".viewtest.ZoomHeadListViewActivity" />
-        <activity android:name=".widget.wechat.tablayout.TabLayoutActivity" />
-        <activity android:name=".widget.ViewFlipperActivity" />
-        <activity android:name=".widget.ListViewActivity" />
 
         <activity android:name=".baidu.BDActivity" />
         <activity android:name=".ThirdAPIActivity" />
@@ -159,34 +131,28 @@
         <activity android:name=".db.GreenDaoActivity" />
         <activity android:name=".evenbus.EvenBusSendActivity" />
         <activity android:name=".evenbus.EventBusReceiveActivity" />
-        <activity android:name=".widget.DialogActivity" />
+
         <activity android:name=".viewtest.ClipPhotoViewActivity" />
         <activity android:name=".viewtest.UploadActivity" />
-        <activity android:name=".widget.ReccyclerViewActivity" />
+
         <activity android:name=".evenbus.BackEvenBUSFragment_Activity" />
         <activity android:name=".evenbus.ForgroundActivity" />
-        <activity android:name=".widget.wechat.CommentActivity" />
-        <activity android:name=".widget.brvah.BRVAHActivity" />
-        <activity android:name=".widget.brvah.MultieBRVAHActivity" />
-        <activity android:name=".widget.brvah.BaseQuickActivity" />
+
+        <activity android:name="com.lukemi.android.tutorial.brvah.BRVAHActivity" />
+        <activity android:name="com.lukemi.android.tutorial.brvah.MultieBRVAHActivity" />
+        <activity android:name="com.lukemi.android.tutorial.brvah.BaseQuickActivity" />
         <activity android:name=".jsoup.JsoupActivity" />
-        <activity android:name=".widget.JSAndroidActivity" />
-        <activity android:name=".widget.LifecycleFragmentActivity" />
-        <activity android:name=".widget.ViewPagerActivity" />
+
         <activity android:name=".viewtest.RVRefreshViewActivity" />
         <activity android:name=".AppInfoActivity" />
         <activity android:name=".news_today.NewListActivity" />
-        <activity android:name=".widget.CoordinaryLayoutActivity" />
-        <activity android:name=".widget.ConstraintLayoutActivity" />
-        <activity android:name=".widget.MeasureViewActivity" />
+
         <activity android:name=".main.RadioGroupMainActivity" />
-        <activity android:name=".widget.ImageViewCenterInsideActivity" />
-        <activity android:name=".widget.RoundImageViewListActivity" />
         <activity android:name=".utiltest.FlowLayoutActivity" />
 
         <activity android:name=".viewtest.SingleLineLinearlayoutActivity" />
         <activity android:name=".utiltest.ScannerActivity" />
-        <activity android:name=".widget.WebviewDownloadActivity" />
+
         <activity android:name=".list_r.RvDividerActivity" />
         <activity android:name=".user.login.ui.LoginActivity" />
         <activity android:name=".user.userInfo.ui.UserInfoActivity" />
@@ -215,31 +181,23 @@
         <activity android:name=".anim.TweenAnimActivity" />
         <activity android:name=".anim.FrameAnimActivity" />
         <activity android:name=".anim.PropertyAnimActivity" />
-        <activity
-            android:name=".popup.PopupActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".notification.NotificationActivity" />
+
         <activity android:name=".touch.TouchEventActivity" />
         <activity android:name=".clip.ClipActivity" />
-        <activity android:name=".widget.AutoCopleteActivity" />
+
         <activity android:name=".state.StateActivity" />
         <activity android:name=".view.FlowActivity" />
-        <activity
-            android:name=".view.SignActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".view.EmotionalFaceActivity" />
+
         <activity android:name=".view.CoordinateViewActivity" />
         <activity android:name=".category.ComponentActivity" />
         <activity android:name=".aidl.AidlClientActivity" />
         <activity android:name=".AndroidActivity" />
         <activity android:name=".IPCActivity" />
-        <activity android:name=".widget.CustomViewListActivity" />
+
         <activity android:name=".SystemMemoryActivity" />
-        <activity android:name=".widget.MergeActivity" />
-        <activity android:name=".widget.ViewStubActivity" />
+
         <activity android:name=".system.ScreenShotForbiddenActivity" />
-        <activity android:name=".widget.SoftInputModeActivity" />
+
         <activity android:name=".manager.ActivityManagerActivity" />
         <activity android:name=".manager.ManagerStatisticsActivity" />
         <activity android:name=".lifecycle.NewTaskActivity" />
@@ -289,6 +247,8 @@
             android:value="${UMENG_CHANNEL_VALUE}" />
 
         <activity android:name=".anim.Angle90RecycleActivity" />
+
+        <activity android:name=".RoundImageViewListActivity" />
     </application>
 
 </manifest>

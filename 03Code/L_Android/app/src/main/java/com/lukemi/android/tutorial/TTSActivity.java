@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.lukemi.android.common.util.Logcat;
-import com.lukemi.android.tutorial.util.ToastUtil;
+import com.lukemi.android.common.util.ToastUtil;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

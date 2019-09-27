@@ -11,9 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.lukemi.android.common.util.DeviceUtil;
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.util.DeviceUtil;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

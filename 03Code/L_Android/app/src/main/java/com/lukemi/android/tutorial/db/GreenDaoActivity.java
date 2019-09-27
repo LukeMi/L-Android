@@ -20,7 +20,7 @@ import com.lukemi.android.tutorial.bean.Student;
 import com.lukemi.android.tutorial.db.dao.DaoSession;
 import com.lukemi.android.tutorial.db.dao.StudentDao;
 import com.lukemi.android.common.util.Logcat;
-import com.lukemi.android.tutorial.util.ToastUtil;
+import com.lukemi.android.common.util.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;

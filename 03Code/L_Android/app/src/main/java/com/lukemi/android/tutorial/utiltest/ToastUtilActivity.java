@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.util.ToastUtil;
+import com.lukemi.android.common.util.ToastUtil;
 
 import java.lang.reflect.Field;
 

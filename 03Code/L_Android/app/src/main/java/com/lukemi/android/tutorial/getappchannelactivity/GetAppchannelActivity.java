@@ -36,7 +36,7 @@ public class GetAppchannelActivity extends AppCompatActivity implements View.OnC
         int id = v.getId();
         switch (id){
             case R.id.getAppchannel_GetApp:
-                String appchannel = ((Application) getApplication()).getAppchannel();
+                String appchannel = ((Application) getApplication()).getAppChannel();
                 showAppChannel_GetAppET.setText(appchannel);
                 break;
             default:

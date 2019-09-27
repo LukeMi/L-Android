@@ -7,18 +7,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.text.SpannableString;
-import android.text.Spanned;
 import android.text.style.DynamicDrawableSpan;
 import android.text.style.ImageSpan;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.widget.wechat.fragment.WeChatContactFragment;
-import com.lukemi.android.tutorial.widget.wechat.fragment.WeChatDiscoverFragment;
-import com.lukemi.android.tutorial.widget.wechat.fragment.WeChatMSGFragment;
-import com.lukemi.android.tutorial.widget.wechat.fragment.WeChatMineFragment;
+
 import com.scwang.smartrefresh.layout.util.DensityUtil;
 
 import java.util.ArrayList;
@@ -76,10 +71,10 @@ public class RadioGroupMainActivity extends AppCompatActivity {
 
         }
 
-        fragmentList.add(WeChatMSGFragment.newInstance("", ""));
-        fragmentList.add(WeChatContactFragment.newInstance("", ""));
-        fragmentList.add(WeChatDiscoverFragment.newInstance("", ""));
-        fragmentList.add(WeChatMineFragment.newInstance("", ""));
+//        fragmentList.add(WeChatMSGFragment.newInstance("", ""));
+//        fragmentList.add(WeChatContactFragment.newInstance("", ""));
+//        fragmentList.add(WeChatDiscoverFragment.newInstance("", ""));
+//        fragmentList.add(WeChatMineFragment.newInstance("", ""));
     }
 
     private class MyOnCheckedChangeListener implements RadioGroup.OnCheckedChangeListener {

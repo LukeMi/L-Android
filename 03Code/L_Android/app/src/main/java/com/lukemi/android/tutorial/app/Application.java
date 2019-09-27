@@ -10,6 +10,7 @@ import android.support.multidex.MultiDex;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.lukemi.android.tutorial.BuildConfig;
 import com.lukemi.android.tutorial.base.BaseApplication;
 import com.lukemi.android.tutorial.db.dao.DaoMaster;
@@ -18,7 +19,7 @@ import com.lukemi.android.tutorial.receiver.TimeChangedReceiver;
 import com.lukemi.android.tutorial.service.ForegroundService;
 import com.lukemi.android.tutorial.lifecycle.MyActivityLifecycleCallbacks;
 import com.lukemi.android.common.util.Logcat;
-import com.lukemi.android.tutorial.util.ToastUtil;
+import com.lukemi.android.common.util.ToastUtil;
 import com.squareup.leakcanary.LeakCanary;
 
 import org.greenrobot.greendao.database.Database;
@@ -64,7 +65,6 @@ public class Application extends BaseApplication {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(this);
-
     }
 
     @Override
@@ -78,11 +78,20 @@ public class Application extends BaseApplication {
         //启动服务
         Intent sevice = new Intent(this, ForegroundService.class);
 //        this.startService(sevice);
-
-
         initLeakCanary();
         initDao();
         initToast();
+        initARouter();
+    }
+
+    private void initARouter() {
+        // 这两行必须写在init之前，否则这些配置在init过程中将无效
+        if (BuildConfig.DEBUG) {
+            ARouter.openLog();
+            ARouter.openDebug();
+        }
+        // 尽可能早，推荐在Application中初始化
+        ARouter.init(this);
     }
 
     /**
@@ -114,13 +123,13 @@ public class Application extends BaseApplication {
     }
 
     @Override
-    public String getAppchannel() {
+    public String getAppChannel() {
         SharedPreferences spf = getSharedPreferences("appConfigure", Context.MODE_PRIVATE);
         String appchannel = spf.getString("appchannel", "");
         if (TextUtils.isEmpty(appchannel)) {
             appchannel = "baidu";
             getSharedPreferences("appConfigure", Context.MODE_PRIVATE).edit().putString("appchannel", appchannel).apply();
-            Logcat.log("----getAppchannel---- " + "is not from spf");
+            Logcat.log("----getAppChannel---- " + "is not from spf");
         }
         return appchannel;
     }

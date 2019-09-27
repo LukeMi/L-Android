@@ -23,7 +23,7 @@ import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.util.BitmapUtils;
 import com.lukemi.android.tutorial.util.HttpUtils;
 import com.lukemi.android.common.util.Logcat;
-import com.lukemi.android.tutorial.view.ShowBigPicClass;
+import com.lukemi.android.common.ShowBigPicClass;
 
 
 import java.io.ByteArrayOutputStream;

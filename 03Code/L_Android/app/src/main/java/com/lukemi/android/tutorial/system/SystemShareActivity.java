@@ -1,7 +1,6 @@
 package com.lukemi.android.tutorial.system;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -10,9 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.lukemi.android.common.IntentJumpAdapter;
+import com.lukemi.android.common.IntentJumpBean;
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.widget.IntentJumpAdapter;
-import com.lukemi.android.tutorial.widget.IntentJumpBean;
+
 
 import java.io.File;
 import java.util.ArrayList;

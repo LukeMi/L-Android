@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.jeferry.android.widget.view.EmotionalFaceView
+        android:id="@+id/left"
+        android:layout_width="@dimen/dp80"
+        android:layout_height="@dimen/dp80"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        app:borderColor="@color/color_red"
+        app:borderWidth="@dimen/dp1"
+        app:emotionStyle="happy"
+        app:eyesColor="@color/color_red"
+        app:faceColor="@color/color_white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mouthColor="@color/color_red" />
+
+    <com.jeferry.android.widget.view.EmotionalFaceView
+
+        android:id="@+id/ef"
+        android:layout_width="@dimen/dp200"
+        android:layout_height="@dimen/dp200"
+        android:layout_marginTop="@dimen/dp16"
+        app:borderColor="@color/color_red"
+        app:borderWidth="@dimen/dp1"
+        app:emotionStyle="happy"
+        app:eyesColor="@color/color_green"
+        app:faceColor="@color/color_yellow"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mouthColor="@color/color_red" />
+
+    <com.jeferry.android.widget.view.EmotionalFaceView
+        android:id="@+id/right"
+        android:layout_width="@dimen/dp80"
+        android:layout_height="@dimen/dp80"
+        android:layout_marginRight="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        app:borderColor="@color/color_black"
+        app:borderWidth="@dimen/dp1"
+        app:emotionStyle="sad"
+        app:eyesColor="@color/color_black"
+        app:faceColor="@color/color_gray"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mouthColor="@color/color_black" />
+
+</android.support.constraint.ConstraintLayout>

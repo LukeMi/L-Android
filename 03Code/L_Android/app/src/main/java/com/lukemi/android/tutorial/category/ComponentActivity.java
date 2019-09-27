@@ -7,13 +7,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.lukemi.android.common.IntentJumpAdapter;
+import com.lukemi.android.common.IntentJumpBean;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.base.AbsBaseActivity;
 import com.lukemi.android.tutorial.receiver.ReceiverActivity;
 import com.lukemi.android.tutorial.lifecycle.Session1Activity;
 import com.lukemi.android.tutorial.volum.VolumeActivity;
-import com.lukemi.android.tutorial.widget.IntentJumpAdapter;
-import com.lukemi.android.tutorial.widget.IntentJumpBean;
+
 
 import java.util.ArrayList;
 import java.util.List;

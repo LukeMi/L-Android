@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.aidl.AidlClientActivity;
-import com.lukemi.android.tutorial.util.ToastUtil;
+import com.lukemi.android.common.util.ToastUtil;
 
 import java.util.List;
 

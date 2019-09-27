@@ -33,7 +33,7 @@ public class CViewActivity extends AppCompatActivity implements View.OnClickList
                 targetClass = EleSignActivity.class;
                 break;
             case R.id.dialogUtil_CVA:
-                targetClass = DialogUtilActivity.class;
+//                targetClass = DialogUtilActivity.class;
                 break;
             case R.id.zoomHeadListView_CVA:
                 targetClass = ZoomHeadListViewActivity.class;

@@ -7,7 +7,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.alibaba.android.arouter.facade.Postcard;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.lukemi.android.common.IntentJumpAdapter;
+import com.lukemi.android.common.IntentJumpBean;
+import com.lukemi.android.common.config.ARouterPath;
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.animation.AnimationActivity;
 import com.lukemi.android.tutorial.api.AndroidApiActivity;
@@ -16,10 +21,7 @@ import com.lukemi.android.tutorial.manager.ManagerStatisticsActivity;
 import com.lukemi.android.tutorial.system.SystemActivity;
 import com.lukemi.android.tutorial.statics.StaticFieldActivity;
 import com.lukemi.android.tutorial.utiltest.UtilMainActivity;
-import com.lukemi.android.tutorial.widget.IntentJumpAdapter;
-import com.lukemi.android.tutorial.widget.IntentJumpBean;
-import com.lukemi.android.tutorial.widget.WidgetActivity;
-import com.lukemi.android.tutorial.widget.wechat.activity.WeChatMainActivity;
+
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
@@ -40,9 +42,12 @@ public class MainActivity extends AppCompatActivity {
     private List<IntentJumpBean> intentJumpBeanList;
     private IntentJumpAdapter intentJumpAdapter;
     private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (BaseQuickAdapter adapter, View view, int position) -> {
-        Class<?> c = ((IntentJumpBean) adapter.getData().get(position)).getC();
+        IntentJumpBean bean = (IntentJumpBean) adapter.getData().get(position);
+        Class<?> c = bean.getC();
         if (c != null) {
             startActivity(new Intent(this, c));
+        } else if (null != bean.getPostcard()) {
+            bean.getPostcard().navigation();
         }
     };
 
@@ -94,14 +99,17 @@ public class MainActivity extends AppCompatActivity {
         intentJumpBeanList.add(new IntentJumpBean("四大组件", ComponentActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("动画", AnimationActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("API", ThirdAPIActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("Widget", WidgetActivity.class));
+        Postcard widget = ARouter.getInstance().build(ARouterPath.GROUP_WIDGET + ARouterPath.MAIN);
+
+        intentJumpBeanList.add(new IntentJumpBean("Widget", widget, null));
         intentJumpBeanList.add(new IntentJumpBean("Util", UtilMainActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("System", SystemActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("android", AndroidActivity.class));
-        intentJumpBeanList.add(new IntentJumpBean("Emulate Third App", WeChatMainActivity.class));
+
         intentJumpBeanList.add(new IntentJumpBean("ManagerStatistics", ManagerStatisticsActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Static Field Test", StaticFieldActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Android Api", AndroidApiActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("RoundImageViewListActivity", RoundImageViewListActivity.class));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }

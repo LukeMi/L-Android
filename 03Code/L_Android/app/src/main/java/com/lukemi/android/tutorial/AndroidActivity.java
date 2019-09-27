@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.lukemi.android.common.IntentJumpAdapter;
+import com.lukemi.android.common.IntentJumpBean;
 import com.lukemi.android.tutorial.api.gps.GpsActivity;
 import com.lukemi.android.tutorial.api.sensor.SensorActivity;
 import com.lukemi.android.tutorial.api.vibrator.VibratorActivity;
@@ -16,8 +18,7 @@ import com.lukemi.android.tutorial.permission.PermissionActivity;
 import com.lukemi.android.tutorial.sdf.SpActivity;
 import com.lukemi.android.tutorial.system.FlashActivity;
 import com.lukemi.android.tutorial.system.ScreenShotForbiddenActivity;
-import com.lukemi.android.tutorial.widget.IntentJumpAdapter;
-import com.lukemi.android.tutorial.widget.IntentJumpBean;
+
 
 import java.util.ArrayList;
 import java.util.List;

@@ -8,20 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.lukemi.android.tutorial.AndroidActivity;
+import com.lukemi.android.common.IntentJumpAdapter;
+import com.lukemi.android.common.IntentJumpBean;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.TTSActivity;
-import com.lukemi.android.tutorial.ThirdAPIActivity;
-import com.lukemi.android.tutorial.animation.AnimationActivity;
-import com.lukemi.android.tutorial.category.ComponentActivity;
-import com.lukemi.android.tutorial.manager.ManagerStatisticsActivity;
-import com.lukemi.android.tutorial.statics.StaticFieldActivity;
-import com.lukemi.android.tutorial.system.SystemActivity;
-import com.lukemi.android.tutorial.utiltest.UtilMainActivity;
-import com.lukemi.android.tutorial.widget.IntentJumpAdapter;
-import com.lukemi.android.tutorial.widget.IntentJumpBean;
-import com.lukemi.android.tutorial.widget.WidgetActivity;
-import com.lukemi.android.tutorial.widget.wechat.activity.WeChatMainActivity;
+
+
 
 import java.util.ArrayList;
 import java.util.List;

@@ -16,7 +16,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.bean.AppInfos;
-import com.lukemi.android.tutorial.util.ToastUtil;
+import com.lukemi.android.common.util.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
