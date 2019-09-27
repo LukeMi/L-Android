@@ -116,7 +116,12 @@ public class WebviewDownloadActivity extends AppCompatActivity {
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
             Logcat.log(TAG + " : " + "onPageStarted");
-            progressDialog = new ProgressDialog(WebviewDownloadActivity.this, android.R.style.Widget_DeviceDefault_Light_ProgressBar_Horizontal);
+            showDlg();
+        }
+
+        private void showDlg() {
+            progressDialog = new ProgressDialog(WebviewDownloadActivity.this);
+            progressDialog.setMessage("加载中");
             progressDialog.show();
         }
 

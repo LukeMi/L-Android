@@ -46,8 +46,7 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void initView() {
-        dialog = new ProgressDialog(WebViewActivity.this);
-        dialog.setMessage("加载中请稍候。。。");
+
         webSit_ET = ((EditText) findViewById(R.id.inputsite));
         run_BTN = ((Button) findViewById(R.id.run));
         refresh_BTN = ((Button) findViewById(R.id.refresh));
@@ -91,7 +90,7 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 Logcat.log("onPageStarted url: " + url);
-                dialog.show();
+                showDlg();
             }
 
             @Override
@@ -105,6 +104,13 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         });
 
         web.loadUrl(defURL);
+    }
+
+    private void showDlg() {
+        dialog = new ProgressDialog(WebViewActivity.this);
+        dialog.setMessage("加载中请稍候。。。");
+        dialog.setCancelable(true);
+        dialog.show();
     }
 
     @Override
