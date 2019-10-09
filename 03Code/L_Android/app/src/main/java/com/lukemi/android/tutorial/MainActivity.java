@@ -18,6 +18,7 @@ import com.lukemi.android.tutorial.animation.AnimationActivity;
 import com.lukemi.android.tutorial.api.AndroidApiActivity;
 import com.lukemi.android.tutorial.category.ComponentActivity;
 import com.lukemi.android.tutorial.manager.ManagerStatisticsActivity;
+import com.lukemi.android.tutorial.rxJava.RxJavaActivity;
 import com.lukemi.android.tutorial.system.SystemActivity;
 import com.lukemi.android.tutorial.statics.StaticFieldActivity;
 import com.lukemi.android.tutorial.utiltest.UtilMainActivity;
@@ -110,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         intentJumpBeanList.add(new IntentJumpBean("Static Field Test", StaticFieldActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Android Api", AndroidApiActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("RoundImageViewListActivity", RoundImageViewListActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("RxJavaActivity", RxJavaActivity.class));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }

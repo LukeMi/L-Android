@@ -30,6 +30,7 @@ public class RxJavaActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
     private Disposable subscribe = null;
     private List<Disposable> list = new ArrayList<>();
+    private Disposable intervalDisposable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,8 @@ public class RxJavaActivity extends AppCompatActivity {
 //        rang();
 //        disposableObserver();
 
-        compose();
+//        compose();
+        interval();
     }
 
     private void cc() {
@@ -117,6 +119,10 @@ public class RxJavaActivity extends AppCompatActivity {
             if (disposable != null && !disposable.isDisposed()) {
                 disposable.dispose();
             }
+        }
+
+        if (null != intervalDisposable && !intervalDisposable.isDisposed()) {
+            intervalDisposable.dispose();
         }
     }
 
@@ -360,30 +366,19 @@ public class RxJavaActivity extends AppCompatActivity {
 
 
     private void compose() {
-        Disposable subscribe = Observable.create(new ObservableOnSubscribe<Integer>() {
-            @Override
-            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                emitter.onNext(30);
-                emitter.onNext(29);
-            }
-        }).compose(new ObservableTransformer<Integer, Boolean>() {
-            @Override
-            public ObservableSource<Boolean> apply(Observable<Integer> upstream) {
-                return upstream.map(new Function<Integer, Boolean>() {
-                    @Override
-                    public Boolean apply(Integer integer) throws Exception {
-                        Logcat.log("integer = " + integer);
-                        return integer > 29;
-                    }
-                }).subscribeOn(Schedulers.io());
-            }
-        }).subscribe(new Consumer<Boolean>() {
-            @Override
-            public void accept(Boolean aBoolean) throws Exception {
-                Logcat.log("aBoolean : " + aBoolean);
-            }
-        });
+        Disposable subscribe = Observable.create((ObservableOnSubscribe<Integer>) emitter -> {
+            emitter.onNext(30);
+            emitter.onNext(29);
+        }).compose(upstream -> upstream.map(integer -> {
+            Logcat.log("integer = " + integer);
+            return integer > 29;
+        }).subscribeOn(Schedulers.io())).subscribe(aBoolean -> Logcat.log("aBoolean : " + aBoolean));
 //        subscribe.dispose();
+    }
+
+    private void interval() {
+        intervalDisposable = Observable.interval(0, 1, TimeUnit.SECONDS)
+                .subscribe(aLong -> System.out.println("aLong : " + aLong));
     }
 
 }
