@@ -8,16 +8,19 @@ import android.util.Log;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 
-public class EditText1Activity extends AppCompatActivity {
+/**
+ * 输入法自动弹出
+ */
+public class EditTextInputMethodAutoActivity extends AppCompatActivity {
 
-    private final String TAG = EditText1Activity.class.getSimpleName();
+    private final String TAG = EditTextInputMethodAutoActivity.class.getSimpleName();
 
     private EditText mEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_text1);
+        setContentView(R.layout.activity_edit_text_input_method_auto);
         initView();
     }
 

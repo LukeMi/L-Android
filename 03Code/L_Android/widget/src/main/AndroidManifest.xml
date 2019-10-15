@@ -37,7 +37,7 @@
         <activity android:name=".RatingBarActivity" />
         <activity android:name=".CollapsingToolbarLayoutActivity" />
         <activity
-            android:name=".EditText1Activity"
+            android:name=".EditTextInputMethodAutoActivity"
             android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity android:name=".CoordinaryLayoutActivity" />
         <activity android:name=".ConstraintLayoutActivity" />
