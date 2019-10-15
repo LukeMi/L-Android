@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.os.Message;
 import android.support.multidex.MultiDex;
@@ -24,8 +25,14 @@ import com.squareup.leakcanary.LeakCanary;
 
 import org.greenrobot.greendao.database.Database;
 
+import java.io.IOException;
+import java.lang.reflect.Field;
+
 /**
  * Created by mzchen on 2016/10/23.
+ *
+ * @author chenmz
+ * @date on 2016/10/23
  */
 
 public class Application extends BaseApplication {

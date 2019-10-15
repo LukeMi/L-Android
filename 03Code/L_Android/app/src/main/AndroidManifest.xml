@@ -71,6 +71,7 @@
         <!-- 百度定位配置 end -->
 
         <activity android:name=".system.SystemActivity" />
+        <activity android:name=".system.FontActivity" />
         <activity android:name=".system.CloseAppActivity" />
 
         <activity

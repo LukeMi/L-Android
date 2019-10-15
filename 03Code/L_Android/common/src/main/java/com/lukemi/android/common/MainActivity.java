@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.lukemi.android.common.test.DiDiViewActivity;
 import com.lukemi.android.common.test.FloatViewActivity;
-import com.lukemi.android.common.test.FontActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,10 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         Intent intent = null;
         int i = view.getId();
-        if (i == R.id.FontActivity) {
-            intent = new Intent(this, FontActivity.class);
-
-        } else if (i == R.id.DiDiViewActivity) {
+         if (i == R.id.DiDiViewActivity) {
             intent = new Intent(this, DiDiViewActivity.class);
 
         } else if (i == R.id.FloatViewActivity) {

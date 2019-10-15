@@ -1,6 +1,8 @@
-package com.lukemi.android.common.test;
+package com.lukemi.android.tutorial.system;
 
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,15 +13,14 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.lukemi.android.common.R;
 import com.lukemi.android.common.util.Logcat;
+import com.lukemi.android.tutorial.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class FontActivity extends AppCompatActivity implements View.OnClickListener {
-
     private TextView welcomeTV;
     private Button changeBTN;
     private ListView showFontsLV;
@@ -30,6 +31,18 @@ public class FontActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_font);
         initView();
+    }
+
+    @Override
+    public Resources getResources() {
+        //禁止app字体大小跟随系统字体大小调节
+        Resources resources = super.getResources();
+        if (resources != null && resources.getConfiguration().fontScale != 1.0f) {
+            Configuration configuration = resources.getConfiguration();
+            configuration.fontScale = 1.0f;
+            resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+        }
+        return resources;
     }
 
     private void initView() {
@@ -51,22 +64,21 @@ public class FontActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        int i1 = v.getId();
-        if (i1 == R.id.changeBTN) {
+        int id = v.getId();
+        if (id == R.id.changeBTN) {
             try {
                 AssetManager assetManager = getAssets();
-                String[] fontses = assetManager.list("fonts");
-                int fontsNO = fontses.length;
+                String[] fonts = assetManager.list("fonts");
+                int fontsNO = fonts.length;
                 for (int i = 0; i < fontsNO; i++) {
-                    Logcat.log(fontses[i]);
-                    listStr.add("fonts/" + fontses[i]);
+                    Logcat.log(fonts[i]);
+                    listStr.add("fonts/" + fonts[i]);
                 }
                 showFontsLV.setAdapter(new ArrayAdapter<String>(FontActivity.this, android.R.layout.simple_list_item_1,
-                                                                       fontses));
+                        fonts));
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
     }
 }
