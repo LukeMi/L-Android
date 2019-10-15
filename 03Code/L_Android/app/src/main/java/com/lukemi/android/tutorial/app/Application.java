@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.os.Handler;
 import android.os.Message;
 import android.support.multidex.MultiDex;
@@ -12,21 +11,18 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.lukemi.android.common.util.Logcat;
+import com.lukemi.android.common.util.ToastUtil;
 import com.lukemi.android.tutorial.BuildConfig;
 import com.lukemi.android.tutorial.base.BaseApplication;
 import com.lukemi.android.tutorial.db.dao.DaoMaster;
 import com.lukemi.android.tutorial.db.dao.DaoSession;
+import com.lukemi.android.tutorial.lifecycle.MyActivityLifecycleCallbacks;
 import com.lukemi.android.tutorial.receiver.TimeChangedReceiver;
 import com.lukemi.android.tutorial.service.ForegroundService;
-import com.lukemi.android.tutorial.lifecycle.MyActivityLifecycleCallbacks;
-import com.lukemi.android.common.util.Logcat;
-import com.lukemi.android.common.util.ToastUtil;
 import com.squareup.leakcanary.LeakCanary;
 
 import org.greenrobot.greendao.database.Database;
-
-import java.io.IOException;
-import java.lang.reflect.Field;
 
 /**
  * Created by mzchen on 2016/10/23.
