@@ -26,6 +26,10 @@ public class EditTextInputMethodAutoActivity extends AppCompatActivity {
 
     private void initView() {
         mEditText = findViewById(R.id.editText);
+        mEditText.setFocusable(true);
+        mEditText.requestFocus();
+        String text = mEditText.getText().toString();
+        mEditText.setSelection(text == null ? 0 : text.length());
         mEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
