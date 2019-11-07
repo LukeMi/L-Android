@@ -2,6 +2,7 @@ package com.lukemi.android.tutorial.lifecycle;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,8 @@ public class Session1Activity extends AppCompatActivity implements View.OnClickL
         setContentView(com.lukemi.android.tutorial.R.layout.activity_session1);
         intentBTN_SA1 = findViewById(com.lukemi.android.tutorial.R.id.intentBTN_SA1);
         intentBTN_SA1.setOnClickListener(this);
+        Intent intent = new Intent(Session1Activity.this, Session3Activity.class);
+        new Handler().postDelayed(() -> startActivity(intent), 3_000);
     }
 
     @Override

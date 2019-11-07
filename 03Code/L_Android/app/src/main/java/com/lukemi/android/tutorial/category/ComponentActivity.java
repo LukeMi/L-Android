@@ -2,6 +2,7 @@ package com.lukemi.android.tutorial.category;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -11,10 +12,10 @@ import com.lukemi.android.common.IntentJumpAdapter;
 import com.lukemi.android.common.IntentJumpBean;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.base.AbsBaseActivity;
-import com.lukemi.android.tutorial.receiver.ReceiverActivity;
 import com.lukemi.android.tutorial.lifecycle.Session1Activity;
+import com.lukemi.android.tutorial.lifecycle.Session4Activity;
+import com.lukemi.android.tutorial.receiver.ReceiverActivity;
 import com.lukemi.android.tutorial.volum.VolumeActivity;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,8 @@ public class ComponentActivity extends AbsBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = new Intent(ComponentActivity.this, Session4Activity.class);
+        new Handler().postDelayed(() -> startActivity(intent), 9_000);
     }
 
     @Override

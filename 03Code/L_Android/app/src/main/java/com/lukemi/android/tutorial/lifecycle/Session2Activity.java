@@ -21,7 +21,7 @@ public class Session2Activity extends AppCompatActivity {
     @OnClick(R.id.task)
     public void onViewClicked() {
         Intent intent = new Intent(this,NewTaskActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 }
