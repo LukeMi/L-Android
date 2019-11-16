@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.lukemi.android.widget.CoordinaryLayoutActivity">
+    android:orientation="vertical">
 
-    <android.support.design.widget.CoordinatorLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -33,7 +30,7 @@
                     android:background="#987545"
                     android:gravity="center"
                     android:text="banner区域"
-                    android:textColor="#ffffff"/>
+                    android:textColor="#ffffff" />
 
             </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -41,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:gravity="center"
-                android:text="悬浮的部分"/>
+                android:text="悬浮的部分" />
 
             <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
@@ -52,7 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/dp16"
-                    android:text="@string/qjj"/>
+                    android:text="@string/qjj" />
 
             </android.support.v4.widget.NestedScrollView>
 

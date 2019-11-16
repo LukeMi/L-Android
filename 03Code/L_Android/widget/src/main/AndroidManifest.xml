@@ -39,7 +39,7 @@
         <activity
             android:name=".EditTextInputMethodAutoActivity"
             android:windowSoftInputMode="stateVisible|adjustResize" />
-        <activity android:name=".CoordinaryLayoutActivity" />
+        <activity android:name=".CoordinatorLayoutActivity" />
         <activity android:name=".ConstraintLayoutActivity" />
         <activity android:name=".MeasureViewActivity" />
         <activity android:name=".ImageViewCenterInsideActivity" />
@@ -52,7 +52,7 @@
         <activity android:name=".DialogActivity" />
         <activity
             android:name=".PopupActivity"
-            android:configChanges="keyboardHidden|orientation"/>
+            android:configChanges="keyboardHidden|orientation" />
         <activity android:name=".NotificationActivity" />
         <activity android:name=".AutoCompleteActivity" />
         <activity
@@ -63,6 +63,7 @@
         <activity android:name=".MergeActivity" />
         <activity android:name=".ViewStubActivity" />
         <activity android:name=".SoftInputModeActivity" />
+        <activity android:name=".FlexBoxLayoutActivity" />
     </application>
 
 </manifest>

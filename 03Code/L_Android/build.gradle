@@ -44,6 +44,7 @@ ext {
 
     supportVersion = '28.0.0'
     constraintLayoutVersion = '1.1.3'
+    flexboxLayoutVersion = '1.0.0'
     junitVersion = '4.12'
     runnerVersion = '1.0.2'
     espressoCoreVersion = '3.0.2'

@@ -83,6 +83,8 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("Include标签使用", IncludeActivity.class));
         bindBeanList.add(new IntentJumpBean("CollapsingToolbarLayout", CollapsingToolbarLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("WeChatMainActivity", WeChatMainActivity.class));
+        bindBeanList.add(new IntentJumpBean("FlexBoxLayout", FlexBoxLayoutActivity.class));
+        bindBeanList.add(new IntentJumpBean("CoordinatorLayout", CoordinatorLayoutActivity.class));
 
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, bindBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
