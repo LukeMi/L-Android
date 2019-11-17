@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
+import com.jeferry.android.widget.flexbox.FlexBoxLayoutActivity;
 import com.jeferry.android.widget.wechat.activity.WeChatMainActivity;
 import com.jeferry.android.widget.wechat.tablayout.TabLayoutActivity;
 import com.lukemi.android.common.IntentJumpAdapter;

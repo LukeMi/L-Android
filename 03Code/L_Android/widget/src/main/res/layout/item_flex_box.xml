@@ -10,7 +10,7 @@
         android:layout_height="@dimen/dp48"
         android:layout_marginTop="@dimen/dp8"
         android:layout_marginRight="@dimen/dp8"
-        android:background="@drawable/shape_edittext_webite"
+        android:background="@drawable/selector_item_flex_box"
         android:gravity="center"
         android:hint="text"
         android:paddingLeft="@dimen/dp16"

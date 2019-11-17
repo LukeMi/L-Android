@@ -35,7 +35,7 @@
         <activity android:name=".ToastActivity" />
         <activity android:name=".RadioGroupActivity" />
         <activity android:name=".RatingBarActivity" />
-        <activity android:name=".CollapsingToolbarLayoutActivity" />
+        <activity android:name=".CollapsingToolbarLayoutActivity" />it
         <activity
             android:name=".EditTextInputMethodAutoActivity"
             android:windowSoftInputMode="stateVisible|adjustResize" />
@@ -63,7 +63,7 @@
         <activity android:name=".MergeActivity" />
         <activity android:name=".ViewStubActivity" />
         <activity android:name=".SoftInputModeActivity" />
-        <activity android:name=".FlexBoxLayoutActivity" />
+        <activity android:name=".flexbox.FlexBoxLayoutActivity" />
     </application>
 
 </manifest>
