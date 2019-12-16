@@ -3,7 +3,8 @@
     package="com.jeferry.android.widget">
 
     <application>
-        <activity android:name=".ProgressDialogActivity"></activity>
+        <activity android:name=".ConstraintLayout1Activity"></activity>
+        <activity android:name=".ProgressDialogActivity" />
         <activity android:name=".SeekBarActivity" />
         <activity android:name=".ProgressBarActivity" />
         <activity
@@ -35,7 +36,7 @@
         <activity android:name=".ToastActivity" />
         <activity android:name=".RadioGroupActivity" />
         <activity android:name=".RatingBarActivity" />
-        <activity android:name=".CollapsingToolbarLayoutActivity" />it
+        <activity android:name=".CollapsingToolbarLayoutActivity" />
         <activity
             android:name=".EditTextInputMethodAutoActivity"
             android:windowSoftInputMode="stateVisible|adjustResize" />

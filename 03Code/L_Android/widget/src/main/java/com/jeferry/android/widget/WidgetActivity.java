@@ -49,6 +49,7 @@ public class WidgetActivity extends AppCompatActivity {
     private void initData() {
         bindBeanList.add(new IntentJumpBean("自定义View测试", CustomViewListActivity.class));
         bindBeanList.add(new IntentJumpBean("ConstraintLayout", ConstraintLayoutActivity.class));
+        bindBeanList.add(new IntentJumpBean("Constraint1Layout", ConstraintLayout1Activity.class));
         bindBeanList.add(new IntentJumpBean("TextView", TextViewActivity.class));
         bindBeanList.add(new IntentJumpBean("EditText", EditTextActivity.class));
         bindBeanList.add(new IntentJumpBean("EditText1", EditTextInputMethodAutoActivity.class));
