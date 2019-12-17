@@ -14,6 +14,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.jeferry.android.widget.bottomsheet.BottomSheetActivity;
 import com.jeferry.android.widget.flexbox.FlexBoxLayoutActivity;
 import com.jeferry.android.widget.recycle.flexbox.RecyclerViewFlexBoxActivity;
+import com.jeferry.android.widget.recycle.itemdecoration.RecyclerViewActivity;
 import com.jeferry.android.widget.wechat.activity.WeChatMainActivity;
 import com.jeferry.android.widget.wechat.tablayout.TabLayoutActivity;
 import com.lukemi.android.common.IntentJumpAdapter;

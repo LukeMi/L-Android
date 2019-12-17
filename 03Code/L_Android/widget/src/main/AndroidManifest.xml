@@ -51,7 +51,7 @@
         <activity android:name=".LifecycleFragmentActivity" />
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".wechat.CommentActivity" />
-        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".recycle.itemdecoration.RecyclerViewActivity" />
         <activity android:name=".DialogActivity" />
         <activity
             android:name=".PopupActivity"
