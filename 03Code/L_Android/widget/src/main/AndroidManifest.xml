@@ -3,7 +3,8 @@
     package="com.jeferry.android.widget">
 
     <application>
-        <activity android:name=".ConstraintLayout1Activity"></activity>
+        <activity android:name=".bottomsheet.BottomSheetActivity"></activity>
+        <activity android:name=".ConstraintLayout1Activity" />
         <activity android:name=".ProgressDialogActivity" />
         <activity android:name=".SeekBarActivity" />
         <activity android:name=".ProgressBarActivity" />

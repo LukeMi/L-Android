@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
+import com.jeferry.android.widget.bottomsheet.BottomSheetActivity;
 import com.jeferry.android.widget.flexbox.FlexBoxLayoutActivity;
 import com.jeferry.android.widget.wechat.activity.WeChatMainActivity;
 import com.jeferry.android.widget.wechat.tablayout.TabLayoutActivity;
@@ -87,6 +88,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("WeChatMainActivity", WeChatMainActivity.class));
         bindBeanList.add(new IntentJumpBean("FlexBoxLayout", FlexBoxLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("CoordinatorLayout", CoordinatorLayoutActivity.class));
+        bindBeanList.add(new IntentJumpBean("BottomSheetActivity", BottomSheetActivity.class));
 
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, bindBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
