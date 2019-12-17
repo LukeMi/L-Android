@@ -3,7 +3,8 @@
     package="com.jeferry.android.widget">
 
     <application>
-        <activity android:name=".bottomsheet.BottomSheetActivity"></activity>
+        <activity android:name=".recycle.flexbox.RecyclerViewFlexBoxActivity"></activity>
+        <activity android:name=".bottomsheet.BottomSheetActivity" />
         <activity android:name=".ConstraintLayout1Activity" />
         <activity android:name=".ProgressDialogActivity" />
         <activity android:name=".SeekBarActivity" />
@@ -50,7 +51,7 @@
         <activity android:name=".LifecycleFragmentActivity" />
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".wechat.CommentActivity" />
-        <activity android:name=".ReccyclerViewActivity" />
+        <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".DialogActivity" />
         <activity
             android:name=".PopupActivity"

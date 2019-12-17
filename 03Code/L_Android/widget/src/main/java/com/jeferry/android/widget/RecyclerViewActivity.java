@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class ReccyclerViewActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends AppCompatActivity {
 
     private RecyclerView rvShow;
 
