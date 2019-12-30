@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:textColor="#0FFF00"
-        android:textSize="500sp"
+        android:textSize="40sp"
         tools:text="\@string/hello_blank_fragment" />
 
 </FrameLayout>

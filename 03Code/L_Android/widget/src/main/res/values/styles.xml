@@ -43,4 +43,9 @@
         <item name="android:windowEnterAnimation">@anim/slide_bottom_in</item>
         <item name="android:windowExitAnimation">@anim/slide_bottom_out</item>
     </style>
+
+    <style name="Anim_Left_out_Right_int">
+        <item name="android:windowEnterAnimation">@anim/anim_right_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_left_out</item>
+    </style>
 </resources>
