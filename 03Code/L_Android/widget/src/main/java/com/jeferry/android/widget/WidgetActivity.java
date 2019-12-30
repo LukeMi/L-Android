@@ -13,6 +13,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import com.jeferry.android.widget.bottomsheet.BottomSheetActivity;
 import com.jeferry.android.widget.flexbox.FlexBoxLayoutActivity;
+import com.jeferry.android.widget.fragment.FragmentActivity;
 import com.jeferry.android.widget.recycle.flexbox.RecyclerViewFlexBoxActivity;
 import com.jeferry.android.widget.recycle.itemdecoration.RecyclerViewActivity;
 import com.jeferry.android.widget.wechat.activity.WeChatMainActivity;
@@ -93,6 +94,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("FlexBoxLayout", FlexBoxLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("CoordinatorLayout", CoordinatorLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("BottomSheetActivity", BottomSheetActivity.class));
+        bindBeanList.add(new IntentJumpBean("FragmentActivity", FragmentActivity.class));
 
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, bindBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);

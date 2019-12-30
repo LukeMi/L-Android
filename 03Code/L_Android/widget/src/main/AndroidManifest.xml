@@ -3,7 +3,8 @@
     package="com.jeferry.android.widget">
 
     <application>
-        <activity android:name=".recycle.flexbox.RecyclerViewFlexBoxActivity"></activity>
+        <activity android:name=".fragment.FragmentActivity"></activity>
+        <activity android:name=".recycle.flexbox.RecyclerViewFlexBoxActivity" />
         <activity android:name=".bottomsheet.BottomSheetActivity" />
         <activity android:name=".ConstraintLayout1Activity" />
         <activity android:name=".ProgressDialogActivity" />
