@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--圆弧控件属性-->
+    <declare-styleable name="CircularArcView">
+        <!--圆弧的宽度-->
+        <attr name="ca_edge_wide" format="dimension|reference|float" />
+        <!--圆弧的颜色-->
+        <attr name="ca_edge_color" format="dimension|reference|color" />
+        <!--圆弧的底色-->
+        <attr name="ca_inner_color" format="dimension|reference|color" />
+        <!--圆弧的半径-->
+        <attr name="ca_radio" format="dimension|reference|integer" />
+
+    </declare-styleable>
+
+    <style name="EtBottomLineStyle" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/gray</item>
+        <item name="colorControlActivated">@color/black</item>
+    </style>
+
+</resources>

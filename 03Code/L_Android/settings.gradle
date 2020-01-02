@@ -1,5 +1,10 @@
 println "settings start"
 
-include ':refresh-layout', ':common', ':app', ':widget', ':aidlServer'
+include ':refresh-layout',
+        ':common',
+        ':app',
+        ':widget',
+        ':aidlServer',
+        "api"
 
 println "settings start"

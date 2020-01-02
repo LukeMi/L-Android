@@ -1,0 +1,90 @@
+import java.util.regex.Pattern
+
+//apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+//apply plugin: 'com.jakewharton.butterknife'
+
+def projectExt = rootProject.extensions.getByName("ext")
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+        //自定义常量
+        buildConfigField "boolean", "LOG_SHOW", "true"
+        buildConfigField "String", "LOG_TAG", "\"Common\""
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':refresh-layout')
+    implementation 'org.apache.ant:ant:1.7.0'
+
+    api "com.android.support:appcompat-v7:$rootProject.supportVersion"
+    api "com.android.support:design:$rootProject.supportVersion"
+
+    api "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
+
+    testImplementation "junit:junit:$rootProject.junitVersion"
+
+    //BRVAH 强大的RecyclerAdapter框架
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.18'
+
+    // Glide
+    api 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    // ARouter
+    api("com.alibaba:arouter-api:${rootProject.arouterVersion}") {
+        exclude group: 'com.android.support'
+    }
+    annotationProcessor "com.alibaba:arouter-compiler:${rootProject.arouterAnnotationVersion}"
+}
+
+task makeJar(type: Copy, dependsOn: "build") {
+    def buildFile = file("build.gradle")
+    def pattern = Pattern.compile("versionName\\s+\"(\\S+)\"")
+    def manifestText = buildFile.getText()
+    def matcher = pattern.matcher(manifestText)
+    matcher.find()
+    def versionCode = matcher.group(1)
+    //去除路径集下部分的资源
+    exclude "com/tbug/android/mlibrary/MainActivity.class"
+    from 'build/intermediates/bundles/debug/classes.jar'
+    into 'build/libs'
+    rename { String fileName ->
+        fileName.replace('classes', 'TbugSDK_' + versionName)
+    }
+
+}
+
+
+

@@ -211,6 +211,7 @@ dependencies {
     implementation project(':refresh-layout')
     implementation project(':common')
     implementation project(':widget')
+    implementation project(':api')
     implementation 'com.alibaba:fastjson:1.2.31'
 
     // Butterknife
