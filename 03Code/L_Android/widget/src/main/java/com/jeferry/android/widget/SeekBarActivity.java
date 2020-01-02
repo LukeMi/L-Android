@@ -1,7 +1,9 @@
 package com.jeferry.android.widget;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -22,7 +24,7 @@ public class SeekBarActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mSeekBar = findViewById(R.id.seekBar);
+        mSeekBar = findViewById(R.id.sb1);
         mTvValue = findViewById(R.id.tv_value);
         setValue(mSeekBar.getProgress());
         mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
