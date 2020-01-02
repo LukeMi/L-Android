@@ -95,6 +95,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("CoordinatorLayout", CoordinatorLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("BottomSheetActivity", BottomSheetActivity.class));
         bindBeanList.add(new IntentJumpBean("FragmentActivity", FragmentActivity.class));
+        bindBeanList.add(new IntentJumpBean("Switch", SwitchActivity.class));
 
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, bindBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
