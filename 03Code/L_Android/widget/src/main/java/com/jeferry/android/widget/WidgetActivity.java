@@ -67,7 +67,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("RecyclerView", RecyclerViewActivity.class));
         bindBeanList.add(new IntentJumpBean("RecyclerViewFlexBoxLayout", RecyclerViewFlexBoxActivity.class));
         bindBeanList.add(new IntentJumpBean("TabHost", null));
-        bindBeanList.add(new IntentJumpBean("Menu", null));
+        bindBeanList.add(new IntentJumpBean("Menu", MenuActivity.class));
         bindBeanList.add(new IntentJumpBean("AutoCompleteTextView", AutoCompleteActivity.class));
         bindBeanList.add(new IntentJumpBean("TabLayout", TabLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("ViewFlipper", ViewFlipperActivity.class));
@@ -96,6 +96,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("BottomSheetActivity", BottomSheetActivity.class));
         bindBeanList.add(new IntentJumpBean("FragmentActivity", FragmentActivity.class));
         bindBeanList.add(new IntentJumpBean("Switch", SwitchActivity.class));
+        bindBeanList.add(new IntentJumpBean("ViewPager", ViewPagerActivity.class));
 
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, bindBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
