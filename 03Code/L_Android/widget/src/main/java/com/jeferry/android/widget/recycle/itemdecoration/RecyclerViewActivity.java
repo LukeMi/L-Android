@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 
 import com.google.android.flexbox.FlexDirection;
 import com.google.android.flexbox.FlexWrap;
-import com.google.android.flexbox.FlexboxLayout;
 import com.google.android.flexbox.FlexboxLayoutManager;
 import com.jeferry.android.widget.R;
 

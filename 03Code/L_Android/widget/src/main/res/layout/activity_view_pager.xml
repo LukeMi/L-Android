@@ -10,10 +10,23 @@
         android:id="@+id/fl_contain"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bnv_Nav"
+
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_button_navigation_view" />
+
+    <android.support.design.widget.BottomNavigationView
+
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_button_navigation_view" />
+
+    <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="56dp"
         app:menu="@menu/menu_button_navigation_view" />

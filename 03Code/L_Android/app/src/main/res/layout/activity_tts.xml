@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp16"
+    android:paddingTop="@dimen/dp16"
     tools:context=".TTSActivity">
 
     <Button
@@ -13,9 +14,7 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/dp10"
         android:text="tts_init"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -24,10 +23,8 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/dp10"
         android:text="tts_play"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_init" />
 
     <Button
         android:id="@+id/btn_stop"
@@ -35,10 +32,8 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/dp10"
         android:text="tts_stop"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_play" />
 
     <Button
         android:id="@+id/btn_destroy"
@@ -46,9 +41,31 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/dp10"
         android:text="tts_destroy"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_stop" />
 
-</LinearLayout>
+    <EditText
+        android:id="@+id/et_speech_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@null"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:gravity="center_vertical"
+        android:hint="设置倍速"
+        android:minWidth="@dimen/dp120"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_init"
+        app:layout_constraintRight_toLeftOf="@+id/btn_set_speech_rate"
+        app:layout_constraintTop_toTopOf="@+id/btn_init" />
+
+    <Button
+        android:id="@+id/btn_set_speech_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:text="设置倍速"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_init"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_init" />
+
+</android.support.constraint.ConstraintLayout>

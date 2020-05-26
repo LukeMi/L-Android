@@ -42,6 +42,7 @@ public class TTSActivity extends AppCompatActivity {
             case R.id.btn_init:
                 if (tts == null) {
                     tts = new TextToSpeech(getApplicationContext(), status -> Logcat.log("status : " + status), getLocalClassName());
+                    tts.setSpeechRate(4f);
                 }
                 break;
             case R.id.btn_play:

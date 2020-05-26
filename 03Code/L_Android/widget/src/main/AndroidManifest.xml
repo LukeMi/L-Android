@@ -3,8 +3,10 @@
     package="com.jeferry.android.widget">
 
     <application>
-        <activity android:name=".MenuActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+        <activity android:name=".MotionLayoutActivity"></activity>
+        <activity
+            android:name=".MenuActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity android:name=".SwitchActivity" />
         <activity android:name=".fragment.FragmentActivity" />
         <activity android:name=".recycle.flexbox.RecyclerViewFlexBoxActivity" />
