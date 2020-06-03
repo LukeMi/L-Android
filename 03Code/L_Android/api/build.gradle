@@ -46,6 +46,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api project(':refresh-layout')
+    api project(':common')
     implementation 'org.apache.ant:ant:1.7.0'
 
     api "com.android.support:appcompat-v7:$rootProject.supportVersion"

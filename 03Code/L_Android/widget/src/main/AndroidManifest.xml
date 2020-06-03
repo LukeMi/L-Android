@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jeferry.android.widget">
+    package="com.jeferry.android.widget"
+    >
 
     <application>
         <activity android:name=".MotionLayoutActivity"></activity>
         <activity
             android:name=".MenuActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            />
         <activity android:name=".SwitchActivity" />
         <activity android:name=".fragment.FragmentActivity" />
         <activity android:name=".recycle.flexbox.RecyclerViewFlexBoxActivity" />
@@ -17,13 +19,16 @@
         <activity android:name=".ProgressBarActivity" />
         <activity
             android:name=".WidgetActivity"
-            android:label="控件大全" />
+            android:label="控件大全"
+            />
         <activity
             android:name=".TextViewActivity"
-            android:label="TextView控件效果" />
+            android:label="TextView控件效果"
+            />
         <activity
             android:name=".EditTextActivity"
-            android:label="EditText控件效果" />
+            android:label="EditText控件效果"
+            />
         <activity android:name=".ImageViewActivity" />
         <activity android:name=".wechat.activity.WeChatLoginActivity" />
         <activity android:name=".ViewPrintActivity" />
@@ -37,7 +42,8 @@
         <activity
             android:name=".WebViewActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            />
         <activity android:name=".SpanActivity" />
         <activity android:name=".IncludeActivity" />
         <activity android:name=".ScrollViewActivity" />
@@ -47,7 +53,8 @@
         <activity android:name=".CollapsingToolbarLayoutActivity" />
         <activity
             android:name=".EditTextInputMethodAutoActivity"
-            android:windowSoftInputMode="stateVisible|adjustResize" />
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            />
         <activity android:name=".CoordinatorLayoutActivity" />
         <activity android:name=".ConstraintLayoutActivity" />
         <activity android:name=".MeasureViewActivity" />
@@ -61,18 +68,22 @@
         <activity android:name=".DialogActivity" />
         <activity
             android:name=".PopupActivity"
-            android:configChanges="keyboardHidden|orientation" />
+            android:configChanges="keyboardHidden|orientation"
+            />
         <activity android:name=".NotificationActivity" />
         <activity android:name=".AutoCompleteActivity" />
         <activity
             android:name=".SignActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".EmotionalFaceActivity" />
         <activity android:name=".CustomViewListActivity" />
         <activity android:name=".MergeActivity" />
         <activity android:name=".ViewStubActivity" />
         <activity android:name=".SoftInputModeActivity" />
         <activity android:name=".flexbox.FlexBoxLayoutActivity" />
+        <activity android:name="com.jeferry.android.widget.event.EventDistributeActivity" />
+
     </application>
 
 </manifest>

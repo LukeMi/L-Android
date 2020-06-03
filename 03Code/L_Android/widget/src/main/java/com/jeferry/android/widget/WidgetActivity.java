@@ -12,6 +12,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import com.jeferry.android.widget.bottomsheet.BottomSheetActivity;
+import com.jeferry.android.widget.event.EventDistributeActivity;
 import com.jeferry.android.widget.flexbox.FlexBoxLayoutActivity;
 import com.jeferry.android.widget.fragment.FragmentActivity;
 import com.jeferry.android.widget.recycle.flexbox.RecyclerViewFlexBoxActivity;
@@ -94,9 +95,11 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("FlexBoxLayout", FlexBoxLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("CoordinatorLayout", CoordinatorLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("BottomSheetActivity", BottomSheetActivity.class));
+        bindBeanList.add(new IntentJumpBean("DialogActivity", DialogActivity.class));
         bindBeanList.add(new IntentJumpBean("FragmentActivity", FragmentActivity.class));
         bindBeanList.add(new IntentJumpBean("Switch", SwitchActivity.class));
         bindBeanList.add(new IntentJumpBean("ViewPager", ViewPagerActivity.class));
+        bindBeanList.add(new IntentJumpBean("事件分发", EventDistributeActivity.class));
 
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, bindBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);

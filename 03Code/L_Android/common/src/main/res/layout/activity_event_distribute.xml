@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.jeferry.android.widget.event.EventLogViewGroup
+        android:id="@+id/viewGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp60"
+        android:layout_marginRight="@dimen/dp16"
+        android:layout_marginBottom="@dimen/dp60"
+        android:background="@color/color_gray">
+
+        <com.jeferry.android.widget.event.EventLogView
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp32"
+            android:layout_marginTop="@dimen/dp60"
+            android:layout_marginRight="@dimen/dp32"
+            android:layout_marginBottom="@dimen/dp60"
+            android:background="@color/black" />
+    </com.jeferry.android.widget.event.EventLogViewGroup>
+
+</android.support.constraint.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.jeferry.android.widget.dialog.BaseDialogFragment;
 import com.lukemi.android.tutorial.view.ActionSheetDialog;
 
 public class DialogActivity extends AppCompatActivity {
@@ -13,6 +14,7 @@ public class DialogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog);
+        findViewById(R.id.center_dlg).setOnClickListener(this::onViewClicked);
         findViewById(R.id.btn_ios).setOnClickListener(this::onViewClicked);
     }
 
@@ -20,6 +22,8 @@ public class DialogActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         if (view.getId() == R.id.btn_ios) {
             showDlg();
+        } else if (view.getId() == R.id.center_dlg) {
+            BaseDialogFragment.newInstance("title","msg").show(getSupportFragmentManager(),"BaseDialogFragment");
         }
     }
 
@@ -27,7 +31,7 @@ public class DialogActivity extends AppCompatActivity {
         new ActionSheetDialog(this)
                 .builder()
                 .setCancelable(false)
-                .setCanceledOnTouchOutside(false)
+                .setCanceledOnTouchOutside(true)
                 .addSheetItem("发送给好友", ActionSheetDialog.SheetItemColor.Blue,
                         which -> Toast.makeText(DialogActivity.this, "发送给好友", Toast.LENGTH_SHORT).show())
                 .addSheetItem("转载到空间相册", ActionSheetDialog.SheetItemColor.Blue,

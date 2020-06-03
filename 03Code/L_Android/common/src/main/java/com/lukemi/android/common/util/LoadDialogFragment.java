@@ -15,14 +15,12 @@ import android.view.ViewGroup;
 public class LoadDialogFragment extends DialogFragment {
 
     private Context context;
+
     private String Message;
 
     public LoadDialogFragment() {
     }
 
-    /*public LoadDialogFragment(Context context) {
-        this.context = context;
-    }*/
 
     @Nullable
     @Override
