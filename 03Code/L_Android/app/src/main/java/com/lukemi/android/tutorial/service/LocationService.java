@@ -1,4 +1,4 @@
-package com.lukemi.android.service;
+package com.lukemi.android.tutorial.service;
 
 import android.content.Context;
 

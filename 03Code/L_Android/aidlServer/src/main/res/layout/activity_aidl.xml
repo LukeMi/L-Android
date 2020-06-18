@@ -8,12 +8,15 @@
     tools:context=".AidlActivity">
 
     <TextView
+        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="\n AIDL 服务器 \n"
-        android:textSize="@dimen/sp16" />
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.lukemi.android.toturial.aidl.widget.NoSpaceTextView
         android:layout_width="0dp"

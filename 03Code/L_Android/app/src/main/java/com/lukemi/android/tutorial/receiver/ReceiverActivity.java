@@ -1,43 +1,78 @@
 package com.lukemi.android.tutorial.receiver;
 
+import android.app.Application;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.lukemi.android.common.util.DeviceUtil;
 import com.lukemi.android.common.util.Logcat;
+import com.lukemi.android.tutorial.R;
+import com.socks.library.KLog;
 
 public class ReceiverActivity extends AppCompatActivity {
 
-    private static NetChangedReceiver netChangedReceiver;
+    public static final String TAG = ReceiverActivity.class.getSimpleName();
+
+    public static final String CUSTOM_BROAD_CAST_RECEIVER = "custom.BroadcastReceiver";
+
+    private static NetChangedReceiver mNetChangedReceiver;
+
+    private LocalBroadcastReceiver mLocalBroadcastReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.lukemi.android.tutorial.R.layout.activity_receiver);
+        setContentView(R.layout.activity_receiver);
         initNetChangedReceiver();
+        registerLocalBroadcastReceiver();
+        sendCustomBroadcastReceiver();
+        Application application = getApplication();
+        Context applicationContext = getApplicationContext();
+        KLog.d("application 地址 = "+application + " ; applicationContext 地址 = " + applicationContext);
+    }
+
+    private void sendCustomBroadcastReceiver() {
+        Intent intent = new Intent("custom.BroadcastReceiver");
+        this.sendBroadcast(intent);
+    }
+
+    private void registerLocalBroadcastReceiver() {
+        mLocalBroadcastReceiver = new LocalBroadcastReceiver();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("localManager1");
+        LocalBroadcastManager.getInstance(this).registerReceiver(mLocalBroadcastReceiver, intentFilter);
+        Intent intent = new Intent("localManager1");
+        intent.putExtra("registerLocalBroadcastReceiver", "registerLocalBroadcastReceiver");
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
 
 
     /**
      * 注册网络改变广播
      */
-    private   void initNetChangedReceiver() {
+    private void initNetChangedReceiver() {
         IntentFilter intentFilter = new IntentFilter();
         // 为BroadcastReceiver指定action，使之用于接收同action的广播(网络变化)
         intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-        netChangedReceiver = new NetChangedReceiver();
-        registerReceiver(netChangedReceiver, intentFilter);
+        mNetChangedReceiver = new NetChangedReceiver();
+        registerReceiver(mNetChangedReceiver, intentFilter);
     }
 
     @Override
     protected void onDestroy() {
-        unregisterReceiver(netChangedReceiver);
+        if (mNetChangedReceiver != null) {
+            unregisterReceiver(mNetChangedReceiver);
+        }
+        if (mLocalBroadcastReceiver != null) {
+            LocalBroadcastManager.getInstance(this).unregisterReceiver(mLocalBroadcastReceiver);
+        }
         super.onDestroy();
     }
 
@@ -48,14 +83,17 @@ public class ReceiverActivity extends AppCompatActivity {
 
         @Override
         public void onReceive(Context context, Intent intent) {
+            KLog.d(TAG, "onReceive");
             String action = intent.getAction();
-            switch (action){
+            switch (action) {
                 case ConnectivityManager.CONNECTIVITY_ACTION:
-                    Logcat.log("----networkChanged---->"+"netWorkType: "+ DeviceUtil.getNetType(ReceiverActivity.this));
-                    Toast.makeText(getApplicationContext(), DeviceUtil.getNetType(ReceiverActivity.this),Toast.LENGTH_LONG).show();
+                    KLog.d("----networkChanged---->" + "netWorkType: " + DeviceUtil.getNetType(ReceiverActivity.this));
+                    Toast.makeText(getApplicationContext(), DeviceUtil.getNetType(ReceiverActivity.this), Toast.LENGTH_LONG).show();
+                    break;
+                case CUSTOM_BROAD_CAST_RECEIVER:
+                    KLog.d(TAG, "CUSTOM_BROAD_CAST_RECEIVER ");
                     break;
             }
-
         }
     }
 }

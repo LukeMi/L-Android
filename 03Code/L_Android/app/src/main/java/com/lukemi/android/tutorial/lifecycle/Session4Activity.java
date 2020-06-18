@@ -13,6 +13,5 @@ public class Session4Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_session4);
-        ButterKnife.bind(this);
     }
 }

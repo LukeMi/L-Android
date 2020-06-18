@@ -6,8 +6,11 @@ import android.content.Intent;
 
 import com.lukemi.android.tutorial.service.ForegroundService;
 import com.lukemi.android.common.util.Logcat;
+import com.socks.library.KLog;
 
 public class BootReceiver extends BroadcastReceiver {
+
+    public static final String TAG = BootReceiver.class.getSimpleName();
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -17,9 +20,9 @@ public class BootReceiver extends BroadcastReceiver {
                 || intent.getAction().equals("android.intent.action.PACKAGE_RESTARTED")
                 || intent.getAction().equals("android.intent.action.SCREEN_ON")
                 || intent.getAction().equals("android.intent.action.SCREEN_OF")
-                ) {
+        ) {
             //在这里写重新启动service的相关操作
-            Logcat.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+            KLog.d(TAG , "onReceive" );
             startUploadService(context);
         }
         throw new UnsupportedOperationException("Not yet implemented");
