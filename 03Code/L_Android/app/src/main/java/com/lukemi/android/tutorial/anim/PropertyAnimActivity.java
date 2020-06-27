@@ -26,11 +26,6 @@ public class PropertyAnimActivity extends AbsBaseActivity {
     ImageView imgBkg;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     protected int bindLayout() {
         return R.layout.activity_property_anim;
     }

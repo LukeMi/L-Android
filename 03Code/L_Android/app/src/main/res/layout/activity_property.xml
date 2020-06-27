@@ -24,4 +24,12 @@
         android:gravity="center"
         android:text="需要折叠的区域" />
 
+    <View
+        android:id="@+id/v_bottom"
+        android:layout_width="@dimen/dp120"
+        android:layout_height="@dimen/dp140"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/gray" />
+
 </RelativeLayout>
