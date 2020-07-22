@@ -18,7 +18,7 @@ import com.lukemi.android.tutorial.permission.PermissionActivity;
 import com.lukemi.android.tutorial.sdf.SpActivity;
 import com.lukemi.android.tutorial.system.FlashActivity;
 import com.lukemi.android.tutorial.system.ScreenShotForbiddenActivity;
-
+import com.lukemi.android.tutorial.touch.TouchEventActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +60,7 @@ public class AndroidActivity extends AppCompatActivity {
         intentJumpBeanList.add(new IntentJumpBean("后置灯", FlashActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("禁止截屏", ScreenShotForbiddenActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Permission", PermissionActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("事件分发", TouchEventActivity.class));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }

@@ -5,7 +5,7 @@ import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
-import com.lukemi.android.common.util.Logcat;
+import com.socks.library.KLog;
 
 public class TouchViewGroup extends ConstraintLayout {
 
@@ -23,24 +23,23 @@ public class TouchViewGroup extends ConstraintLayout {
     }
 
     @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        boolean b = super.onInterceptTouchEvent(ev);
-        Logcat.log("TouchViewGroup onInterceptTouchEvent  b : " + b);
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        boolean b = super.dispatchTouchEvent(ev);
+        KLog.d(TouchEventActivity.TAG, "dispatchTouchEvent : " + b);
         return b;
     }
 
-
     @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        boolean b = super.dispatchTouchEvent(ev);
-        Logcat.log("TouchViewGroup dispatchTouchEvent  b : " + b);
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        boolean b = super.onInterceptTouchEvent(ev);
+        KLog.d(TouchEventActivity.TAG, "onInterceptTouchEvent : " + b);
         return b;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         boolean b = super.onTouchEvent(event);
-        Logcat.log("TouchViewGroup onTouchEvent  b : " + b);
+        KLog.d(TouchEventActivity.TAG, "onTouchEvent : " + b + " event : " + event.getAction());
         return b;
     }
 }

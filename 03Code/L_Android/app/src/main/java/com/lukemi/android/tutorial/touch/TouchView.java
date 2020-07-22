@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.lukemi.android.common.util.Logcat;
+import com.socks.library.KLog;
 
 public class TouchView extends View {
     public TouchView(Context context) {
@@ -25,14 +25,14 @@ public class TouchView extends View {
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         boolean b = super.dispatchTouchEvent(event);
-        Logcat.log("TouchView dispatchTouchEvent  b : " + b);
+        KLog.d(TouchEventActivity.TAG, "dispatchTouchEvent");
         return b;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         boolean b = super.onTouchEvent(event);
-        Logcat.log("TouchView onTouchEvent  b : " + b);
+        KLog.d(TouchEventActivity.TAG, "onTouchEvent");
         return b;
     }
 }

@@ -1,48 +1,50 @@
 package com.lukemi.android.tutorial.touch;
 
 import android.os.Bundle;
-import android.view.MotionEvent;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.base.AbsBaseActivity;
-import com.lukemi.android.common.util.Logcat;
 
-import butterknife.BindView;
-import butterknife.OnClick;
+public class TouchEventActivity extends AppCompatActivity {
 
-public class  TouchEventActivity extends AbsBaseActivity {
+    public static final String TAG = TouchEventActivity.class.getSimpleName();
 
-    @BindView(R.id.view)
-    View view;
-    @BindView(R.id.cl_vg)
     ViewGroup clVg;
 
+    View view;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_touch_event);
+        initView();
     }
 
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        boolean b = super.dispatchTouchEvent(ev);
-        Logcat.log("TouchActivity dispatchTouchEvent b : " + b);
-        return b;
+    /*
+     @Override
+     public boolean dispatchTouchEvent(MotionEvent ev) {
+         KLog.d(TAG, "dispatchTouchEvent");
+         return super.dispatchTouchEvent(ev);
+     }
+
+     @Override
+     public boolean onTouchEvent(MotionEvent event) {
+         KLog.d(TAG, "onTouchEvent");
+         return super.onTouchEvent(event);
+     }
+ */
+    private void initView() {
+        clVg = findViewById(R.id.cl_vg);
+        view = findViewById(R.id.view);
+
+        clVg.setOnClickListener(this::onViewClicked);
+        view.setOnClickListener(this::onViewClicked);
     }
 
-    @Override
-    protected int bindLayout() {
-        return R.layout.activity_touch_event;
-    }
-
-    @Override
-    protected void initView() {
-
-    }
-
-    @OnClick({R.id.view, R.id.cl_vg})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.view:
