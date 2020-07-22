@@ -9,9 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
-import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lukemi.android.common.util.Logcat;
@@ -19,21 +17,15 @@ import com.lukemi.android.tutorial.R;
 import com.scwang.smartrefresh.layout.util.DensityUtil;
 import com.socks.library.KLog;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 public class PropertyActivity extends AppCompatActivity {
 
     public static final String TAG = PropertyActivity.class.getSimpleName();
 
-    @BindView(R.id.iv_switch)
-    ImageView ivSwitch;
-    @BindView(R.id.tv_area)
-    TextView tvArea;
+    private ImageView ivSwitch;
 
-    @BindView(R.id.v_bottom)
-    View mVBottom;
+    private TextView tvArea;
+
+    private View mVBottom;
 
     private int height;
     private ValueAnimator valueAnimator;
@@ -42,9 +34,18 @@ public class PropertyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_property);
-        ButterKnife.bind(this);
+        initView();
 //        measure();
         Logcat.log("height : height " + height);
+    }
+
+    private void initView() {
+        ivSwitch = findViewById(R.id.iv_switch);
+        tvArea = findViewById(R.id.tv_area);
+        mVBottom = findViewById(R.id.v_bottom);
+
+        ivSwitch.setOnClickListener(this::onViewClicked);
+        mVBottom.setOnClickListener(this::onViewClicked);
     }
 
     /**
@@ -57,7 +58,6 @@ public class PropertyActivity extends AppCompatActivity {
         height = tvArea.getMeasuredHeight();
     }
 
-    @OnClick({R.id.iv_switch, R.id.v_bottom})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_switch:
@@ -73,7 +73,6 @@ public class PropertyActivity extends AppCompatActivity {
 
     private void start1() {
         int defWidth = DensityUtil.dp2px(120);
-        int defHeight = DensityUtil.dp2px(140);
         int maxWidth = getResources().getDisplayMetrics().widthPixels;
         int maxHeight = (int) (getResources().getDisplayMetrics().widthPixels * (((float) 140 / 120)));
         KLog.d(TAG, maxWidth + " : " + maxHeight + " ; " + (float) ((float) 140 / 120));
@@ -91,12 +90,14 @@ public class PropertyActivity extends AppCompatActivity {
             @Override
             public void onAnimationStart(Animator animation, boolean isReverse) {
                 KLog.d(TAG, "onAnimationStart");
+                mVBottom.setEnabled(false);
             }
 
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
                 KLog.d(TAG, "onAnimationEnd");
+                mVBottom.setEnabled(true);
             }
         });
         valueAnimator.setInterpolator(new AccelerateInterpolator());
