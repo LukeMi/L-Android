@@ -24,15 +24,15 @@ public class TouchView extends View {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        boolean b = super.dispatchTouchEvent(event);
         KLog.d(TouchEventActivity.TAG, "dispatchTouchEvent");
-        return b;
+//        boolean b = super.dispatchTouchEvent(event);
+        return true;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         boolean b = super.onTouchEvent(event);
-        KLog.d(TouchEventActivity.TAG, "onTouchEvent");
-        return b;
+        KLog.d(TouchEventActivity.TAG, "b : " + b + " ;onTouchEvent ,action: " + event.getAction());
+        return true;
     }
 }

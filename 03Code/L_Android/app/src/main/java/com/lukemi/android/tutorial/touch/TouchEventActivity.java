@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
@@ -13,9 +12,9 @@ public class TouchEventActivity extends AppCompatActivity {
 
     public static final String TAG = TouchEventActivity.class.getSimpleName();
 
-    ViewGroup clVg;
+    TouchViewGroup clVg;
 
-    View view;
+    TouchView view;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,8 +23,7 @@ public class TouchEventActivity extends AppCompatActivity {
         initView();
     }
 
-    /*
-     @Override
+/*     @Override
      public boolean dispatchTouchEvent(MotionEvent ev) {
          KLog.d(TAG, "dispatchTouchEvent");
          return super.dispatchTouchEvent(ev);
@@ -35,8 +33,8 @@ public class TouchEventActivity extends AppCompatActivity {
      public boolean onTouchEvent(MotionEvent event) {
          KLog.d(TAG, "onTouchEvent");
          return super.onTouchEvent(event);
-     }
- */
+     }*/
+
     private void initView() {
         clVg = findViewById(R.id.cl_vg);
         view = findViewById(R.id.view);
