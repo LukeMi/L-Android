@@ -9,6 +9,9 @@ import android.view.View;
 import com.socks.library.KLog;
 
 public class TouchView extends View {
+
+    private static final String TAG = TouchView.class.getSimpleName();
+
     public TouchView(Context context) {
         super(context);
     }
@@ -21,6 +24,19 @@ public class TouchView extends View {
         super(context, attrs, defStyleAttr);
     }
 
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        KLog.d(TAG, "onAttachedToWindow");
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int hSize = MeasureSpec.getSize(widthMeasureSpec);
+        int vSize = MeasureSpec.getSize(heightMeasureSpec);
+        KLog.d(TAG, "hSize : " + hSize + " ;vSize : " + vSize);
+    }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
