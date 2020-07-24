@@ -4,8 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.TextView;
+
+import com.socks.library.KLog;
 
 public class SchemeActivity extends AppCompatActivity {
 
@@ -27,15 +28,17 @@ public class SchemeActivity extends AppCompatActivity {
 
     private void initData() {
         Intent intent = getIntent();
-        Log.e(TAG, "scheme:" + intent.getScheme());
+        KLog.d(TAG, "scheme:" + intent.getScheme());
+        String aidl = intent.getStringExtra("aidl");
         Uri uri = intent.getData();
-        Log.e(TAG, "scheme: " + uri.getScheme());
-        Log.e(TAG, "host: " + uri.getHost());
-        Log.e(TAG, "port: " + uri.getPort());
-        Log.e(TAG, "path: " + uri.getPath());
-        Log.e(TAG, "queryString: " + uri.getQuery());
-        Log.e(TAG, "id: " + uri.getQueryParameter("id"));
-        Log.e(TAG, "type: " + uri.getQueryParameter("type"));
+        KLog.d(TAG, "scheme: " + uri.getScheme());
+        KLog.d(TAG, "host: " + uri.getHost());
+        KLog.d(TAG, "port: " + uri.getPort());
+        KLog.d(TAG, "path: " + uri.getPath());
+        KLog.d(TAG, "queryString: " + uri.getQuery());
+        KLog.d(TAG, "id: " + uri.getQueryParameter("id"));
+        KLog.d(TAG, "type: " + uri.getQueryParameter("type"));
+        KLog.d(TAG, "bundle: " + aidl);
 
         result = "scheme: " + uri.getScheme() + "\n\n" +
                 "host: " + uri.getHost() + "\n\n" +

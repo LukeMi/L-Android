@@ -114,7 +114,6 @@
         <activity android:name=".baidu.BDLocQuestionActivity" />
         <activity android:name=".camera.WX_Camera_Activity" />
         <activity android:name=".utiltest.ToastUtilActivity" />
-        <activity android:name=".SchemeActivity" />
         <activity android:name=".utiltest.BitmapUtilActivity" />
         <activity android:name=".utiltest.UtilMainActivity" />
         <activity android:name=".viewtest.ZoomHeadListViewActivity" />

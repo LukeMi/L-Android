@@ -14,12 +14,13 @@ import android.webkit.WebViewClient;
 public class JSAndroidActivity extends AppCompatActivity {
 
     WebView wv;
-    private Handler mHandler = new Handler();
+
+    private static Handler mHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_jsandroid);
         initView();
     }
 
@@ -43,6 +44,7 @@ public class JSAndroidActivity extends AppCompatActivity {
             }
         });
         wv.loadUrl("file:///android_asset/js.html");
+//        wv.loadUrl("file:///android_asset/schemeTest.html");
     }
 
     class DemoJavaScriptInterface {

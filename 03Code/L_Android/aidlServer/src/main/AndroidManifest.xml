@@ -39,13 +39,14 @@
         <activity android:name=".SchemeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="hostq"
                     android:scheme="aidl"
+                    android:host="host"
+                    android:port="3000"
+                    android:path="/path"
                     />
             </intent-filter>
         </activity>
