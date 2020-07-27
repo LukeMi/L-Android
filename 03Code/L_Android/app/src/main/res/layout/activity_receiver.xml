@@ -6,4 +6,16 @@
     android:layout_height="match_parent"
     android:padding="@dimen/dp16">
 
+    <TextView
+        android:id="@+id/tv_local"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="本地广播取到的值"
+        android:paddingTop="@dimen/dp8"
+        android:paddingBottom="@dimen/dp8"
+        android:textColor="@color/red"
+        android:textSize="@dimen/sp16"
+        android:textStyle="bold" />
+
 </RelativeLayout>

@@ -9,10 +9,10 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lukemi.android.common.util.DeviceUtil;
-import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
 import com.socks.library.KLog;
 
@@ -26,16 +26,19 @@ public class ReceiverActivity extends AppCompatActivity {
 
     private LocalBroadcastReceiver mLocalBroadcastReceiver;
 
+    private TextView tvLocal;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receiver);
+        tvLocal = findViewById(R.id.tv_local);
         initNetChangedReceiver();
         registerLocalBroadcastReceiver();
         sendCustomBroadcastReceiver();
         Application application = getApplication();
         Context applicationContext = getApplicationContext();
-        KLog.d("application 地址 = "+application + " ; applicationContext 地址 = " + applicationContext);
+        KLog.d("application 地址 = " + application + " ; applicationContext 地址 = " + applicationContext);
     }
 
     private void sendCustomBroadcastReceiver() {
@@ -44,13 +47,24 @@ public class ReceiverActivity extends AppCompatActivity {
     }
 
     private void registerLocalBroadcastReceiver() {
-        mLocalBroadcastReceiver = new LocalBroadcastReceiver();
+        // 注册本地广播
+        mLocalBroadcastReceiver = new LocalBroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String action = intent.getAction();
+                KLog.d(TAG, action);
+                tvLocal.setText("this value is from local broadcastReceiver\n" + intent.getStringExtra("local"));
+            }
+        };
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("localManager1");
+        intentFilter.addAction(LocalBroadcastReceiver.TAG);
         LocalBroadcastManager.getInstance(this).registerReceiver(mLocalBroadcastReceiver, intentFilter);
-        Intent intent = new Intent("localManager1");
-        intent.putExtra("registerLocalBroadcastReceiver", "registerLocalBroadcastReceiver");
+
+        KLog.d(TAG, "发送本地广播开始");
+        Intent intent = new Intent(LocalBroadcastReceiver.TAG);
+        intent.putExtra("local", "this is local broadcast receiver value");
         LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
+        KLog.d(TAG, "发送本地广播结束");
     }
 
 
