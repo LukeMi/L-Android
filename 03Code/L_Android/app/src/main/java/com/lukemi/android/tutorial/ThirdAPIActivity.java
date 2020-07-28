@@ -11,12 +11,12 @@ import com.lukemi.android.common.IntentJumpAdapter;
 import com.lukemi.android.common.IntentJumpBean;
 import com.lukemi.android.tutorial.baidu.BDActivity;
 import com.lukemi.android.tutorial.base.AbsBaseActivity;
+import com.lukemi.android.tutorial.brvah.BaseQuickActivity;
 import com.lukemi.android.tutorial.db.GreenDaoActivity;
 import com.lukemi.android.tutorial.evenbus.EventBusReceiveActivity;
 import com.lukemi.android.tutorial.glide.GlideActivity;
 import com.lukemi.android.tutorial.handler.HandlerTestActivity;
-
-
+import com.lukemi.android.tutorial.xg.XGPushActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +55,8 @@ public class ThirdAPIActivity extends AbsBaseActivity {
         intentJumpBeanList.add(new IntentJumpBean("GreenDao", GreenDaoActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("EventBus", EventBusReceiveActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Glide", GlideActivity.class));
-//        intentJumpBeanList.add(new IntentJumpBean("BRVAH", BaseQuickActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("信鸽推送", XGPushActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("BRVAH", BaseQuickActivity.class));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/xg_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--通知的背景，id名字不能改变，其他可变-->
+    <ImageView
+        android:id="@+id/xg_notification_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+    <!--通知的大图标，id名字不能改变，其他可变.必须-->
+    <ImageView
+        android:id="@+id/xg_notification_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:scaleType="centerInside" />
+    <!--通知的时间，id名字不能改变，其他可变.若不显示时间可以去掉此布局-->
+    <TextView
+        android:id="@+id/xg_notification_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:textSize="12dp" />
+    <!--通知的标题，id名字不能改变，其他可变。必须-->
+    <TextView
+        android:id="@+id/xg_notification_style_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toLeftOf="@id/xg_notification_date"
+        android:layout_toRightOf="@id/xg_notification_icon"
+        android:singleLine="true" />
+    <!--通知的内容，id名字不能改变，其他可变。必须-->
+    <TextView
+        android:id="@+id/xg_notification_style_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/xg_notification_style_title"
+        android:layout_alignLeft="@+id/xg_notification_style_title"
+        android:layout_marginTop="1dp"
+        android:layout_toLeftOf="@id/xg_notification_date"
+        android:singleLine="true" />
+    <!--带音频的富媒体通知的音频播放按钮，id名字不能改变，其他可变。若没用到音频富媒体可以去掉此布局-->
+    <ImageView
+        android:id="@+id/xg_notification_audio_play"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/xg_notification_style_title"
+        android:layout_alignParentBottom="true"
+        android:background="@android:drawable/ic_media_play"
+        android:visibility="gone" />
+    <!--带音频的富媒体通知的音频停止播放按钮，id名字不能改变，其他可变.若没用到音频富媒体可以去掉此布局-->
+    <ImageView
+        android:id="@+id/xg_notification_audio_stop"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/xg_notification_audio_play"
+        android:background="@android:drawable/ic_media_pause"
+        android:visibility="gone" />
+</RelativeLayout>

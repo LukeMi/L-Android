@@ -25,7 +25,8 @@ android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
     defaultConfig {
-        applicationId "com.lukemi.android.tutorial"
+        keyProps.load(new FileInputStream(file("../keystore/developer/keystore.properties")))
+        applicationId keyProps['APPLICATION_ID']
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -84,7 +85,7 @@ android {
             projectName = "developer"
             keyProps.load(new FileInputStream(file("../keystore/developer/keystore.properties")))
             buildConfigField "int", "userType", "1"
-            minSdkVersion 14
+            minSdkVersion 16
             targetSdkVersion 28
             versionCode 1
             versionName "1.0"
@@ -130,12 +131,12 @@ android {
             v2SigningEnabled true
         }
 
-        debug {
+      /*  debug {
             storeFile file(keyProps['STORE_FILE'])
             storePassword keyProps['STORE_PASSWORD']
             keyAlias keyProps['KEY_ALIAS']
             keyPassword keyProps['KEY_PASSWORD']
-        }
+        }*/
     }
     // Gradle Build 配置
     buildTypes {
@@ -196,6 +197,7 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$rootProject.supportVersion"
     implementation "com.android.support:design:$rootProject.supportVersion"
     implementation "com.android.support:cardview-v7:$rootProject.supportVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -212,7 +214,7 @@ dependencies {
     implementation project(':common')
     implementation project(':widget')
     implementation project(':api')
-    implementation 'com.alibaba:fastjson:1.2.31'
+    implementation project(':xgpush')
 
     // Butterknife
     implementation "com.jakewharton:butterknife:$rootProject.butterknifeVersion"

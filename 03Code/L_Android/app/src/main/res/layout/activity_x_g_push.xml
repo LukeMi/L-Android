@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".xg.XGPushActivity">
+
+    <TextView
+        android:id="@+id/tv_xg_register"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp48"
+        android:background="@drawable/selector_enable_color"
+        android:gravity="center"
+        android:text="注册信鸽"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_xg_un_register"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp48"
+        android:background="@drawable/selector_enable_color"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="取消注册信鸽"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_xg_register" />
+
+</android.support.constraint.ConstraintLayout>

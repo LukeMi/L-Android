@@ -1,3 +1,4 @@
+include ':xgpush'
 println "settings start"
 
 include ':refresh-layout',

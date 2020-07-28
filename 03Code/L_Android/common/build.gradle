@@ -64,6 +64,8 @@ dependencies {
 
     api 'com.github.zhaokaiqiang.klog:library:1.6.0'
 
+    api 'com.alibaba:fastjson:1.2.31'
+
     // ARouter
     api("com.alibaba:arouter-api:${rootProject.arouterVersion}") {
         exclude group: 'com.android.support'

@@ -19,10 +19,9 @@ import com.lukemi.android.tutorial.api.AndroidApiActivity;
 import com.lukemi.android.tutorial.category.ComponentActivity;
 import com.lukemi.android.tutorial.manager.ManagerStatisticsActivity;
 import com.lukemi.android.tutorial.rxJava.RxJavaActivity;
-import com.lukemi.android.tutorial.system.SystemActivity;
 import com.lukemi.android.tutorial.statics.StaticFieldActivity;
+import com.lukemi.android.tutorial.system.SystemActivity;
 import com.lukemi.android.tutorial.utiltest.UtilMainActivity;
-
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
@@ -37,6 +36,8 @@ import okhttp3.Call;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.rv_intent)
     RecyclerView mRvIntent;
