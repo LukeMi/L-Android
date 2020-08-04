@@ -21,6 +21,7 @@ import com.lukemi.android.tutorial.lifecycle.MyActivityLifecycleCallbacks;
 import com.lukemi.android.tutorial.receiver.TimeChangedReceiver;
 import com.lukemi.android.tutorial.service.ForegroundService;
 import com.squareup.leakcanary.LeakCanary;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import org.greenrobot.greendao.database.Database;
 
@@ -85,6 +86,7 @@ public class Application extends BaseApplication {
         initDao();
         initToast();
         initARouter();
+        initBugly();
     }
 
     private void initARouter() {
@@ -132,7 +134,7 @@ public class Application extends BaseApplication {
         if (TextUtils.isEmpty(appchannel)) {
             appchannel = "baidu";
             getSharedPreferences("appConfigure", Context.MODE_PRIVATE).edit().putString("appchannel", appchannel).apply();
-            Logcat.log("----getAppChannel---- " + "is not from spf");
+            Logcat.log("----getAppChannel---- " + "Mis not from spf");
         }
         return appchannel;
     }
@@ -148,6 +150,12 @@ public class Application extends BaseApplication {
         registerReceiver(dateChangedReceiver, intentFilter);
         // 实时时间
         handler.sendEmptyMessage(MSG_CURRENT_TIME);
+    }
+
+    private void initBugly(){
+//        CrashReport.initCrashReport(getApplicationContext());
+
+        CrashReport.initCrashReport(getApplicationContext(), "ecec18200b", true);
     }
 
 }

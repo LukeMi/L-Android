@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         updateVersion(this);
+         int i = 1/0;
     }
 
     private void updateVersion(MainActivity mainActivity) {

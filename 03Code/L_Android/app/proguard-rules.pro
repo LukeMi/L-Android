@@ -103,3 +103,8 @@ public static java.lang.String TABLENAME;
 # If single-type injection is used, that is, no interface is defined to implement IProvider, the following rules need to be added to protect the implementation
 # -keep class * implements com.alibaba.android.arouter.facade.template.IProvider
 # ----------------------------- Arouter end -----------------------------
+
+# ----------------------------- bugly start  -----------------------------
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{*;}
+# ----------------------------- bugly end  -----------------------------

@@ -308,6 +308,8 @@ dependencies {
     //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    implementation 'com.tencent.bugly:crashreport:3.2.33'
+
     // ARouter
     annotationProcessor "com.alibaba:arouter-compiler:${rootProject.arouterAnnotationVersion}"
 }
