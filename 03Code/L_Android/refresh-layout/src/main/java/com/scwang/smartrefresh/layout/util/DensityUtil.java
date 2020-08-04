@@ -1,6 +1,8 @@
 package com.scwang.smartrefresh.layout.util;
 
+import android.content.Context;
 import android.content.res.Resources;
+import android.util.TypedValue;
 
 public class DensityUtil {
 
@@ -36,5 +38,19 @@ public class DensityUtil {
      */
     public float px2dip(float pxValue) {
         return (pxValue / density);
+    }
+
+    /**
+     * sp转px
+     */
+    public static int sp2px(Context context, float spVal) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, spVal, context.getResources().getDisplayMetrics());
+    }
+
+    /**
+     * sp转px
+     */
+    public static int dp2px(Context context, float spVal) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, spVal, context.getResources().getDisplayMetrics());
     }
 }  
