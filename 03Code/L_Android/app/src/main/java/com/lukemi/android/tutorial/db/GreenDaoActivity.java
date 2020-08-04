@@ -72,7 +72,7 @@ public class GreenDaoActivity extends AppCompatActivity implements BaseQuickAdap
                 id++;
                 int age = 10;
                 Student student = new Student();
-                student.setAge("age: " + String.valueOf(age + id));
+                student.setAge("age: " + (age + id));
                 student.setName("name: " + id);
                 student.setNumber("number: " + id);
                 insertStudent(student);

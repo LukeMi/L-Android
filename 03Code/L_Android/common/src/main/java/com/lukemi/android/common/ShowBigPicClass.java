@@ -44,7 +44,7 @@ public class ShowBigPicClass {
             @Override
             public void run() {
                 try {
-                    String fileName = "ZSGD_Water_" + String.valueOf(Calendar.getInstance().getTimeInMillis()) + ".jpg";
+                    String fileName = "ZSGD_Water_" + Calendar.getInstance().getTimeInMillis() + ".jpg";
                     File file = new File(Environment.getExternalStorageDirectory(), File.separator + "zsgd" + fileName);
                     FileOutputStream fos = new FileOutputStream(file);
                     bm.compress(Bitmap.CompressFormat.JPEG, 100, fos);

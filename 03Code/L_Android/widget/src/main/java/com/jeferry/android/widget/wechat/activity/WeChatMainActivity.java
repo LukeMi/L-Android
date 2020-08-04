@@ -81,8 +81,8 @@ public class WeChatMainActivity extends AppCompatActivity {
      * 初始化控件
      */
     private void initView() {
-        mainViewPager = ((ViewPager) findViewById(R.id.mainViewPager));
-        navigateTabLayout = ((TabLayout) findViewById(R.id.bottomNavigationBar));
+        mainViewPager = findViewById(R.id.mainViewPager);
+        navigateTabLayout = findViewById(R.id.bottomNavigationBar);
         initMainViewPager();
         initNavigateTabLayout();
     }
@@ -168,8 +168,8 @@ public class WeChatMainActivity extends AppCompatActivity {
 
         public View getTabView(int position) {
             View view = View.inflate(context, R.layout.item_wechat_main_navigation, null);
-            ImageView imageView = (ImageView) view.findViewById(R.id.icon);
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            ImageView imageView = view.findViewById(R.id.icon);
+            TextView textView = view.findViewById(R.id.title);
             imageView.setImageDrawable(getResources().getDrawable(drawableIDs[position]));
             textView.setText(titles[position]);
             return view;

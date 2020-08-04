@@ -42,7 +42,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label,android:theme"
         >
-        <activity android:name=".xg.XGPushActivity"></activity>
+        <activity android:name=".xg.XGPushActivity" />
         <activity
             android:name=".LauncherActivity"
             android:launchMode="singleTask"

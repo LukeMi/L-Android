@@ -57,10 +57,10 @@ public class FrameActivity extends AppCompatActivity implements View.OnClickList
      * 初始化控件
      */
     private void initView() {
-        frameIV = ((ImageView) findViewById(R.id.frameIV));
-        controlBTN = ((Button) findViewById(R.id.control));
+        frameIV = findViewById(R.id.frameIV);
+        controlBTN = findViewById(R.id.control);
         controlBTN.setOnClickListener(this);
-        addFrameBTN = ((Button) findViewById(R.id.addFrame));
+        addFrameBTN = findViewById(R.id.addFrame);
         addFrameBTN.setOnClickListener(this);
     }
 

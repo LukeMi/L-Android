@@ -49,11 +49,11 @@ public class ActionSheetDialog {
         view.setMinimumWidth(display.getWidth());
 
         // 获取自定义Dialog布局中的控件
-        sLayout_content = (ScrollView) view.findViewById(R.id.sLayout_content);
-        lLayout_content = (LinearLayout) view
+        sLayout_content = view.findViewById(R.id.sLayout_content);
+        lLayout_content = view
                 .findViewById(R.id.lLayout_content);
-        txt_title = (TextView) view.findViewById(R.id.txt_title);
-        txt_cancel = (TextView) view.findViewById(R.id.txt_cancel);
+        txt_title = view.findViewById(R.id.txt_title);
+        txt_cancel = view.findViewById(R.id.txt_cancel);
         txt_cancel.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,7 +131,7 @@ public class ActionSheetDialog {
             SheetItem sheetItem = sheetItemList.get(i - 1);
             String strItem = sheetItem.name;
             SheetItemColor color = sheetItem.color;
-            final OnSheetItemClickListener listener = (OnSheetItemClickListener) sheetItem.itemClickListener;
+            final OnSheetItemClickListener listener = sheetItem.itemClickListener;
 
             TextView textView = new TextView(context);
             textView.setText(strItem);
@@ -217,7 +217,7 @@ public class ActionSheetDialog {
 
         private String name;
 
-        private SheetItemColor(String name) {
+        SheetItemColor(String name) {
             this.name = name;
         }
 

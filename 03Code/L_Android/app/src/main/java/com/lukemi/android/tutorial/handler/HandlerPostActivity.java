@@ -94,13 +94,13 @@ public class HandlerPostActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void initView() {
-        pBTN = ((Button) findViewById(R.id.press_HandlerPostActivity));
-        insideHandlerBTN = ((Button) findViewById(R.id.insideHandler));
+        pBTN = findViewById(R.id.press_HandlerPostActivity);
+        insideHandlerBTN = findViewById(R.id.insideHandler);
         pBTN.setOnClickListener(this);
         insideHandlerBTN.setOnClickListener(this);
-        showTV = ((TextView) findViewById(R.id.showResult_HandlerPostActivity));
-        showTV1 = ((TextView) findViewById(R.id.showResult1_HandlerPostActivity));
-        showTV2 = ((TextView) findViewById(R.id.receiverInsideHandlerMSG));
+        showTV = findViewById(R.id.showResult_HandlerPostActivity);
+        showTV1 = findViewById(R.id.showResult1_HandlerPostActivity);
+        showTV2 = findViewById(R.id.receiverInsideHandlerMSG);
     }
 
     @Override

@@ -11,6 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 /**
  * 网络请求工具类
@@ -43,7 +44,7 @@ public class HttpUtils {
                 // 获取数据
                 is = conn.getInputStream();
                 // 在转换流里定义编码格式(网上下载的数据有中文，一定要考虑到编码格式)
-                br = new BufferedReader(new InputStreamReader(is, "utf-8"));
+                br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
                 // 存放每一行的StringBuilder
                 StringBuilder builder = new StringBuilder();
                 String line = null;

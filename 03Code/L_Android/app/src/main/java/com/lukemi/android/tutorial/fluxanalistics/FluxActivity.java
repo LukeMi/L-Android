@@ -47,9 +47,9 @@ public class FluxActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        clickBTN = ((Button) findViewById(R.id.click));
-        showFlux_ET = ((TextView) findViewById(R.id.showFlux));
-        pic_IV = ((ImageView) findViewById(R.id.pic));
+        clickBTN = findViewById(R.id.click);
+        showFlux_ET = findViewById(R.id.showFlux);
+        pic_IV = findViewById(R.id.pic);
 
         clickBTN.setOnClickListener(this);
     }
@@ -76,8 +76,8 @@ public class FluxActivity extends AppCompatActivity implements View.OnClickListe
             //ui操作
             runOnUiThread(() -> {
                 pic_IV.setImageBitmap(bitmap);
-                long uidRxBytes = ts.getUidRxBytes(uid);
-                long uidTxBytes = ts.getUidTxBytes(uid);
+                long uidRxBytes = TrafficStats.getUidRxBytes(uid);
+                long uidTxBytes = TrafficStats.getUidTxBytes(uid);
                 totalBytes = uidRxBytes + uidTxBytes;
                 showFlux_ET.setText("使用流量 = " + totalBytes + "byte" + "");
                 Logcat.log("----FluxActivity----info---->" + "uid= " + uid

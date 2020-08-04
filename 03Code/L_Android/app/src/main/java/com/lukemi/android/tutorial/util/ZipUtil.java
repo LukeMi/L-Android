@@ -6,6 +6,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.GZIPInputStream;
@@ -50,7 +51,7 @@ public class ZipUtil {
         }
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         ByteArrayInputStream in = new ByteArrayInputStream(
-                zipStr.getBytes("ISO-8859-1"));
+                zipStr.getBytes(StandardCharsets.ISO_8859_1));
         GZIPInputStream gunzip = new GZIPInputStream(in);
         byte[] buffer = new byte[256];
         int n;

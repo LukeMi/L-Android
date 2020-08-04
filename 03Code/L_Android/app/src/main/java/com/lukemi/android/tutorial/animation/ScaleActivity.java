@@ -16,7 +16,7 @@ public class ScaleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView( R.layout.activity_scale);
-        scaleImg = ((ImageView) findViewById( R.id.scale_img_ScaleAct));
+        scaleImg = findViewById( R.id.scale_img_ScaleAct);
         ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f, 1.4f, 1.0f, 1.4f,
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         scaleAnimation.setDuration(2000);

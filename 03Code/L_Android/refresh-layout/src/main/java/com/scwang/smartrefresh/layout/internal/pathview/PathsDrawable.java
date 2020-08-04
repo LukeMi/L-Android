@@ -221,17 +221,11 @@ public class PathsDrawable extends Drawable {
     }
 
     public boolean canReuseBitmap(int width, int height) {
-        if (width == mCachedBitmap.getWidth()
-                && height == mCachedBitmap.getHeight()) {
-            return true;
-        }
-        return false;
+        return width == mCachedBitmap.getWidth()
+                && height == mCachedBitmap.getHeight();
     }
     public boolean canReuseCache() {
-        if (!mCacheDirty) {
-            return true;
-        }
-        return false;
+        return !mCacheDirty;
     }
 
     public void updateCacheStates() {

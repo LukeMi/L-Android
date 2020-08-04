@@ -145,7 +145,6 @@ public class RVRefreshView extends LinearLayout implements View.OnTouchListener 
      * STATUS_REFRESHING 和 STATUS_REFRESH_FINISHED
      */
     private int currentStatus = STATUS_REFRESH_FINISHED;
-    ;
 
     /**
      * 记录上一次的状态是什么，避免进行重复操作
@@ -182,10 +181,10 @@ public class RVRefreshView extends LinearLayout implements View.OnTouchListener 
         super(context, attrs);
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
         header = LayoutInflater.from(context).inflate(R.layout.pull_to_refresh, null, true);
-        progressBar = (ProgressBar) header.findViewById(R.id.progress_bar);
-        arrow = (ImageView) header.findViewById(R.id.arrow);
-        description = (TextView) header.findViewById(R.id.description);
-        updateAt = (TextView) header.findViewById(R.id.updated_at);
+        progressBar = header.findViewById(R.id.progress_bar);
+        arrow = header.findViewById(R.id.arrow);
+        description = header.findViewById(R.id.description);
+        updateAt = header.findViewById(R.id.updated_at);
         touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         refreshUpdatedAtValue();
         setOrientation(VERTICAL);

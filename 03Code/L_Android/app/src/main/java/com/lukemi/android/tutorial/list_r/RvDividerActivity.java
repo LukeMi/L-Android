@@ -170,7 +170,7 @@ public class RvDividerActivity extends AppCompatActivity {
 
         public DViewHolder(View itemView) {
             super(itemView);
-            tvTitle = (TextView) itemView.findViewById(R.id.tv_title);
+            tvTitle = itemView.findViewById(R.id.tv_title);
         }
 
 

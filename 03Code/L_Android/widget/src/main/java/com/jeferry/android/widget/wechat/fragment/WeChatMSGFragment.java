@@ -95,16 +95,16 @@ public class WeChatMSGFragment extends BaseLazyFragment {
 
     private void initView() {
         View c1 = inflater.inflate(R.layout.item_common_image, null);
-        ImageView img1 = (ImageView) c1.findViewById(R.id.img_common);
+        ImageView img1 = c1.findViewById(R.id.img_common);
         img1.setImageResource(R.drawable.wallpaper1);
         View c2 = inflater.inflate(R.layout.item_common_image, null);
-        ImageView img2 = (ImageView) c2.findViewById(R.id.img_common);
+        ImageView img2 = c2.findViewById(R.id.img_common);
         img2.setImageResource(R.drawable.wallpaper2);
         View c3 = inflater.inflate(R.layout.item_common_image, null);
-        ImageView img3 = (ImageView) c3.findViewById(R.id.img_common);
+        ImageView img3 = c3.findViewById(R.id.img_common);
         img3.setImageResource(R.drawable.wallpaper3);
         View c4 = inflater.inflate(R.layout.item_common_image, null);
-        ImageView img4 = (ImageView) c4.findViewById(R.id.img_common);
+        ImageView img4 = c4.findViewById(R.id.img_common);
         img4.setImageResource(R.drawable.wallpaper4);
         viewflipper.addView(c1);
         viewflipper.addView(c2);

@@ -72,8 +72,8 @@ public class RVRefreshViewActivity extends AppCompatActivity implements RefreshH
         setContentView(R.layout.activity_rvrefresh_view);
         ButterKnife.bind(this);
         contentView = LayoutInflater.from(this).inflate(R.layout.contentview_menu, null);
-        rvTest = (RecyclerView) contentView.findViewById(R.id.mRecyclerView);
-        superSwipeRefreshLayout = (SuperSwipeRefreshLayout) contentView.findViewById(R.id.rotate_header_list_view_frame);
+        rvTest = contentView.findViewById(R.id.mRecyclerView);
+        superSwipeRefreshLayout = contentView.findViewById(R.id.rotate_header_list_view_frame);
         initData();
         initView();
         refresh();
@@ -191,10 +191,10 @@ public class RVRefreshViewActivity extends AppCompatActivity implements RefreshH
     private View createHeaderView() {
         View headerView = LayoutInflater.from(superSwipeRefreshLayout.getContext())
                                   .inflate(R.layout.layout_head, null);
-        progressBar = (ProgressBar) headerView.findViewById(R.id.pb_view);
-        textView = (TextView) headerView.findViewById(R.id.text_view);
+        progressBar = headerView.findViewById(R.id.pb_view);
+        textView = headerView.findViewById(R.id.text_view);
         textView.setText("下拉刷新");
-        imageView = (ImageView) headerView.findViewById(R.id.image_view);
+        imageView = headerView.findViewById(R.id.image_view);
         imageView.setVisibility(View.VISIBLE);
         imageView.setImageResource(R.drawable.arrow);
         progressBar.setVisibility(View.GONE);

@@ -26,11 +26,9 @@ public class SDCardUtils {
 	public static boolean isSDCardMounted() {
 		// 挂载外存储设备成功的常量 (挂载成功,挂载以后只能读取,没有挂载等等)
 		String state = Environment.MEDIA_MOUNTED;
-		if (Environment.getExternalStorageState().equals(state)) { // 字符串判断相等千万不能用==
-			return true;
-		}
-		return false;
-	}
+        // 字符串判断相等千万不能用==
+        return Environment.getExternalStorageState().equals(state);
+    }
 
 	/**
 	 * 获取SDCard的根路径

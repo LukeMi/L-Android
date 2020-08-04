@@ -16,8 +16,8 @@ public class FluxUtils {
     public static long getCurrentTraffic(int uid) {
         try {
             TrafficStats ts = new TrafficStats();
-            long uidRxBytes = ts.getUidRxBytes(uid);
-            long uidTxBytes = ts.getUidTxBytes(uid);
+            long uidRxBytes = TrafficStats.getUidRxBytes(uid);
+            long uidTxBytes = TrafficStats.getUidTxBytes(uid);
             return (uidRxBytes + uidTxBytes) / 1024;
         } catch (Exception e) {
             e.printStackTrace();

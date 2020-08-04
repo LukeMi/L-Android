@@ -30,7 +30,7 @@ public class BallPulseView extends View {
 
     private boolean mIsStarted = false;
     private ArrayList<ValueAnimator> mAnimators;
-    private Map<ValueAnimator, ValueAnimator.AnimatorUpdateListener> mUpdateListeners = new HashMap<>();;
+    private Map<ValueAnimator, ValueAnimator.AnimatorUpdateListener> mUpdateListeners = new HashMap<>();
 
     //<editor-fold desc="View">
     public BallPulseView(Context context) {

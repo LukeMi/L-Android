@@ -435,7 +435,7 @@ public class DeviceUtil {
                     for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements(); ) {
                         InetAddress inetAddress = enumIpAddr.nextElement();
                         if (!inetAddress.isLoopbackAddress()) {
-                            return inetAddress.getHostAddress().toString();
+                            return inetAddress.getHostAddress();
                         }
                     }
                 }
@@ -537,11 +537,7 @@ public class DeviceUtil {
      * @return true 表示有该权限；false表示没有该权限
      */
     public static boolean isGetParamPermission(Context context, String permission) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context.checkSelfPermission(permission) == PackageManager.PERMISSION_DENIED) {
-            return false;
-        } else {
-            return true;
-        }
+        return Build.VERSION.SDK_INT < Build.VERSION_CODES.M || context.checkSelfPermission(permission) != PackageManager.PERMISSION_DENIED;
     }
 
     /**
@@ -552,7 +548,7 @@ public class DeviceUtil {
      */
     public static void requestPermission(Context context, String permission) {
         if (!isGetParamPermission(context, permission)) {
-            if (((AppCompatActivity) context) instanceof AppCompatActivity && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (context instanceof AppCompatActivity && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 ((AppCompatActivity) context).requestPermissions(new String[]{permission}, 1 << 4);
             }
         }
@@ -700,10 +696,7 @@ public class DeviceUtil {
             @Override
             public boolean accept(File pathname) {
                 //Check if filename is "cpu", followed by a single digit number
-                if (Pattern.matches("cpu[0-9]", pathname.getName())) {
-                    return true;
-                }
-                return false;
+                return Pattern.matches("cpu[0-9]", pathname.getName());
             }
         }
 
@@ -826,7 +819,7 @@ public class DeviceUtil {
                     //查找到序列号所在行
                     if (str.indexOf("Serial") > -1) {
                         //提取序列号
-                        strCPU = str.substring(str.indexOf(":") + 1, str.length());
+                        strCPU = str.substring(str.indexOf(":") + 1);
                         //去空格
                         cpuAddress = strCPU.trim();
                         break;

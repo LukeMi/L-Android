@@ -47,12 +47,12 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
 
     private void initView() {
 
-        webSit_ET = ((EditText) findViewById(R.id.inputsite));
-        run_BTN = ((Button) findViewById(R.id.run));
-        refresh_BTN = ((Button) findViewById(R.id.refresh));
-        clear_BTN = ((Button) findViewById(R.id.clear));
-        web = ((WebView) findViewById(R.id.webview));
-        llayout = ((LinearLayout) findViewById(R.id.llayout));
+        webSit_ET = findViewById(R.id.inputsite);
+        run_BTN = findViewById(R.id.run);
+        refresh_BTN = findViewById(R.id.refresh);
+        clear_BTN = findViewById(R.id.clear);
+        web = findViewById(R.id.webview);
+        llayout = findViewById(R.id.llayout);
     }
 
     private void setListener() {

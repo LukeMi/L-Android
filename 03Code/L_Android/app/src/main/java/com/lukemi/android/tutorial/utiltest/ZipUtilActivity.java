@@ -14,6 +14,7 @@ import com.lukemi.android.tutorial.util.ZipUtil;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 /**
  * 验证ZipUtil
@@ -36,9 +37,9 @@ public class ZipUtilActivity extends AppCompatActivity implements View.OnClickLi
      * 初始化控件
      */
     private void initView() {
-        zipStr_ZIPBTN = ((Button) findViewById(com.lukemi.android.tutorial.R.id.zipStr_ZIP));
-        unZipStr_ZIPBTN = ((Button) findViewById(com.lukemi.android.tutorial.R.id.unZipStr_ZIP));
-        zipStrET_ZIPET = ((EditText) findViewById(com.lukemi.android.tutorial.R.id.zipStrET_ZIP));
+        zipStr_ZIPBTN = findViewById(com.lukemi.android.tutorial.R.id.zipStr_ZIP);
+        unZipStr_ZIPBTN = findViewById(com.lukemi.android.tutorial.R.id.unZipStr_ZIP);
+        zipStrET_ZIPET = findViewById(com.lukemi.android.tutorial.R.id.zipStrET_ZIP);
 
         zipStr_ZIPBTN.setOnClickListener(this);
         unZipStr_ZIPBTN.setOnClickListener(this);
@@ -77,7 +78,7 @@ public class ZipUtilActivity extends AppCompatActivity implements View.OnClickLi
                     File f2 = new File("C:\\Users\\dev\\Desktop\\Akazam_Project\\Migu_SDK\\zipfile\\zipStr.text");
                     fis2 = new FileOutputStream(f2);
                     fis2.write(zipStr.getBytes());
-                    String zipStr1 = new String(zipStr.getBytes("ISO-8859-1"), "utf-8");
+                    String zipStr1 = new String(zipStr.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
                     Logcat.log("----压缩字符串前后长度对比---- " + str.length() + " VS " + zipStr1.length() + "\n" +
                             str + " VS " + zipStr1);
                 } catch (IOException e) {

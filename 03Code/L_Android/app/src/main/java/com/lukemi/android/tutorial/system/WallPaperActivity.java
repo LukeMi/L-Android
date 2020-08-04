@@ -59,7 +59,7 @@ public class WallPaperActivity extends AppCompatActivity implements View.OnClick
         list.add(com.lukemi.android.tutorial.R.drawable.wallpaper4);
 
         final MPagerAdapder mPagerAdapder = new MPagerAdapder(this, list);
-        viewPager = ((ViewPager) findViewById(com.lukemi.android.tutorial.R.id.viewPager));
+        viewPager = findViewById(com.lukemi.android.tutorial.R.id.viewPager);
 //        viewPager.setAnimation(AnimationUtils.loadAnimation(this, R.anim.push_left_in));
         viewPager.setAdapter(mPagerAdapder);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

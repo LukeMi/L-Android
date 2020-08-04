@@ -47,9 +47,9 @@ public class RefreshHeaderView extends PtrFrameLayout implements PtrUIHandler {
     private void initView() {
 
         View view = View.inflate(this.getContext(), R.layout.jingdongheaderviewlayout, null);
-        status_text = (TextView) view.findViewById(R.id.status_test);
-        ren = (ImageView) view.findViewById(R.id.ren);
-        donghua = (ProgressBar) view.findViewById(R.id.donghua);
+        status_text = view.findViewById(R.id.status_test);
+        ren = view.findViewById(R.id.ren);
+        donghua = view.findViewById(R.id.donghua);
         setRatioOfHeaderHeightToRefresh(1.0f);
         setHeaderView(view);
         addPtrUIHandler(this);
@@ -70,8 +70,6 @@ public class RefreshHeaderView extends PtrFrameLayout implements PtrUIHandler {
         rotateAnimation.setFillAfter(true);
         return rotateAnimation;
     }*/
-
-    ;
 
     @Override
     public void onUIRefreshPrepare(PtrFrameLayout frame) {

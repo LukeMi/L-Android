@@ -72,11 +72,11 @@ public class EleSignActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void initView() {
-        eleSignView = ((LinePathView) findViewById(com.lukemi.android.tutorial.R.id.elecSign_ESA));
+        eleSignView = findViewById(com.lukemi.android.tutorial.R.id.elecSign_ESA);
         eleSignView.setPenColor(com.lukemi.android.tutorial.R.color.black);
-        isSigned_ESA_BTN = ((Button) findViewById(com.lukemi.android.tutorial.R.id.isSigned_ESA));
-        clearSigned_ESA_BTN = ((Button) findViewById(com.lukemi.android.tutorial.R.id.clearSigned_ESA));
-        showPicBig_ESA_BTN = ((Button) findViewById(com.lukemi.android.tutorial.R.id.showPicBig_ESA));
+        isSigned_ESA_BTN = findViewById(com.lukemi.android.tutorial.R.id.isSigned_ESA);
+        clearSigned_ESA_BTN = findViewById(com.lukemi.android.tutorial.R.id.clearSigned_ESA);
+        showPicBig_ESA_BTN = findViewById(com.lukemi.android.tutorial.R.id.showPicBig_ESA);
         isSigned_ESA_BTN.setOnClickListener(this);
         clearSigned_ESA_BTN.setOnClickListener(this);
         showPicBig_ESA_BTN.setOnClickListener(this);
@@ -159,11 +159,7 @@ public class EleSignActivity extends AppCompatActivity implements View.OnClickLi
                         }
                     }
                 }).start();
-                if (f.exists()) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return f.exists();
             } catch (Exception e) {
                 e.printStackTrace();
             }

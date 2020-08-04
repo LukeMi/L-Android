@@ -26,9 +26,9 @@ public class GetAppchannelActivity extends AppCompatActivity implements View.OnC
      * 初始化控件
      */
     private void initView() {
-        getAppchannel_GetAppBTN = ((Button) findViewById(R.id.getAppchannel_GetApp));
+        getAppchannel_GetAppBTN = findViewById(R.id.getAppchannel_GetApp);
         getAppchannel_GetAppBTN.setOnClickListener(this);
-        showAppChannel_GetAppET = ((TextView) findViewById(R.id.showAppChannel_GetApp));
+        showAppChannel_GetAppET = findViewById(R.id.showAppChannel_GetApp);
     }
 
     @Override

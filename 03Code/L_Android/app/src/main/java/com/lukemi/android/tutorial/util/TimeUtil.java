@@ -220,10 +220,7 @@ public class TimeUtil {
             return false;
 
         Date current = new Date();
-        if (date.compareTo(current) > 0)
-            return true;
-        else
-            return false;
+        return date.compareTo(current) > 0;
     }
 
     @SuppressLint("SimpleDateFormat")

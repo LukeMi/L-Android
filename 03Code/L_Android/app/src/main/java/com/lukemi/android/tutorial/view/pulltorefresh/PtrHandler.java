@@ -7,5 +7,5 @@ public interface PtrHandler {
      *
      * @param frame
      */
-    public void onRefreshBegin(final PtrFrameLayout frame);
+    void onRefreshBegin(final PtrFrameLayout frame);
 }

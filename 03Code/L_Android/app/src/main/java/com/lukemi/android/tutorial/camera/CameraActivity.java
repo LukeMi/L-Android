@@ -55,10 +55,10 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void initView() {
-        takePhoneBTN = ((Button) findViewById(R.id.takePhotos_CA));
-        uploadPhotosBTN = ((Button) findViewById(R.id.uploadPhotos_CA));
-        nativiePicBTN = ((Button) findViewById(R.id.nativiePic_CA));
-        preViewPicIV = ((ImageView) findViewById(R.id.preViewPic_CA));
+        takePhoneBTN = findViewById(R.id.takePhotos_CA);
+        uploadPhotosBTN = findViewById(R.id.uploadPhotos_CA);
+        nativiePicBTN = findViewById(R.id.nativiePic_CA);
+        preViewPicIV = findViewById(R.id.preViewPic_CA);
         uploadPhotosBTN.setOnClickListener(this);
         takePhoneBTN.setOnClickListener(this);
         nativiePicBTN.setOnClickListener(this);

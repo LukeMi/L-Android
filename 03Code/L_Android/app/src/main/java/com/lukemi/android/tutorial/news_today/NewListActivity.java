@@ -172,11 +172,11 @@ public class NewListActivity extends AppCompatActivity implements OnRefreshListe
         popViews.add(lvcategories2);
         dropDownMenu.setDropDownMenu(tabs, popViews, contentView);
 
-        mRecyclerView = (RecyclerView) contentView.findViewById(R.id.mRecyclerView);
+        mRecyclerView = contentView.findViewById(R.id.mRecyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(newsAdapter);
         initRecyclerViewListener();
-        refreshLayout = (SmartRefreshLayout) contentView.findViewById(R.id.refreshLayout);
+        refreshLayout = contentView.findViewById(R.id.refreshLayout);
         refreshLayout.setRefreshHeader(new ClassicsHeader(this).setSpinnerStyle(SpinnerStyle.Translate));
         refreshLayout.setOnRefreshListener(this);
         refreshLayout.autoRefresh();

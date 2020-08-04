@@ -66,7 +66,7 @@ public class BDLocActivity extends AppCompatActivity implements View.OnClickList
      */
     private void initViews() {
 
-        content = ((TextView) findViewById(R.id.content));
+        content = findViewById(R.id.content);
         content.setMovementMethod(ScrollingMovementMethod.getInstance());
         findViewById(R.id.title).setBackgroundColor(getResources().getColor(R.color.transparent));
         findViewById(R.id.startLoc).setOnClickListener(this);
@@ -192,7 +192,7 @@ public class BDLocActivity extends AppCompatActivity implements View.OnClickList
         sb.append("\nPoi: ");// POI信息
         if (location.getPoiList() != null && !location.getPoiList().isEmpty()) {
             for (int i = 0; i < location.getPoiList().size(); i++) {
-                Poi poi = (Poi) location.getPoiList().get(i);
+                Poi poi = location.getPoiList().get(i);
                 sb.append(poi.getName() + ";");
             }
         }

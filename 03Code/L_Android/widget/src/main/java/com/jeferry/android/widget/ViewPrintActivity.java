@@ -28,8 +28,8 @@ public class ViewPrintActivity extends AppCompatActivity implements View.OnClick
      * 初始化控件
      */
     private void initView() {
-        frameLayout = ((FrameLayout) findViewById(R.id.frameLayout));
-        screenShot = ((Button) findViewById(R.id.screenShot));
+        frameLayout = findViewById(R.id.frameLayout);
+        screenShot = findViewById(R.id.screenShot);
         screenShot.setOnClickListener(this);
     }
 

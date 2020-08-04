@@ -210,7 +210,7 @@ public class RxJavaActivity extends AppCompatActivity {
                     @Override
                     public void subscribe(ObservableEmitter<String> emitter) throws Exception {
                         for (int j = 0; j < 3; j++) {
-                            String str = "the result is " + String.valueOf(integer);
+                            String str = "the result is " + integer;
                             emitter.onNext(str);
                         }
                     }
@@ -246,7 +246,7 @@ public class RxJavaActivity extends AppCompatActivity {
                     @Override
                     public void subscribe(ObservableEmitter<String> emitter) throws Exception {
                         for (int j = 0; j < 4; j++) {
-                            String str = "the result is " + String.valueOf(integer);
+                            String str = "the result is " + integer;
                             emitter.onNext(str);
                         }
                     }

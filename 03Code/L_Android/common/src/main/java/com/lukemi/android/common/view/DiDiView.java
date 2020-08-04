@@ -31,7 +31,7 @@ public class DiDiView extends View {
     //路径的总长度
     float pathLength = 0;
     //圆的 x ，y坐标---也就是球心的坐标
-    float xy[];
+    float[] xy;
     //做过的圆环路径
     Path workePath;
     //画笔

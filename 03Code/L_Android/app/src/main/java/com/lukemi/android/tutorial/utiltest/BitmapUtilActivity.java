@@ -51,7 +51,7 @@ public class BitmapUtilActivity extends BaseActivity implements View.OnClickList
      * 初始化控件
      */
     private void initView() {
-        showIV = ((ImageView) findViewById(com.lukemi.android.tutorial.R.id.showIV));
+        showIV = findViewById(R.id.showIV);
         bitmap = BitmapUtils.view2Bitmap(showIV);
 //        showIV.setOnClickListener(this);
         showIV.setOnTouchListener(new View.OnTouchListener() {
@@ -81,7 +81,7 @@ public class BitmapUtilActivity extends BaseActivity implements View.OnClickList
                         y_MOVE = event.getY();
                         float x_delt = x_MOVE - x_DOWN;
                         float y_delt = y_MOVE - y_DOWN;
-                        Logcat.log("x_MOVE: " + x_MOVE + " ;y_MOVE: " + y_MOVE + " ;x_MOVE - x_DOWN: " + String.valueOf(x_delt) + " ;y_MOVE - y_DOWN " + String.valueOf(y_delt));
+                        Logcat.log("x_MOVE: " + x_MOVE + " ;y_MOVE: " + y_MOVE + " ;x_MOVE - x_DOWN: " + x_delt + " ;y_MOVE - y_DOWN " + y_delt);
                         if ((Math.abs(x_MOVE - x_DOWN) > 10 || Math.abs(y_MOVE - y_DOWN) > 10) && eventTime > 300) {
                             b = BitmapUtils.zoomBitmap(b, (int) ((x_MOVE - x_DOWN + 1)), (int) ((y_MOVE - y_DOWN + 1)));
                             showIV.setImageBitmap(b);

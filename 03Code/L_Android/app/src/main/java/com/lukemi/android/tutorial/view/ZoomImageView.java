@@ -396,7 +396,7 @@ public class ZoomImageView extends AppCompatImageView {
      */
     private void setDoubleTouchEvent(MotionEvent event) {
 
-        float values[] = new float[9];
+        float[] values = new float[9];
         matrix.getValues(values);
         // 存储当前时间
         long currentTime = System.currentTimeMillis();

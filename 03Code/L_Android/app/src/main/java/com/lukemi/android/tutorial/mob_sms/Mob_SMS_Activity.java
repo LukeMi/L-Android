@@ -64,10 +64,10 @@ public class Mob_SMS_Activity extends AppCompatActivity implements View.OnClickL
     }
 
     private void initViews() {
-        defined_Code_ET = ((EditText) findViewById(R.id.defined_Code_ET));
-        security_code_ET = ((EditText) findViewById(R.id.security_code_ET));
-        sendRequestBTN = ((Button) findViewById(R.id.sendRequestBTN));
-        submit_secrityCode = ((Button) findViewById(R.id.submit_secrityCode));
+        defined_Code_ET = findViewById(R.id.defined_Code_ET);
+        security_code_ET = findViewById(R.id.security_code_ET);
+        sendRequestBTN = findViewById(R.id.sendRequestBTN);
+        submit_secrityCode = findViewById(R.id.submit_secrityCode);
 
         sendRequestBTN.setOnClickListener(this);
         submit_secrityCode.setOnClickListener(this);

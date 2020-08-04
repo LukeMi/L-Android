@@ -75,7 +75,7 @@ public class PropertyActivity extends AppCompatActivity {
         int defWidth = DensityUtil.dp2px(120);
         int maxWidth = getResources().getDisplayMetrics().widthPixels;
         int maxHeight = (int) (getResources().getDisplayMetrics().widthPixels * (((float) 140 / 120)));
-        KLog.d(TAG, maxWidth + " : " + maxHeight + " ; " + (float) ((float) 140 / 120));
+        KLog.d(TAG, maxWidth + " : " + maxHeight + " ; " + ((float) 140 / 120));
         boolean isMin = mVBottom.getWidth() != maxWidth;
         int start = isMin ? defWidth : maxWidth;
         int end = isMin ? maxWidth : defWidth;

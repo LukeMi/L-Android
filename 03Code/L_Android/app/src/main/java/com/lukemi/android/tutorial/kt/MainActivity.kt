@@ -16,11 +16,7 @@ class Main1Activity : AppCompatActivity() {
     }
 
     fun initView() {
-        findViewById<TextView>(R.id.tv_title).text = "title";
-    }
-
-    override fun onResume() {
-        super.onResume();
+        findViewById<TextView>(R.id.tv_title).text = "title"
     }
 
 

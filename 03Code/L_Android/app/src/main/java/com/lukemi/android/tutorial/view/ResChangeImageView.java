@@ -57,7 +57,7 @@ public class ResChangeImageView extends AppCompatImageView {
     }
 
     public interface OnImgeChangeListener {
-        public void onImgeChangeListener(boolean changed);
+        void onImgeChangeListener(boolean changed);
     }
 
 

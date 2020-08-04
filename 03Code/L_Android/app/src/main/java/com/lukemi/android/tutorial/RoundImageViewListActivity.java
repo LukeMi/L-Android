@@ -139,7 +139,7 @@ public class RoundImageViewListActivity extends BaseActivity implements OnRefres
                 String avatar_url = user.getAvatar_url();
                 helper.setText(R.id.title, name)
                         .setText(R.id.pName, user_id);
-                CommonUtils.glideLoadPicGround(context, avatar_url, (ImageView) helper.getView(R.id.icon));
+                CommonUtils.glideLoadPicGround(context, avatar_url, helper.getView(R.id.icon));
             } else {
                 helper.setText(R.id.title, "name")
                         .setText(R.id.pName, "name");

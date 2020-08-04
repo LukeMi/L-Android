@@ -41,12 +41,6 @@
         <item name="android:windowAnimationStyle">@null</item>
     </style>
 
-    <!-- dialog -->
-    <style name="CommonDialog" parent="@android:style/Theme.Dialog">
-        <item name="android:windowBackground">@drawable/smssdk_dialog_bg</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat" />
 
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light" />

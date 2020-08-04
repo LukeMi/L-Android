@@ -44,7 +44,7 @@ public class UserInfoActivity extends AbsBaseActivity {
 
     @Override
     protected void getIntentData() {
-        userInfoBean = (UserInfoBean) getIntent().getParcelableExtra("userBean");
+        userInfoBean = getIntent().getParcelableExtra("userBean");
     }
 
     @Override

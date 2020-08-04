@@ -97,11 +97,7 @@ public class FlashActivity extends AppCompatActivity {
         try {
             Camera.Parameters parameters = camera.getParameters();
             String flashMode = parameters.getFlashMode();
-            if (flashMode.equals(android.hardware.Camera.Parameters.FLASH_MODE_TORCH)) {
-                return true;
-            } else {
-                return false;
-            }
+            return flashMode.equals(Camera.Parameters.FLASH_MODE_TORCH);
         } catch (Exception e) {
             return false;
         }

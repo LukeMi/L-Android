@@ -37,7 +37,7 @@ public class NetworkActivity extends AppCompatActivity implements DownloadCallba
     }
 
     private void initViews() {
-        loadBTN = ((Button) findViewById(R.id.loadFM));
+        loadBTN = findViewById(R.id.loadFM);
         loadBTN.setOnClickListener(this);
 
         mNetworkFragment = NetworkFragment.getInstance(getSupportFragmentManager(), "https://www.baidu.com");

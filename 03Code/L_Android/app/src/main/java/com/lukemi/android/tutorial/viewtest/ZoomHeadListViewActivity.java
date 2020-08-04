@@ -52,10 +52,10 @@ public class ZoomHeadListViewActivity extends AppCompatActivity {
 
     private void initView() {
         View view = View.inflate(this, R.layout.zoom_head_listview, null);
-        ImageView iv = (ImageView) view.findViewById(R.id.zoomHeadListView_ImageView);
+        ImageView iv = view.findViewById(R.id.zoomHeadListView_ImageView);
         iv.setImageResource(R.drawable.bd_loc_bg);
 
-        zoomHeadListView = ((ZoomHeadListView) findViewById(R.id.zoomHeadListView));
+        zoomHeadListView = findViewById(R.id.zoomHeadListView);
         zoomHeadListView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1, lists));
         zoomHeadListView.addHeaderView(view);
         zoomHeadListView.setZoomImageView(iv);

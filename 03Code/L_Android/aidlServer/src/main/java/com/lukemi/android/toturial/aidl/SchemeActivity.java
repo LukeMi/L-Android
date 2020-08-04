@@ -22,7 +22,7 @@ public class SchemeActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        TextView viewById = (TextView) findViewById(R.id.tv_result);
+        TextView viewById = findViewById(R.id.tv_result);
         viewById.setText(result);
     }
 

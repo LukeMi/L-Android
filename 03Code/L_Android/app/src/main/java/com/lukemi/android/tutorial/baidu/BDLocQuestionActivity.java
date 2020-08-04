@@ -22,7 +22,7 @@ public class BDLocQuestionActivity extends AppCompatActivity {
                 + getResources().getString(R.string.qa_callback)
                 + getResources().getString(R.string.qa_callback_mail);
 
-        tv = ((TextView) findViewById(R.id.instrament));
+        tv = findViewById(R.id.instrament);
         tv.setMovementMethod(ScrollingMovementMethod.getInstance());
         tv.setText(instrament);
     }

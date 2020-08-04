@@ -58,9 +58,9 @@ class AppinfoAdapter extends BaseAdapter {
         } else {
             vh = (ViewHolder) convertView.getTag();
         }
-        vh.title = (TextView) convertView.findViewById(R.id.title);
-        vh.pName = (TextView) convertView.findViewById(R.id.pName);
-        vh.iconIV = (ImageView) convertView.findViewById(R.id.icon);
+        vh.title = convertView.findViewById(R.id.title);
+        vh.pName = convertView.findViewById(R.id.pName);
+        vh.iconIV = convertView.findViewById(R.id.icon);
 
         vh.title.setText(appList.get(position).getAppName());
         vh.pName.setText(appList.get(position).getPn());

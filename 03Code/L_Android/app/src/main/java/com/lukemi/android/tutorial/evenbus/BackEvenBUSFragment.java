@@ -65,5 +65,4 @@ public class BackEvenBUSFragment extends Fragment {
         GlideUtil.loadImgByUrl(getContext(),img,url);
     }
 
-    ;
 }

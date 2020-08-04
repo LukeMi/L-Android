@@ -108,8 +108,8 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserAd
 
         public UserAdapterViewHolder1(View itemView) {
             super(itemView);
-            tvKey = (TextView) itemView.findViewById(R.id.tv_hint);
-            tvValue = (TextView) itemView.findViewById(R.id.tv_value);
+            tvKey = itemView.findViewById(R.id.tv_hint);
+            tvValue = itemView.findViewById(R.id.tv_value);
         }
 
         public void setTvKey(String key) {
@@ -130,8 +130,8 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserAd
 
         public UserAdapterViewHolder2(View itemView) {
             super(itemView);
-            tvKey = (TextView) itemView.findViewById(R.id.tv_hint);
-            tvValue = (TextView) itemView.findViewById(R.id.tv_value);
+            tvKey = itemView.findViewById(R.id.tv_hint);
+            tvValue = itemView.findViewById(R.id.tv_value);
         }
 
         public void setTvKey(String key) {
@@ -153,8 +153,8 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserAd
 
         public UserAdapterViewHolder3(View itemView) {
             super(itemView);
-            tvKey = (TextView) itemView.findViewById(R.id.tv_hint);
-            tvValue = (TextView) itemView.findViewById(R.id.tv_value);
+            tvKey = itemView.findViewById(R.id.tv_hint);
+            tvValue = itemView.findViewById(R.id.tv_value);
         }
 
         public void setTvKey(String key) {

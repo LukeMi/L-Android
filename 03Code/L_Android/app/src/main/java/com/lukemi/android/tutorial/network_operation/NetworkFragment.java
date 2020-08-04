@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -253,7 +254,7 @@ public class NetworkFragment extends Fragment {
     private String readStream(InputStream stream, int maxLength) throws IOException {
         String result = null;
         // Read InputStream using the UTF-8 charset.
-        InputStreamReader reader = new InputStreamReader(stream, "UTF-8");
+        InputStreamReader reader = new InputStreamReader(stream, StandardCharsets.UTF_8);
         // Create temporary buffer to hold Stream data with specified max length.
         char[] buffer = new char[maxLength];
         // Populate temporary buffer with Stream data.
