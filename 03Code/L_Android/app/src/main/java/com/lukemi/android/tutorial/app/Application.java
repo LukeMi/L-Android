@@ -152,9 +152,7 @@ public class Application extends BaseApplication {
         handler.sendEmptyMessage(MSG_CURRENT_TIME);
     }
 
-    private void initBugly(){
-//        CrashReport.initCrashReport(getApplicationContext());
-
+    private void initBugly() {
         CrashReport.initCrashReport(getApplicationContext(), "ecec18200b", true);
     }
 

@@ -131,12 +131,12 @@ android {
             v2SigningEnabled true
         }
 
-      /*  debug {
-            storeFile file(keyProps['STORE_FILE'])
-            storePassword keyProps['STORE_PASSWORD']
-            keyAlias keyProps['KEY_ALIAS']
-            keyPassword keyProps['KEY_PASSWORD']
-        }*/
+        /*  debug {
+              storeFile file(keyProps['STORE_FILE'])
+              storePassword keyProps['STORE_PASSWORD']
+              keyAlias keyProps['KEY_ALIAS']
+              keyPassword keyProps['KEY_PASSWORD']
+          }*/
     }
     // Gradle Build 配置
     buildTypes {
@@ -300,7 +300,6 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.10.3'
 
     //二维码扫描
-
     //https://github.com/bingoogolapple/BGAQRCode-Android
     implementation 'cn.bingoogolapple:bga-qrcodecore:1.1.9@aar'
     implementation 'cn.bingoogolapple:bga-zbar:1.1.9@aar'
@@ -309,6 +308,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'com.tencent.bugly:crashreport:3.2.33'
+    implementation 'com.tencent.bugly:nativecrashreport:3.7.1'
 
     // ARouter
     annotationProcessor "com.alibaba:arouter-compiler:${rootProject.arouterAnnotationVersion}"

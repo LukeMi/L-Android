@@ -17,6 +17,7 @@ import com.lukemi.android.tutorial.evenbus.EventBusReceiveActivity;
 import com.lukemi.android.tutorial.glide.GlideActivity;
 import com.lukemi.android.tutorial.handler.HandlerTestActivity;
 import com.lukemi.android.tutorial.xg.XGPushActivity;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,8 @@ public class ThirdAPIActivity extends AbsBaseActivity {
         Class<?> c = ((IntentJumpBean) adapter.getData().get(position)).getC();
         if (c != null) {
             startActivity(new Intent(this, c));
+        } else if (((IntentJumpBean) adapter.getData().get(position)).getText() == "bugly") {
+            CrashReport.testJavaCrash();
         }
     };
 
@@ -57,6 +60,7 @@ public class ThirdAPIActivity extends AbsBaseActivity {
         intentJumpBeanList.add(new IntentJumpBean("Glide", GlideActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("信鸽推送", XGPushActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("BRVAH", BaseQuickActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("bugly", null));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }
