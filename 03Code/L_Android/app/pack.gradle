@@ -48,7 +48,7 @@ def uploadApk() {
     sb.append(twoHyphens).append(boundary).append(end)
     sb.append("Content-Disposition: form-data; name=_api_key")
     sb.append(end).append(end)
-    sb.append("3b3295f86c84ac5e233e6c26b9720bd9").append(end)
+    sb.append("b4b47828dd92e6ab6310201f86b93d54").append(end)
 
     //添加参数：buildUpdateDescription 更新日志，取值gradle.properties中的 BUILD_NOTES
     sb.append(twoHyphens).append(boundary).append(end)
@@ -116,7 +116,7 @@ task packUploadApk {
 def sendMsgToDing(def data) {
     println("sendMsgToDing")
     println("sendMsgToDing : " + data)
-    def conn = new URL("https://oapi.dingtalk.com/robot/send?access_token=f7101297d61bfa23b6e1b0ff14c86b0035fce7780d47698b02b64fbb6d00e2bf").openConnection()
+    def conn = new URL("https://oapi.dingtalk.com/robot/send?access_token=5ff581e314a4e5d0f0f78074e63fd937e8c116e670da99a726a91fba09dab8fd").openConnection()
     conn.setRequestMethod('POST')
     conn.setRequestProperty("Connection", "Keep-Alive")
     conn.setRequestProperty("Content-type", "application/json;charset=UTF-8")
