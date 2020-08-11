@@ -4,12 +4,13 @@
     android:id="@+id/activity_session1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.tbug.android.collection.com.lukemi.android.collection.sessionlifecycle.SessionActivity1">
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="@dimen/dp48"
         android:text="@string/sessionactivity1" />
 
     <Button
@@ -17,4 +18,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/intent_2_sessionactivity2" />
+
+    <TextView
+        android:id="@+id/tv_activity_option"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:gravity="center"
+        android:text="ActivityOptionActivity"
+        android:textStyle="bold" />
 </LinearLayout>
