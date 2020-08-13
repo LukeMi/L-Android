@@ -3,16 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="@dimen/dp10">
 
-    <Button
+    <TextView
         android:id="@+id/btn_notice"
         style="@style/btn_common_type1"
-        android:text="通知" />
+        android:background="@drawable/shape_sb2_thumb"
+        android:gravity="center"
+        android:minHeight="@dimen/dp48"
+        android:text="通知"
+        android:textColor="@color/white" />
 
-    <Button
+    <TextView
         android:id="@+id/btn_remote"
         style="@style/btn_common_type1"
-        android:text="remoteView" />
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@drawable/shape_sb2_thumb"
+        android:gravity="center"
+        android:minHeight="@dimen/dp48"
+        android:text="remoteView"
+        android:textColor="@color/white" />
 
 </LinearLayout>

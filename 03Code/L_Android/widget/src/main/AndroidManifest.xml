@@ -70,7 +70,7 @@
             android:name=".PopupActivity"
             android:configChanges="keyboardHidden|orientation"
             />
-        <activity android:name=".NotificationActivity" />
+        <activity android:name=".notification.NotificationActivity" />
         <activity android:name=".AutoCompleteActivity" />
         <activity
             android:name=".SignActivity"

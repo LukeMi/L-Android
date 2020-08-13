@@ -1,4 +1,4 @@
-package com.lukemi.android.tutorial.util;
+package com.jeferry.android.widget.notification;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -67,9 +67,8 @@ public class NotificationUtil {
             notificationManager.createNotificationChannel(mChannel);
             notification = new NotificationCompat.Builder(context, CHANNEL_ID)
                     .setSmallIcon(android.R.drawable.stat_sys_download_done)
-                    .setContentTitle("Title")
-                    .setContentTitle("哈哈")
-                    .setContentText("你好")
+                    .setContentTitle("ContentTitle")
+                    .setContentText("ContentText")
                     .setAutoCancel(true)
                     .setContentIntent(pi)
                     .build();

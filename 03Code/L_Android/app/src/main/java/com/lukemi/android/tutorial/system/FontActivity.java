@@ -12,13 +12,15 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.lukemi.android.common.base.RoutePath;
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Route(path = RoutePath.FONT_ACTIVITY)
 public class FontActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView welcomeTV;
     private Button changeBTN;
