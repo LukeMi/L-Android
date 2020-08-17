@@ -4,7 +4,7 @@
     >
 
     <application>
-        <activity android:name=".MotionLayoutActivity"></activity>
+        <activity android:name=".MotionLayoutActivity"/>
         <activity
             android:name=".MenuActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
@@ -14,7 +14,6 @@
         <activity android:name=".recycle.flexbox.RecyclerViewFlexBoxActivity" />
         <activity android:name=".bottomsheet.BottomSheetActivity" />
         <activity android:name=".ConstraintLayout1Activity" />
-        <activity android:name=".ProgressDialogActivity" />
         <activity android:name=".SeekBarActivity" />
         <activity android:name=".ProgressBarActivity" />
         <activity

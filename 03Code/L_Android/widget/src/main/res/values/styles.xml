@@ -87,4 +87,12 @@
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
     </style>
+
+    <style name="bottom_navigation_view_active_size">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="bottom_navigation_view_in_active_size">
+        <item name="android:textSize">10sp</item>
+    </style>
 </resources>

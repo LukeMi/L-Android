@@ -5,12 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-
 import com.jeferry.android.widget.bottomsheet.BottomSheetActivity;
 import com.jeferry.android.widget.event.EventDistributeActivity;
 import com.jeferry.android.widget.flexbox.FlexBoxLayoutActivity;
@@ -34,7 +32,7 @@ public class WidgetActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     private List<IntentJumpBean> bindBeanList = new ArrayList<>();
     private IntentJumpAdapter intentJumpAdapter;
-    private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (BaseQuickAdapter adapter, View view, int position) -> {
+    private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (  adapter,   view,   position) -> {
         IntentJumpBean o = (IntentJumpBean) adapter.getData().get(position);
         Class<?> c = o.getC();
         if (c != null) {
@@ -81,7 +79,6 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("PopupWindow", PopupActivity.class));
         bindBeanList.add(new IntentJumpBean("SeekBar", SeekBarActivity.class));
         bindBeanList.add(new IntentJumpBean("RatingBar", RatingBarActivity.class));
-        bindBeanList.add(new IntentJumpBean("ProgressDialog", ProgressDialogActivity.class));
         bindBeanList.add(new IntentJumpBean("Notification", NotificationActivity.class));
         bindBeanList.add(new IntentJumpBean("Webview", WebViewActivity.class));
         bindBeanList.add(new IntentJumpBean("ScrollView", ScrollViewActivity.class));
