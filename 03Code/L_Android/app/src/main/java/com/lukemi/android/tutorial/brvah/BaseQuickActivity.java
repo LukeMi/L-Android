@@ -16,7 +16,7 @@ import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.bean.NewsCatesBean;
 import com.lukemi.android.tutorial.bean.Village;
 import com.lukemi.android.tutorial.util.CommonUtils;
-import com.lukemi.android.tutorial.view.DividerItemDecoration;
+import com.lukemi.android.common.view.DividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -5,56 +5,6 @@
         <attr name="text1Color" format="color|reference" />
     </declare-styleable>
 
-    // pull to refresh =================
-    <declare-styleable name="PtrFrameLayout">
-        <!-- Optional. If you put header and content in xml, you can you these to specify them. -->
-        <attr name="ptr_header" format="reference" />
-        <attr name="ptr_content" format="reference" />
-
-        <!-- the resistance when you are moving the frame -->
-        <attr name="ptr_resistance" format="float" />
-
-        <!-- the ration of the height of the header to trigger refresh -->
-        <attr name="ptr_ratio_of_header_height_to_refresh" format="float" />
-
-        <attr name="ptr_duration_to_close" format="integer" />
-        <attr name="ptr_duration_to_close_header" format="integer" />
-
-        <!-- pull to refresh, otherwise release to refresh, default is release to refresh -->
-        <attr name="ptr_pull_to_fresh" format="boolean" />
-
-        <!-- keep header when refreshing-->
-        <attr name="ptr_keep_header_when_refresh" format="boolean" />
-    </declare-styleable>
-
-    <declare-styleable name="DropDownMenu">
-        <attr name="ddunderlineColor" format="color" />
-        <attr name="dddividerColor" format="color" />
-        <attr name="ddtextSelectedColor" format="color" />
-        <attr name="ddtextUnselectedColor" format="color" />
-        <attr name="ddmenuBackgroundColor" format="color" />
-        <attr name="ddmaskColor" format="color" />
-        <attr name="ddmenuTextSize" format="dimension" />
-        <attr name="ddmenuSelectedIcon" format="reference" />
-        <attr name="ddmenuUnselectedIcon" format="reference" />
-        <attr name="ddmenuMenuHeightPercent" format="float" />
-    </declare-styleable>
-
-    <declare-styleable name="CircleView">
-        <attr name="circle_color" format="color|reference" />
-        <attr name="circle_radius" format="integer|reference|dimension" />
-    </declare-styleable>
-
-    <declare-styleable name="RingView">
-        <attr name="border_color" format="color|reference" />
-        <attr name="border_width" format="integer|reference|dimension" />
-    </declare-styleable>
-
-
-
-    <declare-styleable name="ScratchCardView">
-        <attr name="gestureWidth" format="integer|dimension" />
-    </declare-styleable>
 
     <!--验证码输入框-->
     <declare-styleable name="VerifyCodeView">

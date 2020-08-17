@@ -38,7 +38,6 @@
         <activity android:name=".wechat.tablayout.TabLayoutActivity" />
         <activity android:name=".ViewFlipperActivity" />
         <activity android:name=".ListViewActivity" />
-        <activity android:name=".DialogUtilActivity" />
         <activity
             android:name=".WebViewActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -82,8 +81,14 @@
         <activity android:name=".ViewStubActivity" />
         <activity android:name=".SoftInputModeActivity" />
         <activity android:name=".flexbox.FlexBoxLayoutActivity" />
-        <activity android:name="com.jeferry.android.widget.event.EventDistributeActivity" />
-
+        <activity android:name=".event.EventDistributeActivity" />
+        <activity android:name=".RadioGroupMainActivity" />
+        <activity android:name=".NewListActivity" />
+        <activity android:name=".FlowLayoutActivity" />
+        <activity
+            android:name=".GlobalDialogActivity"
+            android:theme="@style/DialogActivity"
+            />
     </application>
 
 </manifest>

@@ -27,6 +27,8 @@ public class ComponentActivity extends AbsBaseActivity {
     @BindView(R.id.rv_intent)
     RecyclerView mRvIntent;
 
+    private Handler mHandler = new Handler();
+
     private List<IntentJumpBean> intentJumpBeanList;
     private IntentJumpAdapter intentJumpAdapter;
     private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (BaseQuickAdapter adapter, View view, int position) -> {
@@ -40,12 +42,18 @@ public class ComponentActivity extends AbsBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = new Intent(ComponentActivity.this, Session4Activity.class);
-        new Handler().postDelayed(() -> startActivity(intent), 9_000);
+        mHandler.postDelayed(() -> startActivity(intent), 9_000);
     }
 
     @Override
     protected int bindLayout() {
         return R.layout.activity_component;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mHandler.removeCallbacksAndMessages(null);
     }
 
     @Override

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.lukemi.android.tutorial.view.SingleLineLayout
+    <com.lukemi.android.common.view.SingleLineLayout
         android:id="@+id/sll"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp40"/>

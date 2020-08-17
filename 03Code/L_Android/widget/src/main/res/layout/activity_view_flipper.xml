@@ -29,5 +29,16 @@
             android:text="第2个" />
 
     </ViewFlipper>
+
+    <ViewFlipper
+        android:id="@+id/marquee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/marquee_view"
+        android:autoStart="true"
+        android:background="#0f0"
+        android:flipInterval="3000"
+        android:inAnimation="@anim/anim_right_in"
+        android:outAnimation="@anim/anim_left_out" />
 </RelativeLayout>
 

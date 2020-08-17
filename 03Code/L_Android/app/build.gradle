@@ -240,10 +240,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
 
-    // Okhttp3
-    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
-
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
@@ -265,9 +261,6 @@ dependencies {
     // Optional, if you use support library fragments:
     debugImplementation "com.squareup.leakcanary:leakcanary-support-fragment:$rootProject.ext.leakCanaryVersion"
 
-    //Gson解析依赖
-    implementation 'com.google.code.gson:gson:2.3.1'
-
     //Glide加载图片
 
     //    implementation 'com.github.bumptech.glide:glide:3.7.0'
@@ -286,9 +279,6 @@ dependencies {
 
     //activeAndroid 数据库操作
     implementation 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
-
-    //okgo 通用的 GET POST
-    implementation 'com.lzy.net:okgo:2.1.4'
 
     // Optional, if you use support library fragments:
     debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2'

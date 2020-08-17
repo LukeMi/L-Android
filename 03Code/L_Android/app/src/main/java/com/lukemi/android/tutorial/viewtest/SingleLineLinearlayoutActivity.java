@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.view.SingleLineLayout;
+import com.lukemi.android.common.view.SingleLineLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

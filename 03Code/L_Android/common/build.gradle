@@ -66,6 +66,16 @@ dependencies {
 
     api 'com.alibaba:fastjson:1.2.31'
 
+    //okgo 通用的 GET POST
+    api 'com.lzy.net:okgo:2.1.4'
+
+    //Gson解析依赖
+    api 'com.google.code.gson:gson:2.3.1'
+
+    // Okhttp3
+    api 'com.squareup.okhttp3:okhttp:3.11.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
     // ARouter
     api("com.alibaba:arouter-api:${rootProject.arouterVersion}") {
         exclude group: 'com.android.support'

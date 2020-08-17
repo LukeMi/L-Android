@@ -8,11 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.jeferry.android.widget.FontActivity;
 import com.lukemi.android.common.IntentJumpAdapter;
 import com.lukemi.android.common.IntentJumpBean;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.SystemMemoryActivity;
-
+import com.lukemi.android.tutorial.viewtest.ClipPhotoViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +57,7 @@ public class SystemActivity extends AppCompatActivity {
         intentJumpBeanList.add(new IntentJumpBean("内存分析", SystemMemoryActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("系统分享", SystemShareActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("字体", FontActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("裁剪", ClipPhotoViewActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("关闭应用", CloseAppActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);

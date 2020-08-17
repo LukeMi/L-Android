@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:fitsSystemWindows="true"
     android:layout_height="wrap_content"
-    android:background="@color/white">
+    android:background="@drawable/shape_top_corner_4_solid_ffffff">
 
     <TextView
         android:id="@+id/tv_title"

@@ -1,6 +1,5 @@
 package com.jeferry.android.widget.wechat.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -27,13 +26,10 @@ public class WeChatMSGFragment extends BaseLazyFragment {
 
     ViewFlipper viewflipper;
 
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private LayoutInflater inflater;
-
 
 
     @Override

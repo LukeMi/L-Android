@@ -43,7 +43,8 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label,android:theme"
         >
-        <activity android:name=".lifecycle.ActivityOptionActivity"></activity>
+        <activity android:name=".handler.weak.WeakReferenceActivity" />
+        <activity android:name=".lifecycle.ActivityOptionActivity" />
         <activity android:name=".xg.XGPushActivity" />
         <activity
             android:name=".LauncherActivity"
@@ -68,7 +69,7 @@
             android:value="@string/bai_du_location_key"
             /> <!-- 百度定位配置 end -->
         <activity android:name=".system.SystemActivity" />
-        <activity android:name=".system.FontActivity" />
+        <activity android:name="com.jeferry.android.widget.FontActivity" />
         <activity android:name=".system.CloseAppActivity" />
         <activity
             android:name=".MainActivity"
@@ -98,8 +99,8 @@
         <activity android:name=".utiltest.ZipUtilActivity" />
         <activity android:name=".handler.HandlerPostActivity" />
         <activity android:name=".camera.CameraActivity" />
-        <activity android:name=".viewtest.EleSignActivity" />
-        <activity android:name=".viewtest.CViewActivity" />
+        <activity android:name="com.jeferry.android.widget.EleSignActivity" />
+        <activity android:name="com.jeferry.android.widget.CViewActivity" />
         <activity android:name=".fluxanalistics.FluxActivity" />
         <activity android:name=".receiver.ReceiverActivity" />
         <activity android:name=".plug.PlugActivity" />
@@ -118,7 +119,7 @@
         <activity android:name=".utiltest.ToastUtilActivity" />
         <activity android:name=".utiltest.BitmapUtilActivity" />
         <activity android:name=".utiltest.UtilMainActivity" />
-        <activity android:name=".viewtest.ZoomHeadListViewActivity" />
+        <activity android:name="com.jeferry.android.widget.ZoomHeadListViewActivity" />
         <activity android:name=".baidu.BDActivity" />
         <activity android:name=".ThirdAPIActivity" />
         <activity android:name=".system.WallPaperActivity" />
@@ -138,9 +139,6 @@
         <activity android:name=".jsoup.JsoupActivity" />
         <activity android:name=".viewtest.RVRefreshViewActivity" />
         <activity android:name=".AppInfoActivity" />
-        <activity android:name=".news_today.NewListActivity" />
-        <activity android:name=".main.RadioGroupMainActivity" />
-        <activity android:name=".utiltest.FlowLayoutActivity" />
         <activity android:name=".viewtest.SingleLineLinearlayoutActivity" />
         <activity android:name=".utiltest.ScannerActivity" />
         <activity android:name=".list_r.RvDividerActivity" />
@@ -176,8 +174,8 @@
         <activity android:name=".touch.TouchEventActivity" />
         <activity android:name=".clip.ClipActivity" />
         <activity android:name=".state.StateActivity" />
-        <activity android:name=".view.FlowActivity" />
-        <activity android:name=".view.CoordinateViewActivity" />
+        <activity android:name="com.jeferry.android.widget.FlowActivity" />
+        <activity android:name="com.lukemi.android.common.view.CoordinateViewActivity" />
         <activity android:name=".category.ComponentActivity" />
         <activity android:name=".aidl.AidlClientActivity" />
         <activity android:name=".AndroidActivity" />

@@ -1,11 +1,9 @@
 package com.jeferry.android.widget.bottomsheet;
 
-import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -13,27 +11,60 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jeferry.android.widget.R;
+import com.socks.library.KLog;
 
 public class MyBottomSheetDialogFragment extends BottomSheetDialogFragment {
+
+    private static final String TAG = MyBottomSheetDialogFragment.class.getSimpleName();
+
     private String[] items = new String[]{"第一条", "第二条", "第三条"};
 
     private ImageView mIvClose;
 
     private LinearLayout mLlContainer;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // 设置dialog背景透明 - 方法一
+//        this.setStyle(STYLE_NORMAL, R.style.CustomBottomSheetDialogTheme);
+        // 设置dialog背景透明 - 方法二
+//        this.setStyle(STYLE_NORMAL, R.style.SheetDialog);
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        this.getDialog().setCanceledOnTouchOutside(true);
         View view = inflater.inflate(R.layout.dialog_gragment_my_bottom_sheet, null);
         initView(view);
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        KLog.d(TAG, "onActivityCreated");
+        super.onActivityCreated(savedInstanceState);
+        getDialog().setCanceledOnTouchOutside(true);
+        // 设置dialog背景透明 - 方法三
+        if (getView() != null && getView().getParent() != null) {
+            ((View) getView().getParent()).setBackgroundColor(Color.TRANSPARENT);
+        }
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        // 设置dialog背景透明
+        if (view.getParent() != null) {
+            ((View) view.getParent()).setBackgroundColor(Color.TRANSPARENT);
+        } else {
+            KLog.d(TAG, view.getParent() == null);
+        }
     }
 
     private void initView(View view) {

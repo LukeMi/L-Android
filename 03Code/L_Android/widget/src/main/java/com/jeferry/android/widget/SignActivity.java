@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.lukemi.android.tutorial.view.SignView;
+import com.lukemi.android.common.view.SignView;
 
 
 public class SignActivity extends AppCompatActivity {

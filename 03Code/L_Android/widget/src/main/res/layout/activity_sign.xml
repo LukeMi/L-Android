@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
 
-    <com.lukemi.android.tutorial.view.SignView
+    <com.lukemi.android.common.view.SignView
         android:id="@+id/sv_"
         android:layout_width="match_parent"
         android:layout_height="0dp"

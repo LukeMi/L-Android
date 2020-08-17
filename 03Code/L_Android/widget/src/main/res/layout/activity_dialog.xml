@@ -16,4 +16,17 @@
         android:layout_height="wrap_content"
         android:text="btn_ios" />
 
+    <Button
+        android:id="@+id/btn_global"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="全局弹框" />
+
+    <Button
+        android:id="@+id/btn_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="进度条对话框" />
+
+
 </LinearLayout>

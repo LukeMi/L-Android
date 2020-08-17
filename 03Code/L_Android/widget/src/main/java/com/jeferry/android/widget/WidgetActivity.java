@@ -31,7 +31,7 @@ import java.util.List;
 @Route(path = ARouterPath.GROUP_WIDGET + ARouterPath.MAIN)
 public class WidgetActivity extends AppCompatActivity {
 
-    RecyclerView mRvIntent;
+    RecyclerView recyclerView;
     private List<IntentJumpBean> bindBeanList = new ArrayList<>();
     private IntentJumpAdapter intentJumpAdapter;
     private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (BaseQuickAdapter adapter, View view, int position) -> {
@@ -73,7 +73,6 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("AutoCompleteTextView", AutoCompleteActivity.class));
         bindBeanList.add(new IntentJumpBean("TabLayout", TabLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("ViewFlipper", ViewFlipperActivity.class));
-        bindBeanList.add(new IntentJumpBean("Dialog", DialogUtilActivity.class));
         bindBeanList.add(new IntentJumpBean("ImageView", null));
         bindBeanList.add(new IntentJumpBean("Gallery", null));
         bindBeanList.add(new IntentJumpBean("ImageSwitcher", null));
@@ -96,10 +95,13 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("FlexBoxLayout", FlexBoxLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("CoordinatorLayout", CoordinatorLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("BottomSheetActivity", BottomSheetActivity.class));
-        bindBeanList.add(new IntentJumpBean("DialogActivity", DialogActivity.class));
+        bindBeanList.add(new IntentJumpBean("Dialog", DialogActivity.class));
         bindBeanList.add(new IntentJumpBean("FragmentActivity", FragmentActivity.class));
+        bindBeanList.add(new IntentJumpBean("FlowLayout", FlowActivity.class));
         bindBeanList.add(new IntentJumpBean("Switch", SwitchActivity.class));
         bindBeanList.add(new IntentJumpBean("ViewPager", ViewPagerActivity.class));
+        bindBeanList.add(new IntentJumpBean("CViewActivity", CViewActivity.class));
+        bindBeanList.add(new IntentJumpBean("RadioGroup", RadioGroupMainActivity.class));
         bindBeanList.add(new IntentJumpBean("事件分发", EventDistributeActivity.class));
 
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, bindBeanList);
@@ -107,10 +109,8 @@ public class WidgetActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mRvIntent = findViewById(R.id.rv_intent);
-        mRvIntent.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        mRvIntent.setAdapter(intentJumpAdapter);
+        recyclerView = findViewById(R.id.rv_intent);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(intentJumpAdapter);
     }
-
-
 }

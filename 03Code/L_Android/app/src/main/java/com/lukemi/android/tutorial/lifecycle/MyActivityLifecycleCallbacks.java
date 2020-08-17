@@ -5,45 +5,48 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
+
+import com.socks.library.KLog;
 
 
 /**
  * Created by mzchen on 2016/10/23.
  */
-
 @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 public class MyActivityLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
+
+    private static final String TAG = MyActivityLifecycleCallbacks.class.getSimpleName();
+
     private long startTime;
     private long endTime;
     private boolean isFirstShow = true;
 
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-        Log.i("session", activity.getClass().getSimpleName() + "-->onActivityCreated");
+        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityCreated");
     }
 
     @Override
     public void onActivityStarted(Activity activity) {
-        Log.i("session", activity.getClass().getSimpleName() + "-->onActivityStarted");
+        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityStarted");
     }
 
     @Override
     public void onActivityResumed(Activity activity) {
         RunTimeDuration runTimeDuration = RunTimeDuration.getInstance();
-        Log.i("session", activity.getClass().getSimpleName() + "-->onActivityResumed");
+        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityResumed");
         startTime = System.currentTimeMillis();
         if (isFirstShow) {
             isFirstShow = false;
             runTimeDuration.setStartTime(startTime);
-            Log.i("session", isFirstShow + RunTimeDuration.getInstance().toString());
+            KLog.d(TAG, isFirstShow + RunTimeDuration.getInstance().toString());
         }
         if (!isFirstShow && startTime - endTime > 30000 && startTime - endTime != startTime) {
             runTimeDuration.setEndTime(endTime);
             runTimeDuration.setDuration(runTimeDuration.getEndTime() - runTimeDuration.getStartTime());
             //处理逻辑的时候
-            Log.i("session", isFirstShow + RunTimeDuration.getInstance().toString());
-            Log.i("session", isFirstShow + "" + startTime);
+            KLog.d(TAG, isFirstShow + RunTimeDuration.getInstance().toString());
+            KLog.d(TAG, isFirstShow + "" + startTime);
 
             runTimeDuration.setStartTime(startTime);
         }
@@ -51,23 +54,23 @@ public class MyActivityLifecycleCallbacks implements Application.ActivityLifecyc
 
     @Override
     public void onActivityPaused(Activity activity) {
-        Log.i("session", activity.getClass().getSimpleName() + "-->onActivityPaused");
+        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityPaused");
         endTime = System.currentTimeMillis();
-        Log.i("session", activity.getClass().getSimpleName() + "-->onActivityPaused" + endTime);
+        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityPaused" + endTime);
     }
 
     @Override
     public void onActivityStopped(Activity activity) {
-        Log.i("session", activity.getClass().getSimpleName() + "-->onActivityStopped");
+        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityStopped");
     }
 
     @Override
     public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-        Log.i("session", activity.getClass().getSimpleName() + "-->onActivitySaveInstanceState");
+        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivitySaveInstanceState");
     }
 
     @Override
     public void onActivityDestroyed(Activity activity) {
-        Log.i("session", activity.getClass().getSimpleName() + "-->onActivityDestroyed");
+        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityDestroyed");
     }
 }

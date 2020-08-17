@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.common.util.WindowUtil;
-import com.lukemi.android.tutorial.view.MyEditText;
+import com.lukemi.android.common.view.MyEditText;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
