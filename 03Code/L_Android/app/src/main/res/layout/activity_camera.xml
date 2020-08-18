@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="2dp"
-    tools:context="com.tbug.android.collection.com.lukemi.android.collection.camera.CameraActivity">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            app:srcCompat="@mipmap/default_pic"
+            app:srcCompat="@drawable/default_pic"
             android:scaleType="fitCenter"/>
     </LinearLayout>
     <Button

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.lukemi.android.tutorial.R;
+import com.lukemi.android.tutorial.anim.AnimActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,7 +34,7 @@ public class AnimationActivity extends AppCompatActivity {
         tvTitleType1.setText("动画效果");
     }
 
-    @OnClick({R.id.img_back, R.id.btn_tween, R.id.btn_fram, R.id.btn_property})
+    @OnClick({R.id.img_back, R.id.btn_tween, R.id.btn_fram, R.id.btn_property, R.id.btn_anim})
     public void onClick(View v) {
         int id = v.getId();
         Intent intent = new Intent();
@@ -49,6 +50,10 @@ public class AnimationActivity extends AppCompatActivity {
                 break;
             case R.id.btn_property:
                 intent.setClass(this, PropertyActivity.class);
+                break;
+
+            case R.id.btn_anim:
+                intent.setClass(this, AnimActivity.class);
                 break;
             default:
                 break;

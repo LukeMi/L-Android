@@ -85,7 +85,7 @@ public class FrameActivity extends AppCompatActivity implements View.OnClickList
                 if (++i > 2) {
                     i = 1;
                 }
-                int id = this.getResources().getIdentifier("pageload_icon" + i, "drawable", this.getPackageName());
+                int id = this.getResources().getIdentifier("pageload_icon" + 2, "drawable", this.getPackageName());
                 Drawable dw;
                 dw = getResources().getDrawable(id);
                 Logcat.log("----addFrame---->> " + "dw: " + dw + "");

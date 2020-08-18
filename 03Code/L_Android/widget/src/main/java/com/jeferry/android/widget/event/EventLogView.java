@@ -25,16 +25,36 @@ class EventLogView extends View {
     }
 
     @Override
+    public void onWindowFocusChanged(boolean hasWindowFocus) {
+        super.onWindowFocusChanged(hasWindowFocus);
+        int width = getWidth();
+        int height = getHeight();
+        KLog.d(TAG, "width: " + width + " ;height: " + height);
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        KLog.d(TAG, "onAttachedToWindow");
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        KLog.d(TAG, "onDetachedFromWindow");
+    }
+
+    @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         boolean result = super.dispatchTouchEvent(event);
-        KLog.i(TAG, "dispatchTouchEvent : " + result+ " ; MotionEvent : " + getDesc(event.getAction()));
+        KLog.i(TAG, "dispatchTouchEvent : " + result + " ; MotionEvent : " + getDesc(event.getAction()));
         return result;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         boolean result = super.onTouchEvent(event);
-        KLog.i(TAG, "onTouchEvent : " + result+ " ; MotionEvent : " + getDesc(event.getAction()));
+        KLog.i(TAG, "onTouchEvent : " + result + " ; MotionEvent : " + getDesc(event.getAction()));
         return result;
     }
 

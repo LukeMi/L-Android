@@ -23,18 +23,18 @@ public class MyActivityLifecycleCallbacks implements Application.ActivityLifecyc
 
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityCreated");
+        KLog.d(TAG, "<-- " + activity.getClass().getSimpleName());
     }
 
     @Override
     public void onActivityStarted(Activity activity) {
-        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityStarted");
+        KLog.d(TAG, "<-- " + activity.getClass().getSimpleName());
     }
 
     @Override
     public void onActivityResumed(Activity activity) {
         RunTimeDuration runTimeDuration = RunTimeDuration.getInstance();
-        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityResumed");
+        KLog.d(TAG, "<-- " + activity.getClass().getSimpleName());
         startTime = System.currentTimeMillis();
         if (isFirstShow) {
             isFirstShow = false;
@@ -54,23 +54,23 @@ public class MyActivityLifecycleCallbacks implements Application.ActivityLifecyc
 
     @Override
     public void onActivityPaused(Activity activity) {
-        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityPaused");
+        KLog.d(TAG, "<-- " + activity.getClass().getSimpleName());
         endTime = System.currentTimeMillis();
-        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityPaused" + endTime);
+        KLog.d(TAG, "<-- " + activity.getClass().getSimpleName() + " end time: " + endTime);
     }
 
     @Override
     public void onActivityStopped(Activity activity) {
-        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityStopped");
+        KLog.d(TAG, "<-- " + activity.getClass().getSimpleName());
     }
 
     @Override
     public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivitySaveInstanceState");
+        KLog.d(TAG, "<-- " + activity.getClass().getSimpleName());
     }
 
     @Override
     public void onActivityDestroyed(Activity activity) {
-        KLog.d(TAG, activity.getClass().getSimpleName() + "-->onActivityDestroyed");
+        KLog.d(TAG, "<-- " + activity.getClass().getSimpleName());
     }
 }

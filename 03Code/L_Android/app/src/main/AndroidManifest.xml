@@ -167,7 +167,7 @@
             />
         <activity android:name=".github.GitHubActivity" />
         <activity android:name=".weather.view.WeatherActivity" />
-        <activity android:name=".anim.AnimationActivity" />
+        <activity android:name=".anim.AnimActivity" />
         <activity android:name=".anim.TweenAnimActivity" />
         <activity android:name=".anim.FrameAnimActivity" />
         <activity android:name=".anim.PropertyAnimActivity" />

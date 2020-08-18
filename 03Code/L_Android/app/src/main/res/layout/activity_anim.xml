@@ -34,10 +34,10 @@
             android:text="属性动画" />
 
         <Button
-            android:id="@+id/btn_anim"
+            android:id="@+id/btn_90"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="动画" />
+            android:text="90度旋转" />
     </LinearLayout>
 
 
