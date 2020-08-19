@@ -43,7 +43,7 @@
             android:textColor="@color/black" />
 
 
-        <com.lukemi.android.tutorial.view.MarqueeTextView
+        <com.lukemi.android.common.view.MarqueeTextView
             android:id="@+id/marqueeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

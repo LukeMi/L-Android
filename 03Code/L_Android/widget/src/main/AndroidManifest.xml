@@ -4,7 +4,7 @@
     >
 
     <application>
-        <activity android:name=".MotionLayoutActivity"/>
+        <activity android:name=".MotionLayoutActivity" />
         <activity
             android:name=".MenuActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
@@ -63,7 +63,10 @@
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".wechat.CommentActivity" />
         <activity android:name=".recycle.itemdecoration.RecyclerViewActivity" />
-        <activity android:name=".DialogActivity" />
+        <activity
+            android:name=".DialogActivity"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".PopupActivity"
             android:configChanges="keyboardHidden|orientation"
@@ -86,6 +89,7 @@
         <activity android:name=".FlowLayoutActivity" />
         <activity
             android:name=".GlobalDialogActivity"
+            android:screenOrientation="behind"
             android:theme="@style/DialogActivity"
             />
     </application>

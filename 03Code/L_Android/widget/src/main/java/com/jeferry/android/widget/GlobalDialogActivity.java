@@ -2,7 +2,6 @@ package com.jeferry.android.widget;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -30,7 +29,7 @@ public class GlobalDialogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // android O fix bug orientation
         if (android.os.Build.VERSION.SDK_INT != Build.VERSION_CODES.O) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+//            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog_global);
