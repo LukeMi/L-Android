@@ -277,9 +277,6 @@ dependencies {
     //事件总线
     implementation 'org.greenrobot:eventbus:3.0.0'
 
-    //activeAndroid 数据库操作
-    implementation 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
-
     // Optional, if you use support library fragments:
     debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2'
 

@@ -4,6 +4,7 @@
     >
 
     <application>
+        <activity android:name=".ImageViewButtonActivity"></activity>
         <activity android:name=".MotionLayoutActivity" />
         <activity
             android:name=".MenuActivity"

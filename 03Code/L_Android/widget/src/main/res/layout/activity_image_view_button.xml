@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ImageViewButtonActivity">
+
+    <ImageButton
+        android:id="@+id/ib"
+        android:layout_width="@dimen/dp120"
+        android:layout_height="@dimen/dp48"
+        android:background="@drawable/selector_ic_back"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="@dimen/dp120"
+        android:layout_height="@dimen/dp48"
+        android:clickable="true"
+        android:background="@drawable/selector_ic_back"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ib" />
+
+</android.support.constraint.ConstraintLayout>

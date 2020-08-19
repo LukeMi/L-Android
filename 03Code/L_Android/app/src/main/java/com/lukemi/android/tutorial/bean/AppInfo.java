@@ -3,10 +3,6 @@ package com.lukemi.android.tutorial.bean;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 
-import com.activeandroid.Model;
-import com.activeandroid.annotation.Column;
-import com.activeandroid.annotation.Table;
-
 import java.io.Serializable;
 
 /**

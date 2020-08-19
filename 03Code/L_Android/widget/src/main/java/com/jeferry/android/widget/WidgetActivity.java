@@ -29,10 +29,10 @@ import java.util.List;
 @Route(path = ARouterPath.GROUP_WIDGET + ARouterPath.MAIN)
 public class WidgetActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
     private List<IntentJumpBean> bindBeanList = new ArrayList<>();
     private IntentJumpAdapter intentJumpAdapter;
-    private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (  adapter,   view,   position) -> {
+    private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (adapter, view, position) -> {
         IntentJumpBean o = (IntentJumpBean) adapter.getData().get(position);
         Class<?> c = o.getC();
         if (c != null) {
@@ -58,7 +58,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("EditText", EditTextActivity.class));
         bindBeanList.add(new IntentJumpBean("EditText1", EditTextInputMethodAutoActivity.class));
         bindBeanList.add(new IntentJumpBean("Button", null));
-        bindBeanList.add(new IntentJumpBean("ImageButton", ImageViewActivity.class));
+        bindBeanList.add(new IntentJumpBean("ImageButton", ImageViewButtonActivity.class));
         bindBeanList.add(new IntentJumpBean("CheckBox", null));
         bindBeanList.add(new IntentJumpBean("RadioGroup", RadioGroupActivity.class));
         bindBeanList.add(new IntentJumpBean("Toast", ToastActivity.class));
@@ -71,7 +71,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("AutoCompleteTextView", AutoCompleteActivity.class));
         bindBeanList.add(new IntentJumpBean("TabLayout", TabLayoutActivity.class));
         bindBeanList.add(new IntentJumpBean("ViewFlipper", ViewFlipperActivity.class));
-        bindBeanList.add(new IntentJumpBean("ImageView", null));
+        bindBeanList.add(new IntentJumpBean("ImageView", ImageViewActivity.class));
         bindBeanList.add(new IntentJumpBean("Gallery", null));
         bindBeanList.add(new IntentJumpBean("ImageSwitcher", null));
         bindBeanList.add(new IntentJumpBean("GridView", null));
