@@ -16,6 +16,7 @@ import com.lukemi.android.tutorial.db.GreenDaoActivity;
 import com.lukemi.android.tutorial.evenbus.EventBusReceiveActivity;
 import com.lukemi.android.tutorial.glide.GlideActivity;
 import com.lukemi.android.tutorial.handler.HandlerTestActivity;
+import com.lukemi.android.tutorial.room.RoomActivity;
 import com.lukemi.android.tutorial.xg.XGPushActivity;
 import com.tencent.bugly.crashreport.CrashReport;
 
@@ -60,6 +61,7 @@ public class ThirdAPIActivity extends AbsBaseActivity {
         intentJumpBeanList.add(new IntentJumpBean("Glide", GlideActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("信鸽推送", XGPushActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("BRVAH", BaseQuickActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("room", RoomActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("bugly", null));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);

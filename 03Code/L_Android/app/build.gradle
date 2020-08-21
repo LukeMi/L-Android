@@ -299,4 +299,11 @@ dependencies {
 
     // ARouter
     annotationProcessor "com.alibaba:arouter-compiler:${rootProject.arouterAnnotationVersion}"
+
+    // add for room
+    api "android.arch.persistence.room:runtime:${rootProject.roomVersion}"
+    // room 配合 RxJava
+    api "android.arch.persistence.room:rxjava2:${rootProject.roomVersion}"
+    // 解释器
+    annotationProcessor "android.arch.persistence.room:compiler:${rootProject.roomVersion}"
 }

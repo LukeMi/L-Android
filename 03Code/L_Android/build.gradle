@@ -60,4 +60,6 @@ ext {
 
     arouterVersion = "1.5.0"
     arouterAnnotationVersion = "1.2.2"
+
+    roomVersion = "1.1.1"
 }

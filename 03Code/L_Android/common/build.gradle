@@ -81,6 +81,15 @@ dependencies {
         exclude group: 'com.android.support'
     }
     annotationProcessor "com.alibaba:arouter-compiler:${rootProject.arouterAnnotationVersion}"
+
+    // room
+    api "android.arch.persistence.room:runtime:${rootProject.roomVersion}"
+    // room 配合 RxJava
+    api "android.arch.persistence.room:rxjava2:${rootProject.roomVersion}"
+    // room 解释器
+    annotationProcessor "android.arch.persistence.room:compiler:${rootProject.roomVersion}"
+
+    api "com.google.android:flexbox:${rootProject.flexboxLayoutVersion}"
 }
 
 task makeJar(type: Copy, dependsOn: "build") {
