@@ -12,5 +12,5 @@ public interface BookSource {
 
     void deleteBook(BookEntity name);
 
-    void insert(BookEntity book);
+    void insert(BookEntity book, RoomCallback callback);
 }

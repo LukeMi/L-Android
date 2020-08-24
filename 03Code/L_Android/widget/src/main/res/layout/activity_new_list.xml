@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.lukemi.android.news_today.NewListActivity">
+    >
 
-    <com.lukemi.android.view.DropDownMenu
+    <com.lukemi.android.common.view.DropDownMenu
         android:id="@+id/dropDownView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

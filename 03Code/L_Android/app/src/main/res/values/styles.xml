@@ -1644,16 +1644,6 @@
     <color name="design_textinput_error_color_light">#000000</color>
     <dimen name="abc_action_bar_progress_bar_size">80dp</dimen>
 
-    <style name="rb_style" parent="Widget.AppCompat.RatingBar">
-        <item name="android:progressDrawable">@drawable/layer_rb</item>
-        <item name="android:gravity">fill</item>
-        <item name="android:isIndicator">false</item>
-        <item name="android:numStars">5</item>
-        <item name="android:max">100</item>
-        <item name="android:minHeight">@dimen/dp48</item>
-        <item name="android:maxHeight">@dimen/dp48</item>
-        <item name="android:rating">1</item>
-        <item name="android:stepSize">0.5</item>
-    </style>
+
 
 </resources>

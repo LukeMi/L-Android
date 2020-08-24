@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.lukemi.android.tutorial.R;
+import com.socks.library.KLog;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -20,7 +21,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 public class RoomActivity extends AppCompatActivity {
-
+    private final String TAG = RoomActivity.class.getSimpleName();
     private TextView mTvAdd;
     private TextView mTvDeleteAll;
     private RecyclerView mRv;
@@ -74,8 +75,36 @@ public class RoomActivity extends AppCompatActivity {
     private void onClick(View view) {
         int id = view.getId();
         if (id == R.id.tv_add) {
-            localBookSource.insert(getBookEntity());
-            refresh();
+
+            localBookSource.insert(getBookEntity(), new RoomCallback<Long>() {
+                @Override
+                public void onStart() {
+                    KLog.d(TAG, "onStart");
+                }
+
+                @Override
+                public void onSuccess(Long o) {
+                    KLog.d(TAG, "onSuccess : " + o);
+                }
+
+                @Override
+                public void onError(Throwable throwable) {
+                    KLog.d(TAG, "onError : " + throwable.getMessage());
+                }
+
+                @Override
+                public void onComplete() {
+                    KLog.d(TAG, "onComplete");
+                    refresh();
+                }
+            });
+           /* Disposable disposable = localBookSource.insert(getBookEntity())
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(aLong -> KLog.d(TAG, "onNext: " + aLong)
+                            , throwable -> KLog.d(TAG, throwable.getMessage())
+                            , () -> KLog.d(TAG, "onComplete"));*/
+
         } else if (id == R.id.tv_delete_all) {
             localBookSource.deleteAllBook();
             refresh();

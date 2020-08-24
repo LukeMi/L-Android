@@ -15,7 +15,7 @@ public class StudentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student);
+        setContentView(R.layout.activity_widget_student);
         com.lukemi.android.tutorial.dagger2.DaggerStudentComponent.builder().build().inject(this);
         studentBean.eat();
     }

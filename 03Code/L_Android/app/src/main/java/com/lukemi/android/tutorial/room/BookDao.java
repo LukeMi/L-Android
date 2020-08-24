@@ -23,6 +23,6 @@ public interface BookDao {
     void delete(BookEntity bookEntity);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(BookEntity bookEntity);
+    long insert(BookEntity bookEntity);
 
 }

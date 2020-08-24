@@ -163,12 +163,6 @@
     <string name="title_activity_edit_text">EditTextActivity</string>
 
 
-    <string name="action_feed">意见反馈</string>
-    <string name="action_group_chat">发起群聊</string>
-    <string name="action_add_friend">添加朋友</string>
-    <string name="action_scan">扫一扫</string>
-    <string name="action_search">搜索</string>
-    <string name="action_add">添加</string>
     <string name="save">保存</string>
     <string name="clip">裁剪</string>
     <string name="cancle">取消</string>

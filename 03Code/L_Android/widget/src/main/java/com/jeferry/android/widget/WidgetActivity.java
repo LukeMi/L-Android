@@ -16,6 +16,7 @@ import com.jeferry.android.widget.fragment.FragmentActivity;
 import com.jeferry.android.widget.notification.NotificationActivity;
 import com.jeferry.android.widget.recycle.flexbox.RecyclerViewFlexBoxActivity;
 import com.jeferry.android.widget.recycle.itemdecoration.RecyclerViewActivity;
+import com.jeferry.android.widget.room.StudentActivity;
 import com.jeferry.android.widget.wechat.activity.WeChatMainActivity;
 import com.jeferry.android.widget.wechat.tablayout.TabLayoutActivity;
 import com.lukemi.android.common.IntentJumpAdapter;
@@ -100,6 +101,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("CViewActivity", CViewActivity.class));
         bindBeanList.add(new IntentJumpBean("RadioGroup", RadioGroupMainActivity.class));
         bindBeanList.add(new IntentJumpBean("事件分发", EventDistributeActivity.class));
+        bindBeanList.add(new IntentJumpBean("StudentActivity", StudentActivity.class));
 
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, bindBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);

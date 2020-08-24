@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#ffffff">
 
-    <com.lukemi.android.tutorial.view.CircleView
+    <com.lukemi.android.common.view.CircleView
         android:id="@+id/img_cv"
         android:layout_width="@dimen/dp48"
         android:layout_height="@dimen/dp48"
@@ -16,7 +16,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.lukemi.android.tutorial.view.RingView
+    <com.lukemi.android.common.view.RingView
         android:id="@+id/rv"
         android:layout_width="@dimen/dp48"
         android:layout_height="@dimen/dp48"
@@ -34,20 +34,18 @@
         app:civ_border_color="@color/color_blue"
         app:civ_border_width="@dimen/dp2"
         app:layout_constraintLeft_toRightOf="@+id/rv"
-        app:layout_constraintTop_toBottomOf="@+id/cv" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-    <com.lukemi.android.tutorial.view.FlowLayout
+    <com.jeferry.android.widget.flowlayout.FlowLayout
         android:id="@+id/fl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cimg">
+        app:layout_constraintTop_toBottomOf="@+id/cimg" />
 
-    </com.lukemi.android.tutorial.view.FlowLayout>
-
-    <com.lukemi.android.tutorial.view.ScratchCardView
+    <com.lukemi.android.common.view.ScratchCardView
         android:id="@+id/scv"
         android:layout_width="match_parent"
         android:layout_height="500dp"
