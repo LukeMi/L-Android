@@ -20,9 +20,15 @@ public class AidlServerService extends Service {
     }
 
     private ServerAidlInterface.Stub mBinder = new ServerAidlInterface.Stub() {
+
         @Override
         public int add(int a, int b) throws RemoteException {
             return a + b;
+        }
+
+        @Override
+        public int multi(int a, int b) throws RemoteException {
+            return a * b;
         }
 
         @Override

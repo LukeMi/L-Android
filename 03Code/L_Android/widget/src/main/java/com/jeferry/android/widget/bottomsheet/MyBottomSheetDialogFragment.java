@@ -49,7 +49,11 @@ public class MyBottomSheetDialogFragment extends BottomSheetDialogFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         KLog.d(TAG, "onActivityCreated");
         super.onActivityCreated(savedInstanceState);
-        getDialog().setCanceledOnTouchOutside(true);
+        if (getDialog() != null) {
+            getDialog().setCanceledOnTouchOutside(true);
+            getDialog().getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT
+                    , ViewGroup.LayoutParams.WRAP_CONTENT);
+        }
         // 设置dialog背景透明 - 方法三
         if (getView() != null && getView().getParent() != null) {
             ((View) getView().getParent()).setBackgroundColor(Color.TRANSPARENT);

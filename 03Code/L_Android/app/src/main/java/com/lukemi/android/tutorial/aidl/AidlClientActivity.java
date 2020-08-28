@@ -18,20 +18,25 @@ import com.lukemi.android.tutorial.R;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AidlClientActivity extends AppCompatActivity {
 
-    @BindView(R.id.tv_result)
     TextView tvResult;
+
+    private ServerAidlInterface serverAidlInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aidl_client);
-        ButterKnife.bind(this);
+        initView();
+    }
+
+    private void initView() {
+        tvResult = findViewById(R.id.tv_result);
+        findViewById(R.id.btn_calc).setOnClickListener(this::onViewClicked);
+        findViewById(R.id.btn_c).setOnClickListener(this::onViewClicked);
     }
 
     @Override
@@ -40,11 +45,19 @@ public class AidlClientActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    @OnClick(R.id.btn_calc)
+    @OnClick({R.id.btn_calc, R.id.btn_c})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_calc:
                 connect();
+                break;
+            case R.id.btn_c:
+                try {
+                    int multi = serverAidlInterface.multi(3, 5);
+                    System.out.println("multi : " + multi);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 break;
         }
     }
@@ -64,7 +77,7 @@ public class AidlClientActivity extends AppCompatActivity {
     ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            ServerAidlInterface serverAidlInterface = ServerAidlInterface.Stub.asInterface(service);
+            serverAidlInterface = ServerAidlInterface.Stub.asInterface(service);
             String result;
             try {
                 int add = serverAidlInterface.add(31, 40);

@@ -7,6 +7,8 @@ interface ServerAidlInterface {
 
     int add(int a ,int b);
 
+    int multi(int a, int b);
+
     /**
      * Demonstrates some basic types that you can use as parameters
      * and return values in AIDL.
