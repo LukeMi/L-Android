@@ -15,12 +15,15 @@ import android.widget.TextView;
 
 import com.lukemi.android.toturial.aidl.ServerAidlInterface;
 import com.lukemi.android.tutorial.R;
+import com.socks.library.KLog;
 
 import java.util.List;
 
 import butterknife.OnClick;
 
 public class AidlClientActivity extends AppCompatActivity {
+
+    private final String TAG = AidlClientActivity.class.getSimpleName();
 
     TextView tvResult;
 
@@ -54,7 +57,7 @@ public class AidlClientActivity extends AppCompatActivity {
             case R.id.btn_c:
                 try {
                     int multi = serverAidlInterface.multi(3, 5);
-                    System.out.println("multi : " + multi);
+                    KLog.d(TAG, "multi : " + multi);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -77,6 +80,7 @@ public class AidlClientActivity extends AppCompatActivity {
     ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
+            KLog.d(TAG, "onServiceConnected : " + name);
             serverAidlInterface = ServerAidlInterface.Stub.asInterface(service);
             String result;
             try {
@@ -92,6 +96,7 @@ public class AidlClientActivity extends AppCompatActivity {
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
+            KLog.d(TAG, "onServiceDisconnected : " + name);
             tvResult.setText("RemoteException");
         }
     };

@@ -10,6 +10,10 @@ import java.util.List;
 
 public class IntentJumpAdapter extends BaseQuickAdapter<IntentJumpBean, BaseViewHolder> {
 
+    public IntentJumpAdapter() {
+        super(R.layout.item_intent_jump);
+    }
+
     public IntentJumpAdapter(int layoutResId, @Nullable List<IntentJumpBean> data) {
         super(layoutResId, data);
     }
