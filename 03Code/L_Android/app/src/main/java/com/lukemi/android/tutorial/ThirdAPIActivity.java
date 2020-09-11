@@ -13,6 +13,7 @@ import com.lukemi.android.tutorial.baidu.BDActivity;
 import com.lukemi.android.tutorial.base.AbsBaseActivity;
 import com.lukemi.android.tutorial.brvah.BaseQuickActivity;
 import com.lukemi.android.tutorial.db.GreenDaoActivity;
+import com.lukemi.android.tutorial.di.DIActivity;
 import com.lukemi.android.tutorial.evenbus.EventBusReceiveActivity;
 import com.lukemi.android.tutorial.glide.GlideActivity;
 import com.lukemi.android.tutorial.handler.HandlerTestActivity;
@@ -63,6 +64,7 @@ public class ThirdAPIActivity extends AbsBaseActivity {
         intentJumpBeanList.add(new IntentJumpBean("BRVAH", BaseQuickActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("room", RoomActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("bugly", null));
+        intentJumpBeanList.add(new IntentJumpBean("Annotation Processor", DIActivity.class));
         intentJumpAdapter = new IntentJumpAdapter(R.layout.item_intent_jump, intentJumpBeanList);
         intentJumpAdapter.setOnItemClickListener(mOnItemClickListener);
     }

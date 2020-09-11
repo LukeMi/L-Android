@@ -43,7 +43,8 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label,android:theme"
         >
-        <activity android:name=".lib.FrameworkLibActivity"></activity>
+        <activity android:name=".di.DIActivity"></activity>
+        <activity android:name=".lib.FrameworkLibActivity" />
         <activity android:name=".bitmap.BitmapActivity" />
         <activity android:name=".room.RoomActivity" />
         <activity android:name=".handler.weak.WeakReferenceActivity" />

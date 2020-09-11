@@ -1,3 +1,5 @@
+include ':compiler'
+include ':annotation'
 include ':xgpush'
 println "settings start"
 
