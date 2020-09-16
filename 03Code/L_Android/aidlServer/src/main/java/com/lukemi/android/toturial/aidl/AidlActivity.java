@@ -1,6 +1,5 @@
 package com.lukemi.android.toturial.aidl;
 
-import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,10 +17,6 @@ public class AidlActivity extends AppCompatActivity {
         setContentView(R.layout.activity_aidl);
         mTvReceiver = findViewById(R.id.tv_aidl);
         register();
-
-        Intent dance = new Intent("dance.BroadcastReceiver");
-//        dance.setComponent(new ComponentName(getPackageName(), "com.lukemi.android.toturial.aidl.DanceReceiver"));
-//        this.sendBroadcast(dance);
     }
 
     @Override
