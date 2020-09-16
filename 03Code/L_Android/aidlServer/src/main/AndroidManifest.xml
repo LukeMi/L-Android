@@ -17,8 +17,7 @@
             android:exported="true"
             >
             <intent-filter>
-                <action android:name="custom.BroadcastReceiver" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="aidl.BroadcastReceiver" />
             </intent-filter>
         </receiver>
 

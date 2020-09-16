@@ -42,7 +42,7 @@ public class ComponentActivity extends AbsBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = new Intent(ComponentActivity.this, Session4Activity.class);
-        mHandler.postDelayed(() -> startActivity(intent), 9_000);
+//        mHandler.postDelayed(() -> startActivity(intent), 9_000);
     }
 
     @Override
