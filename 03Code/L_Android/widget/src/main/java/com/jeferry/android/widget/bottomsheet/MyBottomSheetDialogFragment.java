@@ -1,10 +1,13 @@
 package com.jeferry.android.widget.bottomsheet;
 
+import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialogFragment;
+import android.support.design.widget.CoordinatorLayout;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -40,6 +43,7 @@ public class MyBottomSheetDialogFragment extends BottomSheetDialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        getDialog().getWindow().setDimAmount(0.3f);
         View view = inflater.inflate(R.layout.dialog_gragment_my_bottom_sheet, null);
         initView(view);
         return view;
@@ -58,6 +62,27 @@ public class MyBottomSheetDialogFragment extends BottomSheetDialogFragment {
         if (getView() != null && getView().getParent() != null) {
             ((View) getView().getParent()).setBackgroundColor(Color.TRANSPARENT);
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Dialog dialog = getDialog();
+
+        // 设置全屏高度
+        if (dialog != null) {
+            View bottomSheet = dialog.findViewById(R.id.design_bottom_sheet);
+            bottomSheet.getLayoutParams().height = ViewGroup.LayoutParams.MATCH_PARENT;
+        }
+        final View view = getView();
+        view.post(() -> {
+            View parent = (View) view.getParent();
+            CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) (parent).getLayoutParams();
+            CoordinatorLayout.Behavior behavior = params.getBehavior();
+            BottomSheetBehavior bottomSheetBehavior = (BottomSheetBehavior) behavior;
+            bottomSheetBehavior.setPeekHeight(view.getMeasuredHeight());
+            parent.setBackgroundColor(Color.TRANSPARENT);
+        });
     }
 
     @Override
