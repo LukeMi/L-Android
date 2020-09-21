@@ -3,6 +3,7 @@ package com.lukemi.android.tutorial.lifecycle;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -14,7 +15,11 @@ import com.lukemi.android.tutorial.R;
 
 public class Session1Activity extends AppCompatActivity implements View.OnClickListener {
 
+    private final String TAG = Session1Activity.class.getSimpleName();
+
     private Button intentBTN_SA1;
+
+    private Handler mHandler = new Handler(Looper.getMainLooper());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,15 +28,16 @@ public class Session1Activity extends AppCompatActivity implements View.OnClickL
         intentBTN_SA1 = findViewById(com.lukemi.android.tutorial.R.id.intentBTN_SA1);
         intentBTN_SA1.setOnClickListener(this);
         findViewById(R.id.tv_activity_option).setOnClickListener(this::onClick);
-        Intent intent = new Intent(Session1Activity.this, Session3Activity.class);
-        new Handler().postDelayed(() -> startActivity(intent), 3_000);
+        Intent intent = new Intent(Session1Activity.this, OnConfigurationChangedActivity.class);
+        mHandler.postDelayed(() -> startActivity(intent), 3_000);
     }
+
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.intentBTN_SA1:
-                Intent intent = new Intent(this, Session2Activity.class);
+                Intent intent = new Intent(this, SaveInstanceStateActivity.class);
                 startActivity(intent);
                 break;
             case R.id.tv_activity_option:
@@ -64,6 +70,7 @@ public class Session1Activity extends AppCompatActivity implements View.OnClickL
 
     @Override
     protected void onDestroy() {
+        mHandler.removeCallbacksAndMessages(null);
         Logcat.log("Session1Activity onDestroy");
         super.onDestroy();
     }

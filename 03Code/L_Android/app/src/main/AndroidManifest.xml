@@ -83,8 +83,11 @@
             android:launchMode="singleTask"
             />
         <activity android:name=".lifecycle.Session1Activity" />
-        <activity android:name=".lifecycle.Session2Activity" />
-        <activity android:name=".lifecycle.Session3Activity" />
+        <activity android:name=".lifecycle.SaveInstanceStateActivity" />
+        <activity
+            android:name=".lifecycle.OnConfigurationChangedActivity"
+            android:configChanges="orientation|screenSize"
+            />
         <activity android:name=".lifecycle.Session4Activity" />
         <activity android:name=".sdf.SpActivity" />
         <activity android:name=".handler.BaseHandlerActivity" />
