@@ -28,6 +28,7 @@ public class Session1Activity extends AppCompatActivity implements View.OnClickL
         intentBTN_SA1 = findViewById(com.lukemi.android.tutorial.R.id.intentBTN_SA1);
         intentBTN_SA1.setOnClickListener(this);
         findViewById(R.id.tv_activity_option).setOnClickListener(this::onClick);
+        findViewById(R.id.tv_single_instance).setOnClickListener(this::onClick);
         Intent intent = new Intent(Session1Activity.this, OnConfigurationChangedActivity.class);
         mHandler.postDelayed(() -> startActivity(intent), 3_000);
     }
@@ -44,6 +45,9 @@ public class Session1Activity extends AppCompatActivity implements View.OnClickL
                 ActivityOptionsCompat optionsCompat = ActivityOptionsCompat
                         .makeCustomAnimation(this, R.anim.anim_bottom_in, R.anim.anim_bottom_out);
                 ActivityOptionActivity.start(this, optionsCompat);
+                break;
+            case R.id.tv_single_instance:
+                mHandler.postDelayed(() -> Session1Activity.this.startActivity(new Intent(this, SingleInstanceActivity.class)), 3000);
                 break;
             default:
                 break;

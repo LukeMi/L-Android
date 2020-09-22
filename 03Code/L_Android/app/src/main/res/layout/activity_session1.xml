@@ -26,4 +26,12 @@
         android:gravity="center"
         android:text="ActivityOptionActivity"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_single_instance"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:gravity="center"
+        android:text="Launchmode_SingleInstance"
+        android:textStyle="bold" />
 </LinearLayout>
