@@ -1,37 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_session1"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/activity_session1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:minHeight="@dimen/dp48"
-        android:text="@string/sessionactivity1" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/intentBTN_SA1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/intent_2_sessionactivity2" />
+        <Button
+            android:id="@+id/tv_onConfigChanged"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="@dimen/dp48"
+            android:text="@string/sessionactivity1" />
 
-    <TextView
-        android:id="@+id/tv_activity_option"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp48"
-        android:gravity="center"
-        android:text="ActivityOptionActivity"
-        android:textStyle="bold" />
+        <Button
+            android:id="@+id/intentBTN_SA1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/intent_2_sessionactivity2" />
 
-    <TextView
-        android:id="@+id/tv_single_instance"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp48"
-        android:gravity="center"
-        android:text="Launchmode_SingleInstance"
-        android:textStyle="bold" />
-</LinearLayout>
+        <Button
+            android:id="@+id/tv_activity_option"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp48"
+            android:gravity="center"
+            android:text="ActivityOptionActivity"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/tv_single_instance"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp48"
+            android:gravity="center"
+            android:text="Launchmode_SingleInstance"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/tv_flag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="FLAG_ACTIVITY_\n动态代码实现启动模式指定"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

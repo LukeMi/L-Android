@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.lukemi.android.tutorial">
+    package="com.lukemi.android.tutorial"
+    >
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -41,10 +42,13 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/AppTheme"
-        tools:replace="android:icon,android:label,android:theme">
+        tools:replace="android:icon,android:label,android:theme"
+        >
+        <activity android:name=".lifecycle.flag.FlagActivity" />
         <activity
             android:name=".lifecycle.SingleInstanceActivity"
-            android:launchMode="singleInstance" />
+            android:launchMode="singleInstance"
+            />
         <activity android:name=".di.DIActivity" />
         <activity android:name=".lib.FrameworkLibActivity" />
         <activity android:name=".bitmap.BitmapActivity" />
@@ -55,7 +59,8 @@
         <activity
             android:name=".LauncherActivity"
             android:launchMode="singleTask"
-            android:theme="@style/LaunchTheme">
+            android:theme="@style/LaunchTheme"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -71,18 +76,21 @@
         <!-- key:开发者申请的Key -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="@string/bai_du_location_key" /> <!-- 百度定位配置 end -->
+            android:value="@string/bai_du_location_key"
+            /> <!-- 百度定位配置 end -->
         <activity android:name=".system.SystemActivity" />
         <activity android:name="com.jeferry.android.widget.FontActivity" />
         <activity android:name=".system.CloseAppActivity" />
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTask"
+            />
         <activity android:name=".lifecycle.Session1Activity" />
         <activity android:name=".lifecycle.SaveInstanceStateActivity" />
         <activity
             android:name=".lifecycle.OnConfigurationChangedActivity"
-            android:configChanges="orientation|screenSize" />
+            android:configChanges="orientation|screenSize"
+            />
         <activity android:name=".lifecycle.Session4Activity" />
         <activity android:name=".sdf.SpActivity" />
         <activity android:name=".handler.BaseHandlerActivity" />
@@ -91,13 +99,15 @@
         <activity android:name=".animation.AnimationActivity" />
         <activity
             android:name=".animation.TweenActivity"
-            android:label="TweenActivity" />
+            android:label="TweenActivity"
+            />
         <activity android:name=".animation.FrameActivity" />
         <activity android:name=".animation.PropertyActivity" />
         <activity android:name=".animation.ScaleActivity" /> <!-- <activity android:name=".webservice.WebServiceActivity" /> -->
         <activity
             android:name=".utiltest.DeviceutilActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            />
         <activity android:name=".getappchannelactivity.GetAppchannelActivity" />
         <activity android:name=".utiltest.ZipUtilActivity" />
         <activity android:name=".handler.HandlerPostActivity" />
@@ -115,7 +125,8 @@
         <activity android:name=".weather.WeatherActivity" />
         <activity
             android:name=".baidu.BDLocActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".baidu.BDLocQuestionActivity" />
         <activity android:name=".camera.WX_Camera_Activity" />
         <activity android:name=".utiltest.ToastUtilActivity" />
@@ -153,7 +164,8 @@
             android:enabled="false"
             android:icon="@drawable/b"
             android:label="@string/app_name_type"
-            android:targetActivity=".set.IconSetActivity" />
+            android:targetActivity=".set.IconSetActivity"
+            />
 
         <activity android:name=".set.NewLaunchActivity" />
         <activity android:name=".dagger2.StudentActivity" />
@@ -164,7 +176,8 @@
         <activity android:name=".user.register.RegisterActivity" />
         <activity
             android:name=".recommend.RecommendActivity"
-            android:configChanges="orientation|keyboardHidden" />
+            android:configChanges="orientation|keyboardHidden"
+            />
         <activity android:name=".github.GitHubActivity" />
         <activity android:name=".weather.view.WeatherActivity" />
         <activity android:name=".anim.AnimActivity" />
@@ -189,17 +202,20 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote" />
+            android:process=":remote"
+            />
         <service
             android:name=".service.ForegroundService"
             android:enabled="true"
             android:exported="true"
-            android:process=":foreground_service" />
+            android:process=":foreground_service"
+            />
 
         <receiver
             android:name=".receiver.BootReceiver"
             android:enabled="false"
-            android:exported="false">
+            android:exported="false"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.USER_PRESENT" />
@@ -213,22 +229,26 @@
         <service
             android:name=".volum.MusicService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"
+            />
 
         <activity android:name=".glide.GlideActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.lukemi.android.fileprovider"
-            android:grantUriPermissions="true">
+            android:grantUriPermissions="true"
+            >
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
+                android:resource="@xml/file_paths"
+                />
         </provider>
 
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="${UMENG_CHANNEL_VALUE}" />
+            android:value="${UMENG_CHANNEL_VALUE}"
+            />
 
         <activity android:name=".anim.Angle90RecycleActivity" />
         <activity android:name=".RoundImageViewListActivity" />

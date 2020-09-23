@@ -1,14 +1,5 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/cardview_dark_background</item>
-        <item name="textAllCaps">false</item>
-    </style>
-
     <style name="btn_common_type1">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">40dp</item>

@@ -7,36 +7,36 @@ import android.os.Looper;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
+import com.lukemi.android.tutorial.lifecycle.flag.FlagActivity;
+import com.socks.library.KLog;
 
 
 public class Session1Activity extends AppCompatActivity implements View.OnClickListener {
 
     private final String TAG = Session1Activity.class.getSimpleName();
 
-    private Button intentBTN_SA1;
-
     private Handler mHandler = new Handler(Looper.getMainLooper());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.lukemi.android.tutorial.R.layout.activity_session1);
-        intentBTN_SA1 = findViewById(com.lukemi.android.tutorial.R.id.intentBTN_SA1);
-        intentBTN_SA1.setOnClickListener(this);
+        setContentView(R.layout.activity_session1);
+        findViewById(R.id.intentBTN_SA1).setOnClickListener(this);
+        findViewById(R.id.tv_onConfigChanged).setOnClickListener(this::onClick);
         findViewById(R.id.tv_activity_option).setOnClickListener(this::onClick);
         findViewById(R.id.tv_single_instance).setOnClickListener(this::onClick);
-        Intent intent = new Intent(Session1Activity.this, OnConfigurationChangedActivity.class);
-        mHandler.postDelayed(() -> startActivity(intent), 3_000);
+        findViewById(R.id.tv_flag).setOnClickListener(this::onClick);
     }
-
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.tv_onConfigChanged:
+                startActivity(new Intent(Session1Activity.this, OnConfigurationChangedActivity.class));
+                break;
             case R.id.intentBTN_SA1:
                 Intent intent = new Intent(this, SaveInstanceStateActivity.class);
                 startActivity(intent);
@@ -47,7 +47,11 @@ public class Session1Activity extends AppCompatActivity implements View.OnClickL
                 ActivityOptionActivity.start(this, optionsCompat);
                 break;
             case R.id.tv_single_instance:
+                KLog.d(TAG, getTaskId());
                 mHandler.postDelayed(() -> Session1Activity.this.startActivity(new Intent(this, SingleInstanceActivity.class)), 3000);
+                break;
+            case R.id.tv_flag:
+                startActivity(new Intent(this, FlagActivity.class));
                 break;
             default:
                 break;

@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="SessionActivity3"
+        android:text="onConfigureChanged \n||\n查看日志"
         android:textSize="24sp"
         android:textStyle="bold|italic" />
 </LinearLayout>

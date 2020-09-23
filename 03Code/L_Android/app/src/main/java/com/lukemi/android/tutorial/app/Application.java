@@ -17,7 +17,6 @@ import com.lukemi.android.tutorial.BuildConfig;
 import com.lukemi.android.tutorial.base.BaseApplication;
 import com.lukemi.android.tutorial.db.dao.DaoMaster;
 import com.lukemi.android.tutorial.db.dao.DaoSession;
-import com.lukemi.android.tutorial.lifecycle.MyActivityLifecycleCallbacks;
 import com.lukemi.android.tutorial.receiver.TimeChangedReceiver;
 import com.lukemi.android.tutorial.service.ForegroundService;
 import com.squareup.leakcanary.LeakCanary;
@@ -75,7 +74,7 @@ public class Application extends BaseApplication {
     public void onCreate() {
         super.onCreate();
         Logcat.log("----Application---- is in");
-        registerActivityLifecycleCallbacks(new MyActivityLifecycleCallbacks());
+//        registerActivityLifecycleCallbacks(new MyActivityLifecycleCallbacks());
         handler.sendEmptyMessageDelayed(MSG_REPEAT_TIME, 60000);
         initReceiver();
 //        ActiveAndroid.initialize(this);
