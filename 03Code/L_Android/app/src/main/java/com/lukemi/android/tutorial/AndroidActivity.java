@@ -19,7 +19,7 @@ import com.lukemi.android.tutorial.api.sensor.SensorActivity;
 import com.lukemi.android.tutorial.api.vibrator.VibratorActivity;
 import com.lukemi.android.tutorial.killprocess.AppStaticsActivity;
 import com.lukemi.android.tutorial.permission.PermissionActivity;
-import com.lukemi.android.tutorial.sdf.SpActivity;
+import com.lukemi.android.tutorial.sp.SpActivity;
 import com.lukemi.android.tutorial.system.FlashActivity;
 import com.lukemi.android.tutorial.system.ScreenShotForbiddenActivity;
 import com.lukemi.android.tutorial.touch.TouchEventActivity;

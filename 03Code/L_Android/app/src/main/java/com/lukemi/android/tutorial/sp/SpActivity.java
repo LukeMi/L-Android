@@ -1,4 +1,4 @@
-package com.lukemi.android.tutorial.sdf;
+package com.lukemi.android.tutorial.sp;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
+import com.socks.library.KLog;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -26,6 +27,8 @@ import butterknife.OnClick;
  * @mail chenmingzhiji@163.com or mingzhichen1990@gmail.com
  */
 public class SpActivity extends AppCompatActivity {
+
+    private final String TAG = SpActivity.class.getSimpleName();
 
     private final String KEY = "key";
 
@@ -60,11 +63,12 @@ public class SpActivity extends AppCompatActivity {
             case R.id.tv_edit:
                 String input = etInput.getText().toString();
                 if (!TextUtils.isEmpty(input)) {
-                    mEditor.putString(input, input).commit();
+                    boolean commit = mEditor.putString(input, input).commit();
+                    KLog.d(TAG, "commit result : " + commit);
                 }
                 break;
             case R.id.tv_clear:
-                mEditor.clear().commit();
+                boolean commit = mEditor.clear().commit();
                 break;
             default:
                 break;

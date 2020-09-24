@@ -92,7 +92,7 @@
             android:configChanges="orientation|screenSize"
             />
         <activity android:name=".lifecycle.Session4Activity" />
-        <activity android:name=".sdf.SpActivity" />
+        <activity android:name=".sp.SpActivity" />
         <activity android:name=".handler.BaseHandlerActivity" />
         <activity android:name=".handler.HandlerTestActivity" />
         <activity android:name=".permission.PermissionActivity" />
