@@ -14,21 +14,30 @@
         android:paddingTop="@dimen/dp10"
         android:paddingBottom="@dimen/dp10"
         android:text="Add Fragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/dp48"
+        android:layout_height="@dimen/dp48"
+        android:padding="@dimen/dp16"
+        android:src="@drawable/ic_back_typ1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_back_fragment"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="@dimen/dp44"
-        android:drawableLeft="@drawable/ic_back_typ1"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:minWidth="@dimen/dp120"
-        android:paddingTop="@dimen/dp10"
-        android:paddingBottom="@dimen/dp10"
         android:text="Fragment Back"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_add_fragment" />
+        app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+        app:layout_constraintLeft_toRightOf="@+id/iv_back"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/fragment"

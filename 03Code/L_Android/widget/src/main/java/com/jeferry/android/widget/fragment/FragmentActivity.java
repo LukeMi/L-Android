@@ -22,13 +22,15 @@ public class FragmentActivity extends AppCompatActivity {
     private void init() {
         findViewById(R.id.tv_add_fragment).setOnClickListener(this::onCLick);
         findViewById(R.id.tv_back_fragment).setOnClickListener(this::onCLick);
+        findViewById(R.id.iv_back).setOnClickListener(this::onCLick);
     }
 
     private void onCLick(View view) {
-        if (view.getId() == R.id.tv_add_fragment) {
+        int id = view.getId();
+        if (id == R.id.tv_add_fragment || id == R.id.iv_back) {
             ParamsFragment fragment = ParamsFragment.newInstance(++i);
             addFragment(fragment);
-        } else if (view.getId() == R.id.tv_back_fragment) {
+        } else if (id == R.id.tv_back_fragment) {
             if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
                 getSupportFragmentManager().popBackStack();
             } else {
