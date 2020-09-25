@@ -10,8 +10,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.lukemi.android.tutorial.R;
+import com.socks.library.KLog;
 
 public class BitmapActivity extends AppCompatActivity {
+
+    private final String TAG = BitmapActivity.class.getSimpleName();
+
     private ImageView mIv;
     private Button mBtnLoad;
 
@@ -37,17 +41,43 @@ public class BitmapActivity extends AppCompatActivity {
 
 
             BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inDensity = 0;
+            options.inJustDecodeBounds = true;
+//            options.inDensity = 0;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                options.outConfig = Bitmap.Config.RGB_565;
+//                options.outConfig = Bitmap.Config.RGB_565;
             }
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.abc, options);
-//            mIv.setImageBitmap(bitmap);
+            int width = mIv.getWidth();
+            int height = mIv.getHeight();
+            int widthSize = options.outWidth / width;
+//            int heightSize = options.outHeight /height;
+
+            options.inJustDecodeBounds = false;
+            options.inSampleSize = 2;
+            Bitmap after = BitmapFactory.decodeResource(getResources(), R.drawable.abc, options);
+
+
+            BitmapFactory.Options o = new BitmapFactory.Options();
+            Bitmap oB = BitmapFactory.decodeResource(getResources(), R.drawable.abc, o);
+            KLog.d(TAG, "bitmap==null  : " + (bitmap == null)
+                            + " ;outWidth : " + options.outWidth
+                            + " ;outHeight : " + options.outHeight
+                            + " ;view width : " + width
+                            + " ;view height : " + height
+                            + " ; widthSize : " + widthSize
+                            + " ; after RowBytes : " + after.getRowBytes()
+                            + " ; oB ByteCount : " + oB.getByteCount()
+                            + " ; ByteCount : " + after.getByteCount()
+//                    + " ; heightSize : " + heightSize
+            );
+
+            mIv.setImageBitmap(after);
+//            mIv.setImageBitmap(oB);
         } catch (Exception e) {
             e.printStackTrace();
         }
 //        mIv.setImageResource(R.drawable.abc);
-        mIv.setImageResource(R.drawable.stocksnap);
+//        mIv.setImageResource(R.drawable.stocksnap);
 
     }
 }
