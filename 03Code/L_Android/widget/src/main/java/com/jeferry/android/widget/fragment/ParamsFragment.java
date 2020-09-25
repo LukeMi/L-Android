@@ -1,8 +1,10 @@
 package com.jeferry.android.widget.fragment;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +44,11 @@ public class ParamsFragment extends Fragment {
     }
 
     private void initView(View view) {
-        ((TextView) view.findViewById(R.id.tv_page)).setText(String.valueOf(page));
+        int textSize = (int) ((Math.random() * 10)) + this.page;
+        int textColor = Color.parseColor("#ff0000") + (int) (Math.random() * 100);
+        TextView page = (TextView) view.findViewById(R.id.tv_page);
+        page.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
+        page.setTextColor(textColor);
+        page.setText(String.valueOf(this.page));
     }
 }

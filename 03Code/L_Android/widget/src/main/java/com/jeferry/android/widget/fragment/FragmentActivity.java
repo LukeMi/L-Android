@@ -27,10 +27,10 @@ public class FragmentActivity extends AppCompatActivity {
 
     private void onCLick(View view) {
         int id = view.getId();
-        if (id == R.id.tv_add_fragment || id == R.id.iv_back) {
+        if (id == R.id.tv_add_fragment) {
             ParamsFragment fragment = ParamsFragment.newInstance(++i);
             addFragment(fragment);
-        } else if (id == R.id.tv_back_fragment) {
+        } else if (id == R.id.tv_back_fragment || id == R.id.iv_back) {
             if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
                 getSupportFragmentManager().popBackStack();
             } else {
@@ -43,7 +43,7 @@ public class FragmentActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         // 添加到回退站
         transaction.addToBackStack("")
-                .setCustomAnimations(R.anim.anim_right_in, R.anim.anim_left_out,
+                .setCustomAnimations(R.anim.anim_dim_in, R.anim.anim_dim_out,
                         R.anim.anim_right_in, R.anim.anim_left_out)
                 .add(R.id.fragment, fragment)
                 .commitAllowingStateLoss();
