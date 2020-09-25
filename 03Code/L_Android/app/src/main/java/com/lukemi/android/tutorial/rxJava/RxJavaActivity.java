@@ -3,9 +3,12 @@ package com.lukemi.android.tutorial.rxJava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
+import com.socks.library.KLog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +18,6 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
-import io.reactivex.ObservableTransformer;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -50,7 +52,27 @@ public class RxJavaActivity extends AppCompatActivity {
 //        disposableObserver();
 
 //        compose();
-        interval();
+//        interval();
+        findViewById(R.id.tv_rx_java).setOnClickListener(this::onClick);
+    }
+
+    private void onClick(View view) {
+        int id = view.getId();
+        if (id == R.id.tv_rx_java) {
+            test();
+        }
+    }
+
+    private void test() {
+        Observable.just(2)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(aInt -> {
+                            KLog.d(TAG, aInt);
+                            ((TextView) findViewById(R.id.tv_rx_java)).setText("aInt : " + aInt);
+                        }
+                        , throwable -> KLog.d(TAG, throwable.getMessage())
+                        , () -> KLog.d(TAG, "onComplete"));
     }
 
     private void cc() {

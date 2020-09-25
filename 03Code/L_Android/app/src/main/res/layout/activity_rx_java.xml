@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".tutorial.rxJava.RxJavaActivity">
+    android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/tv_rx_java"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="RXJAVA learning\n详见log"
-        android:textColor="#f00"
+        android:hint="RXJAVA learning\n详见log"
+        android:textColor="@color/black"
+        android:textColorHint="#f00"
         android:textSize="26sp" />
 
 </android.support.constraint.ConstraintLayout>

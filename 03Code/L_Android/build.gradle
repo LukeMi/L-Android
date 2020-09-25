@@ -51,7 +51,7 @@ ext {
 
     butterknifeVersion = '8.8.1'
     rxBindVersion = '2.1.1'
-    rxJavaVersion = '2.1.16'
+    rxJavaVersion = '2.2.9'
     rxandroidVersion = '2.0.2'
     okhttp3Version = '3.11.0'
     dagger2Version = '2.16'
