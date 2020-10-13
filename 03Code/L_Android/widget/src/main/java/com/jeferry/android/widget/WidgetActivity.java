@@ -97,6 +97,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("FragmentActivity", FragmentActivity.class));
         bindBeanList.add(new IntentJumpBean("FlowLayout", FlowActivity.class));
         bindBeanList.add(new IntentJumpBean("Switch", SwitchActivity.class));
+        bindBeanList.add(new IntentJumpBean("CardView", CardViewActivity.class));
         bindBeanList.add(new IntentJumpBean("ViewPager", ViewPagerActivity.class));
         bindBeanList.add(new IntentJumpBean("CViewActivity", CViewActivity.class));
         bindBeanList.add(new IntentJumpBean("RadioGroup", RadioGroupMainActivity.class));
