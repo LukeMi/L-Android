@@ -106,7 +106,7 @@ android {
             dimension "project"
             keyProps.load(new FileInputStream(file("../keystore/user/keystore.properties")))
             buildConfigField "int", "userType", "2"
-            minSdkVersion 14
+            minSdkVersion 16
             targetSdkVersion 28
             versionCode 1
             versionName "2.0"
