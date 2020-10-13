@@ -4,6 +4,7 @@
     >
 
     <application>
+        <activity android:name=".OnClickActivity"></activity>
         <activity android:name=".room.StudentActivity" />
         <activity android:name=".ImageViewButtonActivity" />
         <activity android:name=".MotionLayoutActivity" />

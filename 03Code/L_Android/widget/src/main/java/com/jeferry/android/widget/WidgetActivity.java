@@ -58,7 +58,7 @@ public class WidgetActivity extends AppCompatActivity {
         bindBeanList.add(new IntentJumpBean("TextView", TextViewActivity.class));
         bindBeanList.add(new IntentJumpBean("EditText", EditTextActivity.class));
         bindBeanList.add(new IntentJumpBean("EditText1", EditTextInputMethodAutoActivity.class));
-        bindBeanList.add(new IntentJumpBean("Button", null));
+        bindBeanList.add(new IntentJumpBean("Button", OnClickActivity.class));
         bindBeanList.add(new IntentJumpBean("ImageButton", ImageViewButtonActivity.class));
         bindBeanList.add(new IntentJumpBean("CheckBox", null));
         bindBeanList.add(new IntentJumpBean("RadioGroup", RadioGroupActivity.class));
