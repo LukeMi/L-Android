@@ -86,6 +86,7 @@ public class DeviceUtil {
      * @param context 上下文
      * @return IMEI号码
      */
+    @RequiresPermission(Manifest.permission.READ_PHONE_STATE)
     public static String getIMEI(Context context) {
         String imei = "";
         String sim = "";//实时
@@ -111,6 +112,7 @@ public class DeviceUtil {
      * @param context 上下文
      * @return IMSI号码
      */
+    @RequiresPermission(Manifest.permission.READ_PHONE_STATE)
     public static String getIMSI(Context context) {
         String imsi = "";//实时
         TelephonyManager mtm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
@@ -130,6 +132,7 @@ public class DeviceUtil {
      * @param context 上下文
      * @return SIM号码
      */
+    @RequiresPermission(Manifest.permission.READ_PHONE_STATE)
     public static String getSIM(Context context) {
         String sim = "";//实时
         TelephonyManager mtm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
@@ -149,6 +152,7 @@ public class DeviceUtil {
      * @param context 上下文
      * @return 手机号码
      */
+    @RequiresPermission(Manifest.permission.READ_PHONE_STATE)
     public static String getPhoneNumber(Context context) {
         TelephonyManager mtm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         String phoneNumber = "";
@@ -357,6 +361,7 @@ public class DeviceUtil {
      * @param context 上下文
      * @return netName
      */
+    @RequiresPermission(Manifest.permission.READ_PHONE_STATE)
     public static String getNetName(Context context) {
         if ("WIFI".equalsIgnoreCase(getNetType(context))) {
             return getWifiSsid(context);
@@ -365,6 +370,7 @@ public class DeviceUtil {
         }
     }
 
+    @RequiresPermission(Manifest.permission.READ_PHONE_STATE)
     private static String getNetOperation(Context context) {
         String OperatorsName = "未知";
         String IMSI = "";
@@ -476,6 +482,7 @@ public class DeviceUtil {
      * @param context 上下文
      * @return udid 手机唯一标示
      */
+    @RequiresPermission(Manifest.permission.READ_PHONE_STATE)
     public static String getUdid(Context context) {
         SharedPreferences loadInfoConfigureSPF = context.getSharedPreferences("loadInfoConfigure", Context.MODE_PRIVATE);
         String udid = "", tmSerial, tmPhone, androidId;
@@ -902,7 +909,7 @@ public class DeviceUtil {
      * @param context
      * @return 单位（px）
      */
-    public float getDensity(Context context) {
+    public static float getDensity(Context context) {
         return context.getResources().getDisplayMetrics().density;
     }
 

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.lukemi.android.common.util.DeviceUtil;
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
+import com.scwang.smartrefresh.layout.util.DensityUtil;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -98,8 +99,9 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         DisplayMetrics displayMetrics = DeviceUtil.getDisplayMetrics(this);
         int widthPixels = displayMetrics.widthPixels;
         int heightPixels = displayMetrics.heightPixels;
-        float density = displayMetrics.density;
-        density = displayMetrics.density + displayMetrics.densityDpi;
+        float density = DeviceUtil.getDensity(getApplicationContext());
+//        density = displayMetrics.density + displayMetrics.densityDpi;
+
         String IMEI = DeviceUtil.getIMEI(this);
         String IMSI = DeviceUtil.getIMSI(this);
         String SIM = DeviceUtil.getSIM(this);
@@ -174,5 +176,7 @@ public class DeviceutilActivity extends AppCompatActivity implements View.OnClic
         String showStr = builder.toString();
         showDeviceInfoTV.setText(showStr);
     }
+
+
 
 }
