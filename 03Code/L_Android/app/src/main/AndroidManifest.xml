@@ -42,14 +42,13 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/AppTheme"
-        tools:replace="android:icon,android:label,android:theme"
+        tools:replace="android:icon,android:label"
         >
         <activity android:name=".lifecycle.flag.FlagActivity" />
         <activity
             android:name=".lifecycle.SingleInstanceActivity"
             android:launchMode="singleInstance"
             />
-        <activity android:name=".di.DIActivity" />
         <activity android:name=".lib.FrameworkLibActivity" />
         <activity android:name=".bitmap.BitmapActivity" />
         <activity android:name=".room.RoomActivity" />

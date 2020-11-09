@@ -1,13 +1,11 @@
-include ':compiler'
-include ':annotation'
-include ':xgpush'
+
 println "settings start"
 
 include ':refresh-layout',
         ':common',
-        ':app',
-        ':widget',
+        ':app' ,
+        ':widget' ,
         ':aidlServer',
-        "api"
+        ':xgpush'
 
 println "settings start"
