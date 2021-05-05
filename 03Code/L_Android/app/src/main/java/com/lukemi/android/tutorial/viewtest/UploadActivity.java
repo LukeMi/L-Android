@@ -6,13 +6,14 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.util.BitmapUtils;
-import com.lukemi.android.common.util.Logcat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

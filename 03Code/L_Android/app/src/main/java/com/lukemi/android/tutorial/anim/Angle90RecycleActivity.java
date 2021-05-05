@@ -1,11 +1,12 @@
 package com.lukemi.android.tutorial.anim;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.tutorial.R;
 import com.socks.library.KLog;

@@ -4,11 +4,12 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.common.view.SignView;
 
@@ -54,9 +55,14 @@ public class SignActivity extends AppCompatActivity {
         sv.layout(0, 0, w, h);
         sv.draw(c);
         ImageView imageView = new ImageView(this);
+        if (bmp == null) {
+            return;
+        }
         imageView.setImageBitmap(bmp);
-        AlertDialog.Builder b = new AlertDialog.Builder(this);
-        b.setView(imageView).create().show();
+        new AlertDialog.Builder(this)
+                .setView(imageView)
+                .create()
+                .show();
     }
 
 

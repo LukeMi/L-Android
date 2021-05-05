@@ -2,8 +2,9 @@ package com.lukemi.android.tutorial.system;
 
 import android.os.Bundle;
 import android.os.Process;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.tutorial.R;
 

@@ -9,9 +9,10 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.toturial.aidl.ServerAidlInterface;
 import com.lukemi.android.tutorial.R;

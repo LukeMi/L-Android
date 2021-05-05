@@ -1,19 +1,18 @@
 package com.lukemi.android.tutorial.api;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.lukemi.android.common.IntentJumpAdapter;
 import com.lukemi.android.common.IntentJumpBean;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.TTSActivity;
-
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,10 +32,13 @@ public class AndroidApiActivity extends AppCompatActivity {
     RecyclerView mRvIntent;
     private List<IntentJumpBean> intentJumpBeanList;
     private IntentJumpAdapter intentJumpAdapter;
-    private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (BaseQuickAdapter adapter, View view, int position) -> {
-        Class<?> c = ((IntentJumpBean) adapter.getData().get(position)).getC();
-        if (c != null) {
-            startActivity(new Intent(this, c));
+    private OnItemClickListener mOnItemClickListener = new OnItemClickListener() {
+        @Override
+        public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull android.view.View view, int position) {
+            Class<?> c = ((IntentJumpBean) adapter.getData().get(position)).getC();
+            if (c != null) {
+                startActivity(new Intent(AndroidApiActivity.this, c));
+            }
         }
     };
 

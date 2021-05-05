@@ -3,7 +3,8 @@ package com.lukemi.android.tutorial;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.common.util.Logcat;
 

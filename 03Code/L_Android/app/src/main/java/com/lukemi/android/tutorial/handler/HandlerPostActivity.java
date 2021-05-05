@@ -4,14 +4,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.lukemi.android.tutorial.R;
 import com.lukemi.android.common.util.Logcat;
+import com.lukemi.android.tutorial.R;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

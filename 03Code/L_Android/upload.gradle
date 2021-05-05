@@ -1,0 +1,27 @@
+apply plugin: "maven"
+
+def username = "widget"
+def pwd = "admin123"
+
+def nexusRepositoryUrl = "http://127.0.0.1:8981/repository/widget/"
+def VERSION_NAME = '1.0.0'
+def ARTIFACT_ID = 'widget'
+def GROUP_ID = 'com.jeferry.android.widget'
+
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: nexusRepositoryUrl) {
+                authentication(userName:username, password: pwd)
+            }
+            pom.project {
+                artifactId ARTIFACT_ID
+                version VERSION_NAME
+                groupId GROUP_ID
+                packaging 'aar'
+                description 'lib des'
+            }
+        }
+    }
+}

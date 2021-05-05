@@ -1,7 +1,7 @@
 package com.lukemi.android.tutorial.weather.model;
 
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.lukemi.android.tutorial.weather.api.WeatherRetrofit;
 import com.lukemi.android.tutorial.weather.api.WeatherService;

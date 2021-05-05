@@ -1,9 +1,9 @@
 package com.lukemi.android.tutorial.evenbus;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.evenbus.event.NumberEvent;

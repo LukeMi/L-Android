@@ -1,9 +1,10 @@
 package com.jeferry.android.widget.recycle.flexbox;
 
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.jeferry.android.widget.R;
 import com.jeferry.android.widget.flexbox.FlexBoxEntity;
 
@@ -18,7 +19,7 @@ public class FlexboxAdapter extends BaseQuickAdapter<FlexBoxEntity, BaseViewHold
     @Override
     protected void convert(BaseViewHolder helper, FlexBoxEntity item) {
         helper.setText(R.id.tv_text, item.name)
-                .addOnClickListener(R.id.tv_text);
+                /*.addOnClickListener(R.id.tv_text)*/;
         helper.getView(R.id.tv_text).setSelected(item.selected);
     }
 }

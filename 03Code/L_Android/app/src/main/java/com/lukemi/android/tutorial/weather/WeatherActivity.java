@@ -1,9 +1,10 @@
 package com.lukemi.android.tutorial.weather;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.common.util.HttpUtils;
 import com.lukemi.android.tutorial.R;

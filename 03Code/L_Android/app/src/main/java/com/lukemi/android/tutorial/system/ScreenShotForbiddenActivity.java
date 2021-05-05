@@ -1,15 +1,19 @@
 package com.lukemi.android.tutorial.system;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.WindowManager;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.lukemi.android.tutorial.R;
+
 /**
  * @author lukemi
  * @date 2018/12/24 17:38
  * @des 禁止截屏
  * @mail chenmingzhiji@163.com or mingzhichen1990@gmail.com
  */
-import com.lukemi.android.tutorial.R;
 
 public class ScreenShotForbiddenActivity extends AppCompatActivity {
 

@@ -9,5 +9,4 @@
     android:paddingRight="@dimen/dp10"
     android:textColor="@color/white"
     android:textSize="@dimen/sp16"
-    tools:context=".widget.SoftInputModeActivity"
     tools:text="item" />

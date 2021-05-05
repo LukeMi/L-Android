@@ -3,31 +3,27 @@ package com.lukemi.android.tutorial.user.login.ui;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.jakewharton.rxbinding2.InitialValueObservable;
-import com.jakewharton.rxbinding2.widget.RxTextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.jakewharton.rxbinding4.InitialValueObservable;
+import com.jakewharton.rxbinding4.widget.RxTextView;
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.user.login.bean.LoginBeanRB;
 import com.lukemi.android.tutorial.user.login.presenter.LoginContract;
 import com.lukemi.android.tutorial.user.login.presenter.LoginPresenter;
 import com.lukemi.android.tutorial.user.userInfo.bean.UserInfoBean;
 import com.lukemi.android.tutorial.user.userInfo.ui.UserInfoActivity;
-import com.lukemi.android.common.util.Logcat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.BiFunction;
-import io.reactivex.functions.Consumer;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.View {
 
@@ -70,14 +66,14 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     private void initView() {
         InitialValueObservable<CharSequence> etAccountObservable = RxTextView.textChanges(etAccount);
         InitialValueObservable<CharSequence> etPasswordObservable = RxTextView.textChanges(etPassword);
-        disposable = Observable.combineLatest(etAccountObservable, etPasswordObservable, new BiFunction<CharSequence, CharSequence, Boolean>() {
-            /**
+      /*  disposable = Observable.combineLatest(etAccountObservable, etPasswordObservable, new BiFunction<CharSequence, CharSequence, Boolean>() {
+            *//**
              *
              * @param accountStr 帐号
              * @param passwordStr 密码
              * @return 等录按钮是否可用
              * @throws Exception 相关异常
-             */
+             *//*
             @Override
             public Boolean apply(CharSequence accountStr, CharSequence passwordStr) {
                 account = accountStr.toString();
@@ -90,16 +86,16 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
             }
         }).subscribe(new Consumer<Boolean>() {
 
-            /**
+            *//**
              *
              * @param btnLoginIsEnable 登录是否可用
              * @throws Exception 相关异常
-             */
+             *//*
             @Override
             public void accept(Boolean btnLoginIsEnable) {
                 btnLogin.setEnabled(btnLoginIsEnable);
             }
-        });
+        });*/
     }
 
     @OnClick(R.id.btn_login)

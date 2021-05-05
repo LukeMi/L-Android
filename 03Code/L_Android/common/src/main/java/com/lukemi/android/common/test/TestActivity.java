@@ -3,9 +3,10 @@ package com.lukemi.android.common.test;
 import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.common.R;
 import com.lukemi.android.common.view.CirculaArcView;

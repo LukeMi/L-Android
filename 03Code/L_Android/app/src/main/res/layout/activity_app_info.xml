@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--android.support.constraint.ConstraintLayout-->
+<!--androidx.constraintlayout.widget.ConstraintLayout-->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,7 +8,7 @@
     android:background="@color/gray_bkg_first"
     tools:context="com.lukemi.android.AppInfoActivity">
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_appinfo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

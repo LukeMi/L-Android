@@ -6,13 +6,15 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 
+import androidx.appcompat.widget.AppCompatTextView;
+
 import com.lukemi.android.common.util.Logcat;
 
 /**
  * Created by mzchen on 2017/2/24.
  */
 
-public class NoPadingTextView extends android.support.v7.widget.AppCompatTextView {
+public class NoPadingTextView extends AppCompatTextView {
 
     private static final String TEXT = "ap爱哥ξτβбпшㄎㄊěǔぬも┰┠№＠↓";
     private Paint mPaint;// 画笔

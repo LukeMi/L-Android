@@ -1,6 +1,7 @@
 package com.lukemi.android.tutorial.list_r;
 
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by chenmz

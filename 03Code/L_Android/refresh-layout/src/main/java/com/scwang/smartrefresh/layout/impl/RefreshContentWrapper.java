@@ -3,23 +3,9 @@ package com.scwang.smartrefresh.layout.impl;
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.content.Context;
-import android.database.DataSetObserver;
 import android.graphics.PointF;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.NestedScrollingChild;
-import android.support.v4.view.NestedScrollingParent;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.PagerAdapterWrapper;
-import android.support.v4.view.ScrollingView;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.Space;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -32,7 +18,21 @@ import android.widget.AbsListView;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
+import android.widget.Space;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.NestedScrollingChild;
+import androidx.core.view.NestedScrollingParent;
+import androidx.core.view.ScrollingView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.appbar.AppBarLayout;
 import com.scwang.smartrefresh.layout.api.RefreshContent;
 import com.scwang.smartrefresh.layout.api.RefreshKernel;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -47,6 +47,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import static com.scwang.smartrefresh.layout.util.ScrollBoundaryUtil.isTransformedTouchPointInView;
+
 
 /**
  * 刷新内容包装
@@ -120,6 +121,7 @@ public class RefreshContentWrapper implements RefreshContent {
         viewPager.post(new Runnable() {
             int count = 0;
             PagerPrimaryAdapter mAdapter = primaryAdapter;
+
             @Override
             public void run() {
                 count++;
@@ -135,7 +137,7 @@ public class RefreshContentWrapper implements RefreshContent {
                         } else {
                             mAdapter.wrapper(adapter);
                         }
-                        mAdapter.attachViewPager(viewPager);
+//                        mAdapter.attachViewPager(viewPager);
                     }
                 } else if (count < 10) {
                     viewPager.postDelayed(this, 500);
@@ -200,7 +202,7 @@ public class RefreshContentWrapper implements RefreshContent {
             PointF point = new PointF();
             for (int i = childCount; i > 0; i--) {
                 View child = viewGroup.getChildAt(i - 1);
-                if (isTransformedTouchPointInView(viewGroup,child, event.getX(), event.getY() , point)) {
+                if (isTransformedTouchPointInView(viewGroup, child, event.getX(), event.getY(), point)) {
                     event = MotionEvent.obtain(event);
                     event.offsetLocation(point.x, point.y);
                     return isNestedScrollingChild(child, event);
@@ -360,6 +362,7 @@ public class RefreshContentWrapper implements RefreshContent {
             }
             return new AnimatorUpdateListener() {
                 int lastValue = kernel.getSpinner();
+
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
                     int thisValue = (int) animation.getAnimatedValue();
@@ -409,12 +412,12 @@ public class RefreshContentWrapper implements RefreshContent {
             boolean overScroll = layout.isEnableOverScrollBounce() || layout.isRefreshing() || layout.isLoading();
             if (scrollY <= 0 && oldScrollY > 0 && mMotionEvent == null && lastTime - lastTimeOld > 1000 && overScroll && layout.isEnableRefresh()) {
                 //time:16000000 value:160
-                final int velocity = (lastOldScrollY - oldScrollY) * 16000 / (int)((lastTime - lastTimeOld)/1000f);
+                final int velocity = (lastOldScrollY - oldScrollY) * 16000 / (int) ((lastTime - lastTimeOld) / 1000f);
 //                    System.out.println("ValueAnimator - " + (lastTime - lastTimeOld) + " - " + velocity+"("+(lastOldScrollY - oldScrollY)+")");
                 kernel.animSpinnerBounce(Math.min(velocity, mHeaderHeight));
             } else if (oldScrollY < scrollY && mMotionEvent == null && overScroll && layout.isEnableLoadmore()) {
                 if (lastTime - lastTimeOld > 1000 && !ScrollBoundaryUtil.canScrollDown(mScrollableView)) {
-                    final int velocity = (lastOldScrollY - oldScrollY) * 16000 / (int)((lastTime - lastTimeOld)/1000f);
+                    final int velocity = (lastOldScrollY - oldScrollY) * 16000 / (int) ((lastTime - lastTimeOld) / 1000f);
 //                    System.out.println("ValueAnimator - " + (lastTime - lastTimeOld) + " - " + velocity+"("+(lastOldScrollY - oldScrollY)+")");
                     kernel.animSpinnerBounce(Math.max(velocity, -mFooterHeight));
                 }
@@ -450,7 +453,7 @@ public class RefreshContentWrapper implements RefreshContent {
             scrollY = getScrollY(absListView, firstVisibleItem);
             scrollDy = lastScrolly - scrollY;
 
-            final int dy =lastScrollDy + scrollDy;
+            final int dy = lastScrollDy + scrollDy;
             if (totalItemCount > 0) {
                 RefreshLayout layout = kernel.getRefreshLayout();
                 boolean overScroll = (layout.isEnableOverScrollBounce() || layout.isRefreshing() || layout.isLoading());
@@ -491,7 +494,7 @@ public class RefreshContentWrapper implements RefreshContent {
                 itemRecord.top = firstView.getTop();
                 recordSp.append(firstVisibleItem, itemRecord);
 
-                int height = 0,lastheight = 0;
+                int height = 0, lastheight = 0;
                 for (int i = 0; i < firstVisibleItem; i++) {
                     ItemRecod itemRecod = recordSp.get(i);
                     if (itemRecod != null) {
@@ -524,6 +527,7 @@ public class RefreshContentWrapper implements RefreshContent {
         RecyclerViewScrollComponent(RefreshKernel kernel) {
             this.kernel = kernel;
         }
+
         @Override
         public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
             RefreshLayout layout = kernel.getRefreshLayout();
@@ -559,15 +563,15 @@ public class RefreshContentWrapper implements RefreshContent {
                     && layout.isEnableLoadmore()
                     && !layout.isLoadmoreFinished()
                     && layout.isEnableAutoLoadmore()
-                    && layout.getState() == RefreshState.None ){
+                    && layout.getState() == RefreshState.None) {
                 RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
                 if (manager instanceof LinearLayoutManager) {
                     LinearLayoutManager linearManager = ((LinearLayoutManager) manager);
                     int lastVisiblePosition = linearManager.findLastVisibleItemPosition();
-                    if(lastVisiblePosition >= linearManager.getItemCount() - 1
+                    if (lastVisiblePosition >= linearManager.getItemCount() - 1
                             && lastVisiblePosition > 0
-                            && !ScrollBoundaryUtil.canScrollDown(recyclerView)){
-                        kernel.getRefreshLayout().autoLoadmore(0,1);
+                            && !ScrollBoundaryUtil.canScrollDown(recyclerView)) {
+                        kernel.getRefreshLayout().autoLoadmore(0, 1);
                     }
                 }
             }
@@ -590,7 +594,7 @@ public class RefreshContentWrapper implements RefreshContent {
     private static int measureViewHeight(View view) {
         ViewGroup.LayoutParams p = view.getLayoutParams();
         if (p == null) {
-            p = new ViewGroup.LayoutParams(MATCH_PARENT,WRAP_CONTENT);
+            p = new ViewGroup.LayoutParams(MATCH_PARENT, WRAP_CONTENT);
         }
         int childHeightSpec;
         int childWidthSpec = ViewGroup.getChildMeasureSpec(0, 0, p.width);
@@ -615,7 +619,7 @@ public class RefreshContentWrapper implements RefreshContent {
             wrapped = adapter;
         }
 
-        @Override
+        /*@Override
         public void attachViewPager(ViewPager viewPager) {
             mViewPager = viewPager;
             super.attachViewPager(viewPager);
@@ -627,7 +631,7 @@ public class RefreshContentWrapper implements RefreshContent {
             if (observer == null) {
                 wrapperViewPager(mViewPager, this);
             }
-        }
+        }*/
 
         @Override
         public void setPrimaryItem(ViewGroup container, int position, Object object) {

@@ -2,24 +2,23 @@ package com.lukemi.android.tutorial;
 
 
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.google.gson.Gson;
-import com.lukemi.android.common.base.BaseLazyFragment;
-import com.lukemi.android.common.util.Logcat;
 import com.jeferry.android.widget.data.model.JNewsBabyBean;
 import com.jeferry.android.widget.data.model.JNewsBaseBean;
 import com.jeferry.android.widget.data.model.JNewsCarBean;
@@ -41,6 +40,8 @@ import com.jeferry.android.widget.data.model.JNewsStoryBean;
 import com.jeferry.android.widget.data.model.JNewsTechBean;
 import com.jeferry.android.widget.data.model.JNewsTravelBean;
 import com.jeferry.android.widget.data.model.JNewsWorldBean;
+import com.lukemi.android.common.base.BaseLazyFragment;
+import com.lukemi.android.common.util.Logcat;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.request.BaseRequest;
@@ -70,7 +71,7 @@ import okhttp3.Response;
  * create an instance of this fragment.
  */
 public class SubLazyLoadFragment extends BaseLazyFragment
-        implements BaseQuickAdapter.RequestLoadMoreListener,
+        implements /*BaseQuickAdapter.RequestLoadMoreListener,*/
         OnRefreshListener {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -163,11 +164,11 @@ public class SubLazyLoadFragment extends BaseLazyFragment
             @Override
             public void onGlobalLayout() {
                 try {
-                    if (rvTest.computeVerticalScrollRange() < getResources().getDisplayMetrics().heightPixels) {
+                    /*if (rvTest.computeVerticalScrollRange() < getResources().getDisplayMetrics().heightPixels) {
                         newsAdapter.setEnableLoadMore(false);
                     } else {
                         newsAdapter.setEnableLoadMore(true);
-                    }
+                    }*/
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -233,7 +234,7 @@ public class SubLazyLoadFragment extends BaseLazyFragment
         targetMap.put("news_history", JNewsHistoryBean.class);
         targetMap.put("news_food", JNewsFoodBean.class);
         newsAdapter = new NewsAdapter(android.R.layout.simple_list_item_1, newsList);
-        newsAdapter.setOnLoadMoreListener(this, rvTest);
+//        newsAdapter.setOnLoadMoreListener(this, rvTest);
     }
 
 
@@ -256,11 +257,11 @@ public class SubLazyLoadFragment extends BaseLazyFragment
                         try {
                             JSONObject object = new JSONObject(s);
                             JSONArray array = object.getJSONArray("data");
-                            if (array == null || array.length() < 1) {
+                          /*  if (array == null || array.length() < 1) {
                                 newsAdapter.loadMoreEnd();
                             } else {
                                 newsAdapter.loadMoreComplete();
-                            }
+                            }*/
                             Class<?> transformClass = getTagetClass(category);
                             if (transformClass != null && JNewsBaseBean.class.isAssignableFrom(transformClass)) {
                                 List<JNewsBaseBean> terms = new ArrayList<JNewsBaseBean>();
@@ -286,9 +287,9 @@ public class SubLazyLoadFragment extends BaseLazyFragment
                             page--;
                         }
                         super.onError(call, response, e);
-                        if (newsAdapter.isLoading()) {
+                       /* if (newsAdapter.isLoading()) {
                             newsAdapter.loadMoreFail();
-                        }
+                        }*/
                     }
 
                     @Override
@@ -319,10 +320,10 @@ public class SubLazyLoadFragment extends BaseLazyFragment
         return null;
     }
 
-    @Override
+   /* @Override
     public void onLoadMoreRequested() {
         loadMore();
-    }
+    }*/
 
     @Override
     public void onRefresh(RefreshLayout refreshlayout) {

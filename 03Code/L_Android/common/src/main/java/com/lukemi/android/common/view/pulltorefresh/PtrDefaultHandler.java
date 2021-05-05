@@ -1,10 +1,11 @@
 package com.lukemi.android.common.view.pulltorefresh;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.AbsListView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 
 public abstract class PtrDefaultHandler {
@@ -16,14 +17,14 @@ public abstract class PtrDefaultHandler {
                 return absListView.getChildCount() > 0
                         && (absListView.getFirstVisiblePosition() > 0 || absListView.getChildAt(0)
                         .getTop() < absListView.getPaddingTop());
-            } else if(view instanceof  RecyclerView){
+            } else if(view instanceof RecyclerView){
                 RecyclerView recyclerView = (RecyclerView)view;
                 RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
                 if(layoutManager instanceof LinearLayoutManager){
                     int position = ((LinearLayoutManager) layoutManager).findFirstCompletelyVisibleItemPosition();
                     return position != 0;
                 }else{
-                    if(layoutManager instanceof StaggeredGridLayoutManager ){
+                    if(layoutManager instanceof StaggeredGridLayoutManager){
                         StaggeredGridLayoutManager stagger = (StaggeredGridLayoutManager) layoutManager;
                         int[] positions = stagger.findFirstCompletelyVisibleItemPositions(null);
                         return positions[0] != 0;

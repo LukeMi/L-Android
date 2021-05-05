@@ -1,10 +1,11 @@
 package com.lukemi.android.tutorial.user.userInfo.ui;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.base.AbsBaseActivity;
@@ -15,16 +16,14 @@ import com.lukemi.android.tutorial.user.userInfo.bean.UserParamsBean;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
 public class UserInfoActivity extends AbsBaseActivity {
 
-    @BindView(R.id.list)
+//    @BindView(R.id.list)
     RecyclerView list;
-    @BindView(R.id.tv_title)
+//    @BindView(R.id.tv_title)
     TextView tvTitle;
     private UserInfoAdapter adapter;
 //    private ViewDataBinding viewDataBinding;
@@ -39,7 +38,7 @@ public class UserInfoActivity extends AbsBaseActivity {
     @Override
     protected void dateBind() {
 //        viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_user_info);
-        ButterKnife.bind(this);
+//        ButterKnife.bind(this);
     }
 
     @Override
@@ -60,7 +59,7 @@ public class UserInfoActivity extends AbsBaseActivity {
 
     @Override
     protected int bindLayout() {
-        return 0;
+        return R.layout.activity_user_info;
     }
 
     private List<UserParamsBean> getList(UserInfoBean userInfoBean) {

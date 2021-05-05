@@ -2,15 +2,16 @@ package com.jeferry.android.widget;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.text.style.DynamicDrawableSpan;
 import android.text.style.ImageSpan;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import androidx.annotation.IdRes;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.jeferry.android.widget.wechat.fragment.WeChatContactFragment;
 import com.jeferry.android.widget.wechat.fragment.WeChatDiscoverFragment;

@@ -6,9 +6,10 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
-import android.support.multidex.MultiDex;
 import android.text.TextUtils;
 import android.util.Log;
+
+import androidx.multidex.MultiDex;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.lukemi.android.common.util.Logcat;

@@ -44,24 +44,24 @@
         android:id="@+id/btn_camera"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="btn_camera"/>
+        android:text="btn_camera" />
+
     <Button
         android:id="@+id/btn_loc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="btn_loc"/>
+        android:text="btn_loc" />
 
     <ImageView
         android:id="@+id/img_show"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/bd_loc_bg"/>
-    <com.lukemi.android.toturial.view.ClipImageView
+        app:srcCompat="@drawable/bd_loc_bg" />
+
+    <com.lukemi.android.common.view.ClipImageView
         android:id="@+id/civ"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/abc"/>
-
-
+        android:src="@drawable/abc" />
 </LinearLayout>

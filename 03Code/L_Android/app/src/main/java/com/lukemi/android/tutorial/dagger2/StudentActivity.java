@@ -1,8 +1,8 @@
 package com.lukemi.android.tutorial.dagger2;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.tutorial.R;
 

@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <android.support.design.widget.BottomNavigationView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnv_1"
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -19,14 +19,14 @@
         app:labelVisibilityMode="labeled"
         app:menu="@menu/menu_button_navigation_view" />
 
-    <android.support.design.widget.BottomNavigationView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
 
         android:layout_width="match_parent"
         android:layout_height="56dp"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/menu_button_navigation_view" />
 
-    <android.support.design.widget.BottomNavigationView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="56dp"
         app:menu="@menu/menu_button_navigation_view" />

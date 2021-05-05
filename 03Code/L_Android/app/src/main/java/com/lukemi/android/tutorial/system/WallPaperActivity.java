@@ -5,19 +5,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.lukemi.android.tutorial.MainActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.lukemi.android.common.ShowBigPicClass;
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.LauncherActivity;
-import com.lukemi.android.common.ShowBigPicClass;
+import com.lukemi.android.tutorial.MainActivity;
+import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.util.BitmapUtils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +43,7 @@ public class WallPaperActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.lukemi.android.tutorial.R.layout.activity_wall_paper);
+        setContentView(R.layout.activity_wall_paper);
         initView();
     }
 
@@ -51,15 +54,15 @@ public class WallPaperActivity extends AppCompatActivity implements View.OnClick
      * created at: 2017/4/9 14:11
      */
     private void initView() {
-        findViewById(com.lukemi.android.tutorial.R.id.setWallPaper).setOnClickListener(this);
+        findViewById(R.id.setWallPaper).setOnClickListener(this);
 
-        list.add(com.lukemi.android.tutorial.R.drawable.wallpaper1);
-        list.add(com.lukemi.android.tutorial.R.drawable.wallpaper2);
-        list.add(com.lukemi.android.tutorial.R.drawable.wallpaper3);
-        list.add(com.lukemi.android.tutorial.R.drawable.wallpaper4);
+        list.add(R.drawable.wallpaper1);
+        list.add(R.drawable.wallpaper2);
+        list.add(R.drawable.wallpaper3);
+        list.add(R.drawable.wallpaper4);
 
         final MPagerAdapder mPagerAdapder = new MPagerAdapder(this, list);
-        viewPager = findViewById(com.lukemi.android.tutorial.R.id.viewPager);
+        viewPager = findViewById(R.id.viewPager);
 //        viewPager.setAnimation(AnimationUtils.loadAnimation(this, R.anim.push_left_in));
         viewPager.setAdapter(mPagerAdapder);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -106,8 +109,9 @@ public class WallPaperActivity extends AppCompatActivity implements View.OnClick
                 }
             }
         });
-        showIV = findViewById(com.lukemi.android.tutorial.R.id.showPic);
+        showIV = findViewById(R.id.showPic);
         showIV.setImageResource(list.get(0));//设置默认值
+        findViewById(R.id.btn_clear).setOnClickListener(this::onClick);
     }
 
     private void go2Launch() {
@@ -119,20 +123,31 @@ public class WallPaperActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case com.lukemi.android.tutorial.R.id.setWallPaper:
+            case R.id.setWallPaper:
                 setWallPaper(this, BitmapUtils.drawable2Bitmap(showIV.getDrawable()));
                 break;
-            case com.lukemi.android.tutorial.R.id.viewPager:
+            case R.id.viewPager:
                 Logcat.log("position : " + sourceId);
                 startActivity(new Intent(WallPaperActivity.this, MainActivity.class));
+                break;
+            case R.id.btn_clear:
+                clearWallPaper();
                 break;
             default:
                 break;
         }
     }
 
+    private void clearWallPaper() {
+        WallpaperManager wallpaperManager = (WallpaperManager) getSystemService(WALLPAPER_SERVICE);
+        try {
+            wallpaperManager.clear();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
-     * 设置壁纸
      * <p>
      * created by: tbug
      * created at: 2017/4/9 13:49
@@ -141,6 +156,7 @@ public class WallPaperActivity extends AppCompatActivity implements View.OnClick
         WallpaperManager wallpaperManager = WallpaperManager.getInstance(context);
         try {
             wallpaperManager.setBitmap(bitmap);
+
         } catch (Exception e) {
             e.printStackTrace();
         }

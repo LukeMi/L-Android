@@ -3,14 +3,14 @@ package com.lukemi.android.tutorial;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.view.View;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.jeferry.android.widget.JSAndroidActivity;
 import com.lukemi.android.common.IntentJumpAdapter;
 import com.lukemi.android.common.IntentJumpBean;
@@ -40,7 +40,7 @@ public class AndroidActivity extends AppCompatActivity {
 
     private List<IntentJumpBean> intentJumpBeanList;
     private IntentJumpAdapter intentJumpAdapter;
-    private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (BaseQuickAdapter adapter, View view, int position) -> {
+    private OnItemClickListener mOnItemClickListener = (adapter, view, position) -> {
         IntentJumpBean bean = (IntentJumpBean) adapter.getData().get(position);
         Class<?> c = bean.getC();
         if (c != null) {

@@ -1,10 +1,11 @@
 package com.lukemi.android.tutorial.rxJava;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;

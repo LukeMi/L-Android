@@ -2,20 +2,21 @@ package com.lukemi.android.tutorial.list_r;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.lukemi.android.tutorial.list_r.itemDecoration.GruopItemDecoration;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.list_r.itemDecoration.DividerItemDecoration;
-import com.lukemi.android.common.util.Logcat;
+import com.lukemi.android.tutorial.list_r.itemDecoration.GruopItemDecoration;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -110,7 +111,7 @@ public class RvDividerActivity extends AppCompatActivity {
                 .setDividerHeightRes(R.dimen.dp1)
                 .create();
 
-        android.support.v7.widget.DividerItemDecoration d = new android.support.v7.widget.DividerItemDecoration(this, android.support.v7.widget.DividerItemDecoration.VERTICAL);
+     DividerItemDecoration d = new  DividerItemDecoration(this );
         rv.addItemDecoration(dd);
 
         GruopItemDecoration gg = new GruopItemDecoration(this, mDecorationListener);

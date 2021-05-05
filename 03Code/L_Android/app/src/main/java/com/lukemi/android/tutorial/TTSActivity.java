@@ -2,9 +2,10 @@ package com.lukemi.android.tutorial;
 
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.common.util.ToastUtil;

@@ -2,15 +2,16 @@ package com.lukemi.android.tutorial.recommend;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.base.AbsBaseActivity;
 import com.lukemi.android.tutorial.recommend.presenter.RecommendPresenter;
 import com.lukemi.android.tutorial.recommend.view.RecommendView;
-import com.lukemi.android.common.util.Logcat;
 
 import butterknife.BindView;
 

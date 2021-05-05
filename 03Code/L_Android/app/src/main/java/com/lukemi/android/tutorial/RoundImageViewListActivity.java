@@ -2,22 +2,21 @@ package com.lukemi.android.tutorial;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.ImageView;
+
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.google.gson.Gson;
-import com.lukemi.android.tutorial.BaseActivity;
-import com.lukemi.android.tutorial.R;
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.bean.DZBean;
 import com.lukemi.android.tutorial.util.CommonUtils;
-import com.lukemi.android.common.util.Logcat;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.request.BaseRequest;
@@ -38,7 +37,7 @@ import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Response;
 
-public class RoundImageViewListActivity extends BaseActivity implements OnRefreshListener, BaseQuickAdapter.OnItemClickListener, BaseQuickAdapter.RequestLoadMoreListener {
+public class RoundImageViewListActivity extends BaseActivity implements OnRefreshListener, OnItemClickListener/*, BaseQuickAdapter.RequestLoadMoreListener*/ {
 
     @BindView(R.id.mRecyclerView)
     RecyclerView mRecyclerView;
@@ -64,7 +63,7 @@ public class RoundImageViewListActivity extends BaseActivity implements OnRefres
         gson = new Gson();
         adapter = new MyAdapter(R.layout.item_process, list, this);
         adapter.setOnItemClickListener(this);
-        adapter.setOnLoadMoreListener(this, mRecyclerView);
+//        adapter.setOnLoadMoreListener(this, mRecyclerView);
         initRecyclerViewListener();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(adapter);
@@ -79,11 +78,11 @@ public class RoundImageViewListActivity extends BaseActivity implements OnRefres
             @Override
             public void onGlobalLayout() {
                 try {
-                    if (mRecyclerView.computeVerticalScrollRange() < getResources().getDisplayMetrics().heightPixels) {
+                   /* if (mRecyclerView.computeVerticalScrollRange() < getResources().getDisplayMetrics().heightPixels) {
                         adapter.setEnableLoadMore(false);
                     } else {
                         adapter.setEnableLoadMore(true);
-                    }
+                    }*/
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -93,7 +92,7 @@ public class RoundImageViewListActivity extends BaseActivity implements OnRefres
 
     private void refresh() {
         isRefresh = true;
-        adapter.setEnableLoadMore(false);
+//        adapter.setEnableLoadMore(false);
         page = 1;
         http();
     }
@@ -109,11 +108,11 @@ public class RoundImageViewListActivity extends BaseActivity implements OnRefres
     public void onRefresh(RefreshLayout refreshlayout) {
         refresh();
     }
-
+/*
     @Override
     public void onLoadMoreRequested() {
         loadMore();
-    }
+    }*/
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -179,7 +178,7 @@ public class RoundImageViewListActivity extends BaseActivity implements OnRefres
                         if (page != 1) {
                             page--;
                         }
-                        adapter.loadMoreFail();
+//                        adapter.loadMoreFail();
                         super.onError(call, response, e);
                     }
 
@@ -206,12 +205,12 @@ public class RoundImageViewListActivity extends BaseActivity implements OnRefres
             if (isRefresh) {
                 list.clear();
             }
-            if (data != null && data.size() > 0) {
+           /* if (data != null && data.size() > 0) {
                 list.addAll(data);
                 adapter.loadMoreComplete();
             } else {
                 adapter.loadMoreEnd();
-            }
+            }*/
 
         } catch (Exception e) {
             e.printStackTrace();

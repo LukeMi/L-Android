@@ -1,8 +1,10 @@
 package com.jeferry.android.widget;
 
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ViewPagerActivity extends AppCompatActivity {
 

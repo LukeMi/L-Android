@@ -1,8 +1,9 @@
 package com.lukemi.android.tutorial.lifecycle;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.tutorial.R;
 import com.socks.library.KLog;
@@ -31,7 +32,7 @@ public class SaveInstanceStateActivity extends AppCompatActivity {
 
     @OnClick(R.id.task)
     public void onViewClicked() {
-
+        Toast.makeText(this, "hehe", Toast.LENGTH_SHORT).show();
     }
 
     /**

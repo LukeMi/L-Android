@@ -1,7 +1,8 @@
 package com.jeferry.android.widget.satin;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.jeferry.android.widget.R;
 

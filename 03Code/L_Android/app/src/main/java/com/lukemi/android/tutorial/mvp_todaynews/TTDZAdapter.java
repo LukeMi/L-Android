@@ -1,10 +1,10 @@
 package com.lukemi.android.tutorial.mvp_todaynews;
 
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.lukemi.android.tutorial.R;
 
 import java.util.List;
@@ -39,7 +39,8 @@ public class TTDZAdapter extends BaseQuickAdapter<TTDZBean.DataBean, BaseViewHol
 
 
     public TTDZAdapter(@Nullable List< TTDZBean.DataBean> data) {
-        super(data);
+        super(data==null?0:data.size());
+
     }
 
     public TTDZAdapter(@LayoutRes int layoutResId) {

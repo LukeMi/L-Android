@@ -3,14 +3,15 @@ package com.scwang.smartrefresh.layout.footer;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.scwang.smartrefresh.layout.R;
 import com.scwang.smartrefresh.layout.api.RefreshFooter;
@@ -216,6 +217,7 @@ public class ClassicsFooter extends LinearLayout implements RefreshFooter {
 
     //<editor-fold desc="private">
     private Runnable restoreRunable;
+
     private void restoreRefreshLayoutBackground() {
         if (restoreRunable != null) {
             restoreRunable.run();
@@ -227,6 +229,7 @@ public class ClassicsFooter extends LinearLayout implements RefreshFooter {
         if (restoreRunable == null && mSpinnerStyle == SpinnerStyle.FixedBehind) {
             restoreRunable = new Runnable() {
                 Drawable drawable = refreshLayout.getLayout().getBackground();
+
                 @Override
                 public void run() {
                     refreshLayout.getLayout().setBackgroundDrawable(drawable);
@@ -242,6 +245,7 @@ public class ClassicsFooter extends LinearLayout implements RefreshFooter {
         this.mSpinnerStyle = style;
         return this;
     }
+
     public ClassicsFooter setAccentColor(int accentColor) {
         mBottomText.setTextColor(accentColor);
         mProgressDrawable.setColor(accentColor);

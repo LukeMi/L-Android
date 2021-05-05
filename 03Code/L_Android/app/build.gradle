@@ -6,6 +6,9 @@ apply plugin: 'org.greenrobot.greendao'
 // 导入打包 上传蒲公英 gradle
 //apply from: "pack.gradle"
 
+//apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
 def getTimeStamp() {
     SimpleDateFormat sdf = new SimpleDateFormat("-yyyy-MM-dd_HH_mm_")
     String timeStamp = sdf.format(new Date())
@@ -94,7 +97,7 @@ android {
             projectName = "developer"
             keyProps.load(new FileInputStream(file("../keystore/developer/keystore.properties")))
             buildConfigField "int", "userType", "1"
-            minSdkVersion 16
+            minSdkVersion 19
             targetSdkVersion 28
             versionCode 1
             versionName "1.0"
@@ -106,7 +109,7 @@ android {
             dimension "project"
             keyProps.load(new FileInputStream(file("../keystore/user/keystore.properties")))
             buildConfigField "int", "userType", "2"
-            minSdkVersion 16
+            minSdkVersion 19
             targetSdkVersion 28
             versionCode 1
             versionName "2.0"
@@ -199,12 +202,9 @@ dependencies {
 
     //同步树//
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "com.android.support:appcompat-v7:$rootProject.supportVersion"
-    implementation "com.android.support:design:$rootProject.supportVersion"
-    implementation "com.android.support:cardview-v7:$rootProject.supportVersion"
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
-    implementation 'com.android.support:appcompat-v7:28.0.1'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
@@ -226,15 +226,16 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
 
     // RxBind
-    implementation "com.jakewharton.rxbinding2:rxbinding:$rootProject.rxBindVersion"
-    implementation "com.jakewharton.rxbinding2:rxbinding-support-v4:$rootProject.rxBindVersion"
-    implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rootProject.rxBindVersion"
-    implementation "com.jakewharton.rxbinding2:rxbinding-design:$rootProject.rxBindVersion"
-    implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$rootProject.rxBindVersion"
-
-    //    @TargetApi version 17
-
-    //    implementation "com.jakewharton.rxbinding2:rxbinding-leanback-v17:$rootProject.rxBindVersion"
+    implementation "com.jakewharton.rxbinding4:rxbinding-core:$rootProject.rxBindVersion"
+    implementation "com.jakewharton.rxbinding4:rxbinding-appcompat:$rootProject.rxBindVersion"
+    implementation "com.jakewharton.rxbinding4:rxbinding-drawerlayout:$rootProject.rxBindVersion"
+    implementation "com.jakewharton.rxbinding4:rxbinding-leanback:$rootProject.rxBindVersion"
+    implementation "com.jakewharton.rxbinding4:rxbinding-recyclerview:$rootProject.rxBindVersion"
+    implementation "com.jakewharton.rxbinding4:rxbinding-slidingpanelayout:$rootProject.rxBindVersion"
+    implementation "com.jakewharton.rxbinding4:rxbinding-swiperefreshlayout:$rootProject.rxBindVersion"
+    implementation "com.jakewharton.rxbinding4:rxbinding-viewpager:$rootProject.rxBindVersion"
+    implementation "com.jakewharton.rxbinding4:rxbinding-viewpager2:$rootProject.rxBindVersion"
+    implementation "com.jakewharton.rxbinding4:rxbinding-material:$rootProject.rxBindVersion"
 
     //retrofit
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
@@ -246,10 +247,10 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
     //BRVAH
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 
     // 64 K
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation "androidx.multidex:multidex:$multidex_version"
 
     //daggers
     implementation "com.google.dagger:dagger:$rootProject.dagger2Version"

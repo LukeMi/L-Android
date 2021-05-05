@@ -1,9 +1,6 @@
 package com.lukemi.android.tutorial.viewtest;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,15 +11,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.gson.Gson;
-import com.lukemi.android.tutorial.R;
-import com.lukemi.android.tutorial.mvp_todaynews.TTDZAdapter;
-import com.lukemi.android.tutorial.mvp_todaynews.TTDZBean;
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.common.view.DropDownMenu;
 import com.lukemi.android.common.view.SuperSwipeRefreshLayout;
 import com.lukemi.android.common.view.pulltorefresh.RefreshHeaderView;
+import com.lukemi.android.tutorial.R;
+import com.lukemi.android.tutorial.mvp_todaynews.TTDZAdapter;
+import com.lukemi.android.tutorial.mvp_todaynews.TTDZBean;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.request.BaseRequest;
@@ -37,7 +37,7 @@ import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Response;
 
-public class RVRefreshViewActivity extends AppCompatActivity implements RefreshHeaderView.RefreshDistanceListener, BaseQuickAdapter.RequestLoadMoreListener {
+public class RVRefreshViewActivity extends AppCompatActivity implements RefreshHeaderView.RefreshDistanceListener/*, BaseQuickAdapter.RequestLoadMoreListener*/ {
 
     RecyclerView rvTest;
     SuperSwipeRefreshLayout superSwipeRefreshLayout;
@@ -117,7 +117,7 @@ public class RVRefreshViewActivity extends AppCompatActivity implements RefreshH
         gson = new Gson();
         ttdzAdapter = new TTDZAdapter(R.layout.item_ttdz, dataBeanList);
 //        ttdzAdapter.setMaxItemCount(2);
-        ttdzAdapter.setOnLoadMoreListener(this, rvTest);
+//        ttdzAdapter.setOnLoadMoreListener(this, rvTest);
 
 
     }
@@ -235,16 +235,16 @@ public class RVRefreshViewActivity extends AppCompatActivity implements RefreshH
                                 dataBeanList.clear();
                             }
                             if (data != null && data.size() > 0) {
-                                if (ttdzAdapter.isLoading()) {
-                                    ttdzAdapter.loadMoreComplete();
-                                }
+//                                if (ttdzAdapter.isLoading()) {
+//                                    ttdzAdapter.loadMoreComplete();
+//                                }
 
                                 dataBeanList.addAll(data);
                                 ttdzAdapter.notifyDataSetChanged();
                             } else {
-                                if (ttdzAdapter.isLoading()) {
-                                    ttdzAdapter.loadMoreEnd();
-                                }
+//                                if (ttdzAdapter.isLoading()) {
+//                                    ttdzAdapter.loadMoreEnd();
+//                                }
 
                             }
 
@@ -266,18 +266,18 @@ public class RVRefreshViewActivity extends AppCompatActivity implements RefreshH
                             superSwipeRefreshLayout.setRefreshing(false);
                             progressBar.setVisibility(View.GONE);
                         }
-                        if (ttdzAdapter.isLoading()) {
-                            ttdzAdapter.loadMoreFail();
-                        }
+//                        if (ttdzAdapter.isLoading()) {
+//                            ttdzAdapter.loadMoreFail();
+//                        }
                         super.onAfter(s, e);
                     }
                 });
     }
 
-    @Override
+  /*  @Override
     public void onLoadMoreRequested() {
         loadMore();
-    }
+    }*/
 
     @Override
     public void onPositionChange(int currentPosY) {

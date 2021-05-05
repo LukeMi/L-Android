@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.design.widget.TabLayout
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tl"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp48"
@@ -14,7 +14,7 @@
         app:tabIndicatorHeight="@dimen/dp3"
         app:tabMode="fixed" />
 
-    <android.support.design.widget.TabLayout
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tl2"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp48"
@@ -24,5 +24,4 @@
         app:tabMode="fixed"
         app:tabSelectedTextColor="@color/red"
         app:tabTextColor="@color/sandybrown" />
-
 </LinearLayout>

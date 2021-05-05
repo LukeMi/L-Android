@@ -5,12 +5,14 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.lukemi.android.tutorial.R;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.lukemi.android.common.util.Logcat;
+import com.lukemi.android.tutorial.R;
 
 
 public class NetworkActivity extends AppCompatActivity implements DownloadCallback, View.OnClickListener {
@@ -41,7 +43,7 @@ public class NetworkActivity extends AppCompatActivity implements DownloadCallba
         loadBTN.setOnClickListener(this);
 
         mNetworkFragment = NetworkFragment.getInstance(getSupportFragmentManager(), "https://www.baidu.com");
-        android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+      FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_layout, mNetworkFragment);
     }
 

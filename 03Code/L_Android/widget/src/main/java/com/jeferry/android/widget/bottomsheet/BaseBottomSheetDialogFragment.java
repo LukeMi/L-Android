@@ -1,12 +1,12 @@
 package com.jeferry.android.widget.bottomsheet;
 
 import android.graphics.Color;
-import android.support.design.widget.BottomSheetBehavior;
-import android.support.design.widget.BottomSheetDialogFragment;
-import android.support.design.widget.CoordinatorLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.socks.library.KLog;
 
 public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {

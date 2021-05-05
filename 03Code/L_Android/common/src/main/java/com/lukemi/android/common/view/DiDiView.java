@@ -8,11 +8,12 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.graphics.RectF;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.LinearInterpolator;
+
+import androidx.annotation.Nullable;
 
 /**
  * 仿照滴滴倒计时控件

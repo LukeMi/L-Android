@@ -1,11 +1,6 @@
-
-println "settings start"
-
 include ':refresh-layout',
         ':common',
-        ':app' ,
-        ':widget' ,
+        ':app',
+        ':widget',
         ':aidlServer',
         ':xgpush'
-
-println "settings start"

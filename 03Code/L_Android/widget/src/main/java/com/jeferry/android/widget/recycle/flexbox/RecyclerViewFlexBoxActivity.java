@@ -1,18 +1,15 @@
 package com.jeferry.android.widget.recycle.flexbox;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.flexbox.FlexDirection;
 import com.google.android.flexbox.FlexWrap;
-import com.google.android.flexbox.FlexboxLayout;
 import com.google.android.flexbox.FlexboxLayoutManager;
 import com.jeferry.android.widget.R;
 import com.jeferry.android.widget.flexbox.FlexBoxEntity;
-import com.jeferry.android.widget.recycle.flexbox.FlexboxAdapter;
 
 import java.util.ArrayList;
 

@@ -13,5 +13,4 @@
         android:textColor="#0FFF00"
         android:textSize="40sp"
         tools:text="\@string/hello_blank_fragment" />
-
 </FrameLayout>

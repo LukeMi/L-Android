@@ -1,7 +1,8 @@
 package com.lukemi.android.common.util;
 
-import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class WindowUtil {
     /**

@@ -1,9 +1,10 @@
 package com.jeferry.android.widget;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.common.util.EditTextUtil;
 

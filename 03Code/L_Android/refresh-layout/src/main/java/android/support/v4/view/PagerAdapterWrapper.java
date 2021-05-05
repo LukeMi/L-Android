@@ -5,6 +5,8 @@ import android.os.Parcelable;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.viewpager.widget.PagerAdapter;
+
 @SuppressWarnings("deprecation")
 public class PagerAdapterWrapper extends PagerAdapter {
 
@@ -14,14 +16,14 @@ public class PagerAdapterWrapper extends PagerAdapter {
         this.wrapped = wrapped;
     }
 
-    public void attachViewPager(ViewPager viewPager) {
-        viewPager.mAdapter = this;
-    }
+//    public void attachViewPager(ViewPager viewPager) {
+//        viewPager.mAdapter = this;
+//    }
 
-    @Override
+  /*  @Override
     protected void setViewPagerObserver(DataSetObserver observer) {
         super.setViewPagerObserver(observer);
-    }
+    }*/
 
     @Override
     public int getCount() {

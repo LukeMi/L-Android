@@ -11,9 +11,8 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:switchMinWidth="@dimen/dp36"
         android:checked="true"
+        android:switchMinWidth="@dimen/dp36"
         android:thumb="@drawable/selector_switch_thumb"
         android:track="@drawable/selector_switch_track" />
-
 </LinearLayout>

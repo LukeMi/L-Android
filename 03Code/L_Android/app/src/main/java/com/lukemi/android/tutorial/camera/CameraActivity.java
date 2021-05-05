@@ -12,19 +12,19 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Layout;
 import android.text.TextPaint;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.lukemi.android.common.ShowBigPicClass;
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.util.BitmapUtils;
 import com.lukemi.android.tutorial.util.HttpUtils;
-import com.lukemi.android.common.util.Logcat;
-import com.lukemi.android.common.ShowBigPicClass;
-
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

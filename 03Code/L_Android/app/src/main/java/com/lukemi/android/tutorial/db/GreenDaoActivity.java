@@ -2,25 +2,28 @@ package com.lukemi.android.tutorial.db;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
+import com.chad.library.adapter.base.listener.OnItemLongClickListener;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.lukemi.android.common.util.Logcat;
+import com.lukemi.android.common.util.ToastUtil;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.app.Application;
 import com.lukemi.android.tutorial.bean.Student;
 import com.lukemi.android.tutorial.db.dao.DaoSession;
 import com.lukemi.android.tutorial.db.dao.StudentDao;
-import com.lukemi.android.common.util.Logcat;
-import com.lukemi.android.common.util.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +32,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class GreenDaoActivity extends AppCompatActivity implements BaseQuickAdapter.OnItemLongClickListener,
-        BaseQuickAdapter.OnItemChildClickListener {
+public class GreenDaoActivity extends AppCompatActivity implements OnItemLongClickListener,
+        OnItemChildClickListener {
 
     @BindView(R.id.rv_list)
     RecyclerView rvList;
@@ -220,10 +223,10 @@ public class GreenDaoActivity extends AppCompatActivity implements BaseQuickAdap
                     .setText(R.id.number, item.getNumber() + "")
                     .setText(R.id.name, item.getName() + "")
                     .setText(R.id.age, item.getAge() + "")
-                    .addOnClickListener(R.id.btn_del)
+                    /*.addOnClickListener(R.id.btn_del)
                     .addOnClickListener(R.id.btn_query)
                     .addOnClickListener(R.id.btn_DEL_id)
-                    .addOnClickListener(R.id.btn_id);
+                    .addOnClickListener(R.id.btn_id)*/;
         }
 
         public void setRelationView(View view) {

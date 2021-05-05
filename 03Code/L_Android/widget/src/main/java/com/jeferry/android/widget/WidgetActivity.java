@@ -2,13 +2,14 @@ package com.jeferry.android.widget;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.jeferry.android.widget.bottomsheet.BottomSheetActivity;
 import com.jeferry.android.widget.event.EventDistributeActivity;
 import com.jeferry.android.widget.flexbox.FlexBoxLayoutActivity;
@@ -33,7 +34,7 @@ public class WidgetActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<IntentJumpBean> bindBeanList = new ArrayList<>();
     private IntentJumpAdapter intentJumpAdapter;
-    private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (adapter, view, position) -> {
+    private OnItemClickListener mOnItemClickListener = (adapter, view, position) -> {
         IntentJumpBean o = (IntentJumpBean) adapter.getData().get(position);
         Class<?> c = o.getC();
         if (c != null) {

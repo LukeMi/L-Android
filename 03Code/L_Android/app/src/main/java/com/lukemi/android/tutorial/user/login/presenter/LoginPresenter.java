@@ -1,7 +1,9 @@
 package com.lukemi.android.tutorial.user.login.presenter;
 
-import android.support.annotation.NonNull;
+
 import android.text.TextUtils;
+
+import androidx.annotation.NonNull;
 
 import com.lukemi.android.tutorial.user.login.bean.LoginBeanRB;
 import com.lukemi.android.tutorial.user.login.ui.LoginActivity;

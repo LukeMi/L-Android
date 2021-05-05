@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
@@ -19,8 +18,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.lukemi.android.tutorial.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.lukemi.android.common.util.Logcat;
+import com.lukemi.android.tutorial.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

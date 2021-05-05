@@ -5,12 +5,13 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
+
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 
 import com.scwang.smartrefresh.layout.R;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
@@ -40,11 +41,11 @@ public class BezierRadarHeader extends FrameLayout implements RefreshHeader {
 
     //<editor-fold desc="FrameLayout">
     public BezierRadarHeader(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public BezierRadarHeader(Context context, AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public BezierRadarHeader(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -144,7 +145,7 @@ public class BezierRadarHeader extends FrameLayout implements RefreshHeader {
     @Override
     public void onPullingDown(float percent, int offset, int headHeight, int extendHeight) {
         mWaveView.setHeadHeight(Math.min(headHeight, offset));
-        mWaveView.setWaveHeight((int)(1.9f*Math.max(0, offset - headHeight)));
+        mWaveView.setWaveHeight((int) (1.9f * Math.max(0, offset - headHeight)));
         mDotView.setFraction(percent);
     }
 
@@ -158,12 +159,12 @@ public class BezierRadarHeader extends FrameLayout implements RefreshHeader {
         mWaveView.setHeadHeight(headHeight);
         ValueAnimator animator = ValueAnimator.ofInt(
                 mWaveView.getWaveHeight(), 0,
-                -(int)(mWaveView.getWaveHeight()*0.8),0,
-                -(int)(mWaveView.getWaveHeight()*0.4f),0);
+                -(int) (mWaveView.getWaveHeight() * 0.8), 0,
+                -(int) (mWaveView.getWaveHeight() * 0.4f), 0);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                mWaveView.setWaveHeight((int) animation.getAnimatedValue()/2);
+                mWaveView.setWaveHeight((int) animation.getAnimatedValue() / 2);
                 mWaveView.invalidate();
             }
         });

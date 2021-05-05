@@ -2,14 +2,14 @@ package com.lukemi.android.tutorial;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.lukemi.android.common.IntentJumpAdapter;
 import com.lukemi.android.common.IntentJumpBean;
 import com.lukemi.android.common.config.ARouterPath;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mRvIntent;
     private List<IntentJumpBean> intentJumpBeanList;
     private IntentJumpAdapter intentJumpAdapter;
-    private BaseQuickAdapter.OnItemClickListener mOnItemClickListener = (BaseQuickAdapter adapter, View view, int position) -> {
+    private OnItemClickListener mOnItemClickListener = (  adapter,   view,   position) -> {
         IntentJumpBean bean = (IntentJumpBean) adapter.getData().get(position);
         Class<?> c = bean.getC();
         if (c != null) {

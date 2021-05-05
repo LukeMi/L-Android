@@ -2,8 +2,9 @@ package com.lukemi.android.tutorial.api.sensor;
 
 import android.content.Context;
 import android.hardware.SensorManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.tutorial.R;
 

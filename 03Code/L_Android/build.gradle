@@ -4,6 +4,7 @@ buildscript {
     ext.kotlin_version = '1.3.50'
 
     repositories {
+//        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         google()
         jcenter()
     }
@@ -13,17 +14,18 @@ buildscript {
         //greenDao
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // add plugin
         //ButterKnife配置
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-        classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
+//        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.3'
         //kotlin配置
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.15'
     }
 }
 
 allprojects {
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+//        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         google()
         jcenter()
         mavenCentral()
@@ -38,26 +40,28 @@ task clean(type: Delete) {
 }
 
 ext {
-    compileSdkVersion = 28
-    buildToolsVersion = '28.0.3'
+    compileSdkVersion = 30
+    buildToolsVersion = '30.0.3'
     minSdkVersion = 16
-    targetSdkVersion = 28
+    targetSdkVersion = 230
 
-    supportVersion = '28.0.1'
-    constraintLayoutVersion = '1.1.3'
+    supportVersion = '30.+'
+    constraintLayoutVersion = '2.0.4'
     flexboxLayoutVersion = '1.0.0'
     junitVersion = '4.12'
     runnerVersion = '1.0.2'
     espressoCoreVersion = '3.0.2'
 
-    butterknifeVersion = '9.0.0-rc2'
-    rxBindVersion = '2.1.1'
+    butterknifeVersion = '10.2.0'
+    rxBindVersion = '4.0.0'
     rxJavaVersion = '2.2.9'
     rxandroidVersion = '2.0.2'
     okhttp3Version = '3.11.0'
     dagger2Version = '2.16'
     retrofitVersion = '2.4.0'
     leakCanaryVersion = '1.6.2'
+
+    multidex_version = '2.0.1'
 
     arouterVersion = "1.5.0"
     arouterAnnotationVersion = "1.2.2"

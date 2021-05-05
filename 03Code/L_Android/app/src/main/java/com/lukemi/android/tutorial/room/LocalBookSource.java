@@ -1,7 +1,8 @@
 package com.lukemi.android.tutorial.room;
 
 import android.annotation.SuppressLint;
-import android.arch.core.executor.ArchTaskExecutor;
+
+import androidx.arch.core.executor.ArchTaskExecutor;
 
 import com.socks.library.KLog;
 

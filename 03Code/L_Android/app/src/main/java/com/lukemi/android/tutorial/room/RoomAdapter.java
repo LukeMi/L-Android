@@ -1,9 +1,9 @@
 package com.lukemi.android.tutorial.room;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.google.android.flexbox.FlexDirection;
 import com.google.android.flexbox.FlexWrap;
 import com.google.android.flexbox.FlexboxLayoutManager;
@@ -23,9 +23,9 @@ public class RoomAdapter extends BaseQuickAdapter<BookEntity, BaseViewHolder> {
         helper.setText(R.id.tv_name, item.name)
                 .setText(R.id.tv_price, price(item.price))
                 .setText(R.id.tv_time, time(item.date))
-                .addOnClickListener(R.id.btn_delete);
+           /*     .addOnClickListener(R.id.btn_delete)*/;
         RecyclerView tag = helper.getView(R.id.rv_tag);
-        FlexboxLayoutManager flexboxLayoutManager = new FlexboxLayoutManager(mContext, FlexDirection.ROW, FlexWrap.WRAP);
+        FlexboxLayoutManager flexboxLayoutManager = new FlexboxLayoutManager(getContext(), FlexDirection.ROW, FlexWrap.WRAP);
         tag.setLayoutManager(flexboxLayoutManager);
         AuthorAdapter authorAdapter = new AuthorAdapter();
         authorAdapter.replaceData(item.list);

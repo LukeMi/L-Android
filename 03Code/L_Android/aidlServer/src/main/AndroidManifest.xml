@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lukemi.android.toturial.aidl"
-    >
-
+    package="com.lukemi.android.toturial.aidl">
+    <!--    android:theme="@style/Theme.AppCompat.Light.NoActionBar"-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        >
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         <receiver
             android:name=".CaptureReceiver"
             android:enabled="true"
-            android:exported="true"
-            >
+            android:exported="true">
             <intent-filter>
                 <action android:name="aidl.BroadcastReceiver" />
             </intent-filter>
@@ -24,7 +21,6 @@
         <activity android:name=".AidlActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -32,21 +28,20 @@
         <service
             android:name=".service.AidlServerService"
             android:enabled="true"
-            android:exported="true"
-            />
+            android:exported="true" />
 
         <activity android:name=".SchemeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="aidl"
                     android:host="host"
-                    android:port="3000"
                     android:path="/path"
-                    />
+                    android:port="3000"
+                    android:scheme="aidl" />
             </intent-filter>
         </activity>
     </application>

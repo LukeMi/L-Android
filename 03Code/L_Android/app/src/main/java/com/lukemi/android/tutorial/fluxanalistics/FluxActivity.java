@@ -5,16 +5,17 @@ import android.graphics.BitmapFactory;
 import android.net.TrafficStats;
 import android.os.Bundle;
 import android.os.Process;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.lukemi.android.common.util.DeviceUtil;
+import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
 import com.lukemi.android.tutorial.util.HttpUtils;
-import com.lukemi.android.common.util.Logcat;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

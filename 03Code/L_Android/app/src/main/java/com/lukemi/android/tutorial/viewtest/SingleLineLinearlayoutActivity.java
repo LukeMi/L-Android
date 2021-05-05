@@ -1,15 +1,16 @@
 package com.lukemi.android.tutorial.viewtest;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.lukemi.android.tutorial.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.lukemi.android.common.view.SingleLineLayout;
+import com.lukemi.android.tutorial.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

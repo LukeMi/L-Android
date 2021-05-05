@@ -4,19 +4,21 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.lukemi.android.common.util.Logcat;
-import com.lukemi.android.tutorial.bean.AppInfos;
 import com.lukemi.android.common.util.ToastUtil;
+import com.lukemi.android.tutorial.bean.AppInfos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +26,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AppInfoActivity extends AppCompatActivity implements BaseQuickAdapter.OnItemClickListener {
+public class AppInfoActivity extends AppCompatActivity implements OnItemClickListener {
 
     @BindView(R.id.rv_appinfo)
     RecyclerView rvAppinfo;

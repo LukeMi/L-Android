@@ -1,14 +1,15 @@
 package com.jeferry.android.widget.event;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import androidx.annotation.Nullable;
+
 import com.socks.library.KLog;
 
-class EventLogView extends View {
+public class EventLogView extends View {
 
     public final String TAG = this.getClass().getSimpleName();
 

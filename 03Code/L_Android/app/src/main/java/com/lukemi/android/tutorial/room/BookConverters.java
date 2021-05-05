@@ -1,6 +1,6 @@
 package com.lukemi.android.tutorial.room;
 
-import android.arch.persistence.room.TypeConverter;
+import androidx.room.TypeConverter;
 
 import com.alibaba.fastjson.JSON;
 

@@ -1,14 +1,15 @@
 package com.lukemi.android.tutorial.utiltest;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.lukemi.android.tutorial.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.lukemi.android.common.util.ToastUtil;
+import com.lukemi.android.tutorial.R;
 
 import java.lang.reflect.Field;
 

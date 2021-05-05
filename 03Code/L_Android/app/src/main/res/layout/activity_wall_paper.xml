@@ -3,15 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.tbug.android.collection.com.lukemi.android.collection.setting.WallPaperActivity">
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/showPic"
         android:layout_width="match_parent"
         android:layout_height="300dp" />
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -31,7 +30,11 @@
             android:layout_weight="1"
             android:text="设置壁纸" />
 
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:text="设置为系统默认" />
     </LinearLayout>
-
-
 </LinearLayout>

@@ -1,8 +1,9 @@
 package com.jeferry.android.widget;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TableLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * TableLayout布局学习

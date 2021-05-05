@@ -1,11 +1,11 @@
 package com.lukemi.android.tutorial.api.vibrator;
 
 import android.content.Context;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.tutorial.R;
 

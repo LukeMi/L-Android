@@ -1,9 +1,11 @@
 package com.jeferry.android.widget.event;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.jeferry.android.widget.R;
 import com.socks.library.KLog;
 
 public class EventDistributeActivity extends AppCompatActivity {
@@ -33,10 +35,9 @@ public class EventDistributeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.lukemi.android.common.R.layout.activity_event_distribute);
-        mViewGroup = findViewById(com.lukemi.android.common.R.id.viewGroup);
+        setContentView(R.layout.activity_event_distribute);
+        mViewGroup = findViewById(R.id.viewGroup);
 //        view = findViewById(com.lukemi.android.common.R.id.view);
-
     }
 
     private String getDesc(int action) {

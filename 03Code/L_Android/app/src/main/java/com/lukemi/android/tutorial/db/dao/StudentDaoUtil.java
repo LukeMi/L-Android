@@ -1,7 +1,8 @@
 package com.lukemi.android.tutorial.db.dao;
 
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lukemi.android.tutorial.app.Application;
 import com.lukemi.android.tutorial.bean.Student;

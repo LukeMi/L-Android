@@ -4,17 +4,17 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.lukemi.android.common.util.DeviceUtil;
 import com.lukemi.android.common.util.Logcat;
 import com.lukemi.android.tutorial.R;
-import com.scwang.smartrefresh.layout.util.DensityUtil;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

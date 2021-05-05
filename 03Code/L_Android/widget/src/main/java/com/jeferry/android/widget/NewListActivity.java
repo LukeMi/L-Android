@@ -1,12 +1,6 @@
 package com.jeferry.android.widget;
 
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +9,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.google.gson.Gson;
 import com.jeferry.android.widget.data.model.JNewsBabyBean;
 import com.jeferry.android.widget.data.model.JNewsBaseBean;
@@ -61,7 +62,7 @@ import java.util.Map;
 import okhttp3.Call;
 import okhttp3.Response;
 
-public class NewListActivity extends AppCompatActivity implements OnRefreshListener, BaseQuickAdapter.RequestLoadMoreListener {
+public class NewListActivity extends AppCompatActivity implements OnRefreshListener/*, BaseQuickAdapter.RequestLoadMoreListener*/ {
 
 
     private DropDownMenu dropDownMenu;
@@ -160,7 +161,7 @@ public class NewListActivity extends AppCompatActivity implements OnRefreshListe
         targetMap.put("news_history", JNewsHistoryBean.class);
         targetMap.put("news_food", JNewsFoodBean.class);
         newsAdapter = new NewsAdapter(android.R.layout.simple_list_item_1, newsList);
-        newsAdapter.setOnLoadMoreListener(this, mRecyclerView);
+//        newsAdapter.setOnLoadMoreListener(this, mRecyclerView);
     }
 
     private void initView() {
@@ -186,10 +187,10 @@ public class NewListActivity extends AppCompatActivity implements OnRefreshListe
             public void onGlobalLayout() {
                 if (mRecyclerView.computeVerticalScrollRange() < getResources().getDisplayMetrics().heightPixels) {
                     Logcat.log("initRecyclerViewListener: sliceAdapter.setEnableLoadMore(false)");
-                    newsAdapter.setEnableLoadMore(false);
+//                    newsAdapter.setEnableLoadMore(false);
                 } else {
                     Logcat.log("initRecyclerViewListener: sliceAdapter.setEnableLoadMore(true)");
-                    newsAdapter.setEnableLoadMore(true);
+//                    newsAdapter.setEnableLoadMore(true);
                 }
             }
         });
@@ -226,9 +227,9 @@ public class NewListActivity extends AppCompatActivity implements OnRefreshListe
                             JSONObject object = new JSONObject(s);
                             JSONArray array = object.getJSONArray("data");
                             if (array == null || array.length() < 1) {
-                                newsAdapter.loadMoreEnd();
+//                                newsAdapter.loadMoreEnd();
                             } else {
-                                newsAdapter.loadMoreComplete();
+//                                newsAdapter.loadMoreComplete();
                             }
                             Class<?> transformClass = getTagetClass(category);
                             if (transformClass != null && JNewsBaseBean.class.isAssignableFrom(transformClass)) {
@@ -253,9 +254,9 @@ public class NewListActivity extends AppCompatActivity implements OnRefreshListe
                     public void onError(Call call, Response response, Exception e) {
                         page--;
                         super.onError(call, response, e);
-                        if (newsAdapter.isLoading()) {
+                       /* if (newsAdapter.isLoading()) {
                             newsAdapter.loadMoreFail();
-                        }
+                        }*/
                     }
 
                     @Override
@@ -282,16 +283,16 @@ public class NewListActivity extends AppCompatActivity implements OnRefreshListe
         return null;
     }
 
-    @Override
+ /*   @Override
     public void onLoadMoreRequested() {
         refreshLayout.setEnableRefresh(false);
         Logcat.log("onLoadMoreRequested: ");
         loadMore();
-    }
+    }*/
 
     @Override
     public void onRefresh(RefreshLayout refreshlayout) {
-        newsAdapter.setEnableLoadMore(false);
+//        newsAdapter.setEnableLoadMore(false);
         Logcat.log("onRefresh");
         refresh();
     }

@@ -89,7 +89,5 @@
                     android:text="提交" />
             </LinearLayout>
         </LinearLayout>
-
     </ScrollView>
-
 </RelativeLayout>

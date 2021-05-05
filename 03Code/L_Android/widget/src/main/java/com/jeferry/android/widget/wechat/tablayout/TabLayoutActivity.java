@@ -2,12 +2,13 @@ package com.jeferry.android.widget.wechat.tablayout;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.tabs.TabLayout;
 import com.jeferry.android.widget.R;
 import com.lukemi.android.common.util.ToastUtil;
 

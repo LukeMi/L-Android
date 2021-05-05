@@ -6,12 +6,13 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import com.lukemi.android.tutorial.aidl.AidlClientActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.lukemi.android.common.util.ToastUtil;
+import com.lukemi.android.tutorial.aidl.AidlClientActivity;
 
 import java.util.List;
 

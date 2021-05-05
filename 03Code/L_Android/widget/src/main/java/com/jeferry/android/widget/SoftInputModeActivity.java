@@ -2,7 +2,6 @@ package com.jeferry.android.widget;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -10,6 +9,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.jeferry.android.widget.bean.SoftInputModeBean;
 import com.jeferry.android.widget.flowlayout.FlowLayout;
