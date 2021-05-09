@@ -19,7 +19,8 @@ buildscript {
         //kotlin配置
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.15'
+        // protobuf
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.16'
     }
 }
 

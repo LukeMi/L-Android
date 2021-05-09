@@ -3,4 +3,5 @@ include ':refresh-layout',
         ':app',
         ':widget',
         ':aidlServer',
-        ':xgpush'
+        ':xgpush',
+        ':protobuf'

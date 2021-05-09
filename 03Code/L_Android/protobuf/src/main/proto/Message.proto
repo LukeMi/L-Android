@@ -1,0 +1,8 @@
+syntax = "proto3";
+option java_package = "com.jeferry.protobuf.generated";
+option java_outer_classname = "IMessage";
+message Message{
+  string id = 1;// 消息id
+  string  from = 2;// 发送者
+  string  to = 3;// 接受者
+}

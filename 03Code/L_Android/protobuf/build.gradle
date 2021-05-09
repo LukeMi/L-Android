@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'com.google.protobuf'
+
+protobuf {
+
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.8.0'
+    }
+
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option "lite"
+                }
+            }
+            task.generateDescriptorSet = true
+            task.descriptorSetOptions.path = "${projectDir}/build/descriptors/${task.sourceSet.name}.dsc"
+            task.descriptorSetOptions.includeSourceInfo = true
+            task.descriptorSetOptions.includeImports = true
+        }
+    }
+
+    generatedFilesBaseDir = "$projectDir/src"
+}
+
+dependencies {
+    implementation 'com.google.protobuf:protobuf-javalite:3.8.0'
+}
