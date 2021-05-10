@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply from: project.rootProject.getProjectDir().absolutePath + "/upload.gradle"
+apply from: "upload.gradle"
 
 //apply plugin: 'kotlin-android'
 //apply plugin: 'kotlin-android-extensions'

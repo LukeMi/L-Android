@@ -218,7 +218,11 @@ dependencies {
     implementation files('libs/httpmime-4.3-sources.jar')
     implementation project(':refresh-layout')
     implementation project(':common')
-    implementation project(':widget')
+    if (useWidgetSourceCode.toBoolean()) {
+        implementation project(':widget')
+    } else {
+        implementation "com.jeferry.android.widget:widget:1.0.0"
+    }
     implementation project(':xgpush')
 
     // Butterknife

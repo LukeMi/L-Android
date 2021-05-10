@@ -1,9 +1,9 @@
 apply plugin: "maven"
 
-def username = "widget"
+def username = "repo"
 def pwd = "admin123"
 
-def nexusRepositoryUrl = "http://127.0.0.1:8981/repository/widget/"
+def nexusRepositoryUrl = "http://127.0.0.1:8981/repository/repo/"
 def VERSION_NAME = '1.0.0'
 def ARTIFACT_ID = 'widget'
 def GROUP_ID = 'com.jeferry.android.widget'
@@ -13,15 +13,28 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository(url: nexusRepositoryUrl) {
-                authentication(userName:username, password: pwd)
+                authentication(userName: username, password: pwd)
             }
             pom.project {
+                groupId GROUP_ID
                 artifactId ARTIFACT_ID
                 version VERSION_NAME
-                groupId GROUP_ID
                 packaging 'aar'
                 description 'lib des'
             }
         }
     }
 }
+
+// 指定编码
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+// 打包源码
+task(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+
