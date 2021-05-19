@@ -1,11 +1,16 @@
 apply plugin: "maven"
 
+// 服务端用户id
 def username = "repo"
-def pwd = "admin123"
+// 服务端配置的密码
+def pwd = "nexus20210512"
 
-def nexusRepositoryUrl = "http://127.0.0.1:8981/repository/repo/"
+def nexusRepositoryUrl = "http://127.0.0.1:8181/repository/repo/"
+// 打包版本号
 def VERSION_NAME = '1.0.0'
+// 构建id
 def ARTIFACT_ID = 'widget'
+// 构建groupId
 def GROUP_ID = 'com.jeferry.android.widget'
 
 
