@@ -14,7 +14,7 @@
         android:layout_height="5dp"
         android:indeterminate="false"
         android:max="100"
-        android:progress="90"
+        android:progress="0"
         android:progressDrawable="@drawable/layer_list_progress_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
