@@ -5,7 +5,8 @@ def username = "repo"
 // 服务端配置的密码
 def pwd = "nexus20210512"
 
-def nexusRepositoryUrl = "http://127.0.0.1:8181/repository/repo/"
+//def nexusRepositoryUrl = "http://127.0.0.1:8181/repository/repo/"
+def nexusRepositoryUrl = "http://120.55.167.85:8181/repository/repo/"
 // 打包版本号
 def VERSION_NAME = '1.0.0'
 // 构建id

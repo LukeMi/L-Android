@@ -15,6 +15,7 @@ import com.jeferry.android.widget.JSAndroidActivity;
 import com.lukemi.android.common.IntentJumpAdapter;
 import com.lukemi.android.common.IntentJumpBean;
 import com.lukemi.android.tutorial.api.gps.GpsActivity;
+import com.lukemi.android.tutorial.api.okhttp.OkhttpActivity;
 import com.lukemi.android.tutorial.api.sensor.SensorActivity;
 import com.lukemi.android.tutorial.api.vibrator.VibratorActivity;
 import com.lukemi.android.tutorial.killprocess.AppStaticsActivity;
@@ -81,6 +82,7 @@ public class AndroidActivity extends AppCompatActivity {
         intentJumpBeanList = new ArrayList<>();
         intentJumpBeanList.add(new IntentJumpBean("IPC机制", IPCActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("GPS", GpsActivity.class));
+        intentJumpBeanList.add(new IntentJumpBean("Okhttp", OkhttpActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Vibrator", VibratorActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Sensor", SensorActivity.class));
         intentJumpBeanList.add(new IntentJumpBean("Process", AppStaticsActivity.class));

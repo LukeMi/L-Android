@@ -1,8 +1,12 @@
 package com.lukemi.android.common.util;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -12,6 +16,11 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * 网络请求工具类
@@ -19,6 +28,10 @@ import java.nio.charset.StandardCharsets;
  * @author Jimmy
  */
 public class HttpUtils {
+    public static final String TAG = HttpUtils.class.getSimpleName();
+    public static final String IMAGE_PATH = "https://www.baidu.com/img/540x258_2179d1243e6c5320a8dcbecd834a025d.png";
+    public static final String TOU_TIAO_URL = "https://s9.pstatp.com/package/apk/news_article/1001_8310/news_article_tt_wtt_qrcod_v1001_8310_ca49_1624598627.apk?v=1624598630";
+
 
     /**
      * 通过GET请求方式获取Json数据
@@ -27,7 +40,6 @@ public class HttpUtils {
      * @return JSON 字符串
      */
     public static String getString(String webSite) {
-        // TODO Auto-generated method stub
         InputStream is = null;
         // 读取String内容
         BufferedReader br = null;
@@ -323,5 +335,123 @@ public class HttpUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+
+    public static void download(String url, String filePath, ProgressListener progressListener) {
+        OkHttpClient client = new OkHttpClient.Builder().connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .build();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+        FileOutputStream outputStream = null;
+        InputStream stream = null;
+        try {
+            File file = new File(filePath);
+            file.getParentFile().mkdirs();
+            file.createNewFile();
+            outputStream = new FileOutputStream(file);
+            Response response = client.newCall(request).execute();
+            long contentLength = response.body().contentLength();
+            stream = response.body().byteStream();
+            byte[] bytes = new byte[1024];
+            int length;
+            long sum = 0;
+            while ((length = stream.read(bytes)) != -1) {
+                outputStream.write(bytes, 0, length);
+                sum += length;
+                if (progressListener != null) {
+                    int progress = (int) ((sum / (contentLength * 1.0f)) * 100);
+                    Log.i(TAG, "download: " + progress);
+                    progressListener.onProgress(progress);
+                }
+            }
+            if (file.exists()) {
+                if (progressListener != null) {
+                    progressListener.onSuccess(file.getPath());
+                }
+            } else {
+                if (progressListener != null) {
+                    progressListener.onFailure(new RuntimeException("file not exist"));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            if (progressListener != null) {
+                progressListener.onFailure(e);
+            }
+        } finally {
+            try {
+                outputStream.flush();
+                stream.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void downloadImg(String url, String filePath, ProgressListener progressListener) {
+        OkHttpClient client = new OkHttpClient.Builder().connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .build();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+        FileOutputStream outputStream = null;
+        InputStream stream = null;
+        try {
+            File file = new File(filePath);
+            file.getParentFile().mkdirs();
+            file.createNewFile();
+            outputStream = new FileOutputStream(file);
+            Response response = client.newCall(request).execute();
+            long contentLength = response.body().contentLength();
+            stream = response.body().byteStream();
+            byte[] bytes = new byte[1024];
+            int length;
+            long sum = 0;
+            while ((length = stream.read(bytes)) != -1) {
+                outputStream.write(bytes, 0, length);
+                sum += length;
+                if (progressListener != null) {
+                    int progress = (int) ((sum / (contentLength * 1.0f)) * 100);
+                    Log.i(TAG, "download: " + progress);
+                    progressListener.onProgress(progress);
+                }
+            }
+            if (file.exists()) {
+                if (progressListener != null) {
+                    progressListener.onSuccess(file.getPath());
+                }
+            } else {
+                if (progressListener != null) {
+                    progressListener.onFailure(new RuntimeException("file not exist"));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            if (progressListener != null) {
+                progressListener.onFailure(e);
+            }
+        } finally {
+            try {
+                outputStream.flush();
+                stream.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public interface ProgressListener {
+        void onProgress(int progress);
+
+        void onSuccess(String filePath);
+
+        void onFailure(Throwable throwable);
     }
 }

@@ -13,8 +13,7 @@
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.CAMERA" /> <!-- <uses-permission android:name="android.permission.VIBRATE" /> -->
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
-    <!-- 设置壁纸 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" /> <!-- 设置壁纸 -->
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
 
@@ -54,6 +53,7 @@
         android:testOnly="false"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label">
+        <activity android:name=".api.okhttp.OkhttpActivity"/>
         <activity android:name=".lifecycle.flag.FlagActivity" />
         <activity
             android:name=".lifecycle.SingleInstanceActivity"
