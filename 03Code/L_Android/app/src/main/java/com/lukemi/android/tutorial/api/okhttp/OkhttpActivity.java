@@ -49,33 +49,7 @@ public class OkhttpActivity extends AppCompatActivity {
     private void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_download:
-                new Thread(() -> {
-                    String filePath = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + System.currentTimeMillis() + ".apk";
-                    HttpUtils.download(HttpUtils.TOU_TIAO_URL, filePath, new HttpUtils.ProgressListener() {
-                        @Override
-                        public void onProgress(int progress) {
-                            if (mProgress.getProgress() == progress) {
-                                return;
-                            }
-                            OkhttpActivity.this.runOnUiThread(() -> {
-                                Log.i(TAG, "onProgress: " + progress + ";" + mProgress.getMax() + " : " + mProgress.getProgress());
-                                mProgress.setProgress(progress);
-                                mProgress.setSecondaryProgress(progress);
-                            });
-                        }
-
-                        @Override
-                        public void onSuccess(String filePath) {
-                            Log.i(TAG, "onSuccess: " + filePath);
-                            list.add(filePath);
-                        }
-
-                        @Override
-                        public void onFailure(Throwable throwable) {
-                            Log.i(TAG, "onFailure: " + throwable.getMessage());
-                        }
-                    });
-                }).start();
+                downloadFile();
                 break;
             case R.id.tv_delete:
                 for (String s : list) {
@@ -85,37 +59,71 @@ public class OkhttpActivity extends AppCompatActivity {
                 list.clear();
                 break;
             case R.id.iv_img:
-                new Thread(() -> {
-                    String filePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES) + File.separator + System.currentTimeMillis() + ".jpg";
-                    HttpUtils.downloadImg(HttpUtils.IMAGE_PATH, filePath, new HttpUtils.ProgressListener() {
-                        @Override
-                        public void onProgress(int progress) {
-
-                        }
-
-                        @Override
-                        public void onSuccess(String filePath) {
-                            OkhttpActivity.this.runOnUiThread(() -> {
-                                try {
-                                    Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(new File(filePath)));
-                                    OkhttpActivity.this.runOnUiThread(() -> {
-                                        mIvImg.setImageBitmap(bitmap);
-                                    });
-                                } catch (FileNotFoundException e) {
-                                    e.printStackTrace();
-                                }
-                            });
-                        }
-
-                        @Override
-                        public void onFailure(Throwable throwable) {
-
-                        }
-                    });
-                }).start();
+                downloadImg();
                 break;
             default:
                 break;
         }
+    }
+
+    private void downloadImg() {
+        new Thread(() -> {
+            String filePath = getExternalFilesDir(Environment.DIRECTORY_PICTURES) + File.separator + System.currentTimeMillis() + ".jpg";
+            HttpUtils.downloadImg(HttpUtils.IMAGE_PATH, filePath, new HttpUtils.ProgressListener() {
+                @Override
+                public void onProgress(int progress) {
+
+                }
+
+                @Override
+                public void onSuccess(String filePath) {
+                    OkhttpActivity.this.runOnUiThread(() -> {
+                        try {
+                            Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(new File(filePath)));
+                            OkhttpActivity.this.runOnUiThread(() -> {
+                                mIvImg.setImageBitmap(bitmap);
+                            });
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    });
+                }
+
+                @Override
+                public void onFailure(Throwable throwable) {
+
+                }
+            });
+        }).start();
+    }
+
+    private void downloadFile() {
+        new Thread(() -> {
+            String filePath = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + System.currentTimeMillis() + ".apk";
+            HttpUtils.download(HttpUtils.TOU_TIAO_URL, filePath, new HttpUtils.ProgressListener() {
+                @Override
+                public void onProgress(int progress) {
+                    if (mProgress.getProgress() == progress) {
+                        return;
+                    }
+                    OkhttpActivity.this.runOnUiThread(() -> {
+                        Log.i(TAG, "onProgress: " + progress + ";" + mProgress.getMax() + " : " + mProgress.getProgress());
+                        mProgress.setProgress(progress);
+                        mProgress.setSecondaryProgress(progress);
+                    });
+                }
+
+                @Override
+                public void onSuccess(String filePath) {
+                    Log.i(TAG, "onSuccess: " + filePath);
+                    list.add(filePath);
+                }
+
+                @Override
+                public void onFailure(Throwable throwable) {
+                    Log.i(TAG, "onFailure: " + throwable.getMessage());
+                }
+            });
+        }).start();
     }
 }
